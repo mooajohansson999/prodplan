@@ -23,7 +23,7 @@ def get_access_token():
 ACCESS_TOKEN = get_access_token()
 HEADERS = {'Authorization': f'Bearer {ACCESS_TOKEN}', 'Content-Type': 'application/json'}
 
-DROPBOX_FOLDER = '/moa johansson/appar/produktionsplan'
+DROPBOX_FOLDER = ''  # Scoped app ser bara sin egen mapp (Produktionsplan)
 OUTPUT_DIR = 'data'
 
 # Mappning: filnamns-nyckelord -> typ
@@ -37,23 +37,14 @@ FILE_MAP = {
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 def list_files():
-    # Testa rotnivån först för att se mappstruktur
     r = requests.post(
-        'https://api.dropboxapi.com/2/files/list_folder',
-        headers=HEADERS,
-        json={'path': ''}
-    )
-    print('ROOT innehåll:', [e['name'] for e in r.json().get('entries', [])])
-
-    r2 = requests.post(
         'https://api.dropboxapi.com/2/files/list_folder',
         headers=HEADERS,
         json={'path': DROPBOX_FOLDER}
     )
-    print('Status:', r2.status_code)
-    print('Svar:', r2.text[:500])
-    r2.raise_for_status()
-    return r2.json().get('entries', [])
+    print('list_folder status:', r.status_code, r.text[:300])
+    r.raise_for_status()
+    return r.json().get('entries', [])
 
 def download_file(path):
     r = requests.post(
