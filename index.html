@@ -438,25 +438,27 @@ async function loadData(){
 }
 
 function convertJsonToStore(raw, store, type){
-  // Mappa sheet-namn till projekt-id
   const sheetToProject = {};
   document.querySelectorAll('.project-item').forEach(item => {
     sheetToProject[item.dataset.sheet] = item.dataset.project;
   });
 
   for(const [sheetName, dateRows] of Object.entries(raw)){
-    // Hitta matching projekt
-    let proj = sheetToProject[sheetName];
-    if(!proj){
-      // Försök fuzzy match
-      const lower = sheetName.toLowerCase();
+    let proj = null;
+
+    // Exakt match
+    if(sheetToProject[sheetName]){
+      proj = sheetToProject[sheetName];
+    } else {
+      // Fuzzy match – jämför utan punkter och siffror i början
+      const normalize = s => s.toLowerCase().replace(/^\d+[\.\d]*\s*/, '').replace(/\./g, '').trim();
+      const normSheet = normalize(sheetName);
       for(const [sheet, p] of Object.entries(sheetToProject)){
-        if(lower.includes(sheet.toLowerCase().replace(/^\d+[\.\d]*\s*/,'').toLowerCase())){
-          proj = p; break;
-        }
+        if(normalize(sheet) === normSheet){ proj = p; break; }
       }
     }
-    if(!proj) continue;
+
+    if(!proj){ console.warn('Ingen match för sheet:', sheetName); continue; }
 
     for(const [dateKey, row] of Object.entries(dateRows)){
       const d = new Date(dateKey);
