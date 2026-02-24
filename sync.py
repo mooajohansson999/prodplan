@@ -16,6 +16,7 @@ def get_access_token():
             'client_secret': APP_SECRET,
         }
     )
+    print('Token svar:', r.status_code, r.text)
     r.raise_for_status()
     return r.json()['access_token']
 
