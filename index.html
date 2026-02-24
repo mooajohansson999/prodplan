@@ -202,8 +202,6 @@
 </head>
 <body>
 
-
-
 <!-- UTFALL MODAL -->
 <div class="modal-overlay" id="utfallModal">
   <div class="modal">
@@ -258,12 +256,11 @@
       Mål importerade
     </div>
 
-    <!-- Buttons -->
+    <!-- Last synced -->
     <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#999;">
       <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/></svg>
       <span id="lastSynced">Senast synkad: —</span>
     </div>
-
   </div>
 </header>
 
@@ -314,10 +311,12 @@
       <div class="project-checkbox"></div><span class="project-name">Telia FMC</span>
       <span class="data-dots"><span class="data-dot utfall"></span><span class="data-dot mal"></span></span>
     </div>
+
     <div class="compare-bar" id="compareBar">
       <strong>Jämförelseläge</strong>
       <span id="compareCount">0</span> projekt valda
     </div>
+
     <div style="padding: 16px 20px 0; border-top: 1px solid #f0f0ee; margin-top: 16px;">
       <div class="legend">
         <div class="legend-item"><div class="legend-dot" style="background:#f97c5a"></div> Utfall</div>
@@ -365,6 +364,7 @@
         <div class="tab" onclick="setView('compare',this)" style="display:none">Jämförelse</div>
       </div>
     </div>
+
     <div class="month-nav" style="margin-bottom:10px;">
       <button class="nav-btn" onclick="changeMonth(-1)">◀</button>
       <div class="month-selects">
@@ -384,6 +384,7 @@
       </div>
       <button class="nav-btn" onclick="changeMonth(1)">▶</button>
     </div>
+
     <div class="table-wrap" id="tableWrap">
       <table><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table>
     </div>
@@ -400,37 +401,52 @@ let currentProject = 'telia-fm';
 let utfallData = {};
 let malData = {};
 
+/**
+ * FIXAD VERSION:
+ * - cache-bust för att undvika stale JSON från GitHub Pages
+ * - INGEN recursion (inga loadData() i slutet)
+ * - renderAll() körs när datan är inläst
+ */
 async function loadData(){
   try {
+    const bust = `?v=${Date.now()}`;
+
     const [utfallRes, malRes, syncRes] = await Promise.all([
-      fetch('data/utfall.json'),
-      fetch('data/mal.json'),
-      fetch('data/last_synced.json')
+      fetch('data/utfall.json' + bust),
+      fetch('data/mal.json' + bust),
+      fetch('data/last_synced.json' + bust)
     ]);
+
     if(utfallRes.ok){
       const raw = await utfallRes.json();
-      // raw är { "Sheet Name": { "2026-02-01": { ...row } } }
-      // Konvertera till vårt format: utfallData["project_year_month"] = { dateKey: row }
       convertJsonToStore(raw, utfallData, 'utfall');
+    } else {
+      console.warn('utfall.json kunde inte laddas:', utfallRes.status);
     }
+
     if(malRes.ok){
       const raw = await malRes.json();
       convertJsonToStore(raw, malData, 'mal');
+    } else {
+      console.warn('mal.json kunde inte laddas:', malRes.status);
     }
+
     if(syncRes.ok){
       const sync = await syncRes.json();
       const el = document.getElementById('lastSynced');
       if(el && sync.last_synced) el.textContent = 'Senast synkad: ' + sync.last_synced;
     }
+
     // Markera projekt som har data
     document.querySelectorAll('.project-item').forEach(item => {
       const proj = item.dataset.project;
       const hasU = Object.keys(utfallData).some(k => k.startsWith(proj + '_'));
       const hasM = Object.keys(malData).some(k => k.startsWith(proj + '_'));
-      if(hasU) item.classList.add('has-utfall');
-      if(hasM) item.classList.add('has-mal');
+      item.classList.toggle('has-utfall', hasU);
+      item.classList.toggle('has-mal', hasM);
     });
-    loadData();
+
+    renderAll();
   } catch(e) {
     console.warn('Kunde inte ladda data:', e);
     renderAll();
@@ -749,7 +765,6 @@ function updateStatCards(uData,mData){
 function renderSubtitle(){
   const m=getMonth(),y=getYear();
   document.getElementById('pageSub').textContent=`${MONTHS_SV[m]} ${y} · Månadsöversikt`;
-
 }
 function renderAll(){
   if(currentView==='compare') renderCompare();
@@ -758,7 +773,6 @@ function renderAll(){
 }
 
 function generateDummyData(proj, m, y){
-  // Generera dummy-data för ett projekt om ingen riktig data finns
   const days=new Date(y,m+1,0).getDate();
   const uData={}, mData={};
   const seeds={'telia-fm':{s:8,t:60,p:18},'villafiber':{s:5,t:38,p:10},'koax':{s:4,t:30,p:8},'lan':{s:3,t:22,p:6},'globalconnect':{s:6,t:45,p:12},'adressandring':{s:7,t:52,p:15},'vip-leads':{s:5,t:40,p:11},'retention':{s:6,t:44,p:13},'mbh':{s:4,t:32,p:9},'mobil':{s:5,t:38,p:10},'fmc':{s:3,t:24,p:7}};
@@ -778,7 +792,6 @@ function getProjectData(proj){
   const m=getMonth(), y=getYear();
   let uData=utfallData[storeKey(proj,y,m)]||{};
   let mData=malData[storeKey(proj,y,m)]||{};
-  // Använd dummy-data om ingen riktig data finns
   if(!Object.keys(uData).length&&!Object.keys(mData).length){
     const d=generateDummyData(proj,m,y);
     uData=d.uData; mData=d.mData;
@@ -799,8 +812,8 @@ function renderCompare(){
     const uRows=Object.values(uData);
     const mRows=Object.values(mData);
 
-    const totalProd=uRows.reduce((s,r)=>s+(typeof(findVal(r,'Produkt')||findVal(r,'produkt'))===  'number'?(findVal(r,'Produkt')||findVal(r,'produkt')):0),0);
-    const malProd=mRows.reduce((s,r)=>s+(typeof(findVal(r,'Produkt')||findVal(r,'produkt'))===  'number'?(findVal(r,'Produkt')||findVal(r,'produkt')):0),0);
+    const totalProd=uRows.reduce((s,r)=>s+(typeof(findVal(r,'Produkt')||findVal(r,'produkt'))==='number'?(findVal(r,'Produkt')||findVal(r,'produkt')):0),0);
+    const malProd=mRows.reduce((s,r)=>s+(typeof(findVal(r,'Produkt')||findVal(r,'produkt'))==='number'?(findVal(r,'Produkt')||findVal(r,'produkt')):0),0);
     const totalTimmar=uRows.reduce((s,r)=>s+(typeof findVal(r,'timmar')==='number'?findVal(r,'timmar'):(typeof findVal(r,'Utfall Timmar')==='number'?findVal(r,'Utfall Timmar'):0)),0);
     const malTimmar=mRows.reduce((s,r)=>s+(typeof findVal(r,'Mål timmar')==='number'?findVal(r,'Mål timmar'):0),0);
     const workDays=uRows.filter(r=>(findVal(r,'Antal Mansdagar')||0)>0).length;
@@ -814,7 +827,6 @@ function renderCompare(){
     const snittpMalPct=malSnitt>0?Math.round(snittpMansdag/malSnitt*100):0;
     const overall=Math.round((prodPct+timPct)/2);
 
-    // Sparkline – daglig produkt
     const m=getMonth(),y=getYear(),days=new Date(y,m+1,0).getDate();
     let sparkPoints=[],malPoints=[];
     for(let i=1;i<=days;i++){
@@ -897,19 +909,8 @@ function setView(v,el){
   }
 }
 
-
 function openModal(id){ document.getElementById(id).classList.add('visible'); }
 function closeModal(id){ document.getElementById(id).classList.remove('visible'); }
-
-function handleSynkModal(){
-  const pw=document.getElementById('synkPw').value;
-  if(pw!=='ViaProdPlan2040#!'){ document.getElementById('synkPwError').classList.add('visible'); return; }
-  document.getElementById('synkPwError').classList.remove('visible');
-  closeModal('synkModal');
-  const el=document.getElementById('synkSuccess');
-  el.classList.add('visible');
-  setTimeout(()=>el.classList.remove('visible'),3000);
-}
 
 function handleImport(type){
   const pwId=type==='utfall'?'utfallPw':'malPw';
@@ -1003,14 +1004,12 @@ function toggleProject(el){
     bar.classList.add('visible');
     title.textContent=[...document.querySelectorAll('.project-item.active .project-name')].map(n=>n.textContent).join(' + ');
     currentProject=document.querySelector('.project-item.active').dataset.project;
-    // Tvinga kompakt vy och disabla "Alla kolumner"
     currentView='compact';
     document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
     document.querySelectorAll('.tab').forEach(t=>{
       if(t.textContent.includes('Kompakt')) t.classList.add('active');
     });
   }
-  // Hantera disabled-state på "Alla kolumner"-fliken + visa/dölj Jämförelse-flik
   document.querySelectorAll('.tab').forEach(t=>{
     if(t.textContent.includes('Alla kolumner')){
       t.style.display=activeCount>1?'none':'';
@@ -1048,7 +1047,8 @@ function mergeData(type){
   return merged;
 }
 
-renderAll();
+/* STARTA APPEN: ladda JSON först, sen rendera */
+loadData();
 </script>
 </body>
 </html>
