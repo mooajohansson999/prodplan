@@ -19,13 +19,23 @@ FILE_MAP = {
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 def list_files():
+    # Testa rotnivån först för att se mappstruktur
     r = requests.post(
+        'https://api.dropboxapi.com/2/files/list_folder',
+        headers=HEADERS,
+        json={'path': ''}
+    )
+    print('ROOT innehåll:', [e['name'] for e in r.json().get('entries', [])])
+
+    r2 = requests.post(
         'https://api.dropboxapi.com/2/files/list_folder',
         headers=HEADERS,
         json={'path': DROPBOX_FOLDER}
     )
-    r.raise_for_status()
-    return r.json().get('entries', [])
+    print('Status:', r2.status_code)
+    print('Svar:', r2.text[:500])
+    r2.raise_for_status()
+    return r2.json().get('entries', [])
 
 def download_file(path):
     r = requests.post(
