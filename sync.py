@@ -62,6 +62,10 @@ def excel_to_json(content):
     wb = load_workbook(BytesIO(content), data_only=True)
     result = {}
     for sheet_name in wb.sheetnames:
+        # Hoppa över rådata-blad (börjar med 0.)
+        if sheet_name.startswith('0'):
+            print(f'Hoppar över rådata-blad: {sheet_name}')
+            continue
         ws = wb[sheet_name]
         rows = list(ws.iter_rows(values_only=True))
         if not rows:
