@@ -31,6 +31,7 @@ FILE_MAP = {
     'mål': 'mal',
     'mal': 'mal',
     'produktionsr': 'utfall',
+    'uträkning': 'utfall',
     'utfall': 'utfall',
 }
 
@@ -50,7 +51,7 @@ def download_file(path):
     r = requests.post(
         'https://content.dropboxapi.com/2/files/download',
         headers={
-            'Authorization': f'Bearer {TOKEN}',
+            'Authorization': f'Bearer {ACCESS_TOKEN}',
             'Dropbox-API-Arg': json.dumps({'path': path})
         }
     )
