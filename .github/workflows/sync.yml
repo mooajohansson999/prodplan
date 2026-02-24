@@ -1,0 +1,33 @@
+name: Sync Dropbox
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Kör varje timme
+  workflow_dispatch:       # Tillåter manuell körning
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests openpyxl
+
+      - name: Run sync script
+        env:
+          DP_TOKEN: ${{ secrets.DP_TOKEN }}
+        run: python sync.py
+
+      - name: Commit and push data
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "Sync data from Dropbox"
+          git push
