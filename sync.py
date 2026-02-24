@@ -1,6 +1,13 @@
-import os, json, requests, datetime
+import os
+import json
+import requests
+import datetime
 from openpyxl import load_workbook
 from io import BytesIO
+
+# ==============================
+# DROPBOX AUTH
+# ==============================
 
 REFRESH_TOKEN = os.environ['DP_TOKEN']
 APP_KEY = 't15p5v3rcqofusj'
@@ -16,17 +23,19 @@ def get_access_token():
             'client_secret': APP_SECRET,
         }
     )
-    print('Token svar:', r.status_code, r.text)
+    print('Token svar:', r.status_code)
     r.raise_for_status()
     return r.json()['access_token']
 
 ACCESS_TOKEN = get_access_token()
-HEADERS = {'Authorization': f'Bearer {ACCESS_TOKEN}', 'Content-Type': 'application/json'}
+HEADERS = {
+    'Authorization': f'Bearer {ACCESS_TOKEN}',
+    'Content-Type': 'application/json'
+}
 
-DROPBOX_FOLDER = ''  # Scoped app ser bara sin egen mapp (Produktionsplan)
+DROPBOX_FOLDER = ''   # Scoped app ser bara sin egen mapp
 OUTPUT_DIR = 'data'
 
-# Mappning: filnamns-nyckelord -> typ
 FILE_MAP = {
     'mål': 'mal',
     'mal': 'mal',
@@ -37,13 +46,17 @@ FILE_MAP = {
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
+# ==============================
+# DROPBOX FILE FUNCTIONS
+# ==============================
+
 def list_files():
     r = requests.post(
         'https://api.dropboxapi.com/2/files/list_folder',
         headers=HEADERS,
         json={'path': DROPBOX_FOLDER}
     )
-    print('list_folder status:', r.status_code, r.text[:300])
+    print('list_folder status:', r.status_code)
     r.raise_for_status()
     return r.json().get('entries', [])
 
@@ -58,47 +71,124 @@ def download_file(path):
     r.raise_for_status()
     return r.content
 
+# ==============================
+# ROBUST EXCEL PARSER
+# ==============================
+
 def excel_to_json(content):
     wb = load_workbook(BytesIO(content), data_only=True)
     result = {}
+
+    def norm(x):
+        return str(x).strip().lower().replace(':','') if x is not None else ''
+
     for sheet_name in wb.sheetnames:
-        # Hoppa över rådata-blad (börjar med 0.)
-        if sheet_name.startswith('0'):
+
+        # Hoppa över rådata-flikar
+        if sheet_name.strip().startswith('0'):
             print(f'Hoppar över rådata-blad: {sheet_name}')
             continue
+
         ws = wb[sheet_name]
         rows = list(ws.iter_rows(values_only=True))
         if not rows:
             continue
-        headers = [str(h).strip() if h is not None else '' for h in rows[0]]
+
+        # 1️⃣ Hitta header-rad (letar efter DATUM)
+        header_row_idx = None
+        for i in range(min(60, len(rows))):
+            if any(norm(c) in ('datum', 'date') for c in rows[i]):
+                header_row_idx = i
+                break
+
+        if header_row_idx is None:
+            print(f'⚠️ Ingen header med DATUM hittades i: {sheet_name}')
+            continue
+
+        headers = [str(h).strip() if h is not None else '' for h in rows[header_row_idx]]
+
+        # Hitta datumkolumn
+        date_col = None
+        for h in headers:
+            if norm(h) in ('datum', 'date'):
+                date_col = h
+                break
+
+        if not date_col:
+            print(f'⚠️ Hittade header men ingen datum-kolumn i: {sheet_name}')
+            continue
+
         sheet_data = {}
-        for row in rows[1:]:
+
+        for row in rows[header_row_idx + 1:]:
             row_dict = dict(zip(headers, row))
-            # Hitta datumkolumnen
-            date_val = row_dict.get('DATUM') or row_dict.get('Datum') or row_dict.get('datum')
+            date_val = row_dict.get(date_col)
+
             if not date_val:
                 continue
+
+            date_key = None
+
+            # 2️⃣ Konvertera datum
             if isinstance(date_val, datetime.datetime):
                 date_key = date_val.strftime('%Y-%m-%d')
-            elif isinstance(date_val, str) and '-' in date_val:
-                date_key = date_val[:10]
-            else:
+
+            elif isinstance(date_val, datetime.date):
+                date_key = date_val.strftime('%Y-%m-%d')
+
+            elif isinstance(date_val, (int, float)):
+                base = datetime.datetime(1899, 12, 30)
+                try:
+                    date_key = (base + datetime.timedelta(days=float(date_val))).strftime('%Y-%m-%d')
+                except Exception:
+                    continue
+
+            elif isinstance(date_val, str):
+                s = date_val.strip()
+                try:
+                    if '-' in s:
+                        date_key = s[:10]
+                    elif '/' in s:
+                        parts = s.split('/')
+                        if len(parts[0]) == 4:  # YYYY/MM/DD
+                            date_key = f"{parts[0]}-{parts[1].zfill(2)}-{parts[2].zfill(2)}"
+                        else:  # DD/MM/YYYY
+                            date_key = f"{parts[2]}-{parts[1].zfill(2)}-{parts[0].zfill(2)}"
+                except Exception:
+                    continue
+
+            if not date_key:
                 continue
-            # Konvertera värden
+
+            # 3️⃣ Rensa raden
             clean = {}
             for k, v in row_dict.items():
-                if k == '':
+                if not k or str(k).strip() == '':
                     continue
+
                 if isinstance(v, datetime.datetime):
+                    clean[k] = v.strftime('%Y-%m-%d')
+                elif isinstance(v, datetime.date):
                     clean[k] = v.strftime('%Y-%m-%d')
                 elif isinstance(v, (int, float)):
                     clean[k] = v
-                elif v is not None:
+                elif v is not None and str(v).strip() != '':
                     clean[k] = str(v)
-            sheet_data[date_key] = clean
+
+            if clean:
+                sheet_data[date_key] = clean
+
         if sheet_data:
             result[sheet_name] = sheet_data
+            print(f'✅ {sheet_name}: {len(sheet_data)} rader')
+        else:
+            print(f'⚠️ {sheet_name}: inga rader efter parsing')
+
     return result
+
+# ==============================
+# FILE TYPE DETECTION
+# ==============================
 
 def detect_type(filename):
     fn = filename.lower()
@@ -107,12 +197,17 @@ def detect_type(filename):
             return typ
     return None
 
+# ==============================
+# MAIN SYNC LOOP
+# ==============================
+
 files = list_files()
 print(f'Hittade {len(files)} filer i Dropbox-mappen')
 
 for f in files:
     if f['.tag'] != 'file':
         continue
+
     name = f['name']
     if not name.endswith(('.xlsx', '.xls')):
         continue
@@ -129,9 +224,13 @@ for f in files:
     out_path = os.path.join(OUTPUT_DIR, f'{typ}.json')
     with open(out_path, 'w', encoding='utf-8') as fh:
         json.dump(data, fh, ensure_ascii=False, indent=2)
+
     print(f'Sparade {out_path} med {len(data)} flikar')
 
-# Spara tidsstämpel för senast synkad
+# ==============================
+# SAVE LAST SYNC TIME
+# ==============================
+
 ts = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
 with open(os.path.join(OUTPUT_DIR, 'last_synced.json'), 'w') as fh:
     json.dump({'last_synced': ts}, fh)
