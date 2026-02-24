@@ -202,20 +202,7 @@
 </head>
 <body>
 
-<!-- SYNKA MODAL -->
-<div class="modal-overlay" id="synkModal">
-  <div class="modal">
-    <h2>Synka Dropbox</h2>
-    <p>Ange lösenord för att synka data från Dropbox.</p>
-    <label>Lösenord</label>
-    <input type="password" id="synkPw" placeholder="Ange lösenord..." />
-    <div class="modal-error" id="synkPwError">Fel lösenord, försök igen.</div>
-    <div class="modal-actions">
-      <button class="btn-cancel" onclick="closeModal('synkModal')">Avbryt</button>
-      <button class="btn-confirm" onclick="handleSynkModal()">Synka</button>
-    </div>
-  </div>
-</div>
+
 
 <!-- UTFALL MODAL -->
 <div class="modal-overlay" id="utfallModal">
@@ -272,10 +259,10 @@
     </div>
 
     <!-- Buttons -->
-    <button class="btn btn-synk" onclick="openModal('synkModal')">
-      <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/></svg>
-      Synka Dropbox
-    </button>
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#999;">
+      <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/></svg>
+      <span id="lastSynced">Senast synkad: —</span>
+    </div>
 
   </div>
 </header>
@@ -412,6 +399,75 @@ let currentView = 'full';
 let currentProject = 'telia-fm';
 let utfallData = {};
 let malData = {};
+
+async function loadData(){
+  try {
+    const [utfallRes, malRes, syncRes] = await Promise.all([
+      fetch('data/utfall.json'),
+      fetch('data/mal.json'),
+      fetch('data/last_synced.json')
+    ]);
+    if(utfallRes.ok){
+      const raw = await utfallRes.json();
+      // raw är { "Sheet Name": { "2026-02-01": { ...row } } }
+      // Konvertera till vårt format: utfallData["project_year_month"] = { dateKey: row }
+      convertJsonToStore(raw, utfallData, 'utfall');
+    }
+    if(malRes.ok){
+      const raw = await malRes.json();
+      convertJsonToStore(raw, malData, 'mal');
+    }
+    if(syncRes.ok){
+      const sync = await syncRes.json();
+      const el = document.getElementById('lastSynced');
+      if(el && sync.last_synced) el.textContent = 'Senast synkad: ' + sync.last_synced;
+    }
+    // Markera projekt som har data
+    document.querySelectorAll('.project-item').forEach(item => {
+      const proj = item.dataset.project;
+      const hasU = Object.keys(utfallData).some(k => k.startsWith(proj + '_'));
+      const hasM = Object.keys(malData).some(k => k.startsWith(proj + '_'));
+      if(hasU) item.classList.add('has-utfall');
+      if(hasM) item.classList.add('has-mal');
+    });
+    loadData();
+  } catch(e) {
+    console.warn('Kunde inte ladda data:', e);
+    renderAll();
+  }
+}
+
+function convertJsonToStore(raw, store, type){
+  // Mappa sheet-namn till projekt-id
+  const sheetToProject = {};
+  document.querySelectorAll('.project-item').forEach(item => {
+    sheetToProject[item.dataset.sheet] = item.dataset.project;
+  });
+
+  for(const [sheetName, dateRows] of Object.entries(raw)){
+    // Hitta matching projekt
+    let proj = sheetToProject[sheetName];
+    if(!proj){
+      // Försök fuzzy match
+      const lower = sheetName.toLowerCase();
+      for(const [sheet, p] of Object.entries(sheetToProject)){
+        if(lower.includes(sheet.toLowerCase().replace(/^\d+[\.\d]*\s*/,'').toLowerCase())){
+          proj = p; break;
+        }
+      }
+    }
+    if(!proj) continue;
+
+    for(const [dateKey, row] of Object.entries(dateRows)){
+      const d = new Date(dateKey);
+      if(isNaN(d)) continue;
+      const m = d.getMonth(), y = d.getFullYear();
+      const key = storeKey(proj, y, m);
+      if(!store[key]) store[key] = {};
+      store[key][dateKey] = row;
+    }
+  }
+}
 
 const COMPACT_COLS = [
   {label:'Dag'},{label:'Datum'},
