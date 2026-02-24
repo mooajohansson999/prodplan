@@ -5,7 +5,7 @@ from io import BytesIO
 TOKEN = os.environ['DP_TOKEN']
 HEADERS = {'Authorization': f'Bearer {TOKEN}', 'Content-Type': 'application/json'}
 
-DROPBOX_FOLDER = '/Moa Johansson/Appar/Produktionsplan'
+DROPBOX_FOLDER = '/moa johansson/appar/produktionsplan'
 OUTPUT_DIR = 'data'
 
 # Mappning: filnamns-nyckelord -> typ
