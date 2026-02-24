@@ -2,8 +2,25 @@ import os, json, requests, datetime
 from openpyxl import load_workbook
 from io import BytesIO
 
-TOKEN = os.environ['DP_TOKEN']
-HEADERS = {'Authorization': f'Bearer {TOKEN}', 'Content-Type': 'application/json'}
+REFRESH_TOKEN = os.environ['DP_TOKEN']
+APP_KEY = 't15p5v3rcqofusj'
+APP_SECRET = os.environ['DP_SECRET']
+
+def get_access_token():
+    r = requests.post(
+        'https://api.dropbox.com/oauth2/token',
+        data={
+            'grant_type': 'refresh_token',
+            'refresh_token': REFRESH_TOKEN,
+            'client_id': APP_KEY,
+            'client_secret': APP_SECRET,
+        }
+    )
+    r.raise_for_status()
+    return r.json()['access_token']
+
+ACCESS_TOKEN = get_access_token()
+HEADERS = {'Authorization': f'Bearer {ACCESS_TOKEN}', 'Content-Type': 'application/json'}
 
 DROPBOX_FOLDER = '/moa johansson/appar/produktionsplan'
 OUTPUT_DIR = 'data'
