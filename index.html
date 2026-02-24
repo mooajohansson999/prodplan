@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIASALES Dashboard</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f7f7f5; color: #1a1a1a; font-size: 13px; }
+
+  header {
+    background: #fff; border-bottom: 1px solid #ebebeb;
+    padding: 0 32px; height: 56px;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo-icon {
+    width: 32px; height: 32px;
+    background: linear-gradient(135deg, #f97c5a, #e8503a);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 700; font-size: 14px;
+  }
+  .logo-text { font-weight: 600; font-size: 15px; letter-spacing: 0.5px; }
+  .header-right { display: flex; align-items: center; gap: 10px; }
+
+  .month-nav { display: flex; align-items: center; gap: 8px; }
+  .nav-btn {
+    width: 28px; height: 28px; border: 1px solid #ebebeb; border-radius: 6px;
+    background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    font-size: 12px; color: #555; transition: all 0.15s;
+  }
+  .nav-btn:hover { background: #f7f7f5; }
+  .month-selects { display: flex; gap: 6px; }
+  select {
+    border: 1px solid #ebebeb; border-radius: 8px; padding: 6px 24px 6px 10px;
+    font-size: 13px; font-weight: 500; background: #f7f7f5; color: #1a1a1a;
+    cursor: pointer; outline: none; appearance: none; -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 8px center;
+  }
+  select:focus { border-color: #f97c5a; outline: none; }
+
+  .btn {
+    display: flex; align-items: center; gap: 6px;
+    padding: 7px 14px; border-radius: 8px;
+    font-size: 12px; font-weight: 600; cursor: pointer;
+    transition: background 0.15s; white-space: nowrap;
+  }
+  .btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+  .btn-synk { background: #fff; color: #555; border: 1px solid #ebebeb; }
+  .btn-synk:hover { background: #f7f7f5; }
+  .btn-utfall { background: #f97c5a; color: white; border: none; }
+  .btn-utfall:hover { background: #e8503a; }
+  .btn-mal { background: #fff; color: #555; border: 1px solid #ebebeb; }
+  .btn-mal:hover { background: #f7f7f5; }
+
+  .import-success {
+    display: none; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 500;
+  }
+  .import-success.visible { display: flex; }
+  .import-success.utfall { color: #e8503a; }
+  .import-success.mal { color: #2d8a4e; }
+  .import-success.synk { color: #2d8a4e; }
+
+  .modal-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.3); z-index: 1000;
+    align-items: center; justify-content: center;
+  }
+  .modal-overlay.visible { display: flex; }
+  .modal {
+    background: #fff; border-radius: 16px;
+    padding: 32px; width: 400px; box-shadow: 0 8px 40px rgba(0,0,0,0.15);
+  }
+  .modal h2 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
+  .modal p { font-size: 12px; color: #999; margin-bottom: 20px; }
+  .modal label { font-size: 12px; font-weight: 500; color: #555; display: block; margin-bottom: 6px; }
+  .modal input[type=password], .modal input[type=file] {
+    width: 100%; border: 1px solid #ebebeb; border-radius: 8px;
+    padding: 9px 12px; font-size: 13px; outline: none; margin-bottom: 16px;
+    background: #fafafa;
+  }
+  .modal input[type=password]:focus { border-color: #f97c5a; }
+  .modal input[type=file] { padding: 7px 12px; cursor: pointer; }
+  .modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 4px; }
+  .btn-cancel {
+    padding: 8px 16px; border-radius: 8px; border: 1px solid #ebebeb;
+    background: #fff; font-size: 13px; cursor: pointer; color: #555;
+  }
+  .btn-confirm {
+    padding: 8px 16px; border-radius: 8px; border: none;
+    background: #f97c5a; color: white; font-size: 13px;
+    font-weight: 600; cursor: pointer;
+  }
+  .btn-confirm:hover { background: #e8503a; }
+  .modal-error { font-size: 12px; color: #c0392b; margin-top: -10px; margin-bottom: 12px; display: none; }
+  .modal-error.visible { display: block; }
+
+  .container { display: flex; height: calc(100vh - 56px); }
+  aside {
+    width: 220px; background: #fff; border-right: 1px solid #ebebeb;
+    padding: 20px 0; flex-shrink: 0; overflow-y: auto;
+  }
+  .sidebar-label {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.8px; color: #999;
+    text-transform: uppercase; padding: 0 20px; margin-bottom: 8px;
+  }
+  .project-item {
+    display: flex; align-items: center; gap: 10px; padding: 9px 20px;
+    cursor: pointer; transition: background 0.15s; border-left: 3px solid transparent;
+  }
+  .project-item:hover { background: #faf9f8; }
+  .project-item.active { background: #fff5f3; border-left-color: #f97c5a; }
+  .project-item.active .project-name { color: #e8503a; font-weight: 600; }
+  .project-checkbox {
+    width: 16px; height: 16px; border: 1.5px solid #ddd; border-radius: 4px;
+    flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  }
+  .project-item.active .project-checkbox { background: #f97c5a; border-color: #f97c5a; }
+  .project-item.active .project-checkbox::after { content: '✓'; color: white; font-size: 10px; font-weight: 700; }
+  .project-name { font-size: 13px; color: #444; }
+  .data-dots { display: flex; gap: 3px; margin-left: auto; flex-shrink: 0; }
+  .data-dot { width: 6px; height: 6px; border-radius: 50%; display: none; }
+  .data-dot.utfall { background: #f97c5a; }
+  .data-dot.mal { background: #2d8a4e; }
+  .project-item.has-utfall .data-dot.utfall { display: block; }
+  .project-item.has-mal .data-dot.mal { display: block; }
+
+  .compare-bar {
+    margin: 16px 20px 0; padding: 10px 12px; background: #fff5f3;
+    border-radius: 8px; border: 1px solid #fde0d8; font-size: 11px; color: #e8503a; display: none;
+  }
+  .compare-bar.visible { display: block; }
+  .compare-bar strong { display: block; margin-bottom: 2px; font-size: 12px; }
+
+  main { flex: 1; overflow-y: auto; padding: 28px 32px; }
+  .page-title { font-size: 20px; font-weight: 600; margin-bottom: 4px; }
+  .page-sub { font-size: 12px; color: #999; margin-bottom: 24px; }
+
+  .stat-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px; }
+  .stat-card { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 16px 20px; }
+  .stat-label { font-size: 11px; color: #999; font-weight: 500; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .stat-value { font-size: 24px; font-weight: 600; }
+  .stat-meta { font-size: 11px; color: #999; margin-top: 4px; }
+  .stat-badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 20px; margin-top: 6px; }
+  .badge-green { background: #e8f7ee; color: #2d8a4e; }
+  .badge-red { background: #fdecea; color: #c0392b; }
+  .badge-neutral { background: #f0f0f0; color: #666; }
+
+  .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .section-title { font-size: 14px; font-weight: 600; }
+  .section-tabs { display: flex; gap: 4px; background: #f0f0ee; border-radius: 8px; padding: 3px; }
+  .tab { padding: 5px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; color: #666; font-weight: 500; transition: all 0.15s; }
+  .tab.active { background: #fff; color: #1a1a1a; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+
+  .table-wrap { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; overflow: auto; }
+  table { width: 100%; border-collapse: collapse; }
+  thead { background: #fafafa; }
+  th {
+    padding: 10px 14px; text-align: left; font-size: 11px; font-weight: 600;
+    color: #999; text-transform: uppercase; letter-spacing: 0.5px;
+    border-bottom: 1px solid #ebebeb; white-space: nowrap;
+  }
+  td { padding: 10px 14px; border-bottom: 1px solid #f5f5f5; font-size: 13px; color: #333; white-space: nowrap; }
+  tr:last-child td { border-bottom: none; }
+  tr.weekend { background: #fafafa; }
+  tr.weekend td { color: #bbb; }
+  tr.today td { background: #fff8f6; }
+  tr.today td:first-child { border-left: 3px solid #f97c5a; }
+  td.goal { color: #2d8a4e; font-size: 12px; font-weight: 500; }
+  td.above { color: #2d8a4e; font-weight: 600; }
+  td.below { color: #c0392b; font-weight: 600; }
+  .day-badge {
+    display: inline-block; font-size: 11px; font-weight: 600; color: #f97c5a;
+    background: #fff5f3; border-radius: 4px; padding: 1px 6px; margin-right: 4px;
+  }
+  .summary-row td { background: #fafafa; font-weight: 600; color: #1a1a1a; border-top: 2px solid #ebebeb; font-size: 12px; }
+  .empty-cell { color: #ddd; }
+
+  .compare-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .compare-card { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 20px; }
+  .compare-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .compare-card-title { font-size: 14px; font-weight: 600; }
+  .compare-badge { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px; }
+  .compare-metric { margin-bottom: 14px; }
+  .compare-metric-label { font-size: 11px; color: #999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 4px; display: flex; justify-content: space-between; }
+  .compare-metric-label span { color: #1a1a1a; font-weight: 600; font-size: 12px; text-transform: none; letter-spacing: 0; }
+  .progress-bar-bg { height: 6px; background: #f0f0ee; border-radius: 10px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; border-radius: 10px; transition: width 0.4s ease; }
+  .compare-snitt { display: flex; align-items: baseline; gap: 6px; margin-top: 4px; }
+  .compare-snitt-val { font-size: 22px; font-weight: 700; }
+  .compare-snitt-meta { font-size: 11px; color: #999; }
+  .sparkline { margin-top: 16px; border-top: 1px solid #f0f0ee; padding-top: 12px; }
+  .sparkline-label { font-size: 11px; color: #999; margin-bottom: 6px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.4px; }
+  .legend { display: flex; align-items: center; gap: 16px; font-size: 11px; color: #999; }
+  .legend-item { display: flex; align-items: center; gap: 5px; }
+  .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+</style>
+</head>
+<body>
+
+<!-- SYNKA MODAL -->
+<div class="modal-overlay" id="synkModal">
+  <div class="modal">
+    <h2>Synka Dropbox</h2>
+    <p>Ange lösenord för att synka data från Dropbox.</p>
+    <label>Lösenord</label>
+    <input type="password" id="synkPw" placeholder="Ange lösenord..." />
+    <div class="modal-error" id="synkPwError">Fel lösenord, försök igen.</div>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('synkModal')">Avbryt</button>
+      <button class="btn-confirm" onclick="handleSynkModal()">Synka</button>
+    </div>
+  </div>
+</div>
+
+<!-- UTFALL MODAL -->
+<div class="modal-overlay" id="utfallModal">
+  <div class="modal">
+    <h2>Importera utfall</h2>
+    <p>Ange lösenord och välj översättningsfilen. Endast den månad filen innehåller uppdateras.</p>
+    <label>Lösenord</label>
+    <input type="password" id="utfallPw" placeholder="Ange lösenord..." />
+    <div class="modal-error" id="utfallPwError">Fel lösenord, försök igen.</div>
+    <label>Excel-fil (.xlsx)</label>
+    <input type="file" id="utfallFile" accept=".xlsx,.xls" />
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('utfallModal')">Avbryt</button>
+      <button class="btn-confirm" onclick="handleImport('utfall')">Importera</button>
+    </div>
+  </div>
+</div>
+
+<!-- MÅL MODAL -->
+<div class="modal-overlay" id="malModal">
+  <div class="modal">
+    <h2>Importera mål</h2>
+    <p>Ange lösenord och välj målfilen. Samma struktur som utfallsfilen – en rad per dag. Endast den månad filen innehåller uppdateras.</p>
+    <label>Lösenord</label>
+    <input type="password" id="malPw" placeholder="Ange lösenord..." />
+    <div class="modal-error" id="malPwError">Fel lösenord, försök igen.</div>
+    <label>Excel-fil (.xlsx)</label>
+    <input type="file" id="malFile" accept=".xlsx,.xls" />
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('malModal')">Avbryt</button>
+      <button class="btn-confirm" onclick="handleImport('mal')">Importera</button>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon">V</div>
+    <span class="logo-text">VIASALES</span>
+  </div>
+  <div class="header-right">
+    <!-- Success messages -->
+    <div class="import-success synk" id="synkSuccess">
+      <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+      Synkad med Dropbox
+    </div>
+    <div class="import-success utfall" id="utfallSuccess">
+      <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+      Utfall importerat
+    </div>
+    <div class="import-success mal" id="malSuccess">
+      <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+      Mål importerade
+    </div>
+
+    <!-- Buttons -->
+    <button class="btn btn-synk" onclick="openModal('synkModal')">
+      <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/></svg>
+      Synka Dropbox
+    </button>
+
+  </div>
+</header>
+
+<div class="container">
+  <aside>
+    <div class="sidebar-label">Projekt</div>
+    <div class="project-item active" data-project="telia-fm" data-sheet="1.1. Telia D2D" onclick="toggleProject(this)">
+      <div class="project-checkbox"></div><span class="project-name">Telia FM</span>
+      <span class="data-dots"><span class="data-dot utfall"></span><span class="data-dot mal"></span></span>
+    </div>
+    <div class="project-item" data-project="villafiber" data-sheet="1.3. Tele2 Villafiber" onclick="toggleProject(this)">
+      <div class="project-checkbox"></div><span class="project-name">Villafiber</span>
+      <span class="data-dots"><span class="data-dot utfall"></span><span class="data-dot mal"></span></span>
+    </div>
+    <div class="project-item" data-project="koax" data-sheet="1.2. Tele2 Koax" onclick="toggleProject(this)">
+      <div class="project-checkbox"></div><span class="project-name">Koax</span>
+      <span class="data-dots"><span class="data-dot utfall"></span><span class="data-dot mal"></span></span>
+    </div>
+    <div class="project-item" data-project="lan" data-sheet="1.4. LAN" onclick="toggleProject(this)">
+      <div class="project-checkbox"></div><span class="project-name">LAN</span>
+      <span class="data-dots"><span class="data-dot utfall"></span><span class="data-dot mal"></span></span>
+    </div>
+    <div class="project-item" data-project="globalconnect" data-sheet="GlobalConnect" onclick="toggleProject(this)">
+      <div class="project-checkbox"></div><span class="project-name">GlobalConnect</span>
+      <span class="data-dots"><span class="data-dot utfall"></span><span class="data-dot mal"></span></span>
+    </div>
+    <div class="project-item" data-project="adressandring" data-sheet="2.7. Telia Adressändring" onclick="toggleProject(this)">
+      <div class="project-checkbox"></div><span class="project-name">Telia Adressändring</span>
+      <span class="data-dots"><span class="data-dot utfall"></span><span class="data-dot mal"></span></span>
+    </div>
+    <div class="project-item" data-project="vip-leads" data-sheet="2.6. Telia VIP Leads" onclick="toggleProject(this)">
+      <div class="project-checkbox"></div><span class="project-name">Telia VIP Leads</span>
+      <span class="data-dots"><span class="data-dot utfall"></span><span class="data-dot mal"></span></span>
+    </div>
+    <div class="project-item" data-project="retention" data-sheet="2.5. Telia Retention Leads" onclick="toggleProject(this)">
+      <div class="project-checkbox"></div><span class="project-name">Telia Retention</span>
+      <span class="data-dots"><span class="data-dot utfall"></span><span class="data-dot mal"></span></span>
+    </div>
+    <div class="project-item" data-project="mbh" data-sheet="2.2. Telia MBH" onclick="toggleProject(this)">
+      <div class="project-checkbox"></div><span class="project-name">Telia MBH</span>
+      <span class="data-dots"><span class="data-dot utfall"></span><span class="data-dot mal"></span></span>
+    </div>
+    <div class="project-item" data-project="mobil" data-sheet="2.2. Telia Mobil" onclick="toggleProject(this)">
+      <div class="project-checkbox"></div><span class="project-name">Telia Mobil</span>
+      <span class="data-dots"><span class="data-dot utfall"></span><span class="data-dot mal"></span></span>
+    </div>
+    <div class="project-item" data-project="fmc" data-sheet="2.2.1. Telia FMC" onclick="toggleProject(this)">
+      <div class="project-checkbox"></div><span class="project-name">Telia FMC</span>
+      <span class="data-dots"><span class="data-dot utfall"></span><span class="data-dot mal"></span></span>
+    </div>
+    <div class="compare-bar" id="compareBar">
+      <strong>Jämförelseläge</strong>
+      <span id="compareCount">0</span> projekt valda
+    </div>
+    <div style="padding: 16px 20px 0; border-top: 1px solid #f0f0ee; margin-top: 16px;">
+      <div class="legend">
+        <div class="legend-item"><div class="legend-dot" style="background:#f97c5a"></div> Utfall</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#2d8a4e"></div> Mål</div>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="page-title" id="pageTitle">Telia FM</div>
+    <div class="page-sub" id="pageSub">Februari 2026 · Månadsöversikt</div>
+
+    <div class="stat-cards">
+      <div class="stat-card">
+        <div class="stat-label">Utfall produkter</div>
+        <div class="stat-value" id="sc-prod">—</div>
+        <div class="stat-meta" id="sc-prod-meta">Mål: —</div>
+        <div class="stat-badge badge-neutral" id="sc-prod-badge">Ingen data</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Utfall timmar</div>
+        <div class="stat-value" id="sc-hours">—</div>
+        <div class="stat-meta" id="sc-hours-meta">Mål: —</div>
+        <div class="stat-badge badge-neutral" id="sc-hours-badge">Ingen data</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Snitt per dag</div>
+        <div class="stat-value" id="sc-avg">—</div>
+        <div class="stat-meta" id="sc-avg-meta">Mål: —</div>
+        <div class="stat-badge badge-neutral" id="sc-avg-badge">Ingen data</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Aktiva säljare</div>
+        <div class="stat-value" id="sc-sellers">—</div>
+        <div class="stat-meta" id="sc-sellers-meta">Mål: —</div>
+        <div class="stat-badge badge-neutral" id="sc-sellers-badge">Ingen data</div>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <span class="section-title">Daglig uppföljning</span>
+      <div class="section-tabs">
+        <div class="tab active" onclick="setView('full',this)">Alla kolumner</div>
+        <div class="tab" onclick="setView('compact',this)">Kompakt</div>
+        <div class="tab" onclick="setView('compare',this)" style="display:none">Jämförelse</div>
+      </div>
+    </div>
+    <div class="month-nav" style="margin-bottom:10px;">
+      <button class="nav-btn" onclick="changeMonth(-1)">◀</button>
+      <div class="month-selects">
+        <select id="monthSel" onchange="renderAll()">
+          <option value="0">Januari</option><option value="1" selected>Februari</option>
+          <option value="2">Mars</option><option value="3">April</option>
+          <option value="4">Maj</option><option value="5">Juni</option>
+          <option value="6">Juli</option><option value="7">Augusti</option>
+          <option value="8">September</option><option value="9">Oktober</option>
+          <option value="10">November</option><option value="11">December</option>
+        </select>
+        <select id="yearSel" onchange="renderAll()">
+          <option value="2024">2024</option><option value="2025">2025</option>
+          <option value="2026" selected>2026</option><option value="2027">2027</option>
+          <option value="2028">2028</option>
+        </select>
+      </div>
+      <button class="nav-btn" onclick="changeMonth(1)">▶</button>
+    </div>
+    <div class="table-wrap" id="tableWrap">
+      <table><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table>
+    </div>
+    <div id="compareWrap" style="display:none"></div>
+  </main>
+</div>
+
+<script>
+const MONTHS_SV = ['Januari','Februari','Mars','April','Maj','Juni','Juli','Augusti','September','Oktober','November','December'];
+const DAYS_SV = ['Söndag','Måndag','Tisdag','Onsdag','Torsdag','Fredag','Lördag'];
+const today = new Date();
+let currentView = 'full';
+let currentProject = 'telia-fm';
+let utfallData = {};
+let malData = {};
+
+const COMPACT_COLS = [
+  {label:'Dag'},{label:'Datum'},
+  {label:'Mål säljare',goalKey:'Antal Mansdagar'},{label:'Utfall säljare',key:'Antal Mansdagar'},
+  {label:'Mål timmar',goalKey:'timmar'},{label:'Utfall timmar',key:'timmar'},
+  {label:'Mål Produkt',goalKey:'Produkt'},{label:'Utfall Produkt',key:'Produkt'}
+];
+
+const PROJECT_COLS = {
+  'telia-fm': [
+    {label:'Dag'},{label:'Datum'},
+    {label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},
+    {label:'Sjuka/frånvaro',key:'Utfall Sjuka/og frånvaro'},
+    {label:'Mål Sälj',goalKey:'Mål Sälj'},{label:'Utfall Produkter',key:'Produkt'},
+    {label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall Timmar',key:'Utfall Timmar'},
+    {label:'Mål BB',goalKey:'Mål BB'},{label:'Utfall BB',key:'Bredband'},
+    {label:'Mål TV',goalKey:'Mål TV'},{label:'Utfall TV',key:'TV'},
+    {label:'Mål Premium',goalKey:'Mål Premium'},{label:'Utfall Premium',key:'Streaming'},
+    {label:'Mål Mob',goalKey:'Mål Mob'},{label:'Utfall Mob',key:'MOBIL'},
+    {label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}
+  ],
+  'villafiber': [
+    {label:'Dag'},{label:'Datum'},
+    {label:'Mål mansdagar',goalKey:'Mål mansdagar'},{label:'Utfall mansdagar',key:'Antal Mansdagar'},
+    {label:'Sjuka/frånvaro',key:'Utfall Sjuka/og frånvaro'},
+    {label:'Mål Produkt',goalKey:'Mål Produkt'},{label:'Utfall Produkt',key:'Produkt'},
+    {label:'DTV',key:'TV'},{label:'BB',key:'Bredband'},{label:'MBB',key:'MBB'},{label:'Mobil',key:'Mobil'},
+    {label:'Mål snitt/mansdag',goalKey:'Mål snitt per mansdag'},{label:'Utfall snitt/mansdag',key:'snitt'}
+  ],
+  'koax': [
+    {label:'Dag'},{label:'Datum'},
+    {label:'Mål mansdagar',goalKey:'Mål mansdagar'},{label:'Utfall mansdagar',key:'Antal Mansdagar'},
+    {label:'Sjuka/frånvaro',key:'Utfall Sjuka/og frånvaro'},
+    {label:'Mål Produkt',goalKey:'Mål Produkt'},{label:'Utfall Produkt',key:'Produkt'},
+    {label:'DTV',key:'TV'},{label:'BB',key:'Bredband'},{label:'MBB',key:'MBB'},{label:'Mobil',key:'Mobil'},
+    {label:'Mål snitt/mansdag',goalKey:'Mål snitt per mansdag'},{label:'Utfall snitt/mansdag',key:'snitt'}
+  ],
+  'lan': [
+    {label:'Dag'},{label:'Datum'},
+    {label:'Mål mansdagar',goalKey:'Mål mansdagar'},{label:'Utfall mansdagar',key:'Antal Mansdagar'},
+    {label:'Sjuka/frånvaro',key:'Utfall Sjuka/og frånvaro'},
+    {label:'Mål Produkt',goalKey:'Mål Produkt'},{label:'Utfall Produkt',key:'Produkt'},
+    {label:'DTV',key:'TV'},{label:'BB',key:'Bredband'},{label:'MBB',key:'MBB'},{label:'Mobil',key:'Mobil'},
+    {label:'Mål snitt/mansdag',goalKey:'Mål snitt per mansdag'},{label:'Utfall snitt/mansdag',key:'snitt'}
+  ],
+  'globalconnect': [
+    {label:'Dag'},{label:'Datum'},
+    {label:'Mål mansdagar',goalKey:'Mål mansdagar'},{label:'Utfall mansdagar',key:'Antal Mansdagar'},
+    {label:'Utfall / densi',key:'Utfall / densi (Enligt orderfil)'},
+    {label:'Utfall bygg / nytt',key:'Utfall bygg / nytt (Enligt orderfil)'},
+    {label:'PTS24',key:'PTS24'},{label:'Utfall MDU:er',key:'Utfall MDU:er'},
+    {label:'Utfall total',key:'Utfall total (Enligt orderfil)'},
+    {label:'I Säljark',key:'I Säljarket'},{label:'Diff',key:'Diff Orderfil mot säljark'},
+    {label:'Ånger',key:'Ånger'},{label:'Bortfall',key:'Bortfall'},
+    {label:'Mål snitt/mansdag',goalKey:'Mål snitt per mansdag'},{label:'Utfall snitt/mansdag',key:'snitt'}
+  ],
+  'adressandring': [
+    {label:'Dag'},{label:'Datum'},
+    {label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Säljare'},
+    {label:'Sjuka/frånvaro',key:'Utfall Sjuka/og frånvaro'},
+    {label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'Timmar'},
+    {label:'Mål produkt',goalKey:'Mål produkt'},{label:'Utfall Produkt',key:'produkt'},
+    {label:'Mål BB',goalKey:'Mål BB'},{label:'Utfall BB',key:'Bredband'},
+    {label:'Mål Flytt BB',goalKey:'Mål Flytt BB'},{label:'Utfall Flytt BB',key:'Flytt Bredband'},
+    {label:'Mål MBH',goalKey:'Mål MBH'},{label:'Utfall MBH',key:'MBH'},
+    {label:'Mål TV',goalKey:'Mål TV'},{label:'Utfall TV',key:'TV'},
+    {label:'Mål Film',goalKey:'Mål Film'},{label:'Utfall film',key:'Film'},
+    {label:'Mål Sport',goalKey:'Mål Sport'},{label:'Utfall sport',key:'Sport'},
+    {label:'Mål Mobil',goalKey:'Mål Mobil'},{label:'Utfall Mobil',key:'Mobil'},
+    {label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}
+  ],
+  'vip-leads': [
+    {label:'Dag'},{label:'Datum'},
+    {label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},
+    {label:'Sjuka/frånvaro',key:'Utfall Sjuka/og frånvaro'},
+    {label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'timmar'},
+    {label:'Mål BB',goalKey:'Mål BB'},{label:'Utfall BB',key:'BB'},
+    {label:'Mål MBH',goalKey:'Mål MBH'},{label:'Utfall MBH',key:'MBH'},
+    {label:'Mål TV',goalKey:'Mål TV'},{label:'Utfall TV',key:'TV'},
+    {label:'Mål Film',goalKey:'Mål Film'},{label:'Utfall film',key:'Film'},
+    {label:'Mål Sport',goalKey:'Mål Sport'},{label:'Utfall sport',key:'Sport'},
+    {label:'Mål Mobil',goalKey:'Mål Mobil'},{label:'Utfall Mobil',key:'Mobil'},
+    {label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}
+  ],
+  'retention': [
+    {label:'Dag'},{label:'Datum'},
+    {label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},
+    {label:'Sjuka/frånvaro',key:'Utfall Sjuka/og frånvaro'},
+    {label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'timmar'},
+    {label:'Mål BB',goalKey:'Mål BB'},{label:'Utfall BB',key:'BB'},
+    {label:'Mål Nyteck TV',goalKey:'Mål Nyteck TV'},{label:'Utfall Nyteck TV',key:'Nyteck TV'},
+    {label:'Utfall Förlängning TV',key:'Förlängning TV'},
+    {label:'Mål premium',goalKey:'Mål premium'},{label:'Utfall premium',key:'premium'},
+    {label:'Mål Mobil',goalKey:'Mål Mobil'},{label:'Utfall Mobil',key:'Mobil'},
+    {label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}
+  ],
+  'mbh': [
+    {label:'Dag'},{label:'Datum'},
+    {label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},
+    {label:'Sjuka/frånvaro',key:'Utfall Sjuka/og frånvaro'},
+    {label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'timmar'},
+    {label:'Mål BB',goalKey:'Mål BB'},{label:'Utfall BB',key:'BB'},
+    {label:'Mål TV',goalKey:'Mål TV'},{label:'Utfall TV',key:'TV'},
+    {label:'Mål Film',goalKey:'Mål Film'},{label:'Utfall film',key:'Film'},
+    {label:'Mål Sport',goalKey:'Mål Sport'},{label:'Utfall sport',key:'Sport'},
+    {label:'Mål Mobil',goalKey:'Mål Mobil'},{label:'Utfall Mobil',key:'Mobil'},
+    {label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}
+  ],
+  'mobil': [
+    {label:'Dag'},{label:'Datum'},
+    {label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},
+    {label:'Sjuka/frånvaro',key:'Utfall Sjuka/og frånvaro'},
+    {label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'timmar'},
+    {label:'Mål Huvudabb',goalKey:'Mål Huvudabb'},{label:'Utfall Huvudabb',key:'Huvudabb'},
+    {label:'Mål EA',goalKey:'Mål EA'},{label:'Utfall EA',key:'EA'},
+    {label:'Totalt',key:'Totalt'},
+    {label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}
+  ],
+  'fmc': [
+    {label:'Dag'},{label:'Datum'},
+    {label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},
+    {label:'Sjuka/frånvaro',key:'Utfall Sjuka/og frånvaro'},
+    {label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'timmar'},
+    {label:'Mål Huvudabb',goalKey:'Mål Huvudabb'},{label:'Utfall Huvudabb',key:'Huvudabb'},
+    {label:'Mål EA',goalKey:'Mål EA'},{label:'Utfall EA',key:'EA'},
+    {label:'Totalt',key:'Totalt'},
+    {label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}
+  ]
+};
+
+function getMonth(){ return parseInt(document.getElementById('monthSel').value); }
+function getYear(){ return parseInt(document.getElementById('yearSel').value); }
+function changeMonth(dir){
+  let m=getMonth()+dir, y=getYear();
+  if(m<0){m=11;y--;} if(m>11){m=0;y++;}
+  document.getElementById('monthSel').value=m;
+  document.getElementById('yearSel').value=y;
+  renderAll();
+}
+function isWeekend(d){ return d.getDay()===0||d.getDay()===6; }
+function isToday(d){ return d.getFullYear()===today.getFullYear()&&d.getMonth()===today.getMonth()&&d.getDate()===today.getDate(); }
+function toDateKey(y,m,d){ return `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`; }
+function getCols(){ return currentView==='compact'?COMPACT_COLS:(PROJECT_COLS[currentProject]||COMPACT_COLS); }
+function storeKey(proj,y,m){ return `${proj}_${y}_${m}`; }
+
+function getUtfall(){ const m=getMonth(),y=getYear(); return utfallData[storeKey(currentProject,y,m)]||{}; }
+function getMal(){ const m=getMonth(),y=getYear(); return malData[storeKey(currentProject,y,m)]||{}; }
+
+function findVal(obj,key){
+  if(!obj||!key) return null;
+  const lk=key.toLowerCase();
+  for(const k of Object.keys(obj)){ if(k.toLowerCase()===lk) return obj[k]; }
+  return null;
+}
+
+function renderTable(){
+  const m=getMonth(), y=getYear();
+  const days=new Date(y,m+1,0).getDate();
+  const multi=activeCount>1;
+  const cols=multi?COMPACT_COLS:getCols();
+  const uData=multi?mergeData('utfall'):getUtfall();
+  const mData=multi?mergeData('mal'):getMal();
+  const e=`<span class="empty-cell">—</span>`;
+
+  document.getElementById('tableHead').innerHTML='<tr>'+cols.map(c=>`<th>${c.label}</th>`).join('')+'</tr>';
+
+  let rows='';
+  for(let i=1;i<=days;i++){
+    const d=new Date(y,m,i);
+    const dayName=DAYS_SV[d.getDay()];
+    const weekend=isWeekend(d);
+    const todayRow=isToday(d);
+    const dateKey=toDateKey(y,m,i);
+    const uRow=uData[dateKey]||{};
+    const mRow=mData[dateKey]||{};
+    const hasUtfall=Object.keys(uRow).length>0;
+    const hasMal=Object.keys(mRow).length>0;
+
+    const malSaljare=findVal(mRow,'Mål säljare')||findVal(mRow,'Mål mansdagar')||0;
+    const malTimmar=findVal(mRow,'Mål timmar')||0;
+    const isNonWorkingDay = hasMal && malSaljare===0 && malTimmar===0;
+
+    const dateStr=`${i} ${MONTHS_SV[m].substring(0,3).toLowerCase()}`;
+    const cls=todayRow?'today':(weekend||isNonWorkingDay)?'weekend':'';
+    const dayLabel=todayRow?`<span class="day-badge">Idag</span>${dayName}`:dayName;
+
+    const cells=cols.map((c,idx)=>{
+      if(idx===0) return `<td>${dayLabel}</td>`;
+      if(idx===1) return `<td>${dateStr}</td>`;
+      if(weekend||isNonWorkingDay) return `<td>${e}</td>`;
+
+      if(c.goalKey){
+        const gvDisp=hasMal?findVal(mRow,c.goalKey):null;
+        const gvFmt=typeof gvDisp==='number'?(Number.isInteger(gvDisp)?gvDisp:parseFloat(gvDisp.toFixed(2))):null;
+        return `<td class="goal">${gvFmt!==null&&gvFmt!==''?gvFmt:'—'}</td>`;
+      }
+      if(c.key){
+        const uv=hasUtfall?findVal(uRow,c.key):null;
+        const gk=findGoalKey(cols,c.key);
+        const gvRaw=hasMal&&gk?findVal(mRow,gk):null;
+        const gv=typeof gvRaw==='number'?(Number.isInteger(gvRaw)?gvRaw:parseFloat(gvRaw.toFixed(2))):gvRaw;
+        if(uv!==null&&uv!==''){
+          let cls2='';
+          if(gv!==null&&typeof uv==='number'&&typeof gv==='number'){
+            cls2=uv>=gv?'above':'below';
+          }
+          const disp = typeof uv==='number' ? (Number.isInteger(uv) ? uv : parseFloat(uv.toFixed(2))) : uv;
+          return `<td${cls2?' class="'+cls2+'"':''}>${disp}</td>`;
+        }
+        return `<td>—</td>`;
+      }
+      return `<td>—</td>`;
+    }).join('');
+
+    rows+=`<tr class="${cls}">${cells}</tr>`;
+  }
+
+  const summaryCells=cols.map((c,idx)=>{
+    if(idx===0) return `<td>Summerat</td>`;
+    if(idx===1) return `<td></td>`;
+    if(c.goalKey){
+      let sum=0;
+      Object.values(mData).forEach(r=>{ const v=findVal(r,c.goalKey); if(typeof v==='number') sum+=v; });
+      const fmt=sum>0?(Number.isInteger(sum)?sum:parseFloat(sum.toFixed(2))):'—';
+      return `<td class="goal">${fmt}</td>`;
+    }
+    if(c.key){
+      let sum=0;
+      Object.values(uData).forEach(r=>{ const v=findVal(r,c.key); if(typeof v==='number') sum+=v; });
+      const fmt=sum>0?(Number.isInteger(sum)?sum:parseFloat(sum.toFixed(2))):'—';
+      return `<td>${fmt}</td>`;
+    }
+    return `<td>—</td>`;
+  }).join('');
+  rows+=`<tr class="summary-row">${summaryCells}</tr>`;
+
+  document.getElementById('tableBody').innerHTML=rows;
+  updateStatCards(uData,mData);
+}
+
+function findGoalKey(cols,utfallKey){
+  for(let i=0;i<cols.length;i++){
+    if(cols[i].key&&cols[i].key.toLowerCase()===utfallKey.toLowerCase()){
+      if(i>0&&cols[i-1].goalKey) return cols[i-1].goalKey;
+    }
+  }
+  return null;
+}
+
+function updateStatCards(uData,mData){
+  const uRows=Object.values(uData);
+  const mRows=Object.values(mData);
+
+  const totalProd=uRows.reduce((s,r)=>{ const v=findVal(r,'Produkt')||findVal(r,'produkt')||0; return s+(typeof v==='number'?v:0); },0);
+  const malProd=mRows.reduce((s,r)=>{ const v=findVal(r,'Produkt')||findVal(r,'produkt')||0; return s+(typeof v==='number'?v:0); },0);
+  const workDays=uRows.filter(r=>{ const v=findVal(r,'Antal Mansdagar')||findVal(r,'Antal Säljare')||0; return typeof v==='number'&&v>0; }).length;
+  const avgProd=workDays>0?(totalProd/workDays).toFixed(1):'—';
+  const totalSellers=uRows.reduce((s,r)=>{ const v=findVal(r,'Antal Mansdagar')||findVal(r,'Antal Säljare')||0; return s+(typeof v==='number'?v:0); },0);
+  const avgSellers=workDays>0?(totalSellers/workDays).toFixed(1):'—';
+
+  const setPct=(valEl,metaEl,badgeEl,val,mal)=>{
+    document.getElementById(valEl).textContent=val>0?val:'—';
+    document.getElementById(metaEl).textContent=`Mål: ${mal>0?mal:'—'}`;
+    if(val>0&&mal>0){
+      const pct=Math.round(val/mal*100);
+      const badge=document.getElementById(badgeEl);
+      badge.textContent=`${pct}% av mål`;
+      badge.className='stat-badge '+(pct>=100?'badge-green':'badge-red');
+    }
+  };
+
+  setPct('sc-prod','sc-prod-meta','sc-prod-badge',totalProd,malProd);
+  document.getElementById('sc-avg').textContent=avgProd;
+  document.getElementById('sc-sellers').textContent=avgSellers;
+}
+
+function renderSubtitle(){
+  const m=getMonth(),y=getYear();
+  document.getElementById('pageSub').textContent=`${MONTHS_SV[m]} ${y} · Månadsöversikt`;
+
+}
+function renderAll(){
+  if(currentView==='compare') renderCompare();
+  else renderTable();
+  renderSubtitle();
+}
+
+function generateDummyData(proj, m, y){
+  // Generera dummy-data för ett projekt om ingen riktig data finns
+  const days=new Date(y,m+1,0).getDate();
+  const uData={}, mData={};
+  const seeds={'telia-fm':{s:8,t:60,p:18},'villafiber':{s:5,t:38,p:10},'koax':{s:4,t:30,p:8},'lan':{s:3,t:22,p:6},'globalconnect':{s:6,t:45,p:12},'adressandring':{s:7,t:52,p:15},'vip-leads':{s:5,t:40,p:11},'retention':{s:6,t:44,p:13},'mbh':{s:4,t:32,p:9},'mobil':{s:5,t:38,p:10},'fmc':{s:3,t:24,p:7}};
+  const seed=seeds[proj]||{s:5,t:40,p:10};
+  for(let i=1;i<=days;i++){
+    const d=new Date(y,m,i);
+    if(d.getDay()===0||d.getDay()===6) continue;
+    const dk=toDateKey(y,m,i);
+    const variance=0.7+Math.random()*0.6;
+    uData[dk]={'Antal Mansdagar':seed.s,'timmar':Math.round(seed.t*variance),'Produkt':Math.round(seed.p*variance),'produkt':Math.round(seed.p*variance),'snitt':parseFloat((seed.p*variance/seed.s).toFixed(1))};
+    mData[dk]={'Mål säljare':seed.s,'Mål timmar':seed.t,'Mål Sälj':seed.p,'Produkt':seed.p,'Mål snitt':parseFloat((seed.p/seed.s).toFixed(1))};
+  }
+  return {uData,mData};
+}
+
+function getProjectData(proj){
+  const m=getMonth(), y=getYear();
+  let uData=utfallData[storeKey(proj,y,m)]||{};
+  let mData=malData[storeKey(proj,y,m)]||{};
+  // Använd dummy-data om ingen riktig data finns
+  if(!Object.keys(uData).length&&!Object.keys(mData).length){
+    const d=generateDummyData(proj,m,y);
+    uData=d.uData; mData=d.mData;
+  }
+  return {uData,mData};
+}
+
+function renderCompare(){
+  const projects=getActiveProjects();
+  const wrap=document.getElementById('compareWrap');
+  const COLORS=['#f97c5a','#3b82f6','#8b5cf6','#10b981','#f59e0b','#ec4899'];
+
+  const cards=projects.map((proj,pi)=>{
+    const name=document.querySelector(`.project-item[data-project="${proj}"] .project-name`)?.textContent||proj;
+    const {uData,mData}=getProjectData(proj);
+    const color=COLORS[pi%COLORS.length];
+
+    const uRows=Object.values(uData);
+    const mRows=Object.values(mData);
+
+    const totalProd=uRows.reduce((s,r)=>s+(typeof(findVal(r,'Produkt')||findVal(r,'produkt'))===  'number'?(findVal(r,'Produkt')||findVal(r,'produkt')):0),0);
+    const malProd=mRows.reduce((s,r)=>s+(typeof(findVal(r,'Produkt')||findVal(r,'produkt'))===  'number'?(findVal(r,'Produkt')||findVal(r,'produkt')):0),0);
+    const totalTimmar=uRows.reduce((s,r)=>s+(typeof findVal(r,'timmar')==='number'?findVal(r,'timmar'):(typeof findVal(r,'Utfall Timmar')==='number'?findVal(r,'Utfall Timmar'):0)),0);
+    const malTimmar=mRows.reduce((s,r)=>s+(typeof findVal(r,'Mål timmar')==='number'?findVal(r,'Mål timmar'):0),0);
+    const workDays=uRows.filter(r=>(findVal(r,'Antal Mansdagar')||0)>0).length;
+    const totalSellers=uRows.reduce((s,r)=>s+(typeof findVal(r,'Antal Mansdagar')==='number'?findVal(r,'Antal Mansdagar'):0),0);
+    const avgSellers=workDays>0?(totalSellers/workDays).toFixed(1):0;
+    const snittpMansdag=totalSellers>0?parseFloat((totalProd/totalSellers).toFixed(2)):0;
+    const malSnitt=mRows.reduce((s,r)=>s+(typeof findVal(r,'Mål snitt')==='number'?findVal(r,'Mål snitt'):0),0)/Math.max(mRows.length,1);
+
+    const prodPct=malProd>0?Math.round(totalProd/malProd*100):0;
+    const timPct=malTimmar>0?Math.round(totalTimmar/malTimmar*100):0;
+    const snittpMalPct=malSnitt>0?Math.round(snittpMansdag/malSnitt*100):0;
+    const overall=Math.round((prodPct+timPct)/2);
+
+    // Sparkline – daglig produkt
+    const m=getMonth(),y=getYear(),days=new Date(y,m+1,0).getDate();
+    let sparkPoints=[],malPoints=[];
+    for(let i=1;i<=days;i++){
+      const d=new Date(y,m,i);
+      if(d.getDay()===0||d.getDay()===6) continue;
+      const dk=toDateKey(y,m,i);
+      const uv=findVal(uData[dk]||{},'Produkt')||findVal(uData[dk]||{},'produkt')||0;
+      const mv=findVal(mData[dk]||{},'Produkt')||findVal(mData[dk]||{},'produkt')||findVal(mData[dk]||{},'Mål Sälj')||0;
+      sparkPoints.push(uv); malPoints.push(mv);
+    }
+    const maxVal=Math.max(...sparkPoints,...malPoints,1);
+    const W=260,H=48,n=sparkPoints.length;
+    const px=(i)=>n>1?(i/(n-1))*W:W/2;
+    const py=(v)=>H-(v/maxVal)*(H-4)-2;
+    const malPath=malPoints.map((v,i)=>`${i===0?'M':'L'}${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
+    const utfPath=sparkPoints.map((v,i)=>`${i===0?'M':'L'}${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
+
+    const barColor=(pct)=>pct>=100?'#2d8a4e':pct>=75?'#f97c5a':'#c0392b';
+    const badgeColor=(pct)=>pct>=100?'badge-green':pct>=75?'badge-neutral':'badge-red';
+
+    return `
+    <div class="compare-card">
+      <div class="compare-card-header">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <div style="width:10px;height:10px;border-radius:50%;background:${color};flex-shrink:0"></div>
+          <span class="compare-card-title">${name}</span>
+        </div>
+        <span class="compare-badge ${badgeColor(overall)}">${overall}% av mål</span>
+      </div>
+
+      <div class="compare-metric">
+        <div class="compare-metric-label">Produkter <span>${totalProd} / ${malProd}</span></div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.min(prodPct,100)}%;background:${barColor(prodPct)}"></div></div>
+        <div style="font-size:11px;color:#999;margin-top:3px;">${prodPct}% av mål</div>
+      </div>
+
+      <div class="compare-metric">
+        <div class="compare-metric-label">Timmar <span>${totalTimmar} / ${malTimmar}</span></div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.min(timPct,100)}%;background:${barColor(timPct)}"></div></div>
+        <div style="font-size:11px;color:#999;margin-top:3px;">${timPct}% av mål</div>
+      </div>
+
+      <div class="compare-metric">
+        <div class="compare-metric-label">Snitt per mansdag <span>${snittpMansdag} / ${malSnitt.toFixed(2)}</span></div>
+        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.min(snittpMalPct,100)}%;background:${barColor(snittpMalPct)}"></div></div>
+        <div style="font-size:11px;color:#999;margin-top:3px;">${snittpMalPct}% av mål · ${avgSellers} säljare/dag</div>
+      </div>
+
+      <div class="sparkline">
+        <div class="sparkline-label">Daglig produkt – utfall vs mål</div>
+        <svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" style="overflow:visible">
+          <path d="${malPath}" fill="none" stroke="#2d8a4e" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.6"/>
+          <path d="${utfPath}" fill="none" stroke="${color}" stroke-width="2"/>
+        </svg>
+        <div style="display:flex;gap:12px;margin-top:6px;font-size:11px;color:#999;">
+          <span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:${color};border-radius:2px"></span>Utfall</span>
+          <span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:0;border-top:2px dashed #2d8a4e"></span>Mål</span>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  wrap.innerHTML=`<div class="compare-grid">${cards}</div>`;
+  document.getElementById('tableWrap').style.display='none';
+  wrap.style.display='block';
+}
+
+function setView(v,el){
+  currentView=v;
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  if(v==='compare'){
+    document.getElementById('tableWrap').style.display='none';
+    document.getElementById('compareWrap').style.display='block';
+    renderCompare();
+  } else {
+    document.getElementById('tableWrap').style.display='block';
+    document.getElementById('compareWrap').style.display='none';
+    renderTable();
+  }
+}
+
+
+function openModal(id){ document.getElementById(id).classList.add('visible'); }
+function closeModal(id){ document.getElementById(id).classList.remove('visible'); }
+
+function handleSynkModal(){
+  const pw=document.getElementById('synkPw').value;
+  if(pw!=='ViaProdPlan2040#!'){ document.getElementById('synkPwError').classList.add('visible'); return; }
+  document.getElementById('synkPwError').classList.remove('visible');
+  closeModal('synkModal');
+  const el=document.getElementById('synkSuccess');
+  el.classList.add('visible');
+  setTimeout(()=>el.classList.remove('visible'),3000);
+}
+
+function handleImport(type){
+  const pwId=type==='utfall'?'utfallPw':'malPw';
+  const errId=type==='utfall'?'utfallPwError':'malPwError';
+  const fileId=type==='utfall'?'utfallFile':'malFile';
+  const modalId=type==='utfall'?'utfallModal':'malModal';
+  const successId=type==='utfall'?'utfallSuccess':'malSuccess';
+
+  const pw=document.getElementById(pwId).value;
+  if(pw!=='ViaProdPlan2040#!'){ document.getElementById(errId).classList.add('visible'); return; }
+  document.getElementById(errId).classList.remove('visible');
+
+  const file=document.getElementById(fileId).files[0];
+  if(!file){ alert('Välj en Excel-fil.'); return; }
+
+  const reader=new FileReader();
+  reader.onload=e=>{
+    try{
+      const wb=XLSX.read(e.target.result,{type:'array',cellDates:true});
+      parseWorkbook(wb,type);
+      closeModal(modalId);
+      const el=document.getElementById(successId);
+      el.classList.add('visible');
+      setTimeout(()=>el.classList.remove('visible'),3000);
+      renderAll();
+    }catch(err){ alert('Kunde inte läsa filen: '+err.message); }
+  };
+  reader.readAsArrayBuffer(file);
+}
+
+function parseWorkbook(wb, type){
+  const store=type==='utfall'?utfallData:malData;
+  const dotClass=type==='utfall'?'has-utfall':'has-mal';
+
+  document.querySelectorAll('.project-item').forEach(item=>{
+    const proj=item.dataset.project;
+    const sheetName=item.dataset.sheet;
+    let sheet=wb.Sheets[sheetName];
+    if(!sheet){
+      const found=wb.SheetNames.find(s=>s.toLowerCase().includes(sheetName.toLowerCase().replace(/^\d+[\.\d]*\s*/,'')));
+      if(found) sheet=wb.Sheets[found];
+    }
+    if(!sheet) return;
+
+    const rows=XLSX.utils.sheet_to_json(sheet,{defval:''});
+    if(!rows.length) return;
+
+    let fileMonth=null, fileYear=null;
+    for(const row of rows){
+      let dv=row['DATUM']||row['Datum']||row['datum'];
+      if(!dv) continue;
+      let d;
+      if(dv instanceof Date) d=dv;
+      else if(typeof dv==='string'&&dv.includes('-')) d=new Date(dv);
+      else if(typeof dv==='number') d=new Date(Math.round((dv-25569)*86400*1000));
+      if(!d||isNaN(d)) continue;
+      fileMonth=d.getMonth(); fileYear=d.getFullYear(); break;
+    }
+    if(fileMonth===null) return;
+
+    const key=storeKey(proj,fileYear,fileMonth);
+    store[key]={};
+
+    rows.forEach(row=>{
+      let dv=row['DATUM']||row['Datum']||row['datum'];
+      if(!dv) return;
+      let d;
+      if(dv instanceof Date) d=dv;
+      else if(typeof dv==='string'&&dv.includes('-')) d=new Date(dv);
+      else if(typeof dv==='number') d=new Date(Math.round((dv-25569)*86400*1000));
+      if(!d||isNaN(d)) return;
+      if(d.getMonth()!==fileMonth||d.getFullYear()!==fileYear) return;
+      const dk=toDateKey(d.getFullYear(),d.getMonth(),d.getDate());
+      store[key][dk]=row;
+    });
+
+    if(Object.keys(store[key]).length>0) item.classList.add(dotClass);
+  });
+}
+
+let activeCount=1;
+function toggleProject(el){
+  el.classList.toggle('active');
+  activeCount=document.querySelectorAll('.project-item.active').length;
+  const bar=document.getElementById('compareBar');
+  document.getElementById('compareCount').textContent=activeCount;
+  const title=document.getElementById('pageTitle');
+  if(activeCount===0){ bar.classList.remove('visible'); title.textContent='Välj ett projekt'; currentProject=null; }
+  else if(activeCount===1){ bar.classList.remove('visible'); const a=document.querySelector('.project-item.active'); currentProject=a.dataset.project; title.textContent=a.querySelector('.project-name').textContent; }
+  else{
+    bar.classList.add('visible');
+    title.textContent=[...document.querySelectorAll('.project-item.active .project-name')].map(n=>n.textContent).join(' + ');
+    currentProject=document.querySelector('.project-item.active').dataset.project;
+    // Tvinga kompakt vy och disabla "Alla kolumner"
+    currentView='compact';
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t=>{
+      if(t.textContent.includes('Kompakt')) t.classList.add('active');
+    });
+  }
+  // Hantera disabled-state på "Alla kolumner"-fliken + visa/dölj Jämförelse-flik
+  document.querySelectorAll('.tab').forEach(t=>{
+    if(t.textContent.includes('Alla kolumner')){
+      t.style.display=activeCount>1?'none':'';
+    }
+    if(t.textContent.includes('Jämförelse')){
+      t.style.display=activeCount>1?'':'none';
+    }
+  });
+  renderAll();
+}
+
+function getActiveProjects(){
+  return [...document.querySelectorAll('.project-item.active')].map(el=>el.dataset.project);
+}
+
+function mergeData(type){
+  const m=getMonth(), y=getYear();
+  const store=type==='utfall'?utfallData:malData;
+  const projects=getActiveProjects();
+  const merged={};
+  for(const proj of projects){
+    const key=storeKey(proj,y,m);
+    const data=store[key]||{};
+    for(const [dateKey,row] of Object.entries(data)){
+      if(!merged[dateKey]) merged[dateKey]={};
+      for(const [k,v] of Object.entries(row)){
+        if(typeof v==='number'){
+          merged[dateKey][k]=(merged[dateKey][k]||0)+v;
+        } else if(!merged[dateKey][k]){
+          merged[dateKey][k]=v;
+        }
+      }
+    }
+  }
+  return merged;
+}
+
+renderAll();
+</script>
+</body>
+</html>
