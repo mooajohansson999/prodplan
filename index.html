@@ -1072,45 +1072,28 @@ function getActiveProjects(){
 
 // Normaliserar rad-nycklar till gemensamma namn så mergeData fungerar oavsett projekt
 function normalizeRow(row, type){
-  const out={...row};
-  if(type==='utfall'){
-    // Normalisera produkt → 'Produkt'
-    for(const k of ['produkt']){
-      if(findVal(row,k)!==null && findVal(row,'Produkt')===null){
-        out['Produkt']=findVal(row,k);
-      }
-    }
-    // Normalisera timmar → 'Timmar'
-    for(const k of ['timmar','Utfall Timmar']){
-      if(findVal(row,k)!==null && findVal(row,'Timmar')===null){
-        out['Timmar']=findVal(row,k);
-      }
-    }
-    // Normalisera säljare → 'Antal Mansdagar'
-    for(const k of ['Antal Säljare']){
-      if(findVal(row,k)!==null && findVal(row,'Antal Mansdagar')===null){
-        out['Antal Mansdagar']=findVal(row,k);
-      }
-    }
-  }
-  if(type==='mal'){
-    // Normalisera mål säljare/mansdagar → 'Mål säljare'
-    for(const k of ['Mål mansdagar']){
-      if(findVal(row,k)!==null && findVal(row,'Mål säljare')===null){
-        out['Mål säljare']=findVal(row,k);
-      }
-    }
-    // Normalisera mål produkt → 'Mål Sälj'
-    for(const k of ['Mål Produkt','Mål produkt','Mål sälj']){
-      if(findVal(row,k)!==null && findVal(row,'Mål Sälj')===null){
-        out['Mål Sälj']=findVal(row,k);
-      }
-    }
-    // Normalisera mål snitt per mansdag → 'Mål snitt'
-    for(const k of ['Mål snitt per mansdag']){
-      if(findVal(row,k)!==null && findVal(row,'Mål snitt')===null){
-        out['Mål snitt']=findVal(row,k);
-      }
+  const out={};
+  // Kopiera alla nycklar men ersätt kända varianter med standardnamn
+  const keyMap = type==='utfall' ? {
+    'produkt':'Produkt',
+    'timmar':'Timmar',
+    'utfall timmar':'Timmar',
+    'antal säljare':'Antal Mansdagar'
+  } : {
+    'mål mansdagar':'Mål säljare',
+    'mål produkt':'Mål Sälj',
+    'mål sälj':'Mål Sälj',
+    'mål snitt per mansdag':'Mål snitt'
+  };
+
+  for(const [k,v] of Object.entries(row)){
+    const mapped = keyMap[k.toLowerCase()];
+    const targetKey = mapped || k;
+    // Om målnyckeln redan finns (från en annan variant), summera om number, annars skippa
+    if(out[targetKey]!==undefined){
+      if(typeof v==='number' && typeof out[targetKey]==='number') out[targetKey]+=v;
+    } else {
+      out[targetKey]=v;
     }
   }
   return out;
