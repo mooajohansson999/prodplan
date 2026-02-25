@@ -187,6 +187,8 @@
   }
   th.goal-col { background: #e8503a; }
   td.goal-col { background: #fafafa; }
+  tr.summary-row td { font-weight: 700; color: #1a1a1a; border-top: 2px solid #e8503a; background: #fde0d8; font-size: 12px; }
+  tr.summary-row td.goal-col { background: #f9cfc6; }
   .empty-cell { color: #ddd; }
 
   .compare-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
@@ -456,7 +458,7 @@ function convertJsonToStore(raw, store){
 
 const COMPACT_COLS = [
   {label:'Dag'},{label:'Datum'},
-  {label:'Mål säljare',goalKey:'__mal_saljare__'},{label:'Utfall säljare',key:'Antal Mansdagar'},
+  {label:'Mål säljare',goalKey:'__mal_saljare__'},{label:'Utfall säljare',key:'__utfall_saljare__'},
   {label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'timmar'},
   {label:'Mål Produkt',goalKey:'__mal_prod__'},{label:'Utfall Produkt',key:'Produkt'}
 ];
@@ -474,6 +476,15 @@ function resolveDynGoal(goalKey, mRow){
       const h=findVal(mRow,'Mål Huvudabb')??0;
       const ea=findVal(mRow,'Mål EA')??0;
       return (typeof h==='number'?h:0)+(typeof ea==='number'?ea:0)||null;
+    }
+    if(proj==='vip-leads'){
+      const bb=findVal(mRow,'Mål BB')??0;
+      const mbh=findVal(mRow,'Mål MBH')??0;
+      return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0)||null;
+    }
+    if(proj==='retention'||proj==='mbh'){
+      const v=findVal(mRow,'Mål BB'); if(typeof v==='number') return v;
+      return null;
     }
     for(const k of ['Mål Sälj','Mål Produkt','Mål produkt','Mål sälj']){
       const v=findVal(mRow,k); if(typeof v==='number') return v;
@@ -543,9 +554,9 @@ const PROJECT_COLS = {
   ],
   'vip-leads': [
     {label:'Dag'},{label:'Datum'},
-    {label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},
+    {label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Säljare'},
     {label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'timmar'},
-    {label:'Mål BB',goalKey:'Mål BB'},{label:'Utfall BB',key:'BB'},
+    {label:'Mål BB',goalKey:'Mål BB'},{label:'Utfall BB',key:'Bredband'},
     {label:'Mål MBH',goalKey:'Mål MBH'},{label:'Utfall MBH',key:'MBH'},
     {label:'Mål TV',goalKey:'Mål TV'},{label:'Utfall TV',key:'TV'},
     {label:'Mål Film',goalKey:'Mål Film'},{label:'Utfall film',key:'Film'},
@@ -596,7 +607,7 @@ const PROJECT_COLS = {
 function getCompactProd(proj, row, type){
   if(type==='utfall'){
     if(proj==='vip-leads'){
-      const bb=findVal(row,'BB')??0;
+      const bb=findVal(row,'Bredband')??0;
       const mbh=findVal(row,'MBH')??0;
       return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0);
     }
@@ -678,6 +689,14 @@ function renderTable(){
     `<th class="${c.goalKey?'goal-col':''}">${c.label}</th>`
   ).join('')+'</tr>';
 
+  // Hitta sista dag med utfallsdata
+  let lastDataDay=0;
+  for(let i=1;i<=days;i++){
+    const dk=toDateKey(y,m,i);
+    const uRow=uData[dk]||{};
+    if(Object.keys(uRow).length>0) lastDataDay=i;
+  }
+
   let rows='';
   for(let i=1;i<=days;i++){
     const d=new Date(y,m,i);
@@ -695,8 +714,9 @@ function renderTable(){
     const isNonWorkingDay=hasMal&&malSaljare===0&&malTimmar===0;
 
     const dateStr=`${i} ${MONTHS_SV[m].substring(0,3).toLowerCase()}`;
-    const cls=todayRow?'today':(weekend||isNonWorkingDay)?'weekend':'';
-    const dayLabel=todayRow?`<span class="day-badge">Idag</span>${dayName}`:dayName;
+    const isLastData=i===lastDataDay;
+    const cls=isLastData?'last-data':(weekend||isNonWorkingDay)?'weekend':'';
+    const dayLabel=isLastData?`<span class="day-badge">Uppdaterad till</span>${dayName}`:dayName;
 
     const cells=cols.map((c,idx)=>{
       if(idx===0) return `<td>${dayLabel}</td>`;
@@ -710,11 +730,14 @@ function renderTable(){
       if(c.key){
         const isSnitt = c.key.toLowerCase()==='snitt';
         const isProd = c.key==='Produkt';
+        const isSaljare = c.key==='__utfall_saljare__';
         let uv;
         if(isSnitt){
           uv = hasUtfall ? calcSnitt(currentProject, uRow) : null;
         } else if(isProd && currentView==='compact'){
           uv = hasUtfall ? getCompactProd(currentProject, uRow, 'utfall') : null;
+        } else if(isSaljare){
+          uv = hasUtfall ? (findVal(uRow,'Antal Mansdagar')??findVal(uRow,'Antal Säljare')??null) : null;
         } else {
           uv = hasUtfall ? findVal(uRow,c.key) : null;
         }
@@ -737,6 +760,11 @@ function renderTable(){
     if(idx===0) return `<td>Summerat</td>`;
     if(idx===1) return `<td></td>`;
     if(c.goalKey){
+      if(c.key==='__utfall_saljare__'){
+        let sum=0;
+        Object.values(uData).forEach(r=>{ const v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0; if(typeof v==='number') sum+=v; });
+        return `<td>${sum>0?fmt2(sum):'—'}</td>`;
+      }
       let sum=0;
       Object.values(mData).forEach(r=>{ const v=resolveDynGoal(c.goalKey,r); if(typeof v==='number') sum+=v; });
       return `<td class="goal goal-col">${sum>0?fmt2(sum):'—'}</td>`;
