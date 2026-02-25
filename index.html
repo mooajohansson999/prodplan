@@ -202,6 +202,54 @@
   .progress-bar-fill { height: 100%; border-radius: 10px; transition: width 0.4s ease; }
   .sparkline { margin-top: 16px; border-top: 1px solid #f0f0ee; padding-top: 12px; }
   .sparkline-label { font-size: 11px; color: #1a1a1a; margin-bottom: 6px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.4px; }
+
+  /* ====== MOBIL ====== */
+  @media (max-width: 768px) {
+    header { padding: 0 12px; height: 48px; }
+    .logo-text { font-size: 13px; }
+    .logo-icon { width: 28px; height: 28px; font-size: 12px; }
+    .header-right { gap: 6px; font-size: 11px; }
+    #lastSynced { display: none; }
+    .header-right svg { display: none; }
+    .import-success { font-size: 11px; }
+
+    .container { flex-direction: column; height: auto; }
+
+    aside {
+      position: fixed; top: 48px; left: 0; bottom: 0; z-index: 200;
+      width: 240px; box-shadow: 4px 0 20px rgba(0,0,0,0.15);
+      transition: transform 0.25s ease, opacity 0.25s ease;
+      margin-left: 0;
+    }
+    aside.hidden { transform: translateX(-100%); opacity: 0; pointer-events: none; margin-left: 0; }
+    .mobile-overlay {
+      display: none; position: fixed; inset: 0; top: 48px;
+      background: rgba(0,0,0,0.3); z-index: 199;
+    }
+    .mobile-overlay.visible { display: block; }
+
+    main { padding: 12px; }
+    .page-title { font-size: 15px; }
+    .page-sub { font-size: 10px; margin-bottom: 10px; }
+
+    .stat-cards { grid-template-columns: repeat(2, 1fr); gap: 6px; margin-bottom: 12px; }
+    .stat-card { padding: 8px 12px; }
+    .stat-value { font-size: 16px; }
+    .stat-label { font-size: 9px; }
+    .stat-meta { font-size: 9px; }
+    .stat-badge { font-size: 9px; }
+
+    .month-nav { flex-wrap: wrap; gap: 6px; }
+    .section-tabs { margin-left: 0 !important; margin-top: 6px; }
+
+    .table-wrap { border-radius: 8px; }
+    th { font-size: 9px; padding: 5px 6px; }
+    td { font-size: 11px; padding: 4px 6px; }
+    .day-badge { font-size: 8px; padding: 1px 3px; }
+
+    .compare-grid { grid-template-columns: 1fr; gap: 12px; }
+    .compare-card { padding: 14px; }
+  }
 </style>
 </head>
 <body>
@@ -240,7 +288,7 @@
 
 <header>
   <div class="logo">
-    <button class="sidebar-toggle" onclick="document.querySelector('aside').classList.toggle('hidden')" title="Visa/dölj meny">☰</button>
+    <button class="sidebar-toggle" onclick="toggleSidebar()" title="Visa/dölj meny">☰</button>
     <div class="logo-icon">V</div>
     <span class="logo-text">VIASALES</span>
   </div>
@@ -265,7 +313,8 @@
 </header>
 
 <div class="container">
-  <aside>
+  <div class="mobile-overlay" id="mobileOverlay" onclick="toggleSidebar()"></div>
+  <aside class="hidden">
     <div class="sidebar-label">Projekt</div>
     <div class="project-item active" data-project="telia-fm" data-sheet="1.1. Telia D2D" onclick="toggleProject(this,event)">
       <div class="project-checkbox"></div><span class="project-name">Telia FM</span>
@@ -1199,7 +1248,8 @@ function selectGroup(group){
 }
 
 function toggleProject(el,ev){
-  const multiKey=ev&&(ev.ctrlKey||ev.metaKey);
+  const isMobile=window.innerWidth<=768;
+  const multiKey=isMobile||ev&&(ev.ctrlKey||ev.metaKey);
   const prevCount=activeCount;
   if(!multiKey){
     document.querySelectorAll('.project-item').forEach(x=>x.classList.remove('active'));
@@ -1306,6 +1356,16 @@ function mergeData(type){
   }
   return merged;
 }
+
+function toggleSidebar(){
+  const aside=document.querySelector('aside');
+  const overlay=document.getElementById('mobileOverlay');
+  aside.classList.toggle('hidden');
+  if(overlay) overlay.classList.toggle('visible',!aside.classList.contains('hidden'));
+}
+
+// Visa sidebar på desktop, dölj på mobil vid start
+if(window.innerWidth>768) document.querySelector('aside').classList.remove('hidden');
 
 loadData();
 </script>
