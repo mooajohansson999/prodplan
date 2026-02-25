@@ -2,6 +2,7 @@ import os
 import json
 import requests
 import datetime
+from zoneinfo import ZoneInfo
 from openpyxl import load_workbook
 from io import BytesIO
 
@@ -51,14 +52,28 @@ os.makedirs(OUTPUT_DIR, exist_ok=True)
 # ==============================
 
 def list_files():
+    all_entries = []
     r = requests.post(
         'https://api.dropboxapi.com/2/files/list_folder',
         headers=HEADERS,
-        json={'path': DROPBOX_FOLDER}
+        json={'path': DROPBOX_FOLDER, 'recursive': True}
     )
     print('list_folder status:', r.status_code)
     r.raise_for_status()
-    return r.json().get('entries', [])
+    data = r.json()
+    all_entries.extend(data.get('entries', []))
+
+    while data.get('has_more'):
+        r = requests.post(
+            'https://api.dropboxapi.com/2/files/list_folder/continue',
+            headers=HEADERS,
+            json={'cursor': data['cursor']}
+        )
+        r.raise_for_status()
+        data = r.json()
+        all_entries.extend(data.get('entries', []))
+
+    return all_entries
 
 def download_file(path):
     r = requests.post(
@@ -202,7 +217,10 @@ def detect_type(filename):
 # ==============================
 
 files = list_files()
-print(f'Hittade {len(files)} filer i Dropbox-mappen')
+print(f'Hittade {len(files)} filer/mappar i Dropbox (rekursivt)')
+
+# Samla data per typ från ALLA filer
+all_data = {'utfall': {}, 'mal': {}}
 
 for f in files:
     if f['.tag'] != 'file':
@@ -217,21 +235,31 @@ for f in files:
         print(f'Okänd filtyp: {name}, hoppar över')
         continue
 
-    print(f'Laddar ner: {name} ({typ})')
+    print(f'Laddar ner: {name} ({typ}) från {f["path_lower"]}')
     content = download_file(f['path_lower'])
     data = excel_to_json(content)
 
-    out_path = os.path.join(OUTPUT_DIR, f'{typ}.json')
-    with open(out_path, 'w', encoding='utf-8') as fh:
-        json.dump(data, fh, ensure_ascii=False, indent=2)
+    # Merga in i samlad data – nya flikar läggs till, befintliga uppdateras
+    for sheet_name, sheet_data in data.items():
+        if sheet_name not in all_data[typ]:
+            all_data[typ][sheet_name] = {}
+        all_data[typ][sheet_name].update(sheet_data)
 
-    print(f'Sparade {out_path} med {len(data)} flikar')
+    print(f'  → {len(data)} flikar från {name}')
+
+# Spara samlade JSON-filer
+for typ, data in all_data.items():
+    if data:
+        out_path = os.path.join(OUTPUT_DIR, f'{typ}.json')
+        with open(out_path, 'w', encoding='utf-8') as fh:
+            json.dump(data, fh, ensure_ascii=False, indent=2)
+        print(f'Sparade {out_path} med {len(data)} flikar')
 
 # ==============================
-# SAVE LAST SYNC TIME
+# SAVE LAST SYNC TIME (svensk tid)
 # ==============================
 
-ts = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+ts = datetime.datetime.now(ZoneInfo('Europe/Stockholm')).strftime('%Y-%m-%d %H:%M')
 with open(os.path.join(OUTPUT_DIR, 'last_synced.json'), 'w') as fh:
     json.dump({'last_synced': ts}, fh)
 
