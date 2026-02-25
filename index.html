@@ -1157,9 +1157,14 @@ function toggleProject(el,ev){
     const a=document.querySelector('.project-item.active');
     currentProject=a.dataset.project;
     title.textContent=a.querySelector('.project-name').textContent;
-    currentView='full';
-    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-    document.querySelectorAll('.tab').forEach(t=>{ if(t.textContent.includes('Alla kolumner')) t.classList.add('active'); });
+    // Om vi var i jämförelsevy, byt till kompakt. Annars behåll nuvarande vy.
+    if(currentView==='compare'){
+      currentView='full';
+      document.getElementById('tableWrap').style.display='block';
+      document.getElementById('compareWrap').style.display='none';
+      document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t=>{ if(t.textContent.includes('Alla kolumner')) t.classList.add('active'); });
+    }
   }
   else{
     bar.classList.add('visible');
