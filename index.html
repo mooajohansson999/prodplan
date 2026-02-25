@@ -103,7 +103,17 @@
   aside {
     width: 220px; background: #fff; border-right: 1px solid #ebebeb;
     padding: 20px 0; flex-shrink: 0; overflow-y: auto;
+    transition: margin-left 0.25s ease, opacity 0.25s ease;
   }
+  aside.hidden {
+    margin-left: -220px; opacity: 0; pointer-events: none;
+  }
+  .sidebar-toggle {
+    width: 32px; height: 32px; border: 1px solid #ebebeb; border-radius: 8px;
+    background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    font-size: 16px; color: #555; transition: all 0.15s;
+  }
+  .sidebar-toggle:hover { background: #f7f7f5; }
   .sidebar-label {
     font-size: 10px; font-weight: 600; letter-spacing: 0.8px; color: #999;
     text-transform: uppercase; padding: 0 20px; margin-bottom: 8px;
@@ -234,6 +244,7 @@
 
 <header>
   <div class="logo">
+    <button class="sidebar-toggle" onclick="document.querySelector('aside').classList.toggle('hidden')" title="Visa/dölj meny">☰</button>
     <div class="logo-icon">V</div>
     <span class="logo-text">VIASALES</span>
   </div>
