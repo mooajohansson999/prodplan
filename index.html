@@ -1176,14 +1176,26 @@ function selectGroup(group){
   bar.classList.add('visible');
   title.textContent = [...document.querySelectorAll('.project-item.active .project-name')].map(n=>n.textContent).join(' + ');
   currentProject = document.querySelector('.project-item.active').dataset.project;
-  currentView = 'compact';
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+
+  // Behåll compare om vi redan är där, annars compact
+  if(currentView!=='compare') currentView = 'compact';
+
   document.querySelectorAll('.tab').forEach(t=>{
-    if(t.textContent.includes('Kompakt')) t.classList.add('active');
+    t.classList.remove('active');
     if(t.textContent.includes('Alla kolumner')) t.style.display='none';
     if(t.textContent.includes('Jämförelse')) t.style.display='';
+    if(currentView==='compact'&&t.textContent.includes('Kompakt')) t.classList.add('active');
+    if(currentView==='compare'&&t.textContent.includes('Jämförelse')) t.classList.add('active');
   });
-  renderAll();
+
+  // Tvinga omrendering av jämförelsevyn
+  if(currentView==='compare'){
+    document.getElementById('tableWrap').style.display='none';
+    document.getElementById('compareWrap').style.display='block';
+    renderCompare();
+  } else {
+    renderAll();
+  }
 }
 
 function toggleProject(el,ev){
