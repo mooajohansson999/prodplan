@@ -794,6 +794,13 @@ function renderTable(){
     if(idx===0) return `<td>Summerat</td>`;
     if(idx===1) return `<td></td>`;
     if(c.goalKey){
+      // Snitt-mål ska visa genomsnitt, inte summa
+      const isSnittGoal=c.goalKey.toLowerCase().includes('snitt');
+      if(isSnittGoal){
+        let sum=0,count=0;
+        Object.values(mData).forEach(r=>{ const v=resolveDynGoal(c.goalKey,r); if(typeof v==='number'&&v>0){sum+=v;count++;} });
+        return `<td class="goal goal-col">${count>0?fmt2(sum/count):'—'}</td>`;
+      }
       let sum=0;
       Object.values(mData).forEach(r=>{ const v=resolveDynGoal(c.goalKey,r); if(typeof v==='number') sum+=v; });
       return `<td class="goal goal-col">${sum>0?fmt2(sum):'—'}</td>`;
@@ -879,8 +886,13 @@ function updateStatCards(uData,mData){
 
   const avgPerHour=totalHours>0?fmt2(totalProd/totalHours):0;
   const malAvgPerHour=(()=>{
-    const malHours=mRows.reduce((s,r)=>{ const v=findVal(r,'Mål timmar')??0; return s+(typeof v==='number'?v:0); },0);
-    return malHours>0?fmt2(malProd/malHours):0;
+    const getMalSnitt=r=>findVal(r,'Mål snitt')??findVal(r,'Mål snitt per mansdag')??null;
+    const malSnittDays=mRows.filter(r=>{const v=getMalSnitt(r);return typeof v==='number'&&v>0;});
+    if(malSnittDays.length>0){
+      const sum=malSnittDays.reduce((s,r)=>{const v=getMalSnitt(r);return s+(typeof v==='number'?v:0);},0);
+      return fmt2(sum/malSnittDays.length);
+    }
+    return 0;
   })();
 
   const avgSellers=workDays>0?fmt2(totalSellers/workDays):0;
