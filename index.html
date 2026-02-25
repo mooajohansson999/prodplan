@@ -833,6 +833,21 @@ function updateStatCards(uData,mData){
 
   const getProd=r=>findVal(r,'Produkt')??findVal(r,'produkt')??findVal(r,'Total sälj')??null;
   const getMalProd=r=>{
+    const proj=currentProject;
+    if(proj==='mobil'||proj==='fmc'){
+      const h=findVal(r,'Mål Huvudabb')??0;
+      const ea=findVal(r,'Mål EA')??0;
+      return (typeof h==='number'?h:0)+(typeof ea==='number'?ea:0)||null;
+    }
+    if(proj==='vip-leads'){
+      const bb=findVal(r,'Mål BB')??0;
+      const mbh=findVal(r,'Mål MBH')??0;
+      return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0)||null;
+    }
+    if(proj==='retention'||proj==='mbh'){
+      const v=findVal(r,'Mål BB'); if(typeof v==='number') return v;
+      return null;
+    }
     for(const k of ['Mål Sälj','Mål produkt','Mål Produkt','Mål sälj']){
       const v=findVal(r,k); if(typeof v==='number') return v;
     }
