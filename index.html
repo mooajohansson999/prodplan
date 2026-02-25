@@ -689,12 +689,14 @@ function renderTable(){
     `<th class="${c.goalKey?'goal-col':''}">${c.label}</th>`
   ).join('')+'</tr>';
 
-  // Hitta sista dag med utfallsdata
+  // Hitta sista dag med utfallsdata (faktiska värden, inte bara tom rad)
   let lastDataDay=0;
   for(let i=1;i<=days;i++){
     const dk=toDateKey(y,m,i);
     const uRow=uData[dk]||{};
-    if(Object.keys(uRow).length>0) lastDataDay=i;
+    const hasProd=findVal(uRow,'Produkt')??findVal(uRow,'produkt')??null;
+    const hasSaljare=findVal(uRow,'Antal Mansdagar')??findVal(uRow,'Antal Säljare')??null;
+    if((typeof hasProd==='number'&&hasProd>0)||(typeof hasSaljare==='number'&&hasSaljare>0)) lastDataDay=i;
   }
 
   let rows='';
