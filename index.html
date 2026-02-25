@@ -7,7 +7,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f7f7f5; color: #1a1a1a; font-size: 13px; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: linear-gradient(180deg, #ffffff 0%, #f3f2f0 100%); min-height: 100vh; color: #1a1a1a; font-size: 13px; }
 
   header {
     background: #fff; border-bottom: 1px solid #ebebeb;
@@ -35,7 +35,7 @@
   .month-selects { display: flex; gap: 6px; }
   select {
     border: 1px solid #ebebeb; border-radius: 8px; padding: 6px 24px 6px 10px;
-    font-size: 13px; font-weight: 500; background: #f7f7f5; color: #1a1a1a;
+    font-size: 13px; font-weight: 500; background: #fff; color: #1a1a1a;
     cursor: pointer; outline: none; appearance: none; -webkit-appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E");
     background-repeat: no-repeat; background-position: right 8px center;
@@ -144,7 +144,7 @@
 
   .stat-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
   .stat-card { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 10px 16px; }
-  .stat-label { font-size: 10px; color: #999; font-weight: 500; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .stat-label { font-size: 10px; color: #1a1a1a; font-weight: 500; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
   .stat-value { font-size: 20px; font-weight: 600; }
   .stat-meta { font-size: 10px; color: #999; margin-top: 2px; }
   .stat-badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 20px; margin-top: 4px; }
@@ -250,7 +250,7 @@
       <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
       Mål importerade
     </div>
-    <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#999;">
+    <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#666;">
       <svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/></svg>
       <span id="lastSynced">Senast synkad: —</span>
     </div>
@@ -346,15 +346,6 @@
       </div>
     </div>
 
-    <div class="section-header">
-      <span class="section-title">Daglig uppföljning</span>
-      <div class="section-tabs">
-        <div class="tab active" onclick="setView('full',this)">Alla kolumner</div>
-        <div class="tab" onclick="setView('compact',this)">Kompakt</div>
-        <div class="tab" onclick="setView('compare',this)" style="display:none">Jämförelse</div>
-      </div>
-    </div>
-
     <div class="month-nav" style="margin-bottom:10px;">
       <button class="nav-btn" onclick="changeMonth(-1)">◀</button>
       <div class="month-selects">
@@ -373,6 +364,11 @@
         </select>
       </div>
       <button class="nav-btn" onclick="changeMonth(1)">▶</button>
+      <div class="section-tabs" style="margin-left:12px;">
+        <div class="tab active" onclick="setView('full',this)">Alla kolumner</div>
+        <div class="tab" onclick="setView('compact',this)">Kompakt</div>
+        <div class="tab" onclick="setView('compare',this)" style="display:none">Jämförelse</div>
+      </div>
     </div>
 
     <div class="table-wrap" id="tableWrap">
@@ -795,7 +791,7 @@ function updateStatCards(uData,mData){
   const malSellersTotal=mRows.reduce((s,r)=>{ const v=getMalSaljare(r); return s+(typeof v==='number'?v:0); },0);
 
   const avgProd=workDays>0?fmt2(totalProd/workDays):0;
-  const malAvgProd=malWorkDays>0?fmt2(malProd/malWorkDays):0;
+  const malAvgProd=workDays>0?fmt2(malProd/workDays):0;
 
   const avgPerHour=totalHours>0?fmt2(totalProd/totalHours):0;
   const malAvgPerHour=(()=>{
@@ -804,7 +800,7 @@ function updateStatCards(uData,mData){
   })();
 
   const avgSellers=workDays>0?fmt2(totalSellers/workDays):0;
-  const malAvgSellers=malWorkDays>0?fmt2(malSellersTotal/malWorkDays):0;
+  const malAvgSellers=workDays>0?fmt2(malSellersTotal/workDays):0;
 
   const setPct=(valEl,metaEl,badgeEl,val,mal,suffix='')=>{
     document.getElementById(valEl).textContent=val>0?(fmt2(val)+suffix):'—';
