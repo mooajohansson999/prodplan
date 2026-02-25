@@ -712,7 +712,7 @@ function setDailyGroupFilter(g,el){
 
 function buildProjectChips(){
   var projs=dailyGroup==='d2d'?GROUP_D2D:dailyGroup==='tm'?GROUP_TM:ALL_PROJECTS;
-  var showAll=(dailyGroup==='alla');
+  var showAll=true;
   var allActive=projs.every(function(p){return dailyProject.has(p);});
   var sel=document.getElementById('dailyProjectSelector');
   var html='';
