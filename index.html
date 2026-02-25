@@ -190,7 +190,7 @@
   tr.summary-row td.goal-col { background: #f9cfc6; }
   .empty-cell { color: #ddd; }
 
-  .compare-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .compare-grid { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 600px; }
   .compare-card { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 20px; }
   .compare-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
   .compare-card-title { font-size: 14px; font-weight: 600; }
@@ -316,7 +316,10 @@
   <div class="mobile-overlay" id="mobileOverlay" onclick="toggleSidebar()"></div>
   <aside class="hidden">
     <div class="sidebar-label">Projekt</div>
-    <div class="project-item active" data-project="telia-fm" data-sheet="1.1. Telia D2D" onclick="toggleProject(this,event)">
+    <div style="padding: 0 20px 12px;">
+      <button class="btn btn-utfall" style="width:100%;justify-content:center;" onclick="showOverview()">📊 Översikt</button>
+    </div>
+    <div class="project-item" data-project="telia-fm" data-sheet="1.1. Telia D2D" onclick="toggleProject(this,event)">
       <div class="project-checkbox"></div><span class="project-name">Telia FM</span>
       <span class="data-dots"><span class="data-dot utfall"></span><span class="data-dot mal"></span></span>
     </div>
@@ -438,11 +441,11 @@ const MONTHS_SV = ['Januari','Februari','Mars','April','Maj','Juni','Juli','Augu
 const DAYS_SV = ['Söndag','Måndag','Tisdag','Onsdag','Torsdag','Fredag','Lördag'];
 const today = new Date();
 
-let currentView = 'full';
-let currentProject = 'telia-fm';
+let currentView = 'overview';
+let currentProject = null;
 let utfallData = {};
 let malData = {};
-let activeCount = 1;
+let activeCount = 0;
 
 async function loadData(){
   try {
@@ -464,9 +467,11 @@ async function loadData(){
       if(Object.keys(malData).some(k => k.startsWith(proj + '_'))) item.classList.add('has-mal');
     });
     renderAll();
+    if(currentView==='overview') showOverview();
   } catch(e) {
     console.warn('Kunde inte ladda data:', e);
     renderAll();
+    if(currentView==='overview') showOverview();
   }
 }
 
@@ -929,11 +934,15 @@ function renderSubtitle(){
 }
 
 function renderAll(){
+  if(currentView==='overview'){ renderSubtitle(); return; }
   if(!currentProject){
     document.getElementById('tableHead').innerHTML='<tr><th>Välj ett projekt i listan</th></tr>';
     document.getElementById('tableBody').innerHTML='';
     renderSubtitle(); return;
   }
+  // Visa stat-kort och month-nav igen om vi lämnat overview
+  document.querySelector('.stat-cards').style.display='';
+  document.querySelector('.month-nav').style.display='';
   if(currentView==='compare'&&activeCount<=1){
     currentView='full';
     document.getElementById('tableWrap').style.display='block';
@@ -1387,6 +1396,171 @@ function mergeData(type){
     }
   }
   return merged;
+}
+
+function showOverview(){
+  // Avmarkera alla projekt
+  document.querySelectorAll('.project-item').forEach(x=>x.classList.remove('active'));
+  activeCount=0;
+  currentProject=null;
+  currentView='overview';
+  document.getElementById('compareBar').classList.remove('visible');
+  document.getElementById('pageTitle').textContent='Översikt';
+  document.getElementById('tableWrap').style.display='none';
+  document.getElementById('compareWrap').style.display='block';
+
+  // Dölj stat-kort och month-nav
+  document.querySelector('.stat-cards').style.display='none';
+  document.querySelector('.month-nav').style.display='none';
+
+  // Rendera alla projekt som jämförelsekort
+  renderOverview();
+
+  // Stäng sidebar på mobil
+  if(window.innerWidth<=768) toggleSidebar();
+}
+
+function renderOverview(){
+  const allProjects=[...document.querySelectorAll('.project-item')].map(el=>el.dataset.project);
+  const wrap=document.getElementById('compareWrap');
+  const MAL_COLOR='#999';
+  const barColor=p=>p>=100?'#2d8a4e':'#f97c5a';
+
+  const projectsWithPct = allProjects.map(proj=>{
+    const {uData,mData}=getProjectData(proj);
+    const uRows=Object.values(uData).map(r=>normalizeRow(r,'utfall'));
+    const mRows=Object.values(mData);
+    const totalProd=uRows.reduce((s,r)=>{ const v=findVal(r,'Produkt')??0; return s+(typeof v==='number'?v:0); },0);
+    const malProd=mRows.reduce((s,r)=>s+getProjectMalProd(proj,r),0);
+    return {proj, pct: malProd>0?Math.round(totalProd/malProd*100):0, hasMal: malProd>0};
+  });
+  projectsWithPct.sort((a,b)=>b.pct-a.pct);
+
+  const cards=projectsWithPct.map(({proj, hasMal: projHasMal})=>{
+    const name=document.querySelector(`.project-item[data-project="${proj}"] .project-name`)?.textContent||proj;
+    const {uData,mData}=getProjectData(proj);
+    const uRows=Object.values(uData).map(r=>normalizeRow(r,'utfall'));
+    const mRows=Object.values(mData);
+    const useMansdag=MANSDAG_PROJECTS.has(proj);
+
+    const totalProd=uRows.reduce((s,r)=>{ const v=findVal(r,'Produkt')??0; return s+(typeof v==='number'?v:0); },0);
+    const malProd=mRows.reduce((s,r)=>s+getProjectMalProd(proj,r),0);
+
+    const totalMansdag=uRows.reduce((s,r)=>{ const v=findVal(r,'Antal Mansdagar')??0; return s+(typeof v==='number'?v:0); },0);
+    const mRowsNorm=mRows.map(r=>normalizeRow(r,'mal'));
+    const malMansdag=mRowsNorm.reduce((s,r)=>{ const v=findVal(r,'Mål säljare')??0; return s+(typeof v==='number'?v:0); },0);
+    const totalTimmar=uRows.reduce((s,r)=>{ const v=findVal(r,'Timmar')??0; return s+(typeof v==='number'?v:0); },0);
+    const malTimmar=mRowsNorm.reduce((s,r)=>{ const v=findVal(r,'Mål timmar')??0; return s+(typeof v==='number'?v:0); },0);
+
+    const workDays=uRows.filter(r=>(findVal(r,'Antal Mansdagar')??0)>0).length;
+    const avgSellers=workDays>0?fmt2(totalMansdag/workDays):0;
+
+    const snittpMansdag=useMansdag
+      ? (totalMansdag>0?fmt2(totalProd/totalMansdag):0)
+      : (totalTimmar>0?fmt2(totalProd/totalTimmar):0);
+    const malSnittSum=mRowsNorm.reduce((s,r)=>{ const v=findVal(r,'Mål snitt')??0; return s+(typeof v==='number'?v:0); },0);
+    const malSnittDays=mRowsNorm.filter(r=>(findVal(r,'Mål snitt')??0)>0).length;
+    const malSnitt=malSnittDays>0?fmt2(malSnittSum/malSnittDays):0;
+
+    const prodPct=malProd>0?Math.round(totalProd/malProd*100):0;
+    const secondPct=useMansdag
+      ? (malMansdag>0?Math.round(totalMansdag/malMansdag*100):0)
+      : (malTimmar>0?Math.round(totalTimmar/malTimmar*100):0);
+    const snittpMalPct=malSnitt>0?Math.round(snittpMansdag/malSnitt*100):0;
+
+    const secondLabel=useMansdag?'Mansdagar':'Timmar';
+    const secondUtfall=useMansdag?totalMansdag:fmt2(totalTimmar);
+    const secondMal=useMansdag?malMansdag:fmt2(malTimmar);
+    const snittLabel=useMansdag?'Snitt per mansdag':'Snitt per timme';
+
+    let badgeHtml;
+    if(!projHasMal) badgeHtml=`<span class="compare-badge badge-neutral">Mål saknas</span>`;
+    else badgeHtml=`<span class="compare-badge ${prodPct>=100?'badge-green':'badge-neutral'}">${prodPct}% av mål</span>`;
+
+    let prodMetric;
+    if(!projHasMal){
+      prodMetric=`<div class="compare-metric"><div class="compare-metric-label">Produkter <span>${totalProd}</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>`;
+    } else {
+      prodMetric=`<div class="compare-metric"><div class="compare-metric-label">Produkter <span>${totalProd} / ${malProd}</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.min(prodPct,100)}%;background:${barColor(prodPct)}"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">${prodPct}% av mål</div></div>`;
+    }
+
+    const hasSecondMal=useMansdag?malMansdag>0:malTimmar>0;
+    let secondMetric;
+    if(!hasSecondMal){
+      secondMetric=`<div class="compare-metric"><div class="compare-metric-label">${secondLabel} <span>${secondUtfall}</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>`;
+    } else {
+      secondMetric=`<div class="compare-metric"><div class="compare-metric-label">${secondLabel} <span>${secondUtfall} / ${secondMal}</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.min(secondPct,100)}%;background:${barColor(secondPct)}"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">${secondPct}% av mål</div></div>`;
+    }
+
+    let snittMetric;
+    if(malSnitt<=0){
+      snittMetric=`<div class="compare-metric"><div class="compare-metric-label">${snittLabel} <span>${snittpMansdag}</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas · ${avgSellers} säljare/dag</div></div>`;
+    } else {
+      snittMetric=`<div class="compare-metric"><div class="compare-metric-label">${snittLabel} <span>${snittpMansdag} / ${malSnitt}</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.min(snittpMalPct,100)}%;background:${barColor(snittpMalPct)}"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">${snittpMalPct}% av mål · ${avgSellers} säljare/dag</div></div>`;
+    }
+
+    const m=getMonth(),y=getYear(),days=new Date(y,m+1,0).getDate();
+    let sparkPoints=[],malPoints=[];
+    for(let i=1;i<=days;i++){
+      const d=new Date(y,m,i);
+      if(d.getDay()===0||d.getDay()===6) continue;
+      const dk=toDateKey(y,m,i);
+      const ur=normalizeRow(uData[dk]||{},'utfall');
+      sparkPoints.push(fmt2(findVal(ur,'Produkt')??0));
+      malPoints.push(getProjectMalProd(proj,mData[dk]||{}));
+    }
+    const maxVal=Math.max(...sparkPoints,...malPoints,1);
+    const W=560,H=48,n=sparkPoints.length;
+    const px=i=>n>1?(i/(n-1))*W:W/2;
+    const py=v=>H-(v/maxVal)*(H-4)-2;
+    const malPath=malPoints.map((v,i)=>`${i===0?'M':'L'}${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
+    const utfPath=sparkPoints.map((v,i)=>`${i===0?'M':'L'}${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
+    const lineColor=prodPct>=100?'#2d8a4e':'#f97c5a';
+
+    const sparkHtml=projHasMal?`
+      <div class="sparkline"><div class="sparkline-label">Daglig produkt – utfall vs mål</div>
+        <svg width="100%" height="${H}" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="overflow:visible">
+          <path d="${malPath}" fill="none" stroke="${MAL_COLOR}" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/>
+          <path d="${utfPath}" fill="none" stroke="${lineColor}" stroke-width="2"/>
+        </svg>
+        <div style="display:flex;gap:12px;margin-top:6px;font-size:11px;color:#999;">
+          <span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:${lineColor};border-radius:2px"></span>Utfall</span>
+          <span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:0;border-top:2px dashed ${MAL_COLOR}"></span>Mål</span>
+        </div></div>`:`
+      <div class="sparkline"><div class="sparkline-label">Daglig produkt – utfall</div>
+        <svg width="100%" height="${H}" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="overflow:visible">
+          <path d="${utfPath}" fill="none" stroke="#f97c5a" stroke-width="2"/>
+        </svg></div>`;
+
+    return `<div class="compare-card" style="cursor:pointer" onclick="selectProjectFromOverview('${proj}')">
+      <div class="compare-card-header"><span class="compare-card-title">${name}</span>${badgeHtml}</div>
+      ${prodMetric}${secondMetric}${snittMetric}${sparkHtml}
+    </div>`;
+  }).join('');
+
+  wrap.innerHTML=`<div class="compare-grid">${cards}</div>`;
+  wrap.style.display='block';
+}
+
+function selectProjectFromOverview(proj){
+  document.querySelectorAll('.project-item').forEach(x=>x.classList.remove('active'));
+  const el=document.querySelector(`.project-item[data-project="${proj}"]`);
+  if(el) el.classList.add('active');
+  activeCount=1;
+  currentProject=proj;
+  currentView='full';
+  document.getElementById('compareBar').classList.remove('visible');
+  document.getElementById('pageTitle').textContent=el?.querySelector('.project-name')?.textContent||proj;
+  document.getElementById('tableWrap').style.display='block';
+  document.getElementById('compareWrap').style.display='none';
+  document.querySelector('.stat-cards').style.display='';
+  document.querySelector('.month-nav').style.display='';
+  document.querySelectorAll('.tab').forEach(t=>{
+    t.classList.remove('active');
+    if(t.textContent.includes('Alla kolumner')){t.classList.add('active');t.style.display='';}
+    if(t.textContent.includes('Jämförelse')) t.style.display='none';
+  });
+  renderAll();
 }
 
 function toggleSidebar(){
