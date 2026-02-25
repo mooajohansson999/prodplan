@@ -7,7 +7,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', system-ui, sans-serif; background: linear-gradient(180deg, #ffffff 0%, #f3f2f0 100%); min-height: 100vh; color: #1a1a1a; font-size: 13px; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f3f2f0; min-height: 100vh; color: #1a1a1a; font-size: 13px; }
 
   header {
     background: #fff; border-bottom: 1px solid #ebebeb;
@@ -25,12 +25,7 @@
   .logo-text { font-weight: 600; font-size: 15px; letter-spacing: 0.5px; }
 
   .header-right { display: flex; align-items: center; gap: 10px; }
-  .import-success { display: none; align-items: center; gap: 6px; font-size: 12px; font-weight: 500; }
-  .import-success.visible { display: flex; }
-  .import-success.utfall { color: #e8503a; }
-  .import-success.mal { color: #2d8a4e; }
 
-  /* === MAIN NAV TABS === */
   .main-nav {
     display: flex; align-items: center; gap: 0;
     background: #f0f0ee; border-radius: 10px; padding: 3px; margin-left: 20px;
@@ -43,7 +38,6 @@
   .main-nav-tab.active { background: #fff; color: #1a1a1a; box-shadow: 0 1px 3px rgba(0,0,0,0.08); font-weight: 600; }
   .main-nav-tab:hover:not(.active) { color: #333; }
 
-  /* === BUTTONS === */
   .btn {
     display: flex; align-items: center; gap: 6px;
     padding: 7px 14px; border-radius: 8px;
@@ -51,10 +45,7 @@
     transition: background 0.15s; white-space: nowrap; border: 1px solid #ebebeb; background: #fff; color: #555;
   }
   .btn:hover { background: #f7f7f5; }
-  .btn-primary { background: #f97c5a; color: white; border: none; }
-  .btn-primary:hover { background: #e8503a; }
 
-  /* === FILTER BAR === */
   .filter-bar {
     display: flex; align-items: center; gap: 10px; padding: 12px 24px;
     background: #fff; border-bottom: 1px solid #ebebeb;
@@ -71,8 +62,8 @@
   .filter-pill:hover:not(.active) { color: #333; }
 
   select {
-    border: 1px solid #ebebeb; border-radius: 8px; padding: 6px 28px 6px 10px;
-    font-size: 13px; font-weight: 500; background: #fff; color: #1a1a1a;
+    border: 1.5px solid #aaa; border-radius: 8px; padding: 6px 28px 6px 10px;
+    font-size: 13px; font-weight: 600; background: #fff; color: #1a1a1a;
     cursor: pointer; outline: none; appearance: none;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E");
     background-repeat: no-repeat; background-position: right 8px center;
@@ -80,47 +71,17 @@
   select:focus { border-color: #f97c5a; }
 
   .nav-btn {
-    width: 28px; height: 28px; border: 1px solid #ebebeb; border-radius: 6px;
+    width: 28px; height: 28px; border: 1.5px solid #aaa; border-radius: 6px;
     background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center;
-    font-size: 12px; color: #555; transition: all 0.15s;
+    font-size: 12px; color: #333; font-weight: 600; transition: all 0.15s;
   }
   .nav-btn:hover { background: #f7f7f5; }
 
-  /* === MODAL === */
-  .modal-overlay {
-    display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,0.3); z-index: 1000;
-    align-items: center; justify-content: center;
-  }
-  .modal-overlay.visible { display: flex; }
-  .modal {
-    background: #fff; border-radius: 16px;
-    padding: 32px; width: 400px; box-shadow: 0 8px 40px rgba(0,0,0,0.15);
-  }
-  .modal h2 { font-size: 16px; font-weight: 600; margin-bottom: 6px; }
-  .modal p { font-size: 12px; color: #999; margin-bottom: 20px; }
-  .modal label { font-size: 12px; font-weight: 500; color: #555; display: block; margin-bottom: 6px; }
-  .modal input[type=password], .modal input[type=file] {
-    width: 100%; border: 1px solid #ebebeb; border-radius: 8px;
-    padding: 9px 12px; font-size: 13px; outline: none; margin-bottom: 16px; background: #fafafa;
-  }
-  .modal input[type=password]:focus { border-color: #f97c5a; }
-  .modal input[type=file] { padding: 7px 12px; cursor: pointer; }
-  .modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 4px; }
-  .btn-cancel { padding: 8px 16px; border-radius: 8px; border: 1px solid #ebebeb; background: #fff; font-size: 13px; cursor: pointer; color: #555; }
-  .btn-confirm { padding: 8px 16px; border-radius: 8px; border: none; background: #f97c5a; color: white; font-size: 13px; font-weight: 600; cursor: pointer; }
-  .btn-confirm:hover { background: #e8503a; }
-  .modal-error { font-size: 12px; color: #c0392b; margin-top: -10px; margin-bottom: 12px; display: none; }
-  .modal-error.visible { display: block; }
-
-  /* === CONTENT === */
   main { padding: 0; min-height: calc(100vh - 56px); }
-
   .page-section { padding: 20px 24px; }
   .page-title { font-size: 18px; font-weight: 600; margin-bottom: 2px; }
   .page-sub { font-size: 11px; color: #999; margin-bottom: 14px; }
 
-  /* === OVERVIEW CARDS === */
   .compare-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .compare-card {
     background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 18px;
@@ -141,7 +102,6 @@
   .sparkline { margin-top: 14px; border-top: 1px solid #f0f0ee; padding-top: 10px; }
   .sparkline-label { font-size: 11px; color: #1a1a1a; margin-bottom: 6px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.4px; }
 
-  /* === STAT CARDS === */
   .stat-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
   .stat-card { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 10px 16px; }
   .stat-label { font-size: 10px; color: #1a1a1a; font-weight: 500; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -149,7 +109,6 @@
   .stat-meta { font-size: 10px; color: #999; margin-top: 2px; }
   .stat-badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 20px; margin-top: 4px; }
 
-  /* === TABLE === */
   .table-wrap { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; overflow: auto; }
   table { width: 100%; border-collapse: collapse; }
   thead { background: #fafafa; }
@@ -170,17 +129,15 @@
   tr.summary-row td.goal-col { background: #f9cfc6; }
   .empty-cell { color: #ddd; }
 
-  /* === DAILY PROJECT SELECTOR === */
   .project-selector { display: flex; gap: 6px; flex-wrap: wrap; }
   .proj-chip {
     padding: 5px 12px; border-radius: 20px; font-size: 12px; cursor: pointer;
-    border: 1px solid #ebebeb; background: #fff; color: #555; font-weight: 500;
+    border: 1.5px solid #aaa; background: #fff; color: #333; font-weight: 600;
     transition: all 0.15s;
   }
   .proj-chip.active { background: #f97c5a; color: #fff; border-color: #f97c5a; }
   .proj-chip:hover:not(.active) { border-color: #f97c5a; color: #e8503a; }
 
-  /* === VIEW TABS (compact/full) === */
   .view-tabs { display: flex; gap: 4px; background: #f0f0ee; border-radius: 8px; padding: 3px; }
   .view-tab { padding: 5px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; color: #666; font-weight: 500; transition: all 0.15s; border: none; background: none; }
   .view-tab.active { background: #fff; color: #1a1a1a; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
@@ -189,7 +146,6 @@
     background: #fff; border: 1px solid #ebebeb; border-radius: 14px; padding: 22px 28px;
     display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; align-items: start;
   }
-  .summary-card .sc-block {}
   .summary-card .sc-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #999; margin-bottom: 4px; }
   .summary-card .sc-value { font-size: 22px; font-weight: 700; color: #1a1a1a; }
   .summary-card .sc-meta { font-size: 11px; color: #999; margin-top: 2px; }
@@ -197,32 +153,34 @@
   .summary-card .sc-spark { grid-column: 1 / -1; border-top: 1px solid #f0f0ee; padding-top: 14px; margin-top: 4px; }
   .summary-card .sc-spark-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.4px; color: #1a1a1a; margin-bottom: 6px; }
 
+  .toolbar-row {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;
+  }
+
+  .month-bar {
+    background: #f0f0ee; border-bottom: 1px solid #ebebeb;
+  }
+
   @media (max-width: 768px) {
     .summary-card { grid-template-columns: repeat(2, 1fr); gap: 14px; padding: 16px; }
     .summary-card .sc-value { font-size: 18px; }
     .summary-card .sc-spark { grid-column: 1 / -1; }
-  }
-  @media (max-width: 768px) {
     header { padding: 0 12px; height: 48px; }
     .logo-text { font-size: 13px; }
     .logo-icon { width: 28px; height: 28px; font-size: 12px; }
     .main-nav { margin-left: 10px; }
     .main-nav-tab { padding: 5px 12px; font-size: 12px; }
     .header-right { gap: 6px; }
-    .header-right > div:not(.main-nav):not(.import-success) { display: none; }
-
+    .header-right > div:not(.main-nav) { display: none; }
     .filter-bar { padding: 10px 12px; gap: 8px; }
     .page-section { padding: 14px 12px; }
     .page-title { font-size: 15px; }
-
     .compare-grid { grid-template-columns: 1fr; gap: 10px; }
     .stat-cards { grid-template-columns: repeat(2, 1fr); gap: 6px; }
     .stat-card { padding: 8px 12px; }
     .stat-value { font-size: 16px; }
-
     .project-selector { gap: 4px; }
     .proj-chip { padding: 4px 10px; font-size: 11px; }
-
     th { font-size: 9px; padding: 5px 6px; }
     td { font-size: 11px; padding: 4px 6px; }
   }
@@ -230,7 +188,6 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="logo" style="display:flex;align-items:center;">
     <div class="logo-icon">V</div>
@@ -251,20 +208,26 @@
 <main>
   <!-- ======== OVERVIEW PAGE ======== -->
   <div id="overviewPage">
-    <div class="filter-bar">
-      <div class="filter-group">
-        <span class="filter-label">Visa:</span>
-        <div class="filter-pills" id="overviewFilter">
-          <button class="filter-pill active" onclick="setOverviewFilter('alla',this)">Alla</button>
-          <button class="filter-pill" onclick="setOverviewFilter('d2d',this)">D2D</button>
-          <button class="filter-pill" onclick="setOverviewFilter('tm',this)">TM</button>
+    <div class="filter-bar" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <div class="filter-group">
+          <span class="filter-label">Visa:</span>
+          <div class="filter-pills" id="overviewFilter">
+            <button class="filter-pill active" onclick="setOverviewFilter('alla',this)">Alla</button>
+            <button class="filter-pill" onclick="setOverviewFilter('d2d',this)">D2D</button>
+            <button class="filter-pill" onclick="setOverviewFilter('tm',this)">TM</button>
+          </div>
         </div>
       </div>
-      <div class="filter-group">
-        <span class="filter-label">Projekt:</span>
-        <div class="project-selector" id="overviewProjectSelector"></div>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <div class="filter-group">
+          <span class="filter-label">Projekt:</span>
+          <div class="project-selector" id="overviewProjectSelector"></div>
+        </div>
       </div>
-      <div class="filter-group" style="margin-left:auto;">
+    </div>
+    <div class="filter-bar month-bar" style="border-top:none;">
+      <div class="filter-group">
         <button class="nav-btn" onclick="changeMonth(-1)">◀</button>
         <select id="monthSel" onchange="renderCurrent()">
           <option value="0">Januari</option><option value="1" selected>Februari</option>
@@ -291,28 +254,25 @@
 
   <!-- ======== DAILY PAGE ======== -->
   <div id="dailyPage" style="display:none;">
-    <div class="filter-bar">
-      <div class="filter-group">
-        <span class="filter-label">Filter:</span>
-        <div class="filter-pills" id="dailyGroupFilter">
-          <button class="filter-pill" onclick="setDailyGroupFilter('alla',this)">Alla</button>
-          <button class="filter-pill active" onclick="setDailyGroupFilter('d2d',this)">D2D</button>
-          <button class="filter-pill" onclick="setDailyGroupFilter('tm',this)">TM</button>
+    <div class="filter-bar" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <div class="filter-group">
+          <span class="filter-label">Filter:</span>
+          <div class="filter-pills" id="dailyGroupFilter">
+            <button class="filter-pill" onclick="setDailyGroupFilter('alla',this)">Alla</button>
+            <button class="filter-pill active" onclick="setDailyGroupFilter('d2d',this)">D2D</button>
+            <button class="filter-pill" onclick="setDailyGroupFilter('tm',this)">TM</button>
+          </div>
         </div>
       </div>
-      <div class="filter-group">
-        <span class="filter-label">Projekt:</span>
-        <div class="project-selector" id="dailyProjectSelector"></div>
-      </div>
-      <div class="filter-group" style="margin-left:auto;">
-        <div class="view-tabs" id="dailyViewTabs">
-          <button class="view-tab active" data-view="full" onclick="setDailyView('full',this)">Alla kolumner</button>
-          <button class="view-tab" data-view="compact" onclick="setDailyView('compact',this)">Kompakt</button>
-          <button class="view-tab" data-view="compare" style="display:none" onclick="setDailyView('compare',this)">Jämförelse</button>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <div class="filter-group">
+          <span class="filter-label">Projekt:</span>
+          <div class="project-selector" id="dailyProjectSelector"></div>
         </div>
       </div>
     </div>
-    <div class="filter-bar" style="border-bottom:none;padding-top:0;">
+    <div class="filter-bar month-bar" style="border-top:none;">
       <div class="filter-group">
         <button class="nav-btn" onclick="changeMonth(-1)">◀</button>
         <select id="monthSel2" onchange="syncMonthFrom(this);renderCurrent()">
@@ -329,8 +289,13 @@
         </select>
         <button class="nav-btn" onclick="changeMonth(1)">▶</button>
       </div>
+      <div class="view-tabs" id="dailyViewTabs">
+        <button class="view-tab active" data-view="full" onclick="setDailyView('full',this)">Alla kolumner</button>
+        <button class="view-tab" data-view="compact" onclick="setDailyView('compact',this)">Kompakt</button>
+        <button class="view-tab" data-view="compare" style="display:none" onclick="setDailyView('compare',this)">Jämförelse</button>
+      </div>
     </div>
-    <div class="page-section" style="padding-top:0;">
+    <div class="page-section" style="padding-top:14px;">
       <div class="stat-cards" id="dailyStatCards">
         <div class="stat-card">
           <div class="stat-label">Utfall produkter</div>
@@ -391,15 +356,14 @@ const PROJECT_META={
 
 let currentPage='overview';
 let overviewFilter='alla';
-let overviewProject=null; // null = visa alla, Set = flera valda
+let overviewProject=null;
 let dailyGroup='d2d';
 let dailyProject=new Set(['telia-fm']);
 let dailyView='full';
 let utfallData={};
 let malData={};
-let _dailyRef=null; // used by resolveDynGoal
+let _dailyRef=null;
 
-// === PROJECT COLUMN DEFINITIONS ===
 const COMPACT_COLS=[
   {label:'Dag'},{label:'Datum'},
   {label:'Mål säljare',goalKey:'__mal_saljare__'},{label:'Utfall säljare',key:'__utfall_saljare__'},
@@ -421,13 +385,12 @@ const PROJECT_COLS={
   'fmc':[{label:'Dag'},{label:'Datum'},{label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},{label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'Timmar'},{label:'Mål Huvudabb',goalKey:'Mål Huvudabb'},{label:'Utfall Huvudabb',key:'Mobil'},{label:'Mål EA',goalKey:'Mål EA'},{label:'Utfall EA',key:'EA'},{label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}]
 };
 
-// === HELPERS ===
 function getMonth(){ return parseInt(document.getElementById('monthSel').value); }
 function getYear(){ return parseInt(document.getElementById('yearSel').value); }
 function syncMonthFrom(sel){ document.getElementById('monthSel').value=sel.value; }
 function syncYearFrom(sel){ document.getElementById('yearSel').value=sel.value; }
 function changeMonth(dir){
-  let m=getMonth()+dir, y=getYear();
+  var m=getMonth()+dir, y=getYear();
   if(m<0){m=11;y--;} if(m>11){m=0;y++;}
   document.getElementById('monthSel').value=m;
   document.getElementById('yearSel').value=y;
@@ -435,46 +398,46 @@ function changeMonth(dir){
   document.getElementById('yearSel2').value=y;
   renderCurrent();
 }
-function toDateKey(y,m,d){ return `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`; }
-function storeKey(proj,y,m){ return `${proj}_${y}_${m}`; }
+function toDateKey(y,m,d){ return y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0'); }
+function storeKey(proj,y,m){ return proj+'_'+y+'_'+m; }
 function fmt2(v){ return typeof v==='number'?parseFloat(v.toFixed(2)):v; }
 function isWeekend(d){ return d.getDay()===0||d.getDay()===6; }
 function findVal(obj,key){
   if(!obj||!key) return null;
-  const lk=key.toLowerCase();
-  for(const k of Object.keys(obj)){ if(k.toLowerCase()===lk) return obj[k]; }
+  var lk=key.toLowerCase();
+  for(var k of Object.keys(obj)){ if(k.toLowerCase()===lk) return obj[k]; }
   return null;
 }
 
 function resolveDynGoal(goalKey,mRow){
   if(goalKey==='__mal_saljare__'){
-    for(const k of ['Mål säljare','Mål mansdagar']){ const v=findVal(mRow,k); if(typeof v==='number') return v; }
+    for(var k of ['Mål säljare','Mål mansdagar']){ var v=findVal(mRow,k); if(typeof v==='number') return v; }
     return null;
   }
   if(goalKey==='__mal_prod__'){
-    const p=_dailyRef||[...dailyProject][0];
-    if(p==='mobil'||p==='fmc'){ const h=findVal(mRow,'Mål Huvudabb')??0, ea=findVal(mRow,'Mål EA')??0; return (typeof h==='number'?h:0)+(typeof ea==='number'?ea:0)||null; }
-    if(p==='vip-leads'){ const bb=findVal(mRow,'Mål BB')??0, mbh=findVal(mRow,'Mål MBH')??0; return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0)||null; }
-    if(p==='retention'||p==='mbh'){ const v=findVal(mRow,'Mål BB'); return typeof v==='number'?v:null; }
-    for(const k of ['Mål Sälj','Mål Produkt','Mål produkt','Mål sälj']){ const v=findVal(mRow,k); if(typeof v==='number') return v; }
+    var p=_dailyRef||[...dailyProject][0];
+    if(p==='mobil'||p==='fmc'){ var h=findVal(mRow,'Mål Huvudabb')??0, ea=findVal(mRow,'Mål EA')??0; return (typeof h==='number'?h:0)+(typeof ea==='number'?ea:0)||null; }
+    if(p==='vip-leads'){ var bb=findVal(mRow,'Mål BB')??0, mbh=findVal(mRow,'Mål MBH')??0; return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0)||null; }
+    if(p==='retention'||p==='mbh'){ var v2=findVal(mRow,'Mål BB'); return typeof v2==='number'?v2:null; }
+    for(var k2 of ['Mål Sälj','Mål Produkt','Mål produkt','Mål sälj']){ var v3=findVal(mRow,k2); if(typeof v3==='number') return v3; }
     return null;
   }
   return findVal(mRow,goalKey);
 }
 
 function getProjectMalProd(proj,mRow){
-  const nr=normalizeRow(mRow,'mal');
-  if(proj==='mobil'||proj==='fmc'){ const h=findVal(nr,'Mål Huvudabb')??0, ea=findVal(nr,'Mål EA')??0; return (typeof h==='number'?h:0)+(typeof ea==='number'?ea:0); }
-  if(proj==='vip-leads'){ const bb=findVal(nr,'Mål BB')??0, mbh=findVal(nr,'Mål MBH')??0; return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0); }
-  if(proj==='retention'||proj==='mbh'){ const v=findVal(nr,'Mål BB'); return typeof v==='number'?v:0; }
-  const v=findVal(nr,'Mål Sälj'); return typeof v==='number'?v:0;
+  var nr=normalizeRow(mRow,'mal');
+  if(proj==='mobil'||proj==='fmc'){ var h=findVal(nr,'Mål Huvudabb')??0, ea=findVal(nr,'Mål EA')??0; return (typeof h==='number'?h:0)+(typeof ea==='number'?ea:0); }
+  if(proj==='vip-leads'){ var bb=findVal(nr,'Mål BB')??0, mbh=findVal(nr,'Mål MBH')??0; return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0); }
+  if(proj==='retention'||proj==='mbh'){ var v=findVal(nr,'Mål BB'); return typeof v==='number'?v:0; }
+  var v2=findVal(nr,'Mål Sälj'); return typeof v2==='number'?v2:0;
 }
 
 function normalizeRow(row,type){
-  const out={};
-  const km=type==='utfall'?{'produkt':'Produkt','timmar':'Timmar','utfall timmar':'Timmar','antal säljare':'Antal Mansdagar'}:{'mål mansdagar':'Mål säljare','mål produkt':'Mål Sälj','mål sälj':'Mål Sälj','mål snitt per mansdag':'Mål snitt'};
-  for(const [k,v] of Object.entries(row)){
-    const mapped=km[k.toLowerCase()]; const tk=mapped||k;
+  var out={};
+  var km=type==='utfall'?{'produkt':'Produkt','timmar':'Timmar','utfall timmar':'Timmar','antal säljare':'Antal Mansdagar'}:{'mål mansdagar':'Mål säljare','mål produkt':'Mål Sälj','mål sälj':'Mål Sälj','mål snitt per mansdag':'Mål snitt'};
+  for(var [k,v] of Object.entries(row)){
+    var mapped=km[k.toLowerCase()]; var tk=mapped||k;
     if(out[tk]!==undefined){ if(typeof v==='number'&&typeof out[tk]==='number') out[tk]+=v; }
     else out[tk]=v;
   }
@@ -482,19 +445,19 @@ function normalizeRow(row,type){
 }
 
 function calcSnitt(proj,uRow){
-  const prod=findVal(uRow,'Produkt')??findVal(uRow,'produkt')??null;
+  var prod=findVal(uRow,'Produkt')??findVal(uRow,'produkt')??null;
   if(typeof prod!=='number') return null;
   if(SNITT_PER_TIMMAR.has(proj)){
-    const t=findVal(uRow,'Timmar')??findVal(uRow,'timmar')??null;
+    var t=findVal(uRow,'Timmar')??findVal(uRow,'timmar')??null;
     return (typeof t==='number'&&t>0)?fmt2(prod/t):null;
   } else {
-    const s=findVal(uRow,'Antal Mansdagar')??findVal(uRow,'Antal Säljare')??null;
+    var s=findVal(uRow,'Antal Mansdagar')??findVal(uRow,'Antal Säljare')??null;
     return (typeof s==='number'&&s>0)?fmt2(prod/s):null;
   }
 }
 
 function findGoalKey(cols,utfallKey){
-  for(let i=0;i<cols.length;i++){
+  for(var i=0;i<cols.length;i++){
     if(cols[i].key&&cols[i].key.toLowerCase()===utfallKey.toLowerCase()){
       if(i>0&&cols[i-1].goalKey) return cols[i-1].goalKey;
     }
@@ -503,49 +466,49 @@ function findGoalKey(cols,utfallKey){
 }
 
 function getCompactProd(proj,row){
-  if(proj==='vip-leads'){ const bb=findVal(row,'Bredband')??0, mbh=findVal(row,'MBH')??0; return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0); }
+  if(proj==='vip-leads'){ var bb=findVal(row,'Bredband')??0, mbh=findVal(row,'MBH')??0; return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0); }
   if(proj==='retention'||proj==='mbh') return findVal(row,'Bredband')??findVal(row,'BB')??null;
-  if(proj==='mobil'||proj==='fmc'){ const h=findVal(row,'Mobil')??0, ea=findVal(row,'EA')??0; return (typeof h==='number'?h:0)+(typeof ea==='number'?ea:0); }
+  if(proj==='mobil'||proj==='fmc'){ var h=findVal(row,'Mobil')??0, ea=findVal(row,'EA')??0; return (typeof h==='number'?h:0)+(typeof ea==='number'?ea:0); }
   return findVal(row,'Produkt')??findVal(row,'produkt')??null;
 }
 
 function generateDummyData(proj,m,y){
-  const days=new Date(y,m+1,0).getDate();
-  const uData={},mData={};
-  const seeds={'telia-fm':{s:8,t:60,p:18},'villafiber':{s:5,t:38,p:10},'koax':{s:4,t:30,p:8},'lan':{s:3,t:22,p:6},'globalconnect':{s:6,t:45,p:12},'adressandring':{s:7,t:52,p:15},'vip-leads':{s:5,t:40,p:11},'retention':{s:6,t:44,p:13},'mbh':{s:4,t:32,p:9},'mobil':{s:5,t:38,p:10},'fmc':{s:3,t:24,p:7}};
-  const seed=seeds[proj]||{s:5,t:40,p:10};
-  for(let i=1;i<=days;i++){
-    const d=new Date(y,m,i); if(d.getDay()===0||d.getDay()===6) continue;
-    const dk=toDateKey(y,m,i), v=0.7+Math.random()*0.6;
+  var days=new Date(y,m+1,0).getDate();
+  var uData={},mData={};
+  var seeds={'telia-fm':{s:8,t:60,p:18},'villafiber':{s:5,t:38,p:10},'koax':{s:4,t:30,p:8},'lan':{s:3,t:22,p:6},'globalconnect':{s:6,t:45,p:12},'adressandring':{s:7,t:52,p:15},'vip-leads':{s:5,t:40,p:11},'retention':{s:6,t:44,p:13},'mbh':{s:4,t:32,p:9},'mobil':{s:5,t:38,p:10},'fmc':{s:3,t:24,p:7}};
+  var seed=seeds[proj]||{s:5,t:40,p:10};
+  for(var i=1;i<=days;i++){
+    var d=new Date(y,m,i); if(d.getDay()===0||d.getDay()===6) continue;
+    var dk=toDateKey(y,m,i), v=0.7+Math.random()*0.6;
     uData[dk]={'Antal Mansdagar':seed.s,'timmar':Math.round(seed.t*v),'Produkt':Math.round(seed.p*v),'snitt':parseFloat((seed.p*v/seed.s).toFixed(2))};
     mData[dk]={'Mål säljare':seed.s,'Mål timmar':seed.t,'Mål Sälj':seed.p,'Mål snitt':parseFloat((seed.p/seed.s).toFixed(2))};
   }
-  return {uData,mData};
+  return {uData:uData,mData:mData};
 }
 
 function getProjectData(proj){
-  const m=getMonth(),y=getYear();
-  let u=utfallData[storeKey(proj,y,m)]||{}, ml=malData[storeKey(proj,y,m)]||{};
-  if(!Object.keys(u).length&&!Object.keys(ml).length){ const d=generateDummyData(proj,m,y); u=d.uData; ml=d.mData; }
+  var m=getMonth(),y=getYear();
+  var u=utfallData[storeKey(proj,y,m)]||{}, ml=malData[storeKey(proj,y,m)]||{};
+  if(!Object.keys(u).length&&!Object.keys(ml).length){ var d=generateDummyData(proj,m,y); u=d.uData; ml=d.mData; }
   return {uData:u,mData:ml};
 }
 
-// === PAGE SWITCHING ===
 function switchPage(page){
   currentPage=page;
-  document.querySelectorAll('.main-nav-tab').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.main-nav-tab').forEach(t=>{ if((page==='overview'&&t.textContent.includes('Översikt'))||(page==='daily'&&t.textContent.includes('Daglig'))) t.classList.add('active'); });
+  document.querySelectorAll('.main-nav-tab').forEach(function(t){t.classList.remove('active');});
+  document.querySelectorAll('.main-nav-tab').forEach(function(t){ if((page==='overview'&&t.textContent.indexOf('Översikt')>=0)||(page==='daily'&&t.textContent.indexOf('Daglig')>=0)) t.classList.add('active'); });
   document.getElementById('overviewPage').style.display=page==='overview'?'':'none';
   document.getElementById('dailyPage').style.display=page==='daily'?'':'none';
   renderCurrent();
 }
 
 function switchToDaily(proj){
-  const group=GROUP_D2D.includes(proj)?'d2d':'tm';
+  var group=GROUP_D2D.indexOf(proj)>=0?'d2d':'tm';
   dailyGroup=group;
   dailyProject=new Set([proj]);
-  document.querySelectorAll('#dailyGroupFilter .filter-pill').forEach(p=>{ p.classList.toggle('active',p.textContent.toLowerCase()===group); });
+  document.querySelectorAll('#dailyGroupFilter .filter-pill').forEach(function(p){ p.classList.toggle('active',p.textContent.toLowerCase()===group); });
   buildProjectChips();
+  updateDailyTabs();
   switchPage('daily');
 }
 
@@ -554,21 +517,25 @@ function renderCurrent(){
   else renderDaily();
 }
 
-// === OVERVIEW FILTER ===
 function setOverviewFilter(f,el){
   overviewFilter=f;
   overviewProject=null;
-  document.querySelectorAll('#overviewFilter .filter-pill').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('#overviewFilter .filter-pill').forEach(function(p){p.classList.remove('active');});
   el.classList.add('active');
   buildOverviewProjectChips();
   renderOverview();
 }
 
 function buildOverviewProjectChips(){
-  const projs=overviewFilter==='d2d'?GROUP_D2D:overviewFilter==='tm'?GROUP_TM:ALL_PROJECTS;
-  const sel=document.getElementById('overviewProjectSelector');
-  const isAll=overviewProject===null;
-  sel.innerHTML=`<button class="proj-chip ${isAll?'active':''}" onclick="selectOverviewProject('alla',this,event)">Alla</button>`+projs.map(p=>`<button class="proj-chip ${overviewProject instanceof Set&&overviewProject.has(p)?'active':''}" onclick="selectOverviewProject('${p}',this,event)">${PROJECT_META[p]?.name||p}</button>`).join('');
+  var projs=overviewFilter==='d2d'?GROUP_D2D:overviewFilter==='tm'?GROUP_TM:ALL_PROJECTS;
+  var sel=document.getElementById('overviewProjectSelector');
+  var isAll=overviewProject===null;
+  var html='<button class="proj-chip '+(isAll?'active':'')+'" onclick="selectOverviewProject(\'alla\',this,event)">Alla</button>';
+  projs.forEach(function(p){
+    var active=overviewProject instanceof Set&&overviewProject.has(p);
+    html+='<button class="proj-chip '+(active?'active':'')+'" onclick="selectOverviewProject(\''+p+'\',this,event)">'+PROJECT_META[p].name+'</button>';
+  });
+  sel.innerHTML=html;
 }
 
 function selectOverviewProject(p,el,ev){
@@ -583,233 +550,181 @@ function selectOverviewProject(p,el,ev){
     if(overviewProject instanceof Set&&overviewProject.size===1&&overviewProject.has(p)) overviewProject=null;
     else overviewProject=new Set([p]);
   }
-  document.querySelectorAll('#overviewProjectSelector .proj-chip').forEach(c=>{
-    const val=c.textContent;
+  document.querySelectorAll('#overviewProjectSelector .proj-chip').forEach(function(c){
+    var val=c.textContent;
     if(val==='Alla') c.classList.toggle('active',overviewProject===null);
     else {
-      const proj=Object.entries(PROJECT_META).find(([k,v])=>v.name===val);
+      var proj=Object.entries(PROJECT_META).find(function(e){return e[1].name===val;});
       if(proj) c.classList.toggle('active',overviewProject instanceof Set&&overviewProject.has(proj[0]));
     }
   });
   renderOverview();
 }
 
-// === OVERVIEW RENDER ===
 function renderOverview(){
-  const m=getMonth(),y=getYear();
-  document.getElementById('overviewSub').textContent=`${MONTHS_SV[m]} ${y}`;
-  let projects=ALL_PROJECTS;
+  var m=getMonth(),y=getYear();
+  document.getElementById('overviewSub').textContent=MONTHS_SV[m]+' '+y;
+  var projects=ALL_PROJECTS;
   if(overviewFilter==='d2d') projects=GROUP_D2D;
   if(overviewFilter==='tm') projects=GROUP_TM;
-  const singleProject=null;
-  const cardProjects=overviewProject instanceof Set?[...overviewProject]:projects;
+  var cardProjects=overviewProject instanceof Set?[...overviewProject]:projects;
 
-  const barColor=p=>p>=100?'#2d8a4e':'#f97c5a';
-  const MAL_COLOR='#999';
+  var barColor=function(p){return p>=100?'#2d8a4e':'#f97c5a';};
+  var MAL_COLOR='#999';
 
-  // === SUMMARY CARD (aggregera alla synliga projekt) ===
-  let sumTotalProd=0,sumMalProd=0,sumTotalMansdag=0,sumMalMansdag=0,sumTotalTimmar=0,sumMalTimmar=0,sumWorkDays=0;
-  let sumMalSnitt=0,sumMalSnittCount=0;
-  const allSparkU=[],allSparkM=[];
-  const days=new Date(y,m+1,0).getDate();
+  var sumTotalProd=0,sumMalProd=0,sumTotalMansdag=0,sumMalMansdag=0,sumTotalTimmar=0,sumMalTimmar=0,sumWorkDays=0;
+  var sumMalSnitt=0,sumMalSnittCount=0;
+  var days=new Date(y,m+1,0).getDate();
+  var sparkLen=0;
+  for(var i=1;i<=days;i++){var dd=new Date(y,m,i);if(dd.getDay()!==0&&dd.getDay()!==6) sparkLen++;}
+  var allSparkU=[],allSparkM=[];
+  for(var i2=0;i2<sparkLen;i2++){allSparkU.push(0);allSparkM.push(0);}
 
-  // init spark arrays
-  let sparkLen=0;
-  for(let i=1;i<=days;i++){const d=new Date(y,m,i);if(d.getDay()!==0&&d.getDay()!==6) sparkLen++;}
-  for(let i=0;i<sparkLen;i++){allSparkU.push(0);allSparkM.push(0);}
-
-  cardProjects.forEach(proj=>{
-    const {uData,mData}=getProjectData(proj);
-    const uRows=Object.values(uData).map(r=>normalizeRow(r,'utfall'));
-    const mRows=Object.values(mData);
-    const mRowsNorm=mRows.map(r=>normalizeRow(r,'mal'));
-    sumTotalProd+=uRows.reduce((s,r)=>{const v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0);},0);
-    sumMalProd+=mRows.reduce((s,r)=>s+getProjectMalProd(proj,r),0);
-    sumTotalMansdag+=uRows.reduce((s,r)=>{const v=findVal(r,'Antal Mansdagar')??0;return s+(typeof v==='number'?v:0);},0);
-    sumMalMansdag+=mRowsNorm.reduce((s,r)=>{const v=findVal(r,'Mål säljare')??0;return s+(typeof v==='number'?v:0);},0);
-    sumTotalTimmar+=uRows.reduce((s,r)=>{const v=findVal(r,'Timmar')??0;return s+(typeof v==='number'?v:0);},0);
-    sumMalTimmar+=mRowsNorm.reduce((s,r)=>{const v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0);},0);
-    sumWorkDays=Math.max(sumWorkDays,uRows.filter(r=>(findVal(r,'Antal Mansdagar')??0)>0).length);
-    mRowsNorm.forEach(r=>{const v=findVal(r,'Mål snitt')??0;if(typeof v==='number'&&v>0){sumMalSnitt+=v;sumMalSnittCount++;}});
-
-    // Accumulate sparklines
-    let si=0;
-    for(let i=1;i<=days;i++){
-      const d=new Date(y,m,i);if(d.getDay()===0||d.getDay()===6) continue;
-      const dk=toDateKey(y,m,i),ur=normalizeRow(uData[dk]||{},'utfall');
+  cardProjects.forEach(function(proj){
+    var pd=getProjectData(proj);
+    var uRows=Object.values(pd.uData).map(function(r){return normalizeRow(r,'utfall');});
+    var mRows=Object.values(pd.mData);
+    var mRowsNorm=mRows.map(function(r){return normalizeRow(r,'mal');});
+    sumTotalProd+=uRows.reduce(function(s,r){var v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0);},0);
+    sumMalProd+=mRows.reduce(function(s,r){return s+getProjectMalProd(proj,r);},0);
+    sumTotalMansdag+=uRows.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??0;return s+(typeof v==='number'?v:0);},0);
+    sumMalMansdag+=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål säljare')??0;return s+(typeof v==='number'?v:0);},0);
+    sumTotalTimmar+=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??0;return s+(typeof v==='number'?v:0);},0);
+    sumMalTimmar+=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0);},0);
+    sumWorkDays=Math.max(sumWorkDays,uRows.filter(function(r){return (findVal(r,'Antal Mansdagar')??0)>0;}).length);
+    mRowsNorm.forEach(function(r){var v=findVal(r,'Mål snitt')??0;if(typeof v==='number'&&v>0){sumMalSnitt+=v;sumMalSnittCount++;}});
+    var si=0;
+    for(var i3=1;i3<=days;i3++){
+      var d3=new Date(y,m,i3);if(d3.getDay()===0||d3.getDay()===6) continue;
+      var dk=toDateKey(y,m,i3),ur=normalizeRow(pd.uData[dk]||{},'utfall');
       allSparkU[si]+=(findVal(ur,'Produkt')??0);
-      allSparkM[si]+=getProjectMalProd(proj,mData[dk]||{});
+      allSparkM[si]+=getProjectMalProd(proj,pd.mData[dk]||{});
       si++;
     }
   });
 
-  const sumProdPct=sumMalProd>0?Math.round(sumTotalProd/sumMalProd*100):0;
-  const sumAvgProd=sumWorkDays>0?fmt2(sumTotalProd/sumWorkDays):0;
-  const sumMalAvgSnitt=sumMalSnittCount>0?fmt2(sumMalSnitt/sumMalSnittCount):0;
-  const sumSnittPerTimme=sumTotalTimmar>0?fmt2(sumTotalProd/sumTotalTimmar):0;
-  const sumAvgSellers=sumWorkDays>0?fmt2(sumTotalMansdag/sumWorkDays):0;
+  var sumProdPct=sumMalProd>0?Math.round(sumTotalProd/sumMalProd*100):0;
+  var sumAvgProd=sumWorkDays>0?fmt2(sumTotalProd/sumWorkDays):0;
+  var sumMalAvgSnitt=sumMalSnittCount>0?fmt2(sumMalSnitt/sumMalSnittCount):0;
+  var sumSnittPerTimme=sumTotalTimmar>0?fmt2(sumTotalProd/sumTotalTimmar):0;
+  var sumAvgSellers=sumWorkDays>0?fmt2(sumTotalMansdag/sumWorkDays):0;
 
-  // Takt
-  const sumMalDaysTotal=sumMalMansdag>0?(() => {
-    let maxDays=0;
-    cardProjects.forEach(proj=>{
-      const {mData}=getProjectData(proj);
-      const mRowsNorm=Object.values(mData).map(r=>normalizeRow(r,'mal'));
-      const d=mRowsNorm.filter(r=>{const v=findVal(r,'Mål säljare')??0;return typeof v==='number'&&v>0;}).length;
-      maxDays=Math.max(maxDays,d);
+  var sumMalDaysTotal=0;
+  if(sumMalMansdag>0){
+    cardProjects.forEach(function(proj){
+      var pd2=getProjectData(proj);
+      var mn=Object.values(pd2.mData).map(function(r){return normalizeRow(r,'mal');});
+      var dc=mn.filter(function(r){var v=findVal(r,'Mål säljare')??0;return typeof v==='number'&&v>0;}).length;
+      sumMalDaysTotal=Math.max(sumMalDaysTotal,dc);
     });
-    return maxDays;
-  })():0;
-  let taktHtml='';
+  }
+  var taktHtml='';
   if(sumWorkDays>0&&sumMalProd>0&&sumMalDaysTotal>0){
-    const expected=sumMalProd*(sumWorkDays/sumMalDaysTotal),diff=sumTotalProd-expected,diffPct=Math.round((diff/expected)*100);
-    taktHtml=diff>=0?`<div style="font-size:11px;margin-top:4px;"><span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+${Math.round(diff)} / +${diffPct}%)</span></div>`:`<div style="font-size:11px;margin-top:4px;"><span style="color:#c0392b;font-weight:600;">▼ Off track</span> <span style="color:#666;">(${Math.round(diff)} / ${diffPct}%)</span></div>`;
+    var expected=sumMalProd*(sumWorkDays/sumMalDaysTotal),diff=sumTotalProd-expected,diffPct=Math.round((diff/expected)*100);
+    if(diff>=0) taktHtml='<div style="font-size:11px;margin-top:4px;"><span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+'+Math.round(diff)+' / +'+diffPct+'%)</span></div>';
+    else taktHtml='<div style="font-size:11px;margin-top:4px;"><span style="color:#c0392b;font-weight:600;">▼ Off track</span> <span style="color:#666;">('+Math.round(diff)+' / '+diffPct+'%)</span></div>';
   }
 
-  // Sparkline
-  const maxSpark=Math.max(...allSparkU,...allSparkM,1);
-  const W=900,H=52,n=allSparkU.length;
-  const px=i=>n>1?(i/(n-1))*W:W/2;
-  const py=v=>H-(v/maxSpark)*(H-4)-2;
-  const malPath=allSparkM.map((v,i)=>`${i===0?'M':'L'}${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
-  const utfPath=allSparkU.map((v,i)=>`${i===0?'M':'L'}${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
-  const lineColor=sumProdPct>=100?'#2d8a4e':'#f97c5a';
+  var maxSpark=Math.max.apply(null,allSparkU.concat(allSparkM).concat([1]));
+  var W=900,H=52,n=allSparkU.length;
+  var px=function(i){return n>1?(i/(n-1))*W:W/2;};
+  var py=function(v){return H-(v/maxSpark)*(H-4)-2;};
+  var malPath=allSparkM.map(function(v,i){return (i===0?'M':'L')+px(i).toFixed(1)+','+py(v).toFixed(1);}).join(' ');
+  var utfPath=allSparkU.map(function(v,i){return (i===0?'M':'L')+px(i).toFixed(1)+','+py(v).toFixed(1);}).join(' ');
+  var lineColor=sumProdPct>=100?'#2d8a4e':'#f97c5a';
 
-  const filterLabel=overviewProject instanceof Set&&overviewProject.size>0?[...overviewProject].map(p=>PROJECT_META[p]?.name||p).join(' + '):overviewFilter==='d2d'?'D2D':overviewFilter==='tm'?'TM':'Alla projekt';
+  var filterLabel;
+  if(overviewProject instanceof Set&&overviewProject.size>0) filterLabel=[...overviewProject].map(function(p){return PROJECT_META[p]?PROJECT_META[p].name:p;}).join(' + ');
+  else if(overviewFilter==='d2d') filterLabel='D2D';
+  else if(overviewFilter==='tm') filterLabel='TM';
+  else filterLabel='Alla projekt';
 
-  const summaryHtml=`<div class="summary-card">
-    <div class="sc-block">
-      <div class="sc-label">Produkter totalt</div>
-      <div class="sc-value">${sumTotalProd}</div>
-      <div class="sc-meta">Mål: ${sumMalProd>0?sumMalProd:'—'}</div>
-      <div class="sc-badge ${sumProdPct>=100?'badge-green':sumMalProd>0?'badge-red':'badge-neutral'}">${sumMalProd>0?sumProdPct+'% av mål':'Mål saknas'}</div>
-      ${taktHtml}
-    </div>
-    <div class="sc-block">
-      <div class="sc-label">Snitt per dag</div>
-      <div class="sc-value">${sumAvgProd}</div>
-      <div class="sc-meta">Mål snitt: ${sumMalAvgSnitt>0?sumMalAvgSnitt:'—'}</div>
-    </div>
-    <div class="sc-block">
-      <div class="sc-label">Snitt per timme</div>
-      <div class="sc-value">${sumSnittPerTimme}</div>
-      <div class="sc-meta">Totalt ${fmt2(sumTotalTimmar)} timmar</div>
-    </div>
-    <div class="sc-block">
-      <div class="sc-label">Säljare per dag (snitt)</div>
-      <div class="sc-value">${sumAvgSellers}</div>
-      <div class="sc-meta">Totalt ${sumTotalMansdag} mansdagar</div>
-    </div>
-    <div class="sc-spark">
-      <div class="sc-spark-label">${filterLabel} – daglig produkt, utfall vs mål</div>
-      <svg width="100%" height="${H}" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="overflow:visible">
-        ${sumMalProd>0?`<path d="${malPath}" fill="none" stroke="${MAL_COLOR}" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/>`:''}<path d="${utfPath}" fill="none" stroke="${lineColor}" stroke-width="2"/>
-      </svg>
-      <div style="display:flex;gap:12px;margin-top:5px;font-size:10px;color:#999;">
-        <span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:${lineColor};border-radius:2px"></span>Utfall</span>
-        ${sumMalProd>0?`<span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:0;border-top:2px dashed ${MAL_COLOR}"></span>Mål</span>`:''}
-      </div>
-    </div>
-  </div>`;
-
+  var summaryHtml='<div class="summary-card"><div class="sc-block"><div class="sc-label">Produkter totalt</div><div class="sc-value">'+sumTotalProd+'</div><div class="sc-meta">Mål: '+(sumMalProd>0?sumMalProd:'—')+'</div><div class="sc-badge '+(sumProdPct>=100?'badge-green':sumMalProd>0?'badge-red':'badge-neutral')+'">'+(sumMalProd>0?sumProdPct+'% av mål':'Mål saknas')+'</div>'+taktHtml+'</div><div class="sc-block"><div class="sc-label">Snitt per dag</div><div class="sc-value">'+sumAvgProd+'</div><div class="sc-meta">Mål snitt: '+(sumMalAvgSnitt>0?sumMalAvgSnitt:'—')+'</div></div><div class="sc-block"><div class="sc-label">Snitt per timme</div><div class="sc-value">'+sumSnittPerTimme+'</div><div class="sc-meta">Totalt '+fmt2(sumTotalTimmar)+' timmar</div></div><div class="sc-block"><div class="sc-label">Säljare per dag (snitt)</div><div class="sc-value">'+sumAvgSellers+'</div><div class="sc-meta">Totalt '+sumTotalMansdag+' mansdagar</div></div><div class="sc-spark"><div class="sc-spark-label">'+filterLabel+' – daglig produkt, utfall vs mål</div><svg width="100%" height="'+H+'" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" style="overflow:visible">'+(sumMalProd>0?'<path d="'+malPath+'" fill="none" stroke="'+MAL_COLOR+'" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/>':'')+'<path d="'+utfPath+'" fill="none" stroke="'+lineColor+'" stroke-width="2"/></svg><div style="display:flex;gap:12px;margin-top:5px;font-size:10px;color:#999;"><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:'+lineColor+';border-radius:2px"></span>Utfall</span>'+(sumMalProd>0?'<span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:0;border-top:2px dashed '+MAL_COLOR+'"></span>Mål</span>':'')+'</div></div></div>';
   document.getElementById('overviewSummaryCard').innerHTML=summaryHtml;
 
-  // === PROJECT CARDS ===
-  const sorted=cardProjects.map(proj=>{
-    const {uData,mData}=getProjectData(proj);
-    const uRows=Object.values(uData).map(r=>normalizeRow(r,'utfall'));
-    const mRows=Object.values(mData);
-    const totalProd=uRows.reduce((s,r)=>{const v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0);},0);
-    const malProd=mRows.reduce((s,r)=>s+getProjectMalProd(proj,r),0);
-    return {proj,totalProd,malProd,pct:malProd>0?Math.round(totalProd/malProd*100):0,hasMal:malProd>0,uData,mData,uRows,mRows};
-  }).sort((a,b)=>b.pct-a.pct);
+  if(overviewProject instanceof Set&&overviewProject.size===1){
+    document.getElementById('overviewGrid').innerHTML='';
+    return;
+  }
 
-  const cards=sorted.map(({proj,totalProd,malProd,pct:prodPct,hasMal:projHasMal,uData,mData,uRows,mRows})=>{
-    const name=PROJECT_META[proj]?.name||proj;
-    const useMansdag=MANSDAG_PROJECTS.has(proj);
-    const mRowsNorm=mRows.map(r=>normalizeRow(r,'mal'));
+  var sorted=cardProjects.map(function(proj){
+    var pd=getProjectData(proj);
+    var uRows=Object.values(pd.uData).map(function(r){return normalizeRow(r,'utfall');});
+    var mRows=Object.values(pd.mData);
+    var totalProd=uRows.reduce(function(s,r){var v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0);},0);
+    var malProd=mRows.reduce(function(s,r){return s+getProjectMalProd(proj,r);},0);
+    return {proj:proj,totalProd:totalProd,malProd:malProd,pct:malProd>0?Math.round(totalProd/malProd*100):0,hasMal:malProd>0,uData:pd.uData,mData:pd.mData,uRows:uRows,mRows:mRows};
+  }).sort(function(a,b){return b.pct-a.pct;});
 
-    const totalMansdag=uRows.reduce((s,r)=>{const v=findVal(r,'Antal Mansdagar')??0;return s+(typeof v==='number'?v:0);},0);
-    const malMansdag=mRowsNorm.reduce((s,r)=>{const v=findVal(r,'Mål säljare')??0;return s+(typeof v==='number'?v:0);},0);
-    const totalTimmar=uRows.reduce((s,r)=>{const v=findVal(r,'Timmar')??0;return s+(typeof v==='number'?v:0);},0);
-    const malTimmar=mRowsNorm.reduce((s,r)=>{const v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0);},0);
-    const workDays=uRows.filter(r=>(findVal(r,'Antal Mansdagar')??0)>0).length;
-    const avgSellers=workDays>0?fmt2(totalMansdag/workDays):0;
-    const snittpMansdag=useMansdag?(totalMansdag>0?fmt2(totalProd/totalMansdag):0):(totalTimmar>0?fmt2(totalProd/totalTimmar):0);
-    const malSnittSum=mRowsNorm.reduce((s,r)=>{const v=findVal(r,'Mål snitt')??0;return s+(typeof v==='number'?v:0);},0);
-    const malSnittDays=mRowsNorm.filter(r=>(findVal(r,'Mål snitt')??0)>0).length;
-    const malSnitt=malSnittDays>0?fmt2(malSnittSum/malSnittDays):0;
-
-    const secondPct=useMansdag?(malMansdag>0?Math.round(totalMansdag/malMansdag*100):0):(malTimmar>0?Math.round(totalTimmar/malTimmar*100):0);
-    const snittpMalPct=malSnitt>0?Math.round(snittpMansdag/malSnitt*100):0;
-    const secondLabel=useMansdag?'Mansdagar':'Timmar';
-    const secondUtfall=useMansdag?totalMansdag:fmt2(totalTimmar);
-    const secondMal=useMansdag?malMansdag:fmt2(malTimmar);
-    const snittLabel=useMansdag?'Snitt per mansdag':'Snitt per timme';
-
-    const badgeHtml=!projHasMal?`<span class="compare-badge badge-neutral">Mål saknas</span>`:`<span class="compare-badge ${prodPct>=100?'badge-green':'badge-neutral'}">${prodPct}% av mål</span>`;
-
-    const prodMetric=!projHasMal
-      ?`<div class="compare-metric"><div class="compare-metric-label">Produkter <span>${totalProd}</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>`
-      :`<div class="compare-metric"><div class="compare-metric-label">Produkter <span>${totalProd} / ${malProd}</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.min(prodPct,100)}%;background:${barColor(prodPct)}"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">${prodPct}% av mål</div></div>`;
-
-    const hasSecondMal=useMansdag?malMansdag>0:malTimmar>0;
-    const secondMetric=!hasSecondMal
-      ?`<div class="compare-metric"><div class="compare-metric-label">${secondLabel} <span>${secondUtfall}</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>`
-      :`<div class="compare-metric"><div class="compare-metric-label">${secondLabel} <span>${secondUtfall} / ${secondMal}</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.min(secondPct,100)}%;background:${barColor(secondPct)}"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">${secondPct}% av mål</div></div>`;
-
-    const snittMetric=malSnitt<=0
-      ?`<div class="compare-metric"><div class="compare-metric-label">${snittLabel} <span>${snittpMansdag}</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas · ${avgSellers} säljare/dag</div></div>`
-      :`<div class="compare-metric"><div class="compare-metric-label">${snittLabel} <span>${snittpMansdag} / ${malSnitt}</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.min(snittpMalPct,100)}%;background:${barColor(snittpMalPct)}"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">${snittpMalPct}% av mål · ${avgSellers} säljare/dag</div></div>`;
-
-    // Sparkline
-    const days=new Date(y,m+1,0).getDate();
-    let sparkP=[],malP=[];
-    for(let i=1;i<=days;i++){
-      const d=new Date(y,m,i); if(d.getDay()===0||d.getDay()===6) continue;
-      const dk=toDateKey(y,m,i), ur=normalizeRow(uData[dk]||{},'utfall');
-      sparkP.push(fmt2(findVal(ur,'Produkt')??0));
-      malP.push(getProjectMalProd(proj,mData[dk]||{}));
-    }
-    const maxVal=Math.max(...sparkP,...malP,1);
-    const W=560,H=44,n=sparkP.length;
-    const px=i=>n>1?(i/(n-1))*W:W/2;
-    const py=v=>H-(v/maxVal)*(H-4)-2;
-    const malPath=malP.map((v,i)=>`${i===0?'M':'L'}${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
-    const utfPath=sparkP.map((v,i)=>`${i===0?'M':'L'}${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
-    const lineColor=prodPct>=100?'#2d8a4e':'#f97c5a';
-
-    const sparkHtml=projHasMal?`<div class="sparkline"><div class="sparkline-label">Daglig produkt – utfall vs mål</div><svg width="100%" height="${H}" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="overflow:visible"><path d="${malPath}" fill="none" stroke="${MAL_COLOR}" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/><path d="${utfPath}" fill="none" stroke="${lineColor}" stroke-width="2"/></svg><div style="display:flex;gap:12px;margin-top:5px;font-size:10px;color:#999;"><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:${lineColor};border-radius:2px"></span>Utfall</span><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:0;border-top:2px dashed ${MAL_COLOR}"></span>Mål</span></div></div>`:`<div class="sparkline"><div class="sparkline-label">Daglig produkt</div><svg width="100%" height="${H}" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="overflow:visible"><path d="${utfPath}" fill="none" stroke="#f97c5a" stroke-width="2"/></svg></div>`;
-
-    return `<div class="compare-card" onclick="switchToDaily('${proj}')">
-      <div class="compare-card-header"><span class="compare-card-title">${name}</span>${badgeHtml}</div>
-      ${prodMetric}${secondMetric}${snittMetric}${sparkHtml}
-    </div>`;
+  var cards=sorted.map(function(item){
+    var proj=item.proj,totalProd=item.totalProd,malProd=item.malProd,prodPct=item.pct,projHasMal=item.hasMal,uData=item.uData,mData=item.mData,uRows=item.uRows,mRows=item.mRows;
+    var name=PROJECT_META[proj]?PROJECT_META[proj].name:proj;
+    var useMansdag=MANSDAG_PROJECTS.has(proj);
+    var mRowsNorm=mRows.map(function(r){return normalizeRow(r,'mal');});
+    var totalMansdag=uRows.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??0;return s+(typeof v==='number'?v:0);},0);
+    var malMansdag=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål säljare')??0;return s+(typeof v==='number'?v:0);},0);
+    var totalTimmar=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??0;return s+(typeof v==='number'?v:0);},0);
+    var malTimmar=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0);},0);
+    var workDays=uRows.filter(function(r){return (findVal(r,'Antal Mansdagar')??0)>0;}).length;
+    var avgSellers=workDays>0?fmt2(totalMansdag/workDays):0;
+    var snittpMansdag=useMansdag?(totalMansdag>0?fmt2(totalProd/totalMansdag):0):(totalTimmar>0?fmt2(totalProd/totalTimmar):0);
+    var malSnittSum=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål snitt')??0;return s+(typeof v==='number'?v:0);},0);
+    var malSnittDays=mRowsNorm.filter(function(r){return (findVal(r,'Mål snitt')??0)>0;}).length;
+    var malSnitt=malSnittDays>0?fmt2(malSnittSum/malSnittDays):0;
+    var secondPct=useMansdag?(malMansdag>0?Math.round(totalMansdag/malMansdag*100):0):(malTimmar>0?Math.round(totalTimmar/malTimmar*100):0);
+    var snittpMalPct=malSnitt>0?Math.round(snittpMansdag/malSnitt*100):0;
+    var secondLabel=useMansdag?'Mansdagar':'Timmar';
+    var secondUtfall=useMansdag?totalMansdag:fmt2(totalTimmar);
+    var secondMal=useMansdag?malMansdag:fmt2(malTimmar);
+    var snittLabel=useMansdag?'Snitt per mansdag':'Snitt per timme';
+    var badgeHtml=!projHasMal?'<span class="compare-badge badge-neutral">Mål saknas</span>':'<span class="compare-badge '+(prodPct>=100?'badge-green':'badge-neutral')+'">'+prodPct+'% av mål</span>';
+    var prodMetric=!projHasMal?'<div class="compare-metric"><div class="compare-metric-label">Produkter <span>'+totalProd+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>':'<div class="compare-metric"><div class="compare-metric-label">Produkter <span>'+totalProd+' / '+malProd+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(prodPct,100)+'%;background:'+barColor(prodPct)+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+prodPct+'% av mål</div></div>';
+    var hasSecondMal=useMansdag?malMansdag>0:malTimmar>0;
+    var secondMetric=!hasSecondMal?'<div class="compare-metric"><div class="compare-metric-label">'+secondLabel+' <span>'+secondUtfall+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>':'<div class="compare-metric"><div class="compare-metric-label">'+secondLabel+' <span>'+secondUtfall+' / '+secondMal+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(secondPct,100)+'%;background:'+barColor(secondPct)+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+secondPct+'% av mål</div></div>';
+    var snittMetric=malSnitt<=0?'<div class="compare-metric"><div class="compare-metric-label">'+snittLabel+' <span>'+snittpMansdag+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas · '+avgSellers+' säljare/dag</div></div>':'<div class="compare-metric"><div class="compare-metric-label">'+snittLabel+' <span>'+snittpMansdag+' / '+malSnitt+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(snittpMalPct,100)+'%;background:'+barColor(snittpMalPct)+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+snittpMalPct+'% av mål · '+avgSellers+' säljare/dag</div></div>';
+    var cdays=new Date(y,m+1,0).getDate();
+    var sparkP=[],malP2=[];
+    for(var i4=1;i4<=cdays;i4++){var d4=new Date(y,m,i4);if(d4.getDay()===0||d4.getDay()===6) continue;var dk4=toDateKey(y,m,i4),ur4=normalizeRow(uData[dk4]||{},'utfall');sparkP.push(fmt2(findVal(ur4,'Produkt')??0));malP2.push(getProjectMalProd(proj,mData[dk4]||{}));}
+    var maxVal=Math.max.apply(null,sparkP.concat(malP2).concat([1]));
+    var cW=560,cH=44,cn=sparkP.length;
+    var cpx=function(i){return cn>1?(i/(cn-1))*cW:cW/2;};
+    var cpy=function(v){return cH-(v/maxVal)*(cH-4)-2;};
+    var cmalPath=malP2.map(function(v,i){return (i===0?'M':'L')+cpx(i).toFixed(1)+','+cpy(v).toFixed(1);}).join(' ');
+    var cutfPath=sparkP.map(function(v,i){return (i===0?'M':'L')+cpx(i).toFixed(1)+','+cpy(v).toFixed(1);}).join(' ');
+    var clineColor=prodPct>=100?'#2d8a4e':'#f97c5a';
+    var sparkHtml=projHasMal?'<div class="sparkline"><div class="sparkline-label">Daglig produkt – utfall vs mål</div><svg width="100%" height="'+cH+'" viewBox="0 0 '+cW+' '+cH+'" preserveAspectRatio="none" style="overflow:visible"><path d="'+cmalPath+'" fill="none" stroke="'+MAL_COLOR+'" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/><path d="'+cutfPath+'" fill="none" stroke="'+clineColor+'" stroke-width="2"/></svg><div style="display:flex;gap:12px;margin-top:5px;font-size:10px;color:#999;"><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:'+clineColor+';border-radius:2px"></span>Utfall</span><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:0;border-top:2px dashed '+MAL_COLOR+'"></span>Mål</span></div></div>':'<div class="sparkline"><div class="sparkline-label">Daglig produkt</div><svg width="100%" height="'+cH+'" viewBox="0 0 '+cW+' '+cH+'" preserveAspectRatio="none" style="overflow:visible"><path d="'+cutfPath+'" fill="none" stroke="#f97c5a" stroke-width="2"/></svg></div>';
+    return '<div class="compare-card" onclick="switchToDaily(\''+proj+'\')"><div class="compare-card-header"><span class="compare-card-title">'+name+'</span>'+badgeHtml+'</div>'+prodMetric+secondMetric+snittMetric+sparkHtml+'</div>';
   }).join('');
 
   document.getElementById('overviewGrid').innerHTML=cards;
 }
 
-// === DAILY VIEW ===
 function setDailyGroupFilter(g,el){
   dailyGroup=g;
-  document.querySelectorAll('#dailyGroupFilter .filter-pill').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('#dailyGroupFilter .filter-pill').forEach(function(p){p.classList.remove('active');});
   el.classList.add('active');
-  const projs=g==='d2d'?GROUP_D2D:GROUP_TM;
+  var projs=g==='d2d'?GROUP_D2D:g==='tm'?GROUP_TM:ALL_PROJECTS;
   dailyProject=new Set([projs[0]]);
   buildProjectChips();
+  updateDailyTabs();
   renderDaily();
 }
 
 function buildProjectChips(){
-  const projs=dailyGroup==='d2d'?GROUP_D2D:dailyGroup==='tm'?GROUP_TM:ALL_PROJECTS;
-  const allActive=projs.every(p=>dailyProject.has(p));
-  const sel=document.getElementById('dailyProjectSelector');
-  sel.innerHTML=`<button class="proj-chip ${allActive?'active':''}" onclick="selectDailyAll()">Alla</button>`+projs.map(p=>`<button class="proj-chip ${dailyProject.has(p)?'active':''}" onclick="selectDailyProject('${p}',this,event)">${PROJECT_META[p]?.name||p}</button>`).join('');
+  var projs=dailyGroup==='d2d'?GROUP_D2D:dailyGroup==='tm'?GROUP_TM:ALL_PROJECTS;
+  var showAll=(dailyGroup==='alla');
+  var allActive=projs.every(function(p){return dailyProject.has(p);});
+  var sel=document.getElementById('dailyProjectSelector');
+  var html='';
+  if(showAll) html+='<button class="proj-chip '+(allActive?'active':'')+'" onclick="selectDailyAll()">Alla</button>';
+  projs.forEach(function(p){
+    html+='<button class="proj-chip '+(dailyProject.has(p)?'active':'')+'" onclick="selectDailyProject(\''+p+'\',this,event)">'+PROJECT_META[p].name+'</button>';
+  });
+  sel.innerHTML=html;
 }
 
 function selectDailyAll(){
-  const projs=dailyGroup==='d2d'?GROUP_D2D:dailyGroup==='tm'?GROUP_TM:ALL_PROJECTS;
+  var projs=dailyGroup==='d2d'?GROUP_D2D:dailyGroup==='tm'?GROUP_TM:ALL_PROJECTS;
   dailyProject=new Set(projs);
   buildProjectChips();
   updateDailyTabs();
@@ -817,7 +732,6 @@ function selectDailyAll(){
 }
 
 function selectDailyProject(p,el,ev){
-  const wasSingle=dailyProject.size<=1;
   if(ev&&(ev.ctrlKey||ev.metaKey)){
     if(dailyProject.has(p)) dailyProject.delete(p);
     else dailyProject.add(p);
@@ -826,13 +740,13 @@ function selectDailyProject(p,el,ev){
     if(dailyProject.size===1&&dailyProject.has(p)) return;
     dailyProject=new Set([p]);
   }
-  document.querySelectorAll('#dailyProjectSelector .proj-chip').forEach(c=>{
-    const val=c.textContent;
+  document.querySelectorAll('#dailyProjectSelector .proj-chip').forEach(function(c){
+    var val=c.textContent;
     if(val==='Alla'){
-      const projs=dailyGroup==='d2d'?GROUP_D2D:dailyGroup==='tm'?GROUP_TM:ALL_PROJECTS;
-      c.classList.toggle('active',projs.every(p=>dailyProject.has(p)));
+      var projs=dailyGroup==='d2d'?GROUP_D2D:dailyGroup==='tm'?GROUP_TM:ALL_PROJECTS;
+      c.classList.toggle('active',projs.every(function(pp){return dailyProject.has(pp);}));
     } else {
-      const proj=Object.entries(PROJECT_META).find(([k,v])=>v.name===val);
+      var proj=Object.entries(PROJECT_META).find(function(e){return e[1].name===val;});
       if(proj) c.classList.toggle('active',dailyProject.has(proj[0]));
     }
   });
@@ -841,168 +755,175 @@ function selectDailyProject(p,el,ev){
 }
 
 function updateDailyTabs(){
-  const multi=dailyProject.size>1;
-  const tabs=document.getElementById('dailyViewTabs');
-  const fullTab=tabs.querySelector('[data-view="full"]');
-  const compactTab=tabs.querySelector('[data-view="compact"]');
-  const compareTab=tabs.querySelector('[data-view="compare"]');
-
+  var multi=dailyProject.size>1;
+  var tabs=document.getElementById('dailyViewTabs');
+  var fullTab=tabs.querySelector('[data-view="full"]');
+  var compareTab=tabs.querySelector('[data-view="compare"]');
   if(multi){
     fullTab.style.display='none';
     compareTab.style.display='';
-    // Om vi var på full, byt till compact
     if(dailyView==='full') dailyView='compact';
   } else {
     fullTab.style.display='';
     compareTab.style.display='none';
-    // Om vi var på compare, byt till full
     if(dailyView==='compare') dailyView='full';
   }
-  tabs.querySelectorAll('.view-tab').forEach(t=>{
+  tabs.querySelectorAll('.view-tab').forEach(function(t){
     t.classList.toggle('active',t.dataset.view===dailyView);
   });
 }
 
 function setDailyView(v,el){
   dailyView=v;
-  document.querySelectorAll('.view-tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.view-tab').forEach(function(t){t.classList.remove('active');});
   el.classList.add('active');
   renderDaily();
 }
 
-function renderDaily(){
-  const m=getMonth(),y=getYear();
-  const days=new Date(y,m+1,0).getDate();
-  const multi=dailyProject.size>1;
-  const activeProjArr=[...dailyProject];
-  const firstProj=activeProjArr[0];
+function mergeDailyData(projArr){
+  var uMerged={},mMerged={};
+  projArr.forEach(function(proj){
+    var pd=getProjectData(proj);
+    for(var [dk,row] of Object.entries(pd.uData)){
+      if(!uMerged[dk]) uMerged[dk]={};
+      var nr=normalizeRow(row,'utfall');
+      for(var [k,v] of Object.entries(nr)){ if(typeof v==='number') uMerged[dk][k]=(uMerged[dk][k]||0)+v; else if(!uMerged[dk][k]) uMerged[dk][k]=v; }
+    }
+    for(var [dk2,row2] of Object.entries(pd.mData)){
+      if(!mMerged[dk2]) mMerged[dk2]={};
+      var nr2=normalizeRow(row2,'mal');
+      for(var [k2,v2] of Object.entries(nr2)){ if(typeof v2==='number') mMerged[dk2][k2]=(mMerged[dk2][k2]||0)+v2; else if(!mMerged[dk2][k2]) mMerged[dk2][k2]=v2; }
+    }
+  });
+  return {uMerged:uMerged,mMerged:mMerged};
+}
 
-  // Compare view
+function renderDaily(){
+  var m=getMonth(),y=getYear();
+  var days=new Date(y,m+1,0).getDate();
+  var multi=dailyProject.size>1;
+  var activeProjArr=[...dailyProject];
+  var firstProj=activeProjArr[0];
+
   if(dailyView==='compare'&&multi){
     document.getElementById('tableWrap').style.display='none';
     document.getElementById('dailyCompareWrap').style.display='block';
     renderDailyCompare(activeProjArr);
-    // Still update stat cards with merged data
-    const {uMerged,mMerged}=mergeDailyData(activeProjArr);
-    updateStatCards(uMerged,mMerged);
+    var merged=mergeDailyData(activeProjArr);
+    updateStatCards(merged.uMerged,merged.mMerged);
     return;
   }
 
   document.getElementById('tableWrap').style.display='';
   document.getElementById('dailyCompareWrap').style.display='none';
 
-  const cols=multi?COMPACT_COLS:(dailyView==='compact'?COMPACT_COLS:(PROJECT_COLS[firstProj]||COMPACT_COLS));
-
-  let uData,mData;
+  var cols=multi?COMPACT_COLS:(dailyView==='compact'?COMPACT_COLS:(PROJECT_COLS[firstProj]||COMPACT_COLS));
+  var uData,mData;
   if(multi){
-    const merged=mergeDailyData(activeProjArr);
-    uData=merged.uMerged; mData=merged.mMerged;
+    var mg=mergeDailyData(activeProjArr);
+    uData=mg.uMerged; mData=mg.mMerged;
   } else {
-    const pd=getProjectData(firstProj);
+    var pd=getProjectData(firstProj);
     uData=pd.uData; mData=pd.mData;
   }
 
-  const e=`<span class="empty-cell">—</span>`;
-  const curProj=firstProj; // for dynamic goal resolution
-
-  // Temporarily set reference for resolveDynGoal
-  const savedDaily=_dailyRef;
+  var e='<span class="empty-cell">—</span>';
+  var savedDaily=_dailyRef;
   _dailyRef=multi?null:firstProj;
 
-  document.getElementById('tableHead').innerHTML='<tr>'+cols.map(c=>`<th class="${c.goalKey?'goal-col':''}">${c.label}</th>`).join('')+'</tr>';
+  document.getElementById('tableHead').innerHTML='<tr>'+cols.map(function(c){return '<th class="'+(c.goalKey?'goal-col':'')+'">'+c.label+'</th>';}).join('')+'</tr>';
 
-  let lastDataDay=0;
-  for(let i=1;i<=days;i++){
-    const dk=toDateKey(y,m,i), uRow=uData[dk]||{};
-    const hasProd=findVal(uRow,'Produkt')??findVal(uRow,'produkt')??null;
-    const hasSaljare=findVal(uRow,'Antal Mansdagar')??findVal(uRow,'Antal Säljare')??null;
+  var lastDataDay=0;
+  for(var i=1;i<=days;i++){
+    var dk=toDateKey(y,m,i), uRow=uData[dk]||{};
+    var hasProd=findVal(uRow,'Produkt')??findVal(uRow,'produkt')??null;
+    var hasSaljare=findVal(uRow,'Antal Mansdagar')??findVal(uRow,'Antal Säljare')??null;
     if((typeof hasProd==='number'&&hasProd>0)||(typeof hasSaljare==='number'&&hasSaljare>0)) lastDataDay=i;
   }
 
-  let rows='';
-  for(let i=1;i<=days;i++){
-    const d=new Date(y,m,i), dayName=DAYS_SV[d.getDay()], weekend=isWeekend(d);
-    const dateKey=toDateKey(y,m,i), uRow=uData[dateKey]||{}, mRow=mData[dateKey]||{};
-    const hasUtfall=Object.keys(uRow).length>0, hasMal=Object.keys(mRow).length>0;
-    const malSaljare=findVal(mRow,'Mål säljare')||findVal(mRow,'Mål mansdagar')||0;
-    const malTimmar=findVal(mRow,'Mål timmar')||0;
-    const isNonWorkingDay=hasMal&&malSaljare===0&&malTimmar===0;
-    const dateStr=`${i} ${MONTHS_SV[m].substring(0,3).toLowerCase()}`;
-    const isLastData=i===lastDataDay;
-    const cls=isLastData?'last-data':(weekend||isNonWorkingDay)?'weekend':'';
-    const dayLabel=isLastData?`<span class="day-badge">senast</span>${dayName}`:dayName;
+  var rows='';
+  for(var i2=1;i2<=days;i2++){
+    var d=new Date(y,m,i2), dayName=DAYS_SV[d.getDay()], weekend=isWeekend(d);
+    var dateKey=toDateKey(y,m,i2), uRow2=uData[dateKey]||{}, mRow=mData[dateKey]||{};
+    var hasUtfall=Object.keys(uRow2).length>0, hasMal=Object.keys(mRow).length>0;
+    var malSaljare=findVal(mRow,'Mål säljare')||findVal(mRow,'Mål mansdagar')||0;
+    var malTimmar=findVal(mRow,'Mål timmar')||0;
+    var isNonWorkingDay=hasMal&&malSaljare===0&&malTimmar===0;
+    var dateStr=i2+' '+MONTHS_SV[m].substring(0,3).toLowerCase();
+    var isLastData=i2===lastDataDay;
+    var cls=isLastData?'last-data':(weekend||isNonWorkingDay)?'weekend':'';
+    var dayLabel=isLastData?'<span class="day-badge">senast</span>'+dayName:dayName;
 
-    const cells=cols.map((c,idx)=>{
-      if(idx===0) return `<td>${dayLabel}</td>`;
-      if(idx===1) return `<td>${dateStr}</td>`;
-      if(weekend||isNonWorkingDay) return `<td>${e}</td>`;
+    var cells=cols.map(function(c,idx){
+      if(idx===0) return '<td>'+dayLabel+'</td>';
+      if(idx===1) return '<td>'+dateStr+'</td>';
+      if(weekend||isNonWorkingDay) return '<td>'+e+'</td>';
       if(c.goalKey){
-        const gv=hasMal?resolveDynGoal(c.goalKey,mRow):null;
-        return `<td class="goal goal-col">${typeof gv==='number'?fmt2(gv):'—'}</td>`;
+        var gv=hasMal?resolveDynGoal(c.goalKey,mRow):null;
+        return '<td class="goal goal-col">'+(typeof gv==='number'?fmt2(gv):'—')+'</td>';
       }
       if(c.key){
-        const isSnitt=c.key.toLowerCase()==='snitt';
-        const isProd=c.key==='Produkt';
-        const isSaljare=c.key==='__utfall_saljare__';
-        let uv;
-        if(isSnitt) uv=hasUtfall?calcSnitt(firstProj,uRow):null;
-        else if(isProd&&(dailyView==='compact'||multi)) uv=hasUtfall?getCompactProd(firstProj,uRow):null;
-        else if(isSaljare) uv=hasUtfall?(findVal(uRow,'Antal Mansdagar')??findVal(uRow,'Antal Säljare')??null):null;
-        else uv=hasUtfall?findVal(uRow,c.key):null;
-        const gk=findGoalKey(cols,c.key);
-        const gvRaw=hasMal&&gk?resolveDynGoal(gk,mRow):null;
-        const gv=typeof gvRaw==='number'?fmt2(gvRaw):gvRaw;
+        var isSnitt=c.key.toLowerCase()==='snitt';
+        var isProd=c.key==='Produkt';
+        var isSaljare=c.key==='__utfall_saljare__';
+        var uv;
+        if(isSnitt) uv=hasUtfall?calcSnitt(firstProj,uRow2):null;
+        else if(isProd&&(dailyView==='compact'||multi)) uv=hasUtfall?getCompactProd(firstProj,uRow2):null;
+        else if(isSaljare) uv=hasUtfall?(findVal(uRow2,'Antal Mansdagar')??findVal(uRow2,'Antal Säljare')??null):null;
+        else uv=hasUtfall?findVal(uRow2,c.key):null;
+        var gk=findGoalKey(cols,c.key);
+        var gvRaw=hasMal&&gk?resolveDynGoal(gk,mRow):null;
+        var gv2=typeof gvRaw==='number'?fmt2(gvRaw):gvRaw;
         if(uv!==null&&uv!==''){
-          let cls2='';
-          if(gv!==null&&typeof uv==='number'&&typeof gv==='number') cls2=uv>=gv?'above':'below';
-          return `<td${cls2?' class="'+cls2+'"':''}>${fmt2(uv)}</td>`;
+          var cls2='';
+          if(gv2!==null&&typeof uv==='number'&&typeof gv2==='number') cls2=uv>=gv2?'above':'below';
+          return '<td'+(cls2?' class="'+cls2+'"':'')+'>'+fmt2(uv)+'</td>';
         }
-        return `<td>—</td>`;
+        return '<td>—</td>';
       }
-      return `<td>—</td>`;
+      return '<td>—</td>';
     }).join('');
-    rows+=`<tr class="${cls}">${cells}</tr>`;
+    rows+='<tr class="'+cls+'">'+cells+'</tr>';
   }
 
-  // Summary row
-  const summaryCells=cols.map((c,idx)=>{
-    if(idx===0) return `<td>Summerat</td>`;
-    if(idx===1) return `<td></td>`;
+  var summaryCells=cols.map(function(c,idx){
+    if(idx===0) return '<td>Summerat</td>';
+    if(idx===1) return '<td></td>';
     if(c.goalKey){
-      const isSnittGoal=c.goalKey.toLowerCase().includes('snitt');
+      var isSnittGoal=c.goalKey.toLowerCase().indexOf('snitt')>=0;
       if(isSnittGoal){
-        let sum=0,count=0;
-        Object.values(mData).forEach(r=>{const v=resolveDynGoal(c.goalKey,r);if(typeof v==='number'&&v>0){sum+=v;count++;}});
-        return `<td class="goal goal-col">${count>0?fmt2(sum/count):'—'}</td>`;
+        var sum=0,count=0;
+        Object.values(mData).forEach(function(r){var v=resolveDynGoal(c.goalKey,r);if(typeof v==='number'&&v>0){sum+=v;count++;}});
+        return '<td class="goal goal-col">'+(count>0?fmt2(sum/count):'—')+'</td>';
       }
-      let sum=0;
-      Object.values(mData).forEach(r=>{const v=resolveDynGoal(c.goalKey,r);if(typeof v==='number') sum+=v;});
-      return `<td class="goal goal-col">${sum>0?fmt2(sum):'—'}</td>`;
+      var sum2=0;
+      Object.values(mData).forEach(function(r){var v=resolveDynGoal(c.goalKey,r);if(typeof v==='number') sum2+=v;});
+      return '<td class="goal goal-col">'+(sum2>0?fmt2(sum2):'—')+'</td>';
     }
     if(c.key){
       if(c.key.toLowerCase()==='snitt'){
-        const allR=Object.values(uData);
-        const totalP=allR.reduce((s,r)=>{const v=findVal(r,'Produkt')??findVal(r,'produkt')??0;return s+(typeof v==='number'?v:0);},0);
+        var allR=Object.values(uData);
+        var totalP=allR.reduce(function(s,r){var v=findVal(r,'Produkt')??findVal(r,'produkt')??0;return s+(typeof v==='number'?v:0);},0);
         if(SNITT_PER_TIMMAR.has(firstProj)){
-          const totalT=allR.reduce((s,r)=>{const v=findVal(r,'Timmar')??findVal(r,'timmar')??0;return s+(typeof v==='number'?v:0);},0);
-          return `<td>${totalT>0?fmt2(totalP/totalT):'—'}</td>`;
+          var totalT=allR.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??0;return s+(typeof v==='number'?v:0);},0);
+          return '<td>'+(totalT>0?fmt2(totalP/totalT):'—')+'</td>';
         } else {
-          const totalS=allR.reduce((s,r)=>{const v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;return s+(typeof v==='number'?v:0);},0);
-          return `<td>${totalS>0?fmt2(totalP/totalS):'—'}</td>`;
+          var totalS=allR.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;return s+(typeof v==='number'?v:0);},0);
+          return '<td>'+(totalS>0?fmt2(totalP/totalS):'—')+'</td>';
         }
       }
       if(c.key==='__utfall_saljare__'){
-        let sum=0;
-        Object.values(uData).forEach(r=>{const v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;if(typeof v==='number') sum+=v;});
-        return `<td>${sum>0?fmt2(sum):'—'}</td>`;
+        var sum3=0;
+        Object.values(uData).forEach(function(r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;if(typeof v==='number') sum3+=v;});
+        return '<td>'+(sum3>0?fmt2(sum3):'—')+'</td>';
       }
-      let sum=0;
-      Object.values(uData).forEach(r=>{const v=findVal(r,c.key);if(typeof v==='number') sum+=v;});
-      return `<td>${sum>0?fmt2(sum):'—'}</td>`;
+      var sum4=0;
+      Object.values(uData).forEach(function(r){var v=findVal(r,c.key);if(typeof v==='number') sum4+=v;});
+      return '<td>'+(sum4>0?fmt2(sum4):'—')+'</td>';
     }
-    return `<td>—</td>`;
+    return '<td>—</td>';
   }).join('');
-  rows+=`<tr class="summary-row">${summaryCells}</tr>`;
+  rows+='<tr class="summary-row">'+summaryCells+'</tr>';
 
   document.getElementById('tableBody').innerHTML=rows;
   _dailyRef=savedDaily;
@@ -1010,35 +931,34 @@ function renderDaily(){
 }
 
 function updateStatCards(uData,mData){
-  const uRows=Object.values(uData), mRows=Object.values(mData);
-  const firstProj=[...dailyProject][0];
-  const getProd=r=>findVal(r,'Produkt')??findVal(r,'produkt')??null;
-  const getMalProd=r=>{
-    const p=firstProj;
-    if(p==='mobil'||p==='fmc'){const h=findVal(r,'Mål Huvudabb')??0,ea=findVal(r,'Mål EA')??0;return (typeof h==='number'?h:0)+(typeof ea==='number'?ea:0)||null;}
-    if(p==='vip-leads'){const bb=findVal(r,'Mål BB')??0,mbh=findVal(r,'Mål MBH')??0;return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0)||null;}
-    if(p==='retention'||p==='mbh'){const v=findVal(r,'Mål BB');return typeof v==='number'?v:null;}
-    for(const k of ['Mål Sälj','Mål produkt','Mål Produkt','Mål sälj']){const v=findVal(r,k);if(typeof v==='number') return v;}
+  var uRows=Object.values(uData), mRows=Object.values(mData);
+  var firstProj=[...dailyProject][0];
+  var getProd=function(r){return findVal(r,'Produkt')??findVal(r,'produkt')??null;};
+  var getMalProd=function(r){
+    var p=firstProj;
+    if(p==='mobil'||p==='fmc'){var h=findVal(r,'Mål Huvudabb')??0,ea=findVal(r,'Mål EA')??0;return (typeof h==='number'?h:0)+(typeof ea==='number'?ea:0)||null;}
+    if(p==='vip-leads'){var bb=findVal(r,'Mål BB')??0,mbh=findVal(r,'Mål MBH')??0;return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0)||null;}
+    if(p==='retention'||p==='mbh'){var v=findVal(r,'Mål BB');return typeof v==='number'?v:null;}
+    for(var k of ['Mål Sälj','Mål produkt','Mål Produkt','Mål sälj']){var v2=findVal(r,k);if(typeof v2==='number') return v2;}
     return null;
   };
-  const totalProd=uRows.reduce((s,r)=>{const v=getProd(r);return s+(typeof v==='number'?v:0);},0);
-  const malProd=mRows.reduce((s,r)=>{const v=getMalProd(r);return s+(typeof v==='number'?v:0);},0);
-  const totalHours=uRows.reduce((s,r)=>{const v=findVal(r,'timmar')??findVal(r,'Utfall Timmar')??findVal(r,'Timmar')??0;return s+(typeof v==='number'?v:0);},0);
-  const workDays=uRows.filter(r=>{const v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;return typeof v==='number'&&v>0;}).length;
-  const totalSellers=uRows.reduce((s,r)=>{const v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;return s+(typeof v==='number'?v:0);},0);
+  var totalProd=uRows.reduce(function(s,r){var v=getProd(r);return s+(typeof v==='number'?v:0);},0);
+  var malProd=mRows.reduce(function(s,r){var v=getMalProd(r);return s+(typeof v==='number'?v:0);},0);
+  var totalHours=uRows.reduce(function(s,r){var v=findVal(r,'timmar')??findVal(r,'Utfall Timmar')??findVal(r,'Timmar')??0;return s+(typeof v==='number'?v:0);},0);
+  var workDays=uRows.filter(function(r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;return typeof v==='number'&&v>0;}).length;
+  var totalSellers=uRows.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;return s+(typeof v==='number'?v:0);},0);
+  var avgProd=workDays>0?fmt2(totalProd/workDays):0;
+  var malAvgProd=(function(){var s=0,c=0;mRows.forEach(function(r){var v=getMalProd(r);if(typeof v==='number'&&v>0){s+=v;c++;}});return c>0?fmt2(s/c):0;})();
+  var avgPerHour=totalHours>0?fmt2(totalProd/totalHours):0;
+  var malAvgPerHour=(function(){var s=0,c=0;mRows.forEach(function(r){var v=findVal(r,'Mål snitt')??findVal(r,'Mål snitt per mansdag')??null;if(typeof v==='number'&&v>0){s+=v;c++;}});return c>0?fmt2(s/c):0;})();
+  var avgSellers=workDays>0?fmt2(totalSellers/workDays):0;
+  var malAvgSellers=(function(){var s=0,c=0;mRows.forEach(function(r){var v=findVal(r,'Mål säljare')??findVal(r,'Mål mansdagar')??null;if(typeof v==='number'&&v>0){s+=v;c++;}});return c>0?fmt2(s/c):0;})();
 
-  const avgProd=workDays>0?fmt2(totalProd/workDays):0;
-  const malAvgProd=(()=>{let s=0,c=0;mRows.forEach(r=>{const v=getMalProd(r);if(typeof v==='number'&&v>0){s+=v;c++;}});return c>0?fmt2(s/c):0;})();
-  const avgPerHour=totalHours>0?fmt2(totalProd/totalHours):0;
-  const malAvgPerHour=(()=>{let s=0,c=0;mRows.forEach(r=>{const v=findVal(r,'Mål snitt')??findVal(r,'Mål snitt per mansdag')??null;if(typeof v==='number'&&v>0){s+=v;c++;}});return c>0?fmt2(s/c):0;})();
-  const avgSellers=workDays>0?fmt2(totalSellers/workDays):0;
-  const malAvgSellers=(()=>{let s=0,c=0;mRows.forEach(r=>{const v=findVal(r,'Mål säljare')??findVal(r,'Mål mansdagar')??null;if(typeof v==='number'&&v>0){s+=v;c++;}});return c>0?fmt2(s/c):0;})();
-
-  const setPct=(vEl,mEl,bEl,val,mal,suf='')=>{
-    document.getElementById(vEl).textContent=val>0?(fmt2(val)+suf):'—';
-    document.getElementById(mEl).textContent=`Mål: ${mal>0?(fmt2(mal)+suf):'—'}`;
-    const b=document.getElementById(bEl);
-    if(val>0&&mal>0){const pct=Math.round(val/mal*100);b.textContent=`${pct}% av mål`;b.className='stat-badge '+(pct>=100?'badge-green':'badge-red');}
+  var setPct=function(vEl,mEl,bEl,val,mal){
+    document.getElementById(vEl).textContent=val>0?fmt2(val):'—';
+    document.getElementById(mEl).textContent='Mål: '+(mal>0?fmt2(mal):'—');
+    var b=document.getElementById(bEl);
+    if(val>0&&mal>0){var pct=Math.round(val/mal*100);b.textContent=pct+'% av mål';b.className='stat-badge '+(pct>=100?'badge-green':'badge-red');}
     else{b.textContent='Ingen data';b.className='stat-badge badge-neutral';}
   };
   setPct('sc-prod','sc-prod-meta','sc-prod-badge',totalProd,malProd);
@@ -1046,116 +966,88 @@ function updateStatCards(uData,mData){
   setPct('sc-phtimme','sc-phtimme-meta','sc-phtimme-badge',avgPerHour,malAvgPerHour);
   setPct('sc-sellers','sc-sellers-meta','sc-sellers-badge',avgSellers,malAvgSellers);
 
-  // Takt
-  const taktEl=document.getElementById('sc-prod-takt');
+  var taktEl=document.getElementById('sc-prod-takt');
   if(taktEl){
-    const getMalSaljare=r=>findVal(r,'Mål säljare')??findVal(r,'Mål mansdagar')??null;
-    const malDaysTotal=mRows.filter(r=>{const v=getMalSaljare(r);return typeof v==='number'&&v>0;}).length;
+    var getMalSaljare=function(r){return findVal(r,'Mål säljare')??findVal(r,'Mål mansdagar')??null;};
+    var malDaysTotal=mRows.filter(function(r){var v=getMalSaljare(r);return typeof v==='number'&&v>0;}).length;
     if(workDays>0&&malProd>0&&malDaysTotal>0){
-      const expected=malProd*(workDays/malDaysTotal), diff=totalProd-expected, diffPct=Math.round((diff/expected)*100);
-      taktEl.innerHTML=diff>=0?`<span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+${Math.round(diff)} / +${diffPct}%)</span>`:`<span style="color:#c0392b;font-weight:600;">▼ Off track</span> <span style="color:#666;">(${Math.round(diff)} / ${diffPct}%)</span>`;
+      var expected=malProd*(workDays/malDaysTotal), diff=totalProd-expected, diffPct=Math.round((diff/expected)*100);
+      if(diff>=0) taktEl.innerHTML='<span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+'+Math.round(diff)+' / +'+diffPct+'%)</span>';
+      else taktEl.innerHTML='<span style="color:#c0392b;font-weight:600;">▼ Off track</span> <span style="color:#666;">('+Math.round(diff)+' / '+diffPct+'%)</span>';
     } else taktEl.innerHTML='';
   }
 }
 
-function mergeDailyData(projArr){
-  const uMerged={},mMerged={};
-  projArr.forEach(proj=>{
-    const pd=getProjectData(proj);
-    for(const [dk,row] of Object.entries(pd.uData)){
-      if(!uMerged[dk]) uMerged[dk]={};
-      const nr=normalizeRow(row,'utfall');
-      for(const [k,v] of Object.entries(nr)){ if(typeof v==='number') uMerged[dk][k]=(uMerged[dk][k]||0)+v; else if(!uMerged[dk][k]) uMerged[dk][k]=v; }
-    }
-    for(const [dk,row] of Object.entries(pd.mData)){
-      if(!mMerged[dk]) mMerged[dk]={};
-      const nr=normalizeRow(row,'mal');
-      for(const [k,v] of Object.entries(nr)){ if(typeof v==='number') mMerged[dk][k]=(mMerged[dk][k]||0)+v; else if(!mMerged[dk][k]) mMerged[dk][k]=v; }
-    }
-  });
-  return {uMerged,mMerged};
-}
-
 function renderDailyCompare(projArr){
-  const m=getMonth(),y=getYear(),days=new Date(y,m+1,0).getDate();
-  const barColor=p=>p>=100?'#2d8a4e':'#f97c5a';
-  const MAL_COLOR='#999';
-
-  const sorted=projArr.map(proj=>{
-    const {uData,mData}=getProjectData(proj);
-    const uRows=Object.values(uData).map(r=>normalizeRow(r,'utfall'));
-    const mRows=Object.values(mData);
-    const totalProd=uRows.reduce((s,r)=>{const v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0);},0);
-    const malProd=mRows.reduce((s,r)=>s+getProjectMalProd(proj,r),0);
-    return {proj,pct:malProd>0?Math.round(totalProd/malProd*100):0,hasMal:malProd>0};
-  }).sort((a,b)=>b.pct-a.pct);
-
-  const cards=sorted.map(({proj,hasMal:projHasMal})=>{
-    const name=PROJECT_META[proj]?.name||proj;
-    const {uData,mData}=getProjectData(proj);
-    const uRows=Object.values(uData).map(r=>normalizeRow(r,'utfall'));
-    const mRows=Object.values(mData);
-    const mRowsNorm=mRows.map(r=>normalizeRow(r,'mal'));
-    const useMansdag=MANSDAG_PROJECTS.has(proj);
-
-    const totalProd=uRows.reduce((s,r)=>{const v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0);},0);
-    const malProd=mRows.reduce((s,r)=>s+getProjectMalProd(proj,r),0);
-    const prodPct=malProd>0?Math.round(totalProd/malProd*100):0;
-
-    const totalMansdag=uRows.reduce((s,r)=>{const v=findVal(r,'Antal Mansdagar')??0;return s+(typeof v==='number'?v:0);},0);
-    const malMansdag=mRowsNorm.reduce((s,r)=>{const v=findVal(r,'Mål säljare')??0;return s+(typeof v==='number'?v:0);},0);
-    const totalTimmar=uRows.reduce((s,r)=>{const v=findVal(r,'Timmar')??0;return s+(typeof v==='number'?v:0);},0);
-    const malTimmar=mRowsNorm.reduce((s,r)=>{const v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0);},0);
-    const workDays=uRows.filter(r=>(findVal(r,'Antal Mansdagar')??0)>0).length;
-    const avgSellers=workDays>0?fmt2(totalMansdag/workDays):0;
-    const snittpMansdag=useMansdag?(totalMansdag>0?fmt2(totalProd/totalMansdag):0):(totalTimmar>0?fmt2(totalProd/totalTimmar):0);
-    const malSnittSum=mRowsNorm.reduce((s,r)=>{const v=findVal(r,'Mål snitt')??0;return s+(typeof v==='number'?v:0);},0);
-    const malSnittDays=mRowsNorm.filter(r=>(findVal(r,'Mål snitt')??0)>0).length;
-    const malSnitt=malSnittDays>0?fmt2(malSnittSum/malSnittDays):0;
-
-    const secondPct=useMansdag?(malMansdag>0?Math.round(totalMansdag/malMansdag*100):0):(malTimmar>0?Math.round(totalTimmar/malTimmar*100):0);
-    const snittpMalPct=malSnitt>0?Math.round(snittpMansdag/malSnitt*100):0;
-    const secondLabel=useMansdag?'Mansdagar':'Timmar';
-    const secondUtfall=useMansdag?totalMansdag:fmt2(totalTimmar);
-    const secondMal=useMansdag?malMansdag:fmt2(malTimmar);
-    const snittLabel=useMansdag?'Snitt per mansdag':'Snitt per timme';
-
-    const badgeHtml=!projHasMal?`<span class="compare-badge badge-neutral">Mål saknas</span>`:`<span class="compare-badge ${prodPct>=100?'badge-green':'badge-neutral'}">${prodPct}% av mål</span>`;
-    const prodMetric=!projHasMal?`<div class="compare-metric"><div class="compare-metric-label">Produkter <span>${totalProd}</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>`:`<div class="compare-metric"><div class="compare-metric-label">Produkter <span>${totalProd} / ${malProd}</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.min(prodPct,100)}%;background:${barColor(prodPct)}"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">${prodPct}% av mål</div></div>`;
-    const hasSecondMal=useMansdag?malMansdag>0:malTimmar>0;
-    const secondMetric=!hasSecondMal?`<div class="compare-metric"><div class="compare-metric-label">${secondLabel} <span>${secondUtfall}</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>`:`<div class="compare-metric"><div class="compare-metric-label">${secondLabel} <span>${secondUtfall} / ${secondMal}</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.min(secondPct,100)}%;background:${barColor(secondPct)}"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">${secondPct}% av mål</div></div>`;
-    const snittMetric=malSnitt<=0?`<div class="compare-metric"><div class="compare-metric-label">${snittLabel} <span>${snittpMansdag}</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas · ${avgSellers} säljare/dag</div></div>`:`<div class="compare-metric"><div class="compare-metric-label">${snittLabel} <span>${snittpMansdag} / ${malSnitt}</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.min(snittpMalPct,100)}%;background:${barColor(snittpMalPct)}"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">${snittpMalPct}% av mål · ${avgSellers} säljare/dag</div></div>`;
-
-    let sparkP=[],malP=[];
-    for(let i=1;i<=days;i++){const d=new Date(y,m,i);if(d.getDay()===0||d.getDay()===6) continue;const dk=toDateKey(y,m,i),ur=normalizeRow(uData[dk]||{},'utfall');sparkP.push(fmt2(findVal(ur,'Produkt')??0));malP.push(getProjectMalProd(proj,mData[dk]||{}));}
-    const maxVal=Math.max(...sparkP,...malP,1);
-    const W=260,H=44,n=sparkP.length;
-    const px=i=>n>1?(i/(n-1))*W:W/2;
-    const py=v=>H-(v/maxVal)*(H-4)-2;
-    const malPath=malP.map((v,i)=>`${i===0?'M':'L'}${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
-    const utfPath=sparkP.map((v,i)=>`${i===0?'M':'L'}${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
-    const lineColor=prodPct>=100?'#2d8a4e':'#f97c5a';
-
-    const sparkHtml=projHasMal?`<div class="sparkline"><div class="sparkline-label">Daglig produkt – utfall vs mål</div><svg width="100%" height="${H}" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="overflow:visible"><path d="${malPath}" fill="none" stroke="${MAL_COLOR}" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/><path d="${utfPath}" fill="none" stroke="${lineColor}" stroke-width="2"/></svg><div style="display:flex;gap:12px;margin-top:5px;font-size:10px;color:#999;"><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:${lineColor};border-radius:2px"></span>Utfall</span><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:0;border-top:2px dashed ${MAL_COLOR}"></span>Mål</span></div></div>`:`<div class="sparkline"><div class="sparkline-label">Daglig produkt</div><svg width="100%" height="${H}" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="overflow:visible"><path d="${utfPath}" fill="none" stroke="#f97c5a" stroke-width="2"/></svg></div>`;
-
-    return `<div class="compare-card"><div class="compare-card-header"><span class="compare-card-title">${name}</span>${badgeHtml}</div>${prodMetric}${secondMetric}${snittMetric}${sparkHtml}</div>`;
+  var m=getMonth(),y=getYear(),days=new Date(y,m+1,0).getDate();
+  var barColor=function(p){return p>=100?'#2d8a4e':'#f97c5a';};
+  var MAL_COLOR='#999';
+  var sorted=projArr.map(function(proj){
+    var pd=getProjectData(proj);
+    var uRows=Object.values(pd.uData).map(function(r){return normalizeRow(r,'utfall');});
+    var mRows=Object.values(pd.mData);
+    var totalProd=uRows.reduce(function(s,r){var v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0);},0);
+    var malProd=mRows.reduce(function(s,r){return s+getProjectMalProd(proj,r);},0);
+    return {proj:proj,pct:malProd>0?Math.round(totalProd/malProd*100):0,hasMal:malProd>0};
+  }).sort(function(a,b){return b.pct-a.pct;});
+  var cards=sorted.map(function(item){
+    var proj=item.proj,projHasMal=item.hasMal;
+    var name=PROJECT_META[proj]?PROJECT_META[proj].name:proj;
+    var pd=getProjectData(proj);
+    var uRows=Object.values(pd.uData).map(function(r){return normalizeRow(r,'utfall');});
+    var mRows=Object.values(pd.mData);
+    var mRowsNorm=mRows.map(function(r){return normalizeRow(r,'mal');});
+    var useMansdag=MANSDAG_PROJECTS.has(proj);
+    var totalProd=uRows.reduce(function(s,r){var v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0);},0);
+    var malProd=mRows.reduce(function(s,r){return s+getProjectMalProd(proj,r);},0);
+    var prodPct=malProd>0?Math.round(totalProd/malProd*100):0;
+    var totalMansdag=uRows.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??0;return s+(typeof v==='number'?v:0);},0);
+    var malMansdag=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål säljare')??0;return s+(typeof v==='number'?v:0);},0);
+    var totalTimmar=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??0;return s+(typeof v==='number'?v:0);},0);
+    var malTimmar=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0);},0);
+    var workDays=uRows.filter(function(r){return (findVal(r,'Antal Mansdagar')??0)>0;}).length;
+    var avgSellers=workDays>0?fmt2(totalMansdag/workDays):0;
+    var snittpMansdag=useMansdag?(totalMansdag>0?fmt2(totalProd/totalMansdag):0):(totalTimmar>0?fmt2(totalProd/totalTimmar):0);
+    var malSnittSum=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål snitt')??0;return s+(typeof v==='number'?v:0);},0);
+    var malSnittDays=mRowsNorm.filter(function(r){return (findVal(r,'Mål snitt')??0)>0;}).length;
+    var malSnitt=malSnittDays>0?fmt2(malSnittSum/malSnittDays):0;
+    var secondPct=useMansdag?(malMansdag>0?Math.round(totalMansdag/malMansdag*100):0):(malTimmar>0?Math.round(totalTimmar/malTimmar*100):0);
+    var snittpMalPct=malSnitt>0?Math.round(snittpMansdag/malSnitt*100):0;
+    var secondLabel=useMansdag?'Mansdagar':'Timmar';
+    var secondUtfall=useMansdag?totalMansdag:fmt2(totalTimmar);
+    var secondMal=useMansdag?malMansdag:fmt2(malTimmar);
+    var snittLabel=useMansdag?'Snitt per mansdag':'Snitt per timme';
+    var badgeHtml=!projHasMal?'<span class="compare-badge badge-neutral">Mål saknas</span>':'<span class="compare-badge '+(prodPct>=100?'badge-green':'badge-neutral')+'">'+prodPct+'% av mål</span>';
+    var prodMetric=!projHasMal?'<div class="compare-metric"><div class="compare-metric-label">Produkter <span>'+totalProd+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>':'<div class="compare-metric"><div class="compare-metric-label">Produkter <span>'+totalProd+' / '+malProd+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(prodPct,100)+'%;background:'+barColor(prodPct)+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+prodPct+'% av mål</div></div>';
+    var hasSecondMal=useMansdag?malMansdag>0:malTimmar>0;
+    var secondMetric=!hasSecondMal?'<div class="compare-metric"><div class="compare-metric-label">'+secondLabel+' <span>'+secondUtfall+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>':'<div class="compare-metric"><div class="compare-metric-label">'+secondLabel+' <span>'+secondUtfall+' / '+secondMal+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(secondPct,100)+'%;background:'+barColor(secondPct)+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+secondPct+'% av mål</div></div>';
+    var snittMetric=malSnitt<=0?'<div class="compare-metric"><div class="compare-metric-label">'+snittLabel+' <span>'+snittpMansdag+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas · '+avgSellers+' säljare/dag</div></div>':'<div class="compare-metric"><div class="compare-metric-label">'+snittLabel+' <span>'+snittpMansdag+' / '+malSnitt+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(snittpMalPct,100)+'%;background:'+barColor(snittpMalPct)+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+snittpMalPct+'% av mål · '+avgSellers+' säljare/dag</div></div>';
+    var sparkP=[],malP=[];
+    for(var i=1;i<=days;i++){var d=new Date(y,m,i);if(d.getDay()===0||d.getDay()===6) continue;var dk=toDateKey(y,m,i),ur=normalizeRow(pd.uData[dk]||{},'utfall');sparkP.push(fmt2(findVal(ur,'Produkt')??0));malP.push(getProjectMalProd(proj,pd.mData[dk]||{}));}
+    var maxVal=Math.max.apply(null,sparkP.concat(malP).concat([1]));
+    var W=260,H=44,n=sparkP.length;
+    var px=function(i){return n>1?(i/(n-1))*W:W/2;};
+    var py=function(v){return H-(v/maxVal)*(H-4)-2;};
+    var malPath=malP.map(function(v,i){return (i===0?'M':'L')+px(i).toFixed(1)+','+py(v).toFixed(1);}).join(' ');
+    var utfPath=sparkP.map(function(v,i){return (i===0?'M':'L')+px(i).toFixed(1)+','+py(v).toFixed(1);}).join(' ');
+    var lineColor=prodPct>=100?'#2d8a4e':'#f97c5a';
+    var sparkHtml=projHasMal?'<div class="sparkline"><div class="sparkline-label">Daglig produkt – utfall vs mål</div><svg width="100%" height="'+H+'" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" style="overflow:visible"><path d="'+malPath+'" fill="none" stroke="'+MAL_COLOR+'" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/><path d="'+utfPath+'" fill="none" stroke="'+lineColor+'" stroke-width="2"/></svg><div style="display:flex;gap:12px;margin-top:5px;font-size:10px;color:#999;"><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:'+lineColor+';border-radius:2px"></span>Utfall</span><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:0;border-top:2px dashed '+MAL_COLOR+'"></span>Mål</span></div></div>':'<div class="sparkline"><div class="sparkline-label">Daglig produkt</div><svg width="100%" height="'+H+'" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" style="overflow:visible"><path d="'+utfPath+'" fill="none" stroke="#f97c5a" stroke-width="2"/></svg></div>';
+    return '<div class="compare-card"><div class="compare-card-header"><span class="compare-card-title">'+name+'</span>'+badgeHtml+'</div>'+prodMetric+secondMetric+snittMetric+sparkHtml+'</div>';
   }).join('');
-
-  document.getElementById('dailyCompareWrap').innerHTML=`<div class="compare-grid">${cards}</div>`;
+  document.getElementById('dailyCompareWrap').innerHTML='<div class="compare-grid">'+cards+'</div>';
 }
 
-// === DATA LOADING ===
 function convertJsonToStore(raw,store){
-  const sheetToProject={};
-  for(const [p,meta] of Object.entries(PROJECT_META)) sheetToProject[meta.sheet]=p;
-  const normalize=s=>s.toLowerCase().replace(/^\d+[\.\d]*\s*/,'').replace(/\./g,'').trim();
-  for(const [sheetName,dateRows] of Object.entries(raw)){
-    let proj=sheetToProject[sheetName];
-    if(!proj){ const ns=normalize(sheetName); for(const [sheet,p] of Object.entries(sheetToProject)){if(normalize(sheet)===ns){proj=p;break;}} }
+  var sheetToProject={};
+  for(var [p,meta] of Object.entries(PROJECT_META)) sheetToProject[meta.sheet]=p;
+  var normalize=function(s){return s.toLowerCase().replace(/^\d+[\.\d]*\s*/,'').replace(/\./g,'').trim();};
+  for(var [sheetName,dateRows] of Object.entries(raw)){
+    var proj=sheetToProject[sheetName];
+    if(!proj){ var ns=normalize(sheetName); for(var [sheet,p2] of Object.entries(sheetToProject)){if(normalize(sheet)===ns){proj=p2;break;}} }
     if(!proj) continue;
-    for(const [dateKey,row] of Object.entries(dateRows)){
-      const d=new Date(dateKey); if(isNaN(d)) continue;
-      const key=storeKey(proj,d.getFullYear(),d.getMonth());
+    for(var [dateKey,row] of Object.entries(dateRows)){
+      var d=new Date(dateKey); if(isNaN(d)) continue;
+      var key=storeKey(proj,d.getFullYear(),d.getMonth());
       if(!store[key]) store[key]={};
       store[key][dateKey]=row;
     }
@@ -1164,79 +1056,18 @@ function convertJsonToStore(raw,store){
 
 async function loadData(){
   try{
-    const [uR,mR,sR]=await Promise.all([
+    var results=await Promise.all([
       fetch('data/utfall.json',{cache:'no-store'}),
       fetch('data/mal.json',{cache:'no-store'}),
       fetch('data/last_synced.json',{cache:'no-store'})
     ]);
-    if(uR.ok){convertJsonToStore(await uR.json(),utfallData);}
-    if(mR.ok){convertJsonToStore(await mR.json(),malData);}
-    if(sR.ok){const s=await sR.json();const el=document.getElementById('lastSynced');if(el&&s.last_synced) el.textContent='Senast synkad: '+s.last_synced;}
+    if(results[0].ok) convertJsonToStore(await results[0].json(),utfallData);
+    if(results[1].ok) convertJsonToStore(await results[1].json(),malData);
+    if(results[2].ok){var s=await results[2].json();var el=document.getElementById('lastSynced');if(el&&s.last_synced) el.textContent='Senast synkad: '+s.last_synced;}
   }catch(e){console.warn('Kunde inte ladda data:',e);}
   renderCurrent();
 }
 
-// === IMPORT ===
-function openModal(id){document.getElementById(id).classList.add('visible');}
-function closeModal(id){document.getElementById(id).classList.remove('visible');}
-function handleImport(type){
-  const pwId=type==='utfall'?'utfallPw':'malPw', errId=type==='utfall'?'utfallPwError':'malPwError';
-  const fileId=type==='utfall'?'utfallFile':'malFile', modalId=type==='utfall'?'utfallModal':'malModal';
-  const successId=type==='utfall'?'utfallSuccess':'malSuccess';
-  const pw=document.getElementById(pwId).value;
-  if(pw!=='ViaProdPlan2040#!'){document.getElementById(errId).classList.add('visible');return;}
-  document.getElementById(errId).classList.remove('visible');
-  const file=document.getElementById(fileId).files[0];
-  if(!file){alert('Välj en Excel-fil.');return;}
-  const reader=new FileReader();
-  reader.onload=ev=>{
-    try{
-      const wb=XLSX.read(ev.target.result,{type:'array',cellDates:true});
-      parseWorkbook(wb,type);
-      closeModal(modalId);
-      const el=document.getElementById(successId);el.classList.add('visible');setTimeout(()=>el.classList.remove('visible'),3000);
-      renderCurrent();
-    }catch(err){alert('Kunde inte läsa filen: '+err.message);}
-  };
-  reader.readAsArrayBuffer(file);
-}
-
-function parseWorkbook(wb,type){
-  const store=type==='utfall'?utfallData:malData;
-  for(const [proj,meta] of Object.entries(PROJECT_META)){
-    let sheet=wb.Sheets[meta.sheet];
-    if(!sheet){const found=wb.SheetNames.find(s=>s.toLowerCase().includes(meta.sheet.toLowerCase().replace(/^\d+[\.\d]*\s*/,'')));if(found) sheet=wb.Sheets[found];}
-    if(!sheet) continue;
-    const rows=XLSX.utils.sheet_to_json(sheet,{defval:''});
-    if(!rows.length) continue;
-    let fileMonth=null,fileYear=null;
-    for(const row of rows){
-      let dv=row['DATUM']||row['Datum']||row['datum'];if(!dv) continue;
-      let d;
-      if(dv instanceof Date) d=dv;
-      else if(typeof dv==='string'&&dv.includes('-')) d=new Date(dv);
-      else if(typeof dv==='number') d=new Date(Math.round((dv-25569)*86400*1000));
-      if(!d||isNaN(d)) continue;
-      fileMonth=d.getMonth();fileYear=d.getFullYear();break;
-    }
-    if(fileMonth===null) continue;
-    const key=storeKey(proj,fileYear,fileMonth);
-    store[key]={};
-    rows.forEach(row=>{
-      let dv=row['DATUM']||row['Datum']||row['datum'];if(!dv) return;
-      let d;
-      if(dv instanceof Date) d=dv;
-      else if(typeof dv==='string'&&dv.includes('-')) d=new Date(dv);
-      else if(typeof dv==='number') d=new Date(Math.round((dv-25569)*86400*1000));
-      if(!d||isNaN(d)) return;
-      if(d.getMonth()!==fileMonth||d.getFullYear()!==fileYear) return;
-      const dk=toDateKey(d.getFullYear(),d.getMonth(),d.getDate());
-      store[key][dk]=row;
-    });
-  }
-}
-
-// === INIT ===
 buildProjectChips();
 buildOverviewProjectChips();
 loadData();
