@@ -304,9 +304,10 @@
         <div class="project-selector" id="dailyProjectSelector"></div>
       </div>
       <div class="filter-group" style="margin-left:auto;">
-        <div class="view-tabs">
-          <button class="view-tab active" onclick="setDailyView('full',this)">Alla kolumner</button>
-          <button class="view-tab" onclick="setDailyView('compact',this)">Kompakt</button>
+        <div class="view-tabs" id="dailyViewTabs">
+          <button class="view-tab active" data-view="full" onclick="setDailyView('full',this)">Alla kolumner</button>
+          <button class="view-tab" data-view="compact" onclick="setDailyView('compact',this)">Kompakt</button>
+          <button class="view-tab" data-view="compare" style="display:none" onclick="setDailyView('compare',this)">Jämförelse</button>
         </div>
       </div>
     </div>
@@ -359,6 +360,7 @@
       <div class="table-wrap" id="tableWrap">
         <table><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table>
       </div>
+      <div id="dailyCompareWrap" style="display:none"></div>
     </div>
   </div>
 </main>
@@ -805,6 +807,7 @@ function buildProjectChips(){
 }
 
 function selectDailyProject(p,el,ev){
+  const wasSingle=dailyProject.size<=1;
   if(ev&&(ev.ctrlKey||ev.metaKey)){
     if(dailyProject.has(p)) dailyProject.delete(p);
     else dailyProject.add(p);
@@ -817,7 +820,31 @@ function selectDailyProject(p,el,ev){
     const proj=Object.entries(PROJECT_META).find(([k,v])=>v.name===c.textContent);
     if(proj) c.classList.toggle('active',dailyProject.has(proj[0]));
   });
+  updateDailyTabs();
   renderDaily();
+}
+
+function updateDailyTabs(){
+  const multi=dailyProject.size>1;
+  const tabs=document.getElementById('dailyViewTabs');
+  const fullTab=tabs.querySelector('[data-view="full"]');
+  const compactTab=tabs.querySelector('[data-view="compact"]');
+  const compareTab=tabs.querySelector('[data-view="compare"]');
+
+  if(multi){
+    fullTab.style.display='none';
+    compareTab.style.display='';
+    // Om vi var på full, byt till compact
+    if(dailyView==='full') dailyView='compact';
+  } else {
+    fullTab.style.display='';
+    compareTab.style.display='none';
+    // Om vi var på compare, byt till full
+    if(dailyView==='compare') dailyView='full';
+  }
+  tabs.querySelectorAll('.view-tab').forEach(t=>{
+    t.classList.toggle('active',t.dataset.view===dailyView);
+  });
 }
 
 function setDailyView(v,el){
@@ -833,25 +860,27 @@ function renderDaily(){
   const multi=dailyProject.size>1;
   const activeProjArr=[...dailyProject];
   const firstProj=activeProjArr[0];
+
+  // Compare view
+  if(dailyView==='compare'&&multi){
+    document.getElementById('tableWrap').style.display='none';
+    document.getElementById('dailyCompareWrap').style.display='block';
+    renderDailyCompare(activeProjArr);
+    // Still update stat cards with merged data
+    const {uMerged,mMerged}=mergeDailyData(activeProjArr);
+    updateStatCards(uMerged,mMerged);
+    return;
+  }
+
+  document.getElementById('tableWrap').style.display='';
+  document.getElementById('dailyCompareWrap').style.display='none';
+
   const cols=multi?COMPACT_COLS:(dailyView==='compact'?COMPACT_COLS:(PROJECT_COLS[firstProj]||COMPACT_COLS));
 
-  // Merge data if multi
   let uData,mData;
   if(multi){
-    uData={};mData={};
-    activeProjArr.forEach(proj=>{
-      const pd=getProjectData(proj);
-      for(const [dk,row] of Object.entries(pd.uData)){
-        if(!uData[dk]) uData[dk]={};
-        const nr=normalizeRow(row,'utfall');
-        for(const [k,v] of Object.entries(nr)){ if(typeof v==='number') uData[dk][k]=(uData[dk][k]||0)+v; else if(!uData[dk][k]) uData[dk][k]=v; }
-      }
-      for(const [dk,row] of Object.entries(pd.mData)){
-        if(!mData[dk]) mData[dk]={};
-        const nr=normalizeRow(row,'mal');
-        for(const [k,v] of Object.entries(nr)){ if(typeof v==='number') mData[dk][k]=(mData[dk][k]||0)+v; else if(!mData[dk][k]) mData[dk][k]=v; }
-      }
-    });
+    const merged=mergeDailyData(activeProjArr);
+    uData=merged.uMerged; mData=merged.mMerged;
   } else {
     const pd=getProjectData(firstProj);
     uData=pd.uData; mData=pd.mData;
@@ -1011,6 +1040,92 @@ function updateStatCards(uData,mData){
       taktEl.innerHTML=diff>=0?`<span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+${Math.round(diff)} / +${diffPct}%)</span>`:`<span style="color:#c0392b;font-weight:600;">▼ Off track</span> <span style="color:#666;">(${Math.round(diff)} / ${diffPct}%)</span>`;
     } else taktEl.innerHTML='';
   }
+}
+
+function mergeDailyData(projArr){
+  const uMerged={},mMerged={};
+  projArr.forEach(proj=>{
+    const pd=getProjectData(proj);
+    for(const [dk,row] of Object.entries(pd.uData)){
+      if(!uMerged[dk]) uMerged[dk]={};
+      const nr=normalizeRow(row,'utfall');
+      for(const [k,v] of Object.entries(nr)){ if(typeof v==='number') uMerged[dk][k]=(uMerged[dk][k]||0)+v; else if(!uMerged[dk][k]) uMerged[dk][k]=v; }
+    }
+    for(const [dk,row] of Object.entries(pd.mData)){
+      if(!mMerged[dk]) mMerged[dk]={};
+      const nr=normalizeRow(row,'mal');
+      for(const [k,v] of Object.entries(nr)){ if(typeof v==='number') mMerged[dk][k]=(mMerged[dk][k]||0)+v; else if(!mMerged[dk][k]) mMerged[dk][k]=v; }
+    }
+  });
+  return {uMerged,mMerged};
+}
+
+function renderDailyCompare(projArr){
+  const m=getMonth(),y=getYear(),days=new Date(y,m+1,0).getDate();
+  const barColor=p=>p>=100?'#2d8a4e':'#f97c5a';
+  const MAL_COLOR='#999';
+
+  const sorted=projArr.map(proj=>{
+    const {uData,mData}=getProjectData(proj);
+    const uRows=Object.values(uData).map(r=>normalizeRow(r,'utfall'));
+    const mRows=Object.values(mData);
+    const totalProd=uRows.reduce((s,r)=>{const v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0);},0);
+    const malProd=mRows.reduce((s,r)=>s+getProjectMalProd(proj,r),0);
+    return {proj,pct:malProd>0?Math.round(totalProd/malProd*100):0,hasMal:malProd>0};
+  }).sort((a,b)=>b.pct-a.pct);
+
+  const cards=sorted.map(({proj,hasMal:projHasMal})=>{
+    const name=PROJECT_META[proj]?.name||proj;
+    const {uData,mData}=getProjectData(proj);
+    const uRows=Object.values(uData).map(r=>normalizeRow(r,'utfall'));
+    const mRows=Object.values(mData);
+    const mRowsNorm=mRows.map(r=>normalizeRow(r,'mal'));
+    const useMansdag=MANSDAG_PROJECTS.has(proj);
+
+    const totalProd=uRows.reduce((s,r)=>{const v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0);},0);
+    const malProd=mRows.reduce((s,r)=>s+getProjectMalProd(proj,r),0);
+    const prodPct=malProd>0?Math.round(totalProd/malProd*100):0;
+
+    const totalMansdag=uRows.reduce((s,r)=>{const v=findVal(r,'Antal Mansdagar')??0;return s+(typeof v==='number'?v:0);},0);
+    const malMansdag=mRowsNorm.reduce((s,r)=>{const v=findVal(r,'Mål säljare')??0;return s+(typeof v==='number'?v:0);},0);
+    const totalTimmar=uRows.reduce((s,r)=>{const v=findVal(r,'Timmar')??0;return s+(typeof v==='number'?v:0);},0);
+    const malTimmar=mRowsNorm.reduce((s,r)=>{const v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0);},0);
+    const workDays=uRows.filter(r=>(findVal(r,'Antal Mansdagar')??0)>0).length;
+    const avgSellers=workDays>0?fmt2(totalMansdag/workDays):0;
+    const snittpMansdag=useMansdag?(totalMansdag>0?fmt2(totalProd/totalMansdag):0):(totalTimmar>0?fmt2(totalProd/totalTimmar):0);
+    const malSnittSum=mRowsNorm.reduce((s,r)=>{const v=findVal(r,'Mål snitt')??0;return s+(typeof v==='number'?v:0);},0);
+    const malSnittDays=mRowsNorm.filter(r=>(findVal(r,'Mål snitt')??0)>0).length;
+    const malSnitt=malSnittDays>0?fmt2(malSnittSum/malSnittDays):0;
+
+    const secondPct=useMansdag?(malMansdag>0?Math.round(totalMansdag/malMansdag*100):0):(malTimmar>0?Math.round(totalTimmar/malTimmar*100):0);
+    const snittpMalPct=malSnitt>0?Math.round(snittpMansdag/malSnitt*100):0;
+    const secondLabel=useMansdag?'Mansdagar':'Timmar';
+    const secondUtfall=useMansdag?totalMansdag:fmt2(totalTimmar);
+    const secondMal=useMansdag?malMansdag:fmt2(malTimmar);
+    const snittLabel=useMansdag?'Snitt per mansdag':'Snitt per timme';
+
+    const badgeHtml=!projHasMal?`<span class="compare-badge badge-neutral">Mål saknas</span>`:`<span class="compare-badge ${prodPct>=100?'badge-green':'badge-neutral'}">${prodPct}% av mål</span>`;
+    const prodMetric=!projHasMal?`<div class="compare-metric"><div class="compare-metric-label">Produkter <span>${totalProd}</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>`:`<div class="compare-metric"><div class="compare-metric-label">Produkter <span>${totalProd} / ${malProd}</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.min(prodPct,100)}%;background:${barColor(prodPct)}"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">${prodPct}% av mål</div></div>`;
+    const hasSecondMal=useMansdag?malMansdag>0:malTimmar>0;
+    const secondMetric=!hasSecondMal?`<div class="compare-metric"><div class="compare-metric-label">${secondLabel} <span>${secondUtfall}</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>`:`<div class="compare-metric"><div class="compare-metric-label">${secondLabel} <span>${secondUtfall} / ${secondMal}</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.min(secondPct,100)}%;background:${barColor(secondPct)}"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">${secondPct}% av mål</div></div>`;
+    const snittMetric=malSnitt<=0?`<div class="compare-metric"><div class="compare-metric-label">${snittLabel} <span>${snittpMansdag}</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas · ${avgSellers} säljare/dag</div></div>`:`<div class="compare-metric"><div class="compare-metric-label">${snittLabel} <span>${snittpMansdag} / ${malSnitt}</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:${Math.min(snittpMalPct,100)}%;background:${barColor(snittpMalPct)}"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">${snittpMalPct}% av mål · ${avgSellers} säljare/dag</div></div>`;
+
+    let sparkP=[],malP=[];
+    for(let i=1;i<=days;i++){const d=new Date(y,m,i);if(d.getDay()===0||d.getDay()===6) continue;const dk=toDateKey(y,m,i),ur=normalizeRow(uData[dk]||{},'utfall');sparkP.push(fmt2(findVal(ur,'Produkt')??0));malP.push(getProjectMalProd(proj,mData[dk]||{}));}
+    const maxVal=Math.max(...sparkP,...malP,1);
+    const W=260,H=44,n=sparkP.length;
+    const px=i=>n>1?(i/(n-1))*W:W/2;
+    const py=v=>H-(v/maxVal)*(H-4)-2;
+    const malPath=malP.map((v,i)=>`${i===0?'M':'L'}${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
+    const utfPath=sparkP.map((v,i)=>`${i===0?'M':'L'}${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
+    const lineColor=prodPct>=100?'#2d8a4e':'#f97c5a';
+
+    const sparkHtml=projHasMal?`<div class="sparkline"><div class="sparkline-label">Daglig produkt – utfall vs mål</div><svg width="100%" height="${H}" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="overflow:visible"><path d="${malPath}" fill="none" stroke="${MAL_COLOR}" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/><path d="${utfPath}" fill="none" stroke="${lineColor}" stroke-width="2"/></svg><div style="display:flex;gap:12px;margin-top:5px;font-size:10px;color:#999;"><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:${lineColor};border-radius:2px"></span>Utfall</span><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:0;border-top:2px dashed ${MAL_COLOR}"></span>Mål</span></div></div>`:`<div class="sparkline"><div class="sparkline-label">Daglig produkt</div><svg width="100%" height="${H}" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="overflow:visible"><path d="${utfPath}" fill="none" stroke="#f97c5a" stroke-width="2"/></svg></div>`;
+
+    return `<div class="compare-card"><div class="compare-card-header"><span class="compare-card-title">${name}</span>${badgeHtml}</div>${prodMetric}${secondMetric}${snittMetric}${sparkHtml}</div>`;
+  }).join('');
+
+  document.getElementById('dailyCompareWrap').innerHTML=`<div class="compare-grid">${cards}</div>`;
 }
 
 // === DATA LOADING ===
