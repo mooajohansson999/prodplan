@@ -244,6 +244,10 @@
           <button class="filter-pill" onclick="setOverviewFilter('tm',this)">TM</button>
         </div>
       </div>
+      <div class="filter-group">
+        <span class="filter-label">Projekt:</span>
+        <div class="project-selector" id="overviewProjectSelector"></div>
+      </div>
       <div class="filter-group" style="margin-left:auto;">
         <button class="nav-btn" onclick="changeMonth(-1)">◀</button>
         <select id="monthSel" onchange="renderCurrent()">
@@ -367,6 +371,7 @@ const PROJECT_META={
 
 let currentPage='overview';
 let overviewFilter='alla';
+let overviewProject=null; // null = visa alla
 let dailyGroup='d2d';
 let dailyProject='telia-fm';
 let dailyView='full';
@@ -531,7 +536,22 @@ function renderCurrent(){
 // === OVERVIEW FILTER ===
 function setOverviewFilter(f,el){
   overviewFilter=f;
+  overviewProject=null;
   document.querySelectorAll('#overviewFilter .filter-pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active');
+  buildOverviewProjectChips();
+  renderOverview();
+}
+
+function buildOverviewProjectChips(){
+  const projs=overviewFilter==='d2d'?GROUP_D2D:overviewFilter==='tm'?GROUP_TM:ALL_PROJECTS;
+  const sel=document.getElementById('overviewProjectSelector');
+  sel.innerHTML=`<button class="proj-chip ${overviewProject===null?'active':''}" onclick="selectOverviewProject(null,this)">Alla</button>`+projs.map(p=>`<button class="proj-chip ${p===overviewProject?'active':''}" onclick="selectOverviewProject('${p}',this)">${PROJECT_META[p]?.name||p}</button>`).join('');
+}
+
+function selectOverviewProject(p,el){
+  overviewProject=p;
+  document.querySelectorAll('#overviewProjectSelector .proj-chip').forEach(c=>c.classList.remove('active'));
   el.classList.add('active');
   renderOverview();
 }
@@ -543,6 +563,7 @@ function renderOverview(){
   let projects=ALL_PROJECTS;
   if(overviewFilter==='d2d') projects=GROUP_D2D;
   if(overviewFilter==='tm') projects=GROUP_TM;
+  if(overviewProject) projects=[overviewProject];
 
   const barColor=p=>p>=100?'#2d8a4e':'#f97c5a';
   const MAL_COLOR='#999';
@@ -901,6 +922,7 @@ function parseWorkbook(wb,type){
 
 // === INIT ===
 buildProjectChips();
+buildOverviewProjectChips();
 loadData();
 </script>
 </body>
