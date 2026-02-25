@@ -190,7 +190,11 @@
   tr.summary-row td.goal-col { background: #f9cfc6; }
   .empty-cell { color: #ddd; }
 
-  .compare-grid { display: grid; grid-template-columns: 1fr; gap: 16px; max-width: 600px; }
+  .compare-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+  @media (max-width: 768px) {
+    .compare-grid { grid-template-columns: 1fr; }
+  }
   .compare-card { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 20px; }
   .compare-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
   .compare-card-title { font-size: 14px; font-weight: 600; }
@@ -1273,7 +1277,16 @@ function parseWorkbook(wb,type){
 const GROUP_D2D = ['telia-fm','villafiber','koax','lan'];
 const GROUP_TM  = ['globalconnect','adressandring','vip-leads','retention','mbh','mobil','fmc'];
 
+function exitOverview(){
+  document.querySelector('.stat-cards').style.removeProperty('display');
+  document.querySelector('.month-nav').style.removeProperty('display');
+  document.getElementById('tableWrap').style.removeProperty('display');
+  document.getElementById('compareWrap').style.display='none';
+  document.getElementById('compareWrap').innerHTML='';
+}
+
 function selectGroup(group){
+  exitOverview();
   const projects = group==='d2d' ? GROUP_D2D : GROUP_TM;
   document.querySelectorAll('.project-item').forEach(el=>{
     if(projects.includes(el.dataset.project)) el.classList.add('active');
@@ -1288,7 +1301,8 @@ function selectGroup(group){
   currentProject = document.querySelector('.project-item.active').dataset.project;
 
   // Behåll compare om vi redan är där, annars compact
-  if(currentView!=='compare') currentView = 'compact';
+  if(currentView==='overview') currentView = 'compact';
+  else if(currentView!=='compare') currentView = 'compact';
 
   document.querySelectorAll('.tab').forEach(t=>{
     t.classList.remove('active');
@@ -1297,6 +1311,9 @@ function selectGroup(group){
     if(currentView==='compact'&&t.textContent.includes('Kompakt')) t.classList.add('active');
     if(currentView==='compare'&&t.textContent.includes('Jämförelse')) t.classList.add('active');
   });
+
+  document.querySelector('.stat-cards').style.display='';
+  document.querySelector('.month-nav').style.display='';
 
   // Tvinga omrendering av jämförelsevyn
   if(currentView==='compare'){
@@ -1340,9 +1357,8 @@ function toggleProject(el,ev){
     title.textContent=a.querySelector('.project-name').textContent;
     // Kom från overview, multi eller compare → byt till full vy
     if(currentView==='overview'||currentView==='compare'||prevCount>1){
+      exitOverview();
       currentView='full';
-      document.getElementById('tableWrap').style.display='block';
-      document.getElementById('compareWrap').style.display='none';
     }
     document.querySelector('.stat-cards').style.display='';
     document.querySelector('.month-nav').style.display='';
@@ -1566,6 +1582,7 @@ function renderOverview(){
 }
 
 function selectProjectFromOverview(proj){
+  exitOverview();
   document.querySelectorAll('.project-item').forEach(x=>x.classList.remove('active'));
   const el=document.querySelector(`.project-item[data-project="${proj}"]`);
   if(el) el.classList.add('active');
