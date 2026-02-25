@@ -388,12 +388,13 @@ const PROJECT_META={
 
 let currentPage='overview';
 let overviewFilter='alla';
-let overviewProject=null; // null = visa alla
+let overviewProject=null; // null = visa alla, Set = flera valda
 let dailyGroup='d2d';
-let dailyProject='telia-fm';
+let dailyProject=new Set(['telia-fm']);
 let dailyView='full';
 let utfallData={};
 let malData={};
+let _dailyRef=null; // used by resolveDynGoal
 
 // === PROJECT COLUMN DEFINITIONS ===
 const COMPACT_COLS=[
@@ -448,7 +449,7 @@ function resolveDynGoal(goalKey,mRow){
     return null;
   }
   if(goalKey==='__mal_prod__'){
-    const p=dailyProject;
+    const p=_dailyRef||[...dailyProject][0];
     if(p==='mobil'||p==='fmc'){ const h=findVal(mRow,'Mål Huvudabb')??0, ea=findVal(mRow,'Mål EA')??0; return (typeof h==='number'?h:0)+(typeof ea==='number'?ea:0)||null; }
     if(p==='vip-leads'){ const bb=findVal(mRow,'Mål BB')??0, mbh=findVal(mRow,'Mål MBH')??0; return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0)||null; }
     if(p==='retention'||p==='mbh'){ const v=findVal(mRow,'Mål BB'); return typeof v==='number'?v:null; }
@@ -539,7 +540,7 @@ function switchPage(page){
 function switchToDaily(proj){
   const group=GROUP_D2D.includes(proj)?'d2d':'tm';
   dailyGroup=group;
-  dailyProject=proj;
+  dailyProject=new Set([proj]);
   document.querySelectorAll('#dailyGroupFilter .filter-pill').forEach(p=>{ p.classList.toggle('active',p.textContent.toLowerCase()===group); });
   buildProjectChips();
   switchPage('daily');
@@ -563,13 +564,30 @@ function setOverviewFilter(f,el){
 function buildOverviewProjectChips(){
   const projs=overviewFilter==='d2d'?GROUP_D2D:overviewFilter==='tm'?GROUP_TM:ALL_PROJECTS;
   const sel=document.getElementById('overviewProjectSelector');
-  sel.innerHTML=`<button class="proj-chip ${overviewProject===null?'active':''}" onclick="selectOverviewProject(null,this)">Alla</button>`+projs.map(p=>`<button class="proj-chip ${p===overviewProject?'active':''}" onclick="selectOverviewProject('${p}',this)">${PROJECT_META[p]?.name||p}</button>`).join('');
+  const isAll=overviewProject===null;
+  sel.innerHTML=`<button class="proj-chip ${isAll?'active':''}" onclick="selectOverviewProject('alla',this,event)">Alla</button>`+projs.map(p=>`<button class="proj-chip ${overviewProject instanceof Set&&overviewProject.has(p)?'active':''}" onclick="selectOverviewProject('${p}',this,event)">${PROJECT_META[p]?.name||p}</button>`).join('');
 }
 
-function selectOverviewProject(p,el){
-  overviewProject=p;
-  document.querySelectorAll('#overviewProjectSelector .proj-chip').forEach(c=>c.classList.remove('active'));
-  el.classList.add('active');
+function selectOverviewProject(p,el,ev){
+  if(p==='alla'){
+    overviewProject=null;
+  } else if(ev&&(ev.ctrlKey||ev.metaKey)){
+    if(overviewProject===null) overviewProject=new Set();
+    if(overviewProject.has(p)) overviewProject.delete(p);
+    else overviewProject.add(p);
+    if(overviewProject.size===0) overviewProject=null;
+  } else {
+    if(overviewProject instanceof Set&&overviewProject.size===1&&overviewProject.has(p)) overviewProject=null;
+    else overviewProject=new Set([p]);
+  }
+  document.querySelectorAll('#overviewProjectSelector .proj-chip').forEach(c=>{
+    const val=c.textContent;
+    if(val==='Alla') c.classList.toggle('active',overviewProject===null);
+    else {
+      const proj=Object.entries(PROJECT_META).find(([k,v])=>v.name===val);
+      if(proj) c.classList.toggle('active',overviewProject instanceof Set&&overviewProject.has(proj[0]));
+    }
+  });
   renderOverview();
 }
 
@@ -580,8 +598,8 @@ function renderOverview(){
   let projects=ALL_PROJECTS;
   if(overviewFilter==='d2d') projects=GROUP_D2D;
   if(overviewFilter==='tm') projects=GROUP_TM;
-  const singleProject=overviewProject?[overviewProject]:null;
-  const cardProjects=singleProject||projects;
+  const singleProject=null;
+  const cardProjects=overviewProject instanceof Set?[...overviewProject]:projects;
 
   const barColor=p=>p>=100?'#2d8a4e':'#f97c5a';
   const MAL_COLOR='#999';
@@ -654,7 +672,7 @@ function renderOverview(){
   const utfPath=allSparkU.map((v,i)=>`${i===0?'M':'L'}${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
   const lineColor=sumProdPct>=100?'#2d8a4e':'#f97c5a';
 
-  const filterLabel=overviewProject?PROJECT_META[overviewProject]?.name:overviewFilter==='d2d'?'D2D':overviewFilter==='tm'?'TM':'Alla projekt';
+  const filterLabel=overviewProject instanceof Set&&overviewProject.size>0?[...overviewProject].map(p=>PROJECT_META[p]?.name||p).join(' + '):overviewFilter==='d2d'?'D2D':overviewFilter==='tm'?'TM':'Alla projekt';
 
   const summaryHtml=`<div class="summary-card">
     <div class="sc-block">
@@ -693,12 +711,7 @@ function renderOverview(){
 
   document.getElementById('overviewSummaryCard').innerHTML=summaryHtml;
 
-  // === PROJECT CARDS (skip if only one project selected) ===
-  if(singleProject){
-    document.getElementById('overviewGrid').innerHTML='';
-    return;
-  }
-
+  // === PROJECT CARDS ===
   const sorted=cardProjects.map(proj=>{
     const {uData,mData}=getProjectData(proj);
     const uRows=Object.values(uData).map(r=>normalizeRow(r,'utfall'));
@@ -780,7 +793,7 @@ function setDailyGroupFilter(g,el){
   document.querySelectorAll('#dailyGroupFilter .filter-pill').forEach(p=>p.classList.remove('active'));
   el.classList.add('active');
   const projs=g==='d2d'?GROUP_D2D:GROUP_TM;
-  dailyProject=projs[0];
+  dailyProject=new Set([projs[0]]);
   buildProjectChips();
   renderDaily();
 }
@@ -788,13 +801,22 @@ function setDailyGroupFilter(g,el){
 function buildProjectChips(){
   const projs=dailyGroup==='d2d'?GROUP_D2D:GROUP_TM;
   const sel=document.getElementById('dailyProjectSelector');
-  sel.innerHTML=projs.map(p=>`<button class="proj-chip ${p===dailyProject?'active':''}" onclick="selectDailyProject('${p}',this)">${PROJECT_META[p]?.name||p}</button>`).join('');
+  sel.innerHTML=projs.map(p=>`<button class="proj-chip ${dailyProject.has(p)?'active':''}" onclick="selectDailyProject('${p}',this,event)">${PROJECT_META[p]?.name||p}</button>`).join('');
 }
 
-function selectDailyProject(p,el){
-  dailyProject=p;
-  document.querySelectorAll('.proj-chip').forEach(c=>c.classList.remove('active'));
-  el.classList.add('active');
+function selectDailyProject(p,el,ev){
+  if(ev&&(ev.ctrlKey||ev.metaKey)){
+    if(dailyProject.has(p)) dailyProject.delete(p);
+    else dailyProject.add(p);
+    if(dailyProject.size===0) dailyProject.add(p);
+  } else {
+    if(dailyProject.size===1&&dailyProject.has(p)) return;
+    dailyProject=new Set([p]);
+  }
+  document.querySelectorAll('#dailyProjectSelector .proj-chip').forEach(c=>{
+    const proj=Object.entries(PROJECT_META).find(([k,v])=>v.name===c.textContent);
+    if(proj) c.classList.toggle('active',dailyProject.has(proj[0]));
+  });
   renderDaily();
 }
 
@@ -808,9 +830,39 @@ function setDailyView(v,el){
 function renderDaily(){
   const m=getMonth(),y=getYear();
   const days=new Date(y,m+1,0).getDate();
-  const cols=dailyView==='compact'?COMPACT_COLS:(PROJECT_COLS[dailyProject]||COMPACT_COLS);
-  const {uData,mData}=getProjectData(dailyProject);
+  const multi=dailyProject.size>1;
+  const activeProjArr=[...dailyProject];
+  const firstProj=activeProjArr[0];
+  const cols=multi?COMPACT_COLS:(dailyView==='compact'?COMPACT_COLS:(PROJECT_COLS[firstProj]||COMPACT_COLS));
+
+  // Merge data if multi
+  let uData,mData;
+  if(multi){
+    uData={};mData={};
+    activeProjArr.forEach(proj=>{
+      const pd=getProjectData(proj);
+      for(const [dk,row] of Object.entries(pd.uData)){
+        if(!uData[dk]) uData[dk]={};
+        const nr=normalizeRow(row,'utfall');
+        for(const [k,v] of Object.entries(nr)){ if(typeof v==='number') uData[dk][k]=(uData[dk][k]||0)+v; else if(!uData[dk][k]) uData[dk][k]=v; }
+      }
+      for(const [dk,row] of Object.entries(pd.mData)){
+        if(!mData[dk]) mData[dk]={};
+        const nr=normalizeRow(row,'mal');
+        for(const [k,v] of Object.entries(nr)){ if(typeof v==='number') mData[dk][k]=(mData[dk][k]||0)+v; else if(!mData[dk][k]) mData[dk][k]=v; }
+      }
+    });
+  } else {
+    const pd=getProjectData(firstProj);
+    uData=pd.uData; mData=pd.mData;
+  }
+
   const e=`<span class="empty-cell">—</span>`;
+  const curProj=firstProj; // for dynamic goal resolution
+
+  // Temporarily set reference for resolveDynGoal
+  const savedDaily=_dailyRef;
+  _dailyRef=multi?null:firstProj;
 
   document.getElementById('tableHead').innerHTML='<tr>'+cols.map(c=>`<th class="${c.goalKey?'goal-col':''}">${c.label}</th>`).join('')+'</tr>';
 
@@ -848,8 +900,8 @@ function renderDaily(){
         const isProd=c.key==='Produkt';
         const isSaljare=c.key==='__utfall_saljare__';
         let uv;
-        if(isSnitt) uv=hasUtfall?calcSnitt(dailyProject,uRow):null;
-        else if(isProd&&dailyView==='compact') uv=hasUtfall?getCompactProd(dailyProject,uRow):null;
+        if(isSnitt) uv=hasUtfall?calcSnitt(firstProj,uRow):null;
+        else if(isProd&&(dailyView==='compact'||multi)) uv=hasUtfall?getCompactProd(firstProj,uRow):null;
         else if(isSaljare) uv=hasUtfall?(findVal(uRow,'Antal Mansdagar')??findVal(uRow,'Antal Säljare')??null):null;
         else uv=hasUtfall?findVal(uRow,c.key):null;
         const gk=findGoalKey(cols,c.key);
@@ -886,7 +938,7 @@ function renderDaily(){
       if(c.key.toLowerCase()==='snitt'){
         const allR=Object.values(uData);
         const totalP=allR.reduce((s,r)=>{const v=findVal(r,'Produkt')??findVal(r,'produkt')??0;return s+(typeof v==='number'?v:0);},0);
-        if(SNITT_PER_TIMMAR.has(dailyProject)){
+        if(SNITT_PER_TIMMAR.has(firstProj)){
           const totalT=allR.reduce((s,r)=>{const v=findVal(r,'Timmar')??findVal(r,'timmar')??0;return s+(typeof v==='number'?v:0);},0);
           return `<td>${totalT>0?fmt2(totalP/totalT):'—'}</td>`;
         } else {
@@ -908,14 +960,16 @@ function renderDaily(){
   rows+=`<tr class="summary-row">${summaryCells}</tr>`;
 
   document.getElementById('tableBody').innerHTML=rows;
+  _dailyRef=savedDaily;
   updateStatCards(uData,mData);
 }
 
 function updateStatCards(uData,mData){
   const uRows=Object.values(uData), mRows=Object.values(mData);
+  const firstProj=[...dailyProject][0];
   const getProd=r=>findVal(r,'Produkt')??findVal(r,'produkt')??null;
   const getMalProd=r=>{
-    const p=dailyProject;
+    const p=firstProj;
     if(p==='mobil'||p==='fmc'){const h=findVal(r,'Mål Huvudabb')??0,ea=findVal(r,'Mål EA')??0;return (typeof h==='number'?h:0)+(typeof ea==='number'?ea:0)||null;}
     if(p==='vip-leads'){const bb=findVal(r,'Mål BB')??0,mbh=findVal(r,'Mål MBH')??0;return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0)||null;}
     if(p==='retention'||p==='mbh'){const v=findVal(r,'Mål BB');return typeof v==='number'?v:null;}
