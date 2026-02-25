@@ -383,6 +383,7 @@
         <div class="stat-value" id="sc-prod">—</div>
         <div class="stat-meta" id="sc-prod-meta">Mål: —</div>
         <div class="stat-badge badge-neutral" id="sc-prod-badge">Ingen data</div>
+        <div id="sc-prod-takt" style="font-size:11px;margin-top:4px;"></div>
       </div>
       <div class="stat-card">
         <div class="stat-label">Snitt per dag</div>
@@ -923,6 +924,25 @@ function updateStatCards(uData,mData){
   };
 
   setPct('sc-prod','sc-prod-meta','sc-prod-badge',totalProd,malProd);
+
+  // Takt-indikator: jämför utfall med var målet borde ligga baserat på rapporterade dagar
+  const taktEl=document.getElementById('sc-prod-takt');
+  if(taktEl){
+    const malDaysTotal=mRows.filter(r=>{const v=getMalSaljare(r);return typeof v==='number'&&v>0;}).length;
+    if(workDays>0&&malProd>0&&malDaysTotal>0){
+      const expectedProd=malProd*(workDays/malDaysTotal);
+      const diff=totalProd-expectedProd;
+      const diffPct=Math.round((diff/expectedProd)*100);
+      if(diff>=0){
+        taktEl.innerHTML=`<span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+${Math.round(diff)} / +${diffPct}%)</span>`;
+      } else {
+        taktEl.innerHTML=`<span style="color:#c0392b;font-weight:600;">▼ Off track</span> <span style="color:#666;">(${Math.round(diff)} / ${diffPct}%)</span>`;
+      }
+    } else {
+      taktEl.innerHTML='';
+    }
+  }
+
   setPct('sc-avg','sc-avg-meta','sc-avg-badge',avgProd,malAvgProd);
   setPct('sc-phtimme','sc-phtimme-meta','sc-phtimme-badge',avgPerHour,malAvgPerHour);
   setPct('sc-sellers','sc-sellers-meta','sc-sellers-badge',avgSellers,malAvgSellers);
@@ -1310,19 +1330,22 @@ function toggleProject(el,ev){
     currentView='full';
     document.getElementById('tableWrap').style.display='block';
     document.getElementById('compareWrap').style.display='none';
+    document.querySelector('.stat-cards').style.display='';
+    document.querySelector('.month-nav').style.display='';
   }
   else if(activeCount===1){
     bar.classList.remove('visible');
     const a=document.querySelector('.project-item.active');
     currentProject=a.dataset.project;
     title.textContent=a.querySelector('.project-name').textContent;
-    // Kom från multi → singel: byt till full vy
-    if(prevCount>1||currentView==='compare'){
+    // Kom från overview, multi eller compare → byt till full vy
+    if(currentView==='overview'||currentView==='compare'||prevCount>1){
       currentView='full';
       document.getElementById('tableWrap').style.display='block';
       document.getElementById('compareWrap').style.display='none';
     }
-    // Annars behåll nuvarande vy
+    document.querySelector('.stat-cards').style.display='';
+    document.querySelector('.month-nav').style.display='';
   }
   else{
     bar.classList.add('visible');
