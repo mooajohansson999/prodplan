@@ -718,10 +718,10 @@ function renderTable(){
     const dateStr=`${i} ${MONTHS_SV[m].substring(0,3).toLowerCase()}`;
     const isLastData=i===lastDataDay&&!weekend&&!isNonWorkingDay;
     const cls=isLastData?'last-data':(weekend||isNonWorkingDay)?'weekend':'';
-    const dayLabel=isLastData?`<span class="day-badge">Uppdaterad till</span>${dayName}`:dayName;
+    const dayLabel=isLastData?`<span class="day-badge">upd till</span>${dayName}`:dayName;
 
     const cells=cols.map((c,idx)=>{
-      if(idx===0) return `<td style="text-align:left">${dayLabel}</td>`;
+      if(idx===0) return `<td>${dayLabel}</td>`;
       if(idx===1) return `<td>${dateStr}</td>`;
       if(weekend||isNonWorkingDay) return `<td>${e}</td>`;
       if(c.goalKey){
