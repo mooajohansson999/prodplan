@@ -882,21 +882,26 @@ function updateStatCards(uData,mData){
   const malSellersTotal=mRows.reduce((s,r)=>{ const v=getMalSaljare(r); return s+(typeof v==='number'?v:0); },0);
 
   const avgProd=workDays>0?fmt2(totalProd/workDays):0;
-  const malAvgProd=workDays>0?fmt2(malProd/workDays):0;
+  const malAvgProd=(()=>{
+    let sum=0,count=0;
+    mRows.forEach(r=>{const v=getMalProd(r);if(typeof v==='number'&&v>0){sum+=v;count++;}});
+    return count>0?fmt2(sum/count):0;
+  })();
 
   const avgPerHour=totalHours>0?fmt2(totalProd/totalHours):0;
   const malAvgPerHour=(()=>{
     const getMalSnitt=r=>findVal(r,'Mål snitt')??findVal(r,'Mål snitt per mansdag')??null;
-    const malSnittDays=mRows.filter(r=>{const v=getMalSnitt(r);return typeof v==='number'&&v>0;});
-    if(malSnittDays.length>0){
-      const sum=malSnittDays.reduce((s,r)=>{const v=getMalSnitt(r);return s+(typeof v==='number'?v:0);},0);
-      return fmt2(sum/malSnittDays.length);
-    }
-    return 0;
+    let sum=0,count=0;
+    mRows.forEach(r=>{const v=getMalSnitt(r);if(typeof v==='number'&&v>0){sum+=v;count++;}});
+    return count>0?fmt2(sum/count):0;
   })();
 
   const avgSellers=workDays>0?fmt2(totalSellers/workDays):0;
-  const malAvgSellers=workDays>0?fmt2(malSellersTotal/workDays):0;
+  const malAvgSellers=(()=>{
+    let sum=0,count=0;
+    mRows.forEach(r=>{const v=findVal(r,'Mål säljare')??findVal(r,'Mål mansdagar')??null;if(typeof v==='number'&&v>0){sum+=v;count++;}});
+    return count>0?fmt2(sum/count):0;
+  })();
 
   const setPct=(valEl,metaEl,badgeEl,val,mal,suffix='')=>{
     document.getElementById(valEl).textContent=val>0?(fmt2(val)+suffix):'—';
