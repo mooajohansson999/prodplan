@@ -451,10 +451,27 @@ function convertJsonToStore(raw, store){
 
 const COMPACT_COLS = [
   {label:'Dag'},{label:'Datum'},
-  {label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},
+  {label:'Mål säljare',goalKey:'__mal_saljare__'},{label:'Utfall säljare',key:'Antal Mansdagar'},
   {label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'timmar'},
-  {label:'Mål Produkt',goalKey:'Mål Sälj'},{label:'Utfall Produkt',key:'Produkt'}
+  {label:'Mål Produkt',goalKey:'__mal_prod__'},{label:'Utfall Produkt',key:'Produkt'}
 ];
+
+// Dynamisk lookup för kompaktvyns specialnycklar
+function resolveDynGoal(goalKey, mRow){
+  if(goalKey==='__mal_saljare__'){
+    for(const k of ['Mål säljare','Mål mansdagar']){
+      const v=findVal(mRow,k); if(typeof v==='number') return v;
+    }
+    return null;
+  }
+  if(goalKey==='__mal_prod__'){
+    for(const k of ['Mål Sälj','Mål Produkt','Mål produkt','Mål sälj']){
+      const v=findVal(mRow,k); if(typeof v==='number') return v;
+    }
+    return null;
+  }
+  return findVal(mRow,goalKey);
+}
 
 const PROJECT_COLS = {
   'telia-fm': [
@@ -560,23 +577,36 @@ const PROJECT_COLS = {
     {label:'Dag'},{label:'Datum'},
     {label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},
     {label:'Sjuka/frånvaro',key:'Utfall Sjuka/og frånvaro'},
-    {label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'timmar'},
-    {label:'Mål Huvudabb',goalKey:'Mål Huvudabb'},{label:'Utfall Huvudabb',key:'Huvudabb'},
+    {label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'Timmar'},
+    {label:'Mål Huvudabb',goalKey:'Mål Huvudabb'},{label:'Utfall Huvudabb',key:'Mobil'},
     {label:'Mål EA',goalKey:'Mål EA'},{label:'Utfall EA',key:'EA'},
-    {label:'Totalt',key:'Totalt'},
     {label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}
   ],
   'fmc': [
     {label:'Dag'},{label:'Datum'},
     {label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},
     {label:'Sjuka/frånvaro',key:'Utfall Sjuka/og frånvaro'},
-    {label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'timmar'},
-    {label:'Mål Huvudabb',goalKey:'Mål Huvudabb'},{label:'Utfall Huvudabb',key:'Huvudabb'},
+    {label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'Timmar'},
+    {label:'Mål Huvudabb',goalKey:'Mål Huvudabb'},{label:'Utfall Huvudabb',key:'Mobil'},
     {label:'Mål EA',goalKey:'Mål EA'},{label:'Utfall EA',key:'EA'},
-    {label:'Totalt',key:'Totalt'},
     {label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}
   ]
 };
+
+// Snitt per mansdagar (grupp A) eller per timmar (grupp B)
+const SNITT_PER_TIMMAR = new Set(['adressandring','vip-leads','retention','mbh','mobil','fmc']);
+
+function calcSnitt(proj, uRow){
+  const prod = findVal(uRow,'Produkt')??findVal(uRow,'produkt')??null;
+  if(typeof prod !== 'number') return null;
+  if(SNITT_PER_TIMMAR.has(proj)){
+    const t = findVal(uRow,'Timmar')??findVal(uRow,'timmar')??null;
+    return (typeof t === 'number' && t > 0) ? fmt2(prod/t) : null;
+  } else {
+    const s = findVal(uRow,'Antal Mansdagar')??findVal(uRow,'Antal Säljare')??null;
+    return (typeof s === 'number' && s > 0) ? fmt2(prod/s) : null;
+  }
+}
 
 function getMonth(){ return parseInt(document.getElementById('monthSel').value); }
 function getYear(){ return parseInt(document.getElementById('yearSel').value); }
@@ -648,12 +678,16 @@ function renderTable(){
       if(idx===1) return `<td>${dateStr}</td>`;
       if(weekend||isNonWorkingDay) return `<td>${e}</td>`;
       if(c.goalKey){
-        const gv=hasMal?findVal(mRow,c.goalKey):null;
+        const gv=hasMal?resolveDynGoal(c.goalKey,mRow):null;
         const gvFmt=typeof gv==='number'?fmt2(gv):null;
         return `<td class="goal">${gvFmt!==null?gvFmt:'—'}</td>`;
       }
       if(c.key){
-        const uv=hasUtfall?findVal(uRow,c.key):null;
+        // Snitt räknas alltid automatiskt, aldrig från Excel
+        const isSnitt = c.key.toLowerCase()==='snitt';
+        const uv = isSnitt
+          ? (hasUtfall ? calcSnitt(currentProject, uRow) : null)
+          : (hasUtfall ? findVal(uRow,c.key) : null);
         const gk=findGoalKey(cols,c.key);
         const gvRaw=hasMal&&gk?findVal(mRow,gk):null;
         const gv=typeof gvRaw==='number'?fmt2(gvRaw):gvRaw;
@@ -674,10 +708,22 @@ function renderTable(){
     if(idx===1) return `<td></td>`;
     if(c.goalKey){
       let sum=0;
-      Object.values(mData).forEach(r=>{ const v=findVal(r,c.goalKey); if(typeof v==='number') sum+=v; });
+      Object.values(mData).forEach(r=>{ const v=resolveDynGoal(c.goalKey,r); if(typeof v==='number') sum+=v; });
       return `<td class="goal">${sum>0?fmt2(sum):'—'}</td>`;
     }
     if(c.key){
+      if(c.key.toLowerCase()==='snitt'){
+        // Summerad snitt = total produkt / total säljare eller timmar
+        const allRows=Object.values(uData);
+        const totalP=allRows.reduce((s,r)=>{ const v=findVal(r,'Produkt')??findVal(r,'produkt')??0; return s+(typeof v==='number'?v:0); },0);
+        if(SNITT_PER_TIMMAR.has(currentProject)){
+          const totalT=allRows.reduce((s,r)=>{ const v=findVal(r,'Timmar')??findVal(r,'timmar')??0; return s+(typeof v==='number'?v:0); },0);
+          return `<td>${totalT>0?fmt2(totalP/totalT):'—'}</td>`;
+        } else {
+          const totalS=allRows.reduce((s,r)=>{ const v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0; return s+(typeof v==='number'?v:0); },0);
+          return `<td>${totalS>0?fmt2(totalP/totalS):'—'}</td>`;
+        }
+      }
       let sum=0;
       Object.values(uData).forEach(r=>{ const v=findVal(r,c.key); if(typeof v==='number') sum+=v; });
       return `<td>${sum>0?fmt2(sum):'—'}</td>`;
@@ -1024,6 +1070,52 @@ function getActiveProjects(){
   return [...document.querySelectorAll('.project-item.active')].map(el=>el.dataset.project);
 }
 
+// Normaliserar rad-nycklar till gemensamma namn så mergeData fungerar oavsett projekt
+function normalizeRow(row, type){
+  const out={...row};
+  if(type==='utfall'){
+    // Normalisera produkt → 'Produkt'
+    for(const k of ['produkt']){
+      if(findVal(row,k)!==null && findVal(row,'Produkt')===null){
+        out['Produkt']=findVal(row,k);
+      }
+    }
+    // Normalisera timmar → 'Timmar'
+    for(const k of ['timmar','Utfall Timmar']){
+      if(findVal(row,k)!==null && findVal(row,'Timmar')===null){
+        out['Timmar']=findVal(row,k);
+      }
+    }
+    // Normalisera säljare → 'Antal Mansdagar'
+    for(const k of ['Antal Säljare']){
+      if(findVal(row,k)!==null && findVal(row,'Antal Mansdagar')===null){
+        out['Antal Mansdagar']=findVal(row,k);
+      }
+    }
+  }
+  if(type==='mal'){
+    // Normalisera mål säljare/mansdagar → 'Mål säljare'
+    for(const k of ['Mål mansdagar']){
+      if(findVal(row,k)!==null && findVal(row,'Mål säljare')===null){
+        out['Mål säljare']=findVal(row,k);
+      }
+    }
+    // Normalisera mål produkt → 'Mål Sälj'
+    for(const k of ['Mål Produkt','Mål produkt','Mål sälj']){
+      if(findVal(row,k)!==null && findVal(row,'Mål Sälj')===null){
+        out['Mål Sälj']=findVal(row,k);
+      }
+    }
+    // Normalisera mål snitt per mansdag → 'Mål snitt'
+    for(const k of ['Mål snitt per mansdag']){
+      if(findVal(row,k)!==null && findVal(row,'Mål snitt')===null){
+        out['Mål snitt']=findVal(row,k);
+      }
+    }
+  }
+  return out;
+}
+
 function mergeData(type){
   const m=getMonth(),y=getYear();
   const store=type==='utfall'?utfallData:malData;
@@ -1033,7 +1125,8 @@ function mergeData(type){
     const data=store[storeKey(proj,y,m)]||{};
     for(const [dateKey,row] of Object.entries(data)){
       if(!merged[dateKey]) merged[dateKey]={};
-      for(const [k,v] of Object.entries(row)){
+      const normRow=normalizeRow(row,type);
+      for(const [k,v] of Object.entries(normRow)){
         if(typeof v==='number') merged[dateKey][k]=(merged[dateKey][k]||0)+v;
         else if(!merged[dateKey][k]) merged[dateKey][k]=v;
       }
