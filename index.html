@@ -182,8 +182,8 @@
   td.above { color: #2d8a4e; font-weight: 600; }
   td.below { color: #c0392b; font-weight: 600; }
   .day-badge {
-    display: inline-block; font-size: 11px; font-weight: 600; color: #f97c5a;
-    background: #fff5f3; border-radius: 4px; padding: 1px 6px; margin-right: 4px;
+    display: inline-block; font-size: 9px; font-weight: 600; color: #f97c5a;
+    background: #fff5f3; border-radius: 3px; padding: 1px 5px; margin-right: 4px;
   }
   th.goal-col { background: #e8503a; }
   td.goal-col { background: #fafafa; }
@@ -716,12 +716,12 @@ function renderTable(){
     const isNonWorkingDay=hasMal&&malSaljare===0&&malTimmar===0;
 
     const dateStr=`${i} ${MONTHS_SV[m].substring(0,3).toLowerCase()}`;
-    const isLastData=i===lastDataDay;
+    const isLastData=i===lastDataDay&&!weekend&&!isNonWorkingDay;
     const cls=isLastData?'last-data':(weekend||isNonWorkingDay)?'weekend':'';
     const dayLabel=isLastData?`<span class="day-badge">Uppdaterad till</span>${dayName}`:dayName;
 
     const cells=cols.map((c,idx)=>{
-      if(idx===0) return `<td>${dayLabel}</td>`;
+      if(idx===0) return `<td style="text-align:left">${dayLabel}</td>`;
       if(idx===1) return `<td>${dateStr}</td>`;
       if(weekend||isNonWorkingDay) return `<td>${e}</td>`;
       if(c.goalKey){
