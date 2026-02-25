@@ -295,6 +295,7 @@
       <div class="filter-group">
         <span class="filter-label">Filter:</span>
         <div class="filter-pills" id="dailyGroupFilter">
+          <button class="filter-pill" onclick="setDailyGroupFilter('alla',this)">Alla</button>
           <button class="filter-pill active" onclick="setDailyGroupFilter('d2d',this)">D2D</button>
           <button class="filter-pill" onclick="setDailyGroupFilter('tm',this)">TM</button>
         </div>
@@ -801,9 +802,17 @@ function setDailyGroupFilter(g,el){
 }
 
 function buildProjectChips(){
-  const projs=dailyGroup==='d2d'?GROUP_D2D:GROUP_TM;
+  const projs=dailyGroup==='d2d'?GROUP_D2D:dailyGroup==='tm'?GROUP_TM:ALL_PROJECTS;
   const sel=document.getElementById('dailyProjectSelector');
   sel.innerHTML=projs.map(p=>`<button class="proj-chip ${dailyProject.has(p)?'active':''}" onclick="selectDailyProject('${p}',this,event)">${PROJECT_META[p]?.name||p}</button>`).join('');
+}
+
+function selectDailyAll(){
+  const projs=dailyGroup==='d2d'?GROUP_D2D:dailyGroup==='tm'?GROUP_TM:ALL_PROJECTS;
+  dailyProject=new Set(projs);
+  buildProjectChips();
+  updateDailyTabs();
+  renderDaily();
 }
 
 function selectDailyProject(p,el,ev){
@@ -817,8 +826,14 @@ function selectDailyProject(p,el,ev){
     dailyProject=new Set([p]);
   }
   document.querySelectorAll('#dailyProjectSelector .proj-chip').forEach(c=>{
-    const proj=Object.entries(PROJECT_META).find(([k,v])=>v.name===c.textContent);
-    if(proj) c.classList.toggle('active',dailyProject.has(proj[0]));
+    const val=c.textContent;
+    if(val==='Alla'){
+      const projs=dailyGroup==='d2d'?GROUP_D2D:GROUP_TM;
+      c.classList.toggle('active',projs.every(p=>dailyProject.has(p)));
+    } else {
+      const proj=Object.entries(PROJECT_META).find(([k,v])=>v.name===val);
+      if(proj) c.classList.toggle('active',dailyProject.has(proj[0]));
+    }
   });
   updateDailyTabs();
   renderDaily();
