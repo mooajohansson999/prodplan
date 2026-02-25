@@ -185,7 +185,23 @@
   .view-tab { padding: 5px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; color: #666; font-weight: 500; transition: all 0.15s; border: none; background: none; }
   .view-tab.active { background: #fff; color: #1a1a1a; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
 
-  /* === RESPONSIVE === */
+  .summary-card {
+    background: #fff; border: 1px solid #ebebeb; border-radius: 14px; padding: 22px 28px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; align-items: start;
+  }
+  .summary-card .sc-block {}
+  .summary-card .sc-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #999; margin-bottom: 4px; }
+  .summary-card .sc-value { font-size: 22px; font-weight: 700; color: #1a1a1a; }
+  .summary-card .sc-meta { font-size: 11px; color: #999; margin-top: 2px; }
+  .summary-card .sc-badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px; margin-top: 4px; }
+  .summary-card .sc-spark { grid-column: 1 / -1; border-top: 1px solid #f0f0ee; padding-top: 14px; margin-top: 4px; }
+  .summary-card .sc-spark-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.4px; color: #1a1a1a; margin-bottom: 6px; }
+
+  @media (max-width: 768px) {
+    .summary-card { grid-template-columns: repeat(2, 1fr); gap: 14px; padding: 16px; }
+    .summary-card .sc-value { font-size: 18px; }
+    .summary-card .sc-spark { grid-column: 1 / -1; }
+  }
   @media (max-width: 768px) {
     header { padding: 0 12px; height: 48px; }
     .logo-text { font-size: 13px; }
@@ -268,7 +284,8 @@
     <div class="page-section">
       <div class="page-title">Översikt</div>
       <div class="page-sub" id="overviewSub">Februari 2026</div>
-      <div id="overviewGrid" class="compare-grid"></div>
+      <div id="overviewSummaryCard"></div>
+      <div id="overviewGrid" class="compare-grid" style="margin-top:14px;"></div>
     </div>
   </div>
 
@@ -563,12 +580,126 @@ function renderOverview(){
   let projects=ALL_PROJECTS;
   if(overviewFilter==='d2d') projects=GROUP_D2D;
   if(overviewFilter==='tm') projects=GROUP_TM;
-  if(overviewProject) projects=[overviewProject];
+  const singleProject=overviewProject?[overviewProject]:null;
+  const cardProjects=singleProject||projects;
 
   const barColor=p=>p>=100?'#2d8a4e':'#f97c5a';
   const MAL_COLOR='#999';
 
-  const sorted=projects.map(proj=>{
+  // === SUMMARY CARD (aggregera alla synliga projekt) ===
+  let sumTotalProd=0,sumMalProd=0,sumTotalMansdag=0,sumMalMansdag=0,sumTotalTimmar=0,sumMalTimmar=0,sumWorkDays=0;
+  let sumMalSnitt=0,sumMalSnittCount=0;
+  const allSparkU=[],allSparkM=[];
+  const days=new Date(y,m+1,0).getDate();
+
+  // init spark arrays
+  let sparkLen=0;
+  for(let i=1;i<=days;i++){const d=new Date(y,m,i);if(d.getDay()!==0&&d.getDay()!==6) sparkLen++;}
+  for(let i=0;i<sparkLen;i++){allSparkU.push(0);allSparkM.push(0);}
+
+  cardProjects.forEach(proj=>{
+    const {uData,mData}=getProjectData(proj);
+    const uRows=Object.values(uData).map(r=>normalizeRow(r,'utfall'));
+    const mRows=Object.values(mData);
+    const mRowsNorm=mRows.map(r=>normalizeRow(r,'mal'));
+    sumTotalProd+=uRows.reduce((s,r)=>{const v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0);},0);
+    sumMalProd+=mRows.reduce((s,r)=>s+getProjectMalProd(proj,r),0);
+    sumTotalMansdag+=uRows.reduce((s,r)=>{const v=findVal(r,'Antal Mansdagar')??0;return s+(typeof v==='number'?v:0);},0);
+    sumMalMansdag+=mRowsNorm.reduce((s,r)=>{const v=findVal(r,'Mål säljare')??0;return s+(typeof v==='number'?v:0);},0);
+    sumTotalTimmar+=uRows.reduce((s,r)=>{const v=findVal(r,'Timmar')??0;return s+(typeof v==='number'?v:0);},0);
+    sumMalTimmar+=mRowsNorm.reduce((s,r)=>{const v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0);},0);
+    sumWorkDays=Math.max(sumWorkDays,uRows.filter(r=>(findVal(r,'Antal Mansdagar')??0)>0).length);
+    mRowsNorm.forEach(r=>{const v=findVal(r,'Mål snitt')??0;if(typeof v==='number'&&v>0){sumMalSnitt+=v;sumMalSnittCount++;}});
+
+    // Accumulate sparklines
+    let si=0;
+    for(let i=1;i<=days;i++){
+      const d=new Date(y,m,i);if(d.getDay()===0||d.getDay()===6) continue;
+      const dk=toDateKey(y,m,i),ur=normalizeRow(uData[dk]||{},'utfall');
+      allSparkU[si]+=(findVal(ur,'Produkt')??0);
+      allSparkM[si]+=getProjectMalProd(proj,mData[dk]||{});
+      si++;
+    }
+  });
+
+  const sumProdPct=sumMalProd>0?Math.round(sumTotalProd/sumMalProd*100):0;
+  const sumAvgProd=sumWorkDays>0?fmt2(sumTotalProd/sumWorkDays):0;
+  const sumMalAvgSnitt=sumMalSnittCount>0?fmt2(sumMalSnitt/sumMalSnittCount):0;
+  const sumSnittPerTimme=sumTotalTimmar>0?fmt2(sumTotalProd/sumTotalTimmar):0;
+  const sumAvgSellers=sumWorkDays>0?fmt2(sumTotalMansdag/sumWorkDays):0;
+
+  // Takt
+  const sumMalDaysTotal=sumMalMansdag>0?(() => {
+    let maxDays=0;
+    cardProjects.forEach(proj=>{
+      const {mData}=getProjectData(proj);
+      const mRowsNorm=Object.values(mData).map(r=>normalizeRow(r,'mal'));
+      const d=mRowsNorm.filter(r=>{const v=findVal(r,'Mål säljare')??0;return typeof v==='number'&&v>0;}).length;
+      maxDays=Math.max(maxDays,d);
+    });
+    return maxDays;
+  })():0;
+  let taktHtml='';
+  if(sumWorkDays>0&&sumMalProd>0&&sumMalDaysTotal>0){
+    const expected=sumMalProd*(sumWorkDays/sumMalDaysTotal),diff=sumTotalProd-expected,diffPct=Math.round((diff/expected)*100);
+    taktHtml=diff>=0?`<div style="font-size:11px;margin-top:4px;"><span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+${Math.round(diff)} / +${diffPct}%)</span></div>`:`<div style="font-size:11px;margin-top:4px;"><span style="color:#c0392b;font-weight:600;">▼ Off track</span> <span style="color:#666;">(${Math.round(diff)} / ${diffPct}%)</span></div>`;
+  }
+
+  // Sparkline
+  const maxSpark=Math.max(...allSparkU,...allSparkM,1);
+  const W=900,H=52,n=allSparkU.length;
+  const px=i=>n>1?(i/(n-1))*W:W/2;
+  const py=v=>H-(v/maxSpark)*(H-4)-2;
+  const malPath=allSparkM.map((v,i)=>`${i===0?'M':'L'}${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
+  const utfPath=allSparkU.map((v,i)=>`${i===0?'M':'L'}${px(i).toFixed(1)},${py(v).toFixed(1)}`).join(' ');
+  const lineColor=sumProdPct>=100?'#2d8a4e':'#f97c5a';
+
+  const filterLabel=overviewProject?PROJECT_META[overviewProject]?.name:overviewFilter==='d2d'?'D2D':overviewFilter==='tm'?'TM':'Alla projekt';
+
+  const summaryHtml=`<div class="summary-card">
+    <div class="sc-block">
+      <div class="sc-label">Produkter totalt</div>
+      <div class="sc-value">${sumTotalProd}</div>
+      <div class="sc-meta">Mål: ${sumMalProd>0?sumMalProd:'—'}</div>
+      <div class="sc-badge ${sumProdPct>=100?'badge-green':sumMalProd>0?'badge-red':'badge-neutral'}">${sumMalProd>0?sumProdPct+'% av mål':'Mål saknas'}</div>
+      ${taktHtml}
+    </div>
+    <div class="sc-block">
+      <div class="sc-label">Snitt per dag</div>
+      <div class="sc-value">${sumAvgProd}</div>
+      <div class="sc-meta">Mål snitt: ${sumMalAvgSnitt>0?sumMalAvgSnitt:'—'}</div>
+    </div>
+    <div class="sc-block">
+      <div class="sc-label">Snitt per timme</div>
+      <div class="sc-value">${sumSnittPerTimme}</div>
+      <div class="sc-meta">Totalt ${fmt2(sumTotalTimmar)} timmar</div>
+    </div>
+    <div class="sc-block">
+      <div class="sc-label">Säljare per dag (snitt)</div>
+      <div class="sc-value">${sumAvgSellers}</div>
+      <div class="sc-meta">Totalt ${sumTotalMansdag} mansdagar</div>
+    </div>
+    <div class="sc-spark">
+      <div class="sc-spark-label">${filterLabel} – daglig produkt, utfall vs mål</div>
+      <svg width="100%" height="${H}" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" style="overflow:visible">
+        ${sumMalProd>0?`<path d="${malPath}" fill="none" stroke="${MAL_COLOR}" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/>`:''}<path d="${utfPath}" fill="none" stroke="${lineColor}" stroke-width="2"/>
+      </svg>
+      <div style="display:flex;gap:12px;margin-top:5px;font-size:10px;color:#999;">
+        <span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:${lineColor};border-radius:2px"></span>Utfall</span>
+        ${sumMalProd>0?`<span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:0;border-top:2px dashed ${MAL_COLOR}"></span>Mål</span>`:''}
+      </div>
+    </div>
+  </div>`;
+
+  document.getElementById('overviewSummaryCard').innerHTML=summaryHtml;
+
+  // === PROJECT CARDS (skip if only one project selected) ===
+  if(singleProject){
+    document.getElementById('overviewGrid').innerHTML='';
+    return;
+  }
+
+  const sorted=cardProjects.map(proj=>{
     const {uData,mData}=getProjectData(proj);
     const uRows=Object.values(uData).map(r=>normalizeRow(r,'utfall'));
     const mRows=Object.values(mData);
