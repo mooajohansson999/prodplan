@@ -11,7 +11,7 @@ from io import BytesIO
 # ==============================
 
 REFRESH_TOKEN = os.environ['DP_TOKEN']
-APP_KEY = 't15p5v3rcqofusj'
+APP_KEY = os.environ['DP_APP_TOKEN']
 APP_SECRET = os.environ['DP_SECRET']
 
 def get_access_token():
