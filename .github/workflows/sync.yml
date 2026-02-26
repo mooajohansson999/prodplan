@@ -23,6 +23,7 @@ jobs:
         env:
           DP_TOKEN: ${{ secrets.DP_TOKEN }}
           DP_SECRET: ${{ secrets.DP_SECRET }}
+          DP_APP_TOKEN: ${{ secrets.DP_APP_TOKEN }}
         run: python sync.py
 
       - name: Commit and push data
