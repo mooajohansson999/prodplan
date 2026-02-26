@@ -323,6 +323,12 @@
           <div class="stat-badge badge-neutral" id="sc-sellers-badge">Ingen data</div>
         </div>
       </div>
+      <div id="teliaFmBreakdown" style="display:none;margin-bottom:16px;">
+        <div class="stat-card" style="padding:14px 20px;">
+          <div class="stat-label">Snitt per timme – Kategorier</div>
+          <div id="teliaFmBreakdownContent" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:8px;"></div>
+        </div>
+      </div>
       <div class="table-wrap" id="tableWrap">
         <table><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table>
       </div>
@@ -373,7 +379,7 @@ const COMPACT_COLS=[
 ];
 
 const PROJECT_COLS={
-  'telia-fm':[{label:'Dag'},{label:'Datum'},{label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},{label:'Mål Sälj',goalKey:'Mål Sälj'},{label:'Utfall Produkter',key:'Produkt'},{label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall Timmar',key:'Utfall Timmar'},{label:'Mål BB',goalKey:'Mål BB'},{label:'Utfall BB',key:'Bredband'},{label:'Mål TV',goalKey:'Mål TV'},{label:'Utfall TV',key:'TV'},{label:'Mål Premium',goalKey:'Mål Premium'},{label:'Utfall Premium',key:'Streaming'},{label:'Mål Mob',goalKey:'Mål Mob'},{label:'Utfall Mob',key:'MOBIL'},{label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}],
+  'telia-fm':[{label:'Dag'},{label:'Datum'},{label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},{label:'Mål Sälj',goalKey:'Mål Sälj'},{label:'Utfall Produkter',key:'Produkt'},{label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall Timmar',key:'Timmar'},{label:'Mål BB',goalKey:'Mål BB'},{label:'Utfall BB',key:'Bredband'},{label:'Mål TV',goalKey:'Mål TV'},{label:'Utfall TV',key:'TV'},{label:'Mål Premium',goalKey:'Mål Premium'},{label:'Utfall Premium',key:'Streaming'},{label:'Mål Mob',goalKey:'Mål Mob'},{label:'Utfall Mob',key:'MOBIL'},{label:'Mål Trygghetspaket',goalKey:'Mål Trygghetspaket'},{label:'Utfall Trygghetspaket',key:'Trygghetspaket'},{label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}],
   'villafiber':[{label:'Dag'},{label:'Datum'},{label:'Mål mansdagar',goalKey:'Mål mansdagar'},{label:'Utfall mansdagar',key:'Antal Mansdagar'},{label:'Mål Produkt',goalKey:'Mål Produkt'},{label:'Utfall Produkt',key:'Produkt'},{label:'DTV',key:'TV'},{label:'BB',key:'Bredband'},{label:'MBB',key:'MBB'},{label:'Mobil',key:'Mobil'},{label:'Mål snitt/mansdag',goalKey:'Mål snitt per mansdag'},{label:'Utfall snitt/mansdag',key:'snitt'}],
   'koax':[{label:'Dag'},{label:'Datum'},{label:'Mål mansdagar',goalKey:'Mål mansdagar'},{label:'Utfall mansdagar',key:'Antal Mansdagar'},{label:'Mål Produkt',goalKey:'Mål Produkt'},{label:'Utfall Produkt',key:'Produkt'},{label:'DTV',key:'TV'},{label:'BB',key:'Bredband'},{label:'MBB',key:'MBB'},{label:'Mobil',key:'Mobil'},{label:'Mål snitt/mansdag',goalKey:'Mål snitt per mansdag'},{label:'Utfall snitt/mansdag',key:'snitt'}],
   'lan':[{label:'Dag'},{label:'Datum'},{label:'Mål mansdagar',goalKey:'Mål mansdagar'},{label:'Utfall mansdagar',key:'Antal Mansdagar'},{label:'Mål Produkt',goalKey:'Mål Produkt'},{label:'Utfall Produkt',key:'Produkt'},{label:'DTV',key:'TV'},{label:'BB',key:'Bredband'},{label:'MBB',key:'MBB'},{label:'Mobil',key:'Mobil'},{label:'Mål snitt/mansdag',goalKey:'Mål snitt per mansdag'},{label:'Utfall snitt/mansdag',key:'snitt'}],
@@ -982,6 +988,31 @@ function updateStatCards(uData,mData){
       else if(diff>=0||totalPct>=100) taktEl.innerHTML='<span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+'+(diff>=0?Math.round(diff):Math.round(totalProd-malProd))+' / +'+(diff>=0?diffPct:Math.round((totalProd/malProd-1)*100))+'%)</span>';
       else taktEl.innerHTML='<span style="color:#c0392b;font-weight:600;">▼ Off track</span> <span style="color:#666;">('+Math.round(diff)+' / '+diffPct+'%)</span>';
     } else taktEl.innerHTML='';
+  }
+
+  // Telia FM kategori-breakdown
+  var breakdownEl=document.getElementById('teliaFmBreakdown');
+  var breakdownContent=document.getElementById('teliaFmBreakdownContent');
+  if(breakdownEl){
+    var isTeliaFm=dailyProject.size===1&&[...dailyProject][0]==='telia-fm';
+    if(isTeliaFm&&totalHours>0){
+      var cats=[
+        {label:'BB/H',key:'Bredband'},
+        {label:'TV/H',key:'TV'},
+        {label:'Premium/H',key:'Streaming'},
+        {label:'Mob/H',key:'MOBIL'},
+        {label:'Trygghetspaket/H',key:'Trygghetspaket'}
+      ];
+      var html=cats.map(function(c){
+        var total=uRows.reduce(function(s,r){var v=findVal(r,c.key)??0;return s+(typeof v==='number'?v:0);},0);
+        var perH=fmt2(total/totalHours);
+        return '<div style="text-align:center;"><div style="font-size:11px;color:#999;font-weight:500;text-transform:uppercase;letter-spacing:0.4px;">'+c.label+'</div><div style="font-size:18px;font-weight:700;margin-top:2px;">'+perH+'</div></div>';
+      }).join('');
+      breakdownContent.innerHTML=html;
+      breakdownEl.style.display='';
+    } else {
+      breakdownEl.style.display='none';
+    }
   }
 }
 
