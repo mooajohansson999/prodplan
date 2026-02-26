@@ -120,6 +120,8 @@
   tr.weekend td { background: #efefed; color: #bbb; }
   tr.weekend td.goal-col { background: #e8e8e6; }
   tr.weekend-data td { background: #f7f7f5; color: #333; }
+  tr.no-data td { color: #bbb; }
+  tr.no-data td.goal-col { color: #bbb; }
   tr.weekend-data td.goal-col { background: #f0f0ee; }
   tr.last-data td, tr.last-data td.goal-col { background: #fff0eb !important; }
   tr.last-data td:first-child { border-left: 3px solid #f97c5a; }
@@ -855,7 +857,10 @@ function renderDaily(){
     var isNonWorkingDay=hasMal&&malSaljare===0&&malTimmar===0;
     var dateStr=i2+' '+MONTHS_SV[m].substring(0,3).toLowerCase();
     var isLastData=i2===lastDataDay;
-    var cls=isLastData?'last-data':(weekend||isNonWorkingDay)?(hasUtfallData?'weekend-data':'weekend'):'';
+    var today=new Date();today.setHours(0,0,0,0);
+    var thisDate=new Date(y,m,i2);
+    var isFuture=thisDate>today;
+    var cls=isLastData?'last-data':(weekend||isNonWorkingDay)?(hasUtfallData?'weekend-data':'weekend'):(isFuture&&!hasUtfallData?'no-data':'');
     var dayLabel=isLastData?'<span class="day-badge">senast</span>'+dayName:dayName;
 
     var hasUtfallData=Object.keys(uRow2).length>0&&(findVal(uRow2,'Produkt')??findVal(uRow2,'produkt')??findVal(uRow2,'Antal Mansdagar')??findVal(uRow2,'Antal Säljare')??null)!==null;
@@ -865,12 +870,14 @@ function renderDaily(){
       if((weekend||isNonWorkingDay)&&!hasUtfallData) return '<td>'+e+'</td>';
       if(c.goalKey){
         var gv=hasMal?resolveDynGoal(c.goalKey,mRow):null;
+        if((weekend||isNonWorkingDay)&&!hasUtfallData) return '<td class="goal goal-col">'+(typeof gv==='number'?fmt2(gv):'—')+'</td>';
         return '<td class="goal goal-col">'+(typeof gv==='number'?fmt2(gv):'—')+'</td>';
       }
       if(c.key){
         var isSnitt=c.key.toLowerCase()==='snitt';
         var isProd=c.key==='Produkt';
         var isSaljare=c.key==='__utfall_saljare__';
+        if(isFuture&&!c.goalKey) return '<td>—</td>';
         var uv;
         if(isSnitt) uv=hasUtfall?calcSnitt(firstProj,uRow2):null;
         else if(isProd&&(dailyView==='compact'||multi)) uv=hasUtfall?getCompactProd(firstProj,uRow2):null;
