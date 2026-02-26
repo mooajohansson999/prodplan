@@ -850,7 +850,7 @@ function renderDaily(){
     var hasUtfall=Object.keys(uRow2).length>0, hasMal=Object.keys(mRow).length>0;
     var malSaljare=findVal(mRow,'Mål säljare')||findVal(mRow,'Mål mansdagar')||0;
     var malTimmar=findVal(mRow,'Mål timmar')||0;
-    var isNonWorkingDay=hasMal&&malSaljare===0&&malTimmar===0;
+    var isNonWorkingDay=hasMal&&malSaljare===0&&malTimmar===0&&!hasUtfall;
     var dateStr=i2+' '+MONTHS_SV[m].substring(0,3).toLowerCase();
     var isLastData=i2===lastDataDay;
     var cls=isLastData?'last-data':(weekend||isNonWorkingDay)?'weekend':'';
