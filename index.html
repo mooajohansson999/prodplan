@@ -259,8 +259,8 @@
         <div class="filter-group">
           <span class="filter-label">Filter:</span>
           <div class="filter-pills" id="dailyGroupFilter">
-            <button class="filter-pill" onclick="setDailyGroupFilter('alla',this)">Alla</button>
-            <button class="filter-pill active" onclick="setDailyGroupFilter('d2d',this)">D2D</button>
+            <button class="filter-pill active" onclick="setDailyGroupFilter('alla',this)">Alla</button>
+            <button class="filter-pill" onclick="setDailyGroupFilter('d2d',this)">D2D</button>
             <button class="filter-pill" onclick="setDailyGroupFilter('tm',this)">TM</button>
           </div>
         </div>
@@ -363,8 +363,8 @@ const PROJECT_META={
 let currentPage='overview';
 let overviewFilter='alla';
 let overviewProject=null;
-let dailyGroup='d2d';
-let dailyProject=new Set(['telia-fm']);
+let dailyGroup='alla';
+let dailyProject=new Set(ALL_PROJECTS);
 let dailyView='full';
 let utfallData={};
 let malData={};
@@ -714,7 +714,7 @@ function setDailyGroupFilter(g,el){
   document.querySelectorAll('#dailyGroupFilter .filter-pill').forEach(function(p){p.classList.remove('active');});
   el.classList.add('active');
   var projs=g==='d2d'?GROUP_D2D:g==='tm'?GROUP_TM:ALL_PROJECTS;
-  dailyProject=new Set([projs[0]]);
+  dailyProject=new Set(projs);
   buildProjectChips();
   updateDailyTabs();
   renderDaily();
@@ -728,7 +728,8 @@ function buildProjectChips(){
   var html='';
   if(showAll) html+='<button class="proj-chip '+(allActive?'active':'')+'" onclick="selectDailyAll()">Alla</button>';
   projs.forEach(function(p){
-    html+='<button class="proj-chip '+(dailyProject.has(p)?'active':'')+'" onclick="selectDailyProject(\''+p+'\',this,event)">'+PROJECT_META[p].name+'</button>';
+    var active=!allActive&&dailyProject.has(p);
+    html+='<button class="proj-chip '+(active?'active':'')+'" onclick="selectDailyProject(\''+p+'\',this,event)">'+PROJECT_META[p].name+'</button>';
   });
   sel.innerHTML=html;
 }
@@ -750,16 +751,7 @@ function selectDailyProject(p,el,ev){
     if(dailyProject.size===1&&dailyProject.has(p)) return;
     dailyProject=new Set([p]);
   }
-  document.querySelectorAll('#dailyProjectSelector .proj-chip').forEach(function(c){
-    var val=c.textContent;
-    if(val==='Alla'){
-      var projs=dailyGroup==='d2d'?GROUP_D2D:dailyGroup==='tm'?GROUP_TM:ALL_PROJECTS;
-      c.classList.toggle('active',projs.every(function(pp){return dailyProject.has(pp);}));
-    } else {
-      var proj=Object.entries(PROJECT_META).find(function(e){return e[1].name===val;});
-      if(proj) c.classList.toggle('active',dailyProject.has(proj[0]));
-    }
-  });
+  buildProjectChips();
   updateDailyTabs();
   renderDaily();
 }
@@ -776,7 +768,7 @@ function updateDailyTabs(){
   } else {
     fullTab.style.display='';
     compareTab.style.display='none';
-    if(dailyView==='compare') dailyView='full';
+    if(dailyView==='compare'||dailyView==='compact') dailyView='full';
   }
   tabs.querySelectorAll('.view-tab').forEach(function(t){
     t.classList.toggle('active',t.dataset.view===dailyView);
