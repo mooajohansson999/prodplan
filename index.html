@@ -620,9 +620,11 @@ function renderOverview(){
     });
   }
   var taktHtml='';
-  if(sumWorkDays>0&&sumMalProd>0&&sumMalDaysTotal>0){
+  var now=new Date();
+  var isCurrentMonth=(m===now.getMonth()&&y===now.getFullYear());
+  if(isCurrentMonth&&sumWorkDays>0&&sumMalProd>0&&sumMalDaysTotal>0){
     var expected=sumMalProd*(sumWorkDays/sumMalDaysTotal),diff=sumTotalProd-expected,diffPct=Math.round((diff/expected)*100);
-    if(diff>=0) taktHtml='<div style="font-size:11px;margin-top:4px;"><span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+'+Math.round(diff)+' / +'+diffPct+'%)</span></div>';
+    if(diff>=0||sumProdPct>=100) taktHtml='<div style="font-size:11px;margin-top:4px;"><span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+'+(diff>=0?Math.round(diff):Math.round(sumTotalProd-sumMalProd))+' / +'+(diff>=0?diffPct:Math.round((sumTotalProd/sumMalProd-1)*100))+'%)</span></div>';
     else taktHtml='<div style="font-size:11px;margin-top:4px;"><span style="color:#c0392b;font-weight:600;">▼ Off track</span> <span style="color:#666;">('+Math.round(diff)+' / '+diffPct+'%)</span></div>';
   }
 
@@ -972,8 +974,11 @@ function updateStatCards(uData,mData){
     var getMalSaljare=function(r){return findVal(r,'Mål säljare')??findVal(r,'Mål mansdagar')??null;};
     var malDaysTotal=mRows.filter(function(r){var v=getMalSaljare(r);return typeof v==='number'&&v>0;}).length;
     if(workDays>0&&malProd>0&&malDaysTotal>0){
+      var now2=new Date();var isCurrentMonth2=(getMonth()===now2.getMonth()&&getYear()===now2.getFullYear());
       var expected=malProd*(workDays/malDaysTotal), diff=totalProd-expected, diffPct=Math.round((diff/expected)*100);
-      if(diff>=0) taktEl.innerHTML='<span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+'+Math.round(diff)+' / +'+diffPct+'%)</span>';
+      var totalPct=Math.round(totalProd/malProd*100);
+      if(!isCurrentMonth2) taktEl.innerHTML='';
+      else if(diff>=0||totalPct>=100) taktEl.innerHTML='<span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+'+(diff>=0?Math.round(diff):Math.round(totalProd-malProd))+' / +'+(diff>=0?diffPct:Math.round((totalProd/malProd-1)*100))+'%)</span>';
       else taktEl.innerHTML='<span style="color:#c0392b;font-weight:600;">▼ Off track</span> <span style="color:#666;">('+Math.round(diff)+' / '+diffPct+'%)</span>';
     } else taktEl.innerHTML='';
   }
