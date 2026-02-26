@@ -119,6 +119,8 @@
   tr:last-child td { border-bottom: none; }
   tr.weekend td { background: #efefed; color: #bbb; }
   tr.weekend td.goal-col { background: #e8e8e6; }
+  tr.weekend-data td { background: #f7f7f5; color: #333; }
+  tr.weekend-data td.goal-col { background: #f0f0ee; }
   tr.last-data td, tr.last-data td.goal-col { background: #fff0eb !important; }
   tr.last-data td:first-child { border-left: 3px solid #f97c5a; }
   td.goal { color: #1a1a1a; font-size: 12px; font-weight: 500; }
@@ -850,16 +852,17 @@ function renderDaily(){
     var hasUtfall=Object.keys(uRow2).length>0, hasMal=Object.keys(mRow).length>0;
     var malSaljare=findVal(mRow,'Mål säljare')||findVal(mRow,'Mål mansdagar')||0;
     var malTimmar=findVal(mRow,'Mål timmar')||0;
-    var isNonWorkingDay=hasMal&&malSaljare===0&&malTimmar===0&&!hasUtfall;
+    var isNonWorkingDay=hasMal&&malSaljare===0&&malTimmar===0;
     var dateStr=i2+' '+MONTHS_SV[m].substring(0,3).toLowerCase();
     var isLastData=i2===lastDataDay;
-    var cls=isLastData?'last-data':(weekend||isNonWorkingDay)?'weekend':'';
+    var cls=isLastData?'last-data':(weekend||isNonWorkingDay)?(hasUtfallData?'weekend-data':'weekend'):'';
     var dayLabel=isLastData?'<span class="day-badge">senast</span>'+dayName:dayName;
 
+    var hasUtfallData=Object.keys(uRow2).length>0&&(findVal(uRow2,'Produkt')??findVal(uRow2,'produkt')??findVal(uRow2,'Antal Mansdagar')??findVal(uRow2,'Antal Säljare')??null)!==null;
     var cells=cols.map(function(c,idx){
       if(idx===0) return '<td>'+dayLabel+'</td>';
       if(idx===1) return '<td>'+dateStr+'</td>';
-      if(weekend||isNonWorkingDay) return '<td>'+e+'</td>';
+      if((weekend||isNonWorkingDay)&&!hasUtfallData) return '<td>'+e+'</td>';
       if(c.goalKey){
         var gv=hasMal?resolveDynGoal(c.goalKey,mRow):null;
         return '<td class="goal goal-col">'+(typeof gv==='number'?fmt2(gv):'—')+'</td>';
