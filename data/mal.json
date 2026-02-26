@@ -1,217 +1,5 @@
 {
   "1.1 Telia D2D": {
-    "2026-02-01": {
-      "DATUM": "2026-02-01"
-    },
-    "2026-02-02": {
-      "DATUM": "2026-02-02",
-      "Mål säljare": 19,
-      "Mål Sälj": 105,
-      "Mål timmar": 171,
-      "Mål BB": 38,
-      "Mål TV": 29,
-      "Mål Premium": 19,
-      "Mål Mob": 19,
-      "Mål snitt": 5.526315789473684
-    },
-    "2026-02-03": {
-      "DATUM": "2026-02-03",
-      "Mål säljare": 19,
-      "Mål Sälj": 105,
-      "Mål timmar": 171,
-      "Mål BB": 38,
-      "Mål TV": 29,
-      "Mål Premium": 19,
-      "Mål Mob": 19,
-      "Mål snitt": 5.526315789473684
-    },
-    "2026-02-04": {
-      "DATUM": "2026-02-04",
-      "Mål säljare": 19,
-      "Mål Sälj": 105,
-      "Mål timmar": 171,
-      "Mål BB": 38,
-      "Mål TV": 29,
-      "Mål Premium": 19,
-      "Mål Mob": 19,
-      "Mål snitt": 5.526315789473684
-    },
-    "2026-02-05": {
-      "DATUM": "2026-02-05",
-      "Mål säljare": 19,
-      "Mål Sälj": 105,
-      "Mål timmar": 171,
-      "Mål BB": 38,
-      "Mål TV": 29,
-      "Mål Premium": 19,
-      "Mål Mob": 19,
-      "Mål snitt": 5.526315789473684
-    },
-    "2026-02-06": {
-      "DATUM": "2026-02-06"
-    },
-    "2026-02-07": {
-      "DATUM": "2026-02-07"
-    },
-    "2026-02-08": {
-      "DATUM": "2026-02-08"
-    },
-    "2026-02-09": {
-      "DATUM": "2026-02-09",
-      "Mål säljare": 19,
-      "Mål Sälj": 105,
-      "Mål timmar": 171,
-      "Mål BB": 38,
-      "Mål TV": 29,
-      "Mål Premium": 19,
-      "Mål Mob": 19,
-      "Mål snitt": 5.526315789473684
-    },
-    "2026-02-10": {
-      "DATUM": "2026-02-10",
-      "Mål säljare": 19,
-      "Mål Sälj": 105,
-      "Mål timmar": 171,
-      "Mål BB": 38,
-      "Mål TV": 29,
-      "Mål Premium": 19,
-      "Mål Mob": 19,
-      "Mål snitt": 5.526315789473684
-    },
-    "2026-02-11": {
-      "DATUM": "2026-02-11",
-      "Mål säljare": 19,
-      "Mål Sälj": 105,
-      "Mål timmar": 171,
-      "Mål BB": 38,
-      "Mål TV": 29,
-      "Mål Premium": 19,
-      "Mål Mob": 19,
-      "Mål snitt": 5.526315789473684
-    },
-    "2026-02-12": {
-      "DATUM": "2026-02-12",
-      "Mål säljare": 19,
-      "Mål Sälj": 105,
-      "Mål timmar": 171,
-      "Mål BB": 38,
-      "Mål TV": 29,
-      "Mål Premium": 19,
-      "Mål Mob": 19,
-      "Mål snitt": 5.526315789473684
-    },
-    "2026-02-13": {
-      "DATUM": "2026-02-13"
-    },
-    "2026-02-14": {
-      "DATUM": "2026-02-14"
-    },
-    "2026-02-15": {
-      "DATUM": "2026-02-15"
-    },
-    "2026-02-16": {
-      "DATUM": "2026-02-16",
-      "Mål säljare": 19,
-      "Mål Sälj": 105,
-      "Mål timmar": 171,
-      "Mål BB": 38,
-      "Mål TV": 29,
-      "Mål Premium": 19,
-      "Mål Mob": 19,
-      "Mål snitt": 5.526315789473684
-    },
-    "2026-02-17": {
-      "DATUM": "2026-02-17",
-      "Mål säljare": 19,
-      "Mål Sälj": 105,
-      "Mål timmar": 171,
-      "Mål BB": 38,
-      "Mål TV": 29,
-      "Mål Premium": 19,
-      "Mål Mob": 19,
-      "Mål snitt": 5.526315789473684
-    },
-    "2026-02-18": {
-      "DATUM": "2026-02-18",
-      "Mål säljare": 19,
-      "Mål Sälj": 105,
-      "Mål timmar": 171,
-      "Mål BB": 38,
-      "Mål TV": 29,
-      "Mål Premium": 19,
-      "Mål Mob": 19,
-      "Mål snitt": 5.526315789473684
-    },
-    "2026-02-19": {
-      "DATUM": "2026-02-19",
-      "Mål säljare": 19,
-      "Mål Sälj": 105,
-      "Mål timmar": 171,
-      "Mål BB": 38,
-      "Mål TV": 29,
-      "Mål Premium": 19,
-      "Mål Mob": 19,
-      "Mål snitt": 5.526315789473684
-    },
-    "2026-02-20": {
-      "DATUM": "2026-02-20"
-    },
-    "2026-02-21": {
-      "DATUM": "2026-02-21"
-    },
-    "2026-02-22": {
-      "DATUM": "2026-02-22"
-    },
-    "2026-02-23": {
-      "DATUM": "2026-02-23",
-      "Mål säljare": 19,
-      "Mål Sälj": 105,
-      "Mål timmar": 171,
-      "Mål BB": 38,
-      "Mål TV": 29,
-      "Mål Premium": 19,
-      "Mål Mob": 19,
-      "Mål snitt": 5.526315789473684
-    },
-    "2026-02-24": {
-      "DATUM": "2026-02-24",
-      "Mål säljare": 19,
-      "Mål Sälj": 105,
-      "Mål timmar": 171,
-      "Mål BB": 38,
-      "Mål TV": 29,
-      "Mål Premium": 19,
-      "Mål Mob": 19,
-      "Mål snitt": 5.526315789473684
-    },
-    "2026-02-25": {
-      "DATUM": "2026-02-25",
-      "Mål säljare": 19,
-      "Mål Sälj": 105,
-      "Mål timmar": 171,
-      "Mål BB": 38,
-      "Mål TV": 29,
-      "Mål Premium": 19,
-      "Mål Mob": 19,
-      "Mål snitt": 5.526315789473684
-    },
-    "2026-02-26": {
-      "DATUM": "2026-02-26",
-      "Mål säljare": 19,
-      "Mål Sälj": 105,
-      "Mål timmar": 171,
-      "Mål BB": 38,
-      "Mål TV": 29,
-      "Mål Premium": 19,
-      "Mål Mob": 19,
-      "Mål snitt": 5.526315789473684
-    },
-    "2026-02-27": {
-      "DATUM": "2026-02-27"
-    },
-    "2026-02-28": {
-      "DATUM": "2026-02-28"
-    },
     "2026-01-01": {
       "DATUM": "2026-01-01"
     },
@@ -440,141 +228,221 @@
     },
     "2026-01-31": {
       "DATUM": "2026-01-31"
+    },
+    "2026-02-01": {
+      "DATUM": "2026-02-01"
+    },
+    "2026-02-02": {
+      "DATUM": "2026-02-02",
+      "Mål säljare": 19,
+      "Mål Sälj": 105,
+      "Mål timmar": 171,
+      "Mål BB": 38,
+      "Mål TV": 29,
+      "Mål Premium": 19,
+      "Mål Mob": 19,
+      "Mål snitt": 5.526315789473684
+    },
+    "2026-02-03": {
+      "DATUM": "2026-02-03",
+      "Mål säljare": 19,
+      "Mål Sälj": 105,
+      "Mål timmar": 171,
+      "Mål BB": 38,
+      "Mål TV": 29,
+      "Mål Premium": 19,
+      "Mål Mob": 19,
+      "Mål snitt": 5.526315789473684
+    },
+    "2026-02-04": {
+      "DATUM": "2026-02-04",
+      "Mål säljare": 19,
+      "Mål Sälj": 105,
+      "Mål timmar": 171,
+      "Mål BB": 38,
+      "Mål TV": 29,
+      "Mål Premium": 19,
+      "Mål Mob": 19,
+      "Mål snitt": 5.526315789473684
+    },
+    "2026-02-05": {
+      "DATUM": "2026-02-05",
+      "Mål säljare": 19,
+      "Mål Sälj": 105,
+      "Mål timmar": 171,
+      "Mål BB": 38,
+      "Mål TV": 29,
+      "Mål Premium": 19,
+      "Mål Mob": 19,
+      "Mål snitt": 5.526315789473684
+    },
+    "2026-02-06": {
+      "DATUM": "2026-02-06"
+    },
+    "2026-02-07": {
+      "DATUM": "2026-02-07"
+    },
+    "2026-02-08": {
+      "DATUM": "2026-02-08"
+    },
+    "2026-02-09": {
+      "DATUM": "2026-02-09",
+      "Mål säljare": 19,
+      "Mål Sälj": 105,
+      "Mål timmar": 171,
+      "Mål BB": 38,
+      "Mål TV": 29,
+      "Mål Premium": 19,
+      "Mål Mob": 19,
+      "Mål snitt": 5.526315789473684
+    },
+    "2026-02-10": {
+      "DATUM": "2026-02-10",
+      "Mål säljare": 19,
+      "Mål Sälj": 105,
+      "Mål timmar": 171,
+      "Mål BB": 38,
+      "Mål TV": 29,
+      "Mål Premium": 19,
+      "Mål Mob": 19,
+      "Mål snitt": 5.526315789473684
+    },
+    "2026-02-11": {
+      "DATUM": "2026-02-11",
+      "Mål säljare": 19,
+      "Mål Sälj": 105,
+      "Mål timmar": 171,
+      "Mål BB": 38,
+      "Mål TV": 29,
+      "Mål Premium": 19,
+      "Mål Mob": 19,
+      "Mål snitt": 5.526315789473684
+    },
+    "2026-02-12": {
+      "DATUM": "2026-02-12",
+      "Mål säljare": 19,
+      "Mål Sälj": 105,
+      "Mål timmar": 171,
+      "Mål BB": 38,
+      "Mål TV": 29,
+      "Mål Premium": 19,
+      "Mål Mob": 19,
+      "Mål snitt": 5.526315789473684
+    },
+    "2026-02-13": {
+      "DATUM": "2026-02-13"
+    },
+    "2026-02-14": {
+      "DATUM": "2026-02-14"
+    },
+    "2026-02-15": {
+      "DATUM": "2026-02-15"
+    },
+    "2026-02-16": {
+      "DATUM": "2026-02-16",
+      "Mål säljare": 19,
+      "Mål Sälj": 105,
+      "Mål timmar": 171,
+      "Mål BB": 38,
+      "Mål TV": 29,
+      "Mål Premium": 19,
+      "Mål Mob": 19,
+      "Mål snitt": 5.526315789473684
+    },
+    "2026-02-17": {
+      "DATUM": "2026-02-17",
+      "Mål säljare": 19,
+      "Mål Sälj": 105,
+      "Mål timmar": 171,
+      "Mål BB": 38,
+      "Mål TV": 29,
+      "Mål Premium": 19,
+      "Mål Mob": 19,
+      "Mål snitt": 5.526315789473684
+    },
+    "2026-02-18": {
+      "DATUM": "2026-02-18",
+      "Mål säljare": 19,
+      "Mål Sälj": 105,
+      "Mål timmar": 171,
+      "Mål BB": 38,
+      "Mål TV": 29,
+      "Mål Premium": 19,
+      "Mål Mob": 19,
+      "Mål snitt": 5.526315789473684
+    },
+    "2026-02-19": {
+      "DATUM": "2026-02-19",
+      "Mål säljare": 19,
+      "Mål Sälj": 105,
+      "Mål timmar": 171,
+      "Mål BB": 38,
+      "Mål TV": 29,
+      "Mål Premium": 19,
+      "Mål Mob": 19,
+      "Mål snitt": 5.526315789473684
+    },
+    "2026-02-20": {
+      "DATUM": "2026-02-20"
+    },
+    "2026-02-21": {
+      "DATUM": "2026-02-21"
+    },
+    "2026-02-22": {
+      "DATUM": "2026-02-22"
+    },
+    "2026-02-23": {
+      "DATUM": "2026-02-23",
+      "Mål säljare": 19,
+      "Mål Sälj": 105,
+      "Mål timmar": 171,
+      "Mål BB": 38,
+      "Mål TV": 29,
+      "Mål Premium": 19,
+      "Mål Mob": 19,
+      "Mål snitt": 5.526315789473684
+    },
+    "2026-02-24": {
+      "DATUM": "2026-02-24",
+      "Mål säljare": 19,
+      "Mål Sälj": 105,
+      "Mål timmar": 171,
+      "Mål BB": 38,
+      "Mål TV": 29,
+      "Mål Premium": 19,
+      "Mål Mob": 19,
+      "Mål snitt": 5.526315789473684
+    },
+    "2026-02-25": {
+      "DATUM": "2026-02-25",
+      "Mål säljare": 19,
+      "Mål Sälj": 105,
+      "Mål timmar": 171,
+      "Mål BB": 38,
+      "Mål TV": 29,
+      "Mål Premium": 19,
+      "Mål Mob": 19,
+      "Mål snitt": 5.526315789473684
+    },
+    "2026-02-26": {
+      "DATUM": "2026-02-26",
+      "Mål säljare": 19,
+      "Mål Sälj": 105,
+      "Mål timmar": 171,
+      "Mål BB": 38,
+      "Mål TV": 29,
+      "Mål Premium": 19,
+      "Mål Mob": 19,
+      "Mål snitt": 5.526315789473684
+    },
+    "2026-02-27": {
+      "DATUM": "2026-02-27"
+    },
+    "2026-02-28": {
+      "DATUM": "2026-02-28"
     }
   },
   "1.3 Tele2 Villafiber": {
-    "2026-02-01": {
-      "DATUM": "2026-02-01"
-    },
-    "2026-02-02": {
-      "DATUM": "2026-02-02",
-      "Mål mansdagar": 16,
-      "Mål Produkt": 64,
-      "Mål snitt per mansdag": 4
-    },
-    "2026-02-03": {
-      "DATUM": "2026-02-03",
-      "Mål mansdagar": 16,
-      "Mål Produkt": 64,
-      "Mål snitt per mansdag": 4
-    },
-    "2026-02-04": {
-      "DATUM": "2026-02-04",
-      "Mål mansdagar": 16,
-      "Mål Produkt": 64,
-      "Mål snitt per mansdag": 4
-    },
-    "2026-02-05": {
-      "DATUM": "2026-02-05",
-      "Mål mansdagar": 16,
-      "Mål Produkt": 64,
-      "Mål snitt per mansdag": 4
-    },
-    "2026-02-06": {
-      "DATUM": "2026-02-06"
-    },
-    "2026-02-07": {
-      "DATUM": "2026-02-07"
-    },
-    "2026-02-08": {
-      "DATUM": "2026-02-08"
-    },
-    "2026-02-09": {
-      "DATUM": "2026-02-09",
-      "Mål mansdagar": 16,
-      "Mål Produkt": 64,
-      "Mål snitt per mansdag": 4
-    },
-    "2026-02-10": {
-      "DATUM": "2026-02-10",
-      "Mål mansdagar": 16,
-      "Mål Produkt": 64,
-      "Mål snitt per mansdag": 4
-    },
-    "2026-02-11": {
-      "DATUM": "2026-02-11",
-      "Mål mansdagar": 16,
-      "Mål Produkt": 64,
-      "Mål snitt per mansdag": 4
-    },
-    "2026-02-12": {
-      "DATUM": "2026-02-12",
-      "Mål mansdagar": 16,
-      "Mål Produkt": 64,
-      "Mål snitt per mansdag": 4
-    },
-    "2026-02-13": {
-      "DATUM": "2026-02-13"
-    },
-    "2026-02-14": {
-      "DATUM": "2026-02-14"
-    },
-    "2026-02-15": {
-      "DATUM": "2026-02-15"
-    },
-    "2026-02-16": {
-      "DATUM": "2026-02-16",
-      "Mål mansdagar": 20,
-      "Mål Produkt": 80,
-      "Mål snitt per mansdag": 4
-    },
-    "2026-02-17": {
-      "DATUM": "2026-02-17",
-      "Mål mansdagar": 20,
-      "Mål Produkt": 80,
-      "Mål snitt per mansdag": 4
-    },
-    "2026-02-18": {
-      "DATUM": "2026-02-18",
-      "Mål mansdagar": 20,
-      "Mål Produkt": 80,
-      "Mål snitt per mansdag": 4
-    },
-    "2026-02-19": {
-      "DATUM": "2026-02-19",
-      "Mål mansdagar": 20,
-      "Mål Produkt": 80,
-      "Mål snitt per mansdag": 4
-    },
-    "2026-02-20": {
-      "DATUM": "2026-02-20"
-    },
-    "2026-02-21": {
-      "DATUM": "2026-02-21"
-    },
-    "2026-02-22": {
-      "DATUM": "2026-02-22"
-    },
-    "2026-02-23": {
-      "DATUM": "2026-02-23",
-      "Mål mansdagar": 20,
-      "Mål Produkt": 80,
-      "Mål snitt per mansdag": 4
-    },
-    "2026-02-24": {
-      "DATUM": "2026-02-24",
-      "Mål mansdagar": 20,
-      "Mål Produkt": 80,
-      "Mål snitt per mansdag": 4
-    },
-    "2026-02-25": {
-      "DATUM": "2026-02-25",
-      "Mål mansdagar": 20,
-      "Mål Produkt": 80,
-      "Mål snitt per mansdag": 4
-    },
-    "2026-02-26": {
-      "DATUM": "2026-02-26",
-      "Mål mansdagar": 20,
-      "Mål Produkt": 80,
-      "Mål snitt per mansdag": 4
-    },
-    "2026-02-27": {
-      "DATUM": "2026-02-27"
-    },
-    "2026-02-28": {
-      "DATUM": "2026-02-28"
-    },
     "2026-01-01": {
       "DATUM": "2026-01-01"
     },
@@ -718,141 +586,141 @@
     },
     "2026-01-31": {
       "DATUM": "2026-01-31"
+    },
+    "2026-02-01": {
+      "DATUM": "2026-02-01"
+    },
+    "2026-02-02": {
+      "DATUM": "2026-02-02",
+      "Mål mansdagar": 16,
+      "Mål Produkt": 64,
+      "Mål snitt per mansdag": 4
+    },
+    "2026-02-03": {
+      "DATUM": "2026-02-03",
+      "Mål mansdagar": 16,
+      "Mål Produkt": 64,
+      "Mål snitt per mansdag": 4
+    },
+    "2026-02-04": {
+      "DATUM": "2026-02-04",
+      "Mål mansdagar": 16,
+      "Mål Produkt": 64,
+      "Mål snitt per mansdag": 4
+    },
+    "2026-02-05": {
+      "DATUM": "2026-02-05",
+      "Mål mansdagar": 16,
+      "Mål Produkt": 64,
+      "Mål snitt per mansdag": 4
+    },
+    "2026-02-06": {
+      "DATUM": "2026-02-06"
+    },
+    "2026-02-07": {
+      "DATUM": "2026-02-07"
+    },
+    "2026-02-08": {
+      "DATUM": "2026-02-08"
+    },
+    "2026-02-09": {
+      "DATUM": "2026-02-09",
+      "Mål mansdagar": 16,
+      "Mål Produkt": 64,
+      "Mål snitt per mansdag": 4
+    },
+    "2026-02-10": {
+      "DATUM": "2026-02-10",
+      "Mål mansdagar": 16,
+      "Mål Produkt": 64,
+      "Mål snitt per mansdag": 4
+    },
+    "2026-02-11": {
+      "DATUM": "2026-02-11",
+      "Mål mansdagar": 16,
+      "Mål Produkt": 64,
+      "Mål snitt per mansdag": 4
+    },
+    "2026-02-12": {
+      "DATUM": "2026-02-12",
+      "Mål mansdagar": 16,
+      "Mål Produkt": 64,
+      "Mål snitt per mansdag": 4
+    },
+    "2026-02-13": {
+      "DATUM": "2026-02-13"
+    },
+    "2026-02-14": {
+      "DATUM": "2026-02-14"
+    },
+    "2026-02-15": {
+      "DATUM": "2026-02-15"
+    },
+    "2026-02-16": {
+      "DATUM": "2026-02-16",
+      "Mål mansdagar": 20,
+      "Mål Produkt": 80,
+      "Mål snitt per mansdag": 4
+    },
+    "2026-02-17": {
+      "DATUM": "2026-02-17",
+      "Mål mansdagar": 20,
+      "Mål Produkt": 80,
+      "Mål snitt per mansdag": 4
+    },
+    "2026-02-18": {
+      "DATUM": "2026-02-18",
+      "Mål mansdagar": 20,
+      "Mål Produkt": 80,
+      "Mål snitt per mansdag": 4
+    },
+    "2026-02-19": {
+      "DATUM": "2026-02-19",
+      "Mål mansdagar": 20,
+      "Mål Produkt": 80,
+      "Mål snitt per mansdag": 4
+    },
+    "2026-02-20": {
+      "DATUM": "2026-02-20"
+    },
+    "2026-02-21": {
+      "DATUM": "2026-02-21"
+    },
+    "2026-02-22": {
+      "DATUM": "2026-02-22"
+    },
+    "2026-02-23": {
+      "DATUM": "2026-02-23",
+      "Mål mansdagar": 20,
+      "Mål Produkt": 80,
+      "Mål snitt per mansdag": 4
+    },
+    "2026-02-24": {
+      "DATUM": "2026-02-24",
+      "Mål mansdagar": 20,
+      "Mål Produkt": 80,
+      "Mål snitt per mansdag": 4
+    },
+    "2026-02-25": {
+      "DATUM": "2026-02-25",
+      "Mål mansdagar": 20,
+      "Mål Produkt": 80,
+      "Mål snitt per mansdag": 4
+    },
+    "2026-02-26": {
+      "DATUM": "2026-02-26",
+      "Mål mansdagar": 20,
+      "Mål Produkt": 80,
+      "Mål snitt per mansdag": 4
+    },
+    "2026-02-27": {
+      "DATUM": "2026-02-27"
+    },
+    "2026-02-28": {
+      "DATUM": "2026-02-28"
     }
   },
   "1.2 Tele2 Koax": {
-    "2026-02-01": {
-      "DATUM": "2026-02-01"
-    },
-    "2026-02-02": {
-      "DATUM": "2026-02-02",
-      "Mål mansdagar": 4,
-      "Mål Produkt": 24,
-      "Mål snitt per mansdag": 6
-    },
-    "2026-02-03": {
-      "DATUM": "2026-02-03",
-      "Mål mansdagar": 4,
-      "Mål Produkt": 24,
-      "Mål snitt per mansdag": 6
-    },
-    "2026-02-04": {
-      "DATUM": "2026-02-04",
-      "Mål mansdagar": 4,
-      "Mål Produkt": 24,
-      "Mål snitt per mansdag": 6
-    },
-    "2026-02-05": {
-      "DATUM": "2026-02-05",
-      "Mål mansdagar": 4,
-      "Mål Produkt": 24,
-      "Mål snitt per mansdag": 6
-    },
-    "2026-02-06": {
-      "DATUM": "2026-02-06"
-    },
-    "2026-02-07": {
-      "DATUM": "2026-02-07"
-    },
-    "2026-02-08": {
-      "DATUM": "2026-02-08"
-    },
-    "2026-02-09": {
-      "DATUM": "2026-02-09",
-      "Mål mansdagar": 4,
-      "Mål Produkt": 24,
-      "Mål snitt per mansdag": 6
-    },
-    "2026-02-10": {
-      "DATUM": "2026-02-10",
-      "Mål mansdagar": 4,
-      "Mål Produkt": 24,
-      "Mål snitt per mansdag": 6
-    },
-    "2026-02-11": {
-      "DATUM": "2026-02-11",
-      "Mål mansdagar": 4,
-      "Mål Produkt": 24,
-      "Mål snitt per mansdag": 6
-    },
-    "2026-02-12": {
-      "DATUM": "2026-02-12",
-      "Mål mansdagar": 4,
-      "Mål Produkt": 24,
-      "Mål snitt per mansdag": 6
-    },
-    "2026-02-13": {
-      "DATUM": "2026-02-13"
-    },
-    "2026-02-14": {
-      "DATUM": "2026-02-14"
-    },
-    "2026-02-15": {
-      "DATUM": "2026-02-15"
-    },
-    "2026-02-16": {
-      "DATUM": "2026-02-16",
-      "Mål mansdagar": 4,
-      "Mål Produkt": 24,
-      "Mål snitt per mansdag": 6
-    },
-    "2026-02-17": {
-      "DATUM": "2026-02-17",
-      "Mål mansdagar": 4,
-      "Mål Produkt": 24,
-      "Mål snitt per mansdag": 6
-    },
-    "2026-02-18": {
-      "DATUM": "2026-02-18",
-      "Mål mansdagar": 4,
-      "Mål Produkt": 24,
-      "Mål snitt per mansdag": 6
-    },
-    "2026-02-19": {
-      "DATUM": "2026-02-19",
-      "Mål mansdagar": 6,
-      "Mål Produkt": 36,
-      "Mål snitt per mansdag": 6
-    },
-    "2026-02-20": {
-      "DATUM": "2026-02-20"
-    },
-    "2026-02-21": {
-      "DATUM": "2026-02-21"
-    },
-    "2026-02-22": {
-      "DATUM": "2026-02-22"
-    },
-    "2026-02-23": {
-      "DATUM": "2026-02-23",
-      "Mål mansdagar": 6,
-      "Mål Produkt": 36,
-      "Mål snitt per mansdag": 6
-    },
-    "2026-02-24": {
-      "DATUM": "2026-02-24",
-      "Mål mansdagar": 6,
-      "Mål Produkt": 36,
-      "Mål snitt per mansdag": 6
-    },
-    "2026-02-25": {
-      "DATUM": "2026-02-25",
-      "Mål mansdagar": 6,
-      "Mål Produkt": 36,
-      "Mål snitt per mansdag": 6
-    },
-    "2026-02-26": {
-      "DATUM": "2026-02-26",
-      "Mål mansdagar": 6,
-      "Mål Produkt": 36,
-      "Mål snitt per mansdag": 6
-    },
-    "2026-02-27": {
-      "DATUM": "2026-02-27"
-    },
-    "2026-02-28": {
-      "DATUM": "2026-02-28"
-    },
     "2026-01-01": {
       "DATUM": "2026-01-01"
     },
@@ -996,141 +864,141 @@
     },
     "2026-01-31": {
       "DATUM": "2026-01-31"
+    },
+    "2026-02-01": {
+      "DATUM": "2026-02-01"
+    },
+    "2026-02-02": {
+      "DATUM": "2026-02-02",
+      "Mål mansdagar": 4,
+      "Mål Produkt": 24,
+      "Mål snitt per mansdag": 6
+    },
+    "2026-02-03": {
+      "DATUM": "2026-02-03",
+      "Mål mansdagar": 4,
+      "Mål Produkt": 24,
+      "Mål snitt per mansdag": 6
+    },
+    "2026-02-04": {
+      "DATUM": "2026-02-04",
+      "Mål mansdagar": 4,
+      "Mål Produkt": 24,
+      "Mål snitt per mansdag": 6
+    },
+    "2026-02-05": {
+      "DATUM": "2026-02-05",
+      "Mål mansdagar": 4,
+      "Mål Produkt": 24,
+      "Mål snitt per mansdag": 6
+    },
+    "2026-02-06": {
+      "DATUM": "2026-02-06"
+    },
+    "2026-02-07": {
+      "DATUM": "2026-02-07"
+    },
+    "2026-02-08": {
+      "DATUM": "2026-02-08"
+    },
+    "2026-02-09": {
+      "DATUM": "2026-02-09",
+      "Mål mansdagar": 4,
+      "Mål Produkt": 24,
+      "Mål snitt per mansdag": 6
+    },
+    "2026-02-10": {
+      "DATUM": "2026-02-10",
+      "Mål mansdagar": 4,
+      "Mål Produkt": 24,
+      "Mål snitt per mansdag": 6
+    },
+    "2026-02-11": {
+      "DATUM": "2026-02-11",
+      "Mål mansdagar": 4,
+      "Mål Produkt": 24,
+      "Mål snitt per mansdag": 6
+    },
+    "2026-02-12": {
+      "DATUM": "2026-02-12",
+      "Mål mansdagar": 4,
+      "Mål Produkt": 24,
+      "Mål snitt per mansdag": 6
+    },
+    "2026-02-13": {
+      "DATUM": "2026-02-13"
+    },
+    "2026-02-14": {
+      "DATUM": "2026-02-14"
+    },
+    "2026-02-15": {
+      "DATUM": "2026-02-15"
+    },
+    "2026-02-16": {
+      "DATUM": "2026-02-16",
+      "Mål mansdagar": 4,
+      "Mål Produkt": 24,
+      "Mål snitt per mansdag": 6
+    },
+    "2026-02-17": {
+      "DATUM": "2026-02-17",
+      "Mål mansdagar": 4,
+      "Mål Produkt": 24,
+      "Mål snitt per mansdag": 6
+    },
+    "2026-02-18": {
+      "DATUM": "2026-02-18",
+      "Mål mansdagar": 4,
+      "Mål Produkt": 24,
+      "Mål snitt per mansdag": 6
+    },
+    "2026-02-19": {
+      "DATUM": "2026-02-19",
+      "Mål mansdagar": 6,
+      "Mål Produkt": 36,
+      "Mål snitt per mansdag": 6
+    },
+    "2026-02-20": {
+      "DATUM": "2026-02-20"
+    },
+    "2026-02-21": {
+      "DATUM": "2026-02-21"
+    },
+    "2026-02-22": {
+      "DATUM": "2026-02-22"
+    },
+    "2026-02-23": {
+      "DATUM": "2026-02-23",
+      "Mål mansdagar": 6,
+      "Mål Produkt": 36,
+      "Mål snitt per mansdag": 6
+    },
+    "2026-02-24": {
+      "DATUM": "2026-02-24",
+      "Mål mansdagar": 6,
+      "Mål Produkt": 36,
+      "Mål snitt per mansdag": 6
+    },
+    "2026-02-25": {
+      "DATUM": "2026-02-25",
+      "Mål mansdagar": 6,
+      "Mål Produkt": 36,
+      "Mål snitt per mansdag": 6
+    },
+    "2026-02-26": {
+      "DATUM": "2026-02-26",
+      "Mål mansdagar": 6,
+      "Mål Produkt": 36,
+      "Mål snitt per mansdag": 6
+    },
+    "2026-02-27": {
+      "DATUM": "2026-02-27"
+    },
+    "2026-02-28": {
+      "DATUM": "2026-02-28"
     }
   },
   "1.4 LAN": {
-    "2026-02-01": {
-      "DATUM": "2026-02-01"
-    },
-    "2026-02-02": {
-      "DATUM": "2026-02-02",
-      "Mål mansdagar": 10,
-      "Mål Produkt": 50,
-      "Mål snitt per mansdag": 5
-    },
-    "2026-02-03": {
-      "DATUM": "2026-02-03",
-      "Mål mansdagar": 10,
-      "Mål Produkt": 50,
-      "Mål snitt per mansdag": 5
-    },
-    "2026-02-04": {
-      "DATUM": "2026-02-04",
-      "Mål mansdagar": 10,
-      "Mål Produkt": 50,
-      "Mål snitt per mansdag": 5
-    },
-    "2026-02-05": {
-      "DATUM": "2026-02-05",
-      "Mål mansdagar": 10,
-      "Mål Produkt": 50,
-      "Mål snitt per mansdag": 5
-    },
-    "2026-02-06": {
-      "DATUM": "2026-02-06"
-    },
-    "2026-02-07": {
-      "DATUM": "2026-02-07"
-    },
-    "2026-02-08": {
-      "DATUM": "2026-02-08"
-    },
-    "2026-02-09": {
-      "DATUM": "2026-02-09",
-      "Mål mansdagar": 10,
-      "Mål Produkt": 50,
-      "Mål snitt per mansdag": 5
-    },
-    "2026-02-10": {
-      "DATUM": "2026-02-10",
-      "Mål mansdagar": 10,
-      "Mål Produkt": 50,
-      "Mål snitt per mansdag": 5
-    },
-    "2026-02-11": {
-      "DATUM": "2026-02-11",
-      "Mål mansdagar": 12,
-      "Mål Produkt": 60,
-      "Mål snitt per mansdag": 5
-    },
-    "2026-02-12": {
-      "DATUM": "2026-02-12",
-      "Mål mansdagar": 12,
-      "Mål Produkt": 60,
-      "Mål snitt per mansdag": 5
-    },
-    "2026-02-13": {
-      "DATUM": "2026-02-13"
-    },
-    "2026-02-14": {
-      "DATUM": "2026-02-14"
-    },
-    "2026-02-15": {
-      "DATUM": "2026-02-15"
-    },
-    "2026-02-16": {
-      "DATUM": "2026-02-16",
-      "Mål mansdagar": 12,
-      "Mål Produkt": 60,
-      "Mål snitt per mansdag": 5
-    },
-    "2026-02-17": {
-      "DATUM": "2026-02-17",
-      "Mål mansdagar": 12,
-      "Mål Produkt": 60,
-      "Mål snitt per mansdag": 5
-    },
-    "2026-02-18": {
-      "DATUM": "2026-02-18",
-      "Mål mansdagar": 12,
-      "Mål Produkt": 60,
-      "Mål snitt per mansdag": 5
-    },
-    "2026-02-19": {
-      "DATUM": "2026-02-19",
-      "Mål mansdagar": 12,
-      "Mål Produkt": 60,
-      "Mål snitt per mansdag": 5
-    },
-    "2026-02-20": {
-      "DATUM": "2026-02-20"
-    },
-    "2026-02-21": {
-      "DATUM": "2026-02-21"
-    },
-    "2026-02-22": {
-      "DATUM": "2026-02-22"
-    },
-    "2026-02-23": {
-      "DATUM": "2026-02-23",
-      "Mål mansdagar": 12,
-      "Mål Produkt": 60,
-      "Mål snitt per mansdag": 5
-    },
-    "2026-02-24": {
-      "DATUM": "2026-02-24",
-      "Mål mansdagar": 12,
-      "Mål Produkt": 60,
-      "Mål snitt per mansdag": 5
-    },
-    "2026-02-25": {
-      "DATUM": "2026-02-25",
-      "Mål mansdagar": 12,
-      "Mål Produkt": 60,
-      "Mål snitt per mansdag": 5
-    },
-    "2026-02-26": {
-      "DATUM": "2026-02-26",
-      "Mål mansdagar": 12,
-      "Mål Produkt": 60,
-      "Mål snitt per mansdag": 5
-    },
-    "2026-02-27": {
-      "DATUM": "2026-02-27"
-    },
-    "2026-02-28": {
-      "DATUM": "2026-02-28"
-    },
     "2026-01-01": {
       "DATUM": "2026-01-01"
     },
@@ -1274,36 +1142,36 @@
     },
     "2026-01-31": {
       "DATUM": "2026-01-31"
-    }
-  },
-  "GlobalConnect": {
+    },
     "2026-02-01": {
       "DATUM": "2026-02-01"
     },
     "2026-02-02": {
       "DATUM": "2026-02-02",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "Mål mansdagar": 10,
+      "Mål Produkt": 50,
+      "Mål snitt per mansdag": 5
     },
     "2026-02-03": {
       "DATUM": "2026-02-03",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "Mål mansdagar": 10,
+      "Mål Produkt": 50,
+      "Mål snitt per mansdag": 5
     },
     "2026-02-04": {
       "DATUM": "2026-02-04",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "Mål mansdagar": 10,
+      "Mål Produkt": 50,
+      "Mål snitt per mansdag": 5
     },
     "2026-02-05": {
       "DATUM": "2026-02-05",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "Mål mansdagar": 10,
+      "Mål Produkt": 50,
+      "Mål snitt per mansdag": 5
     },
     "2026-02-06": {
-      "DATUM": "2026-02-06",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "DATUM": "2026-02-06"
     },
     "2026-02-07": {
       "DATUM": "2026-02-07"
@@ -1313,28 +1181,30 @@
     },
     "2026-02-09": {
       "DATUM": "2026-02-09",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "Mål mansdagar": 10,
+      "Mål Produkt": 50,
+      "Mål snitt per mansdag": 5
     },
     "2026-02-10": {
       "DATUM": "2026-02-10",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "Mål mansdagar": 10,
+      "Mål Produkt": 50,
+      "Mål snitt per mansdag": 5
     },
     "2026-02-11": {
       "DATUM": "2026-02-11",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "Mål mansdagar": 12,
+      "Mål Produkt": 60,
+      "Mål snitt per mansdag": 5
     },
     "2026-02-12": {
       "DATUM": "2026-02-12",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "Mål mansdagar": 12,
+      "Mål Produkt": 60,
+      "Mål snitt per mansdag": 5
     },
     "2026-02-13": {
-      "DATUM": "2026-02-13",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "DATUM": "2026-02-13"
     },
     "2026-02-14": {
       "DATUM": "2026-02-14"
@@ -1344,28 +1214,30 @@
     },
     "2026-02-16": {
       "DATUM": "2026-02-16",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "Mål mansdagar": 12,
+      "Mål Produkt": 60,
+      "Mål snitt per mansdag": 5
     },
     "2026-02-17": {
       "DATUM": "2026-02-17",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "Mål mansdagar": 12,
+      "Mål Produkt": 60,
+      "Mål snitt per mansdag": 5
     },
     "2026-02-18": {
       "DATUM": "2026-02-18",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "Mål mansdagar": 12,
+      "Mål Produkt": 60,
+      "Mål snitt per mansdag": 5
     },
     "2026-02-19": {
       "DATUM": "2026-02-19",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "Mål mansdagar": 12,
+      "Mål Produkt": 60,
+      "Mål snitt per mansdag": 5
     },
     "2026-02-20": {
-      "DATUM": "2026-02-20",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "DATUM": "2026-02-20"
     },
     "2026-02-21": {
       "DATUM": "2026-02-21"
@@ -1375,32 +1247,36 @@
     },
     "2026-02-23": {
       "DATUM": "2026-02-23",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "Mål mansdagar": 12,
+      "Mål Produkt": 60,
+      "Mål snitt per mansdag": 5
     },
     "2026-02-24": {
       "DATUM": "2026-02-24",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "Mål mansdagar": 12,
+      "Mål Produkt": 60,
+      "Mål snitt per mansdag": 5
     },
     "2026-02-25": {
       "DATUM": "2026-02-25",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "Mål mansdagar": 12,
+      "Mål Produkt": 60,
+      "Mål snitt per mansdag": 5
     },
     "2026-02-26": {
       "DATUM": "2026-02-26",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "Mål mansdagar": 12,
+      "Mål Produkt": 60,
+      "Mål snitt per mansdag": 5
     },
     "2026-02-27": {
-      "DATUM": "2026-02-27",
-      "Mål mansdagar": 15,
-      "Mål snitt per mansdag": 2
+      "DATUM": "2026-02-27"
     },
     "2026-02-28": {
       "DATUM": "2026-02-28"
-    },
+    }
+  },
+  "GlobalConnect": {
     "2026-01-01": {
       "DATUM": "2026-01-01"
     },
@@ -1533,36 +1409,34 @@
     },
     "2026-01-31": {
       "DATUM": "2026-01-31"
-    }
-  },
-  "2.7 Telia Adressändring": {
+    },
     "2026-02-01": {
       "DATUM": "2026-02-01"
     },
     "2026-02-02": {
       "DATUM": "2026-02-02",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-03": {
       "DATUM": "2026-02-03",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-04": {
       "DATUM": "2026-02-04",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-05": {
       "DATUM": "2026-02-05",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-06": {
       "DATUM": "2026-02-06",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-07": {
       "DATUM": "2026-02-07"
@@ -1572,28 +1446,28 @@
     },
     "2026-02-09": {
       "DATUM": "2026-02-09",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-10": {
       "DATUM": "2026-02-10",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-11": {
       "DATUM": "2026-02-11",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-12": {
       "DATUM": "2026-02-12",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-13": {
       "DATUM": "2026-02-13",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-14": {
       "DATUM": "2026-02-14"
@@ -1603,28 +1477,28 @@
     },
     "2026-02-16": {
       "DATUM": "2026-02-16",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-17": {
       "DATUM": "2026-02-17",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-18": {
       "DATUM": "2026-02-18",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-19": {
       "DATUM": "2026-02-19",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-20": {
       "DATUM": "2026-02-20",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-21": {
       "DATUM": "2026-02-21"
@@ -1634,32 +1508,34 @@
     },
     "2026-02-23": {
       "DATUM": "2026-02-23",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-24": {
       "DATUM": "2026-02-24",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-25": {
       "DATUM": "2026-02-25",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-26": {
       "DATUM": "2026-02-26",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-27": {
       "DATUM": "2026-02-27",
-      "Mål säljare": 2,
-      "Mål timmar": 16
+      "Mål mansdagar": 15,
+      "Mål snitt per mansdag": 2
     },
     "2026-02-28": {
       "DATUM": "2026-02-28"
-    },
+    }
+  },
+  "2.7 Telia Adressändring": {
     "2026-01-01": {
       "DATUM": "2026-01-01"
     },
@@ -1752,273 +1628,133 @@
     },
     "2026-01-31": {
       "DATUM": "2026-01-31"
+    },
+    "2026-02-01": {
+      "DATUM": "2026-02-01"
+    },
+    "2026-02-02": {
+      "DATUM": "2026-02-02",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-03": {
+      "DATUM": "2026-02-03",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-04": {
+      "DATUM": "2026-02-04",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-05": {
+      "DATUM": "2026-02-05",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-06": {
+      "DATUM": "2026-02-06",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-07": {
+      "DATUM": "2026-02-07"
+    },
+    "2026-02-08": {
+      "DATUM": "2026-02-08"
+    },
+    "2026-02-09": {
+      "DATUM": "2026-02-09",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-10": {
+      "DATUM": "2026-02-10",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-11": {
+      "DATUM": "2026-02-11",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-12": {
+      "DATUM": "2026-02-12",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-13": {
+      "DATUM": "2026-02-13",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-14": {
+      "DATUM": "2026-02-14"
+    },
+    "2026-02-15": {
+      "DATUM": "2026-02-15"
+    },
+    "2026-02-16": {
+      "DATUM": "2026-02-16",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-17": {
+      "DATUM": "2026-02-17",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-18": {
+      "DATUM": "2026-02-18",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-19": {
+      "DATUM": "2026-02-19",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-20": {
+      "DATUM": "2026-02-20",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-21": {
+      "DATUM": "2026-02-21"
+    },
+    "2026-02-22": {
+      "DATUM": "2026-02-22"
+    },
+    "2026-02-23": {
+      "DATUM": "2026-02-23",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-24": {
+      "DATUM": "2026-02-24",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-25": {
+      "DATUM": "2026-02-25",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-26": {
+      "DATUM": "2026-02-26",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-27": {
+      "DATUM": "2026-02-27",
+      "Mål säljare": 2,
+      "Mål timmar": 16
+    },
+    "2026-02-28": {
+      "DATUM": "2026-02-28"
     }
   },
   "2.6 Telia VIP Leads": {
-    "2026-02-01": {
-      "DATUM": "2026-02-01"
-    },
-    "2026-02-02": {
-      "DATUM": "2026-02-02",
-      "Mål säljare": 6,
-      "Mål timmar": 48,
-      "Mål BB": 19,
-      "Mål MBH": 5,
-      "Mål TV": 10,
-      "Mål Film": 4,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-03": {
-      "DATUM": "2026-02-03",
-      "Mål säljare": 6,
-      "Mål timmar": 48,
-      "Mål BB": 19,
-      "Mål MBH": 5,
-      "Mål TV": 10,
-      "Mål Film": 4,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-04": {
-      "DATUM": "2026-02-04",
-      "Mål säljare": 6,
-      "Mål timmar": 48,
-      "Mål BB": 19,
-      "Mål MBH": 5,
-      "Mål TV": 10,
-      "Mål Film": 4,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-05": {
-      "DATUM": "2026-02-05",
-      "Mål säljare": 6,
-      "Mål timmar": 48,
-      "Mål BB": 19,
-      "Mål MBH": 5,
-      "Mål TV": 10,
-      "Mål Film": 4,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-06": {
-      "DATUM": "2026-02-06",
-      "Mål säljare": 6,
-      "Mål timmar": 42,
-      "Mål BB": 17,
-      "Mål MBH": 4,
-      "Mål TV": 8,
-      "Mål Film": 3,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-07": {
-      "DATUM": "2026-02-07"
-    },
-    "2026-02-08": {
-      "DATUM": "2026-02-08"
-    },
-    "2026-02-09": {
-      "DATUM": "2026-02-09",
-      "Mål säljare": 6,
-      "Mål timmar": 48,
-      "Mål BB": 19,
-      "Mål MBH": 5,
-      "Mål TV": 10,
-      "Mål Film": 4,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-10": {
-      "DATUM": "2026-02-10",
-      "Mål säljare": 6,
-      "Mål timmar": 48,
-      "Mål BB": 19,
-      "Mål MBH": 5,
-      "Mål TV": 10,
-      "Mål Film": 4,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-11": {
-      "DATUM": "2026-02-11",
-      "Mål säljare": 6,
-      "Mål timmar": 48,
-      "Mål BB": 19,
-      "Mål MBH": 5,
-      "Mål TV": 10,
-      "Mål Film": 4,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-12": {
-      "DATUM": "2026-02-12",
-      "Mål säljare": 6,
-      "Mål timmar": 48,
-      "Mål BB": 19,
-      "Mål MBH": 5,
-      "Mål TV": 10,
-      "Mål Film": 4,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-13": {
-      "DATUM": "2026-02-13",
-      "Mål säljare": 6,
-      "Mål timmar": 42,
-      "Mål BB": 17,
-      "Mål MBH": 4,
-      "Mål TV": 8,
-      "Mål Film": 3,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-14": {
-      "DATUM": "2026-02-14"
-    },
-    "2026-02-15": {
-      "DATUM": "2026-02-15"
-    },
-    "2026-02-16": {
-      "DATUM": "2026-02-16",
-      "Mål säljare": 6,
-      "Mål timmar": 48,
-      "Mål BB": 19,
-      "Mål MBH": 5,
-      "Mål TV": 10,
-      "Mål Film": 4,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-17": {
-      "DATUM": "2026-02-17",
-      "Mål säljare": 6,
-      "Mål timmar": 48,
-      "Mål BB": 19,
-      "Mål MBH": 5,
-      "Mål TV": 10,
-      "Mål Film": 4,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-18": {
-      "DATUM": "2026-02-18",
-      "Mål säljare": 6,
-      "Mål timmar": 48,
-      "Mål BB": 19,
-      "Mål MBH": 5,
-      "Mål TV": 10,
-      "Mål Film": 4,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-19": {
-      "DATUM": "2026-02-19",
-      "Mål säljare": 6,
-      "Mål timmar": 48,
-      "Mål BB": 19,
-      "Mål MBH": 5,
-      "Mål TV": 10,
-      "Mål Film": 4,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-20": {
-      "DATUM": "2026-02-20",
-      "Mål säljare": 6,
-      "Mål timmar": 42,
-      "Mål BB": 17,
-      "Mål MBH": 4,
-      "Mål TV": 8,
-      "Mål Film": 3,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-21": {
-      "DATUM": "2026-02-21"
-    },
-    "2026-02-22": {
-      "DATUM": "2026-02-22"
-    },
-    "2026-02-23": {
-      "DATUM": "2026-02-23",
-      "Mål säljare": 6,
-      "Mål timmar": 48,
-      "Mål BB": 19,
-      "Mål MBH": 5,
-      "Mål TV": 10,
-      "Mål Film": 4,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-24": {
-      "DATUM": "2026-02-24",
-      "Mål säljare": 6,
-      "Mål timmar": 48,
-      "Mål BB": 19,
-      "Mål MBH": 5,
-      "Mål TV": 10,
-      "Mål Film": 4,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-25": {
-      "DATUM": "2026-02-25",
-      "Mål säljare": 6,
-      "Mål timmar": 48,
-      "Mål BB": 19,
-      "Mål MBH": 5,
-      "Mål TV": 10,
-      "Mål Film": 4,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-26": {
-      "DATUM": "2026-02-26",
-      "Mål säljare": 6,
-      "Mål timmar": 48,
-      "Mål BB": 19,
-      "Mål MBH": 5,
-      "Mål TV": 10,
-      "Mål Film": 4,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-27": {
-      "DATUM": "2026-02-27",
-      "Mål säljare": 6,
-      "Mål timmar": 42,
-      "Mål BB": 17,
-      "Mål MBH": 4,
-      "Mål TV": 8,
-      "Mål Film": 3,
-      "Mål Sport": 1,
-      "Mål Mobil": 2,
-      "Mål snitt": 0.4
-    },
-    "2026-02-28": {
-      "DATUM": "2026-02-28"
-    },
     "2026-01-01": {
       "DATUM": "2026-01-01"
     },
@@ -2291,213 +2027,273 @@
     },
     "2026-01-31": {
       "DATUM": "2026-01-31"
+    },
+    "2026-02-01": {
+      "DATUM": "2026-02-01"
+    },
+    "2026-02-02": {
+      "DATUM": "2026-02-02",
+      "Mål säljare": 6,
+      "Mål timmar": 48,
+      "Mål BB": 19,
+      "Mål MBH": 5,
+      "Mål TV": 10,
+      "Mål Film": 4,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-03": {
+      "DATUM": "2026-02-03",
+      "Mål säljare": 6,
+      "Mål timmar": 48,
+      "Mål BB": 19,
+      "Mål MBH": 5,
+      "Mål TV": 10,
+      "Mål Film": 4,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-04": {
+      "DATUM": "2026-02-04",
+      "Mål säljare": 6,
+      "Mål timmar": 48,
+      "Mål BB": 19,
+      "Mål MBH": 5,
+      "Mål TV": 10,
+      "Mål Film": 4,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-05": {
+      "DATUM": "2026-02-05",
+      "Mål säljare": 6,
+      "Mål timmar": 48,
+      "Mål BB": 19,
+      "Mål MBH": 5,
+      "Mål TV": 10,
+      "Mål Film": 4,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-06": {
+      "DATUM": "2026-02-06",
+      "Mål säljare": 6,
+      "Mål timmar": 42,
+      "Mål BB": 17,
+      "Mål MBH": 4,
+      "Mål TV": 8,
+      "Mål Film": 3,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-07": {
+      "DATUM": "2026-02-07"
+    },
+    "2026-02-08": {
+      "DATUM": "2026-02-08"
+    },
+    "2026-02-09": {
+      "DATUM": "2026-02-09",
+      "Mål säljare": 6,
+      "Mål timmar": 48,
+      "Mål BB": 19,
+      "Mål MBH": 5,
+      "Mål TV": 10,
+      "Mål Film": 4,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-10": {
+      "DATUM": "2026-02-10",
+      "Mål säljare": 6,
+      "Mål timmar": 48,
+      "Mål BB": 19,
+      "Mål MBH": 5,
+      "Mål TV": 10,
+      "Mål Film": 4,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-11": {
+      "DATUM": "2026-02-11",
+      "Mål säljare": 6,
+      "Mål timmar": 48,
+      "Mål BB": 19,
+      "Mål MBH": 5,
+      "Mål TV": 10,
+      "Mål Film": 4,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-12": {
+      "DATUM": "2026-02-12",
+      "Mål säljare": 6,
+      "Mål timmar": 48,
+      "Mål BB": 19,
+      "Mål MBH": 5,
+      "Mål TV": 10,
+      "Mål Film": 4,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-13": {
+      "DATUM": "2026-02-13",
+      "Mål säljare": 6,
+      "Mål timmar": 42,
+      "Mål BB": 17,
+      "Mål MBH": 4,
+      "Mål TV": 8,
+      "Mål Film": 3,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-14": {
+      "DATUM": "2026-02-14"
+    },
+    "2026-02-15": {
+      "DATUM": "2026-02-15"
+    },
+    "2026-02-16": {
+      "DATUM": "2026-02-16",
+      "Mål säljare": 6,
+      "Mål timmar": 48,
+      "Mål BB": 19,
+      "Mål MBH": 5,
+      "Mål TV": 10,
+      "Mål Film": 4,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-17": {
+      "DATUM": "2026-02-17",
+      "Mål säljare": 6,
+      "Mål timmar": 48,
+      "Mål BB": 19,
+      "Mål MBH": 5,
+      "Mål TV": 10,
+      "Mål Film": 4,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-18": {
+      "DATUM": "2026-02-18",
+      "Mål säljare": 6,
+      "Mål timmar": 48,
+      "Mål BB": 19,
+      "Mål MBH": 5,
+      "Mål TV": 10,
+      "Mål Film": 4,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-19": {
+      "DATUM": "2026-02-19",
+      "Mål säljare": 6,
+      "Mål timmar": 48,
+      "Mål BB": 19,
+      "Mål MBH": 5,
+      "Mål TV": 10,
+      "Mål Film": 4,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-20": {
+      "DATUM": "2026-02-20",
+      "Mål säljare": 6,
+      "Mål timmar": 42,
+      "Mål BB": 17,
+      "Mål MBH": 4,
+      "Mål TV": 8,
+      "Mål Film": 3,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-21": {
+      "DATUM": "2026-02-21"
+    },
+    "2026-02-22": {
+      "DATUM": "2026-02-22"
+    },
+    "2026-02-23": {
+      "DATUM": "2026-02-23",
+      "Mål säljare": 6,
+      "Mål timmar": 48,
+      "Mål BB": 19,
+      "Mål MBH": 5,
+      "Mål TV": 10,
+      "Mål Film": 4,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-24": {
+      "DATUM": "2026-02-24",
+      "Mål säljare": 6,
+      "Mål timmar": 48,
+      "Mål BB": 19,
+      "Mål MBH": 5,
+      "Mål TV": 10,
+      "Mål Film": 4,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-25": {
+      "DATUM": "2026-02-25",
+      "Mål säljare": 6,
+      "Mål timmar": 48,
+      "Mål BB": 19,
+      "Mål MBH": 5,
+      "Mål TV": 10,
+      "Mål Film": 4,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-26": {
+      "DATUM": "2026-02-26",
+      "Mål säljare": 6,
+      "Mål timmar": 48,
+      "Mål BB": 19,
+      "Mål MBH": 5,
+      "Mål TV": 10,
+      "Mål Film": 4,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-27": {
+      "DATUM": "2026-02-27",
+      "Mål säljare": 6,
+      "Mål timmar": 42,
+      "Mål BB": 17,
+      "Mål MBH": 4,
+      "Mål TV": 8,
+      "Mål Film": 3,
+      "Mål Sport": 1,
+      "Mål Mobil": 2,
+      "Mål snitt": 0.4
+    },
+    "2026-02-28": {
+      "DATUM": "2026-02-28"
     }
   },
   "2.5 Telia Retention Leads": {
-    "2026-02-01": {
-      "DATUM": "2026-02-01"
-    },
-    "2026-02-02": {
-      "DATUM": "2026-02-02",
-      "Mål säljare": 1,
-      "Mål timmar": 8,
-      "Mål BB": 10,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-03": {
-      "DATUM": "2026-02-03",
-      "Mål säljare": 1,
-      "Mål timmar": 8,
-      "Mål BB": 10,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-04": {
-      "DATUM": "2026-02-04",
-      "Mål säljare": 1,
-      "Mål timmar": 8,
-      "Mål BB": 10,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-05": {
-      "DATUM": "2026-02-05",
-      "Mål säljare": 1,
-      "Mål timmar": 8,
-      "Mål BB": 10,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-06": {
-      "DATUM": "2026-02-06",
-      "Mål säljare": 1,
-      "Mål timmar": 7,
-      "Mål BB": 8,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-07": {
-      "DATUM": "2026-02-07"
-    },
-    "2026-02-08": {
-      "DATUM": "2026-02-08"
-    },
-    "2026-02-09": {
-      "DATUM": "2026-02-09",
-      "Mål säljare": 1,
-      "Mål timmar": 8,
-      "Mål BB": 10,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-10": {
-      "DATUM": "2026-02-10",
-      "Mål säljare": 1,
-      "Mål timmar": 8,
-      "Mål BB": 10,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-11": {
-      "DATUM": "2026-02-11",
-      "Mål säljare": 1,
-      "Mål timmar": 8,
-      "Mål BB": 10,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-12": {
-      "DATUM": "2026-02-12",
-      "Mål säljare": 1,
-      "Mål timmar": 8,
-      "Mål BB": 10,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-13": {
-      "DATUM": "2026-02-13",
-      "Mål säljare": 1,
-      "Mål timmar": 7,
-      "Mål BB": 8,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-14": {
-      "DATUM": "2026-02-14"
-    },
-    "2026-02-15": {
-      "DATUM": "2026-02-15"
-    },
-    "2026-02-16": {
-      "DATUM": "2026-02-16",
-      "Mål säljare": 1,
-      "Mål timmar": 8,
-      "Mål BB": 10,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-17": {
-      "DATUM": "2026-02-17",
-      "Mål säljare": 1,
-      "Mål timmar": 8,
-      "Mål BB": 10,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-18": {
-      "DATUM": "2026-02-18",
-      "Mål säljare": 1,
-      "Mål timmar": 8,
-      "Mål BB": 10,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-19": {
-      "DATUM": "2026-02-19",
-      "Mål säljare": 1,
-      "Mål timmar": 8,
-      "Mål BB": 10,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-20": {
-      "DATUM": "2026-02-20",
-      "Mål säljare": 1,
-      "Mål timmar": 7,
-      "Mål BB": 8,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-21": {
-      "DATUM": "2026-02-21"
-    },
-    "2026-02-22": {
-      "DATUM": "2026-02-22"
-    },
-    "2026-02-23": {
-      "DATUM": "2026-02-23",
-      "Mål säljare": 1,
-      "Mål timmar": 8,
-      "Mål BB": 10,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-24": {
-      "DATUM": "2026-02-24",
-      "Mål säljare": 1,
-      "Mål timmar": 8,
-      "Mål BB": 10,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-25": {
-      "DATUM": "2026-02-25",
-      "Mål säljare": 1,
-      "Mål timmar": 8,
-      "Mål BB": 10,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-26": {
-      "DATUM": "2026-02-26",
-      "Mål säljare": 1,
-      "Mål timmar": 8,
-      "Mål BB": 10,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-27": {
-      "DATUM": "2026-02-27",
-      "Mål säljare": 1,
-      "Mål timmar": 7,
-      "Mål BB": 8,
-      "Mål Nyteck TV": 1,
-      "Mål Mobil": 1,
-      "Mål snitt": 1.2
-    },
-    "2026-02-28": {
-      "DATUM": "2026-02-28"
-    },
     "2026-01-01": {
       "DATUM": "2026-01-01"
     },
@@ -2710,66 +2506,54 @@
     },
     "2026-01-31": {
       "DATUM": "2026-01-31"
-    }
-  },
-  "2.2 Telia MBH": {
+    },
     "2026-02-01": {
       "DATUM": "2026-02-01"
     },
     "2026-02-02": {
       "DATUM": "2026-02-02",
-      "Mål säljare": 8,
-      "Mål timmar": 64,
+      "Mål säljare": 1,
+      "Mål timmar": 8,
       "Mål BB": 10,
-      "Mål TV": 8,
-      "Mål Film": 4,
-      "Mål Sport": 2,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-03": {
       "DATUM": "2026-02-03",
-      "Mål säljare": 8,
-      "Mål timmar": 64,
+      "Mål säljare": 1,
+      "Mål timmar": 8,
       "Mål BB": 10,
-      "Mål TV": 8,
-      "Mål Film": 4,
-      "Mål Sport": 2,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-04": {
       "DATUM": "2026-02-04",
-      "Mål säljare": 8,
-      "Mål timmar": 64,
+      "Mål säljare": 1,
+      "Mål timmar": 8,
       "Mål BB": 10,
-      "Mål TV": 8,
-      "Mål Film": 4,
-      "Mål Sport": 2,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-05": {
       "DATUM": "2026-02-05",
-      "Mål säljare": 8,
-      "Mål timmar": 64,
+      "Mål säljare": 1,
+      "Mål timmar": 8,
       "Mål BB": 10,
-      "Mål TV": 8,
-      "Mål Film": 4,
-      "Mål Sport": 2,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-06": {
       "DATUM": "2026-02-06",
-      "Mål säljare": 8,
-      "Mål timmar": 56,
+      "Mål säljare": 1,
+      "Mål timmar": 7,
       "Mål BB": 8,
-      "Mål TV": 7,
-      "Mål Film": 3,
-      "Mål Sport": 1,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-07": {
       "DATUM": "2026-02-07"
@@ -2779,58 +2563,48 @@
     },
     "2026-02-09": {
       "DATUM": "2026-02-09",
-      "Mål säljare": 8,
-      "Mål timmar": 64,
+      "Mål säljare": 1,
+      "Mål timmar": 8,
       "Mål BB": 10,
-      "Mål TV": 8,
-      "Mål Film": 4,
-      "Mål Sport": 2,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-10": {
       "DATUM": "2026-02-10",
-      "Mål säljare": 8,
-      "Mål timmar": 64,
+      "Mål säljare": 1,
+      "Mål timmar": 8,
       "Mål BB": 10,
-      "Mål TV": 8,
-      "Mål Film": 4,
-      "Mål Sport": 2,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-11": {
       "DATUM": "2026-02-11",
-      "Mål säljare": 8,
-      "Mål timmar": 64,
+      "Mål säljare": 1,
+      "Mål timmar": 8,
       "Mål BB": 10,
-      "Mål TV": 8,
-      "Mål Film": 4,
-      "Mål Sport": 2,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-12": {
       "DATUM": "2026-02-12",
-      "Mål säljare": 8,
-      "Mål timmar": 64,
+      "Mål säljare": 1,
+      "Mål timmar": 8,
       "Mål BB": 10,
-      "Mål TV": 8,
-      "Mål Film": 4,
-      "Mål Sport": 2,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-13": {
       "DATUM": "2026-02-13",
-      "Mål säljare": 8,
-      "Mål timmar": 56,
+      "Mål säljare": 1,
+      "Mål timmar": 7,
       "Mål BB": 8,
-      "Mål TV": 7,
-      "Mål Film": 3,
-      "Mål Sport": 1,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-14": {
       "DATUM": "2026-02-14"
@@ -2840,58 +2614,48 @@
     },
     "2026-02-16": {
       "DATUM": "2026-02-16",
-      "Mål säljare": 8,
-      "Mål timmar": 64,
+      "Mål säljare": 1,
+      "Mål timmar": 8,
       "Mål BB": 10,
-      "Mål TV": 8,
-      "Mål Film": 4,
-      "Mål Sport": 2,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-17": {
       "DATUM": "2026-02-17",
-      "Mål säljare": 8,
-      "Mål timmar": 64,
+      "Mål säljare": 1,
+      "Mål timmar": 8,
       "Mål BB": 10,
-      "Mål TV": 8,
-      "Mål Film": 4,
-      "Mål Sport": 2,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-18": {
       "DATUM": "2026-02-18",
-      "Mål säljare": 8,
-      "Mål timmar": 64,
+      "Mål säljare": 1,
+      "Mål timmar": 8,
       "Mål BB": 10,
-      "Mål TV": 8,
-      "Mål Film": 4,
-      "Mål Sport": 2,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-19": {
       "DATUM": "2026-02-19",
-      "Mål säljare": 8,
-      "Mål timmar": 64,
+      "Mål säljare": 1,
+      "Mål timmar": 8,
       "Mål BB": 10,
-      "Mål TV": 8,
-      "Mål Film": 4,
-      "Mål Sport": 2,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-20": {
       "DATUM": "2026-02-20",
-      "Mål säljare": 8,
-      "Mål timmar": 56,
+      "Mål säljare": 1,
+      "Mål timmar": 7,
       "Mål BB": 8,
-      "Mål TV": 7,
-      "Mål Film": 3,
-      "Mål Sport": 1,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-21": {
       "DATUM": "2026-02-21"
@@ -2901,62 +2665,54 @@
     },
     "2026-02-23": {
       "DATUM": "2026-02-23",
-      "Mål säljare": 8,
-      "Mål timmar": 64,
+      "Mål säljare": 1,
+      "Mål timmar": 8,
       "Mål BB": 10,
-      "Mål TV": 8,
-      "Mål Film": 4,
-      "Mål Sport": 2,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-24": {
       "DATUM": "2026-02-24",
-      "Mål säljare": 8,
-      "Mål timmar": 64,
+      "Mål säljare": 1,
+      "Mål timmar": 8,
       "Mål BB": 10,
-      "Mål TV": 8,
-      "Mål Film": 4,
-      "Mål Sport": 2,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-25": {
       "DATUM": "2026-02-25",
-      "Mål säljare": 8,
-      "Mål timmar": 64,
+      "Mål säljare": 1,
+      "Mål timmar": 8,
       "Mål BB": 10,
-      "Mål TV": 8,
-      "Mål Film": 4,
-      "Mål Sport": 2,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-26": {
       "DATUM": "2026-02-26",
-      "Mål säljare": 8,
-      "Mål timmar": 64,
+      "Mål säljare": 1,
+      "Mål timmar": 8,
       "Mål BB": 10,
-      "Mål TV": 8,
-      "Mål Film": 4,
-      "Mål Sport": 2,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-27": {
       "DATUM": "2026-02-27",
-      "Mål säljare": 8,
-      "Mål timmar": 56,
+      "Mål säljare": 1,
+      "Mål timmar": 7,
       "Mål BB": 8,
-      "Mål TV": 7,
-      "Mål Film": 3,
-      "Mål Sport": 1,
-      "Mål Mobil": 0,
-      "Mål snitt": 0.15
+      "Mål Nyteck TV": 1,
+      "Mål Mobil": 1,
+      "Mål snitt": 1.2
     },
     "2026-02-28": {
       "DATUM": "2026-02-28"
-    },
+    }
+  },
+  "2.2 Telia MBH": {
     "2026-01-01": {
       "DATUM": "2026-01-01"
     },
@@ -3210,193 +2966,253 @@
     },
     "2026-01-31": {
       "DATUM": "2026-01-31"
+    },
+    "2026-02-01": {
+      "DATUM": "2026-02-01"
+    },
+    "2026-02-02": {
+      "DATUM": "2026-02-02",
+      "Mål säljare": 8,
+      "Mål timmar": 64,
+      "Mål BB": 10,
+      "Mål TV": 8,
+      "Mål Film": 4,
+      "Mål Sport": 2,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-03": {
+      "DATUM": "2026-02-03",
+      "Mål säljare": 8,
+      "Mål timmar": 64,
+      "Mål BB": 10,
+      "Mål TV": 8,
+      "Mål Film": 4,
+      "Mål Sport": 2,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-04": {
+      "DATUM": "2026-02-04",
+      "Mål säljare": 8,
+      "Mål timmar": 64,
+      "Mål BB": 10,
+      "Mål TV": 8,
+      "Mål Film": 4,
+      "Mål Sport": 2,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-05": {
+      "DATUM": "2026-02-05",
+      "Mål säljare": 8,
+      "Mål timmar": 64,
+      "Mål BB": 10,
+      "Mål TV": 8,
+      "Mål Film": 4,
+      "Mål Sport": 2,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-06": {
+      "DATUM": "2026-02-06",
+      "Mål säljare": 8,
+      "Mål timmar": 56,
+      "Mål BB": 8,
+      "Mål TV": 7,
+      "Mål Film": 3,
+      "Mål Sport": 1,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-07": {
+      "DATUM": "2026-02-07"
+    },
+    "2026-02-08": {
+      "DATUM": "2026-02-08"
+    },
+    "2026-02-09": {
+      "DATUM": "2026-02-09",
+      "Mål säljare": 8,
+      "Mål timmar": 64,
+      "Mål BB": 10,
+      "Mål TV": 8,
+      "Mål Film": 4,
+      "Mål Sport": 2,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-10": {
+      "DATUM": "2026-02-10",
+      "Mål säljare": 8,
+      "Mål timmar": 64,
+      "Mål BB": 10,
+      "Mål TV": 8,
+      "Mål Film": 4,
+      "Mål Sport": 2,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-11": {
+      "DATUM": "2026-02-11",
+      "Mål säljare": 8,
+      "Mål timmar": 64,
+      "Mål BB": 10,
+      "Mål TV": 8,
+      "Mål Film": 4,
+      "Mål Sport": 2,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-12": {
+      "DATUM": "2026-02-12",
+      "Mål säljare": 8,
+      "Mål timmar": 64,
+      "Mål BB": 10,
+      "Mål TV": 8,
+      "Mål Film": 4,
+      "Mål Sport": 2,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-13": {
+      "DATUM": "2026-02-13",
+      "Mål säljare": 8,
+      "Mål timmar": 56,
+      "Mål BB": 8,
+      "Mål TV": 7,
+      "Mål Film": 3,
+      "Mål Sport": 1,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-14": {
+      "DATUM": "2026-02-14"
+    },
+    "2026-02-15": {
+      "DATUM": "2026-02-15"
+    },
+    "2026-02-16": {
+      "DATUM": "2026-02-16",
+      "Mål säljare": 8,
+      "Mål timmar": 64,
+      "Mål BB": 10,
+      "Mål TV": 8,
+      "Mål Film": 4,
+      "Mål Sport": 2,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-17": {
+      "DATUM": "2026-02-17",
+      "Mål säljare": 8,
+      "Mål timmar": 64,
+      "Mål BB": 10,
+      "Mål TV": 8,
+      "Mål Film": 4,
+      "Mål Sport": 2,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-18": {
+      "DATUM": "2026-02-18",
+      "Mål säljare": 8,
+      "Mål timmar": 64,
+      "Mål BB": 10,
+      "Mål TV": 8,
+      "Mål Film": 4,
+      "Mål Sport": 2,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-19": {
+      "DATUM": "2026-02-19",
+      "Mål säljare": 8,
+      "Mål timmar": 64,
+      "Mål BB": 10,
+      "Mål TV": 8,
+      "Mål Film": 4,
+      "Mål Sport": 2,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-20": {
+      "DATUM": "2026-02-20",
+      "Mål säljare": 8,
+      "Mål timmar": 56,
+      "Mål BB": 8,
+      "Mål TV": 7,
+      "Mål Film": 3,
+      "Mål Sport": 1,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-21": {
+      "DATUM": "2026-02-21"
+    },
+    "2026-02-22": {
+      "DATUM": "2026-02-22"
+    },
+    "2026-02-23": {
+      "DATUM": "2026-02-23",
+      "Mål säljare": 8,
+      "Mål timmar": 64,
+      "Mål BB": 10,
+      "Mål TV": 8,
+      "Mål Film": 4,
+      "Mål Sport": 2,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-24": {
+      "DATUM": "2026-02-24",
+      "Mål säljare": 8,
+      "Mål timmar": 64,
+      "Mål BB": 10,
+      "Mål TV": 8,
+      "Mål Film": 4,
+      "Mål Sport": 2,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-25": {
+      "DATUM": "2026-02-25",
+      "Mål säljare": 8,
+      "Mål timmar": 64,
+      "Mål BB": 10,
+      "Mål TV": 8,
+      "Mål Film": 4,
+      "Mål Sport": 2,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-26": {
+      "DATUM": "2026-02-26",
+      "Mål säljare": 8,
+      "Mål timmar": 64,
+      "Mål BB": 10,
+      "Mål TV": 8,
+      "Mål Film": 4,
+      "Mål Sport": 2,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-27": {
+      "DATUM": "2026-02-27",
+      "Mål säljare": 8,
+      "Mål timmar": 56,
+      "Mål BB": 8,
+      "Mål TV": 7,
+      "Mål Film": 3,
+      "Mål Sport": 1,
+      "Mål Mobil": 0,
+      "Mål snitt": 0.15
+    },
+    "2026-02-28": {
+      "DATUM": "2026-02-28"
     }
   },
   "2.2 Telia Mobil": {
-    "2026-02-01": {
-      "DATUM": "2026-02-01"
-    },
-    "2026-02-02": {
-      "DATUM": "2026-02-02",
-      "Mål säljare": 18,
-      "Mål timmar": 144,
-      "Mål Huvudabb": 29,
-      "Mål EA": 14,
-      "Mål snitt": 0.2
-    },
-    "2026-02-03": {
-      "DATUM": "2026-02-03",
-      "Mål säljare": 18,
-      "Mål timmar": 144,
-      "Mål Huvudabb": 29,
-      "Mål EA": 14,
-      "Mål snitt": 0.2
-    },
-    "2026-02-04": {
-      "DATUM": "2026-02-04",
-      "Mål säljare": 18,
-      "Mål timmar": 144,
-      "Mål Huvudabb": 29,
-      "Mål EA": 14,
-      "Mål snitt": 0.2
-    },
-    "2026-02-05": {
-      "DATUM": "2026-02-05",
-      "Mål säljare": 18,
-      "Mål timmar": 144,
-      "Mål Huvudabb": 29,
-      "Mål EA": 14,
-      "Mål snitt": 0.2
-    },
-    "2026-02-06": {
-      "DATUM": "2026-02-06",
-      "Mål säljare": 18,
-      "Mål timmar": 126,
-      "Mål Huvudabb": 25,
-      "Mål EA": 13,
-      "Mål snitt": 0.2
-    },
-    "2026-02-07": {
-      "DATUM": "2026-02-07"
-    },
-    "2026-02-08": {
-      "DATUM": "2026-02-08"
-    },
-    "2026-02-09": {
-      "DATUM": "2026-02-09",
-      "Mål säljare": 18,
-      "Mål timmar": 144,
-      "Mål Huvudabb": 29,
-      "Mål EA": 14,
-      "Mål snitt": 0.2
-    },
-    "2026-02-10": {
-      "DATUM": "2026-02-10",
-      "Mål säljare": 18,
-      "Mål timmar": 144,
-      "Mål Huvudabb": 29,
-      "Mål EA": 14,
-      "Mål snitt": 0.2
-    },
-    "2026-02-11": {
-      "DATUM": "2026-02-11",
-      "Mål säljare": 18,
-      "Mål timmar": 144,
-      "Mål Huvudabb": 29,
-      "Mål EA": 14,
-      "Mål snitt": 0.2
-    },
-    "2026-02-12": {
-      "DATUM": "2026-02-12",
-      "Mål säljare": 18,
-      "Mål timmar": 144,
-      "Mål Huvudabb": 29,
-      "Mål EA": 14,
-      "Mål snitt": 0.2
-    },
-    "2026-02-13": {
-      "DATUM": "2026-02-13",
-      "Mål säljare": 18,
-      "Mål timmar": 126,
-      "Mål Huvudabb": 25,
-      "Mål EA": 13,
-      "Mål snitt": 0.2
-    },
-    "2026-02-14": {
-      "DATUM": "2026-02-14"
-    },
-    "2026-02-15": {
-      "DATUM": "2026-02-15"
-    },
-    "2026-02-16": {
-      "DATUM": "2026-02-16",
-      "Mål säljare": 18,
-      "Mål timmar": 144,
-      "Mål Huvudabb": 29,
-      "Mål EA": 14,
-      "Mål snitt": 0.2
-    },
-    "2026-02-17": {
-      "DATUM": "2026-02-17",
-      "Mål säljare": 18,
-      "Mål timmar": 144,
-      "Mål Huvudabb": 29,
-      "Mål EA": 14,
-      "Mål snitt": 0.2
-    },
-    "2026-02-18": {
-      "DATUM": "2026-02-18",
-      "Mål säljare": 18,
-      "Mål timmar": 144,
-      "Mål Huvudabb": 29,
-      "Mål EA": 14,
-      "Mål snitt": 0.2
-    },
-    "2026-02-19": {
-      "DATUM": "2026-02-19",
-      "Mål säljare": 18,
-      "Mål timmar": 144,
-      "Mål Huvudabb": 29,
-      "Mål EA": 14,
-      "Mål snitt": 0.2
-    },
-    "2026-02-20": {
-      "DATUM": "2026-02-20",
-      "Mål säljare": 18,
-      "Mål timmar": 126,
-      "Mål Huvudabb": 25,
-      "Mål EA": 13,
-      "Mål snitt": 0.2
-    },
-    "2026-02-21": {
-      "DATUM": "2026-02-21"
-    },
-    "2026-02-22": {
-      "DATUM": "2026-02-22"
-    },
-    "2026-02-23": {
-      "DATUM": "2026-02-23",
-      "Mål säljare": 18,
-      "Mål timmar": 144,
-      "Mål Huvudabb": 29,
-      "Mål EA": 14,
-      "Mål snitt": 0.2
-    },
-    "2026-02-24": {
-      "DATUM": "2026-02-24",
-      "Mål säljare": 18,
-      "Mål timmar": 144,
-      "Mål Huvudabb": 29,
-      "Mål EA": 14,
-      "Mål snitt": 0.2
-    },
-    "2026-02-25": {
-      "DATUM": "2026-02-25",
-      "Mål säljare": 18,
-      "Mål timmar": 144,
-      "Mål Huvudabb": 29,
-      "Mål EA": 14,
-      "Mål snitt": 0.2
-    },
-    "2026-02-26": {
-      "DATUM": "2026-02-26",
-      "Mål säljare": 18,
-      "Mål timmar": 144,
-      "Mål Huvudabb": 29,
-      "Mål EA": 14,
-      "Mål snitt": 0.2
-    },
-    "2026-02-27": {
-      "DATUM": "2026-02-27",
-      "Mål säljare": 18,
-      "Mål timmar": 126,
-      "Mål Huvudabb": 25,
-      "Mål EA": 13,
-      "Mål snitt": 0.2
-    },
-    "2026-02-28": {
-      "DATUM": "2026-02-28"
-    },
     "2026-01-01": {
       "DATUM": "2026-01-01"
     },
@@ -3589,193 +3405,193 @@
     },
     "2026-01-31": {
       "DATUM": "2026-01-31"
+    },
+    "2026-02-01": {
+      "DATUM": "2026-02-01"
+    },
+    "2026-02-02": {
+      "DATUM": "2026-02-02",
+      "Mål säljare": 18,
+      "Mål timmar": 144,
+      "Mål Huvudabb": 29,
+      "Mål EA": 14,
+      "Mål snitt": 0.2
+    },
+    "2026-02-03": {
+      "DATUM": "2026-02-03",
+      "Mål säljare": 18,
+      "Mål timmar": 144,
+      "Mål Huvudabb": 29,
+      "Mål EA": 14,
+      "Mål snitt": 0.2
+    },
+    "2026-02-04": {
+      "DATUM": "2026-02-04",
+      "Mål säljare": 18,
+      "Mål timmar": 144,
+      "Mål Huvudabb": 29,
+      "Mål EA": 14,
+      "Mål snitt": 0.2
+    },
+    "2026-02-05": {
+      "DATUM": "2026-02-05",
+      "Mål säljare": 18,
+      "Mål timmar": 144,
+      "Mål Huvudabb": 29,
+      "Mål EA": 14,
+      "Mål snitt": 0.2
+    },
+    "2026-02-06": {
+      "DATUM": "2026-02-06",
+      "Mål säljare": 18,
+      "Mål timmar": 126,
+      "Mål Huvudabb": 25,
+      "Mål EA": 13,
+      "Mål snitt": 0.2
+    },
+    "2026-02-07": {
+      "DATUM": "2026-02-07"
+    },
+    "2026-02-08": {
+      "DATUM": "2026-02-08"
+    },
+    "2026-02-09": {
+      "DATUM": "2026-02-09",
+      "Mål säljare": 18,
+      "Mål timmar": 144,
+      "Mål Huvudabb": 29,
+      "Mål EA": 14,
+      "Mål snitt": 0.2
+    },
+    "2026-02-10": {
+      "DATUM": "2026-02-10",
+      "Mål säljare": 18,
+      "Mål timmar": 144,
+      "Mål Huvudabb": 29,
+      "Mål EA": 14,
+      "Mål snitt": 0.2
+    },
+    "2026-02-11": {
+      "DATUM": "2026-02-11",
+      "Mål säljare": 18,
+      "Mål timmar": 144,
+      "Mål Huvudabb": 29,
+      "Mål EA": 14,
+      "Mål snitt": 0.2
+    },
+    "2026-02-12": {
+      "DATUM": "2026-02-12",
+      "Mål säljare": 18,
+      "Mål timmar": 144,
+      "Mål Huvudabb": 29,
+      "Mål EA": 14,
+      "Mål snitt": 0.2
+    },
+    "2026-02-13": {
+      "DATUM": "2026-02-13",
+      "Mål säljare": 18,
+      "Mål timmar": 126,
+      "Mål Huvudabb": 25,
+      "Mål EA": 13,
+      "Mål snitt": 0.2
+    },
+    "2026-02-14": {
+      "DATUM": "2026-02-14"
+    },
+    "2026-02-15": {
+      "DATUM": "2026-02-15"
+    },
+    "2026-02-16": {
+      "DATUM": "2026-02-16",
+      "Mål säljare": 18,
+      "Mål timmar": 144,
+      "Mål Huvudabb": 29,
+      "Mål EA": 14,
+      "Mål snitt": 0.2
+    },
+    "2026-02-17": {
+      "DATUM": "2026-02-17",
+      "Mål säljare": 18,
+      "Mål timmar": 144,
+      "Mål Huvudabb": 29,
+      "Mål EA": 14,
+      "Mål snitt": 0.2
+    },
+    "2026-02-18": {
+      "DATUM": "2026-02-18",
+      "Mål säljare": 18,
+      "Mål timmar": 144,
+      "Mål Huvudabb": 29,
+      "Mål EA": 14,
+      "Mål snitt": 0.2
+    },
+    "2026-02-19": {
+      "DATUM": "2026-02-19",
+      "Mål säljare": 18,
+      "Mål timmar": 144,
+      "Mål Huvudabb": 29,
+      "Mål EA": 14,
+      "Mål snitt": 0.2
+    },
+    "2026-02-20": {
+      "DATUM": "2026-02-20",
+      "Mål säljare": 18,
+      "Mål timmar": 126,
+      "Mål Huvudabb": 25,
+      "Mål EA": 13,
+      "Mål snitt": 0.2
+    },
+    "2026-02-21": {
+      "DATUM": "2026-02-21"
+    },
+    "2026-02-22": {
+      "DATUM": "2026-02-22"
+    },
+    "2026-02-23": {
+      "DATUM": "2026-02-23",
+      "Mål säljare": 18,
+      "Mål timmar": 144,
+      "Mål Huvudabb": 29,
+      "Mål EA": 14,
+      "Mål snitt": 0.2
+    },
+    "2026-02-24": {
+      "DATUM": "2026-02-24",
+      "Mål säljare": 18,
+      "Mål timmar": 144,
+      "Mål Huvudabb": 29,
+      "Mål EA": 14,
+      "Mål snitt": 0.2
+    },
+    "2026-02-25": {
+      "DATUM": "2026-02-25",
+      "Mål säljare": 18,
+      "Mål timmar": 144,
+      "Mål Huvudabb": 29,
+      "Mål EA": 14,
+      "Mål snitt": 0.2
+    },
+    "2026-02-26": {
+      "DATUM": "2026-02-26",
+      "Mål säljare": 18,
+      "Mål timmar": 144,
+      "Mål Huvudabb": 29,
+      "Mål EA": 14,
+      "Mål snitt": 0.2
+    },
+    "2026-02-27": {
+      "DATUM": "2026-02-27",
+      "Mål säljare": 18,
+      "Mål timmar": 126,
+      "Mål Huvudabb": 25,
+      "Mål EA": 13,
+      "Mål snitt": 0.2
+    },
+    "2026-02-28": {
+      "DATUM": "2026-02-28"
     }
   },
   "2.2.1 Telia FMC": {
-    "2026-02-01": {
-      "DATUM": "2026-02-01"
-    },
-    "2026-02-02": {
-      "DATUM": "2026-02-02",
-      "Mål säljare": 17,
-      "Mål timmar": 136,
-      "Mål Huvudabb": 34,
-      "Mål EA": 17,
-      "Mål snitt": 0.25
-    },
-    "2026-02-03": {
-      "DATUM": "2026-02-03",
-      "Mål säljare": 17,
-      "Mål timmar": 136,
-      "Mål Huvudabb": 34,
-      "Mål EA": 17,
-      "Mål snitt": 0.25
-    },
-    "2026-02-04": {
-      "DATUM": "2026-02-04",
-      "Mål säljare": 17,
-      "Mål timmar": 136,
-      "Mål Huvudabb": 34,
-      "Mål EA": 17,
-      "Mål snitt": 0.25
-    },
-    "2026-02-05": {
-      "DATUM": "2026-02-05",
-      "Mål säljare": 17,
-      "Mål timmar": 136,
-      "Mål Huvudabb": 34,
-      "Mål EA": 17,
-      "Mål snitt": 0.25
-    },
-    "2026-02-06": {
-      "DATUM": "2026-02-06",
-      "Mål säljare": 17,
-      "Mål timmar": 119,
-      "Mål Huvudabb": 30,
-      "Mål EA": 15,
-      "Mål snitt": 0.25
-    },
-    "2026-02-07": {
-      "DATUM": "2026-02-07"
-    },
-    "2026-02-08": {
-      "DATUM": "2026-02-08"
-    },
-    "2026-02-09": {
-      "DATUM": "2026-02-09",
-      "Mål säljare": 17,
-      "Mål timmar": 136,
-      "Mål Huvudabb": 34,
-      "Mål EA": 17,
-      "Mål snitt": 0.25
-    },
-    "2026-02-10": {
-      "DATUM": "2026-02-10",
-      "Mål säljare": 17,
-      "Mål timmar": 136,
-      "Mål Huvudabb": 34,
-      "Mål EA": 17,
-      "Mål snitt": 0.25
-    },
-    "2026-02-11": {
-      "DATUM": "2026-02-11",
-      "Mål säljare": 17,
-      "Mål timmar": 136,
-      "Mål Huvudabb": 34,
-      "Mål EA": 17,
-      "Mål snitt": 0.25
-    },
-    "2026-02-12": {
-      "DATUM": "2026-02-12",
-      "Mål säljare": 17,
-      "Mål timmar": 136,
-      "Mål Huvudabb": 34,
-      "Mål EA": 17,
-      "Mål snitt": 0.25
-    },
-    "2026-02-13": {
-      "DATUM": "2026-02-13",
-      "Mål säljare": 17,
-      "Mål timmar": 119,
-      "Mål Huvudabb": 30,
-      "Mål EA": 15,
-      "Mål snitt": 0.25
-    },
-    "2026-02-14": {
-      "DATUM": "2026-02-14"
-    },
-    "2026-02-15": {
-      "DATUM": "2026-02-15"
-    },
-    "2026-02-16": {
-      "DATUM": "2026-02-16",
-      "Mål säljare": 17,
-      "Mål timmar": 136,
-      "Mål Huvudabb": 34,
-      "Mål EA": 17,
-      "Mål snitt": 0.25
-    },
-    "2026-02-17": {
-      "DATUM": "2026-02-17",
-      "Mål säljare": 17,
-      "Mål timmar": 136,
-      "Mål Huvudabb": 34,
-      "Mål EA": 17,
-      "Mål snitt": 0.25
-    },
-    "2026-02-18": {
-      "DATUM": "2026-02-18",
-      "Mål säljare": 17,
-      "Mål timmar": 136,
-      "Mål Huvudabb": 34,
-      "Mål EA": 17,
-      "Mål snitt": 0.25
-    },
-    "2026-02-19": {
-      "DATUM": "2026-02-19",
-      "Mål säljare": 17,
-      "Mål timmar": 136,
-      "Mål Huvudabb": 34,
-      "Mål EA": 17,
-      "Mål snitt": 0.25
-    },
-    "2026-02-20": {
-      "DATUM": "2026-02-20",
-      "Mål säljare": 17,
-      "Mål timmar": 119,
-      "Mål Huvudabb": 30,
-      "Mål EA": 15,
-      "Mål snitt": 0.25
-    },
-    "2026-02-21": {
-      "DATUM": "2026-02-21"
-    },
-    "2026-02-22": {
-      "DATUM": "2026-02-22"
-    },
-    "2026-02-23": {
-      "DATUM": "2026-02-23",
-      "Mål säljare": 17,
-      "Mål timmar": 136,
-      "Mål Huvudabb": 34,
-      "Mål EA": 17,
-      "Mål snitt": 0.25
-    },
-    "2026-02-24": {
-      "DATUM": "2026-02-24",
-      "Mål säljare": 17,
-      "Mål timmar": 136,
-      "Mål Huvudabb": 34,
-      "Mål EA": 17,
-      "Mål snitt": 0.25
-    },
-    "2026-02-25": {
-      "DATUM": "2026-02-25",
-      "Mål säljare": 17,
-      "Mål timmar": 136,
-      "Mål Huvudabb": 34,
-      "Mål EA": 17,
-      "Mål snitt": 0.25
-    },
-    "2026-02-26": {
-      "DATUM": "2026-02-26",
-      "Mål säljare": 17,
-      "Mål timmar": 136,
-      "Mål Huvudabb": 34,
-      "Mål EA": 17,
-      "Mål snitt": 0.25
-    },
-    "2026-02-27": {
-      "DATUM": "2026-02-27",
-      "Mål säljare": 17,
-      "Mål timmar": 119,
-      "Mål Huvudabb": 30,
-      "Mål EA": 15,
-      "Mål snitt": 0.25
-    },
-    "2026-02-28": {
-      "DATUM": "2026-02-28"
-    },
     "2026-01-01": {
       "DATUM": "2026-01-01"
     },
@@ -3968,6 +3784,190 @@
     },
     "2026-01-31": {
       "DATUM": "2026-01-31"
+    },
+    "2026-02-01": {
+      "DATUM": "2026-02-01"
+    },
+    "2026-02-02": {
+      "DATUM": "2026-02-02",
+      "Mål säljare": 17,
+      "Mål timmar": 136,
+      "Mål Huvudabb": 34,
+      "Mål EA": 17,
+      "Mål snitt": 0.25
+    },
+    "2026-02-03": {
+      "DATUM": "2026-02-03",
+      "Mål säljare": 17,
+      "Mål timmar": 136,
+      "Mål Huvudabb": 34,
+      "Mål EA": 17,
+      "Mål snitt": 0.25
+    },
+    "2026-02-04": {
+      "DATUM": "2026-02-04",
+      "Mål säljare": 17,
+      "Mål timmar": 136,
+      "Mål Huvudabb": 34,
+      "Mål EA": 17,
+      "Mål snitt": 0.25
+    },
+    "2026-02-05": {
+      "DATUM": "2026-02-05",
+      "Mål säljare": 17,
+      "Mål timmar": 136,
+      "Mål Huvudabb": 34,
+      "Mål EA": 17,
+      "Mål snitt": 0.25
+    },
+    "2026-02-06": {
+      "DATUM": "2026-02-06",
+      "Mål säljare": 17,
+      "Mål timmar": 119,
+      "Mål Huvudabb": 30,
+      "Mål EA": 15,
+      "Mål snitt": 0.25
+    },
+    "2026-02-07": {
+      "DATUM": "2026-02-07"
+    },
+    "2026-02-08": {
+      "DATUM": "2026-02-08"
+    },
+    "2026-02-09": {
+      "DATUM": "2026-02-09",
+      "Mål säljare": 17,
+      "Mål timmar": 136,
+      "Mål Huvudabb": 34,
+      "Mål EA": 17,
+      "Mål snitt": 0.25
+    },
+    "2026-02-10": {
+      "DATUM": "2026-02-10",
+      "Mål säljare": 17,
+      "Mål timmar": 136,
+      "Mål Huvudabb": 34,
+      "Mål EA": 17,
+      "Mål snitt": 0.25
+    },
+    "2026-02-11": {
+      "DATUM": "2026-02-11",
+      "Mål säljare": 17,
+      "Mål timmar": 136,
+      "Mål Huvudabb": 34,
+      "Mål EA": 17,
+      "Mål snitt": 0.25
+    },
+    "2026-02-12": {
+      "DATUM": "2026-02-12",
+      "Mål säljare": 17,
+      "Mål timmar": 136,
+      "Mål Huvudabb": 34,
+      "Mål EA": 17,
+      "Mål snitt": 0.25
+    },
+    "2026-02-13": {
+      "DATUM": "2026-02-13",
+      "Mål säljare": 17,
+      "Mål timmar": 119,
+      "Mål Huvudabb": 30,
+      "Mål EA": 15,
+      "Mål snitt": 0.25
+    },
+    "2026-02-14": {
+      "DATUM": "2026-02-14"
+    },
+    "2026-02-15": {
+      "DATUM": "2026-02-15"
+    },
+    "2026-02-16": {
+      "DATUM": "2026-02-16",
+      "Mål säljare": 17,
+      "Mål timmar": 136,
+      "Mål Huvudabb": 34,
+      "Mål EA": 17,
+      "Mål snitt": 0.25
+    },
+    "2026-02-17": {
+      "DATUM": "2026-02-17",
+      "Mål säljare": 17,
+      "Mål timmar": 136,
+      "Mål Huvudabb": 34,
+      "Mål EA": 17,
+      "Mål snitt": 0.25
+    },
+    "2026-02-18": {
+      "DATUM": "2026-02-18",
+      "Mål säljare": 17,
+      "Mål timmar": 136,
+      "Mål Huvudabb": 34,
+      "Mål EA": 17,
+      "Mål snitt": 0.25
+    },
+    "2026-02-19": {
+      "DATUM": "2026-02-19",
+      "Mål säljare": 17,
+      "Mål timmar": 136,
+      "Mål Huvudabb": 34,
+      "Mål EA": 17,
+      "Mål snitt": 0.25
+    },
+    "2026-02-20": {
+      "DATUM": "2026-02-20",
+      "Mål säljare": 17,
+      "Mål timmar": 119,
+      "Mål Huvudabb": 30,
+      "Mål EA": 15,
+      "Mål snitt": 0.25
+    },
+    "2026-02-21": {
+      "DATUM": "2026-02-21"
+    },
+    "2026-02-22": {
+      "DATUM": "2026-02-22"
+    },
+    "2026-02-23": {
+      "DATUM": "2026-02-23",
+      "Mål säljare": 17,
+      "Mål timmar": 136,
+      "Mål Huvudabb": 34,
+      "Mål EA": 17,
+      "Mål snitt": 0.25
+    },
+    "2026-02-24": {
+      "DATUM": "2026-02-24",
+      "Mål säljare": 17,
+      "Mål timmar": 136,
+      "Mål Huvudabb": 34,
+      "Mål EA": 17,
+      "Mål snitt": 0.25
+    },
+    "2026-02-25": {
+      "DATUM": "2026-02-25",
+      "Mål säljare": 17,
+      "Mål timmar": 136,
+      "Mål Huvudabb": 34,
+      "Mål EA": 17,
+      "Mål snitt": 0.25
+    },
+    "2026-02-26": {
+      "DATUM": "2026-02-26",
+      "Mål säljare": 17,
+      "Mål timmar": 136,
+      "Mål Huvudabb": 34,
+      "Mål EA": 17,
+      "Mål snitt": 0.25
+    },
+    "2026-02-27": {
+      "DATUM": "2026-02-27",
+      "Mål säljare": 17,
+      "Mål timmar": 119,
+      "Mål Huvudabb": 30,
+      "Mål EA": 15,
+      "Mål snitt": 0.25
+    },
+    "2026-02-28": {
+      "DATUM": "2026-02-28"
     }
   }
 }
