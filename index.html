@@ -954,7 +954,7 @@ function updateStatCards(uData,mData){
   };
   var totalProd=uRows.reduce(function(s,r){var v=getProd(r);return s+(typeof v==='number'?v:0);},0);
   var malProd=mRows.reduce(function(s,r){var v=getMalProd(r);return s+(typeof v==='number'?v:0);},0);
-  var totalHours=uRows.reduce(function(s,r){var v=findVal(r,'timmar')??findVal(r,'Utfall Timmar')??findVal(r,'Timmar')??0;return s+(typeof v==='number'?v:0);},0);
+  var totalHours=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??findVal(r,'Utfall Timmar')??findVal(r,'Utfall timmar')??0;return s+(typeof v==='number'?v:0);},0);
   var workDays=uRows.filter(function(r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;return typeof v==='number'&&v>0;}).length;
   var totalSellers=uRows.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;return s+(typeof v==='number'?v:0);},0);
   var avgProd=workDays>0?fmt2(totalProd/workDays):0;
