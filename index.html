@@ -117,14 +117,21 @@
   td { padding: 5px 10px; border-bottom: 1px solid #f5f5f5; font-size: 12px; color: #333; white-space: nowrap; text-align: center; }
   td.goal-col { background: #fafafa; }
   tr:last-child td { border-bottom: none; }
-  tr.weekend td { background: #efefed; color: #bbb; }
-  tr.weekend td.goal-col { background: #e8e8e6; }
-  tr.weekend-data td { background: #f7f7f5; color: #333; }
-  tr.no-data td { color: #bbb; }
-  tr.no-data td.goal-col { color: #bbb; }
-  tr.weekend-data td.goal-col { background: #f0f0ee; }
+
+  /* Helg/ledig utan utfall – nedtonad */
+  tr.off-day td { background: #efefed; color: #bbb; }
+  tr.off-day td.goal-col { background: #e8e8e6; color: #bbb; }
+
+  .extra-badge { display: inline-block; font-size: 9px; font-weight: 600; color: #f97c5a; background: #fff5f3; border-radius: 3px; padding: 1px 5px; margin-right: 4px; }
+
+  /* Framtida dagar utan data */
+  tr.future-day td { color: #b0b0b0; }
+  tr.future-day td.goal-col { color: #b0b0b0; }
+
+  /* Senaste dataraden */
   tr.last-data td, tr.last-data td.goal-col { background: #fff0eb !important; }
   tr.last-data td:first-child { border-left: 3px solid #f97c5a; }
+
   td.goal { color: #1a1a1a; font-size: 12px; font-weight: 500; }
   td.above { color: #2d8a4e; font-weight: 600; }
   td.below { color: #c0392b; font-weight: 600; }
@@ -420,6 +427,32 @@ function findVal(obj,key){
   return null;
 }
 
+/* Determine if a day is an "off day" (no goals set) based on mål data.
+   A day is off if there is NO mål row, OR the mål row has zero/missing
+   for all key goal fields (säljare + timmar). */
+function isDayOff(mRow){
+  if(!mRow || Object.keys(mRow).length===0) return true;
+  var s=findVal(mRow,'Mål säljare')??findVal(mRow,'Mål mansdagar')??0;
+  var t=findVal(mRow,'Mål timmar')??0;
+  return (typeof s!=='number'||s<=0) && (typeof t!=='number'||t<=0);
+}
+
+/* Check if a utfall row has any real data (not just zeros) */
+function hasRealUtfall(uRow){
+  if(!uRow||Object.keys(uRow).length===0) return false;
+  var prod=findVal(uRow,'Produkt')??findVal(uRow,'produkt')??null;
+  var salj=findVal(uRow,'Antal Mansdagar')??findVal(uRow,'Antal Säljare')??null;
+  var tim=findVal(uRow,'Timmar')??findVal(uRow,'timmar')??null;
+  return (typeof prod==='number'&&prod>0)||(typeof salj==='number'&&salj>0)||(typeof tim==='number'&&tim>0);
+}
+
+/* Format a utfall value: 0 → "—", number → formatted, else "—" */
+function fmtUtfall(v){
+  if(v===null||v===undefined||v==='') return '—';
+  if(typeof v==='number'&&v===0) return '—';
+  return fmt2(v);
+}
+
 function resolveDynGoal(goalKey,mRow){
   if(goalKey==='__mal_saljare__'){
     for(var k of ['Mål säljare','Mål mansdagar']){ var v=findVal(mRow,k); if(typeof v==='number') return v; }
@@ -680,7 +713,7 @@ function renderOverview(){
     var malTimmar=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0);},0);
     var workDays=uRows.filter(function(r){return (findVal(r,'Antal Mansdagar')??0)>0;}).length;
     var avgSellers=workDays>0?fmt2(totalMansdag/workDays):0;
-    var totalTimmar=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??findVal(r,'Utfall Timmar')??0;return s+(typeof v==='number'?v:0);},0);
+    totalTimmar=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??findVal(r,'Utfall Timmar')??0;return s+(typeof v==='number'?v:0);},0);
     var snittpMansdag=useMansdag?(totalMansdag>0?fmt2(totalProd/totalMansdag):0):(totalTimmar>0?fmt2(totalProd/totalTimmar):0);
     var malSnittSum=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål snitt')??0;return s+(typeof v==='number'?v:0);},0);
     var malSnittDays=mRowsNorm.filter(function(r){return (findVal(r,'Mål snitt')??0)>0;}).length;
@@ -726,11 +759,9 @@ function setDailyGroupFilter(g,el){
 
 function buildProjectChips(){
   var projs=dailyGroup==='d2d'?GROUP_D2D:dailyGroup==='tm'?GROUP_TM:ALL_PROJECTS;
-  var showAll=true;
   var allActive=projs.every(function(p){return dailyProject.has(p);});
   var sel=document.getElementById('dailyProjectSelector');
-  var html='';
-  if(showAll) html+='<button class="proj-chip '+(allActive?'active':'')+'" onclick="selectDailyAll()">Alla</button>';
+  var html='<button class="proj-chip '+(allActive?'active':'')+'" onclick="selectDailyAll()">Alla</button>';
   projs.forEach(function(p){
     var active=!allActive&&dailyProject.has(p);
     html+='<button class="proj-chip '+(active?'active':'')+'" onclick="selectDailyProject(\''+p+'\',this,event)">'+PROJECT_META[p].name+'</button>';
@@ -839,57 +870,74 @@ function renderDaily(){
 
   document.getElementById('tableHead').innerHTML='<tr>'+cols.map(function(c){return '<th class="'+(c.goalKey?'goal-col':'')+'">'+c.label+'</th>';}).join('')+'</tr>';
 
+  // Find last day with real utfall data
   var lastDataDay=0;
   for(var i=1;i<=days;i++){
     var dk=toDateKey(y,m,i), uRow=uData[dk]||{};
-    var hasProd=findVal(uRow,'Produkt')??findVal(uRow,'produkt')??null;
-    var hasSaljare=findVal(uRow,'Antal Mansdagar')??findVal(uRow,'Antal Säljare')??null;
-    if((typeof hasProd==='number'&&hasProd>0)||(typeof hasSaljare==='number'&&hasSaljare>0)) lastDataDay=i;
+    if(hasRealUtfall(uRow)) lastDataDay=i;
   }
+
+  var today=new Date(); today.setHours(0,0,0,0);
 
   var rows='';
   for(var i2=1;i2<=days;i2++){
-    var d=new Date(y,m,i2), dayName=DAYS_SV[d.getDay()], weekend=isWeekend(d);
+    var d=new Date(y,m,i2), dayName=DAYS_SV[d.getDay()];
     var dateKey=toDateKey(y,m,i2), uRow2=uData[dateKey]||{}, mRow=mData[dateKey]||{};
-    var hasUtfall=Object.keys(uRow2).length>0, hasMal=Object.keys(mRow).length>0;
-    var malSaljare=findVal(mRow,'Mål säljare')||findVal(mRow,'Mål mansdagar')||0;
-    var malTimmar=findVal(mRow,'Mål timmar')||0;
-    var isNonWorkingDay=!weekend&&hasMal&&malSaljare===0&&malTimmar===0;
+    var hasUtfall=Object.keys(uRow2).length>0;
+    var realUtfall=hasRealUtfall(uRow2);
+    var dayOff=isDayOff(mRow);
     var dateStr=i2+' '+MONTHS_SV[m].substring(0,3).toLowerCase();
     var isLastData=i2===lastDataDay;
-    var today=new Date();today.setHours(0,0,0,0);
     var thisDate=new Date(y,m,i2);
     var isFuture=thisDate>today;
-    var cls=isLastData?'last-data':(weekend||isNonWorkingDay)?(hasUtfallData?'weekend-data':'weekend'):(isFuture&&!hasUtfallData?'no-data':'');
-    var dayLabel=isLastData?'<span class="day-badge">senast</span>'+dayName:dayName;
 
-    var hasUtfallData=Object.keys(uRow2).length>0&&(findVal(uRow2,'Produkt')??findVal(uRow2,'produkt')??findVal(uRow2,'Antal Mansdagar')??findVal(uRow2,'Antal Säljare')??null)!==null;
+    // Row class logic:
+    // 1. Last data row = highlight
+    // 2. Day off WITH real utfall = off-day-data (light grey, black text)
+    // 3. Day off WITHOUT utfall = off-day (grey, muted text)
+    // 4. Future day without data = future-day (lighter text)
+    // 5. Normal working day = no special class
+    var cls='';
+    if(isLastData) cls='last-data';
+    else if(dayOff&&realUtfall) cls='';
+    else if(dayOff) cls='off-day';
+    else if(isFuture&&!realUtfall) cls='future-day';
+
+    var extraWork=dayOff&&realUtfall;
+    var dayLabel=isLastData?'<span class="day-badge">senast</span>'+dayName:(extraWork?'<span class="extra-badge">*</span>'+dayName:dayName);
+
     var cells=cols.map(function(c,idx){
       if(idx===0) return '<td>'+dayLabel+'</td>';
       if(idx===1) return '<td>'+dateStr+'</td>';
-      if((weekend||isNonWorkingDay)&&!hasUtfallData) return '<td>'+e+'</td>';
+
+      // Off-day without utfall: show "—" for everything
+      if(dayOff&&!realUtfall) return '<td class="'+(c.goalKey?'goal-col':'')+'">'+e+'</td>';
+
       if(c.goalKey){
-        var gv=hasMal?resolveDynGoal(c.goalKey,mRow):null;
-        if((weekend||isNonWorkingDay)&&!hasUtfallData) return '<td class="goal goal-col">'+(typeof gv==='number'?fmt2(gv):'—')+'</td>';
-        return '<td class="goal goal-col">'+(typeof gv==='number'?fmt2(gv):'—')+'</td>';
+        var gv=resolveDynGoal(c.goalKey,mRow);
+        return '<td class="goal goal-col">'+(typeof gv==='number'&&gv>0?fmt2(gv):'—')+'</td>';
       }
       if(c.key){
         var isSnitt=c.key.toLowerCase()==='snitt';
         var isProd=c.key==='Produkt';
         var isSaljare=c.key==='__utfall_saljare__';
-        if(isFuture&&!c.goalKey) return '<td>—</td>';
+        if(isFuture&&!realUtfall) return '<td>—</td>';
         var uv;
         if(isSnitt) uv=hasUtfall?calcSnitt(firstProj,uRow2):null;
         else if(isProd&&(dailyView==='compact'||multi)) uv=hasUtfall?getCompactProd(firstProj,uRow2):null;
         else if(isSaljare) uv=hasUtfall?(findVal(uRow2,'Antal Mansdagar')??findVal(uRow2,'Antal Säljare')??null):null;
         else uv=hasUtfall?findVal(uRow2,c.key):null;
+
+        // Format: 0 → "—"
+        if(uv===0) return '<td>—</td>';
+
         var gk=findGoalKey(cols,c.key);
-        var gvRaw=hasMal&&gk?resolveDynGoal(gk,mRow):null;
+        var gvRaw=gk?resolveDynGoal(gk,mRow):null;
         var gv2=typeof gvRaw==='number'?fmt2(gvRaw):gvRaw;
         if(uv!==null&&uv!==''){
           var cls2='';
-          if(gv2!==null&&typeof uv==='number'&&typeof gv2==='number') cls2=uv>=gv2?'above':'below';
-          return '<td'+(cls2?' class="'+cls2+'"':'')+'>'+fmt2(uv)+'</td>';
+          if(gv2!==null&&typeof uv==='number'&&typeof gv2==='number'&&gv2>0) cls2=uv>=gv2?'above':'below';
+          return '<td'+(cls2?' class="'+cls2+'"':'')+'>'+fmtUtfall(uv)+'</td>';
         }
         return '<td>—</td>';
       }
@@ -1046,7 +1094,6 @@ function renderDailyCompare(projArr){
     var totalTimmar=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??findVal(r,'Utfall Timmar')??0;return s+(typeof v==='number'?v:0);},0);
     var malTimmar=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0);},0);
     var workDays=uRows.filter(function(r){return (findVal(r,'Antal Mansdagar')??0)>0;}).length;
-    var avgSellers=workDays>0?fmt2(totalMansdag/workDays):0;
     var snittpMansdag=useMansdag?(totalMansdag>0?fmt2(totalProd/totalMansdag):0):(totalTimmar>0?fmt2(totalProd/totalTimmar):0);
     var malSnittSum=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål snitt')??0;return s+(typeof v==='number'?v:0);},0);
     var malSnittDays=mRowsNorm.filter(function(r){return (findVal(r,'Mål snitt')??0)>0;}).length;
