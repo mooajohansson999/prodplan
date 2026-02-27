@@ -119,12 +119,10 @@
   tr:last-child td { border-bottom: none; }
   tr.weekend td { background: #efefed; color: #bbb; }
   tr.weekend td.goal-col { background: #e8e8e6; }
-  tr.weekend-data td { background: #f7f7f5; color: #555; }
-  tr.weekend-data td.goal-col { background: #f0f0ee; color: #555; }
-  tr.weekend-data td.above { color: #2d8a4e; }
-  tr.weekend-data td.below { color: #c0392b; }
-  tr.future td { color: #bbb; }
-  tr.future td.goal-col { color: #1a1a1a; }
+  tr.weekend-data td { background: #f7f7f5; color: #333; }
+  tr.no-data td { color: #bbb; }
+  tr.no-data td.goal-col { color: #bbb; }
+  tr.weekend-data td.goal-col { background: #f0f0ee; }
   tr.last-data td, tr.last-data td.goal-col { background: #fff0eb !important; }
   tr.last-data td:first-child { border-left: 3px solid #f97c5a; }
   td.goal { color: #1a1a1a; font-size: 12px; font-weight: 500; }
@@ -212,6 +210,7 @@
 </header>
 
 <main>
+  <!-- ======== OVERVIEW PAGE ======== -->
   <div id="overviewPage">
     <div class="filter-bar" style="flex-direction:column;align-items:stretch;gap:8px;">
       <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
@@ -257,6 +256,7 @@
     </div>
   </div>
 
+  <!-- ======== DAILY PAGE ======== -->
   <div id="dailyPage" style="display:none;">
     <div class="filter-bar" style="flex-direction:column;align-items:stretch;gap:8px;">
       <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
@@ -342,15 +342,15 @@
 </main>
 
 <script>
-var MONTHS_SV=['Januari','Februari','Mars','April','Maj','Juni','Juli','Augusti','September','Oktober','November','December'];
-var DAYS_SV=['Söndag','Måndag','Tisdag','Onsdag','Torsdag','Fredag','Lördag'];
-var GROUP_D2D=['telia-fm','villafiber','koax','lan'];
-var GROUP_TM=['globalconnect','adressandring','vip-leads','retention','mbh','mobil','fmc'];
-var ALL_PROJECTS=[].concat(GROUP_D2D,GROUP_TM);
-var MANSDAG_PROJECTS=new Set(['telia-fm','villafiber','koax','lan','globalconnect']);
-var SNITT_PER_TIMMAR=new Set(['adressandring','vip-leads','retention','mbh','mobil','fmc']);
+const MONTHS_SV=['Januari','Februari','Mars','April','Maj','Juni','Juli','Augusti','September','Oktober','November','December'];
+const DAYS_SV=['Söndag','Måndag','Tisdag','Onsdag','Torsdag','Fredag','Lördag'];
+const GROUP_D2D=['telia-fm','villafiber','koax','lan'];
+const GROUP_TM=['globalconnect','adressandring','vip-leads','retention','mbh','mobil','fmc'];
+const ALL_PROJECTS=[...GROUP_D2D,...GROUP_TM];
+const MANSDAG_PROJECTS=new Set(['telia-fm','villafiber','koax','lan','globalconnect']);
+const SNITT_PER_TIMMAR=new Set(['adressandring','vip-leads','retention','mbh','mobil','fmc']);
 
-var PROJECT_META={
+const PROJECT_META={
   'telia-fm':{name:'Telia FM',sheet:'1.1. Telia D2D'},
   'villafiber':{name:'Villafiber',sheet:'1.3. Tele2 Villafiber'},
   'koax':{name:'Koax',sheet:'1.2. Tele2 Koax'},
@@ -364,17 +364,17 @@ var PROJECT_META={
   'fmc':{name:'Telia FMC',sheet:'2.2.1. Telia FMC'}
 };
 
-var currentPage='overview';
-var overviewFilter='alla';
-var overviewProject=null;
-var dailyGroup='alla';
-var dailyProject=new Set(ALL_PROJECTS);
-var dailyView='full';
-var utfallData={};
-var malData={};
-var _dailyRef=null;
+let currentPage='overview';
+let overviewFilter='alla';
+let overviewProject=null;
+let dailyGroup='alla';
+let dailyProject=new Set(ALL_PROJECTS);
+let dailyView='full';
+let utfallData={};
+let malData={};
+let _dailyRef=null;
 
-var COMPACT_COLS=[
+const COMPACT_COLS=[
   {label:'Dag'},{label:'Datum'},
   {label:'Mål säljare',goalKey:'__mal_saljare__'},{label:'Utfall säljare',key:'__utfall_saljare__'},
   {label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'timmar'},
@@ -382,7 +382,7 @@ var COMPACT_COLS=[
   {label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}
 ];
 
-var PROJECT_COLS={
+const PROJECT_COLS={
   'telia-fm':[{label:'Dag'},{label:'Datum'},{label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},{label:'Mål Sälj',goalKey:'Mål Sälj'},{label:'Utfall Produkter',key:'Produkt'},{label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall Timmar',key:'Timmar'},{label:'Mål BB',goalKey:'Mål BB'},{label:'Utfall BB',key:'Bredband'},{label:'Mål TV',goalKey:'Mål TV'},{label:'Utfall TV',key:'TV'},{label:'Mål Premium',goalKey:'Mål Premium'},{label:'Utfall Premium',key:'Streaming'},{label:'Mål Mob',goalKey:'Mål Mob'},{label:'Utfall Mob',key:'MOBIL'},{label:'Mål Trygghetspaket',goalKey:'Mål Trygghetspaket'},{label:'Utfall Trygghetspaket',key:'Trygghetspaket'},{label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}],
   'villafiber':[{label:'Dag'},{label:'Datum'},{label:'Mål mansdagar',goalKey:'Mål mansdagar'},{label:'Utfall mansdagar',key:'Antal Mansdagar'},{label:'Mål Produkt',goalKey:'Mål Produkt'},{label:'Utfall Produkt',key:'Produkt'},{label:'DTV',key:'TV'},{label:'BB',key:'Bredband'},{label:'MBB',key:'MBB'},{label:'Mobil',key:'Mobil'},{label:'Mål snitt/mansdag',goalKey:'Mål snitt per mansdag'},{label:'Utfall snitt/mansdag',key:'snitt'}],
   'koax':[{label:'Dag'},{label:'Datum'},{label:'Mål mansdagar',goalKey:'Mål mansdagar'},{label:'Utfall mansdagar',key:'Antal Mansdagar'},{label:'Mål Produkt',goalKey:'Mål Produkt'},{label:'Utfall Produkt',key:'Produkt'},{label:'DTV',key:'TV'},{label:'BB',key:'Bredband'},{label:'MBB',key:'MBB'},{label:'Mobil',key:'Mobil'},{label:'Mål snitt/mansdag',goalKey:'Mål snitt per mansdag'},{label:'Utfall snitt/mansdag',key:'snitt'}],
@@ -420,23 +420,13 @@ function findVal(obj,key){
   return null;
 }
 
-function hasRealUtfall(row){
-  if(!row||!Object.keys(row).length) return false;
-  for(var k of Object.keys(row)){
-    if(k.toLowerCase()==='datum'||k.toLowerCase()==='date'||k.toLowerCase()==='dag') continue;
-    var v=row[k];
-    if(typeof v==='number'&&v>0) return true;
-  }
-  return false;
-}
-
 function resolveDynGoal(goalKey,mRow){
   if(goalKey==='__mal_saljare__'){
     for(var k of ['Mål säljare','Mål mansdagar']){ var v=findVal(mRow,k); if(typeof v==='number') return v; }
     return null;
   }
   if(goalKey==='__mal_prod__'){
-    var p=_dailyRef||[].concat.apply([],[dailyProject])[0];
+    var p=_dailyRef||[...dailyProject][0];
     if(p==='mobil'||p==='fmc'){ var h=findVal(mRow,'Mål Huvudabb')??0, ea=findVal(mRow,'Mål EA')??0; return (typeof h==='number'?h:0)+(typeof ea==='number'?ea:0)||null; }
     if(p==='vip-leads'){ var bb=findVal(mRow,'Mål BB')??0, mbh=findVal(mRow,'Mål MBH')??0; return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0)||null; }
     if(p==='retention'||p==='mbh'){ var v2=findVal(mRow,'Mål BB'); return typeof v2==='number'?v2:null; }
@@ -588,7 +578,7 @@ function renderOverview(){
   var projects=ALL_PROJECTS;
   if(overviewFilter==='d2d') projects=GROUP_D2D;
   if(overviewFilter==='tm') projects=GROUP_TM;
-  var cardProjects=overviewProject instanceof Set?[].concat.apply([],[overviewProject]):projects;
+  var cardProjects=overviewProject instanceof Set?[...overviewProject]:projects;
 
   var barColor=function(p){return p>=100?'#2d8a4e':'#f97c5a';};
   var MAL_COLOR='#999';
@@ -610,7 +600,7 @@ function renderOverview(){
     sumMalProd+=mRows.reduce(function(s,r){return s+getProjectMalProd(proj,r);},0);
     sumTotalMansdag+=uRows.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??0;return s+(typeof v==='number'?v:0);},0);
     sumMalMansdag+=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål säljare')??0;return s+(typeof v==='number'?v:0);},0);
-    sumTotalTimmar+=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??findVal(r,'Utfall Timmar')??0;return s+(typeof v==='number'?v:0);},0);
+    sumTotalTimmar+=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??0;return s+(typeof v==='number'?v:0);},0);
     sumMalTimmar+=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0);},0);
     sumWorkDays=Math.max(sumWorkDays,uRows.filter(function(r){return (findVal(r,'Antal Mansdagar')??0)>0;}).length);
     mRowsNorm.forEach(function(r){var v=findVal(r,'Mål snitt')??0;if(typeof v==='number'&&v>0){sumMalSnitt+=v;sumMalSnittCount++;}});
@@ -657,7 +647,7 @@ function renderOverview(){
   var lineColor=sumProdPct>=100?'#2d8a4e':'#f97c5a';
 
   var filterLabel;
-  if(overviewProject instanceof Set&&overviewProject.size>0) filterLabel=[].concat.apply([],[overviewProject]).map(function(p){return PROJECT_META[p]?PROJECT_META[p].name:p;}).join(' + ');
+  if(overviewProject instanceof Set&&overviewProject.size>0) filterLabel=[...overviewProject].map(function(p){return PROJECT_META[p]?PROJECT_META[p].name:p;}).join(' + ');
   else if(overviewFilter==='d2d') filterLabel='D2D';
   else if(overviewFilter==='tm') filterLabel='TM';
   else filterLabel='Alla projekt';
@@ -686,10 +676,11 @@ function renderOverview(){
     var mRowsNorm=mRows.map(function(r){return normalizeRow(r,'mal');});
     var totalMansdag=uRows.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??0;return s+(typeof v==='number'?v:0);},0);
     var malMansdag=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål säljare')??0;return s+(typeof v==='number'?v:0);},0);
-    var totalTimmar=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??findVal(r,'Utfall Timmar')??0;return s+(typeof v==='number'?v:0);},0);
+    var totalTimmar=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??0;return s+(typeof v==='number'?v:0);},0);
     var malTimmar=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0);},0);
     var workDays=uRows.filter(function(r){return (findVal(r,'Antal Mansdagar')??0)>0;}).length;
     var avgSellers=workDays>0?fmt2(totalMansdag/workDays):0;
+    var totalTimmar=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??findVal(r,'Utfall Timmar')??0;return s+(typeof v==='number'?v:0);},0);
     var snittpMansdag=useMansdag?(totalMansdag>0?fmt2(totalProd/totalMansdag):0):(totalTimmar>0?fmt2(totalProd/totalTimmar):0);
     var malSnittSum=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål snitt')??0;return s+(typeof v==='number'?v:0);},0);
     var malSnittDays=mRowsNorm.filter(function(r){return (findVal(r,'Mål snitt')??0)>0;}).length;
@@ -817,7 +808,7 @@ function renderDaily(){
   var m=getMonth(),y=getYear();
   var days=new Date(y,m+1,0).getDate();
   var multi=dailyProject.size>1;
-  var activeProjArr=[].concat.apply([],[dailyProject]);
+  var activeProjArr=[...dailyProject];
   var firstProj=activeProjArr[0];
 
   if(dailyView==='compare'&&multi){
@@ -851,10 +842,10 @@ function renderDaily(){
   var lastDataDay=0;
   for(var i=1;i<=days;i++){
     var dk=toDateKey(y,m,i), uRow=uData[dk]||{};
-    if(hasRealUtfall(uRow)) lastDataDay=i;
+    var hasProd=findVal(uRow,'Produkt')??findVal(uRow,'produkt')??null;
+    var hasSaljare=findVal(uRow,'Antal Mansdagar')??findVal(uRow,'Antal Säljare')??null;
+    if((typeof hasProd==='number'&&hasProd>0)||(typeof hasSaljare==='number'&&hasSaljare>0)) lastDataDay=i;
   }
-
-  var today=new Date();today.setHours(0,0,0,0);
 
   var rows='';
   for(var i2=1;i2<=days;i2++){
@@ -862,43 +853,36 @@ function renderDaily(){
     var dateKey=toDateKey(y,m,i2), uRow2=uData[dateKey]||{}, mRow=mData[dateKey]||{};
     var hasUtfall=Object.keys(uRow2).length>0, hasMal=Object.keys(mRow).length>0;
     var malSaljare=findVal(mRow,'Mål säljare')||findVal(mRow,'Mål mansdagar')||0;
-    var malTimmar2=findVal(mRow,'Mål timmar')||0;
-    var isNonWorkingDay=!weekend&&hasMal&&malSaljare===0&&malTimmar2===0;
+    var malTimmar=findVal(mRow,'Mål timmar')||0;
+    var isNonWorkingDay=!weekend&&hasMal&&malSaljare===0&&malTimmar===0;
     var dateStr=i2+' '+MONTHS_SV[m].substring(0,3).toLowerCase();
     var isLastData=i2===lastDataDay;
-    var thisDate=new Date(y,m,i2);thisDate.setHours(0,0,0,0);
+    var today=new Date();today.setHours(0,0,0,0);
+    var thisDate=new Date(y,m,i2);
     var isFuture=thisDate>today;
-    var hasData=hasRealUtfall(uRow2);
-    var isOffDay=weekend||isNonWorkingDay;
-
-    var cls;
-    if(isLastData) cls='last-data';
-    else if(isOffDay&&hasData) cls='weekend-data';
-    else if(isOffDay) cls='weekend';
-    else if(isFuture&&!hasData) cls='future';
-    else cls='';
-
+    var cls=isLastData?'last-data':(weekend||isNonWorkingDay)?(hasUtfallData?'weekend-data':'weekend'):(isFuture&&!hasUtfallData?'no-data':'');
     var dayLabel=isLastData?'<span class="day-badge">senast</span>'+dayName:dayName;
 
+    var hasUtfallData=Object.keys(uRow2).length>0&&(findVal(uRow2,'Produkt')??findVal(uRow2,'produkt')??findVal(uRow2,'Antal Mansdagar')??findVal(uRow2,'Antal Säljare')??null)!==null;
     var cells=cols.map(function(c,idx){
       if(idx===0) return '<td>'+dayLabel+'</td>';
       if(idx===1) return '<td>'+dateStr+'</td>';
-      if(isOffDay&&!hasData) return '<td>'+e+'</td>';
+      if((weekend||isNonWorkingDay)&&!hasUtfallData) return '<td>'+e+'</td>';
       if(c.goalKey){
         var gv=hasMal?resolveDynGoal(c.goalKey,mRow):null;
+        if((weekend||isNonWorkingDay)&&!hasUtfallData) return '<td class="goal goal-col">'+(typeof gv==='number'?fmt2(gv):'—')+'</td>';
         return '<td class="goal goal-col">'+(typeof gv==='number'?fmt2(gv):'—')+'</td>';
       }
       if(c.key){
-        if(isFuture&&!hasData) return '<td>—</td>';
         var isSnitt=c.key.toLowerCase()==='snitt';
         var isProd=c.key==='Produkt';
         var isSaljare=c.key==='__utfall_saljare__';
+        if(isFuture&&!c.goalKey) return '<td>—</td>';
         var uv;
         if(isSnitt) uv=hasUtfall?calcSnitt(firstProj,uRow2):null;
         else if(isProd&&(dailyView==='compact'||multi)) uv=hasUtfall?getCompactProd(firstProj,uRow2):null;
         else if(isSaljare) uv=hasUtfall?(findVal(uRow2,'Antal Mansdagar')??findVal(uRow2,'Antal Säljare')??null):null;
         else uv=hasUtfall?findVal(uRow2,c.key):null;
-        if(typeof uv==='number'&&uv===0&&isOffDay) return '<td>—</td>';
         var gk=findGoalKey(cols,c.key);
         var gvRaw=hasMal&&gk?resolveDynGoal(gk,mRow):null;
         var gv2=typeof gvRaw==='number'?fmt2(gvRaw):gvRaw;
@@ -960,7 +944,7 @@ function renderDaily(){
 
 function updateStatCards(uData,mData){
   var uRows=Object.values(uData), mRows=Object.values(mData);
-  var firstProj=[].concat.apply([],[dailyProject])[0];
+  var firstProj=[...dailyProject][0];
   var getProd=function(r){return findVal(r,'Produkt')??findVal(r,'produkt')??null;};
   var getMalProd=function(r){
     var p=firstProj;
@@ -1008,10 +992,11 @@ function updateStatCards(uData,mData){
     } else taktEl.innerHTML='';
   }
 
+  // Telia FM kategori-breakdown
   var breakdownEl=document.getElementById('teliaFmBreakdown');
   var breakdownContent=document.getElementById('teliaFmBreakdownContent');
   if(breakdownEl){
-    var isTeliaFm=dailyProject.size===1&&[].concat.apply([],[dailyProject])[0]==='telia-fm';
+    var isTeliaFm=dailyProject.size===1&&[...dailyProject][0]==='telia-fm';
     if(isTeliaFm&&totalHours>0){
       var cats=[
         {label:'BB/H',key:'Bredband'},
