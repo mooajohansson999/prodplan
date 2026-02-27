@@ -248,12 +248,34 @@ function getProjectSnittMal(project){
   var sheetName=PROJECT_TO_SHEET[project];
   if(!sheetName||!malData[sheetName]) return null;
   var rows=Object.values(malData[sheetName]);
+  var useMansdag=MANSDAG_PROJECTS.has(project);
+
+  // First try explicit Mål snitt
   var sum=0,count=0;
   rows.forEach(function(r){
     var v=findVal(r,'Mål snitt')??findVal(r,'Mål snitt per mansdag')??null;
     if(typeof v==='number'&&v>0){sum+=v;count++;}
   });
-  return count>0?sum/count:null;
+  if(count>0) return sum/count;
+
+  // Fallback: calculate from Mål sälj / Mål säljare (or timmar)
+  var totalMalProd=0,totalMalDivisor=0;
+  rows.forEach(function(r){
+    var prod=findVal(r,'Mål Sälj')??findVal(r,'Mål Produkt')??findVal(r,'Mål produkt')??0;
+    if(typeof prod!=='number') prod=0;
+    var divisor;
+    if(useMansdag){
+      divisor=findVal(r,'Mål säljare')??findVal(r,'Mål mansdagar')??0;
+    } else {
+      divisor=findVal(r,'Mål timmar')??0;
+    }
+    if(typeof divisor!=='number') divisor=0;
+    if(prod>0&&divisor>0){
+      totalMalProd+=prod;
+      totalMalDivisor+=divisor;
+    }
+  });
+  return totalMalDivisor>0?totalMalProd/totalMalDivisor:null;
 }
 
 let ordersData=[], timmarData=[], malData={};
