@@ -124,6 +124,10 @@
 
   .extra-badge { display: inline-block; font-size: 9px; font-weight: 600; color: #f97c5a; background: #fff5f3; border-radius: 3px; padding: 1px 5px; margin-right: 4px; }
 
+  /* Helg/ledig MED utfall – ljusgrå bakgrund, svart text */
+  tr.off-day-data td { background: #f4f4f2; color: #333; }
+  tr.off-day-data td.goal-col { background: #eeeee9; color: #333; }
+
   /* Framtida dagar utan data */
   tr.future-day td { color: #b0b0b0; }
   tr.future-day td.goal-col { color: #b0b0b0; }
@@ -899,7 +903,7 @@ function renderDaily(){
     // 5. Normal working day = no special class
     var cls='';
     if(isLastData) cls='last-data';
-    else if(dayOff&&realUtfall) cls='';
+    else if(dayOff&&realUtfall) cls='off-day-data';
     else if(dayOff) cls='off-day';
     else if(isFuture&&!realUtfall) cls='future-day';
 
