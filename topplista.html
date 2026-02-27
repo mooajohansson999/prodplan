@@ -284,7 +284,7 @@ function normalizeProject(p){
   var s=p.trim();
   // Normalize common variations
   var lower=s.toLowerCase();
-  if(lower.includes('telia d2d')||lower.includes('telia fm')) return 'Telia D2D';
+  if(lower.includes('telia d2d')||lower.includes('telia fm')||lower==='telia fm') return 'Telia D2D';
   if(lower.includes('villafiber')) return 'Tele2 Villafiber';
   if(lower.includes('koax')) return 'Tele2 Koax';
   if(lower.includes('lan')||lower==='lan') return 'LAN';
