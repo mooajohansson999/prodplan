@@ -68,39 +68,39 @@
   .month-bar { background: #f0f0ee; border-bottom: 1px solid #ebebeb; }
 
   /* Podium */
-  .podium { display: flex; align-items: flex-end; justify-content: center; gap: 12px; margin-bottom: 28px; padding-top: 20px; }
-  .podium-spot { text-align: center; cursor: default; }
-  .podium-avatar {
-    width: 52px; height: 52px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 18px; color: #fff; margin: 0 auto 6px;
-  }
-  .podium-spot.first .podium-avatar { width: 64px; height: 64px; font-size: 22px; }
-  .podium-name { font-size: 13px; font-weight: 700; color: #1a1a1a; max-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin: 0 auto; }
+  .podium { display: flex; align-items: flex-end; justify-content: center; gap: 0; margin-bottom: 28px; padding: 20px 20px 0; background: #fff; border: 1px solid #ebebeb; border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.04); }
+  .podium-spot { text-align: center; cursor: default; position: relative; }
+  .podium-name { font-size: 12px; font-weight: 700; color: #1a1a1a; max-width: 130px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin: 0 auto; }
+  .podium-spot.first .podium-name { font-size: 13px; }
   .podium-project { font-size: 10px; color: #999; margin-top: 1px; }
-  .podium-value { font-size: 18px; font-weight: 700; margin-top: 4px; }
-  .podium-spot.first .podium-value { font-size: 22px; }
-  .podium-meta { font-size: 10px; color: #999; margin-top: 1px; }
+  .podium-value { font-size: 16px; font-weight: 700; margin-top: 3px; color: #1a1a1a; }
+  .podium-spot.first .podium-value { font-size: 20px; }
+  .podium-meta { font-size: 10px; color: #999; margin-top: 2px; }
   .podium-bar {
-    width: 100px; border-radius: 10px 10px 0 0; margin: 8px auto 0;
-    display: flex; align-items: flex-start; justify-content: center; padding-top: 8px;
-    font-size: 20px; font-weight: 800; color: rgba(255,255,255,0.9);
+    width: 130px; border-radius: 8px 8px 0 0; margin: 10px auto 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; font-weight: 700; color: #a08040; letter-spacing: 0.5px;
+    background: linear-gradient(180deg, #fafaf6, #eeeee6);
+    border-top: 3px solid #d4b056;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   }
-  .podium-spot.first .podium-bar { width: 110px; height: 100px; background: linear-gradient(180deg, #f5c542, #e8a817); }
-  .podium-spot.second .podium-bar { width: 100px; height: 72px; background: linear-gradient(180deg, #c0c0c0, #9a9a9a); }
-  .podium-spot.third .podium-bar { width: 100px; height: 52px; background: linear-gradient(180deg, #d4956b, #b8784a); }
+  .podium-spot.first .podium-bar { width: 150px; height: 110px; font-size: 28px; border-top-color: #d4b056; }
+  .podium-spot.second .podium-bar { width: 130px; height: 80px; font-size: 24px; border-top-color: #c0c0c0; color: #888; }
+  .podium-spot.third .podium-bar { width: 130px; height: 64px; font-size: 22px; border-top-color: #c8956b; color: #a07050; }
+  .podium-rank { font-weight: 700; }
 
   /* Table */
   .table-wrap { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; overflow: auto; }
   table { width: 100%; border-collapse: collapse; }
   th {
-    padding: 8px 12px; text-align: left; font-size: 10px; font-weight: 700; color: #999;
+    padding: 5px 10px; text-align: left; font-size: 10px; font-weight: 700; color: #999;
     text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 2px solid #ebebeb;
     background: #fafafa;
   }
   th.right, td.right { text-align: right; }
   th.center, td.center { text-align: center; }
   td {
-    padding: 8px 12px; border-bottom: 1px solid #f5f5f5; font-size: 13px;
+    padding: 4px 10px; border-bottom: 1px solid #f5f5f5; font-size: 12px;
     color: #333; font-weight: 600;
   }
   tr:last-child td { border-bottom: none; }
@@ -111,13 +111,12 @@
   .rank-2 { color: #9a9a9a; }
   .rank-3 { color: #b8784a; }
 
-  .seller-cell { display: flex; align-items: center; gap: 10px; }
-  .seller-avatar {
-    width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    font-weight: 700; font-size: 12px; color: #fff; flex-shrink: 0;
-  }
-  .seller-name { font-weight: 600; font-size: 13px; }
+  .seller-cell { display: flex; align-items: center; gap: 8px; }
+  .seller-name { font-weight: 600; font-size: 12px; }
   .seller-project { font-size: 10px; color: #999; font-weight: 500; }
+  .status-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .dot-green { background: #2d8a4e; }
+  .dot-red { background: #c0392b; }
 
   .value-primary { font-size: 15px; font-weight: 700; color: #1a1a1a; }
   .value-secondary { font-size: 11px; color: #999; font-weight: 500; }
@@ -175,7 +174,7 @@
     <div class="filter-group">
       <span class="filter-label">Period:</span>
       <div class="filter-pills" id="periodFilter">
-        <button class="filter-pill" onclick="setPeriod('today',this)">Idag</button>
+        <button class="filter-pill" onclick="setPeriod('yesterday',this)">Igår</button>
         <button class="filter-pill" onclick="setPeriod('week',this)">Denna vecka</button>
         <button class="filter-pill active" onclick="setPeriod('month',this)">Månad</button>
       </div>
@@ -224,7 +223,40 @@ const MANSDAG_PROJECTS=new Set(['Telia D2D','Telia FM','Tele2 Villafiber','Tele2
 
 const AVATAR_COLORS=['#f97c5a','#e8503a','#4a90d9','#50b983','#9b59b6','#e67e22','#1abc9c','#e74c3c','#3498db','#2ecc71','#8e44ad','#f39c12','#16a085','#c0392b','#2980b9','#27ae60'];
 
-let ordersData=[], timmarData=[];
+const PROJECT_TO_SHEET={
+  'Telia D2D':'1.1. Telia D2D',
+  'Tele2 Villafiber':'1.3. Tele2 Villafiber',
+  'Tele2 Koax':'1.2. Tele2 Koax',
+  'LAN':'1.4. LAN',
+  'GlobalConnect':'GlobalConnect',
+  'Telia Adressändring':'2.7. Telia Adressändring',
+  'Telia VIP Leads':'2.6. Telia VIP Leads',
+  'Telia Retention':'2.5. Telia Retention Leads',
+  'Telia MBH':'2.2. Telia MBH',
+  'Telia Mobil':'2.2. Telia Mobil',
+  'Telia FMC':'2.2.1. Telia FMC'
+};
+
+function findVal(obj,key){
+  if(!obj||!key) return null;
+  var lk=key.toLowerCase();
+  for(var k of Object.keys(obj)){ if(k.toLowerCase()===lk) return obj[k]; }
+  return null;
+}
+
+function getProjectSnittMal(project){
+  var sheetName=PROJECT_TO_SHEET[project];
+  if(!sheetName||!malData[sheetName]) return null;
+  var rows=Object.values(malData[sheetName]);
+  var sum=0,count=0;
+  rows.forEach(function(r){
+    var v=findVal(r,'Mål snitt')??findVal(r,'Mål snitt per mansdag')??null;
+    if(typeof v==='number'&&v>0){sum+=v;count++;}
+  });
+  return count>0?sum/count:null;
+}
+
+let ordersData=[], timmarData=[], malData={};
 let filterGroup='alla', filterPeriod='month', filterProject=null;
 
 function getMonth(){ return parseInt(document.getElementById('monthSel').value); }
@@ -268,8 +300,9 @@ function normalizeProject(p){
 
 function getDateRange(){
   var m=getMonth(), y=getYear();
-  if(filterPeriod==='today'){
-    var d=new Date(); var dk=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+  if(filterPeriod==='yesterday'){
+    var d=new Date(); d.setDate(d.getDate()-1);
+    var dk=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
     return {start:dk,end:dk};
   }
   if(filterPeriod==='week'){
@@ -382,7 +415,7 @@ function buildLeaderboard(){
 
 function render(){
   var m=getMonth(), y=getYear();
-  var periodLabel=filterPeriod==='today'?'idag':filterPeriod==='week'?'denna vecka':MONTHS_SV[m]+' '+y;
+  var periodLabel=filterPeriod==='yesterday'?'igår':filterPeriod==='week'?'denna vecka':MONTHS_SV[m]+' '+y;
   var projectLabel=filterProject||'Alla projekt';
   document.getElementById('pageSub').textContent='Snitt per timme/mansdag · '+projectLabel+' · '+periodLabel;
 
@@ -395,7 +428,6 @@ function render(){
   var topSnitt=sellers.length>0?sellers[0].snitt:0;
 
   document.getElementById('statRow').innerHTML=
-    '<div class="stat-card"><div class="stat-label">Antal säljare</div><div class="stat-value">'+totalSellers+'</div></div>'+
     '<div class="stat-card"><div class="stat-label">Totalt produkter</div><div class="stat-value">'+totalProducts+'</div></div>'+
     '<div class="stat-card"><div class="stat-label">Snitt (alla)</div><div class="stat-value">'+avgSnitt+'</div></div>'+
     '<div class="stat-card"><div class="stat-label">Bäst snitt</div><div class="stat-value">'+topSnitt+'</div></div>';
@@ -417,14 +449,14 @@ function render(){
   podiumOrder.forEach(function(s,i){
     var spot=spots[i];
     var rank=spot==='first'?1:spot==='second'?2:3;
-    var col=avatarColor(s.name);
+    var mal=getProjectSnittMal(s.project);
+    var dotHtml2=mal!==null?'<span class="status-dot '+(s.snitt>=mal?'dot-green':'dot-red')+'" style="display:inline-block;vertical-align:middle;margin-right:4px;"></span>':'';
     podiumHtml+='<div class="podium-spot '+spot+'">'+
-      '<div class="podium-avatar" style="background:'+col+'">'+initials(s.name)+'</div>'+
       '<div class="podium-name" title="'+s.name+'">'+s.name+'</div>'+
       '<div class="podium-project">'+s.project+'</div>'+
-      '<div class="podium-value">'+s.snitt+'</div>'+
+      '<div class="podium-value">'+dotHtml2+s.snitt+'</div>'+
       '<div class="podium-meta">'+s.products+' prod · '+s.divisor+' '+(s.snittLabel.replace('per ',''))+'</div>'+
-      '<div class="podium-bar">'+rank+'</div>'+
+      '<div class="podium-bar"><span class="podium-rank">'+rank+'</span></div>'+
     '</div>';
   });
   podiumHtml+='</div>';
@@ -435,24 +467,25 @@ function render(){
   var maxSnitt=sellers.length>0?sellers[0].snitt:1;
 
   var html='<table><thead><tr>'+
-    '<th class="center" style="width:40px">#</th>'+
+    '<th class="center" style="width:36px">#</th>'+
     '<th>Säljare</th>'+
-    '<th class="right">Produkter</th>'+
-    '<th class="right">Timmar/Mansd.</th>'+
+    '<th class="right">Prod</th>'+
+    '<th class="right">Tim/Mansd</th>'+
     '<th class="right">Snitt</th>'+
-    '<th>Nivå</th>'+
+    '<th style="width:100px">Nivå</th>'+
   '</tr></thead><tbody>';
 
   tableRows.forEach(function(s,i){
     var rank=i+4;
-    var col=avatarColor(s.name);
     var pct=maxSnitt>0?Math.round((s.snitt/maxSnitt)*100):0;
+    var mal=getProjectSnittMal(s.project);
+    var dotHtml=mal!==null?'<span class="status-dot '+(s.snitt>=mal?'dot-green':'dot-red')+'"></span>':'';
     html+='<tr>'+
       '<td class="rank-cell">'+rank+'</td>'+
-      '<td><div class="seller-cell"><div class="seller-avatar" style="background:'+col+'">'+initials(s.name)+'</div><div><div class="seller-name">'+s.name+'</div><div class="seller-project">'+s.project+'</div></div></div></td>'+
-      '<td class="right"><span class="value-primary">'+s.products+'</span></td>'+
-      '<td class="right"><span class="value-primary">'+s.divisor+'</span><br><span class="value-secondary">'+s.snittLabel.replace('per ','')+'</span></td>'+
-      '<td class="right"><span class="value-primary">'+s.snitt+'</span><br><span class="value-secondary">'+s.snittLabel+'</span></td>'+
+      '<td><div class="seller-cell">'+dotHtml+'<div class="seller-name">'+s.name+' <span class="seller-project">'+s.project+'</span></div></div></td>'+
+      '<td class="right">'+s.products+'</td>'+
+      '<td class="right">'+s.divisor+'</td>'+
+      '<td class="right"><span class="value-primary">'+s.snitt+'</span></td>'+
       '<td class="bar-cell"><div class="bar-bg"><div class="bar-fill" style="width:'+pct+'%"></div></div></td>'+
     '</tr>';
   });
@@ -461,23 +494,59 @@ function render(){
   document.getElementById('tableWrap').innerHTML=html;
 }
 
+function generateDummyData(){
+  var names=['Erik Lindberg','Anna Svensson','Mohamed Ali','Lejla Dizdar','Jonathan Balfe','Sinai Gerzgher','Oscar Pettersson','Sofia Karlsson','David Björk','Emma Nilsson','Marcus Holm','Lina Andersson','Felix Johansson','Sara Ekström','Viktor Lundqvist','Nadia Hassan','Tobias Falk','Mia Berggren','Adam Rinaldo','Hanna Ström','Leo Wallin','Ida Forsberg','Hugo Sandberg','Elin Nordin','Rasmus Öberg'];
+  var projects=['Telia D2D','Tele2 Villafiber','Tele2 Koax','LAN','GlobalConnect','Telia Adressändring','Telia VIP Leads','Telia Retention','Telia MBH','Telia Mobil','Telia FMC'];
+  var orders=[],timmar=[];
+  var y=new Date().getFullYear(), m=new Date().getMonth();
+  names.forEach(function(name){
+    var proj=projects[Math.floor(Math.random()*projects.length)];
+    var useMansdag=MANSDAG_PROJECTS.has(proj);
+    var daysWorked=Math.floor(Math.random()*15)+5;
+    var totalProds=0;
+    for(var d=1;d<=daysWorked;d++){
+      var date=y+'-'+String(m+1).padStart(2,'0')+'-'+String(Math.min(d+1,28)).padStart(2,'0');
+      var hrs=useMansdag?0:(5+Math.random()*3);
+      var mans=useMansdag?1:0;
+      timmar.push({Datum:date,Projekt:proj,Säljare:name,'Inloggad tid timmar':parseFloat(hrs.toFixed(2)),Mansdagar:mans});
+      var prods=Math.floor(Math.random()*6);
+      totalProds+=prods;
+      for(var p=0;p<prods;p++){
+        orders.push({Datum:date,Projekt:proj,Säljare:name,Produkttyp:'Produkt'});
+      }
+    }
+  });
+  return {orders:orders,timmar:timmar};
+}
+
 async function loadData(){
+  var loaded=false;
   try{
-    var [r1,r2,r3]=await Promise.all([
+    var [r1,r2,r3,r4]=await Promise.all([
       fetch('data/rawdata_orders.json',{cache:'no-store'}),
       fetch('data/rawdata_timmar.json',{cache:'no-store'}),
-      fetch('data/last_synced.json',{cache:'no-store'})
+      fetch('data/last_synced.json',{cache:'no-store'}),
+      fetch('data/mal.json',{cache:'no-store'})
     ]);
     if(r1.ok) ordersData=await r1.json();
     if(r2.ok) timmarData=await r2.json();
     if(r3.ok){var s=await r3.json();if(s.last_synced) document.getElementById('lastSynced').textContent='Senast synkad: '+s.last_synced;}
+    if(r4.ok) malData=await r4.json();
+    if(ordersData.length>0||timmarData.length>0) loaded=true;
     console.log('Loaded',ordersData.length,'orders,',timmarData.length,'timmar rows');
-  }catch(e){console.warn('Kunde inte ladda data:',e);}
+  }catch(e){console.warn('Kunde inte ladda data, använder demodata:',e);}
 
-  // Set current month/year
   var now=new Date();
   document.getElementById('monthSel').value=now.getMonth();
   document.getElementById('yearSel').value=now.getFullYear();
+
+  if(!loaded){
+    var dummy=generateDummyData();
+    ordersData=dummy.orders;
+    timmarData=dummy.timmar;
+    document.getElementById('lastSynced').textContent='DEMODATA';
+    console.log('Using dummy data:',ordersData.length,'orders,',timmarData.length,'timmar');
+  }
 
   buildProjectChips();
   render();
