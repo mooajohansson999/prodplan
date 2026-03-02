@@ -1819,11 +1819,11 @@
       "Tele2 Villafiber": "Fredag",
       "DATUM": "2026-02-27",
       "Antal Mansdagar": 0,
-      "Total sälj": 0,
+      "Total sälj": 2,
       "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "TV": 0,
-      "Bredband": 0,
+      "Produkt": 2,
+      "TV": 1,
+      "Bredband": 1,
       "MBB": 0,
       "Mobil": 0,
       "Räknas ej": 0,
@@ -1890,13 +1890,13 @@
       "Produkt Kontroll": 0,
       "kontroll produkt": 0
     },
-    "1901-11-18": {
+    "1901-11-20": {
       "Tele2 Villafiber": "Total sälj",
-      "DATUM": 688
+      "DATUM": 690
     },
-    "1901-10-18": {
+    "1901-10-20": {
       "Tele2 Villafiber": "Produkter",
-      "DATUM": 657
+      "DATUM": 659
     }
   },
   "1.2. Tele2 Koax": {
@@ -2854,15 +2854,15 @@
       "Tele2 Koax": "Fredag",
       "DATUM": "2026-02-27",
       "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
-      "Tilläggsprodukt": 0,
+      "Total sälj": 9,
+      "produkt": 3,
+      "Tilläggsprodukt": 6,
       "TV": 0,
-      "BREDBAND": 0,
+      "BREDBAND": 1,
       "MBB": 0,
-      "Mobil": 0,
+      "Mobil": 2,
       "Streaming": 0,
-      "Bredband OM": 0,
+      "Bredband OM": 6,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0
@@ -2935,17 +2935,17 @@
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0
     },
-    "1901-12-03": {
+    "1901-12-12": {
       "Tele2 Koax": "Total sälj",
-      "DATUM": 703
+      "DATUM": 712
     },
-    "1900-07-15": {
+    "1900-07-21": {
       "Tele2 Koax": "Produkter",
-      "DATUM": 197
+      "DATUM": 203
     },
-    "1901-05-20": {
+    "1901-05-23": {
       "Tele2 Koax": "Tilläggsprodukter",
-      "DATUM": 506
+      "DATUM": 509
     }
   },
   "1.4. LAN": {
@@ -3903,13 +3903,13 @@
       "Tele2 LAN": "Fredag",
       "DATUM": "2026-02-27",
       "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
+      "Total sälj": 8,
+      "produkt": 8,
       "Tilläggsprodukt": 0,
-      "TV": 0,
+      "TV": 2,
       "BREDBAND": 0,
-      "MBB": 0,
-      "Mobil": 0,
+      "MBB": 2,
+      "Mobil": 4,
       "Streaming": 0,
       "Bredband OM": 0,
       "räknas ej": 0,
@@ -3984,17 +3984,17 @@
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0
     },
-    "1901-05-23": {
+    "1901-05-31": {
       "Tele2 LAN": "Total sälj",
-      "DATUM": 509
+      "DATUM": 517
     },
     "1900-01-07": {
       "Tele2 LAN": "Produkter",
       "DATUM": 8
     },
-    "1901-05-15": {
+    "1901-05-23": {
       "Tele2 LAN": "Tilläggsprodukter",
-      "DATUM": 501
+      "DATUM": 509
     }
   },
   "1.5. Amref": {
@@ -5534,15 +5534,15 @@
       "DATUM": "2026-02-26",
       "Antal Säljare": 3,
       "Timmar": 20.455,
-      "Total sälj": 16,
+      "Total sälj": 15,
       "produkt": 7,
-      "Tilläggsprodukt": 9,
+      "Tilläggsprodukt": 8,
       "Bredband": 3,
       "Flytt Bredband": 4,
       "MBH": 0,
       "TV": 3,
       "Film": 3,
-      "Sport": 2,
+      "Sport": 1,
       "Mobil": 0,
       "TV Box": 1,
       "kontroll produkter": 0,
@@ -5551,19 +5551,19 @@
     "2026-02-27": {
       "Telia Adressändring": "Fredag",
       "DATUM": "2026-02-27",
-      "Antal Säljare": 0,
-      "Timmar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
-      "Tilläggsprodukt": 0,
-      "Bredband": 0,
-      "Flytt Bredband": 0,
-      "MBH": 0,
-      "TV": 0,
-      "Film": 0,
-      "Sport": 0,
+      "Antal Säljare": 3,
+      "Timmar": 17.56861111111111,
+      "Total sälj": 15,
+      "produkt": 5,
+      "Tilläggsprodukt": 10,
+      "Bredband": 2,
+      "Flytt Bredband": 2,
+      "MBH": 1,
+      "TV": 4,
+      "Film": 2,
+      "Sport": 2,
       "Mobil": 0,
-      "TV Box": 0,
+      "TV Box": 2,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -5643,17 +5643,17 @@
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
-    "1900-09-11": {
+    "1900-09-25": {
       "Telia Adressändring": "Total sälj",
-      "DATUM": 255
+      "DATUM": 269
     },
-    "1900-06-19": {
+    "1900-06-28": {
       "Telia Adressändring": "Produkter",
-      "DATUM": 171
+      "DATUM": 180
     },
-    "1900-03-24": {
+    "1900-03-29": {
       "Telia Adressändring": "Tilläggsprodukter",
-      "DATUM": 84
+      "DATUM": 89
     }
   },
   "2.6. Telia VIP Leads": {
@@ -6646,12 +6646,12 @@
       "DATUM": "2026-02-24",
       "Antal Säljare": 5,
       "Timmar": 36.59,
-      "Total sälj": 52,
-      "produkt": 25,
-      "Tilläggsprodukt": 27,
+      "Total sälj": 50,
+      "produkt": 24,
+      "Tilläggsprodukt": 26,
       "Bredband": 20,
-      "MBH": 5,
-      "TV": 17,
+      "MBH": 4,
+      "TV": 16,
       "Film": 2,
       "Sport": 0,
       "Mobil": 3,
@@ -6682,12 +6682,12 @@
       "DATUM": "2026-02-26",
       "Antal Säljare": 5,
       "Timmar": 39.30305555555555,
-      "Total sälj": 59,
-      "produkt": 31,
-      "Tilläggsprodukt": 28,
-      "Bredband": 27,
+      "Total sälj": 57,
+      "produkt": 30,
+      "Tilläggsprodukt": 27,
+      "Bredband": 26,
       "MBH": 4,
-      "TV": 16,
+      "TV": 15,
       "Film": 5,
       "Sport": 0,
       "Mobil": 4,
@@ -6698,18 +6698,18 @@
     "2026-02-27": {
       "Telia VIP Leads": "Fredag",
       "DATUM": "2026-02-27",
-      "Antal Säljare": 0,
-      "Timmar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
-      "Tilläggsprodukt": 0,
-      "Bredband": 0,
-      "MBH": 0,
-      "TV": 0,
-      "Film": 0,
-      "Sport": 0,
+      "Antal Säljare": 5,
+      "Timmar": 29.34583333333333,
+      "Total sälj": 44,
+      "produkt": 22,
+      "Tilläggsprodukt": 22,
+      "Bredband": 14,
+      "MBH": 8,
+      "TV": 14,
+      "Film": 2,
+      "Sport": 1,
       "Mobil": 0,
-      "TV Box": 0,
+      "TV Box": 5,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -6785,17 +6785,17 @@
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
-    "1902-09-29": {
+    "1902-11-08": {
       "Telia VIP Leads": "Total sälj",
-      "DATUM": 1003
+      "DATUM": 1043
     },
-    "1901-06-21": {
+    "1901-07-11": {
       "Telia VIP Leads": "Produkter",
-      "DATUM": 538
+      "DATUM": 558
     },
-    "1901-04-09": {
+    "1901-04-29": {
       "Telia VIP Leads": "Tilläggsprodukter",
-      "DATUM": 465
+      "DATUM": 485
     }
   },
   "2.1. Telia Retention": {
@@ -8263,13 +8263,13 @@
       "DATUM": "2026-02-25",
       "Antal Mansdagar": 1,
       "Timmar": 4.114444444444445,
-      "Total sälj": 5,
+      "Total sälj": 4,
       "produkt": 2,
-      "Tilläggsprodukt": 3,
+      "Tilläggsprodukt": 2,
       "Bredband": 2,
       "TV": 0,
       "TV FL": 2,
-      "Streaming": 1,
+      "Streaming": 0,
       "Mobil": 0,
       "TV BOX": 0,
       "Kontroll produkter": 0,
@@ -8295,15 +8295,15 @@
     "2026-02-27": {
       "Telia Retention Leads": "Fredag",
       "DATUM": "2026-02-27",
-      "Antal Mansdagar": 0,
-      "Timmar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
-      "Tilläggsprodukt": 0,
-      "Bredband": 0,
-      "TV": 0,
-      "TV FL": 0,
-      "Streaming": 0,
+      "Antal Mansdagar": 1,
+      "Timmar": 5.579722222222222,
+      "Total sälj": 10,
+      "produkt": 7,
+      "Tilläggsprodukt": 3,
+      "Bredband": 7,
+      "TV": 1,
+      "TV FL": 1,
+      "Streaming": 1,
       "Mobil": 0,
       "TV BOX": 0,
       "Kontroll produkter": 0,
@@ -8377,17 +8377,17 @@
       "Kontroll produkter": 0,
       "Kontroll Tilläggsprodukter": 0
     },
-    "1900-08-08": {
+    "1900-08-17": {
       "Telia Retention Leads": "Total sälj",
-      "DATUM": 221
+      "DATUM": 230
     },
-    "1900-03-27": {
+    "1900-03-29": {
       "Telia Retention Leads": "Produkter",
-      "DATUM": 87
+      "DATUM": 89
     },
-    "1900-05-13": {
+    "1900-05-20": {
       "Telia Retention Leads": "Tilläggsprodukter",
-      "DATUM": 134
+      "DATUM": 141
     }
   },
   "2.2. Telia MBH": {
@@ -9375,17 +9375,17 @@
     "2026-02-27": {
       "Telia MBH": "Fredag",
       "DATUM": "2026-02-27",
-      "Antal Mansdagar": 0,
-      "Timmar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
-      "Tilläggsprodukt": 0,
-      "Bredband": 0,
-      "TV": 0,
+      "Antal Mansdagar": 3,
+      "Timmar": 16.395555555555553,
+      "Total sälj": 18,
+      "produkt": 7,
+      "Tilläggsprodukt": 11,
+      "Bredband": 7,
+      "TV": 8,
       "Film": 0,
       "Sport": 0,
       "mobil": 0,
-      "tv box": 0,
+      "tv box": 3,
       "Kontroll Tilläggsprodukt": 0,
       "kontroll produkt": 0
     },
@@ -9457,17 +9457,17 @@
       "Kontroll Tilläggsprodukt": 0,
       "kontroll produkt": 0
     },
-    "1900-06-12": {
+    "1900-06-30": {
       "Telia MBH": "Total sälj",
-      "DATUM": 164
+      "DATUM": 182
     },
-    "1900-03-04": {
+    "1900-03-11": {
       "Telia MBH": "Produkter",
-      "DATUM": 64
+      "DATUM": 71
     },
-    "1900-04-09": {
+    "1900-04-20": {
       "Telia MBH": "Tilläggsprodukter",
-      "DATUM": 100
+      "DATUM": 111
     }
   },
   "2.2. Telia Mobil": {
@@ -10019,10 +10019,10 @@
       "DATUM": "2026-02-20",
       "Antal Mansdagar": 24,
       "Timmar": 111.92805555555555,
-      "Total sälj": 41,
-      "produkt": 41,
-      "Mobil": 22,
-      "EA": 19,
+      "Total sälj": 37,
+      "produkt": 37,
+      "Mobil": 21,
+      "EA": 16,
       "kontroll produkt": 0
     },
     "2026-02-21": {
@@ -10074,10 +10074,10 @@
       "DATUM": "2026-02-25",
       "Antal Mansdagar": 23,
       "Timmar": 119.13166666666666,
-      "Total sälj": 22,
-      "produkt": 22,
-      "Mobil": 14,
-      "EA": 8,
+      "Total sälj": 18,
+      "produkt": 18,
+      "Mobil": 11,
+      "EA": 7,
       "kontroll produkt": 0
     },
     "2026-02-26": {
@@ -10085,21 +10085,21 @@
       "DATUM": "2026-02-26",
       "Antal Mansdagar": 21,
       "Timmar": 118.4975,
-      "Total sälj": 27,
-      "produkt": 27,
-      "Mobil": 17,
-      "EA": 10,
+      "Total sälj": 21,
+      "produkt": 21,
+      "Mobil": 12,
+      "EA": 9,
       "kontroll produkt": 0
     },
     "2026-02-27": {
       "Telia Mobil": "Fredag",
       "DATUM": "2026-02-27",
-      "Antal Mansdagar": 0,
-      "Timmar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
-      "Mobil": 0,
-      "EA": 0,
+      "Antal Mansdagar": 27,
+      "Timmar": 118.04333333333334,
+      "Total sälj": 18,
+      "produkt": 18,
+      "Mobil": 14,
+      "EA": 4,
       "kontroll produkt": 0
     },
     "2026-02-28": {
@@ -10135,9 +10135,9 @@
       "EA": 0,
       "kontroll produkt": 0
     },
-    "1901-01-27": {
+    "1901-01-31": {
       "Telia Mobil": "Produkter",
-      "DATUM": 393
+      "DATUM": 397
     }
   },
   "2.2.1. Telia FMC": {
@@ -10744,10 +10744,10 @@
       "DATUM": "2026-02-24",
       "Antal Mansdagar": 18,
       "Timmar": 99.89833333333331,
-      "Total sälj": 24,
-      "produkt": 24,
-      "Mobil": 16,
-      "EA": 8,
+      "Total sälj": 20,
+      "produkt": 20,
+      "Mobil": 13,
+      "EA": 7,
       "kontroll produkt": 0
     },
     "2026-02-25": {
@@ -10755,10 +10755,10 @@
       "DATUM": "2026-02-25",
       "Antal Mansdagar": 18,
       "Timmar": 100.95833333333334,
-      "Total sälj": 18,
-      "produkt": 18,
-      "Mobil": 13,
-      "EA": 5,
+      "Total sälj": 16,
+      "produkt": 16,
+      "Mobil": 12,
+      "EA": 4,
       "kontroll produkt": 0
     },
     "2026-02-26": {
@@ -10766,21 +10766,21 @@
       "DATUM": "2026-02-26",
       "Antal Mansdagar": 18,
       "Timmar": 103.18194444444444,
-      "Total sälj": 20,
-      "produkt": 20,
-      "Mobil": 16,
+      "Total sälj": 15,
+      "produkt": 15,
+      "Mobil": 11,
       "EA": 4,
       "kontroll produkt": 0
     },
     "2026-02-27": {
       "Telia FMC": "Fredag",
       "DATUM": "2026-02-27",
-      "Antal Mansdagar": 0,
-      "Timmar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
-      "Mobil": 0,
-      "EA": 0,
+      "Antal Mansdagar": 19,
+      "Timmar": 94.80944444444444,
+      "Total sälj": 11,
+      "produkt": 11,
+      "Mobil": 9,
+      "EA": 2,
       "kontroll produkt": 0
     },
     "2026-02-28": {
@@ -12108,188 +12108,320 @@
       "Kontroll Produkter": 0
     }
   },
-  "GlobalConnect": {
+  "Global Connect Aktiveringar": {
     "2026-02-01": {
-      "GlobalConnect": "Söndag",
-      "DATUM": "2026-02-01"
+      "Global Connect Aktiveringar": "Söndag",
+      "DATUM": "2026-02-01",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-02-02": {
-      "GlobalConnect": "Måndag",
+      "Global Connect Aktiveringar": "Måndag",
       "DATUM": "2026-02-02",
-      "Antal Mansdagar": 13,
-      "Timmar": 104,
-      "Utfall / densi": 14,
-      "Utfall bygg / nytt": 0
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-02-03": {
-      "GlobalConnect": "Tisdag",
+      "Global Connect Aktiveringar": "Tisdag",
       "DATUM": "2026-02-03",
-      "Antal Mansdagar": 13,
-      "Timmar": 104,
-      "Utfall / densi": 17,
-      "Utfall bygg / nytt": 0
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-02-04": {
-      "GlobalConnect": "Onsdag",
+      "Global Connect Aktiveringar": "Onsdag",
       "DATUM": "2026-02-04",
-      "Antal Mansdagar": 13,
-      "Timmar": 104,
-      "Utfall / densi": 20,
-      "Utfall bygg / nytt": 0
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-02-05": {
-      "GlobalConnect": "Torsdag",
+      "Global Connect Aktiveringar": "Torsdag",
       "DATUM": "2026-02-05",
-      "Antal Mansdagar": 15,
-      "Timmar": 120,
-      "Utfall / densi": 35,
-      "Utfall bygg / nytt": 0
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-02-06": {
-      "GlobalConnect": "Fredag",
+      "Global Connect Aktiveringar": "Fredag",
       "DATUM": "2026-02-06",
-      "Antal Mansdagar": 15,
-      "Timmar": 105,
-      "Utfall / densi": 33,
-      "Utfall bygg / nytt": 0
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-02-07": {
-      "GlobalConnect": "Lördag",
-      "DATUM": "2026-02-07"
+      "Global Connect Aktiveringar": "Lördag",
+      "DATUM": "2026-02-07",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-02-08": {
-      "GlobalConnect": "Söndag",
-      "DATUM": "2026-02-08"
+      "Global Connect Aktiveringar": "Söndag",
+      "DATUM": "2026-02-08",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-02-09": {
-      "GlobalConnect": "Måndag",
+      "Global Connect Aktiveringar": "Måndag",
       "DATUM": "2026-02-09",
-      "Antal Mansdagar": 15,
-      "Timmar": 120,
-      "Utfall / densi": 32,
-      "Utfall bygg / nytt": 1
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-02-10": {
-      "GlobalConnect": "Tisdag",
+      "Global Connect Aktiveringar": "Tisdag",
       "DATUM": "2026-02-10",
-      "Antal Mansdagar": 16,
-      "Timmar": 128,
-      "Utfall / densi": 18,
-      "Utfall bygg / nytt": 1
+      "Antal Mansdagar": 3,
+      "Timmar": 14.05861111111111,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-02-11": {
-      "GlobalConnect": "Onsdag",
+      "Global Connect Aktiveringar": "Onsdag",
       "DATUM": "2026-02-11",
-      "Antal Mansdagar": 16,
-      "Timmar": 128,
-      "Utfall / densi": 22,
-      "Utfall bygg / nytt": 1
+      "Antal Mansdagar": 2,
+      "Timmar": 12.429444444444444,
+      "Total sälj": 5,
+      "produkt": 5,
+      "Bredband": 5,
+      "kontroll produkt": 0
     },
     "2026-02-12": {
-      "GlobalConnect": "Torsdag",
+      "Global Connect Aktiveringar": "Torsdag",
       "DATUM": "2026-02-12",
-      "Antal Mansdagar": 16,
-      "Timmar": 128,
-      "Utfall / densi": 31,
-      "Utfall bygg / nytt": 1
+      "Antal Mansdagar": 4,
+      "Timmar": 13.400833333333335,
+      "Total sälj": 1,
+      "produkt": 1,
+      "Bredband": 1,
+      "kontroll produkt": 0
     },
     "2026-02-13": {
-      "GlobalConnect": "Fredag",
+      "Global Connect Aktiveringar": "Fredag",
       "DATUM": "2026-02-13",
-      "Antal Mansdagar": 16,
-      "Timmar": 112,
-      "Utfall / densi": 30,
-      "Utfall bygg / nytt": 2
+      "Antal Mansdagar": 4,
+      "Timmar": 12.708055555555557,
+      "Total sälj": 2,
+      "produkt": 2,
+      "Bredband": 2,
+      "kontroll produkt": 0
     },
     "2026-02-14": {
-      "GlobalConnect": "Lördag",
-      "DATUM": "2026-02-14"
+      "Global Connect Aktiveringar": "Lördag",
+      "DATUM": "2026-02-14",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-02-15": {
-      "GlobalConnect": "Söndag",
-      "DATUM": "2026-02-15"
+      "Global Connect Aktiveringar": "Söndag",
+      "DATUM": "2026-02-15",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-02-16": {
-      "GlobalConnect": "Måndag",
+      "Global Connect Aktiveringar": "Måndag",
       "DATUM": "2026-02-16",
-      "Antal Mansdagar": 15,
-      "Timmar": 120,
-      "Utfall / densi": 30,
-      "Utfall bygg / nytt": 0
+      "Antal Mansdagar": 3,
+      "Timmar": 18.795277777777777,
+      "Total sälj": 3,
+      "produkt": 3,
+      "Bredband": 3,
+      "kontroll produkt": 0
     },
     "2026-02-17": {
-      "GlobalConnect": "Tisdag",
+      "Global Connect Aktiveringar": "Tisdag",
       "DATUM": "2026-02-17",
-      "Antal Mansdagar": 16,
-      "Timmar": 128
+      "Antal Mansdagar": 4,
+      "Timmar": 15.194722222222222,
+      "Total sälj": 2,
+      "produkt": 2,
+      "Bredband": 2,
+      "kontroll produkt": 0
     },
     "2026-02-18": {
-      "GlobalConnect": "Onsdag",
+      "Global Connect Aktiveringar": "Onsdag",
       "DATUM": "2026-02-18",
-      "Antal Mansdagar": 15,
-      "Timmar": 120
+      "Antal Mansdagar": 2,
+      "Timmar": 12.810555555555556,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-02-19": {
-      "GlobalConnect": "Torsdag",
+      "Global Connect Aktiveringar": "Torsdag",
       "DATUM": "2026-02-19",
-      "Antal Mansdagar": 14,
-      "Timmar": 112
+      "Antal Mansdagar": 1,
+      "Timmar": 4.739722222222222,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-02-20": {
-      "GlobalConnect": "Fredag",
+      "Global Connect Aktiveringar": "Fredag",
       "DATUM": "2026-02-20",
-      "Antal Mansdagar": 14,
-      "Timmar": 98
+      "Antal Mansdagar": 2,
+      "Timmar": 9.382777777777779,
+      "Total sälj": 1,
+      "produkt": 1,
+      "Bredband": 1,
+      "kontroll produkt": 0
     },
     "2026-02-21": {
-      "GlobalConnect": "Lördag",
-      "DATUM": "2026-02-21"
+      "Global Connect Aktiveringar": "Lördag",
+      "DATUM": "2026-02-21",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-02-22": {
-      "GlobalConnect": "Söndag",
-      "DATUM": "2026-02-22"
+      "Global Connect Aktiveringar": "Söndag",
+      "DATUM": "2026-02-22",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-02-23": {
-      "GlobalConnect": "Måndag",
+      "Global Connect Aktiveringar": "Måndag",
       "DATUM": "2026-02-23",
-      "Antal Mansdagar": 14,
-      "Timmar": 112
+      "Antal Mansdagar": 3,
+      "Timmar": 18.426944444444445,
+      "Total sälj": 5,
+      "produkt": 5,
+      "Bredband": 5,
+      "kontroll produkt": 0
     },
     "2026-02-24": {
-      "GlobalConnect": "Tisdag",
-      "DATUM": "2026-02-24"
+      "Global Connect Aktiveringar": "Tisdag",
+      "DATUM": "2026-02-24",
+      "Antal Mansdagar": 3,
+      "Timmar": 19.085833333333333,
+      "Total sälj": 4,
+      "produkt": 4,
+      "Bredband": 4,
+      "kontroll produkt": 0
     },
     "2026-02-25": {
-      "GlobalConnect": "Onsdag",
-      "DATUM": "2026-02-25"
+      "Global Connect Aktiveringar": "Onsdag",
+      "DATUM": "2026-02-25",
+      "Antal Mansdagar": 3,
+      "Timmar": 18.645555555555557,
+      "Total sälj": 3,
+      "produkt": 3,
+      "Bredband": 3,
+      "kontroll produkt": 0
     },
     "2026-02-26": {
-      "GlobalConnect": "Torsdag",
-      "DATUM": "2026-02-26"
+      "Global Connect Aktiveringar": "Torsdag",
+      "DATUM": "2026-02-26",
+      "Antal Mansdagar": 3,
+      "Timmar": 19.015555555555558,
+      "Total sälj": 9,
+      "produkt": 9,
+      "Bredband": 9,
+      "kontroll produkt": 0
     },
     "2026-02-27": {
-      "GlobalConnect": "Fredag",
-      "DATUM": "2026-02-27"
+      "Global Connect Aktiveringar": "Fredag",
+      "DATUM": "2026-02-27",
+      "Antal Mansdagar": 3,
+      "Timmar": 15.213055555555554,
+      "Total sälj": 4,
+      "produkt": 4,
+      "Bredband": 4,
+      "kontroll produkt": 0
     },
     "2026-02-28": {
-      "GlobalConnect": "Lördag",
-      "DATUM": "2026-02-28"
+      "Global Connect Aktiveringar": "Lördag",
+      "DATUM": "2026-02-28",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-03-01": {
-      "GlobalConnect": "Söndag",
-      "DATUM": "2026-03-01"
+      "Global Connect Aktiveringar": "Söndag",
+      "DATUM": "2026-03-01",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-03-02": {
-      "GlobalConnect": "Måndag",
-      "DATUM": "2026-03-02"
+      "Global Connect Aktiveringar": "Måndag",
+      "DATUM": "2026-03-02",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
     "2026-03-03": {
-      "GlobalConnect": "Tisdag",
-      "DATUM": "2026-03-03"
+      "Global Connect Aktiveringar": "Tisdag",
+      "DATUM": "2026-03-03",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0,
+      "produkt": 0,
+      "Bredband": 0,
+      "kontroll produkt": 0
     },
-    "1900-10-08": {
-      "GlobalConnect": "Total sälj",
-      "DATUM": 282
+    "1900-02-07": {
+      "Global Connect Aktiveringar": "Produkter",
+      "DATUM": 39
     }
   }
 }
