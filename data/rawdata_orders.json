@@ -280522,7 +280522,7 @@
     "nyckel": "Tele2 LANMobilt Bredband NyteckningProdukt",
     "kolumn?": "MBB",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -280539,7 +280539,7 @@
     "nyckel": "Tele2 LANDigitalTV Nyteckning LANProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -280556,7 +280556,7 @@
     "nyckel": "Tele2 LANMobilt Bredband NyteckningProdukt",
     "kolumn?": "MBB",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -280573,7 +280573,7 @@
     "nyckel": "Tele2 LANDigitalTV Nyteckning LANProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -280590,7 +280590,7 @@
     "nyckel": "Tele2 LANMobiltelefoni 20GB+Produkt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -280607,7 +280607,7 @@
     "nyckel": "Tele2 LANFamiljeabonnemangProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -280624,7 +280624,7 @@
     "nyckel": "Tele2 LANFamiljeabonnemangProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -280641,7 +280641,7 @@
     "nyckel": "Tele2 LANFamiljeabonnemangProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -280658,7 +280658,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -280675,7 +280675,7 @@
     "nyckel": "Tele2 VillafiberDigitalTV NyteckningProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -280692,7 +280692,7 @@
     "nyckel": "Tele2 KoaxBredband Nyteckning KoaxProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -280709,7 +280709,7 @@
     "nyckel": "Tele2 KoaxBredband Omteckning KoaxTilläggsprodukt",
     "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -280726,7 +280726,7 @@
     "nyckel": "Tele2 KoaxDigitalTV Omteckning KoaxTilläggsprodukt",
     "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -280748,7 +280748,7 @@
     "nyckel": "Tele2 KoaxDigitalTV Omteckning KoaxTilläggsprodukt",
     "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -280770,7 +280770,7 @@
     "nyckel": "Tele2 KoaxBredband Omteckning KoaxTilläggsprodukt",
     "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -280792,7 +280792,7 @@
     "nyckel": "Tele2 KoaxMobiltelefoni 10GBProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -280814,7 +280814,7 @@
     "nyckel": "Tele2 KoaxDigitalTV Omteckning KoaxTilläggsprodukt",
     "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -280836,7 +280836,7 @@
     "nyckel": "Tele2 KoaxBredband Omteckning KoaxTilläggsprodukt",
     "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -280858,7 +280858,7 @@
     "nyckel": "Tele2 KoaxFamiljeabonnemangProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   }
 ]

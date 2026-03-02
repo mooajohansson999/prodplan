@@ -896,8 +896,8 @@
     "2026-02-27": {
       "Telia D2D": "Fredag",
       "DATUM": "2026-02-27",
-      "Antal Mansdagar": 0,
-      "Timmar": 0,
+      "Antal Mansdagar": 7,
+      "Timmar": 63,
       "Total sälj": 0,
       "Tilläggsprodukt": 0,
       "Produkt": 0,
@@ -2853,7 +2853,7 @@
     "2026-02-27": {
       "Tele2 Koax": "Fredag",
       "DATUM": "2026-02-27",
-      "Antal Mansdagar": 0,
+      "Antal Mansdagar": 5,
       "Total sälj": 9,
       "produkt": 3,
       "Tilläggsprodukt": 6,
@@ -3902,7 +3902,7 @@
     "2026-02-27": {
       "Tele2 LAN": "Fredag",
       "DATUM": "2026-02-27",
-      "Antal Mansdagar": 0,
+      "Antal Mansdagar": 5,
       "Total sälj": 8,
       "produkt": 8,
       "Tilläggsprodukt": 0,
