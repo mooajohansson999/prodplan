@@ -1000,14 +1000,17 @@ function renderDaily(){
 function updateStatCards(uData,mData){
   var uRows=Object.values(uData), mRows=Object.values(mData);
   var firstProj=[...dailyProject][0];
-  var getProd=function(r){return findVal(r,'Produkt')??findVal(r,'produkt')??null;};
+  var activeProjArr=[...dailyProject];
+  var multi=dailyProject.size>1;
+  var getProd=function(r){return findVal(r,'Produkt')??findVal(r,'produkt')??findVal(r,'Total sälj')??null;};
   var getMalProd=function(r){
-    var p=firstProj;
-    if(p==='mobil'||p==='fmc'){var h=findVal(r,'Mål Huvudabb')??0,ea=findVal(r,'Mål EA')??0;return (typeof h==='number'?h:0)+(typeof ea==='number'?ea:0)||null;}
-    if(p==='vip-leads'){var bb=findVal(r,'Mål BB')??0,mbh=findVal(r,'Mål MBH')??0;return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0)||null;}
-    if(p==='retention'||p==='mbh'){var v=findVal(r,'Mål BB');return typeof v==='number'?v:null;}
-    for(var k of ['Mål Sälj','Mål produkt','Mål Produkt','Mål sälj']){var v2=findVal(r,k);if(typeof v2==='number') return v2;}
-    return null;
+    if(multi){
+      // When multiple projects, use normalized approach
+      var nr=normalizeRow(r,'mal');
+      var v=findVal(nr,'Mål Sälj');
+      return typeof v==='number'?v:0;
+    }
+    return getProjectMalProd(firstProj,r);
   };
   var totalProd=uRows.reduce(function(s,r){var v=getProd(r);return s+(typeof v==='number'?v:0);},0);
   var malProd=mRows.reduce(function(s,r){var v=getMalProd(r);return s+(typeof v==='number'?v:0);},0);
