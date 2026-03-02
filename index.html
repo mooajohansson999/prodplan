@@ -523,24 +523,9 @@ function getCompactProd(proj,row){
   return findVal(row,'Produkt')??findVal(row,'produkt')??findVal(row,'Total sälj')??null;
 }
 
-function generateDummyData(proj,m,y){
-  var days=new Date(y,m+1,0).getDate();
-  var uData={},mData={};
-  var seeds={'telia-fm':{s:8,t:60,p:18},'villafiber':{s:5,t:38,p:10},'koax':{s:4,t:30,p:8},'lan':{s:3,t:22,p:6},'globalconnect':{s:6,t:45,p:12},'adressandring':{s:7,t:52,p:15},'vip-leads':{s:5,t:40,p:11},'retention':{s:6,t:44,p:13},'mbh':{s:4,t:32,p:9},'mobil':{s:5,t:38,p:10},'fmc':{s:3,t:24,p:7}};
-  var seed=seeds[proj]||{s:5,t:40,p:10};
-  for(var i=1;i<=days;i++){
-    var d=new Date(y,m,i); if(d.getDay()===0||d.getDay()===6) continue;
-    var dk=toDateKey(y,m,i), v=0.7+Math.random()*0.6;
-    uData[dk]={'Antal Mansdagar':seed.s,'timmar':Math.round(seed.t*v),'Produkt':Math.round(seed.p*v),'snitt':parseFloat((seed.p*v/seed.s).toFixed(2))};
-    mData[dk]={'Mål säljare':seed.s,'Mål timmar':seed.t,'Mål Sälj':seed.p,'Mål snitt':parseFloat((seed.p/seed.s).toFixed(2))};
-  }
-  return {uData:uData,mData:mData};
-}
-
 function getProjectData(proj){
   var m=getMonth(),y=getYear();
   var u=utfallData[storeKey(proj,y,m)]||{}, ml=malData[storeKey(proj,y,m)]||{};
-  if(!Object.keys(u).length&&!Object.keys(ml).length){ var d=generateDummyData(proj,m,y); u=d.uData; ml=d.mData; }
   return {uData:u,mData:ml};
 }
 
