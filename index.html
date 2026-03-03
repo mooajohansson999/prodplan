@@ -355,8 +355,8 @@
 <script>
 const MONTHS_SV=['Januari','Februari','Mars','April','Maj','Juni','Juli','Augusti','September','Oktober','November','December'];
 const DAYS_SV=['Söndag','Måndag','Tisdag','Onsdag','Torsdag','Fredag','Lördag'];
-const GROUP_D2D=['telia-fm','villafiber','koax','lan','gc-aktiveringar'];
-const GROUP_TM=['globalconnect','adressandring','vip-leads','retention','mbh','mobil','fmc'];
+const GROUP_D2D=['telia-fm','villafiber','koax','lan'];
+const GROUP_TM=['globalconnect','gc-aktiveringar','adressandring','vip-leads','retention','mbh','mobil','fmc'];
 const ALL_PROJECTS=[...GROUP_D2D,...GROUP_TM];
 const MANSDAG_PROJECTS=new Set(['telia-fm','villafiber','koax','lan','globalconnect','gc-aktiveringar']);
 const SNITT_PER_TIMMAR=new Set(['adressandring','vip-leads','retention','mbh','mobil','fmc']);
@@ -785,19 +785,22 @@ function selectDailyProject(p,el,ev){
   renderDaily();
 }
 
+const TELE2_PROJECTS=new Set(['villafiber','koax','lan']);
+
 function updateDailyTabs(){
   var multi=dailyProject.size>1;
+  var allTele2=multi&&[...dailyProject].every(function(p){return TELE2_PROJECTS.has(p);});
   var tabs=document.getElementById('dailyViewTabs');
   var fullTab=tabs.querySelector('[data-view="full"]');
   var compareTab=tabs.querySelector('[data-view="compare"]');
-  if(multi){
+  if(multi&&!allTele2){
     fullTab.style.display='none';
     compareTab.style.display='';
     if(dailyView==='full') dailyView='compact';
   } else {
     fullTab.style.display='';
-    compareTab.style.display='none';
-    if(dailyView==='compare'||dailyView==='compact') dailyView='full';
+    compareTab.style.display=multi?'':'none';
+    if(dailyView==='compare'&&!multi) dailyView='full';
   }
   tabs.querySelectorAll('.view-tab').forEach(function(t){
     t.classList.toggle('active',t.dataset.view===dailyView);
@@ -848,7 +851,8 @@ function renderDaily(){
   document.getElementById('tableWrap').style.display='';
   document.getElementById('dailyCompareWrap').style.display='none';
 
-  var cols=multi?COMPACT_COLS:(dailyView==='compact'?COMPACT_COLS:(PROJECT_COLS[firstProj]||COMPACT_COLS));
+  var allTele2=multi&&activeProjArr.every(function(p){return TELE2_PROJECTS.has(p);});
+  var cols=multi?(allTele2&&dailyView==='full'?PROJECT_COLS['villafiber']:COMPACT_COLS):(dailyView==='compact'?COMPACT_COLS:(PROJECT_COLS[firstProj]||COMPACT_COLS));
   var uData,mData;
   if(multi){
     var mg=mergeDailyData(activeProjArr);
