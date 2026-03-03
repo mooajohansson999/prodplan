@@ -355,10 +355,10 @@
 <script>
 const MONTHS_SV=['Januari','Februari','Mars','April','Maj','Juni','Juli','Augusti','September','Oktober','November','December'];
 const DAYS_SV=['Söndag','Måndag','Tisdag','Onsdag','Torsdag','Fredag','Lördag'];
-const GROUP_D2D=['telia-fm','villafiber','koax','lan'];
+const GROUP_D2D=['telia-fm','villafiber','koax','lan','gc-aktiveringar'];
 const GROUP_TM=['globalconnect','adressandring','vip-leads','retention','mbh','mobil','fmc'];
 const ALL_PROJECTS=[...GROUP_D2D,...GROUP_TM];
-const MANSDAG_PROJECTS=new Set(['telia-fm','villafiber','koax','lan','globalconnect']);
+const MANSDAG_PROJECTS=new Set(['telia-fm','villafiber','koax','lan','globalconnect','gc-aktiveringar']);
 const SNITT_PER_TIMMAR=new Set(['adressandring','vip-leads','retention','mbh','mobil','fmc']);
 
 const PROJECT_META={
@@ -366,6 +366,7 @@ const PROJECT_META={
   'villafiber':{name:'Villafiber',sheet:'1.3. Tele2 Villafiber'},
   'koax':{name:'Koax',sheet:'1.2. Tele2 Koax'},
   'lan':{name:'LAN',sheet:'1.4. LAN'},
+  'gc-aktiveringar':{name:'GC Aktiveringar',sheet:'GlobalConnect Aktiveringar'},
   'globalconnect':{name:'GlobalConnect',sheet:'GlobalConnect'},
   'adressandring':{name:'Telia Adressändring',sheet:'2.7. Telia Adressändring'},
   'vip-leads':{name:'Telia VIP Leads',sheet:'2.6. Telia VIP Leads'},
@@ -398,8 +399,9 @@ const PROJECT_COLS={
   'villafiber':[{label:'Dag'},{label:'Datum'},{label:'Mål mansdagar',goalKey:'Mål mansdagar'},{label:'Utfall mansdagar',key:'Antal Mansdagar'},{label:'Mål Produkt',goalKey:'Mål Produkt'},{label:'Utfall Produkt',key:'Produkt'},{label:'DTV',key:'TV'},{label:'BB',key:'Bredband'},{label:'MBB',key:'MBB'},{label:'Mobil',key:'Mobil'},{label:'Mål snitt/mansdag',goalKey:'Mål snitt per mansdag'},{label:'Utfall snitt/mansdag',key:'snitt'}],
   'koax':[{label:'Dag'},{label:'Datum'},{label:'Mål mansdagar',goalKey:'Mål mansdagar'},{label:'Utfall mansdagar',key:'Antal Mansdagar'},{label:'Mål Produkt',goalKey:'Mål Produkt'},{label:'Utfall Produkt',key:'Produkt'},{label:'DTV',key:'TV'},{label:'BB',key:'Bredband'},{label:'MBB',key:'MBB'},{label:'Mobil',key:'Mobil'},{label:'Mål snitt/mansdag',goalKey:'Mål snitt per mansdag'},{label:'Utfall snitt/mansdag',key:'snitt'}],
   'lan':[{label:'Dag'},{label:'Datum'},{label:'Mål mansdagar',goalKey:'Mål mansdagar'},{label:'Utfall mansdagar',key:'Antal Mansdagar'},{label:'Mål Produkt',goalKey:'Mål Produkt'},{label:'Utfall Produkt',key:'Produkt'},{label:'DTV',key:'TV'},{label:'BB',key:'Bredband'},{label:'MBB',key:'MBB'},{label:'Mobil',key:'Mobil'},{label:'Mål snitt/mansdag',goalKey:'Mål snitt per mansdag'},{label:'Utfall snitt/mansdag',key:'snitt'}],
+  'gc-aktiveringar':[{label:'Dag'},{label:'Datum'},{label:'Mål mansdagar',goalKey:'Mål mansdagar'},{label:'Utfall mansdagar',key:'Antal Mansdagar'},{label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'Timmar'},{label:'Mål Produkt',goalKey:'Mål produkter'},{label:'Utfall Produkt',key:'produkt'},{label:'Mål snitt/mansdag',goalKey:'Mål snitt per mansdag'},{label:'Utfall snitt/mansdag',key:'snitt'}],
   'globalconnect':[{label:'Dag'},{label:'Datum'},{label:'Mål mansdagar',goalKey:'Mål mansdagar'},{label:'Utfall mansdagar',key:'Antal Mansdagar'},{label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'Timmar'},{label:'Mål Produkt',goalKey:'Mål Produkt'},{label:'Utfall / densi',key:'Utfall / densi'},{label:'Utfall bygg / nytt',key:'Utfall bygg / nytt'},{label:'Utfall total',key:'Total sälj'},{label:'Mål snitt/mansdag',goalKey:'Mål snitt per mansdag'},{label:'Utfall snitt/mansdag',key:'snitt'}],
-  'adressandring':[{label:'Dag'},{label:'Datum'},{label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Säljare'},{label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'Timmar'},{label:'Mål produkt',goalKey:'Mål produkt'},{label:'Utfall Produkt',key:'produkt'},{label:'Mål BB',goalKey:'Mål BB'},{label:'Utfall BB',key:'Bredband'},{label:'Mål Flytt BB',goalKey:'Mål Flytt BB'},{label:'Utfall Flytt BB',key:'Flytt Bredband'},{label:'Mål MBH',goalKey:'Mål MBH'},{label:'Utfall MBH',key:'MBH'},{label:'Mål TV',goalKey:'Mål TV'},{label:'Utfall TV',key:'TV'},{label:'Mål Film',goalKey:'Mål Film'},{label:'Utfall film',key:'Film'},{label:'Mål Sport',goalKey:'Mål Sport'},{label:'Utfall sport',key:'Sport'},{label:'Mål Mobil',goalKey:'Mål Mobil'},{label:'Utfall Mobil',key:'Mobil'},{label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}],
+  'adressandring':[{label:'Dag'},{label:'Datum'},{label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Säljare'},{label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'Timmar'},{label:'Mål produkt',goalKey:'Mål produkt'},{label:'Utfall Produkt',key:'produkt'},{label:'Mål BB',goalKey:'Mål BB'},{label:'Utfall BB',key:'Bredband'},{label:'Mål Flytt BB',goalKey:'Mål Flytt BB'},{label:'Utfall Flytt BB',key:'Flytt Bredband'},{label:'Mål MBH',goalKey:'Mål MBH'},{label:'Utfall MBH',key:'MBH'},{label:'Mål TV',goalKey:'Mål TV'},{label:'Utfall TV',key:'TV'},{label:'Mål Streaming',goalKey:'Mål Streaming'},{label:'Utfall Streaming',key:'Streaming'},{label:'Mål Mobil',goalKey:'Mål Mobil'},{label:'Utfall Mobil',key:'Mobil'},{label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}],
   'vip-leads':[{label:'Dag'},{label:'Datum'},{label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Säljare'},{label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'timmar'},{label:'Mål BB',goalKey:'Mål BB'},{label:'Utfall BB',key:'Bredband'},{label:'Mål MBH',goalKey:'Mål MBH'},{label:'Utfall MBH',key:'MBH'},{label:'Mål TV',goalKey:'Mål TV'},{label:'Utfall TV',key:'TV'},{label:'Mål Film',goalKey:'Mål Film'},{label:'Utfall film',key:'Film'},{label:'Mål Sport',goalKey:'Mål Sport'},{label:'Utfall sport',key:'Sport'},{label:'Mål Mobil',goalKey:'Mål Mobil'},{label:'Utfall Mobil',key:'Mobil'},{label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}],
   'retention':[{label:'Dag'},{label:'Datum'},{label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},{label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'Timmar'},{label:'Mål BB',goalKey:'Mål BB'},{label:'Utfall BB',key:'Bredband'},{label:'Mål Nyteck TV',goalKey:'Mål Nyteck TV'},{label:'Utfall Nyteck TV',key:'TV FL'},{label:'Utfall Förlängning TV',key:'TV BOX'},{label:'Mål premium',goalKey:'Mål premium'},{label:'Utfall premium',key:'Streaming'},{label:'Mål Mobil',goalKey:'Mål Mobil'},{label:'Utfall Mobil',key:'Mobil'},{label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}],
   'mbh':[{label:'Dag'},{label:'Datum'},{label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},{label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'timmar'},{label:'Mål BB',goalKey:'Mål BB'},{label:'Utfall BB',key:'Bredband'},{label:'Mål TV',goalKey:'Mål TV'},{label:'Utfall TV',key:'TV'},{label:'Mål Film',goalKey:'Mål Film'},{label:'Utfall film',key:'Film'},{label:'Mål Sport',goalKey:'Mål Sport'},{label:'Utfall sport',key:'Sport'},{label:'Mål Mobil',goalKey:'Mål Mobil'},{label:'Utfall Mobil',key:'Mobil'},{label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}],
@@ -1161,6 +1163,14 @@ async function loadData(){
 
 buildProjectChips();
 buildOverviewProjectChips();
+
+// Set current month/year on load
+var _now=new Date();
+document.getElementById('monthSel').value=_now.getMonth();
+document.getElementById('yearSel').value=_now.getFullYear();
+document.getElementById('monthSel2').value=_now.getMonth();
+document.getElementById('yearSel2').value=_now.getFullYear();
+
 loadData();
 </script>
 </body>
