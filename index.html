@@ -819,6 +819,7 @@ var TELE2_COL_MAP={'bredband':'Bredband','tv':'TV','mbb':'MBB','mobil':'Mobil','
 
 function mergeDailyData(projArr){
   var uMerged={},mMerged={};
+  var allTele2=projArr.every(function(p){return TELE2_PROJECTS.has(p);});
   projArr.forEach(function(proj){
     var pd=getProjectData(proj);
     for(var [dk,row] of Object.entries(pd.uData)){
@@ -832,7 +833,8 @@ function mergeDailyData(projArr){
     }
     for(var [dk2,row2] of Object.entries(pd.mData)){
       if(!mMerged[dk2]) mMerged[dk2]={};
-      var nr2=normalizeRow(row2,'mal');
+      // For Tele2 projects, keep original keys so goalKeys match
+      var nr2=allTele2?row2:normalizeRow(row2,'mal');
       for(var [k2,v2] of Object.entries(nr2)){
         var nk2=TELE2_COL_MAP[k2.toLowerCase()]||k2;
         if(typeof v2==='number') mMerged[dk2][nk2]=(mMerged[dk2][nk2]||0)+v2;
