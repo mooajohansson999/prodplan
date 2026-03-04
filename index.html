@@ -814,6 +814,9 @@ function setDailyView(v,el){
   renderDaily();
 }
 
+// Normalize Tele2 column names to consistent casing
+var TELE2_COL_MAP={'bredband':'Bredband','tv':'TV','mbb':'MBB','mobil':'Mobil','produkt':'Produkt','total sälj':'Total sälj','tilläggsprodukt':'Tilläggsprodukt','antal mansdagar':'Antal Mansdagar','streaming':'Streaming','bredband om':'Bredband OM','räknas ej':'Räknas ej','kontroll produkt':'Kontroll Produkt','kontroll tilläggsprodukt':'Kontroll Tilläggsprodukt','produkt kontroll':'Produkt Kontroll'};
+
 function mergeDailyData(projArr){
   var uMerged={},mMerged={};
   projArr.forEach(function(proj){
@@ -821,12 +824,20 @@ function mergeDailyData(projArr){
     for(var [dk,row] of Object.entries(pd.uData)){
       if(!uMerged[dk]) uMerged[dk]={};
       var nr=normalizeRow(row,'utfall');
-      for(var [k,v] of Object.entries(nr)){ if(typeof v==='number') uMerged[dk][k]=(uMerged[dk][k]||0)+v; else if(!uMerged[dk][k]) uMerged[dk][k]=v; }
+      for(var [k,v] of Object.entries(nr)){
+        var nk=TELE2_COL_MAP[k.toLowerCase()]||k;
+        if(typeof v==='number') uMerged[dk][nk]=(uMerged[dk][nk]||0)+v;
+        else if(!uMerged[dk][nk]) uMerged[dk][nk]=v;
+      }
     }
     for(var [dk2,row2] of Object.entries(pd.mData)){
       if(!mMerged[dk2]) mMerged[dk2]={};
       var nr2=normalizeRow(row2,'mal');
-      for(var [k2,v2] of Object.entries(nr2)){ if(typeof v2==='number') mMerged[dk2][k2]=(mMerged[dk2][k2]||0)+v2; else if(!mMerged[dk2][k2]) mMerged[dk2][k2]=v2; }
+      for(var [k2,v2] of Object.entries(nr2)){
+        var nk2=TELE2_COL_MAP[k2.toLowerCase()]||k2;
+        if(typeof v2==='number') mMerged[dk2][nk2]=(mMerged[dk2][nk2]||0)+v2;
+        else if(!mMerged[dk2][nk2]) mMerged[dk2][nk2]=v2;
+      }
     }
   });
   return {uMerged:uMerged,mMerged:mMerged};
