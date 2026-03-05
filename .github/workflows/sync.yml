@@ -2,7 +2,7 @@ name: Sync Dropbox
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Kör varje timme
+    - cron: '*/5 * * * *'  # Kör var femte minut
   workflow_dispatch:       # Tillåter manuell körning
 
 jobs:
