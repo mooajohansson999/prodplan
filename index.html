@@ -1166,10 +1166,11 @@ function convertJsonToStore(raw,store){
 
 async function loadData(){
   try{
+    var cacheBust='?t='+Date.now();
     var results=await Promise.all([
-      fetch('data/utfall.json',{cache:'no-store'}),
-      fetch('data/mal.json',{cache:'no-store'}),
-      fetch('data/last_synced.json',{cache:'no-store'})
+      fetch('data/utfall.json'+cacheBust),
+      fetch('data/mal.json'+cacheBust),
+      fetch('data/last_synced.json'+cacheBust)
     ]);
     if(results[0].ok) convertJsonToStore(await results[0].json(),utfallData);
     if(results[1].ok) convertJsonToStore(await results[1].json(),malData);
