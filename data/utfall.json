@@ -2422,15 +2422,15 @@
     "2026-03-06": {
       "Tele2 Villafiber": "Fredag",
       "DATUM": "2026-03-06",
-      "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "TV": 0,
-      "Bredband": 0,
+      "Antal Mansdagar": 16,
+      "Total sälj": 21,
+      "Tilläggsprodukt": 1,
+      "Produkt": 20,
+      "TV": 5,
+      "Bredband": 7,
       "MBB": 0,
-      "Mobil": 0,
-      "Räknas ej": 0,
+      "Mobil": 8,
+      "Räknas ej": 1,
       "Produkt Kontroll": 0,
       "kontroll produkt": 0
     },
@@ -2809,17 +2809,17 @@
       "Produkt Kontroll": 0,
       "kontroll produkt": 0
     },
-    "1900-05-01": {
+    "1900-05-22": {
       "Tele2 Villafiber": "Total sälj",
-      "DATUM": 122
+      "DATUM": 143
     },
-    "1900-04-29": {
+    "1900-05-19": {
       "Tele2 Villafiber": "Produkter",
-      "DATUM": 120
+      "DATUM": 140
     },
-    "1900-01-01": {
+    "1900-01-02": {
       "Tele2 Villafiber": "Tilläggsprodukter",
-      "DATUM": 2
+      "DATUM": 3
     }
   },
   "1.2. Tele2 Koax": {
