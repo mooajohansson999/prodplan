@@ -8,85 +8,34 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f3f2f0; min-height: 100vh; color: #1a1a1a; font-size: 13px; }
-
-  header {
-    background: #fff; border-bottom: 1px solid #ebebeb;
-    padding: 0 32px; height: 56px;
-    display: flex; align-items: center; justify-content: space-between;
-    position: sticky; top: 0; z-index: 100;
-  }
+  header { background: #fff; border-bottom: 1px solid #ebebeb; padding: 0 32px; height: 56px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
   .logo { display: flex; align-items: center; gap: 10px; }
-  .logo-icon {
-    width: 32px; height: 32px;
-    background: linear-gradient(135deg, #f97c5a, #e8503a);
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    color: white; font-weight: 700; font-size: 14px;
-  }
+  .logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, #f97c5a, #e8503a); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 14px; }
   .logo-text { font-weight: 600; font-size: 15px; letter-spacing: 0.5px; }
-
   .header-right { display: flex; align-items: center; gap: 10px; }
-
-  .main-nav {
-    display: flex; align-items: center; gap: 0;
-    background: #f0f0ee; border-radius: 10px; padding: 3px; margin-left: 20px;
-  }
-  .main-nav-tab {
-    padding: 7px 18px; border-radius: 8px; font-size: 13px; cursor: pointer;
-    color: #666; font-weight: 500; transition: all 0.15s; border: none; background: none;
-    white-space: nowrap;
-  }
+  .main-nav { display: flex; align-items: center; gap: 0; background: #f0f0ee; border-radius: 10px; padding: 3px; margin-left: 20px; }
+  .main-nav-tab { padding: 7px 18px; border-radius: 8px; font-size: 13px; cursor: pointer; color: #666; font-weight: 500; transition: all 0.15s; border: none; background: none; white-space: nowrap; }
   .main-nav-tab.active { background: #fff; color: #1a1a1a; box-shadow: 0 1px 3px rgba(0,0,0,0.08); font-weight: 600; }
   .main-nav-tab:hover:not(.active) { color: #333; }
-
-  .btn {
-    display: flex; align-items: center; gap: 6px;
-    padding: 7px 14px; border-radius: 8px;
-    font-size: 12px; font-weight: 600; cursor: pointer;
-    transition: background 0.15s; white-space: nowrap; border: 1px solid #ebebeb; background: #fff; color: #555;
-  }
+  .btn { display: flex; align-items: center; gap: 6px; padding: 7px 14px; border-radius: 8px; font-size: 12px; font-weight: 600; cursor: pointer; transition: background 0.15s; white-space: nowrap; border: 1px solid #ebebeb; background: #fff; color: #555; }
   .btn:hover { background: #f7f7f5; }
-
-  .filter-bar {
-    display: flex; align-items: center; gap: 10px; padding: 12px 24px;
-    background: #fff; border-bottom: 1px solid #ebebeb;
-    flex-wrap: wrap;
-  }
+  .filter-bar { display: flex; align-items: center; gap: 10px; padding: 12px 24px; background: #fff; border-bottom: 1px solid #ebebeb; flex-wrap: wrap; }
   .filter-group { display: flex; align-items: center; gap: 6px; }
   .filter-label { font-size: 11px; font-weight: 600; color: #999; text-transform: uppercase; letter-spacing: 0.5px; }
   .filter-pills { display: flex; gap: 4px; background: #f0f0ee; border-radius: 8px; padding: 3px; }
-  .filter-pill {
-    padding: 5px 14px; border-radius: 6px; font-size: 12px; cursor: pointer;
-    color: #666; font-weight: 500; transition: all 0.15s; border: none; background: none;
-  }
+  .filter-pill { padding: 5px 14px; border-radius: 6px; font-size: 12px; cursor: pointer; color: #666; font-weight: 500; transition: all 0.15s; border: none; background: none; }
   .filter-pill.active { background: #fff; color: #1a1a1a; box-shadow: 0 1px 3px rgba(0,0,0,0.08); font-weight: 600; }
   .filter-pill:hover:not(.active) { color: #333; }
-
-  select {
-    border: 1.5px solid #aaa; border-radius: 8px; padding: 6px 28px 6px 10px;
-    font-size: 13px; font-weight: 600; background: #fff; color: #1a1a1a;
-    cursor: pointer; outline: none; appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E");
-    background-repeat: no-repeat; background-position: right 8px center;
-  }
+  select { border: 1.5px solid #aaa; border-radius: 8px; padding: 6px 28px 6px 10px; font-size: 13px; font-weight: 600; background: #fff; color: #1a1a1a; cursor: pointer; outline: none; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 8px center; }
   select:focus { border-color: #f97c5a; }
-
-  .nav-btn {
-    width: 28px; height: 28px; border: 1.5px solid #aaa; border-radius: 6px;
-    background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center;
-    font-size: 12px; color: #333; font-weight: 600; transition: all 0.15s;
-  }
+  .nav-btn { width: 28px; height: 28px; border: 1.5px solid #aaa; border-radius: 6px; background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 12px; color: #333; font-weight: 600; transition: all 0.15s; }
   .nav-btn:hover { background: #f7f7f5; }
-
   main { padding: 0; min-height: calc(100vh - 56px); }
   .page-section { padding: 20px 24px; }
   .page-title { font-size: 18px; font-weight: 600; margin-bottom: 2px; }
   .page-sub { font-size: 11px; color: #999; margin-bottom: 14px; }
-
   .compare-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-  .compare-card {
-    background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 18px;
-    cursor: pointer; transition: box-shadow 0.15s, border-color 0.15s;
-  }
+  .compare-card { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 18px; cursor: pointer; transition: box-shadow 0.15s, border-color 0.15s; }
   .compare-card:hover { border-color: #f97c5a; box-shadow: 0 2px 12px rgba(249,124,90,0.1); }
   .compare-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
   .compare-card-title { font-size: 14px; font-weight: 600; }
@@ -101,14 +50,12 @@
   .progress-bar-fill { height: 100%; border-radius: 10px; transition: width 0.4s ease; }
   .sparkline { margin-top: 14px; border-top: 1px solid #f0f0ee; padding-top: 10px; }
   .sparkline-label { font-size: 11px; color: #1a1a1a; margin-bottom: 6px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.4px; }
-
   .stat-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
   .stat-card { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 10px 16px; }
   .stat-label { font-size: 10px; color: #1a1a1a; font-weight: 500; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
   .stat-value { font-size: 20px; font-weight: 600; }
   .stat-meta { font-size: 10px; color: #999; margin-top: 2px; }
   .stat-badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 20px; margin-top: 4px; }
-
   .table-wrap { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; overflow: auto; }
   table { width: 100%; border-collapse: collapse; }
   thead { background: #fafafa; }
@@ -117,29 +64,18 @@
   td { padding: 5px 10px; border-bottom: 1px solid #f5f5f5; font-size: 12px; color: #333; white-space: nowrap; text-align: center; font-weight: 600; }
   td.goal-col { background: #fafafa; }
   tr:last-child td { border-bottom: none; }
-
-  /* Helg/ledig utan utfall – nedtonad */
   tr.off-day td { background: #efefed; color: #bbb; }
   tr.off-day td.goal-col { background: #e8e8e6; color: #bbb; }
-
   .extra-badge { display: inline-block; font-size: 9px; font-weight: 600; color: #f97c5a; background: #fff5f3; border-radius: 3px; padding: 1px 5px; margin-right: 4px; }
-
-  /* Helg/ledig MED utfall – ljusgrå bakgrund, svart text */
   tr.off-day-data td { background: #f4f4f2; color: #333; }
   tr.off-day-data td.goal-col { background: #eeeee9; color: #333; }
-
-  /* Framtida dagar utan data */
   tr.future-day td { color: #bbb; }
   tr.future-day td.goal-col { color: #bbb; }
-
   tr.selected-day td { background: #fff5f3 !important; }
   tr.selected-day td.goal-col { background: #ffeee8 !important; }
   tr.selected-day td:first-child { border-left: 3px solid #f97c5a !important; }
-
-  /* Senaste dataraden */
   tr.last-data:not(.selected-day) td, tr.last-data:not(.selected-day) td.goal-col { background: #faf6f4 !important; }
   tr.last-data:not(.selected-day) td:first-child { border-left: 3px solid #f0c8b8; }
-
   td.goal { color: #1a1a1a; font-size: 12px; font-weight: 500; }
   td.above { color: #2d8a4e; font-weight: 600; }
   td.below { color: #c0392b; font-weight: 600; }
@@ -147,39 +83,21 @@
   tr.summary-row td { font-weight: 700; color: #1a1a1a; border-top: 2px solid #e8503a; background: #fde0d8; font-size: 12px; }
   tr.summary-row td.goal-col { background: #f9cfc6; }
   .empty-cell { color: #ddd; }
-
   .project-selector { display: flex; gap: 6px; flex-wrap: wrap; }
-  .proj-chip {
-    padding: 5px 12px; border-radius: 20px; font-size: 12px; cursor: pointer;
-    border: 1.5px solid #aaa; background: #fff; color: #333; font-weight: 600;
-    transition: all 0.15s;
-  }
+  .proj-chip { padding: 5px 12px; border-radius: 20px; font-size: 12px; cursor: pointer; border: 1.5px solid #aaa; background: #fff; color: #333; font-weight: 600; transition: all 0.15s; }
   .proj-chip.active { background: #f97c5a; color: #fff; border-color: #f97c5a; }
   .proj-chip:hover:not(.active) { border-color: #f97c5a; color: #e8503a; }
-
   .view-tabs { display: flex; gap: 4px; background: #f0f0ee; border-radius: 8px; padding: 3px; }
   .view-tab { padding: 5px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; color: #666; font-weight: 500; transition: all 0.15s; border: none; background: none; }
   .view-tab.active { background: #fff; color: #1a1a1a; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
-
-  .summary-card {
-    background: #fff; border: 1px solid #ebebeb; border-radius: 14px; padding: 22px 28px;
-    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; align-items: start;
-  }
+  .summary-card { background: #fff; border: 1px solid #ebebeb; border-radius: 14px; padding: 22px 28px; display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 20px; align-items: start; }
   .summary-card .sc-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: #999; margin-bottom: 4px; }
   .summary-card .sc-value { font-size: 22px; font-weight: 700; color: #1a1a1a; }
   .summary-card .sc-meta { font-size: 11px; color: #999; margin-top: 2px; }
   .summary-card .sc-badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px; margin-top: 4px; }
   .summary-card .sc-spark { grid-column: 1 / -1; border-top: 1px solid #f0f0ee; padding-top: 14px; margin-top: 4px; }
   .summary-card .sc-spark-label { font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.4px; color: #1a1a1a; margin-bottom: 6px; }
-
-  .toolbar-row {
-    display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 12px;
-  }
-
-  .month-bar {
-    background: #f0f0ee; border-bottom: 1px solid #ebebeb;
-  }
-
+  .month-bar { background: #f0f0ee; border-bottom: 1px solid #ebebeb; }
   @media (max-width: 768px) {
     .summary-card { grid-template-columns: repeat(2, 1fr); gap: 14px; padding: 16px; }
     .summary-card .sc-value { font-size: 18px; }
@@ -206,7 +124,6 @@
 </style>
 </head>
 <body>
-
 <header>
   <div class="logo" style="display:flex;align-items:center;">
     <div class="logo-icon">V</div>
@@ -223,14 +140,11 @@
     </div>
   </div>
 </header>
-
 <main>
-  <!-- ======== OVERVIEW PAGE ======== -->
   <div id="overviewPage">
     <div class="filter-bar" style="flex-direction:column;align-items:stretch;gap:8px;">
       <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-        <div class="filter-group">
-          <span class="filter-label">Visa:</span>
+        <div class="filter-group"><span class="filter-label">Visa:</span>
           <div class="filter-pills" id="overviewFilter">
             <button class="filter-pill active" onclick="setOverviewFilter('alla',this)">Alla</button>
             <button class="filter-pill" onclick="setOverviewFilter('d2d',this)">D2D</button>
@@ -239,44 +153,28 @@
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-        <div class="filter-group">
-          <span class="filter-label">Projekt:</span>
-          <div class="project-selector" id="overviewProjectSelector"></div>
-        </div>
+        <div class="filter-group"><span class="filter-label">Projekt:</span><div class="project-selector" id="overviewProjectSelector"></div></div>
       </div>
     </div>
     <div class="filter-bar month-bar" style="border-top:none;">
       <div class="filter-group">
         <button class="nav-btn" onclick="changeMonth(-1)">◀</button>
-        <select id="monthSel" onchange="renderCurrent()">
-          <option value="0">Januari</option><option value="1" selected>Februari</option>
-          <option value="2">Mars</option><option value="3">April</option>
-          <option value="4">Maj</option><option value="5">Juni</option>
-          <option value="6">Juli</option><option value="7">Augusti</option>
-          <option value="8">September</option><option value="9">Oktober</option>
-          <option value="10">November</option><option value="11">December</option>
-        </select>
-        <select id="yearSel" onchange="renderCurrent()">
-          <option value="2024">2024</option><option value="2025">2025</option>
-          <option value="2026" selected>2026</option><option value="2027">2027</option>
-        </select>
+        <select id="monthSel" onchange="renderCurrent()"><option value="0">Januari</option><option value="1">Februari</option><option value="2">Mars</option><option value="3">April</option><option value="4">Maj</option><option value="5">Juni</option><option value="6">Juli</option><option value="7">Augusti</option><option value="8">September</option><option value="9">Oktober</option><option value="10">November</option><option value="11">December</option></select>
+        <select id="yearSel" onchange="renderCurrent()"><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option></select>
         <button class="nav-btn" onclick="changeMonth(1)">▶</button>
       </div>
     </div>
     <div class="page-section">
       <div class="page-title">Översikt</div>
-      <div class="page-sub" id="overviewSub">Februari 2026</div>
+      <div class="page-sub" id="overviewSub"></div>
       <div id="overviewSummaryCard"></div>
       <div id="overviewGrid" class="compare-grid" style="margin-top:14px;"></div>
     </div>
   </div>
-
-  <!-- ======== DAILY PAGE ======== -->
   <div id="dailyPage" style="display:none;">
     <div class="filter-bar" style="flex-direction:column;align-items:stretch;gap:8px;">
       <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-        <div class="filter-group">
-          <span class="filter-label">Filter:</span>
+        <div class="filter-group"><span class="filter-label">Filter:</span>
           <div class="filter-pills" id="dailyGroupFilter">
             <button class="filter-pill active" onclick="setDailyGroupFilter('alla',this)">Alla</button>
             <button class="filter-pill" onclick="setDailyGroupFilter('d2d',this)">D2D</button>
@@ -285,27 +183,14 @@
         </div>
       </div>
       <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-        <div class="filter-group">
-          <span class="filter-label">Projekt:</span>
-          <div class="project-selector" id="dailyProjectSelector"></div>
-        </div>
+        <div class="filter-group"><span class="filter-label">Projekt:</span><div class="project-selector" id="dailyProjectSelector"></div></div>
       </div>
     </div>
     <div class="filter-bar month-bar" style="border-top:none;">
       <div class="filter-group">
         <button class="nav-btn" onclick="changeMonth(-1)">◀</button>
-        <select id="monthSel2" onchange="syncMonthFrom(this);renderCurrent()">
-          <option value="0">Januari</option><option value="1" selected>Februari</option>
-          <option value="2">Mars</option><option value="3">April</option>
-          <option value="4">Maj</option><option value="5">Juni</option>
-          <option value="6">Juli</option><option value="7">Augusti</option>
-          <option value="8">September</option><option value="9">Oktober</option>
-          <option value="10">November</option><option value="11">December</option>
-        </select>
-        <select id="yearSel2" onchange="syncYearFrom(this);renderCurrent()">
-          <option value="2024">2024</option><option value="2025">2025</option>
-          <option value="2026" selected>2026</option><option value="2027">2027</option>
-        </select>
+        <select id="monthSel2" onchange="syncMonthFrom(this);renderCurrent()"><option value="0">Januari</option><option value="1">Februari</option><option value="2">Mars</option><option value="3">April</option><option value="4">Maj</option><option value="5">Juni</option><option value="6">Juli</option><option value="7">Augusti</option><option value="8">September</option><option value="9">Oktober</option><option value="10">November</option><option value="11">December</option></select>
+        <select id="yearSel2" onchange="syncYearFrom(this);renderCurrent()"><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option></select>
         <button class="nav-btn" onclick="changeMonth(1)">▶</button>
       </div>
       <div class="view-tabs" id="dailyViewTabs">
@@ -320,90 +205,34 @@
         <button class="btn" id="clearSelectionBtn" style="display:none;font-size:11px;padding:4px 10px;" onclick="clearSelection()">✕ Rensa urval</button>
       </div>
       <div class="stat-cards" id="dailyStatCards">
-        <div class="stat-card">
-          <div class="stat-label">Utfall produkter</div>
-          <div class="stat-value" id="sc-prod">—</div>
-          <div class="stat-meta" id="sc-prod-meta">Mål: —</div>
-          <div class="stat-badge badge-neutral" id="sc-prod-badge">Ingen data</div>
-          <div id="sc-prod-takt" style="font-size:11px;margin-top:4px;"></div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Snitt per dag</div>
-          <div class="stat-value" id="sc-avg">—</div>
-          <div class="stat-meta" id="sc-avg-meta">Mål: —</div>
-          <div class="stat-badge badge-neutral" id="sc-avg-badge">Ingen data</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Snitt per timme</div>
-          <div class="stat-value" id="sc-phtimme">—</div>
-          <div class="stat-meta" id="sc-phtimme-meta">Mål: —</div>
-          <div class="stat-badge badge-neutral" id="sc-phtimme-badge">Ingen data</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-label">Säljare per dag</div>
-          <div class="stat-value" id="sc-sellers">—</div>
-          <div class="stat-meta" id="sc-sellers-meta">Mål: —</div>
-          <div class="stat-badge badge-neutral" id="sc-sellers-badge">Ingen data</div>
-        </div>
+        <div class="stat-card"><div class="stat-label">Utfall produkter</div><div class="stat-value" id="sc-prod">—</div><div class="stat-meta" id="sc-prod-meta">Mål: —</div><div class="stat-badge badge-neutral" id="sc-prod-badge">Ingen data</div><div id="sc-prod-takt" style="font-size:11px;margin-top:4px;"></div></div>
+        <div class="stat-card"><div class="stat-label">Snitt per dag</div><div class="stat-value" id="sc-avg">—</div><div class="stat-meta" id="sc-avg-meta">Mål: —</div><div class="stat-badge badge-neutral" id="sc-avg-badge">Ingen data</div></div>
+        <div class="stat-card"><div class="stat-label">Snitt per timme</div><div class="stat-value" id="sc-phtimme">—</div><div class="stat-meta" id="sc-phtimme-meta">Mål: —</div><div class="stat-badge badge-neutral" id="sc-phtimme-badge">Ingen data</div></div>
+        <div class="stat-card"><div class="stat-label">Säljare per dag</div><div class="stat-value" id="sc-sellers">—</div><div class="stat-meta" id="sc-sellers-meta">Mål: —</div><div class="stat-badge badge-neutral" id="sc-sellers-badge">Ingen data</div></div>
       </div>
       <div id="teliaFmBreakdown" style="display:none;margin-bottom:16px;">
-        <div class="stat-card" style="padding:14px 20px;">
-          <div class="stat-label">Snitt per timme – Kategorier</div>
-          <div id="teliaFmBreakdownContent" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:8px;"></div>
-        </div>
+        <div class="stat-card" style="padding:14px 20px;"><div class="stat-label">Snitt per timme – Kategorier</div><div id="teliaFmBreakdownContent" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:8px;"></div></div>
       </div>
-      <div class="table-wrap" id="tableWrap">
-        <table><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table>
-      </div>
+      <div class="table-wrap" id="tableWrap"><table><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table></div>
       <div id="dailyCompareWrap" style="display:none"></div>
     </div>
   </div>
 </main>
-
 <script>
-const MONTHS_SV=['Januari','Februari','Mars','April','Maj','Juni','Juli','Augusti','September','Oktober','November','December'];
-const DAYS_SV=['Söndag','Måndag','Tisdag','Onsdag','Torsdag','Fredag','Lördag'];
-const GROUP_D2D=['telia-fm','villafiber','koax','lan'];
-const GROUP_TM=['globalconnect','gc-aktiveringar','adressandring','vip-leads','retention','mbh','mobil','fmc'];
-const ALL_PROJECTS=[...GROUP_D2D,...GROUP_TM];
-const MANSDAG_PROJECTS=new Set(['telia-fm','villafiber','koax','lan','globalconnect','gc-aktiveringar']);
-const SNITT_PER_TIMMAR=new Set(['adressandring','vip-leads','retention','mbh','mobil','fmc']);
-
-const PROJECT_META={
-  'telia-fm':{name:'Telia FM',sheet:'1.1. Telia D2D'},
-  'villafiber':{name:'Villafiber',sheet:'1.3. Tele2 Villafiber'},
-  'koax':{name:'Koax',sheet:'1.2. Tele2 Koax'},
-  'lan':{name:'LAN',sheet:'1.4. LAN'},
-  'gc-aktiveringar':{name:'GC Aktiveringar',sheet:'GlobalConnect Aktiveringar'},
-  'globalconnect':{name:'GlobalConnect',sheet:'GlobalConnect'},
-  'adressandring':{name:'Telia Adressändring',sheet:'2.7. Telia Adressändring'},
-  'vip-leads':{name:'Telia VIP Leads',sheet:'2.6. Telia VIP Leads'},
-  'retention':{name:'Telia Retention',sheet:'2.5. Telia Retention Leads'},
-  'mbh':{name:'Telia MBH',sheet:'2.2. Telia MBH'},
-  'mobil':{name:'Telia Mobil',sheet:'2.2. Telia Mobil'},
-  'fmc':{name:'Telia FMC',sheet:'2.2.1. Telia FMC'}
+var MONTHS_SV=['Januari','Februari','Mars','April','Maj','Juni','Juli','Augusti','September','Oktober','November','December'];
+var DAYS_SV=['Söndag','Måndag','Tisdag','Onsdag','Torsdag','Fredag','Lördag'];
+var GROUP_D2D=['telia-fm','villafiber','koax','lan'];
+var GROUP_TM=['globalconnect','gc-aktiveringar','adressandring','vip-leads','retention','mbh','mobil','fmc'];
+var ALL_PROJECTS=[].concat(GROUP_D2D,GROUP_TM);
+var MANSDAG_PROJECTS={'telia-fm':1,'villafiber':1,'koax':1,'lan':1,'globalconnect':1,'gc-aktiveringar':1};
+var SNITT_PER_TIMMAR={'adressandring':1,'vip-leads':1,'retention':1,'mbh':1,'mobil':1,'fmc':1};
+var TELE2_PROJECTS={'villafiber':1,'koax':1,'lan':1};
+var PROJECT_META={
+  'telia-fm':{name:'Telia FM',sheet:'1.1. Telia D2D'},'villafiber':{name:'Villafiber',sheet:'1.3. Tele2 Villafiber'},'koax':{name:'Koax',sheet:'1.2. Tele2 Koax'},'lan':{name:'LAN',sheet:'1.4. LAN'},'gc-aktiveringar':{name:'GC Aktiveringar',sheet:'GlobalConnect Aktiveringar'},'globalconnect':{name:'GlobalConnect',sheet:'GlobalConnect'},'adressandring':{name:'Telia Adressändring',sheet:'2.7. Telia Adressändring'},'vip-leads':{name:'Telia VIP Leads',sheet:'2.6. Telia VIP Leads'},'retention':{name:'Telia Retention',sheet:'2.5. Telia Retention Leads'},'mbh':{name:'Telia MBH',sheet:'2.2. Telia MBH'},'mobil':{name:'Telia Mobil',sheet:'2.2. Telia Mobil'},'fmc':{name:'Telia FMC',sheet:'2.2.1. Telia FMC'}
 };
-
-let currentPage='overview';
-let overviewFilter='alla';
-let overviewProject=null;
-let dailyGroup='alla';
-let dailyProject=new Set(ALL_PROJECTS);
-let dailyView='full';
-let utfallData={};
-let malData={};
-let _dailyRef=null;
-let selectedDays=new Set();
-
-const COMPACT_COLS=[
-  {label:'Dag'},{label:'Datum'},
-  {label:'Mål säljare',goalKey:'__mal_saljare__'},{label:'Utfall säljare',key:'__utfall_saljare__'},
-  {label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'timmar'},
-  {label:'Mål Produkt',goalKey:'__mal_prod__'},{label:'Utfall Produkt',key:'Produkt'},
-  {label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}
-];
-
-const PROJECT_COLS={
+var currentPage='overview',overviewFilter='alla',overviewProject=null,dailyGroup='alla',dailyProject=new Set(ALL_PROJECTS),dailyView='full',utfallData={},malData={},_dailyRef=null,selectedDays=new Set();
+var COMPACT_COLS=[{label:'Dag'},{label:'Datum'},{label:'Mål säljare',goalKey:'__mal_saljare__'},{label:'Utfall säljare',key:'__utfall_saljare__'},{label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'timmar'},{label:'Mål Produkt',goalKey:'__mal_prod__'},{label:'Utfall Produkt',key:'Produkt'},{label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}];
+var PROJECT_COLS={
   'telia-fm':[{label:'Dag'},{label:'Datum'},{label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},{label:'Mål Sälj',goalKey:'Mål Sälj'},{label:'Utfall Produkter',key:'Produkt'},{label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall Timmar',key:'Timmar'},{label:'Mål BB',goalKey:'Mål BB'},{label:'Utfall BB',key:'Bredband'},{label:'Mål TV',goalKey:'Mål TV'},{label:'Utfall TV',key:'TV'},{label:'Mål Premium',goalKey:'Mål Premium'},{label:'Utfall Premium',key:'Streaming'},{label:'Mål Mob',goalKey:'Mål Mob'},{label:'Utfall Mob',key:'MOBIL'},{label:'Mål Trygghetspaket',goalKey:'Mål Trygghetspaket'},{label:'Utfall Trygghetspaket',key:'Trygghetspaket'},{label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}],
   'villafiber':[{label:'Dag'},{label:'Datum'},{label:'Mål mansdagar',goalKey:'Mål mansdagar'},{label:'Utfall mansdagar',key:'Antal Mansdagar'},{label:'Mål Produkt',goalKey:'Mål Produkt'},{label:'Utfall Produkt',key:'Produkt'},{label:'DTV',key:'TV'},{label:'BB',key:'Bredband'},{label:'MBB',key:'MBB'},{label:'Mobil',key:'Mobil'},{label:'Mål snitt/mansdag',goalKey:'Mål snitt per mansdag'},{label:'Utfall snitt/mansdag',key:'snitt'}],
   'koax':[{label:'Dag'},{label:'Datum'},{label:'Mål mansdagar',goalKey:'Mål mansdagar'},{label:'Utfall mansdagar',key:'Antal Mansdagar'},{label:'Mål Produkt',goalKey:'Mål Produkt'},{label:'Utfall Produkt',key:'Produkt'},{label:'DTV',key:'TV'},{label:'BB',key:'Bredband'},{label:'MBB',key:'MBB'},{label:'Mobil',key:'Mobil'},{label:'Mål snitt/mansdag',goalKey:'Mål snitt per mansdag'},{label:'Utfall snitt/mansdag',key:'snitt'}],
@@ -417,900 +246,299 @@ const PROJECT_COLS={
   'mobil':[{label:'Dag'},{label:'Datum'},{label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},{label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'Timmar'},{label:'Mål Huvudabb',goalKey:'Mål Huvudabb'},{label:'Utfall Huvudabb',key:'Mobil'},{label:'Mål EA',goalKey:'Mål EA'},{label:'Utfall EA',key:'EA'},{label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}],
   'fmc':[{label:'Dag'},{label:'Datum'},{label:'Mål säljare',goalKey:'Mål säljare'},{label:'Utfall säljare',key:'Antal Mansdagar'},{label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'Timmar'},{label:'Mål Huvudabb',goalKey:'Mål Huvudabb'},{label:'Utfall Huvudabb',key:'Mobil'},{label:'Mål EA',goalKey:'Mål EA'},{label:'Utfall EA',key:'EA'},{label:'Mål snitt',goalKey:'Mål snitt'},{label:'Utfall snitt',key:'snitt'}]
 };
+var TELE2_COL_MAP={'bredband':'Bredband','tv':'TV','mbb':'MBB','mobil':'Mobil','produkt':'Produkt','total sälj':'Total sälj','tilläggsprodukt':'Tilläggsprodukt','antal mansdagar':'Antal Mansdagar','streaming':'Streaming','bredband om':'Bredband OM','räknas ej':'Räknas ej','kontroll produkt':'Kontroll Produkt','kontroll tilläggsprodukt':'Kontroll Tilläggsprodukt','produkt kontroll':'Produkt Kontroll'};
 
-function getMonth(){ return parseInt(document.getElementById('monthSel').value); }
-function getYear(){ return parseInt(document.getElementById('yearSel').value); }
-function syncMonthFrom(sel){ document.getElementById('monthSel').value=sel.value; }
-function syncYearFrom(sel){ document.getElementById('yearSel').value=sel.value; }
-function changeMonth(dir){
-  var m=getMonth()+dir, y=getYear();
-  if(m<0){m=11;y--;} if(m>11){m=0;y++;}
-  document.getElementById('monthSel').value=m;
-  document.getElementById('yearSel').value=y;
-  document.getElementById('monthSel2').value=m;
-  document.getElementById('yearSel2').value=y;
-  renderCurrent();
-}
-function toDateKey(y,m,d){ return y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0'); }
-function storeKey(proj,y,m){ return proj+'_'+y+'_'+m; }
-function fmt2(v){ return typeof v==='number'?parseFloat(v.toFixed(2)):v; }
-function isWeekend(d){ return d.getDay()===0||d.getDay()===6; }
-function findVal(obj,key){
-  if(!obj||!key) return null;
-  var lk=key.toLowerCase();
-  for(var k of Object.keys(obj)){ if(k.toLowerCase()===lk) return obj[k]; }
-  return null;
-}
-
-/* Determine if a day is an "off day" (no goals set) based on mål data.
-   A day is off if there is NO mål row, OR the mål row has zero/missing
-   for all key goal fields (säljare + timmar). */
-function isDayOff(mRow){
-  if(!mRow || Object.keys(mRow).length===0) return true;
-  var s=findVal(mRow,'Mål säljare')??findVal(mRow,'Mål mansdagar')??0;
-  var t=findVal(mRow,'Mål timmar')??0;
-  return (typeof s!=='number'||s<=0) && (typeof t!=='number'||t<=0);
-}
-
-/* Check if a utfall row has any real data (not just zeros) */
-function hasRealUtfall(uRow){
-  if(!uRow||Object.keys(uRow).length===0) return false;
-  var prod=findVal(uRow,'Produkt')??findVal(uRow,'produkt')??null;
-  var salj=findVal(uRow,'Antal Mansdagar')??findVal(uRow,'Antal Säljare')??null;
-  var tim=findVal(uRow,'Timmar')??findVal(uRow,'timmar')??null;
-  return (typeof prod==='number'&&prod>0)||(typeof salj==='number'&&salj>0)||(typeof tim==='number'&&tim>0);
-}
-
-/* Format a utfall value: 0 → "—", number → formatted, else "—" */
-function fmtUtfall(v){
-  if(v===null||v===undefined||v==='') return '—';
-  if(typeof v==='number'&&v===0) return '—';
-  return fmt2(v);
-}
-
-/* Check if on track: compare utfall against the proportion of mål
-   that should be reached given worked days vs total mål days */
-function isOnTrack(utfall, mal, workedDays, totalMalDays){
-  if(!mal||mal<=0||!totalMalDays||totalMalDays<=0) return null;
-  var expected=mal*(workedDays/totalMalDays);
-  return utfall>=expected;
-}
-
-function resolveDynGoal(goalKey,mRow){
-  if(goalKey==='__mal_saljare__'){
-    for(var k of ['Mål säljare','Mål mansdagar']){ var v=findVal(mRow,k); if(typeof v==='number') return v; }
-    return null;
-  }
-  if(goalKey==='__mal_prod__'){
-    var p=_dailyRef||[...dailyProject][0];
-    if(p==='mobil'||p==='fmc'){ var h=findVal(mRow,'Mål Huvudabb')??0, ea=findVal(mRow,'Mål EA')??0; return (typeof h==='number'?h:0)+(typeof ea==='number'?ea:0)||null; }
-    if(p==='vip-leads'){ var bb=findVal(mRow,'Mål BB')??0, mbh=findVal(mRow,'Mål MBH')??0; return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0)||null; }
-    if(p==='retention'||p==='mbh'){ var v2=findVal(mRow,'Mål BB'); return typeof v2==='number'?v2:null; }
-    for(var k2 of ['Mål Sälj','Mål Produkt','Mål produkt','Mål sälj']){ var v3=findVal(mRow,k2); if(typeof v3==='number') return v3; }
-    return null;
-  }
-  return findVal(mRow,goalKey);
-}
-
-function getProjectMalProd(proj,mRow){
-  var nr=normalizeRow(mRow,'mal');
-  if(proj==='mobil'||proj==='fmc'){ var h=findVal(nr,'Mål Huvudabb')??0, ea=findVal(nr,'Mål EA')??0; return (typeof h==='number'?h:0)+(typeof ea==='number'?ea:0); }
-  if(proj==='vip-leads'){ var bb=findVal(nr,'Mål BB')??0, mbh=findVal(nr,'Mål MBH')??0; return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0); }
-  if(proj==='retention'||proj==='mbh'){ var v=findVal(nr,'Mål BB'); return typeof v==='number'?v:0; }
-  var v2=findVal(nr,'Mål Sälj'); return typeof v2==='number'?v2:0;
-}
+function getMonth(){return parseInt(document.getElementById('monthSel').value)}
+function getYear(){return parseInt(document.getElementById('yearSel').value)}
+function syncMonthFrom(s){document.getElementById('monthSel').value=s.value}
+function syncYearFrom(s){document.getElementById('yearSel').value=s.value}
+function changeMonth(d){var m=getMonth()+d,y=getYear();if(m<0){m=11;y--}if(m>11){m=0;y++}document.getElementById('monthSel').value=m;document.getElementById('yearSel').value=y;document.getElementById('monthSel2').value=m;document.getElementById('yearSel2').value=y;renderCurrent()}
+function toDateKey(y,m,d){return y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0')}
+function storeKey(p,y,m){return p+'_'+y+'_'+m}
+function fmt2(v){return typeof v==='number'?parseFloat(v.toFixed(2)):v}
+function findVal(o,k){if(!o||!k)return null;var lk=k.toLowerCase();for(var j of Object.keys(o))if(j.toLowerCase()===lk)return o[j];return null}
+function isDayOff(r){if(!r||Object.keys(r).length===0)return true;var s=findVal(r,'Mål säljare')??findVal(r,'Mål mansdagar')??0;var t=findVal(r,'Mål timmar')??0;return(typeof s!=='number'||s<=0)&&(typeof t!=='number'||t<=0)}
+function hasRealUtfall(r){if(!r||Object.keys(r).length===0)return false;var p=findVal(r,'Produkt')??findVal(r,'produkt')??null;var s=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??null;var t=findVal(r,'Timmar')??findVal(r,'timmar')??null;return(typeof p==='number'&&p>0)||(typeof s==='number'&&s>0)||(typeof t==='number'&&t>0)}
+function fmtUtfall(v){if(v===null||v===undefined||v==='')return'—';if(typeof v==='number'&&v===0)return'—';return fmt2(v)}
+function isOnTrack(u,m,wd,md){if(!m||m<=0||!md||md<=0)return null;return u>=(m*(wd/md))}
 
 function normalizeRow(row,type){
   var out={};
   var km=type==='utfall'?{'produkt':'Produkt','timmar':'Timmar','utfall timmar':'Timmar','antal säljare':'Antal Mansdagar'}:{'mål mansdagar':'Mål säljare','mål produkt':'Mål Sälj','mål sälj':'Mål Sälj','mål snitt per mansdag':'Mål snitt'};
-  // Check if row already has a Produkt column before mapping Total sälj
-  var hasProdukt=type==='utfall'&&Object.keys(row).some(function(k){return k.toLowerCase()==='produkt';});
-  if(type==='utfall'&&!hasProdukt) km['total sälj']='Produkt';
-  for(var [k,v] of Object.entries(row)){
-    var mapped=km[k.toLowerCase()]; var tk=mapped||k;
-    if(out[tk]!==undefined){ if(typeof v==='number'&&typeof out[tk]==='number') out[tk]+=v; }
-    else out[tk]=v;
-  }
+  var hasP=type==='utfall'&&Object.keys(row).some(function(k){return k.toLowerCase()==='produkt'});
+  if(type==='utfall'&&!hasP)km['total sälj']='Produkt';
+  for(var[k,v]of Object.entries(row)){var tk=km[k.toLowerCase()]||k;if(out[tk]!==undefined){if(typeof v==='number'&&typeof out[tk]==='number')out[tk]+=v}else out[tk]=v}
   return out;
 }
-
-function calcSnitt(proj,uRow){
-  var prod=findVal(uRow,'Produkt')??findVal(uRow,'produkt')??findVal(uRow,'Total sälj')??null;
-  if(typeof prod!=='number') return null;
-  if(SNITT_PER_TIMMAR.has(proj)){
-    var t=findVal(uRow,'Timmar')??findVal(uRow,'timmar')??null;
-    return (typeof t==='number'&&t>0)?fmt2(prod/t):null;
-  } else {
-    var s=findVal(uRow,'Antal Mansdagar')??findVal(uRow,'Antal Säljare')??null;
-    return (typeof s==='number'&&s>0)?fmt2(prod/s):null;
-  }
+function resolveDynGoal(gk,mr){
+  if(gk==='__mal_saljare__'){for(var k of['Mål säljare','Mål mansdagar']){var v=findVal(mr,k);if(typeof v==='number')return v}return null}
+  if(gk==='__mal_prod__'){var p=_dailyRef||[...dailyProject][0];if(p==='mobil'||p==='fmc'){var h=findVal(mr,'Mål Huvudabb')??0,ea=findVal(mr,'Mål EA')??0;return(typeof h==='number'?h:0)+(typeof ea==='number'?ea:0)||null}if(p==='vip-leads'){var bb=findVal(mr,'Mål BB')??0,mbh=findVal(mr,'Mål MBH')??0;return(typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0)||null}if(p==='retention'||p==='mbh'){var v2=findVal(mr,'Mål BB');return typeof v2==='number'?v2:null}for(var k2 of['Mål Sälj','Mål Produkt','Mål produkt','Mål sälj']){var v3=findVal(mr,k2);if(typeof v3==='number')return v3}return null}
+  return findVal(mr,gk);
 }
+function getProjectMalProd(proj,mr){var nr=normalizeRow(mr,'mal');if(proj==='mobil'||proj==='fmc'){var h=findVal(nr,'Mål Huvudabb')??0,ea=findVal(nr,'Mål EA')??0;return(typeof h==='number'?h:0)+(typeof ea==='number'?ea:0)}if(proj==='vip-leads'){var bb=findVal(nr,'Mål BB')??0,mbh=findVal(nr,'Mål MBH')??0;return(typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0)}if(proj==='retention'||proj==='mbh'){var v=findVal(nr,'Mål BB');return typeof v==='number'?v:0}var v2=findVal(nr,'Mål Sälj');return typeof v2==='number'?v2:0}
+function calcSnitt(proj,ur){var p=findVal(ur,'Produkt')??findVal(ur,'produkt')??findVal(ur,'Total sälj')??null;if(typeof p!=='number')return null;if(SNITT_PER_TIMMAR[proj]){var t=findVal(ur,'Timmar')??findVal(ur,'timmar')??null;return(typeof t==='number'&&t>0)?fmt2(p/t):null}else{var s=findVal(ur,'Antal Mansdagar')??findVal(ur,'Antal Säljare')??null;return(typeof s==='number'&&s>0)?fmt2(p/s):null}}
+function findGoalKey(cols,uk){for(var i=0;i<cols.length;i++){if(cols[i].key&&cols[i].key.toLowerCase()===uk.toLowerCase()){if(i>0&&cols[i-1].goalKey)return cols[i-1].goalKey}}return null}
+function getCompactProd(proj,row){if(proj==='vip-leads'){var bb=findVal(row,'Bredband')??0,mbh=findVal(row,'MBH')??0;return(typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0)}if(proj==='retention'||proj==='mbh')return findVal(row,'Bredband')??findVal(row,'BB')??null;if(proj==='mobil'||proj==='fmc'){var h=findVal(row,'Mobil')??0,ea=findVal(row,'EA')??0;return(typeof h==='number'?h:0)+(typeof ea==='number'?ea:0)}return findVal(row,'Produkt')??findVal(row,'produkt')??findVal(row,'Total sälj')??null}
+function getProjectData(proj){var m=getMonth(),y=getYear();return{uData:utfallData[storeKey(proj,y,m)]||{},mData:malData[storeKey(proj,y,m)]||{}}}
 
-function findGoalKey(cols,utfallKey){
-  for(var i=0;i<cols.length;i++){
-    if(cols[i].key&&cols[i].key.toLowerCase()===utfallKey.toLowerCase()){
-      if(i>0&&cols[i-1].goalKey) return cols[i-1].goalKey;
-    }
-  }
-  return null;
-}
-
-function getCompactProd(proj,row){
-  if(proj==='vip-leads'){ var bb=findVal(row,'Bredband')??0, mbh=findVal(row,'MBH')??0; return (typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0); }
-  if(proj==='retention'||proj==='mbh') return findVal(row,'Bredband')??findVal(row,'BB')??null;
-  if(proj==='mobil'||proj==='fmc'){ var h=findVal(row,'Mobil')??0, ea=findVal(row,'EA')??0; return (typeof h==='number'?h:0)+(typeof ea==='number'?ea:0); }
-  return findVal(row,'Produkt')??findVal(row,'produkt')??findVal(row,'Total sälj')??null;
-}
-
-function getProjectData(proj){
-  var m=getMonth(),y=getYear();
-  var u=utfallData[storeKey(proj,y,m)]||{}, ml=malData[storeKey(proj,y,m)]||{};
-  return {uData:u,mData:ml};
-}
-
-function toggleDay(dateKey,trEl,ev){
-  if(ev&&(ev.ctrlKey||ev.metaKey)){
-    // Multi-select: toggle this day
-    if(selectedDays.has(dateKey)){
-      selectedDays.delete(dateKey);
-      trEl.classList.remove('selected-day');
-    } else {
-      selectedDays.add(dateKey);
-      trEl.classList.add('selected-day');
-    }
-  } else {
-    // Single click: if already the only selected, deselect
-    if(selectedDays.size===1&&selectedDays.has(dateKey)){
-      selectedDays.clear();
-      trEl.classList.remove('selected-day');
-    } else {
-      // Clear all, select this one
-      document.querySelectorAll('tr.selected-day').forEach(function(tr){tr.classList.remove('selected-day');});
-      selectedDays.clear();
-      selectedDays.add(dateKey);
-      trEl.classList.add('selected-day');
-    }
-  }
-  var btn=document.getElementById('clearSelectionBtn');
-  if(btn) btn.style.display=selectedDays.size>0?'':'none';
+function toggleDay(dk,tr,ev){
+  if(ev&&(ev.ctrlKey||ev.metaKey)){if(selectedDays.has(dk)){selectedDays.delete(dk);tr.classList.remove('selected-day')}else{selectedDays.add(dk);tr.classList.add('selected-day')}}
+  else{if(selectedDays.size===1&&selectedDays.has(dk)){selectedDays.clear();tr.classList.remove('selected-day')}else{document.querySelectorAll('tr.selected-day').forEach(function(t){t.classList.remove('selected-day')});selectedDays.clear();selectedDays.add(dk);tr.classList.add('selected-day')}}
+  var btn=document.getElementById('clearSelectionBtn');if(btn)btn.style.display=selectedDays.size>0?'':'none';
   updateStatCardsForSelection();
 }
-
 function clearSelection(){
-  selectedDays.clear();
-  document.querySelectorAll('tr.selected-day').forEach(function(tr){tr.classList.remove('selected-day');});
-  var btn=document.getElementById('clearSelectionBtn');
-  if(btn) btn.style.display='none';
-  // Re-render stat cards with full data
-  var multi=dailyProject.size>1;
-  var activeProjArr=[...dailyProject];
-  if(multi){
-    var mg=mergeDailyData(activeProjArr);
-    updateStatCards(mg.uMerged,mg.mMerged);
-  } else {
-    var pd=getProjectData(activeProjArr[0]);
-    updateStatCards(pd.uData,pd.mData);
-  }
+  selectedDays.clear();document.querySelectorAll('tr.selected-day').forEach(function(t){t.classList.remove('selected-day')});
+  var btn=document.getElementById('clearSelectionBtn');if(btn)btn.style.display='none';
+  var multi=dailyProject.size>1,arr=[...dailyProject];
+  if(multi){var mg=mergeDailyData(arr);updateStatCards(mg.uMerged,mg.mMerged)}else{var pd=getProjectData(arr[0]);updateStatCards(pd.uData,pd.mData)}
 }
-
 function updateStatCardsForSelection(){
-  if(selectedDays.size===0){ clearSelection(); return; }
-  var multi=dailyProject.size>1;
-  var activeProjArr=[...dailyProject];
-  var uData,mData;
-  if(multi){
-    var mg=mergeDailyData(activeProjArr);
-    uData=mg.uMerged; mData=mg.mMerged;
-  } else {
-    var pd=getProjectData(activeProjArr[0]);
-    uData=pd.uData; mData=pd.mData;
-  }
-  // Filter to selected days only
-  var filteredU={},filteredM={};
-  selectedDays.forEach(function(dk){
-    if(uData[dk]) filteredU[dk]=uData[dk];
-    if(mData[dk]) filteredM[dk]=mData[dk];
-  });
-  updateStatCards(filteredU,filteredM);
+  if(selectedDays.size===0){clearSelection();return}
+  var multi=dailyProject.size>1,arr=[...dailyProject],uS,mS;
+  if(multi){var mg=mergeDailyData(arr);uS=mg.uMerged;mS=mg.mMerged}else{var pd=getProjectData(arr[0]);uS=pd.uData;mS=pd.mData}
+  var fU={},fM={};selectedDays.forEach(function(dk){if(uS[dk])fU[dk]=uS[dk];if(mS[dk])fM[dk]=mS[dk]});
+  updateStatCards(fU,fM);
 }
 
-function switchPage(page){
-  currentPage=page;
-  document.querySelectorAll('.main-nav-tab').forEach(function(t){t.classList.remove('active');});
-  document.querySelectorAll('.main-nav-tab').forEach(function(t){ if((page==='overview'&&t.textContent.indexOf('Översikt')>=0)||(page==='daily'&&t.textContent.indexOf('Daglig')>=0)) t.classList.add('active'); });
-  document.getElementById('overviewPage').style.display=page==='overview'?'':'none';
-  document.getElementById('dailyPage').style.display=page==='daily'?'':'none';
-  renderCurrent();
-}
-
-function switchToDaily(proj){
-  var group=GROUP_D2D.indexOf(proj)>=0?'d2d':'tm';
-  dailyGroup=group;
-  dailyProject=new Set([proj]);
-  document.querySelectorAll('#dailyGroupFilter .filter-pill').forEach(function(p){ p.classList.toggle('active',p.textContent.toLowerCase()===group); });
-  buildProjectChips();
-  updateDailyTabs();
-  switchPage('daily');
-}
-
-function renderCurrent(){
-  if(currentPage==='overview') renderOverview();
-  else renderDaily();
-}
-
-function setOverviewFilter(f,el){
-  overviewFilter=f;
-  overviewProject=null;
-  document.querySelectorAll('#overviewFilter .filter-pill').forEach(function(p){p.classList.remove('active');});
-  el.classList.add('active');
-  buildOverviewProjectChips();
-  renderOverview();
-}
-
-function buildOverviewProjectChips(){
-  var projs=overviewFilter==='d2d'?GROUP_D2D:overviewFilter==='tm'?GROUP_TM:ALL_PROJECTS;
-  var sel=document.getElementById('overviewProjectSelector');
-  var isAll=overviewProject===null;
-  var html='<button class="proj-chip '+(isAll?'active':'')+'" onclick="selectOverviewProject(\'alla\',this,event)">Alla</button>';
-  projs.forEach(function(p){
-    var active=overviewProject instanceof Set&&overviewProject.has(p);
-    html+='<button class="proj-chip '+(active?'active':'')+'" onclick="selectOverviewProject(\''+p+'\',this,event)">'+PROJECT_META[p].name+'</button>';
-  });
-  sel.innerHTML=html;
-}
-
-function selectOverviewProject(p,el,ev){
-  if(p==='alla'){
-    overviewProject=null;
-  } else if(ev&&(ev.ctrlKey||ev.metaKey)){
-    if(overviewProject===null) overviewProject=new Set();
-    if(overviewProject.has(p)) overviewProject.delete(p);
-    else overviewProject.add(p);
-    if(overviewProject.size===0) overviewProject=null;
-  } else {
-    if(overviewProject instanceof Set&&overviewProject.size===1&&overviewProject.has(p)) overviewProject=null;
-    else overviewProject=new Set([p]);
-  }
-  document.querySelectorAll('#overviewProjectSelector .proj-chip').forEach(function(c){
-    var val=c.textContent;
-    if(val==='Alla') c.classList.toggle('active',overviewProject===null);
-    else {
-      var proj=Object.entries(PROJECT_META).find(function(e){return e[1].name===val;});
-      if(proj) c.classList.toggle('active',overviewProject instanceof Set&&overviewProject.has(proj[0]));
-    }
-  });
-  renderOverview();
-}
+function switchPage(pg){currentPage=pg;document.querySelectorAll('.main-nav-tab').forEach(function(t){t.classList.remove('active')});document.querySelectorAll('.main-nav-tab').forEach(function(t){if((pg==='overview'&&t.textContent.indexOf('Översikt')>=0)||(pg==='daily'&&t.textContent.indexOf('Daglig')>=0))t.classList.add('active')});document.getElementById('overviewPage').style.display=pg==='overview'?'':'none';document.getElementById('dailyPage').style.display=pg==='daily'?'':'none';renderCurrent()}
+function switchToDaily(proj){var g=GROUP_D2D.indexOf(proj)>=0?'d2d':'tm';dailyGroup=g;dailyProject=new Set([proj]);document.querySelectorAll('#dailyGroupFilter .filter-pill').forEach(function(p){p.classList.toggle('active',p.textContent.toLowerCase()===g)});buildProjectChips();updateDailyTabs();switchPage('daily')}
+function renderCurrent(){if(currentPage==='overview')renderOverview();else renderDaily()}
+function setOverviewFilter(f,el){overviewFilter=f;overviewProject=null;document.querySelectorAll('#overviewFilter .filter-pill').forEach(function(p){p.classList.remove('active')});el.classList.add('active');buildOverviewProjectChips();renderOverview()}
+function buildOverviewProjectChips(){var ps=overviewFilter==='d2d'?GROUP_D2D:overviewFilter==='tm'?GROUP_TM:ALL_PROJECTS;var sel=document.getElementById('overviewProjectSelector');var html='<button class="proj-chip '+(overviewProject===null?'active':'')+'" onclick="selectOverviewProject(\'alla\',this,event)">Alla</button>';ps.forEach(function(p){html+='<button class="proj-chip '+((overviewProject instanceof Set&&overviewProject.has(p))?'active':'')+'" onclick="selectOverviewProject(\''+p+'\',this,event)">'+PROJECT_META[p].name+'</button>'});sel.innerHTML=html}
+function selectOverviewProject(p,el,ev){if(p==='alla')overviewProject=null;else if(ev&&(ev.ctrlKey||ev.metaKey)){if(overviewProject===null)overviewProject=new Set();if(overviewProject.has(p))overviewProject.delete(p);else overviewProject.add(p);if(overviewProject.size===0)overviewProject=null}else{if(overviewProject instanceof Set&&overviewProject.size===1&&overviewProject.has(p))overviewProject=null;else overviewProject=new Set([p])}document.querySelectorAll('#overviewProjectSelector .proj-chip').forEach(function(c){var val=c.textContent;if(val==='Alla')c.classList.toggle('active',overviewProject===null);else{var pr=Object.entries(PROJECT_META).find(function(e){return e[1].name===val});if(pr)c.classList.toggle('active',overviewProject instanceof Set&&overviewProject.has(pr[0]))}});renderOverview()}
 
 function renderOverview(){
-  var m=getMonth(),y=getYear();
-  document.getElementById('overviewSub').textContent=MONTHS_SV[m]+' '+y;
-  var projects=ALL_PROJECTS;
-  if(overviewFilter==='d2d') projects=GROUP_D2D;
-  if(overviewFilter==='tm') projects=GROUP_TM;
+  var m=getMonth(),y=getYear();document.getElementById('overviewSub').textContent=MONTHS_SV[m]+' '+y;
+  var projects=ALL_PROJECTS;if(overviewFilter==='d2d')projects=GROUP_D2D;if(overviewFilter==='tm')projects=GROUP_TM;
   var cardProjects=overviewProject instanceof Set?[...overviewProject]:projects;
-
-  var barColor=function(p){return p>=100?'#2d8a4e':'#f97c5a';};
-  var MAL_COLOR='#999';
-
-  var sumTotalProd=0,sumMalProd=0,sumTotalMansdag=0,sumMalMansdag=0,sumTotalTimmar=0,sumMalTimmar=0,sumWorkDays=0;
-  var sumMalSnitt=0,sumMalSnittCount=0;
-  var days=new Date(y,m+1,0).getDate();
-  var sparkLen=0;
-  for(var i=1;i<=days;i++){var dd=new Date(y,m,i);if(dd.getDay()!==0&&dd.getDay()!==6) sparkLen++;}
-  var allSparkU=[],allSparkM=[];
-  for(var i2=0;i2<sparkLen;i2++){allSparkU.push(0);allSparkM.push(0);}
-
+  var MC='#999',sTP=0,sMP=0,sTM=0,sMM=0,sTT=0,sMT=0,sWD=0,sMS=0,sMSC=0;
+  var days=new Date(y,m+1,0).getDate(),sL=0;
+  for(var i=1;i<=days;i++){var dd=new Date(y,m,i);if(dd.getDay()!==0&&dd.getDay()!==6)sL++}
+  var aSU=[],aSM=[];for(var i2=0;i2<sL;i2++){aSU.push(0);aSM.push(0)}
   cardProjects.forEach(function(proj){
-    var pd=getProjectData(proj);
-    var uRows=Object.values(pd.uData).map(function(r){return normalizeRow(r,'utfall');});
-    var mRows=Object.values(pd.mData);
-    var mRowsNorm=mRows.map(function(r){return normalizeRow(r,'mal');});
-    sumTotalProd+=uRows.reduce(function(s,r){var v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0);},0);
-    sumMalProd+=mRows.reduce(function(s,r){return s+getProjectMalProd(proj,r);},0);
-    sumTotalMansdag+=uRows.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??0;return s+(typeof v==='number'?v:0);},0);
-    sumMalMansdag+=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål säljare')??0;return s+(typeof v==='number'?v:0);},0);
-    sumTotalTimmar+=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??0;return s+(typeof v==='number'?v:0);},0);
-    sumMalTimmar+=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0);},0);
-    sumWorkDays=Math.max(sumWorkDays,uRows.filter(function(r){return (findVal(r,'Antal Mansdagar')??0)>0;}).length);
-    mRowsNorm.forEach(function(r){var v=findVal(r,'Mål snitt')??0;if(typeof v==='number'&&v>0){sumMalSnitt+=v;sumMalSnittCount++;}});
-    var si=0;
-    for(var i3=1;i3<=days;i3++){
-      var d3=new Date(y,m,i3);if(d3.getDay()===0||d3.getDay()===6) continue;
-      var dk=toDateKey(y,m,i3),ur=normalizeRow(pd.uData[dk]||{},'utfall');
-      allSparkU[si]+=(findVal(ur,'Produkt')??0);
-      allSparkM[si]+=getProjectMalProd(proj,pd.mData[dk]||{});
-      si++;
-    }
+    var pd=getProjectData(proj),uR=Object.values(pd.uData).map(function(r){return normalizeRow(r,'utfall')}),mR=Object.values(pd.mData),mN=mR.map(function(r){return normalizeRow(r,'mal')});
+    sTP+=uR.reduce(function(s,r){var v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0)},0);
+    sMP+=mR.reduce(function(s,r){return s+getProjectMalProd(proj,r)},0);
+    sTM+=uR.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??0;return s+(typeof v==='number'?v:0)},0);
+    sMM+=mN.reduce(function(s,r){var v=findVal(r,'Mål säljare')??0;return s+(typeof v==='number'?v:0)},0);
+    sTT+=uR.reduce(function(s,r){var v=findVal(r,'Timmar')??0;return s+(typeof v==='number'?v:0)},0);
+    sMT+=mN.reduce(function(s,r){var v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0)},0);
+    sWD=Math.max(sWD,uR.filter(function(r){return(findVal(r,'Antal Mansdagar')??0)>0}).length);
+    mN.forEach(function(r){var v=findVal(r,'Mål snitt')??0;if(typeof v==='number'&&v>0){sMS+=v;sMSC++}});
+    var si=0;for(var i3=1;i3<=days;i3++){var d3=new Date(y,m,i3);if(d3.getDay()===0||d3.getDay()===6)continue;var dk=toDateKey(y,m,i3),ur=normalizeRow(pd.uData[dk]||{},'utfall');aSU[si]+=(findVal(ur,'Produkt')??0);aSM[si]+=getProjectMalProd(proj,pd.mData[dk]||{});si++}
   });
-
-  var sumProdPct=sumMalProd>0?Math.round(sumTotalProd/sumMalProd*100):0;
-  var sumOnTrack=isOnTrack(sumTotalProd,sumMalProd,sumWorkDays,sumMalDaysTotal);
-  var sumAvgProd=sumWorkDays>0?fmt2(sumTotalProd/sumWorkDays):0;
-  var sumMalAvgSnitt=sumMalSnittCount>0?fmt2(sumMalSnitt/sumMalSnittCount):0;
-  var sumSnittPerTimme=sumTotalTimmar>0?fmt2(sumTotalProd/sumTotalTimmar):0;
-  var sumAvgSellers=sumWorkDays>0?fmt2(sumTotalMansdag/sumWorkDays):0;
-
-  var sumMalDaysTotal=0;
-  if(sumMalMansdag>0){
-    cardProjects.forEach(function(proj){
-      var pd2=getProjectData(proj);
-      var mn=Object.values(pd2.mData).map(function(r){return normalizeRow(r,'mal');});
-      var dc=mn.filter(function(r){var v=findVal(r,'Mål säljare')??0;return typeof v==='number'&&v>0;}).length;
-      sumMalDaysTotal=Math.max(sumMalDaysTotal,dc);
-    });
-  }
-  var taktHtml='';
-  var now=new Date();
-  var isCurrentMonth=(m===now.getMonth()&&y===now.getFullYear());
-  if(isCurrentMonth&&sumWorkDays>0&&sumMalProd>0&&sumMalDaysTotal>0){
-    var expected=sumMalProd*(sumWorkDays/sumMalDaysTotal),diff=sumTotalProd-expected,diffPct=Math.round((diff/expected)*100);
-    if(diff>=0||sumProdPct>=100) taktHtml='<div style="font-size:11px;margin-top:4px;"><span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+'+(diff>=0?Math.round(diff):Math.round(sumTotalProd-sumMalProd))+' / +'+(diff>=0?diffPct:Math.round((sumTotalProd/sumMalProd-1)*100))+'%)</span></div>';
-    else taktHtml='<div style="font-size:11px;margin-top:4px;"><span style="color:#c0392b;font-weight:600;">▼ Off track</span> <span style="color:#666;">('+Math.round(diff)+' / '+diffPct+'%)</span></div>';
-  }
-
-  var maxSpark=Math.max.apply(null,allSparkU.concat(allSparkM).concat([1]));
-  var W=900,H=52,n=allSparkU.length;
-  var px=function(i){return n>1?(i/(n-1))*W:W/2;};
-  var py=function(v){return H-(v/maxSpark)*(H-4)-2;};
-  var malPath=allSparkM.map(function(v,i){return (i===0?'M':'L')+px(i).toFixed(1)+','+py(v).toFixed(1);}).join(' ');
-  var utfPath=allSparkU.map(function(v,i){return (i===0?'M':'L')+px(i).toFixed(1)+','+py(v).toFixed(1);}).join(' ');
-  var lineColor=sumOnTrack?'#2d8a4e':'#f97c5a';
-
-  var taktHtml='';
-  var now=new Date();
-  var isCurrentMonth=(m===now.getMonth()&&y===now.getFullYear());
-  if(isCurrentMonth&&sumWorkDays>0&&sumMalProd>0&&sumMalDaysTotal>0){
-    var expected=sumMalProd*(sumWorkDays/sumMalDaysTotal),diff=sumTotalProd-expected,diffPct=Math.round((diff/expected)*100);
-    if(sumOnTrack) taktHtml='<div style="font-size:11px;margin-top:4px;"><span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+'+Math.round(diff)+' / +'+diffPct+'%)</span></div>';
-    else taktHtml='<div style="font-size:11px;margin-top:4px;"><span style="color:#c0392b;font-weight:600;">▼ Off track</span> <span style="color:#666;">('+Math.round(diff)+' / '+diffPct+'%)</span></div>';
-  }
-
-  var filterLabel;
-  if(overviewProject instanceof Set&&overviewProject.size>0) filterLabel=[...overviewProject].map(function(p){return PROJECT_META[p]?PROJECT_META[p].name:p;}).join(' + ');
-  else if(overviewFilter==='d2d') filterLabel='D2D';
-  else if(overviewFilter==='tm') filterLabel='TM';
-  else filterLabel='Alla projekt';
-
-  var summaryHtml='<div class="summary-card"><div class="sc-block"><div class="sc-label">Produkter totalt</div><div class="sc-value">'+sumTotalProd+'</div><div class="sc-meta">Mål: '+(sumMalProd>0?sumMalProd:'—')+'</div><div class="sc-badge '+(sumOnTrack===true?'badge-green':sumOnTrack===false?'badge-red':'badge-neutral')+'">'+(sumMalProd>0?sumProdPct+'% av mål':'Mål saknas')+'</div>'+taktHtml+'</div><div class="sc-block"><div class="sc-label">Snitt per dag</div><div class="sc-value">'+sumAvgProd+'</div><div class="sc-meta">Mål snitt: '+(sumMalAvgSnitt>0?sumMalAvgSnitt:'—')+'</div></div><div class="sc-block"><div class="sc-label">Snitt per timme</div><div class="sc-value">'+sumSnittPerTimme+'</div><div class="sc-meta">Totalt '+fmt2(sumTotalTimmar)+' timmar</div></div><div class="sc-block"><div class="sc-label">Säljare per dag (snitt)</div><div class="sc-value">'+sumAvgSellers+'</div><div class="sc-meta">Totalt '+sumTotalMansdag+' mansdagar</div></div><div class="sc-spark"><div class="sc-spark-label">'+filterLabel+' – daglig produkt, utfall vs mål</div><svg width="100%" height="'+H+'" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" style="overflow:visible">'+(sumMalProd>0?'<path d="'+malPath+'" fill="none" stroke="'+MAL_COLOR+'" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/>':'')+'<path d="'+utfPath+'" fill="none" stroke="'+lineColor+'" stroke-width="2"/></svg><div style="display:flex;gap:12px;margin-top:5px;font-size:10px;color:#999;"><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:'+lineColor+';border-radius:2px"></span>Utfall</span>'+(sumMalProd>0?'<span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:0;border-top:2px dashed '+MAL_COLOR+'"></span>Mål</span>':'')+'</div></div></div>';
-  document.getElementById('overviewSummaryCard').innerHTML=summaryHtml;
-
-  if(overviewProject instanceof Set&&overviewProject.size===1){
-    document.getElementById('overviewGrid').innerHTML='';
-    return;
-  }
-
-  var sorted=cardProjects.map(function(proj){
-    var pd=getProjectData(proj);
-    var uRows=Object.values(pd.uData).map(function(r){return normalizeRow(r,'utfall');});
-    var mRows=Object.values(pd.mData);
-    var totalProd=uRows.reduce(function(s,r){var v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0);},0);
-    var malProd=mRows.reduce(function(s,r){return s+getProjectMalProd(proj,r);},0);
-    return {proj:proj,totalProd:totalProd,malProd:malProd,pct:malProd>0?Math.round(totalProd/malProd*100):0,hasMal:malProd>0,uData:pd.uData,mData:pd.mData,uRows:uRows,mRows:mRows,workDays:uRows.filter(function(r){return (findVal(r,'Antal Mansdagar')??0)>0;}).length,malDays:mRows.map(function(r){return normalizeRow(r,'mal');}).filter(function(r){var v=findVal(r,'Mål säljare')??0;return typeof v==='number'&&v>0;}).length};
-  }).sort(function(a,b){return b.pct-a.pct;});
-
-  var cards=sorted.map(function(item){
-    var proj=item.proj,totalProd=item.totalProd,malProd=item.malProd,prodPct=item.pct,projHasMal=item.hasMal,uData=item.uData,mData=item.mData,uRows=item.uRows,mRows=item.mRows;
-    var projOnTrack=isOnTrack(totalProd,malProd,item.workDays,item.malDays);
-    var name=PROJECT_META[proj]?PROJECT_META[proj].name:proj;
-    var useMansdag=MANSDAG_PROJECTS.has(proj);
-    var mRowsNorm=mRows.map(function(r){return normalizeRow(r,'mal');});
-    var totalMansdag=uRows.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??0;return s+(typeof v==='number'?v:0);},0);
-    var malMansdag=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål säljare')??0;return s+(typeof v==='number'?v:0);},0);
-    var totalTimmar=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??0;return s+(typeof v==='number'?v:0);},0);
-    var malTimmar=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0);},0);
-    var workDays=uRows.filter(function(r){return (findVal(r,'Antal Mansdagar')??0)>0;}).length;
-    var avgSellers=workDays>0?fmt2(totalMansdag/workDays):0;
-    totalTimmar=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??findVal(r,'Utfall Timmar')??0;return s+(typeof v==='number'?v:0);},0);
-    var snittpMansdag=useMansdag?(totalMansdag>0?fmt2(totalProd/totalMansdag):0):(totalTimmar>0?fmt2(totalProd/totalTimmar):0);
-    var malSnittSum=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål snitt')??0;return s+(typeof v==='number'?v:0);},0);
-    var malSnittDays=mRowsNorm.filter(function(r){return (findVal(r,'Mål snitt')??0)>0;}).length;
-    var malSnitt=malSnittDays>0?fmt2(malSnittSum/malSnittDays):0;
-    var secondPct=useMansdag?(malMansdag>0?Math.round(totalMansdag/malMansdag*100):0):(malTimmar>0?Math.round(totalTimmar/malTimmar*100):0);
-    var snittpMalPct=malSnitt>0?Math.round(snittpMansdag/malSnitt*100):0;
-    var secondLabel=useMansdag?'Mansdagar':'Timmar';
-    var secondUtfall=useMansdag?totalMansdag:fmt2(totalTimmar);
-    var secondMal=useMansdag?malMansdag:fmt2(malTimmar);
-    var snittLabel=useMansdag?'Snitt per mansdag':'Snitt per timme';
-    var badgeHtml=!projHasMal?'<span class="compare-badge badge-neutral">Mål saknas</span>':'<span class="compare-badge '+(projOnTrack?'badge-green':'badge-red')+'">'+prodPct+'% av mål</span>';
-    var prodMetric=!projHasMal?'<div class="compare-metric"><div class="compare-metric-label">Produkter <span>'+totalProd+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>':'<div class="compare-metric"><div class="compare-metric-label">Produkter <span>'+totalProd+' / '+malProd+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(prodPct,100)+'%;background:'+(projOnTrack?'#2d8a4e':'#f97c5a')+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+prodPct+'% av mål</div></div>';
-    var hasSecondMal=useMansdag?malMansdag>0:malTimmar>0;
-    var secondOnTrack=isOnTrack(secondUtfall,secondMal,item.workDays,item.malDays);
-    var snittOnTrack=malSnitt>0?snittpMansdag>=malSnitt:null;
-    var secondMetric=!hasSecondMal?'<div class="compare-metric"><div class="compare-metric-label">'+secondLabel+' <span>'+secondUtfall+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>':'<div class="compare-metric"><div class="compare-metric-label">'+secondLabel+' <span>'+secondUtfall+' / '+secondMal+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(secondPct,100)+'%;background:'+(secondOnTrack?'#2d8a4e':'#f97c5a')+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+secondPct+'% av mål</div></div>';
-    var snittMetric=malSnitt<=0?'<div class="compare-metric"><div class="compare-metric-label">'+snittLabel+' <span>'+snittpMansdag+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>':'<div class="compare-metric"><div class="compare-metric-label">'+snittLabel+' <span>'+snittpMansdag+' / '+malSnitt+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(snittpMalPct,100)+'%;background:'+(snittOnTrack?'#2d8a4e':'#f97c5a')+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+snittpMalPct+'% av mål</div></div>';
-    var cdays=new Date(y,m+1,0).getDate();
-    var sparkP=[],malP2=[];
-    for(var i4=1;i4<=cdays;i4++){var d4=new Date(y,m,i4);if(d4.getDay()===0||d4.getDay()===6) continue;var dk4=toDateKey(y,m,i4),ur4=normalizeRow(uData[dk4]||{},'utfall');sparkP.push(fmt2(findVal(ur4,'Produkt')??0));malP2.push(getProjectMalProd(proj,mData[dk4]||{}));}
-    var maxVal=Math.max.apply(null,sparkP.concat(malP2).concat([1]));
-    var cW=560,cH=44,cn=sparkP.length;
-    var cpx=function(i){return cn>1?(i/(cn-1))*cW:cW/2;};
-    var cpy=function(v){return cH-(v/maxVal)*(cH-4)-2;};
-    var cmalPath=malP2.map(function(v,i){return (i===0?'M':'L')+cpx(i).toFixed(1)+','+cpy(v).toFixed(1);}).join(' ');
-    var cutfPath=sparkP.map(function(v,i){return (i===0?'M':'L')+cpx(i).toFixed(1)+','+cpy(v).toFixed(1);}).join(' ');
-    var clineColor=projOnTrack?'#2d8a4e':'#f97c5a';
-    var sparkHtml=projHasMal?'<div class="sparkline"><div class="sparkline-label">Daglig produkt – utfall vs mål</div><svg width="100%" height="'+cH+'" viewBox="0 0 '+cW+' '+cH+'" preserveAspectRatio="none" style="overflow:visible"><path d="'+cmalPath+'" fill="none" stroke="'+MAL_COLOR+'" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/><path d="'+cutfPath+'" fill="none" stroke="'+clineColor+'" stroke-width="2"/></svg><div style="display:flex;gap:12px;margin-top:5px;font-size:10px;color:#999;"><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:'+clineColor+';border-radius:2px"></span>Utfall</span><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:0;border-top:2px dashed '+MAL_COLOR+'"></span>Mål</span></div></div>':'<div class="sparkline"><div class="sparkline-label">Daglig produkt</div><svg width="100%" height="'+cH+'" viewBox="0 0 '+cW+' '+cH+'" preserveAspectRatio="none" style="overflow:visible"><path d="'+cutfPath+'" fill="none" stroke="#f97c5a" stroke-width="2"/></svg></div>';
-    return '<div class="compare-card" onclick="switchToDaily(\''+proj+'\')"><div class="compare-card-header"><span class="compare-card-title">'+name+'</span>'+badgeHtml+'</div>'+prodMetric+secondMetric+snittMetric+sparkHtml+'</div>';
+  var sMDT=0;if(sMM>0){cardProjects.forEach(function(proj){var pd2=getProjectData(proj),mn=Object.values(pd2.mData).map(function(r){return normalizeRow(r,'mal')}),dc=mn.filter(function(r){var v=findVal(r,'Mål säljare')??0;return typeof v==='number'&&v>0}).length;sMDT=Math.max(sMDT,dc)})}
+  var sPP=sMP>0?Math.round(sTP/sMP*100):0,sOT=isOnTrack(sTP,sMP,sWD,sMDT);
+  var sAP=sWD>0?fmt2(sTP/sWD):0,sMAS=sMSC>0?fmt2(sMS/sMSC):0,sSPT=sTT>0?fmt2(sTP/sTT):0,sAS=sWD>0?fmt2(sTM/sWD):0;
+  var tH='',now=new Date(),isCM=(m===now.getMonth()&&y===now.getFullYear());
+  if(isCM&&sWD>0&&sMP>0&&sMDT>0){var exp=sMP*(sWD/sMDT),df=sTP-exp,dp=Math.round((df/exp)*100);if(sOT)tH='<div style="font-size:11px;margin-top:4px;"><span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+'+Math.round(df)+' / +'+dp+'%)</span></div>';else tH='<div style="font-size:11px;margin-top:4px;"><span style="color:#c0392b;font-weight:600;">▼ Off track</span> <span style="color:#666;">('+Math.round(df)+' / '+dp+'%)</span></div>'}
+  var mxS=Math.max.apply(null,aSU.concat(aSM).concat([1])),W=900,H=52,n=aSU.length;
+  var px=function(i){return n>1?(i/(n-1))*W:W/2},py=function(v){return H-(v/mxS)*(H-4)-2};
+  var mP=aSM.map(function(v,i){return(i===0?'M':'L')+px(i).toFixed(1)+','+py(v).toFixed(1)}).join(' ');
+  var uP=aSU.map(function(v,i){return(i===0?'M':'L')+px(i).toFixed(1)+','+py(v).toFixed(1)}).join(' ');
+  var lC=sOT?'#2d8a4e':'#f97c5a';
+  var fL;if(overviewProject instanceof Set&&overviewProject.size>0)fL=[...overviewProject].map(function(p){return PROJECT_META[p]?PROJECT_META[p].name:p}).join(' + ');else if(overviewFilter==='d2d')fL='D2D';else if(overviewFilter==='tm')fL='TM';else fL='Alla projekt';
+  document.getElementById('overviewSummaryCard').innerHTML='<div class="summary-card"><div class="sc-block"><div class="sc-label">Produkter totalt</div><div class="sc-value">'+sTP+'</div><div class="sc-meta">Mål: '+(sMP>0?sMP:'—')+'</div><div class="sc-badge '+(sOT===true?'badge-green':sOT===false?'badge-red':'badge-neutral')+'">'+(sMP>0?sPP+'% av mål':'Mål saknas')+'</div>'+tH+'</div><div class="sc-block"><div class="sc-label">Snitt per dag</div><div class="sc-value">'+sAP+'</div><div class="sc-meta">Mål snitt: '+(sMAS>0?sMAS:'—')+'</div></div><div class="sc-block"><div class="sc-label">Snitt per timme</div><div class="sc-value">'+sSPT+'</div><div class="sc-meta">Totalt '+fmt2(sTT)+' timmar</div></div><div class="sc-block"><div class="sc-label">Säljare per dag (snitt)</div><div class="sc-value">'+sAS+'</div><div class="sc-meta">Totalt '+sTM+' mansdagar</div></div><div class="sc-spark"><div class="sc-spark-label">'+fL+' – daglig produkt, utfall vs mål</div><svg width="100%" height="'+H+'" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" style="overflow:visible">'+(sMP>0?'<path d="'+mP+'" fill="none" stroke="'+MC+'" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/>':'')+'<path d="'+uP+'" fill="none" stroke="'+lC+'" stroke-width="2"/></svg><div style="display:flex;gap:12px;margin-top:5px;font-size:10px;color:#999;"><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:'+lC+';border-radius:2px"></span>Utfall</span>'+(sMP>0?'<span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:0;border-top:2px dashed '+MC+'"></span>Mål</span>':'')+'</div></div></div>';
+  if(overviewProject instanceof Set&&overviewProject.size===1){document.getElementById('overviewGrid').innerHTML='';return}
+  var sorted=cardProjects.map(function(proj){var pd=getProjectData(proj),uR=Object.values(pd.uData).map(function(r){return normalizeRow(r,'utfall')}),mR=Object.values(pd.mData),tP=uR.reduce(function(s,r){var v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0)},0),mP2=mR.reduce(function(s,r){return s+getProjectMalProd(proj,r)},0);return{proj:proj,tP:tP,mP:mP2,pct:mP2>0?Math.round(tP/mP2*100):0,hM:mP2>0,uD:pd.uData,mD:pd.mData,uR:uR,mR:mR,wD:uR.filter(function(r){return(findVal(r,'Antal Mansdagar')??0)>0}).length,mDy:mR.map(function(r){return normalizeRow(r,'mal')}).filter(function(r){var v=findVal(r,'Mål säljare')??0;return typeof v==='number'&&v>0}).length}}).sort(function(a,b){return b.pct-a.pct});
+  var cards=sorted.map(function(it){
+    var proj=it.proj,tP=it.tP,mP2=it.mP,pP=it.pct,hM=it.hM,uD=it.uD,mD=it.mD,uR=it.uR,mR=it.mR,oT=isOnTrack(tP,mP2,it.wD,it.mDy);
+    var nm=PROJECT_META[proj]?PROJECT_META[proj].name:proj,uM=MANSDAG_PROJECTS[proj],mN=mR.map(function(r){return normalizeRow(r,'mal')});
+    var tMd=uR.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??0;return s+(typeof v==='number'?v:0)},0),mMd=mN.reduce(function(s,r){var v=findVal(r,'Mål säljare')??0;return s+(typeof v==='number'?v:0)},0);
+    var tTm=uR.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??findVal(r,'Utfall Timmar')??0;return s+(typeof v==='number'?v:0)},0),mTm=mN.reduce(function(s,r){var v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0)},0);
+    var wD=it.wD,spm=uM?(tMd>0?fmt2(tP/tMd):0):(tTm>0?fmt2(tP/tTm):0);
+    var mSS=mN.reduce(function(s,r){var v=findVal(r,'Mål snitt')??0;return s+(typeof v==='number'?v:0)},0),mSD=mN.filter(function(r){return(findVal(r,'Mål snitt')??0)>0}).length,mSn=mSD>0?fmt2(mSS/mSD):0;
+    var s2P=uM?(mMd>0?Math.round(tMd/mMd*100):0):(mTm>0?Math.round(tTm/mTm*100):0),sMP2=mSn>0?Math.round(spm/mSn*100):0;
+    var s2L=uM?'Mansdagar':'Timmar',s2U=uM?tMd:fmt2(tTm),s2M=uM?mMd:fmt2(mTm),snL=uM?'Snitt per mansdag':'Snitt per timme';
+    var s2OT=isOnTrack(s2U,s2M,it.wD,it.mDy),snOT=mSn>0?spm>=mSn:null;
+    var bH=!hM?'<span class="compare-badge badge-neutral">Mål saknas</span>':'<span class="compare-badge '+(oT?'badge-green':'badge-red')+'">'+pP+'% av mål</span>';
+    var pM=!hM?'<div class="compare-metric"><div class="compare-metric-label">Produkter <span>'+tP+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>':'<div class="compare-metric"><div class="compare-metric-label">Produkter <span>'+tP+' / '+mP2+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(pP,100)+'%;background:'+(oT?'#2d8a4e':'#f97c5a')+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+pP+'% av mål</div></div>';
+    var h2M=uM?mMd>0:mTm>0;
+    var s2Mt=!h2M?'<div class="compare-metric"><div class="compare-metric-label">'+s2L+' <span>'+s2U+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>':'<div class="compare-metric"><div class="compare-metric-label">'+s2L+' <span>'+s2U+' / '+s2M+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(s2P,100)+'%;background:'+(s2OT?'#2d8a4e':'#f97c5a')+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+s2P+'% av mål</div></div>';
+    var snMt=mSn<=0?'<div class="compare-metric"><div class="compare-metric-label">'+snL+' <span>'+spm+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>':'<div class="compare-metric"><div class="compare-metric-label">'+snL+' <span>'+spm+' / '+mSn+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(sMP2,100)+'%;background:'+(snOT?'#2d8a4e':'#f97c5a')+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+sMP2+'% av mål</div></div>';
+    var cD=new Date(y,m+1,0).getDate(),sP=[],mP3=[];
+    for(var i4=1;i4<=cD;i4++){var d4=new Date(y,m,i4);if(d4.getDay()===0||d4.getDay()===6)continue;var dk4=toDateKey(y,m,i4),ur4=normalizeRow(uD[dk4]||{},'utfall');sP.push(fmt2(findVal(ur4,'Produkt')??0));mP3.push(getProjectMalProd(proj,mD[dk4]||{}))}
+    var mV=Math.max.apply(null,sP.concat(mP3).concat([1])),cW=560,cH=44,cn=sP.length;
+    var cpx=function(i){return cn>1?(i/(cn-1))*cW:cW/2},cpy=function(v){return cH-(v/mV)*(cH-4)-2};
+    var cmP=mP3.map(function(v,i){return(i===0?'M':'L')+cpx(i).toFixed(1)+','+cpy(v).toFixed(1)}).join(' ');
+    var cuP=sP.map(function(v,i){return(i===0?'M':'L')+cpx(i).toFixed(1)+','+cpy(v).toFixed(1)}).join(' ');
+    var clC=oT?'#2d8a4e':'#f97c5a';
+    var spH=hM?'<div class="sparkline"><div class="sparkline-label">Daglig produkt – utfall vs mål</div><svg width="100%" height="'+cH+'" viewBox="0 0 '+cW+' '+cH+'" preserveAspectRatio="none" style="overflow:visible"><path d="'+cmP+'" fill="none" stroke="'+MC+'" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/><path d="'+cuP+'" fill="none" stroke="'+clC+'" stroke-width="2"/></svg><div style="display:flex;gap:12px;margin-top:5px;font-size:10px;color:#999;"><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:'+clC+';border-radius:2px"></span>Utfall</span><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:0;border-top:2px dashed '+MC+'"></span>Mål</span></div></div>':'<div class="sparkline"><div class="sparkline-label">Daglig produkt</div><svg width="100%" height="'+cH+'" viewBox="0 0 '+cW+' '+cH+'" preserveAspectRatio="none" style="overflow:visible"><path d="'+cuP+'" fill="none" stroke="#f97c5a" stroke-width="2"/></svg></div>';
+    return'<div class="compare-card" onclick="switchToDaily(\''+proj+'\')"><div class="compare-card-header"><span class="compare-card-title">'+nm+'</span>'+bH+'</div>'+pM+s2Mt+snMt+spH+'</div>';
   }).join('');
-
   document.getElementById('overviewGrid').innerHTML=cards;
 }
 
-function setDailyGroupFilter(g,el){
-  dailyGroup=g;
-  document.querySelectorAll('#dailyGroupFilter .filter-pill').forEach(function(p){p.classList.remove('active');});
-  el.classList.add('active');
-  var projs=g==='d2d'?GROUP_D2D:g==='tm'?GROUP_TM:ALL_PROJECTS;
-  dailyProject=new Set(projs);
-  buildProjectChips();
-  updateDailyTabs();
-  renderDaily();
-}
+function setDailyGroupFilter(g,el){dailyGroup=g;document.querySelectorAll('#dailyGroupFilter .filter-pill').forEach(function(p){p.classList.remove('active')});el.classList.add('active');dailyProject=new Set(g==='d2d'?GROUP_D2D:g==='tm'?GROUP_TM:ALL_PROJECTS);buildProjectChips();updateDailyTabs();renderDaily()}
+function buildProjectChips(){var ps=dailyGroup==='d2d'?GROUP_D2D:dailyGroup==='tm'?GROUP_TM:ALL_PROJECTS;var aA=ps.every(function(p){return dailyProject.has(p)});var sel=document.getElementById('dailyProjectSelector');var html='<button class="proj-chip '+(aA?'active':'')+'" onclick="selectDailyAll()">Alla</button>';ps.forEach(function(p){html+='<button class="proj-chip '+((!aA&&dailyProject.has(p))?'active':'')+'" onclick="selectDailyProject(\''+p+'\',this,event)">'+PROJECT_META[p].name+'</button>'});sel.innerHTML=html}
+function selectDailyAll(){dailyProject=new Set(dailyGroup==='d2d'?GROUP_D2D:dailyGroup==='tm'?GROUP_TM:ALL_PROJECTS);buildProjectChips();updateDailyTabs();renderDaily()}
+function selectDailyProject(p,el,ev){if(ev&&(ev.ctrlKey||ev.metaKey)){if(dailyProject.has(p))dailyProject.delete(p);else dailyProject.add(p);if(dailyProject.size===0)dailyProject.add(p)}else{if(dailyProject.size===1&&dailyProject.has(p))return;dailyProject=new Set([p])}buildProjectChips();updateDailyTabs();renderDaily()}
+function updateDailyTabs(){var multi=dailyProject.size>1,allT2=multi&&[...dailyProject].every(function(p){return TELE2_PROJECTS[p]});var tabs=document.getElementById('dailyViewTabs'),fT=tabs.querySelector('[data-view="full"]'),cT=tabs.querySelector('[data-view="compare"]');if(multi&&!allT2){fT.style.display='none';cT.style.display='';if(dailyView==='full')dailyView='compact'}else{fT.style.display='';cT.style.display=multi?'':'none';if(dailyView==='compare'&&!multi)dailyView='full'}tabs.querySelectorAll('.view-tab').forEach(function(t){t.classList.toggle('active',t.dataset.view===dailyView)})}
+function setDailyView(v,el){dailyView=v;document.querySelectorAll('.view-tab').forEach(function(t){t.classList.remove('active')});el.classList.add('active');renderDaily()}
 
-function buildProjectChips(){
-  var projs=dailyGroup==='d2d'?GROUP_D2D:dailyGroup==='tm'?GROUP_TM:ALL_PROJECTS;
-  var allActive=projs.every(function(p){return dailyProject.has(p);});
-  var sel=document.getElementById('dailyProjectSelector');
-  var html='<button class="proj-chip '+(allActive?'active':'')+'" onclick="selectDailyAll()">Alla</button>';
-  projs.forEach(function(p){
-    var active=!allActive&&dailyProject.has(p);
-    html+='<button class="proj-chip '+(active?'active':'')+'" onclick="selectDailyProject(\''+p+'\',this,event)">'+PROJECT_META[p].name+'</button>';
-  });
-  sel.innerHTML=html;
-}
-
-function selectDailyAll(){
-  var projs=dailyGroup==='d2d'?GROUP_D2D:dailyGroup==='tm'?GROUP_TM:ALL_PROJECTS;
-  dailyProject=new Set(projs);
-  buildProjectChips();
-  updateDailyTabs();
-  renderDaily();
-}
-
-function selectDailyProject(p,el,ev){
-  if(ev&&(ev.ctrlKey||ev.metaKey)){
-    if(dailyProject.has(p)) dailyProject.delete(p);
-    else dailyProject.add(p);
-    if(dailyProject.size===0) dailyProject.add(p);
-  } else {
-    if(dailyProject.size===1&&dailyProject.has(p)) return;
-    dailyProject=new Set([p]);
-  }
-  buildProjectChips();
-  updateDailyTabs();
-  renderDaily();
-}
-
-const TELE2_PROJECTS=new Set(['villafiber','koax','lan']);
-
-function updateDailyTabs(){
-  var multi=dailyProject.size>1;
-  var allTele2=multi&&[...dailyProject].every(function(p){return TELE2_PROJECTS.has(p);});
-  var tabs=document.getElementById('dailyViewTabs');
-  var fullTab=tabs.querySelector('[data-view="full"]');
-  var compareTab=tabs.querySelector('[data-view="compare"]');
-  if(multi&&!allTele2){
-    fullTab.style.display='none';
-    compareTab.style.display='';
-    if(dailyView==='full') dailyView='compact';
-  } else {
-    fullTab.style.display='';
-    compareTab.style.display=multi?'':'none';
-    if(dailyView==='compare'&&!multi) dailyView='full';
-  }
-  tabs.querySelectorAll('.view-tab').forEach(function(t){
-    t.classList.toggle('active',t.dataset.view===dailyView);
-  });
-}
-
-function setDailyView(v,el){
-  dailyView=v;
-  document.querySelectorAll('.view-tab').forEach(function(t){t.classList.remove('active');});
-  el.classList.add('active');
-  renderDaily();
-}
-
-// Normalize Tele2 column names to consistent casing
-var TELE2_COL_MAP={'bredband':'Bredband','tv':'TV','mbb':'MBB','mobil':'Mobil','produkt':'Produkt','total sälj':'Total sälj','tilläggsprodukt':'Tilläggsprodukt','antal mansdagar':'Antal Mansdagar','streaming':'Streaming','bredband om':'Bredband OM','räknas ej':'Räknas ej','kontroll produkt':'Kontroll Produkt','kontroll tilläggsprodukt':'Kontroll Tilläggsprodukt','produkt kontroll':'Produkt Kontroll'};
-
-function mergeDailyData(projArr){
-  var uMerged={},mMerged={};
-  var allTele2=projArr.every(function(p){return TELE2_PROJECTS.has(p);});
-  projArr.forEach(function(proj){
-    var pd=getProjectData(proj);
-    for(var [dk,row] of Object.entries(pd.uData)){
-      if(!uMerged[dk]) uMerged[dk]={};
-      var nr=normalizeRow(row,'utfall');
-      for(var [k,v] of Object.entries(nr)){
-        var nk=TELE2_COL_MAP[k.toLowerCase()]||k;
-        if(typeof v==='number') uMerged[dk][nk]=(uMerged[dk][nk]||0)+v;
-        else if(!uMerged[dk][nk]) uMerged[dk][nk]=v;
-      }
-    }
-    for(var [dk2,row2] of Object.entries(pd.mData)){
-      if(!mMerged[dk2]) mMerged[dk2]={};
-      // For Tele2 projects, keep original keys so goalKeys match
-      var nr2=allTele2?row2:normalizeRow(row2,'mal');
-      for(var [k2,v2] of Object.entries(nr2)){
-        var nk2=TELE2_COL_MAP[k2.toLowerCase()]||k2;
-        if(typeof v2==='number') mMerged[dk2][nk2]=(mMerged[dk2][nk2]||0)+v2;
-        else if(!mMerged[dk2][nk2]) mMerged[dk2][nk2]=v2;
-      }
-    }
-  });
-  return {uMerged:uMerged,mMerged:mMerged};
+function mergeDailyData(arr){
+  var uM={},mM={},allT2=arr.every(function(p){return TELE2_PROJECTS[p]});
+  arr.forEach(function(proj){var pd=getProjectData(proj);
+    for(var[dk,row]of Object.entries(pd.uData)){if(!uM[dk])uM[dk]={};var nr=normalizeRow(row,'utfall');for(var[k,v]of Object.entries(nr)){var nk=TELE2_COL_MAP[k.toLowerCase()]||k;if(typeof v==='number')uM[dk][nk]=(uM[dk][nk]||0)+v;else if(!uM[dk][nk])uM[dk][nk]=v}}
+    for(var[dk2,row2]of Object.entries(pd.mData)){if(!mM[dk2])mM[dk2]={};var nr2=allT2?row2:normalizeRow(row2,'mal');for(var[k2,v2]of Object.entries(nr2)){var nk2=TELE2_COL_MAP[k2.toLowerCase()]||k2;if(typeof v2==='number')mM[dk2][nk2]=(mM[dk2][nk2]||0)+v2;else if(!mM[dk2][nk2])mM[dk2][nk2]=v2}}
+  });return{uMerged:uM,mMerged:mM};
 }
 
 function renderDaily(){
-  selectedDays.clear();
-  var m=getMonth(),y=getYear();
-  var days=new Date(y,m+1,0).getDate();
-  var multi=dailyProject.size>1;
-  var activeProjArr=[...dailyProject];
-  var firstProj=activeProjArr[0];
-
-  if(dailyView==='compare'&&multi){
-    document.getElementById('tableWrap').style.display='none';
-    document.getElementById('dailyCompareWrap').style.display='block';
-    renderDailyCompare(activeProjArr);
-    var merged=mergeDailyData(activeProjArr);
-    updateStatCards(merged.uMerged,merged.mMerged);
-    return;
-  }
-
-  document.getElementById('tableWrap').style.display='';
-  document.getElementById('dailyCompareWrap').style.display='none';
-
-  var allTele2=multi&&activeProjArr.every(function(p){return TELE2_PROJECTS.has(p);});
-  var cols=multi?(allTele2&&dailyView==='full'?PROJECT_COLS['villafiber']:COMPACT_COLS):(dailyView==='compact'?COMPACT_COLS:(PROJECT_COLS[firstProj]||COMPACT_COLS));
-  var uData,mData;
-  if(multi){
-    var mg=mergeDailyData(activeProjArr);
-    uData=mg.uMerged; mData=mg.mMerged;
-  } else {
-    var pd=getProjectData(firstProj);
-    uData=pd.uData; mData=pd.mData;
-  }
-
-  var e='<span class="empty-cell">—</span>';
-  var savedDaily=_dailyRef;
-  _dailyRef=multi?null:firstProj;
-
-  document.getElementById('tableHead').innerHTML='<tr>'+cols.map(function(c){return '<th class="'+(c.goalKey?'goal-col':'')+'">'+c.label+'</th>';}).join('')+'</tr>';
-
-  // Find last day with real utfall data
-  var lastDataDay=0;
-  for(var i=1;i<=days;i++){
-    var dk=toDateKey(y,m,i), uRow=uData[dk]||{};
-    if(hasRealUtfall(uRow)) lastDataDay=i;
-  }
-
-  var today=new Date(); today.setHours(0,0,0,0);
-
+  selectedDays.clear();var btn=document.getElementById('clearSelectionBtn');if(btn)btn.style.display='none';
+  var m=getMonth(),y=getYear(),days=new Date(y,m+1,0).getDate(),multi=dailyProject.size>1,arr=[...dailyProject],fp=arr[0];
+  if(dailyView==='compare'&&multi){document.getElementById('tableWrap').style.display='none';document.getElementById('dailyCompareWrap').style.display='block';renderDailyCompare(arr);var mg=mergeDailyData(arr);updateStatCards(mg.uMerged,mg.mMerged);return}
+  document.getElementById('tableWrap').style.display='';document.getElementById('dailyCompareWrap').style.display='none';
+  var allT2=multi&&arr.every(function(p){return TELE2_PROJECTS[p]});
+  var cols=multi?(allT2&&dailyView==='full'?PROJECT_COLS['villafiber']:COMPACT_COLS):(dailyView==='compact'?COMPACT_COLS:(PROJECT_COLS[fp]||COMPACT_COLS));
+  var uData,mData;if(multi){var mg2=mergeDailyData(arr);uData=mg2.uMerged;mData=mg2.mMerged}else{var pd=getProjectData(fp);uData=pd.uData;mData=pd.mData}
+  var e='<span class="empty-cell">—</span>',savedD=_dailyRef;_dailyRef=multi?null:fp;
+  document.getElementById('tableHead').innerHTML='<tr>'+cols.map(function(c){return'<th class="'+(c.goalKey?'goal-col':'')+'">'+c.label+'</th>'}).join('')+'</tr>';
+  var lastDD=0;for(var i=1;i<=days;i++){var dk=toDateKey(y,m,i);if(hasRealUtfall(uData[dk]||{}))lastDD=i}
+  var today=new Date();today.setHours(0,0,0,0);
   var rows='';
   for(var i2=1;i2<=days;i2++){
-    var d=new Date(y,m,i2), dayName=DAYS_SV[d.getDay()];
-    var dateKey=toDateKey(y,m,i2), uRow2=uData[dateKey]||{}, mRow=mData[dateKey]||{};
-    var hasUtfall=Object.keys(uRow2).length>0;
-    var realUtfall=hasRealUtfall(uRow2);
-    var dayOff=isDayOff(mRow);
-    var dateStr=i2+' '+MONTHS_SV[m].substring(0,3).toLowerCase();
-    var isLastData=i2===lastDataDay;
-    var thisDate=new Date(y,m,i2);
-    var isFuture=thisDate>today;
-
-    // Row class logic:
-    // 1. Last data row = highlight
-    // 2. Day off WITH real utfall = off-day-data (light grey, black text)
-    // 3. Day off WITHOUT utfall = off-day (grey, muted text)
-    // 4. Future day without data = future-day (lighter text)
-    // 5. Normal working day = no special class
-    var cls='';
-    if(isLastData) cls='last-data';
-    else if(dayOff&&realUtfall) cls='off-day-data';
-    else if(dayOff) cls='off-day';
-    else if(isFuture&&!realUtfall) cls='future-day';
-
-    var extraWork=dayOff&&realUtfall;
-    var dayLabel=isLastData?'<span class="day-badge">senast</span>'+dayName:(extraWork?'<span class="extra-badge">*</span>'+dayName:dayName);
-
+    var d=new Date(y,m,i2),dN=DAYS_SV[d.getDay()],dK=toDateKey(y,m,i2),uR=uData[dK]||{},mR=mData[dK]||{},hU=Object.keys(uR).length>0,rU=hasRealUtfall(uR),dO=isDayOff(mR),dS=i2+' '+MONTHS_SV[m].substring(0,3).toLowerCase(),iL=i2===lastDD,iF=d>today;
+    var cls='';if(iL)cls='last-data';else if(dO&&rU)cls='off-day-data';else if(dO)cls='off-day';else if(iF&&!rU)cls='future-day';
+    var eW=dO&&rU,dL=iL?'<span class="day-badge">senast</span>'+dN:(eW?'<span class="extra-badge">*</span>'+dN:dN);
     var cells=cols.map(function(c,idx){
-      if(idx===0) return '<td>'+dayLabel+'</td>';
-      if(idx===1) return '<td>'+dateStr+'</td>';
-
-      // Off-day without utfall: show "—" for everything
-      if(dayOff&&!realUtfall) return '<td class="'+(c.goalKey?'goal-col':'')+'">'+e+'</td>';
-
-      if(c.goalKey){
-        var gv=resolveDynGoal(c.goalKey,mRow);
-        return '<td class="goal goal-col">'+(typeof gv==='number'&&gv>0?fmt2(gv):'—')+'</td>';
-      }
-      if(c.key){
-        var isSnitt=c.key.toLowerCase()==='snitt';
-        var isProd=c.key==='Produkt';
-        var isSaljare=c.key==='__utfall_saljare__';
-        if(isFuture&&!realUtfall) return '<td>—</td>';
-        var uv;
-        if(isSnitt) uv=hasUtfall?calcSnitt(firstProj,uRow2):null;
-        else if(isProd&&(dailyView==='compact'||multi)) uv=hasUtfall?getCompactProd(firstProj,uRow2):null;
-        else if(isSaljare) uv=hasUtfall?(findVal(uRow2,'Antal Mansdagar')??findVal(uRow2,'Antal Säljare')??null):null;
-        else uv=hasUtfall?findVal(uRow2,c.key):null;
-
-        // Format: 0 → "—"
-        if(uv===0) return '<td>—</td>';
-
-        var gk=findGoalKey(cols,c.key);
-        var gvRaw=gk?resolveDynGoal(gk,mRow):null;
-        var gv2=typeof gvRaw==='number'?fmt2(gvRaw):gvRaw;
-        if(uv!==null&&uv!==''){
-          var cls2='';
-          if(gv2!==null&&typeof uv==='number'&&typeof gv2==='number'&&gv2>0) cls2=uv>=gv2?'above':'below';
-          return '<td'+(cls2?' class="'+cls2+'"':'')+'>'+fmtUtfall(uv)+'</td>';
-        }
-        return '<td>—</td>';
-      }
-      return '<td>—</td>';
+      if(idx===0)return'<td>'+dL+'</td>';if(idx===1)return'<td>'+dS+'</td>';
+      if(dO&&!rU)return'<td class="'+(c.goalKey?'goal-col':'')+'">'+e+'</td>';
+      if(c.goalKey){var gv=resolveDynGoal(c.goalKey,mR);return'<td class="goal goal-col">'+(typeof gv==='number'&&gv>0?fmt2(gv):'—')+'</td>'}
+      if(c.key){var iSn=c.key.toLowerCase()==='snitt',iP=c.key==='Produkt',iSj=c.key==='__utfall_saljare__';if(iF&&!rU)return'<td>—</td>';var uv;if(iSn)uv=hU?calcSnitt(fp,uR):null;else if(iP&&(dailyView==='compact'||multi))uv=hU?getCompactProd(fp,uR):null;else if(iSj)uv=hU?(findVal(uR,'Antal Mansdagar')??findVal(uR,'Antal Säljare')??null):null;else uv=hU?findVal(uR,c.key):null;if(uv===0)return'<td>—</td>';var gk=findGoalKey(cols,c.key),gR=gk?resolveDynGoal(gk,mR):null,g2=typeof gR==='number'?fmt2(gR):gR;if(uv!==null&&uv!==''){var c2='';if(g2!==null&&typeof uv==='number'&&typeof g2==='number'&&g2>0)c2=uv>=g2?'above':'below';return'<td'+(c2?' class="'+c2+'"':'')+'>'+fmtUtfall(uv)+'</td>'}return'<td>—</td>'}
+      return'<td>—</td>';
     }).join('');
-    rows+='<tr class="'+cls+'" data-date="'+dateKey+'" onclick="toggleDay(\''+dateKey+'\',this,event)" style="cursor:pointer;">'+cells+'</tr>';
+    rows+='<tr class="'+cls+'" data-date="'+dK+'" onclick="toggleDay(\''+dK+'\',this,event)" style="cursor:pointer;">'+cells+'</tr>';
   }
-
-  var summaryCells=cols.map(function(c,idx){
-    if(idx===0) return '<td>Summerat</td>';
-    if(idx===1) return '<td></td>';
-    if(c.goalKey){
-      var isSnittGoal=c.goalKey.toLowerCase().indexOf('snitt')>=0;
-      if(isSnittGoal){
-        var sum=0,count=0;
-        Object.values(mData).forEach(function(r){var v=resolveDynGoal(c.goalKey,r);if(typeof v==='number'&&v>0){sum+=v;count++;}});
-        return '<td class="goal goal-col">'+(count>0?fmt2(sum/count):'—')+'</td>';
-      }
-      var sum2=0;
-      Object.values(mData).forEach(function(r){var v=resolveDynGoal(c.goalKey,r);if(typeof v==='number') sum2+=v;});
-      return '<td class="goal goal-col">'+(sum2>0?fmt2(sum2):'—')+'</td>';
-    }
-    if(c.key){
-      if(c.key.toLowerCase()==='snitt'){
-        var allR=Object.values(uData);
-        var totalP=allR.reduce(function(s,r){var v=findVal(r,'Produkt')??findVal(r,'produkt')??0;return s+(typeof v==='number'?v:0);},0);
-        if(SNITT_PER_TIMMAR.has(firstProj)){
-          var totalT=allR.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??0;return s+(typeof v==='number'?v:0);},0);
-          return '<td>'+(totalT>0?fmt2(totalP/totalT):'—')+'</td>';
-        } else {
-          var totalS=allR.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;return s+(typeof v==='number'?v:0);},0);
-          return '<td>'+(totalS>0?fmt2(totalP/totalS):'—')+'</td>';
-        }
-      }
-      if(c.key==='__utfall_saljare__'){
-        var sum3=0;
-        Object.values(uData).forEach(function(r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;if(typeof v==='number') sum3+=v;});
-        return '<td>'+(sum3>0?fmt2(sum3):'—')+'</td>';
-      }
-      var sum4=0;
-      Object.values(uData).forEach(function(r){var v=findVal(r,c.key);if(typeof v==='number') sum4+=v;});
-      return '<td>'+(sum4>0?fmt2(sum4):'—')+'</td>';
-    }
-    return '<td>—</td>';
+  var sC=cols.map(function(c,idx){
+    if(idx===0)return'<td>Summerat</td>';if(idx===1)return'<td></td>';
+    if(c.goalKey){var iSG=c.goalKey.toLowerCase().indexOf('snitt')>=0;if(iSG){var sm=0,ct=0;Object.values(mData).forEach(function(r){var v=resolveDynGoal(c.goalKey,r);if(typeof v==='number'&&v>0){sm+=v;ct++}});return'<td class="goal goal-col">'+(ct>0?fmt2(sm/ct):'—')+'</td>'}var sm2=0;Object.values(mData).forEach(function(r){var v=resolveDynGoal(c.goalKey,r);if(typeof v==='number')sm2+=v});return'<td class="goal goal-col">'+(sm2>0?fmt2(sm2):'—')+'</td>'}
+    if(c.key){if(c.key.toLowerCase()==='snitt'){var aR=Object.values(uData),tP=aR.reduce(function(s,r){var v=findVal(r,'Produkt')??findVal(r,'produkt')??0;return s+(typeof v==='number'?v:0)},0);if(SNITT_PER_TIMMAR[fp]){var tT=aR.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??0;return s+(typeof v==='number'?v:0)},0);return'<td>'+(tT>0?fmt2(tP/tT):'—')+'</td>'}else{var tS=aR.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;return s+(typeof v==='number'?v:0)},0);return'<td>'+(tS>0?fmt2(tP/tS):'—')+'</td>'}}if(c.key==='__utfall_saljare__'){var s3=0;Object.values(uData).forEach(function(r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;if(typeof v==='number')s3+=v});return'<td>'+(s3>0?fmt2(s3):'—')+'</td>'}var s4=0;Object.values(uData).forEach(function(r){var v=findVal(r,c.key);if(typeof v==='number')s4+=v});return'<td>'+(s4>0?fmt2(s4):'—')+'</td>'}
+    return'<td>—</td>';
   }).join('');
-  rows+='<tr class="summary-row">'+summaryCells+'</tr>';
-
-  document.getElementById('tableBody').innerHTML=rows;
-  _dailyRef=savedDaily;
+  rows+='<tr class="summary-row">'+sC+'</tr>';
+  document.getElementById('tableBody').innerHTML=rows;_dailyRef=savedD;
   updateStatCards(uData,mData);
 }
 
 function updateStatCards(uData,mData){
-  var uRows=Object.values(uData), mRows=Object.values(mData);
-  var firstProj=[...dailyProject][0];
-  var activeProjArr=[...dailyProject];
-  var multi=dailyProject.size>1;
-  var getProd=function(r){return findVal(r,'Produkt')??findVal(r,'produkt')??findVal(r,'Total sälj')??null;};
-  var getMalProd=function(r){
-    if(multi){
-      // When multiple projects merged, try all known goal keys
-      for(var k of ['Mål Sälj','Mål Produkt','Mål produkt','Mål sälj']){var v=findVal(r,k);if(typeof v==='number') return v;}
-      return 0;
-    }
-    return getProjectMalProd(firstProj,r);
-  };
-  var totalProd=uRows.reduce(function(s,r){var v=getProd(r);return s+(typeof v==='number'?v:0);},0);
-  var malProd;
-  if(multi){
-    malProd=0;
-    activeProjArr.forEach(function(proj){
-      var pd=getProjectData(proj);
-      Object.values(pd.mData).forEach(function(r){ malProd+=getProjectMalProd(proj,r); });
-    });
+  var uRows=Object.values(uData),mRows=Object.values(mData),fp=[...dailyProject][0],arr=[...dailyProject],multi=dailyProject.size>1;
+  var hasSelection=selectedDays.size>0;
+  var getProd=function(r){return findVal(r,'Produkt')??findVal(r,'produkt')??findVal(r,'Total sälj')??null};
+  var totalProd=uRows.reduce(function(s,r){var v=getProd(r);return s+(typeof v==='number'?v:0)},0);
+
+  // malProd = total month goal
+  var malProd=0;
+  if(multi){arr.forEach(function(proj){Object.values(getProjectData(proj).mData).forEach(function(r){malProd+=getProjectMalProd(proj,r)})})}
+  else{Object.values(getProjectData(fp).mData).forEach(function(r){malProd+=getProjectMalProd(fp,r)})}
+
+  // malProdSoFar = goal for days with data or selected days
+  var malProdSoFar=0;
+  if(hasSelection){
+    if(multi){arr.forEach(function(proj){var pd=getProjectData(proj);selectedDays.forEach(function(dk){if(pd.mData[dk])malProdSoFar+=getProjectMalProd(proj,pd.mData[dk])})})}
+    else{var pdS=getProjectData(fp);selectedDays.forEach(function(dk){if(pdS.mData[dk])malProdSoFar+=getProjectMalProd(fp,pdS.mData[dk])})}
   } else {
-    malProd=0;
-    Object.values(getProjectData(firstProj).mData).forEach(function(r){ malProd+=getProjectMalProd(firstProj,r); });
+    if(multi){arr.forEach(function(proj){var pd=getProjectData(proj);Object.keys(uData).forEach(function(dk){if(hasRealUtfall(uData[dk])&&pd.mData[dk])malProdSoFar+=getProjectMalProd(proj,pd.mData[dk])})})}
+    else{var pdF=getProjectData(fp);Object.keys(uData).forEach(function(dk){if(hasRealUtfall(uData[dk])&&pdF.mData[dk])malProdSoFar+=getProjectMalProd(fp,pdF.mData[dk])})}
   }
-  var totalHours=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??findVal(r,'Utfall Timmar')??findVal(r,'Utfall timmar')??0;return s+(typeof v==='number'?v:0);},0);
-  var workDays=uRows.filter(function(r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;return typeof v==='number'&&v>0;}).length;
-  var totalSellers=uRows.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;return s+(typeof v==='number'?v:0);},0);
+
+  var totalHours=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??0;return s+(typeof v==='number'?v:0)},0);
+  var workDays=uRows.filter(function(r){return(findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0)>0}).length;
+  var totalSellers=uRows.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;return s+(typeof v==='number'?v:0)},0);
   var avgProd=workDays>0?fmt2(totalProd/workDays):0;
-  var malAvgProd=(function(){var s=0,c=0;mRows.forEach(function(r){var v=getMalProd(r);if(typeof v==='number'&&v>0){s+=v;c++;}});return c>0?fmt2(s/c):0;})();
+  var malAvgProd=(function(){var s=0,c=0;mRows.forEach(function(r){var v=findVal(r,'Mål Sälj')??findVal(r,'Mål Produkt')??findVal(r,'Mål produkt')??null;if(typeof v==='number'&&v>0){s+=v;c++}});return c>0?fmt2(s/c):0})();
   var avgPerHour=totalHours>0?fmt2(totalProd/totalHours):0;
-  var malAvgPerHour=(function(){var s=0,c=0;mRows.forEach(function(r){var v=findVal(r,'Mål snitt')??findVal(r,'Mål snitt per mansdag')??null;if(typeof v==='number'&&v>0){s+=v;c++;}});return c>0?fmt2(s/c):0;})();
+  var malAvgPerHour=(function(){var s=0,c=0;mRows.forEach(function(r){var v=findVal(r,'Mål snitt')??findVal(r,'Mål snitt per mansdag')??null;if(typeof v==='number'&&v>0){s+=v;c++}});return c>0?fmt2(s/c):0})();
   var avgSellers=workDays>0?fmt2(totalSellers/workDays):0;
+  var malAvgSellers=(function(){var s=0,c=0;mRows.forEach(function(r){var v=findVal(r,'Mål säljare')??findVal(r,'Mål mansdagar')??null;if(typeof v==='number'&&v>0){s+=v;c++}});return c>0?fmt2(s/c):0})();
+
+  // malDaysTotal always from full month
   var malDaysTotal=0;
-  if(multi){
-    activeProjArr.forEach(function(proj){
-      var pd=getProjectData(proj);
-      var mn=Object.values(pd.mData).map(function(r){return normalizeRow(r,'mal');});
-      var dc=mn.filter(function(r){var v=findVal(r,'Mål säljare')??0;return typeof v==='number'&&v>0;}).length;
-      malDaysTotal=Math.max(malDaysTotal,dc);
-    });
-  } else {
-    var fullMData=getProjectData(firstProj).mData;
-    malDaysTotal=Object.values(fullMData).filter(function(r){
-      var v=findVal(r,'Mål säljare')??findVal(r,'Mål mansdagar')??null;
-      return typeof v==='number'&&v>0;
-    }).length;
-  }
-  var malAvgSellers=(function(){var s=0,c=0;mRows.forEach(function(r){var v=findVal(r,'Mål säljare')??findVal(r,'Mål mansdagar')??null;if(typeof v==='number'&&v>0){s+=v;c++;}});return c>0?fmt2(s/c):0;})();
+  if(multi){arr.forEach(function(proj){var mn=Object.values(getProjectData(proj).mData).map(function(r){return normalizeRow(r,'mal')});var dc=mn.filter(function(r){return(findVal(r,'Mål säljare')??0)>0}).length;malDaysTotal=Math.max(malDaysTotal,dc)})}
+  else{malDaysTotal=Object.values(getProjectData(fp).mData).filter(function(r){var v=findVal(r,'Mål säljare')??findVal(r,'Mål mansdagar')??null;return typeof v==='number'&&v>0}).length}
 
-  var setPct=function(vEl,mEl,bEl,val,mal,wd,md){
-    document.getElementById(vEl).textContent=val>0?fmt2(val):'—';
-    document.getElementById(mEl).textContent='Mål: '+(mal>0?fmt2(mal):'—');
-    var b=document.getElementById(bEl);
-    if(val>0&&mal>0){
-      var onTrack=isOnTrack(val,mal,wd,md);
-      var pct=Math.round(val/mal*100);
-      b.textContent=pct+'% av mål';
-      b.className='stat-badge '+(onTrack?'badge-green':'badge-red');
-    }
-    else{b.textContent='Ingen data';b.className='stat-badge badge-neutral';}
-  };
-  setPct('sc-prod','sc-prod-meta','sc-prod-badge',totalProd,malProd,workDays,malDaysTotal);
-  setPct('sc-avg','sc-avg-meta','sc-avg-badge',avgProd,malAvgProd,workDays,malDaysTotal);
-  setPct('sc-phtimme','sc-phtimme-meta','sc-phtimme-badge',avgPerHour,malAvgPerHour,workDays,malDaysTotal);
-  setPct('sc-sellers','sc-sellers-meta','sc-sellers-badge',avgSellers,malAvgSellers,workDays,malDaysTotal);
+  // Product card: compare against malProdSoFar
+  var el=function(id){return document.getElementById(id)};
+  el('sc-prod').textContent=totalProd>0?fmt2(totalProd):'—';
+  el('sc-prod-meta').textContent='Mål: '+(malProdSoFar>0?fmt2(malProdSoFar):'—');
+  var bP=el('sc-prod-badge');
+  if(totalProd>0&&malProdSoFar>0){var pct=Math.round(totalProd/malProdSoFar*100);bP.textContent=pct+'% av mål';bP.className='stat-badge '+(totalProd>=malProdSoFar?'badge-green':'badge-red')}
+  else{bP.textContent='Ingen data';bP.className='stat-badge badge-neutral'}
 
-  var taktEl=document.getElementById('sc-prod-takt');
+  // Snitt cards: compare directly
+  var setSnitt=function(vE,mE,bE,val,mal){el(vE).textContent=val>0?fmt2(val):'—';el(mE).textContent='Mål: '+(mal>0?fmt2(mal):'—');var b=el(bE);if(val>0&&mal>0){b.textContent=Math.round(val/mal*100)+'% av mål';b.className='stat-badge '+(val>=mal?'badge-green':'badge-red')}else{b.textContent='Ingen data';b.className='stat-badge badge-neutral'}};
+  setSnitt('sc-avg','sc-avg-meta','sc-avg-badge',avgProd,malAvgProd);
+  setSnitt('sc-phtimme','sc-phtimme-meta','sc-phtimme-badge',avgPerHour,malAvgPerHour);
+  setSnitt('sc-sellers','sc-sellers-meta','sc-sellers-badge',avgSellers,malAvgSellers);
+
+  // On-track indicator
+  var taktEl=el('sc-prod-takt');
   if(taktEl){
-    if(hasSelection){
-      // Show selection summary instead of on-track
-      var selectedMalTakt=mRows.reduce(function(s,r){return s+getProjectMalProd(firstProj,r);},0);
-      if(selectedMalTakt>0){
-        var diff2=totalProd-selectedMalTakt;
-        taktEl.innerHTML=diff2>=0?'<span style="color:#2d8a4e;font-weight:600;">▲ +'+Math.round(diff2)+' över mål</span>':'<span style="color:#c0392b;font-weight:600;">▼ '+Math.round(diff2)+' under mål</span>';
-      } else taktEl.innerHTML='';
-    } else if(workDays>0&&malProd>0&&malDaysTotal>0){
-      var now2=new Date();var isCurrentMonth2=(getMonth()===now2.getMonth()&&getYear()===now2.getFullYear());
-      var expected=malProd*(workDays/malDaysTotal), diff=totalProd-expected, diffPct=Math.round((diff/expected)*100);
-      var onTrack2=isOnTrack(totalProd,malProd,workDays,malDaysTotal);
-      if(!isCurrentMonth2) taktEl.innerHTML='';
-      else if(onTrack2) taktEl.innerHTML='<span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+'+Math.round(diff)+' / +'+diffPct+'%)</span>';
-      else taktEl.innerHTML='<span style="color:#c0392b;font-weight:600;">▼ Off track</span> <span style="color:#666;">('+Math.round(diff)+' / '+diffPct+'%)</span>';
-    } else taktEl.innerHTML='';
+    if(workDays>0&&malProd>0&&malDaysTotal>0){
+      var now2=new Date(),isCM=(getMonth()===now2.getMonth()&&getYear()===now2.getFullYear());
+      var exp=malProd*(workDays/malDaysTotal),df=totalProd-exp,dp=Math.round((df/exp)*100);
+      var oT=totalProd>=exp;
+      if(!isCM&&!hasSelection){taktEl.innerHTML=''}
+      else if(oT){taktEl.innerHTML='<span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+'+Math.round(df)+' / +'+dp+'%)</span>'}
+      else{taktEl.innerHTML='<span style="color:#c0392b;font-weight:600;">▼ Off track</span> <span style="color:#666;">('+Math.round(df)+' / '+dp+'%)</span>'}
+    } else{taktEl.innerHTML=''}
   }
 
-  // Telia FM kategori-breakdown
-  var breakdownEl=document.getElementById('teliaFmBreakdown');
-  var breakdownContent=document.getElementById('teliaFmBreakdownContent');
-  if(breakdownEl){
-    var isTeliaFm=dailyProject.size===1&&[...dailyProject][0]==='telia-fm';
-    if(isTeliaFm&&totalHours>0){
-      var cats=[
-        {label:'BB/H',key:'Bredband'},
-        {label:'TV/H',key:'TV'},
-        {label:'Premium/H',key:'Streaming'},
-        {label:'Mob/H',key:'MOBIL'},
-        {label:'Trygghetspaket/H',key:'Trygghetspaket'}
-      ];
-      var html=cats.map(function(c){
-        var total=uRows.reduce(function(s,r){var v=findVal(r,c.key)??0;return s+(typeof v==='number'?v:0);},0);
-        var perH=fmt2(total/totalHours);
-        return '<div style="text-align:center;"><div style="font-size:11px;color:#999;font-weight:500;text-transform:uppercase;letter-spacing:0.4px;">'+c.label+'</div><div style="font-size:18px;font-weight:700;margin-top:2px;">'+perH+'</div></div>';
-      }).join('');
-      breakdownContent.innerHTML=html;
-      breakdownEl.style.display='';
-    } else {
-      breakdownEl.style.display='none';
-    }
+  // Telia FM breakdown
+  var bE2=document.getElementById('teliaFmBreakdown'),bC=document.getElementById('teliaFmBreakdownContent');
+  if(bE2){
+    if(dailyProject.size===1&&[...dailyProject][0]==='telia-fm'&&totalHours>0){
+      var cats=[{label:'BB/H',key:'Bredband'},{label:'TV/H',key:'TV'},{label:'Premium/H',key:'Streaming'},{label:'Mob/H',key:'MOBIL'},{label:'Trygghetspaket/H',key:'Trygghetspaket'}];
+      bC.innerHTML=cats.map(function(c){var t=uRows.reduce(function(s,r){var v=findVal(r,c.key)??0;return s+(typeof v==='number'?v:0)},0);return'<div style="text-align:center;"><div style="font-size:11px;color:#999;font-weight:500;text-transform:uppercase;letter-spacing:0.4px;">'+c.label+'</div><div style="font-size:18px;font-weight:700;margin-top:2px;">'+fmt2(t/totalHours)+'</div></div>'}).join('');
+      bE2.style.display='';
+    } else{bE2.style.display='none'}
   }
 }
 
-function renderDailyCompare(projArr){
-  var m=getMonth(),y=getYear(),days=new Date(y,m+1,0).getDate();
-  var barColor=function(p){return p>=100?'#2d8a4e':'#f97c5a';};
-  var MAL_COLOR='#999';
-  var sorted=projArr.map(function(proj){
-    var pd=getProjectData(proj);
-    var uRows=Object.values(pd.uData).map(function(r){return normalizeRow(r,'utfall');});
-    var mRows=Object.values(pd.mData);
-    var totalProd=uRows.reduce(function(s,r){var v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0);},0);
-    var malProd=mRows.reduce(function(s,r){return s+getProjectMalProd(proj,r);},0);
-    return {proj:proj,pct:malProd>0?Math.round(totalProd/malProd*100):0,hasMal:malProd>0};
-  }).sort(function(a,b){return b.pct-a.pct;});
-  var cards=sorted.map(function(item){
-    var proj=item.proj,projHasMal=item.hasMal;
-    var name=PROJECT_META[proj]?PROJECT_META[proj].name:proj;
-    var pd=getProjectData(proj);
-    var uRows=Object.values(pd.uData).map(function(r){return normalizeRow(r,'utfall');});
-    var mRows=Object.values(pd.mData);
-    var mRowsNorm=mRows.map(function(r){return normalizeRow(r,'mal');});
-    var useMansdag=MANSDAG_PROJECTS.has(proj);
-    var totalProd=uRows.reduce(function(s,r){var v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0);},0);
-    var malProd=mRows.reduce(function(s,r){return s+getProjectMalProd(proj,r);},0);
-    var prodPct=malProd>0?Math.round(totalProd/malProd*100):0;
-    var totalMansdag=uRows.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??0;return s+(typeof v==='number'?v:0);},0);
-    var malMansdag=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål säljare')??0;return s+(typeof v==='number'?v:0);},0);
-    var totalTimmar=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??findVal(r,'Utfall Timmar')??0;return s+(typeof v==='number'?v:0);},0);
-    var malTimmar=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0);},0);
-    var workDays=uRows.filter(function(r){return (findVal(r,'Antal Mansdagar')??0)>0;}).length;
-    var snittpMansdag=useMansdag?(totalMansdag>0?fmt2(totalProd/totalMansdag):0):(totalTimmar>0?fmt2(totalProd/totalTimmar):0);
-    var malSnittSum=mRowsNorm.reduce(function(s,r){var v=findVal(r,'Mål snitt')??0;return s+(typeof v==='number'?v:0);},0);
-    var malSnittDays=mRowsNorm.filter(function(r){return (findVal(r,'Mål snitt')??0)>0;}).length;
-    var malSnitt=malSnittDays>0?fmt2(malSnittSum/malSnittDays):0;
-    var secondPct=useMansdag?(malMansdag>0?Math.round(totalMansdag/malMansdag*100):0):(malTimmar>0?Math.round(totalTimmar/malTimmar*100):0);
-    var snittpMalPct=malSnitt>0?Math.round(snittpMansdag/malSnitt*100):0;
-    var secondLabel=useMansdag?'Mansdagar':'Timmar';
-    var secondUtfall=useMansdag?totalMansdag:fmt2(totalTimmar);
-    var secondMal=useMansdag?malMansdag:fmt2(malTimmar);
-    var snittLabel=useMansdag?'Snitt per mansdag':'Snitt per timme';
-    var badgeHtml=!projHasMal?'<span class="compare-badge badge-neutral">Mål saknas</span>':'<span class="compare-badge '+(prodPct>=100?'badge-green':'badge-neutral')+'">'+prodPct+'% av mål</span>';
-    var prodMetric=!projHasMal?'<div class="compare-metric"><div class="compare-metric-label">Produkter <span>'+totalProd+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>':'<div class="compare-metric"><div class="compare-metric-label">Produkter <span>'+totalProd+' / '+malProd+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(prodPct,100)+'%;background:'+barColor(prodPct)+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+prodPct+'% av mål</div></div>';
-    var hasSecondMal=useMansdag?malMansdag>0:malTimmar>0;
-    var secondMetric=!hasSecondMal?'<div class="compare-metric"><div class="compare-metric-label">'+secondLabel+' <span>'+secondUtfall+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>':'<div class="compare-metric"><div class="compare-metric-label">'+secondLabel+' <span>'+secondUtfall+' / '+secondMal+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(secondPct,100)+'%;background:'+barColor(secondPct)+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+secondPct+'% av mål</div></div>';
-    var snittMetric=malSnitt<=0?'<div class="compare-metric"><div class="compare-metric-label">'+snittLabel+' <span>'+snittpMansdag+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>':'<div class="compare-metric"><div class="compare-metric-label">'+snittLabel+' <span>'+snittpMansdag+' / '+malSnitt+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(snittpMalPct,100)+'%;background:'+barColor(snittpMalPct)+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+snittpMalPct+'% av mål</div></div>';
-    var sparkP=[],malP=[];
-    for(var i=1;i<=days;i++){var d=new Date(y,m,i);if(d.getDay()===0||d.getDay()===6) continue;var dk=toDateKey(y,m,i),ur=normalizeRow(pd.uData[dk]||{},'utfall');sparkP.push(fmt2(findVal(ur,'Produkt')??0));malP.push(getProjectMalProd(proj,pd.mData[dk]||{}));}
-    var maxVal=Math.max.apply(null,sparkP.concat(malP).concat([1]));
-    var W=260,H=44,n=sparkP.length;
-    var px=function(i){return n>1?(i/(n-1))*W:W/2;};
-    var py=function(v){return H-(v/maxVal)*(H-4)-2;};
-    var malPath=malP.map(function(v,i){return (i===0?'M':'L')+px(i).toFixed(1)+','+py(v).toFixed(1);}).join(' ');
-    var utfPath=sparkP.map(function(v,i){return (i===0?'M':'L')+px(i).toFixed(1)+','+py(v).toFixed(1);}).join(' ');
-    var lineColor=prodPct>=100?'#2d8a4e':'#f97c5a';
-    var sparkHtml=projHasMal?'<div class="sparkline"><div class="sparkline-label">Daglig produkt – utfall vs mål</div><svg width="100%" height="'+H+'" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" style="overflow:visible"><path d="'+malPath+'" fill="none" stroke="'+MAL_COLOR+'" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/><path d="'+utfPath+'" fill="none" stroke="'+lineColor+'" stroke-width="2"/></svg><div style="display:flex;gap:12px;margin-top:5px;font-size:10px;color:#999;"><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:'+lineColor+';border-radius:2px"></span>Utfall</span><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:0;border-top:2px dashed '+MAL_COLOR+'"></span>Mål</span></div></div>':'<div class="sparkline"><div class="sparkline-label">Daglig produkt</div><svg width="100%" height="'+H+'" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" style="overflow:visible"><path d="'+utfPath+'" fill="none" stroke="#f97c5a" stroke-width="2"/></svg></div>';
-    return '<div class="compare-card"><div class="compare-card-header"><span class="compare-card-title">'+name+'</span>'+badgeHtml+'</div>'+prodMetric+secondMetric+snittMetric+sparkHtml+'</div>';
+function renderDailyCompare(arr){
+  var m=getMonth(),y=getYear(),days=new Date(y,m+1,0).getDate(),MC='#999';
+  var sorted=arr.map(function(proj){var pd=getProjectData(proj),uR=Object.values(pd.uData).map(function(r){return normalizeRow(r,'utfall')}),mR=Object.values(pd.mData),tP=uR.reduce(function(s,r){var v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0)},0),mP=mR.reduce(function(s,r){return s+getProjectMalProd(proj,r)},0);return{proj:proj,pct:mP>0?Math.round(tP/mP*100):0,hM:mP>0}}).sort(function(a,b){return b.pct-a.pct});
+  var cards=sorted.map(function(it){
+    var proj=it.proj,hM=it.hM,nm=PROJECT_META[proj]?PROJECT_META[proj].name:proj,pd=getProjectData(proj);
+    var uR=Object.values(pd.uData).map(function(r){return normalizeRow(r,'utfall')}),mR=Object.values(pd.mData),mN=mR.map(function(r){return normalizeRow(r,'mal')}),uMd=MANSDAG_PROJECTS[proj];
+    var tP=uR.reduce(function(s,r){var v=findVal(r,'Produkt')??0;return s+(typeof v==='number'?v:0)},0),mP=mR.reduce(function(s,r){return s+getProjectMalProd(proj,r)},0),pP=mP>0?Math.round(tP/mP*100):0;
+    var tMd=uR.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??0;return s+(typeof v==='number'?v:0)},0),mMd=mN.reduce(function(s,r){var v=findVal(r,'Mål säljare')??0;return s+(typeof v==='number'?v:0)},0);
+    var tTm=uR.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??0;return s+(typeof v==='number'?v:0)},0),mTm=mN.reduce(function(s,r){var v=findVal(r,'Mål timmar')??0;return s+(typeof v==='number'?v:0)},0);
+    var spm=uMd?(tMd>0?fmt2(tP/tMd):0):(tTm>0?fmt2(tP/tTm):0);
+    var mSS=mN.reduce(function(s,r){var v=findVal(r,'Mål snitt')??0;return s+(typeof v==='number'?v:0)},0),mSD=mN.filter(function(r){return(findVal(r,'Mål snitt')??0)>0}).length,mSn=mSD>0?fmt2(mSS/mSD):0;
+    var s2P=uMd?(mMd>0?Math.round(tMd/mMd*100):0):(mTm>0?Math.round(tTm/mTm*100):0),sMP=mSn>0?Math.round(spm/mSn*100):0;
+    var s2L=uMd?'Mansdagar':'Timmar',s2U=uMd?tMd:fmt2(tTm),s2M=uMd?mMd:fmt2(mTm),snL=uMd?'Snitt per mansdag':'Snitt per timme';
+    var bH=!hM?'<span class="compare-badge badge-neutral">Mål saknas</span>':'<span class="compare-badge '+(pP>=100?'badge-green':'badge-neutral')+'">'+pP+'% av mål</span>';
+    var bc=function(p){return p>=100?'#2d8a4e':'#f97c5a'};
+    var pM=!hM?'<div class="compare-metric"><div class="compare-metric-label">Produkter <span>'+tP+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>':'<div class="compare-metric"><div class="compare-metric-label">Produkter <span>'+tP+' / '+mP+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(pP,100)+'%;background:'+bc(pP)+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+pP+'% av mål</div></div>';
+    var h2=(uMd?mMd:mTm)>0;
+    var s2Mt=!h2?'<div class="compare-metric"><div class="compare-metric-label">'+s2L+' <span>'+s2U+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>':'<div class="compare-metric"><div class="compare-metric-label">'+s2L+' <span>'+s2U+' / '+s2M+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(s2P,100)+'%;background:'+bc(s2P)+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+s2P+'% av mål</div></div>';
+    var snMt=mSn<=0?'<div class="compare-metric"><div class="compare-metric-label">'+snL+' <span>'+spm+'</span></div><div style="font-size:11px;color:#999;margin-top:3px;">Mål saknas</div></div>':'<div class="compare-metric"><div class="compare-metric-label">'+snL+' <span>'+spm+' / '+mSn+'</span></div><div class="progress-bar-bg"><div class="progress-bar-fill" style="width:'+Math.min(sMP,100)+'%;background:'+bc(sMP)+'"></div></div><div style="font-size:11px;color:#999;margin-top:3px;">'+sMP+'% av mål</div></div>';
+    var sP=[],mP3=[];for(var i=1;i<=days;i++){var d=new Date(y,m,i);if(d.getDay()===0||d.getDay()===6)continue;var dk=toDateKey(y,m,i),ur=normalizeRow(pd.uData[dk]||{},'utfall');sP.push(fmt2(findVal(ur,'Produkt')??0));mP3.push(getProjectMalProd(proj,pd.mData[dk]||{}))}
+    var mV=Math.max.apply(null,sP.concat(mP3).concat([1])),W=260,H=44,n=sP.length;
+    var px=function(i){return n>1?(i/(n-1))*W:W/2},py=function(v){return H-(v/mV)*(H-4)-2};
+    var cmP=mP3.map(function(v,i){return(i===0?'M':'L')+px(i).toFixed(1)+','+py(v).toFixed(1)}).join(' '),cuP=sP.map(function(v,i){return(i===0?'M':'L')+px(i).toFixed(1)+','+py(v).toFixed(1)}).join(' ');
+    var lC=pP>=100?'#2d8a4e':'#f97c5a';
+    var spH=hM?'<div class="sparkline"><div class="sparkline-label">Daglig produkt – utfall vs mål</div><svg width="100%" height="'+H+'" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" style="overflow:visible"><path d="'+cmP+'" fill="none" stroke="'+MC+'" stroke-width="1.5" stroke-dasharray="4,3" opacity="0.8"/><path d="'+cuP+'" fill="none" stroke="'+lC+'" stroke-width="2"/></svg><div style="display:flex;gap:12px;margin-top:5px;font-size:10px;color:#999;"><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:2px;background:'+lC+';border-radius:2px"></span>Utfall</span><span style="display:flex;align-items:center;gap:4px;"><span style="display:inline-block;width:12px;height:0;border-top:2px dashed '+MC+'"></span>Mål</span></div></div>':'<div class="sparkline"><div class="sparkline-label">Daglig produkt</div><svg width="100%" height="'+H+'" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" style="overflow:visible"><path d="'+cuP+'" fill="none" stroke="#f97c5a" stroke-width="2"/></svg></div>';
+    return'<div class="compare-card"><div class="compare-card-header"><span class="compare-card-title">'+nm+'</span>'+bH+'</div>'+pM+s2Mt+snMt+spH+'</div>';
   }).join('');
   document.getElementById('dailyCompareWrap').innerHTML='<div class="compare-grid">'+cards+'</div>';
 }
 
 function convertJsonToStore(raw,store){
-  var sheetToProject={};
-  for(var [p,meta] of Object.entries(PROJECT_META)) sheetToProject[meta.sheet]=p;
-  var normalize=function(s){return s.toLowerCase().replace(/^\d+[\.\d]*\s*/,'').replace(/\./g,'').trim();};
-  for(var [sheetName,dateRows] of Object.entries(raw)){
-    var proj=sheetToProject[sheetName];
-    if(!proj){ var ns=normalize(sheetName); for(var [sheet,p2] of Object.entries(sheetToProject)){if(normalize(sheet)===ns){proj=p2;break;}} }
-    if(!proj) continue;
-    for(var [dateKey,row] of Object.entries(dateRows)){
-      var d=new Date(dateKey); if(isNaN(d)) continue;
-      var key=storeKey(proj,d.getFullYear(),d.getMonth());
-      if(!store[key]) store[key]={};
-      store[key][dateKey]=row;
-    }
-  }
+  var stp={};for(var[p,meta]of Object.entries(PROJECT_META))stp[meta.sheet]=p;
+  var norm=function(s){return s.toLowerCase().replace(/^\d+[\.\d]*\s*/,'').replace(/\./g,'').trim()};
+  for(var[sn,dr]of Object.entries(raw)){var proj=stp[sn];if(!proj){var ns=norm(sn);for(var[sh,p2]of Object.entries(stp))if(norm(sh)===ns){proj=p2;break}}if(!proj)continue;for(var[dk,row]of Object.entries(dr)){var d=new Date(dk);if(isNaN(d))continue;var key=storeKey(proj,d.getFullYear(),d.getMonth());if(!store[key])store[key]={};store[key][dk]=row}}
 }
 
 async function loadData(){
-  try{
-    var cacheBust='?t='+Date.now();
-    var results=await Promise.all([
-      fetch('data/utfall.json'+cacheBust),
-      fetch('data/mal.json'+cacheBust),
-      fetch('data/last_synced.json'+cacheBust)
-    ]);
-    if(results[0].ok) convertJsonToStore(await results[0].json(),utfallData);
-    if(results[1].ok) convertJsonToStore(await results[1].json(),malData);
-    if(results[2].ok){var s=await results[2].json();var el=document.getElementById('lastSynced');if(el&&s.last_synced) el.textContent='Senast synkad: '+s.last_synced;}
-  }catch(e){console.warn('Kunde inte ladda data:',e);}
+  try{var cb='?t='+Date.now();var r=await Promise.all([fetch('data/utfall.json'+cb),fetch('data/mal.json'+cb),fetch('data/last_synced.json'+cb)]);if(r[0].ok)convertJsonToStore(await r[0].json(),utfallData);if(r[1].ok)convertJsonToStore(await r[1].json(),malData);if(r[2].ok){var s=await r[2].json();if(s.last_synced)document.getElementById('lastSynced').textContent='Senast synkad: '+s.last_synced}}catch(e){console.warn('Kunde inte ladda data:',e)}
   renderCurrent();
 }
 
-buildProjectChips();
-buildOverviewProjectChips();
-
-// Set current month/year on load
-var _now=new Date();
-document.getElementById('monthSel').value=_now.getMonth();
-document.getElementById('yearSel').value=_now.getFullYear();
-document.getElementById('monthSel2').value=_now.getMonth();
-document.getElementById('yearSel2').value=_now.getFullYear();
-
+buildProjectChips();buildOverviewProjectChips();
+var _now=new Date();document.getElementById('monthSel').value=_now.getMonth();document.getElementById('yearSel').value=_now.getFullYear();document.getElementById('monthSel2').value=_now.getMonth();document.getElementById('yearSel2').value=_now.getFullYear();
 loadData();
 </script>
 </body>
