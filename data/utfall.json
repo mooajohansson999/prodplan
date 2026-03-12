@@ -1102,8 +1102,8 @@
     "2026-03-11": {
       "Telia D2D": "Onsdag",
       "DATUM": "2026-03-11",
-      "Antal Mansdagar": 0,
-      "Timmar": 0,
+      "Antal Mansdagar": 19,
+      "Timmar": 171,
       "Total sälj": 0,
       "Tilläggsprodukt": 0,
       "Produkt": 0,
@@ -2497,15 +2497,15 @@
     "2026-03-11": {
       "Tele2 Villafiber": "Onsdag",
       "DATUM": "2026-03-11",
-      "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "TV": 0,
-      "Bredband": 0,
-      "MBB": 0,
-      "Mobil": 0,
-      "Räknas ej": 0,
+      "Antal Mansdagar": 18,
+      "Total sälj": 41,
+      "Tilläggsprodukt": 4,
+      "Produkt": 37,
+      "TV": 12,
+      "Bredband": 15,
+      "MBB": 2,
+      "Mobil": 8,
+      "Räknas ej": 4,
       "Produkt Kontroll": 0,
       "kontroll produkt": 0
     },
@@ -2809,17 +2809,17 @@
       "Produkt Kontroll": 0,
       "kontroll produkt": 0
     },
-    "1900-08-15": {
+    "1900-09-25": {
       "Tele2 Villafiber": "Total sälj",
-      "DATUM": 228
+      "DATUM": 269
     },
-    "1900-08-07": {
+    "1900-09-13": {
       "Tele2 Villafiber": "Produkter",
-      "DATUM": 220
+      "DATUM": 257
     },
-    "1900-01-07": {
+    "1900-01-11": {
       "Tele2 Villafiber": "Tilläggsprodukter",
-      "DATUM": 8
+      "DATUM": 12
     }
   },
   "1.2. Tele2 Koax": {
@@ -3992,16 +3992,16 @@
     "2026-03-11": {
       "Tele2 Koax": "Onsdag",
       "DATUM": "2026-03-11",
-      "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
-      "Tilläggsprodukt": 0,
-      "TV": 0,
-      "BREDBAND": 0,
+      "Antal Mansdagar": 7,
+      "Total sälj": 35,
+      "produkt": 29,
+      "Tilläggsprodukt": 6,
+      "TV": 12,
+      "BREDBAND": 12,
       "MBB": 0,
-      "Mobil": 0,
+      "Mobil": 5,
       "Streaming": 0,
-      "Bredband OM": 0,
+      "Bredband OM": 6,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0
@@ -4346,17 +4346,17 @@
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0
     },
-    "1900-07-25": {
+    "1900-08-29": {
       "Tele2 Koax": "Total sälj",
-      "DATUM": 207
+      "DATUM": 242
     },
-    "1900-02-10": {
+    "1900-02-16": {
       "Tele2 Koax": "Produkter",
-      "DATUM": 42
+      "DATUM": 48
     },
-    "1900-06-13": {
+    "1900-07-12": {
       "Tele2 Koax": "Tilläggsprodukter",
-      "DATUM": 165
+      "DATUM": 194
     }
   },
   "1.4. LAN": {
@@ -5529,14 +5529,14 @@
     "2026-03-11": {
       "Tele2 LAN": "Onsdag",
       "DATUM": "2026-03-11",
-      "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
+      "Antal Mansdagar": 7,
+      "Total sälj": 57,
+      "produkt": 57,
       "Tilläggsprodukt": 0,
-      "TV": 0,
+      "TV": 13,
       "BREDBAND": 0,
-      "MBB": 0,
-      "Mobil": 0,
+      "MBB": 16,
+      "Mobil": 28,
       "Streaming": 0,
       "Bredband OM": 0,
       "räknas ej": 0,
@@ -5883,9 +5883,9 @@
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0
     },
-    "1900-07-15": {
+    "1900-09-10": {
       "Tele2 LAN": "Tilläggsprodukter",
-      "DATUM": 197
+      "DATUM": 254
     }
   },
   "1.5. Amref": {
