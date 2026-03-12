@@ -205,10 +205,10 @@
         <button class="btn" id="clearSelectionBtn" style="display:none;font-size:11px;padding:4px 10px;" onclick="clearSelection()">✕ Rensa urval</button>
       </div>
       <div class="stat-cards" id="dailyStatCards">
-        <div class="stat-card"><div class="stat-label">Utfall produkter</div><div class="stat-value" id="sc-prod">—</div><div class="stat-meta" id="sc-prod-meta">Mål: —</div><div class="stat-badge badge-neutral" id="sc-prod-badge">Ingen data</div><div id="sc-prod-takt" style="font-size:11px;margin-top:4px;"></div></div>
-        <div class="stat-card"><div class="stat-label">Snitt per dag</div><div class="stat-value" id="sc-avg">—</div><div class="stat-meta" id="sc-avg-meta">Mål: —</div><div class="stat-badge badge-neutral" id="sc-avg-badge">Ingen data</div></div>
-        <div class="stat-card"><div class="stat-label">Snitt per timme</div><div class="stat-value" id="sc-phtimme">—</div><div class="stat-meta" id="sc-phtimme-meta">Mål: —</div><div class="stat-badge badge-neutral" id="sc-phtimme-badge">Ingen data</div></div>
-        <div class="stat-card"><div class="stat-label">Säljare per dag</div><div class="stat-value" id="sc-sellers">—</div><div class="stat-meta" id="sc-sellers-meta">Mål: —</div><div class="stat-badge badge-neutral" id="sc-sellers-badge">Ingen data</div></div>
+        <div class="stat-card"><div class="stat-label">Utfall produkter</div><div class="stat-value" id="sc-prod">—</div><div class="stat-meta" id="sc-prod-meta">Mål: —</div><div class="stat-badge badge-neutral" id="sc-prod-badge">Ingen data</div>        <div id="sc-prod-takt" style="font-size:11px;margin-top:4px;"></div><div class="hittills-text" style="font-size:9px;color:#ccc;margin-top:4px;font-style:italic;">Baserat på månaden hittills</div></div>
+        <div class="stat-card"><div class="stat-label">Snitt per dag</div><div class="stat-value" id="sc-avg">—</div><div class="stat-meta" id="sc-avg-meta">Mål: —</div><div class="stat-badge badge-neutral" id="sc-avg-badge">Ingen data</div><div class="hittills-text" style="font-size:9px;color:#ccc;margin-top:4px;font-style:italic;">Baserat på månaden hittills</div></div>
+        <div class="stat-card"><div class="stat-label">Snitt per timme</div><div class="stat-value" id="sc-phtimme">—</div><div class="stat-meta" id="sc-phtimme-meta">Mål: —</div><div class="stat-badge badge-neutral" id="sc-phtimme-badge">Ingen data</div><div class="hittills-text" style="font-size:9px;color:#ccc;margin-top:4px;font-style:italic;">Baserat på månaden hittills</div></div>
+        <div class="stat-card"><div class="stat-label">Säljare per dag</div><div class="stat-value" id="sc-sellers">—</div><div class="stat-meta" id="sc-sellers-meta">Mål: —</div><div class="stat-badge badge-neutral" id="sc-sellers-badge">Ingen data</div><div class="hittills-text" style="font-size:9px;color:#ccc;margin-top:4px;font-style:italic;">Baserat på månaden hittills</div></div>
       </div>
       <div id="teliaFmBreakdown" style="display:none;margin-bottom:16px;">
         <div class="stat-card" style="padding:14px 20px;"><div class="stat-label">Snitt per timme – Kategorier</div><div id="teliaFmBreakdownContent" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:8px;"></div></div>
@@ -457,6 +457,9 @@ function updateStatCards(uData,mData){
   var malDaysTotal=0;
   if(multi){arr.forEach(function(proj){var mn=Object.values(getProjectData(proj).mData).map(function(r){return normalizeRow(r,'mal')});var dc=mn.filter(function(r){return(findVal(r,'Mål säljare')??0)>0}).length;malDaysTotal=Math.max(malDaysTotal,dc)})}
   else{malDaysTotal=Object.values(getProjectData(fp).mData).filter(function(r){var v=findVal(r,'Mål säljare')??findVal(r,'Mål mansdagar')??null;return typeof v==='number'&&v>0}).length}
+
+  // Show/hide "hittills" text
+  document.querySelectorAll('.hittills-text').forEach(function(t){t.style.display=hasSelection?'none':''});
 
   // Product card: compare against malProdSoFar
   var el=function(id){return document.getElementById(id)};
