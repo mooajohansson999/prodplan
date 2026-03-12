@@ -50,12 +50,12 @@
   .progress-bar-fill { height: 100%; border-radius: 10px; transition: width 0.4s ease; }
   .sparkline { margin-top: 14px; border-top: 1px solid #f0f0ee; padding-top: 10px; }
   .sparkline-label { font-size: 11px; color: #1a1a1a; margin-bottom: 6px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.4px; }
-  .stat-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
-  .stat-card { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 10px 16px; display: flex; flex-direction: column; }
+  .stat-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; align-items: stretch; }
+  .stat-card { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 10px 16px; display: flex; flex-direction: column; min-height: 140px; }
   .stat-label { font-size: 10px; color: #1a1a1a; font-weight: 500; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
   .stat-value { font-size: 20px; font-weight: 600; }
   .stat-meta { font-size: 10px; color: #999; margin-top: 2px; }
-  .stat-badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 20px; margin-top: 4px; }
+  .stat-badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 20px; margin-top: 4px; align-self: flex-start; }
   .table-wrap { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; overflow: auto; }
   table { width: 100%; border-collapse: collapse; }
   thead { background: #fafafa; }
