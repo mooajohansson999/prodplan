@@ -137,8 +137,8 @@
   tr.selected-day td:first-child { border-left: 3px solid #f97c5a !important; }
 
   /* Senaste dataraden */
-  tr.last-data td, tr.last-data td.goal-col { background: #faf6f4 !important; }
-  tr.last-data td:first-child { border-left: 3px solid #f0c8b8; }
+  tr.last-data:not(.selected-day) td, tr.last-data:not(.selected-day) td.goal-col { background: #faf6f4 !important; }
+  tr.last-data:not(.selected-day) td:first-child { border-left: 3px solid #f0c8b8; }
 
   td.goal { color: #1a1a1a; font-size: 12px; font-weight: 500; }
   td.above { color: #2d8a4e; font-weight: 600; }
@@ -1116,27 +1116,13 @@ function updateStatCards(uData,mData){
   var malProd;
   if(multi){
     malProd=0;
-    if(selectedDays.size>0){
-      // Use filtered mål data
-      mRows.forEach(function(r){
-        for(var k of ['Mål Sälj','Mål Produkt','Mål produkt','Mål sälj']){var v=findVal(r,k);if(typeof v==='number'){malProd+=v;break;}}
-      });
-    } else {
-      activeProjArr.forEach(function(proj){
-        var pd=getProjectData(proj);
-        Object.values(pd.mData).forEach(function(r){ malProd+=getProjectMalProd(proj,r); });
-      });
-    }
+    activeProjArr.forEach(function(proj){
+      var pd=getProjectData(proj);
+      Object.values(pd.mData).forEach(function(r){ malProd+=getProjectMalProd(proj,r); });
+    });
   } else {
-    if(selectedDays.size>0){
-      // Selection active: sum mål from filtered mRows
-      malProd=0;
-      mRows.forEach(function(r){ malProd+=getProjectMalProd(firstProj,r); });
-    } else {
-      malProd=0;
-      var pdFull=getProjectData(firstProj);
-      Object.values(pdFull.mData).forEach(function(r){ malProd+=getProjectMalProd(firstProj,r); });
-    }
+    malProd=0;
+    Object.values(getProjectData(firstProj).mData).forEach(function(r){ malProd+=getProjectMalProd(firstProj,r); });
   }
   var totalHours=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??findVal(r,'Utfall Timmar')??findVal(r,'Utfall timmar')??0;return s+(typeof v==='number'?v:0);},0);
   var workDays=uRows.filter(function(r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;return typeof v==='number'&&v>0;}).length;
@@ -1146,9 +1132,8 @@ function updateStatCards(uData,mData){
   var avgPerHour=totalHours>0?fmt2(totalProd/totalHours):0;
   var malAvgPerHour=(function(){var s=0,c=0;mRows.forEach(function(r){var v=findVal(r,'Mål snitt')??findVal(r,'Mål snitt per mansdag')??null;if(typeof v==='number'&&v>0){s+=v;c++;}});return c>0?fmt2(s/c):0;})();
   var avgSellers=workDays>0?fmt2(totalSellers/workDays):0;
-  var malDaysTotal;
+  var malDaysTotal=0;
   if(multi){
-    malDaysTotal=0;
     activeProjArr.forEach(function(proj){
       var pd=getProjectData(proj);
       var mn=Object.values(pd.mData).map(function(r){return normalizeRow(r,'mal');});
@@ -1156,19 +1141,11 @@ function updateStatCards(uData,mData){
       malDaysTotal=Math.max(malDaysTotal,dc);
     });
   } else {
-    // Count mål days from the mRows passed in (respects selection filtering)
-    malDaysTotal=mRows.filter(function(r){
+    var fullMData=getProjectData(firstProj).mData;
+    malDaysTotal=Object.values(fullMData).filter(function(r){
       var v=findVal(r,'Mål säljare')??findVal(r,'Mål mansdagar')??null;
       return typeof v==='number'&&v>0;
     }).length;
-    // If selection is active but mål rows are sparse, use full month mål days
-    if(selectedDays.size>0&&malDaysTotal===0){
-      var pdFull=getProjectData([...dailyProject][0]);
-      malDaysTotal=Object.values(pdFull.mData).filter(function(r){
-        var v=findVal(r,'Mål säljare')??findVal(r,'Mål mansdagar')??null;
-        return typeof v==='number'&&v>0;
-      }).length;
-    }
   }
   var malAvgSellers=(function(){var s=0,c=0;mRows.forEach(function(r){var v=findVal(r,'Mål säljare')??findVal(r,'Mål mansdagar')??null;if(typeof v==='number'&&v>0){s+=v;c++;}});return c>0?fmt2(s/c):0;})();
 
@@ -1191,7 +1168,14 @@ function updateStatCards(uData,mData){
 
   var taktEl=document.getElementById('sc-prod-takt');
   if(taktEl){
-    if(workDays>0&&malProd>0&&malDaysTotal>0){
+    if(hasSelection){
+      // Show selection summary instead of on-track
+      var selectedMalTakt=mRows.reduce(function(s,r){return s+getProjectMalProd(firstProj,r);},0);
+      if(selectedMalTakt>0){
+        var diff2=totalProd-selectedMalTakt;
+        taktEl.innerHTML=diff2>=0?'<span style="color:#2d8a4e;font-weight:600;">▲ +'+Math.round(diff2)+' över mål</span>':'<span style="color:#c0392b;font-weight:600;">▼ '+Math.round(diff2)+' under mål</span>';
+      } else taktEl.innerHTML='';
+    } else if(workDays>0&&malProd>0&&malDaysTotal>0){
       var now2=new Date();var isCurrentMonth2=(getMonth()===now2.getMonth()&&getYear()===now2.getFullYear());
       var expected=malProd*(workDays/malDaysTotal), diff=totalProd-expected, diffPct=Math.round((diff/expected)*100);
       var onTrack2=isOnTrack(totalProd,malProd,workDays,malDaysTotal);
