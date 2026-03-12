@@ -531,7 +531,7 @@ function renderDailyCompare(arr){
 
 function convertJsonToStore(raw,store){
   var stp={};for(var[p,meta]of Object.entries(PROJECT_META))stp[meta.sheet]=p;
-  var norm=function(s){return s.toLowerCase().replace(/^\d+[\.\d]*\s*/,'').replace(/\./g,'').trim()};
+  var norm=function(s){return s.toLowerCase().replace(/^\d+[\.\d]*\s*/,'').replace(/[\.\s]+/g,'').trim()};
   for(var[sn,dr]of Object.entries(raw)){var proj=stp[sn];if(!proj){var ns=norm(sn);for(var[sh,p2]of Object.entries(stp))if(norm(sh)===ns){proj=p2;break}}if(!proj)continue;for(var[dk,row]of Object.entries(dr)){var d=new Date(dk);if(isNaN(d))continue;var key=storeKey(proj,d.getFullYear(),d.getMonth());if(!store[key])store[key]={};store[key][dk]=row}}
 }
 
