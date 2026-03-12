@@ -51,7 +51,7 @@
   .sparkline { margin-top: 14px; border-top: 1px solid #f0f0ee; padding-top: 10px; }
   .sparkline-label { font-size: 11px; color: #1a1a1a; margin-bottom: 6px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.4px; }
   .stat-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 16px; }
-  .stat-card { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 10px 16px; }
+  .stat-card { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 10px 16px; display: flex; flex-direction: column; }
   .stat-label { font-size: 10px; color: #1a1a1a; font-weight: 500; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
   .stat-value { font-size: 20px; font-weight: 600; }
   .stat-meta { font-size: 10px; color: #999; margin-top: 2px; }
@@ -478,10 +478,10 @@ function updateStatCards(uData,mData){
   // On-track indicator
   var taktEl=el('sc-prod-takt');
   if(taktEl){
-    if(workDays>0&&malProd>0&&malDaysTotal>0){
+          if(workDays>0&&malProd>0&&malDaysTotal>0){
       var now2=new Date(),isCM=(getMonth()===now2.getMonth()&&getYear()===now2.getFullYear());
       var exp=malProd*(workDays/malDaysTotal),df=totalProd-exp,dp=Math.round((df/exp)*100);
-      var oT=totalProd>=exp;
+      var oT=totalProd>=exp||(malProdSoFar>0&&totalProd>=malProdSoFar);
       if(!isCM&&!hasSelection){taktEl.innerHTML=''}
       else if(oT){taktEl.innerHTML='<span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+'+Math.round(df)+' / +'+dp+'%)</span>'}
       else{taktEl.innerHTML='<span style="color:#c0392b;font-weight:600;">▼ Off track</span> <span style="color:#666;">('+Math.round(df)+' / '+dp+'%)</span>'}
