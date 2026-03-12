@@ -488,6 +488,20 @@ function updateStatCards(uData,mData){
     } else{taktEl.innerHTML=''}
   }
 
+  // On-track indicator
+  var taktEl=el('sc-prod-takt');
+  if(taktEl){
+    if(workDays>0&&malProd>0&&malDaysTotal>0){
+      var now2=new Date(),isCM=(getMonth()===now2.getMonth()&&getYear()===now2.getFullYear());
+      var avgPerDay=totalProd/workDays;
+      var projected=Math.round(avgPerDay*malDaysTotal);
+      var oT=projected>=malProd;
+      if(!isCM&&!hasSelection){taktEl.innerHTML=''}
+      else if(oT){taktEl.innerHTML='<span style="color:#2d8a4e;font-weight:600;">▲ Taktar mot: '+projected+' produkter</span>'}
+      else{taktEl.innerHTML='<span style="color:#c0392b;font-weight:600;">▼ Taktar mot: '+projected+' produkter</span>'}
+    } else{taktEl.innerHTML=''}
+  }
+
   // Telia FM breakdown
   var bE2=document.getElementById('teliaFmBreakdown'),bC=document.getElementById('teliaFmBreakdownContent');
   if(bE2){
