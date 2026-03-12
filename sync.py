@@ -317,11 +317,19 @@ for f in files:
     content = download_file(f['path_lower'])
     data, rawdata = excel_to_json(content)
 
-    # Merge normal sheet data
+    # Merge normal sheet data - only overwrite if new row has real data
     for sheet_name, sheet_data in data.items():
         if sheet_name not in all_data[typ]:
             all_data[typ][sheet_name] = {}
-        all_data[typ][sheet_name].update(sheet_data)
+        for date_key, row in sheet_data.items():
+            # Check if new row has any non-zero numeric values (besides DATUM)
+            has_real_data = any(
+                isinstance(v, (int, float)) and v != 0
+                for k, v in row.items()
+                if k.upper() != 'DATUM'
+            )
+            if date_key not in all_data[typ][sheet_name] or has_real_data:
+                all_data[typ][sheet_name][date_key] = row
 
     # Merge rawdata
     for raw_key, raw_rows in rawdata.items():
