@@ -445,7 +445,7 @@ function renderDaily(){
       if(c.key){var iSn=c.key.toLowerCase()==='snitt',iP=c.key==='Produkt',iSj=c.key==='__utfall_saljare__';if(iF&&!rU)return'<td>—</td>';var uv;if(iSn)uv=hU?calcSnitt(fp,uR):null;else if(iP&&(dailyView==='compact'||multi))uv=hU?getCompactProd(fp,uR):null;else if(iSj)uv=hU?(findVal(uR,'Antal Mansdagar')??findVal(uR,'Antal Säljare')??null):null;else uv=hU?findVal(uR,c.key):null;if(uv===0)return'<td>—</td>';var gk=findGoalKey(cols,c.key),gR=gk?resolveDynGoal(gk,mR):null,g2=typeof gR==='number'?fmt2(gR):gR;if(uv!==null&&uv!==''){var c2='';if(g2!==null&&typeof uv==='number'&&typeof g2==='number'&&g2>0)c2=uv>=g2?'above':'below';return'<td'+(c2?' class="'+c2+'"':'')+'>'+fmtUtfall(uv)+'</td>'}return'<td>—</td>'}
       return'<td>—</td>';
     }).join('');
-    rows+='<tr class="'+cls+'" data-date="'+dK+'" onclick="toggleDay(\''+dK+'\',this,event)" onmousedown="startDrag(\''+dK+'\',this,event)" onmouseover="hoverDrag(this)" style="cursor:pointer;-webkit-user-select:none;user-select:none;">'+cells+'</tr>';
+    rows+='<tr class="'+cls+'" data-date="'+dK+'" onmousedown="startDrag(\''+dK+'\',this,event)" onmouseover="hoverDrag(this)" style="cursor:pointer;-webkit-user-select:none;user-select:none;">'+cells+'</tr>';
   }
   var sC=cols.map(function(c,idx){
     if(idx===0)return'<td>Total</td>';if(idx===1)return'<td></td>';
