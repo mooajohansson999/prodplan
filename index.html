@@ -291,31 +291,33 @@ function toggleDay(dk,tr,ev){
 }
 
 function startDrag(dk,tr,ev){
-  if(ev.ctrlKey||ev.metaKey)return;
   ev.preventDefault();
   _dragSelecting=true;_dragStart=dk;
-  document.querySelectorAll('tr.selected-day').forEach(function(t){t.classList.remove('selected-day')});
-  selectedDays.clear();selectedDays.add(dk);tr.classList.add('selected-day');
+  if(!(ev.ctrlKey||ev.metaKey)){
+    document.querySelectorAll('tr.selected-day').forEach(function(t){t.classList.remove('selected-day')});
+    selectedDays.clear();
+  }
+  selectedDays.add(dk);tr.classList.add('selected-day');
 }
 
 function hoverDrag(tr){
   if(!_dragSelecting)return;
   var dk=tr.getAttribute('data-date');if(!dk||!_dragStart)return;
-  // Select range from _dragStart to dk
-  document.querySelectorAll('tr.selected-day').forEach(function(t){t.classList.remove('selected-day')});
-  selectedDays.clear();
+  // Remove only current drag range, keep previous selections
+  document.querySelectorAll('tr.drag-temp').forEach(function(t){t.classList.remove('selected-day','drag-temp');selectedDays.delete(t.getAttribute('data-date'))});
   var allRows=document.querySelectorAll('#tableBody tr[data-date]');
   var inRange=false,found=false;
   allRows.forEach(function(r){
     var rdk=r.getAttribute('data-date');
-    if(rdk===_dragStart||rdk===dk){if(!found){inRange=true;found=true}else{inRange=false;selectedDays.add(rdk);r.classList.add('selected-day')}}
-    if(inRange){selectedDays.add(rdk);r.classList.add('selected-day')}
+    if(rdk===_dragStart||rdk===dk){if(!found){inRange=true;found=true}else{if(!selectedDays.has(rdk)){selectedDays.add(rdk);r.classList.add('selected-day','drag-temp')}inRange=false}}
+    if(inRange&&!selectedDays.has(rdk)){selectedDays.add(rdk);r.classList.add('selected-day','drag-temp')}
   });
 }
 
 function endDrag(){
   if(!_dragSelecting)return;
   _dragSelecting=false;_dragStart=null;
+  document.querySelectorAll('tr.drag-temp').forEach(function(t){t.classList.remove('drag-temp')});
   var btn=document.getElementById('clearSelectionBtn');if(btn)btn.style.display=selectedDays.size>0?'':'none';
   updateStatCardsForSelection();
 }
