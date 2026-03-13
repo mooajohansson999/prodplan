@@ -355375,7 +355375,7 @@
     "nyckel": "Tele2 KoaxBredband Omteckning KoaxTilläggsprodukt",
     "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355384,15 +355384,15 @@
     "Datum": "2026-03-12",
     "År-månad": "2026-03",
     "Kundnummer": "73386708",
-    "Produkt": "DigitalTV Nyteckning Koax",
-    "Produkttyp": "Produkt",
-    "Produktkod": "DigitalTV Nyteckning Koax",
+    "Produkt": "DigitalTV Omteckning Koax",
+    "Produkttyp": "Tilläggsprodukt",
+    "Produktkod": "DigitalTV Omteckning Koax",
     "Säljare": "Roj Mustafa",
     "LoxysoftID": 5983,
-    "nyckel": "Tele2 KoaxDigitalTV Nyteckning KoaxProdukt",
-    "kolumn?": "TV",
+    "nyckel": "Tele2 KoaxDigitalTV Omteckning KoaxTilläggsprodukt",
+    "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355409,7 +355409,7 @@
     "nyckel": "Tele2 KoaxMobiltelefoni 10GBProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355426,7 +355426,7 @@
     "nyckel": "Tele2 KoaxBredband Omteckning KoaxTilläggsprodukt",
     "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355435,15 +355435,15 @@
     "Datum": "2026-03-12",
     "År-månad": "2026-03",
     "Kundnummer": "70922548",
-    "Produkt": "DigitalTV Nyteckning Koax",
-    "Produkttyp": "Produkt",
-    "Produktkod": "DigitalTV Nyteckning Koax",
+    "Produkt": "DigitalTV Omteckning Koax",
+    "Produkttyp": "Tilläggsprodukt",
+    "Produktkod": "DigitalTV Omteckning Koax",
     "Säljare": "Roj Mustafa",
     "LoxysoftID": 5983,
-    "nyckel": "Tele2 KoaxDigitalTV Nyteckning KoaxProdukt",
-    "kolumn?": "TV",
+    "nyckel": "Tele2 KoaxDigitalTV Omteckning KoaxTilläggsprodukt",
+    "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355460,7 +355460,7 @@
     "nyckel": "Tele2 KoaxBredband NyteckningProdukt",
     "kolumn?": "lägg till i inställningar",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355477,7 +355477,7 @@
     "nyckel": "Tele2 KoaxDigitalTV NyteckningProdukt",
     "kolumn?": "lägg till i inställningar",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355494,7 +355494,7 @@
     "nyckel": "Tele2 KoaxMobiltelefoni 20GB+Produkt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355511,7 +355511,7 @@
     "nyckel": "Tele2 KoaxFamiljeabonnemangProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355528,7 +355528,7 @@
     "nyckel": "Tele2 KoaxFamiljeabonnemangProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355545,7 +355545,7 @@
     "nyckel": "Tele2 KoaxMobilt Bredband NyteckningProdukt",
     "kolumn?": "MBB",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355562,7 +355562,7 @@
     "nyckel": "Tele2 KoaxMobiltelefoni 20GB+Produkt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355579,7 +355579,7 @@
     "nyckel": "Tele2 KoaxFamiljeabonnemangProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355596,7 +355596,7 @@
     "nyckel": "Tele2 KoaxBredband Omteckning KoaxTilläggsprodukt",
     "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355605,15 +355605,15 @@
     "Datum": "2026-03-12",
     "År-månad": "2026-03",
     "Kundnummer": "60470814",
-    "Produkt": "DigitalTV Nyteckning Koax",
-    "Produkttyp": "Produkt",
-    "Produktkod": "DigitalTV Nyteckning Koax",
+    "Produkt": "DigitalTV Omteckning Koax",
+    "Produkttyp": "Tilläggsprodukt",
+    "Produktkod": "DigitalTV Omteckning Koax",
     "Säljare": "Asad Mamedov",
     "LoxysoftID": 6574,
-    "nyckel": "Tele2 KoaxDigitalTV Nyteckning KoaxProdukt",
-    "kolumn?": "TV",
+    "nyckel": "Tele2 KoaxDigitalTV Omteckning KoaxTilläggsprodukt",
+    "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355630,7 +355630,7 @@
     "nyckel": "Tele2 KoaxFamiljeabonnemangProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355647,7 +355647,7 @@
     "nyckel": "Tele2 KoaxBredband Omteckning KoaxTilläggsprodukt",
     "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355656,15 +355656,15 @@
     "Datum": "2026-03-12",
     "År-månad": "2026-03",
     "Kundnummer": "830653",
-    "Produkt": "DigitalTV Nyteckning Koax",
-    "Produkttyp": "Produkt",
-    "Produktkod": "DigitalTV Nyteckning Koax",
+    "Produkt": "DigitalTV Omteckning Koax",
+    "Produkttyp": "Tilläggsprodukt",
+    "Produktkod": "DigitalTV Omteckning Koax",
     "Säljare": "Ahmed Mohamed Hassan",
     "LoxysoftID": 6619,
-    "nyckel": "Tele2 KoaxDigitalTV Nyteckning KoaxProdukt",
-    "kolumn?": "TV",
+    "nyckel": "Tele2 KoaxDigitalTV Omteckning KoaxTilläggsprodukt",
+    "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355681,7 +355681,7 @@
     "nyckel": "Tele2 KoaxMobiltelefoni 10GBProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355698,7 +355698,7 @@
     "nyckel": "Tele2 KoaxMobiltelefoni 20GB+Produkt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -355715,7 +355715,7 @@
     "nyckel": "Tele2 KoaxFamiljeabonnemangProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -355732,7 +355732,7 @@
     "nyckel": "Tele2 KoaxFamiljeabonnemangProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -355749,7 +355749,7 @@
     "nyckel": "Tele2 KoaxBredband Nyteckning KoaxProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -355766,7 +355766,7 @@
     "nyckel": "Tele2 KoaxDigitalTV Nyteckning KoaxProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -355783,7 +355783,7 @@
     "nyckel": "Tele2 KoaxBredband Nyteckning KoaxProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -355800,7 +355800,7 @@
     "nyckel": "Tele2 KoaxBredband Omteckning KoaxTilläggsprodukt",
     "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -355817,7 +355817,7 @@
     "nyckel": "Tele2 KoaxDigitalTV Nyteckning KoaxProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -355834,7 +355834,7 @@
     "nyckel": "Tele2 KoaxBredband Omteckning KoaxTilläggsprodukt",
     "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -355851,7 +355851,7 @@
     "nyckel": "Tele2 KoaxDigitalTV Nyteckning KoaxProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -355868,7 +355868,7 @@
     "nyckel": "Tele2 KoaxBredband Nyteckning KoaxProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355885,7 +355885,7 @@
     "nyckel": "Tele2 KoaxDigitalTV Nyteckning KoaxProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355902,7 +355902,7 @@
     "nyckel": "Tele2 KoaxBredband Omteckning KoaxTilläggsprodukt",
     "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355919,7 +355919,7 @@
     "nyckel": "Tele2 KoaxDigitalTV Nyteckning KoaxProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -355936,7 +355936,7 @@
     "nyckel": "Tele2 KoaxBredband Omteckning KoaxTilläggsprodukt",
     "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -355945,15 +355945,15 @@
     "Datum": "2026-03-12",
     "År-månad": "2026-03",
     "Kundnummer": "61318314",
-    "Produkt": "DigitalTV Nyteckning Koax",
-    "Produkttyp": "Produkt",
-    "Produktkod": "DigitalTV Nyteckning Koax",
+    "Produkt": "DigitalTV Omteckning Koax",
+    "Produkttyp": "Tilläggsprodukt",
+    "Produktkod": "DigitalTV Omteckning Koax",
     "Säljare": "Ahmad Motawa",
     "LoxysoftID": 6184,
-    "nyckel": "Tele2 KoaxDigitalTV Nyteckning KoaxProdukt",
-    "kolumn?": "TV",
+    "nyckel": "Tele2 KoaxDigitalTV Omteckning KoaxTilläggsprodukt",
+    "kolumn?": "Bredband OM",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -355970,7 +355970,7 @@
     "nyckel": "Tele2 KoaxMobiltelefoni 10GBProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -355987,7 +355987,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356004,7 +356004,7 @@
     "nyckel": "Tele2 VillafiberDigitalTV NyteckningProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356021,7 +356021,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356038,7 +356038,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356055,7 +356055,7 @@
     "nyckel": "Tele2 VillafiberDigitalTV NyteckningProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356072,7 +356072,7 @@
     "nyckel": "Tele2 VillafiberMobiltelefoni 20GB+Produkt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356089,7 +356089,7 @@
     "nyckel": "Tele2 VillafiberFamiljeabonnemangProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356106,7 +356106,7 @@
     "nyckel": "Tele2 VillafiberFamiljeabonnemangProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356123,7 +356123,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356140,7 +356140,7 @@
     "nyckel": "Tele2 VillafiberDigitalTV NyteckningProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356157,7 +356157,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356174,7 +356174,7 @@
     "nyckel": "Tele2 VillafiberDigitalTV NyteckningProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356191,7 +356191,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356208,7 +356208,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356225,7 +356225,7 @@
     "nyckel": "Tele2 VillafiberDigitalTV NyteckningProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356242,7 +356242,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356259,7 +356259,7 @@
     "nyckel": "Tele2 VillafiberDigitalTV NyteckningProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356276,7 +356276,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356293,7 +356293,7 @@
     "nyckel": "Tele2 VillafiberDigitalTV NyteckningProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356310,7 +356310,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356327,7 +356327,7 @@
     "nyckel": "Tele2 VillafiberDigitalTV NyteckningProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356344,7 +356344,7 @@
     "nyckel": "Tele2 VillafiberMobiltelefoni 20GB+Produkt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356361,7 +356361,7 @@
     "nyckel": "Tele2 VillafiberFamiljeabonnemangProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356378,7 +356378,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356395,7 +356395,7 @@
     "nyckel": "Tele2 VillafiberDigitalTV NyteckningProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356412,7 +356412,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356429,7 +356429,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356446,7 +356446,7 @@
     "nyckel": "Tele2 VillafiberDigitalTV NyteckningProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356463,7 +356463,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356480,7 +356480,7 @@
     "nyckel": "Tele2 VillafiberDigitalTV NyteckningProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356497,7 +356497,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356514,7 +356514,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356531,7 +356531,7 @@
     "nyckel": "Tele2 VillafiberDigitalTV NyteckningProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356548,7 +356548,7 @@
     "nyckel": "Tele2 VillafiberSyskonabonnemangTilläggsprodukt",
     "kolumn?": "räknas ej",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356565,7 +356565,7 @@
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356582,7 +356582,7 @@
     "nyckel": "Tele2 VillafiberDigitalTV NyteckningProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356599,7 +356599,7 @@
     "nyckel": "Tele2 LANMobilt Bredband NyteckningProdukt",
     "kolumn?": "MBB",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356616,7 +356616,7 @@
     "nyckel": "Tele2 LANDigitalTV Nyteckning LANProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356633,7 +356633,7 @@
     "nyckel": "Tele2 LANMobilt Bredband NyteckningProdukt",
     "kolumn?": "MBB",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356650,7 +356650,7 @@
     "nyckel": "Tele2 LANDigitalTV Nyteckning LANProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356667,7 +356667,7 @@
     "nyckel": "Tele2 LANMobilt Bredband NyteckningProdukt",
     "kolumn?": "MBB",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356684,7 +356684,7 @@
     "nyckel": "Tele2 LANDigitalTV Nyteckning LANProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356701,7 +356701,7 @@
     "nyckel": "Tele2 LANMobilt Bredband NyteckningProdukt",
     "kolumn?": "MBB",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356718,7 +356718,7 @@
     "nyckel": "Tele2 LANMobiltelefoni 10GBProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356735,7 +356735,7 @@
     "nyckel": "Tele2 LANMobiltelefoni 10GBProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356752,7 +356752,7 @@
     "nyckel": "Tele2 LANMobiltelefoni 10GBProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 0
   },
   {
@@ -356769,7 +356769,7 @@
     "nyckel": "Tele2 LANMobilt Bredband NyteckningProdukt",
     "kolumn?": "MBB",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356786,7 +356786,7 @@
     "nyckel": "Tele2 LANDigitalTV Nyteckning LANProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356803,7 +356803,7 @@
     "nyckel": "Tele2 LANMobilt Bredband NyteckningProdukt",
     "kolumn?": "MBB",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356820,7 +356820,7 @@
     "nyckel": "Tele2 LANDigitalTV Nyteckning LANProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356837,7 +356837,7 @@
     "nyckel": "Tele2 LANMobilt Bredband NyteckningProdukt",
     "kolumn?": "MBB",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356854,7 +356854,7 @@
     "nyckel": "Tele2 LANMobilt Bredband NyteckningProdukt",
     "kolumn?": "MBB",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356871,7 +356871,7 @@
     "nyckel": "Tele2 LANDigitalTV Nyteckning LANProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356888,7 +356888,7 @@
     "nyckel": "Tele2 LANMobilt Bredband NyteckningProdukt",
     "kolumn?": "MBB",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356905,7 +356905,7 @@
     "nyckel": "Tele2 LANDigitalTV Nyteckning LANProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356922,7 +356922,7 @@
     "nyckel": "Tele2 LANMobilt Bredband NyteckningProdukt",
     "kolumn?": "MBB",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
     "provision trappa": 162
   },
   {
@@ -356939,7 +356939,322 @@
     "nyckel": "Tele2 LANDigitalTV Nyteckning LANProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
-    "FINNS TID": 0,
+    "FINNS TID": 1,
+    "provision trappa": 162
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 LAN",
+    "Datum": "2026-03-12",
+    "År-månad": "2026-03",
+    "Kundnummer": 6032380,
+    "Personnummer": "194506291329",
+    "Gatuadress": "Hangargatan 15",
+    "Postnummer": "753 37",
+    "Ort": "HUDDINGE",
+    "Produkt": "DigitalTV Nyteckning LAN",
+    "Produkttyp": "Produkt",
+    "Produktkod": "DigitalTV Nyteckning LAN",
+    "Säljare": "Jamie Gaines",
+    "LoxysoftID": 5068,
+    "nyckel": "Tele2 LANDigitalTV Nyteckning LANProdukt",
+    "kolumn?": "TV",
+    "Provition kontroll": 1,
+    "FINNS TID": 1,
+    "provision trappa": 162
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 LAN",
+    "Datum": "2026-03-12",
+    "År-månad": "2026-03",
+    "Kundnummer": 6032380,
+    "Personnummer": "194506291329",
+    "Gatuadress": "Hangargatan 15",
+    "Postnummer": "753 37",
+    "Ort": "HUDDINGE",
+    "Produkt": "Mobilt Bredband Nyteckning",
+    "Produkttyp": "Produkt",
+    "Produktkod": "Mobilt Bredband Nyteckning",
+    "Säljare": "Jamie Gaines",
+    "LoxysoftID": 5068,
+    "nyckel": "Tele2 LANMobilt Bredband NyteckningProdukt",
+    "kolumn?": "MBB",
+    "Provition kontroll": 1,
+    "FINNS TID": 1,
+    "provision trappa": 162
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 LAN",
+    "Datum": "2026-03-12",
+    "År-månad": "2026-03",
+    "Kundnummer": 6032380,
+    "Personnummer": "194506291329",
+    "Gatuadress": "Hangargatan 15",
+    "Postnummer": "753 37",
+    "Ort": "HUDDINGE",
+    "Produkt": "Mobiltelefoni 20GB+",
+    "Produkttyp": "Produkt",
+    "Produktkod": "Mobiltelefoni 20GB+",
+    "Säljare": "Jamie Gaines",
+    "LoxysoftID": 5068,
+    "nyckel": "Tele2 LANMobiltelefoni 20GB+Produkt",
+    "kolumn?": "Mobil",
+    "Provition kontroll": 1,
+    "FINNS TID": 1,
+    "provision trappa": 162
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 LAN",
+    "Datum": "2026-03-12",
+    "År-månad": "2026-03",
+    "Kundnummer": 6032380,
+    "Personnummer": "194506291329",
+    "Gatuadress": "Hangargatan 15",
+    "Postnummer": "753 37",
+    "Ort": "HUDDINGE",
+    "Produkt": "Familjeabonnemang",
+    "Produkttyp": "Produkt",
+    "Produktkod": "Familjeabonnemang",
+    "Säljare": "Jamie Gaines",
+    "LoxysoftID": 5068,
+    "nyckel": "Tele2 LANFamiljeabonnemangProdukt",
+    "kolumn?": "Mobil",
+    "Provition kontroll": 1,
+    "FINNS TID": 1,
+    "provision trappa": 162
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 LAN",
+    "Datum": "2026-03-12",
+    "År-månad": "2026-03",
+    "Kundnummer": 6032181,
+    "Personnummer": "194202221430",
+    "Gatuadress": "Starbovägen 15",
+    "Postnummer": "752 65",
+    "Ort": "Uppsala ",
+    "Produkt": "DigitalTV Nyteckning LAN",
+    "Produkttyp": "Produkt",
+    "Produktkod": "DigitalTV Nyteckning LAN",
+    "Säljare": "Jamie Gaines",
+    "LoxysoftID": 5068,
+    "nyckel": "Tele2 LANDigitalTV Nyteckning LANProdukt",
+    "kolumn?": "TV",
+    "Provition kontroll": 1,
+    "FINNS TID": 1,
+    "provision trappa": 162
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 LAN",
+    "Datum": "2026-03-12",
+    "År-månad": "2026-03",
+    "Kundnummer": 6032181,
+    "Personnummer": "194202221430",
+    "Gatuadress": "Starbovägen 15",
+    "Postnummer": "752 65",
+    "Ort": "Uppsala ",
+    "Produkt": "Mobilt Bredband Nyteckning",
+    "Produkttyp": "Produkt",
+    "Produktkod": "Mobilt Bredband Nyteckning",
+    "Säljare": "Jamie Gaines",
+    "LoxysoftID": 5068,
+    "nyckel": "Tele2 LANMobilt Bredband NyteckningProdukt",
+    "kolumn?": "MBB",
+    "Provition kontroll": 1,
+    "FINNS TID": 1,
+    "provision trappa": 162
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 LAN",
+    "Datum": "2026-03-12",
+    "År-månad": "2026-03",
+    "Kundnummer": 6032181,
+    "Personnummer": "194202221430",
+    "Gatuadress": "Starbovägen 15",
+    "Postnummer": "752 65",
+    "Ort": "Uppsala ",
+    "Produkt": "Mobiltelefoni 10GB",
+    "Produkttyp": "Produkt",
+    "Produktkod": "Mobiltelefoni 10GB",
+    "Säljare": "Jamie Gaines",
+    "LoxysoftID": 5068,
+    "nyckel": "Tele2 LANMobiltelefoni 10GBProdukt",
+    "kolumn?": "Mobil",
+    "Provition kontroll": 1,
+    "FINNS TID": 1,
+    "provision trappa": 162
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 LAN",
+    "Datum": "2026-03-12",
+    "År-månad": "2026-03",
+    "Kundnummer": 2559390,
+    "Personnummer": "193009098942",
+    "Gatuadress": "Starbovägen 2",
+    "Postnummer": "752 65",
+    "Ort": "Uppsala ",
+    "Produkt": "DigitalTV Nyteckning LAN",
+    "Produkttyp": "Produkt",
+    "Produktkod": "DigitalTV Nyteckning LAN",
+    "Säljare": "Jamie Gaines",
+    "LoxysoftID": 5068,
+    "nyckel": "Tele2 LANDigitalTV Nyteckning LANProdukt",
+    "kolumn?": "TV",
+    "Provition kontroll": 1,
+    "FINNS TID": 1,
+    "provision trappa": 162
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 LAN",
+    "Datum": "2026-03-12",
+    "År-månad": "2026-03",
+    "Kundnummer": 2559390,
+    "Personnummer": "193009098942",
+    "Gatuadress": "Starbovägen 2",
+    "Postnummer": "752 65",
+    "Ort": "Uppsala ",
+    "Produkt": "Mobiltelefoni 10GB",
+    "Produkttyp": "Produkt",
+    "Produktkod": "Mobiltelefoni 10GB",
+    "Säljare": "Jamie Gaines",
+    "LoxysoftID": 5068,
+    "nyckel": "Tele2 LANMobiltelefoni 10GBProdukt",
+    "kolumn?": "Mobil",
+    "Provition kontroll": 1,
+    "FINNS TID": 1,
+    "provision trappa": 162
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 LAN",
+    "Datum": "2026-03-12",
+    "År-månad": "2026-03",
+    "Kundnummer": 2189536,
+    "Personnummer": "195509151014",
+    "Gatuadress": "Bodavägen 43",
+    "Postnummer": "827 53",
+    "Ort": "Järvsö",
+    "Produkt": "DigitalTV Nyteckning LAN",
+    "Produkttyp": "Produkt",
+    "Produktkod": "DigitalTV Nyteckning LAN",
+    "Säljare": "Seyed Sheiz Mosavi",
+    "LoxysoftID": 4519,
+    "nyckel": "Tele2 LANDigitalTV Nyteckning LANProdukt",
+    "kolumn?": "TV",
+    "Provition kontroll": 1,
+    "FINNS TID": 1,
+    "provision trappa": 162
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 LAN",
+    "Datum": "2026-03-12",
+    "År-månad": "2026-03",
+    "Kundnummer": 2189536,
+    "Personnummer": "195509151014",
+    "Gatuadress": "Bodavägen 43",
+    "Postnummer": "827 53",
+    "Ort": "Järvsö",
+    "Produkt": "Mobilt Bredband Nyteckning",
+    "Produkttyp": "Produkt",
+    "Produktkod": "Mobilt Bredband Nyteckning",
+    "Säljare": "Seyed Sheiz Mosavi",
+    "LoxysoftID": 4519,
+    "nyckel": "Tele2 LANMobilt Bredband NyteckningProdukt",
+    "kolumn?": "MBB",
+    "Provition kontroll": 1,
+    "FINNS TID": 1,
+    "provision trappa": 162
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 Koax",
+    "Datum": "2026-03-12",
+    "År-månad": "2026-03",
+    "Kundnummer": 6164591,
+    "Personnummer": "199912147510",
+    "Gatuadress": "HURTIGS VÄG 27 B",
+    "Postnummer": 13760,
+    "Ort": "JORDBRO",
+    "Produkt": "DigitalTV Nyteckning Koax",
+    "Produkttyp": "Produkt",
+    "Produktkod": "DigitalTV Nyteckning Koax",
+    "Säljare": "Ahmed  Mohamed Hassan ",
+    "LoxysoftID": 6619,
+    "nyckel": "Tele2 KoaxDigitalTV Nyteckning KoaxProdukt",
+    "kolumn?": "TV",
+    "Provition kontroll": 1,
+    "FINNS TID": 1,
+    "provision trappa": 162
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 Koax",
+    "Datum": "2026-03-12",
+    "År-månad": "2026-03",
+    "Kundnummer": 6164591,
+    "Personnummer": "199912147510",
+    "Gatuadress": "HURTIGS VÄG 27 B",
+    "Postnummer": 13760,
+    "Ort": "JORDBRO",
+    "Produkt": "Bredband Nyteckning Koax",
+    "Produkttyp": "Produkt",
+    "Produktkod": "Bredband Nyteckning Koax",
+    "Säljare": "Ahmed  Mohamed Hassan ",
+    "LoxysoftID": 6619,
+    "nyckel": "Tele2 KoaxBredband Nyteckning KoaxProdukt",
+    "kolumn?": "Bredband",
+    "Provition kontroll": 1,
+    "FINNS TID": 1,
+    "provision trappa": 162
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 Koax",
+    "Datum": "2026-03-12",
+    "År-månad": "2026-03",
+    "Kundnummer": 6164591,
+    "Personnummer": "199912147510",
+    "Gatuadress": "HURTIGS VÄG 27 B",
+    "Postnummer": 13760,
+    "Ort": "JORDBRO",
+    "Produkt": "Mobiltelefoni 20GB+",
+    "Produkttyp": "Produkt",
+    "Produktkod": "Mobiltelefoni 20GB+",
+    "Säljare": "Ahmed  Mohamed Hassan ",
+    "LoxysoftID": 6619,
+    "nyckel": "Tele2 KoaxMobiltelefoni 20GB+Produkt",
+    "kolumn?": "Mobil",
+    "Provition kontroll": 1,
+    "FINNS TID": 1,
+    "provision trappa": 162
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 Koax",
+    "Datum": "2026-03-12",
+    "År-månad": "2026-03",
+    "Kundnummer": 6164591,
+    "Personnummer": "199912147510",
+    "Gatuadress": "HURTIGS VÄG 27 B",
+    "Postnummer": 13760,
+    "Ort": "JORDBRO",
+    "Produkt": "Familjeabonnemang",
+    "Produkttyp": "Produkt",
+    "Produktkod": "Familjeabonnemang",
+    "Säljare": "Ahmed  Mohamed Hassan ",
+    "LoxysoftID": 6619,
+    "nyckel": "Tele2 KoaxFamiljeabonnemangProdukt",
+    "kolumn?": "Mobil",
+    "Provition kontroll": 1,
+    "FINNS TID": 1,
     "provision trappa": 162
   }
 ]
