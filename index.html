@@ -332,7 +332,7 @@ function renderOverview(){
   var sPP=sMP>0?Math.round(sTP/sMP*100):0,sOT=isOnTrack(sTP,sMP,sWD,sMDT);
   var sAP=sWD>0?fmt2(sTP/sWD):0,sMAS=sMSC>0?fmt2(sMS/sMSC):0,sSPT=sTT>0?fmt2(sTP/sTT):0,sAS=sWD>0?fmt2(sTM/sWD):0;
   var tH='',now=new Date(),isCM=(m===now.getMonth()&&y===now.getFullYear());
-  if(isCM&&sWD>0&&sMP>0&&sMDT>0){var exp=sMP*(sWD/sMDT),df=sTP-exp,dp=Math.round((df/exp)*100);if(sOT)tH='<div style="font-size:11px;margin-top:4px;"><span style="color:#2d8a4e;font-weight:600;">▲ On track</span> <span style="color:#666;">(+'+Math.round(df)+' / +'+dp+'%)</span></div>';else tH='<div style="font-size:11px;margin-top:4px;"><span style="color:#c0392b;font-weight:600;">▼ Off track</span> <span style="color:#666;">('+Math.round(df)+' / '+dp+'%)</span></div>'}
+  if(isCM&&sWD>0&&sMP>0&&sMDT>0){var avgPD=sTP/sWD;var proj2=Math.round(avgPD*sMDT);tH='<div style="font-size:11px;margin-top:4px;"><span style="color:#1a1a1a;font-weight:600;">'+(proj2>=sMP?'▲':'▼')+' Taktar mot: '+proj2+' produkter</span></div>'}
   var mxS=Math.max.apply(null,aSU.concat(aSM).concat([1])),W=900,H=52,n=aSU.length;
   var px=function(i){return n>1?(i/(n-1))*W:W/2},py=function(v){return H-(v/mxS)*(H-4)-2};
   var mP=aSM.map(function(v,i){return(i===0?'M':'L')+px(i).toFixed(1)+','+py(v).toFixed(1)}).join(' ');
@@ -497,8 +497,8 @@ function updateStatCards(uData,mData){
       var projected=Math.round(avgPerDay*malDaysTotal);
       var oT=projected>=malProd;
       if(!isCM&&!hasSelection){taktEl.innerHTML=''}
-      else if(oT){taktEl.innerHTML='<span style="color:#2d8a4e;font-weight:600;">▲ Taktar mot: '+projected+' produkter</span>'}
-      else{taktEl.innerHTML='<span style="color:#c0392b;font-weight:600;">▼ Taktar mot: '+projected+' produkter</span>'}
+      else if(oT){taktEl.innerHTML='<span style="color:#1a1a1a;font-weight:600;">▲ Taktar mot: '+projected+' produkter</span>'}
+      else{taktEl.innerHTML='<span style="color:#1a1a1a;font-weight:600;">▼ Taktar mot: '+projected+' produkter</span>'}
     } else{taktEl.innerHTML=''}
   }
 
