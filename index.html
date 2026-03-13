@@ -471,12 +471,21 @@ function updateStatCards(uData,mData){
 
   // malProdSoFar = goal for days with data or selected days
   var malProdSoFar=0;
+  // Find all dates that have real utfall across any project
+  var datesWithUtfall=new Set();
   if(hasSelection){
-    if(multi){arr.forEach(function(proj){var pd=getProjectData(proj);selectedDays.forEach(function(dk){if(pd.mData[dk])malProdSoFar+=getProjectMalProd(proj,pd.mData[dk])})})}
-    else{var pdS=getProjectData(fp);selectedDays.forEach(function(dk){if(pdS.mData[dk])malProdSoFar+=getProjectMalProd(fp,pdS.mData[dk])})}
+    selectedDays.forEach(function(dk){datesWithUtfall.add(dk)});
   } else {
-    if(multi){arr.forEach(function(proj){var pd=getProjectData(proj);Object.keys(uData).forEach(function(dk){if(hasRealUtfall(uData[dk])&&pd.mData[dk])malProdSoFar+=getProjectMalProd(proj,pd.mData[dk])})})}
-    else{var pdF=getProjectData(fp);Object.keys(uData).forEach(function(dk){if(hasRealUtfall(uData[dk])&&pdF.mData[dk])malProdSoFar+=getProjectMalProd(fp,pdF.mData[dk])})}
+    if(multi){
+      arr.forEach(function(proj){var pd=getProjectData(proj);Object.keys(pd.uData).forEach(function(dk){if(hasRealUtfall(pd.uData[dk]))datesWithUtfall.add(dk)})});
+    } else {
+      Object.keys(uData).forEach(function(dk){if(hasRealUtfall(uData[dk]))datesWithUtfall.add(dk)});
+    }
+  }
+  if(multi){
+    arr.forEach(function(proj){var pd=getProjectData(proj);datesWithUtfall.forEach(function(dk){if(pd.mData[dk])malProdSoFar+=getProjectMalProd(proj,pd.mData[dk])})});
+  } else {
+    var pdMSF=getProjectData(fp);datesWithUtfall.forEach(function(dk){if(pdMSF.mData[dk])malProdSoFar+=getProjectMalProd(fp,pdMSF.mData[dk])});
   }
 
   var totalHours=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??0;return s+(typeof v==='number'?v:0)},0);
