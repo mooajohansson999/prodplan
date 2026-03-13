@@ -281,12 +281,46 @@ function findGoalKey(cols,uk){for(var i=0;i<cols.length;i++){if(cols[i].key&&col
 function getCompactProd(proj,row){if(proj==='vip-leads'){var bb=findVal(row,'Bredband')??0,mbh=findVal(row,'MBH')??0;return(typeof bb==='number'?bb:0)+(typeof mbh==='number'?mbh:0)}if(proj==='retention'||proj==='mbh')return findVal(row,'Bredband')??findVal(row,'BB')??null;if(proj==='mobil'||proj==='fmc'){var h=findVal(row,'Mobil')??0,ea=findVal(row,'EA')??0;return(typeof h==='number'?h:0)+(typeof ea==='number'?ea:0)}return findVal(row,'Produkt')??findVal(row,'produkt')??findVal(row,'Total sälj')??null}
 function getProjectData(proj){var m=getMonth(),y=getYear();return{uData:utfallData[storeKey(proj,y,m)]||{},mData:malData[storeKey(proj,y,m)]||{}}}
 
+var _dragSelecting=false,_dragStart=null;
+
 function toggleDay(dk,tr,ev){
   if(ev&&(ev.ctrlKey||ev.metaKey)){if(selectedDays.has(dk)){selectedDays.delete(dk);tr.classList.remove('selected-day')}else{selectedDays.add(dk);tr.classList.add('selected-day')}}
   else{if(selectedDays.size===1&&selectedDays.has(dk)){selectedDays.clear();tr.classList.remove('selected-day')}else{document.querySelectorAll('tr.selected-day').forEach(function(t){t.classList.remove('selected-day')});selectedDays.clear();selectedDays.add(dk);tr.classList.add('selected-day')}}
   var btn=document.getElementById('clearSelectionBtn');if(btn)btn.style.display=selectedDays.size>0?'':'none';
   updateStatCardsForSelection();
 }
+
+function startDrag(dk,tr,ev){
+  if(ev.ctrlKey||ev.metaKey)return;
+  ev.preventDefault();
+  _dragSelecting=true;_dragStart=dk;
+  document.querySelectorAll('tr.selected-day').forEach(function(t){t.classList.remove('selected-day')});
+  selectedDays.clear();selectedDays.add(dk);tr.classList.add('selected-day');
+}
+
+function hoverDrag(tr){
+  if(!_dragSelecting)return;
+  var dk=tr.getAttribute('data-date');if(!dk||!_dragStart)return;
+  // Select range from _dragStart to dk
+  document.querySelectorAll('tr.selected-day').forEach(function(t){t.classList.remove('selected-day')});
+  selectedDays.clear();
+  var allRows=document.querySelectorAll('#tableBody tr[data-date]');
+  var inRange=false,found=false;
+  allRows.forEach(function(r){
+    var rdk=r.getAttribute('data-date');
+    if(rdk===_dragStart||rdk===dk){if(!found){inRange=true;found=true}else{inRange=false;selectedDays.add(rdk);r.classList.add('selected-day')}}
+    if(inRange){selectedDays.add(rdk);r.classList.add('selected-day')}
+  });
+}
+
+function endDrag(){
+  if(!_dragSelecting)return;
+  _dragSelecting=false;_dragStart=null;
+  var btn=document.getElementById('clearSelectionBtn');if(btn)btn.style.display=selectedDays.size>0?'':'none';
+  updateStatCardsForSelection();
+}
+
+document.addEventListener('mouseup',endDrag);
 function clearSelection(){
   selectedDays.clear();document.querySelectorAll('tr.selected-day').forEach(function(t){t.classList.remove('selected-day')});
   var btn=document.getElementById('clearSelectionBtn');if(btn)btn.style.display='none';
@@ -409,15 +443,15 @@ function renderDaily(){
       if(c.key){var iSn=c.key.toLowerCase()==='snitt',iP=c.key==='Produkt',iSj=c.key==='__utfall_saljare__';if(iF&&!rU)return'<td>—</td>';var uv;if(iSn)uv=hU?calcSnitt(fp,uR):null;else if(iP&&(dailyView==='compact'||multi))uv=hU?getCompactProd(fp,uR):null;else if(iSj)uv=hU?(findVal(uR,'Antal Mansdagar')??findVal(uR,'Antal Säljare')??null):null;else uv=hU?findVal(uR,c.key):null;if(uv===0)return'<td>—</td>';var gk=findGoalKey(cols,c.key),gR=gk?resolveDynGoal(gk,mR):null,g2=typeof gR==='number'?fmt2(gR):gR;if(uv!==null&&uv!==''){var c2='';if(g2!==null&&typeof uv==='number'&&typeof g2==='number'&&g2>0)c2=uv>=g2?'above':'below';return'<td'+(c2?' class="'+c2+'"':'')+'>'+fmtUtfall(uv)+'</td>'}return'<td>—</td>'}
       return'<td>—</td>';
     }).join('');
-    rows+='<tr class="'+cls+'" data-date="'+dK+'" onclick="toggleDay(\''+dK+'\',this,event)" style="cursor:pointer;">'+cells+'</tr>';
+    rows+='<tr class="'+cls+'" data-date="'+dK+'" onclick="toggleDay(\''+dK+'\',this,event)" onmousedown="startDrag(\''+dK+'\',this,event)" onmouseover="hoverDrag(this)" style="cursor:pointer;-webkit-user-select:none;user-select:none;">'+cells+'</tr>';
   }
   var sC=cols.map(function(c,idx){
-    if(idx===0)return'<td>Summerat</td>';if(idx===1)return'<td></td>';
+    if(idx===0)return'<td>Total</td>';if(idx===1)return'<td></td>';
     if(c.goalKey){var iSG=c.goalKey.toLowerCase().indexOf('snitt')>=0;if(iSG){var sm=0,ct=0;Object.values(mData).forEach(function(r){var v=resolveDynGoal(c.goalKey,r);if(typeof v==='number'&&v>0){sm+=v;ct++}});return'<td class="goal goal-col">'+(ct>0?fmt2(sm/ct):'—')+'</td>'}var sm2=0;Object.values(mData).forEach(function(r){var v=resolveDynGoal(c.goalKey,r);if(typeof v==='number')sm2+=v});return'<td class="goal goal-col">'+(sm2>0?fmt2(sm2):'—')+'</td>'}
     if(c.key){if(c.key.toLowerCase()==='snitt'){var aR=Object.values(uData),tP=aR.reduce(function(s,r){var v=findVal(r,'Produkt')??findVal(r,'produkt')??0;return s+(typeof v==='number'?v:0)},0);if(SNITT_PER_TIMMAR[fp]){var tT=aR.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??0;return s+(typeof v==='number'?v:0)},0);return'<td>'+(tT>0?fmt2(tP/tT):'—')+'</td>'}else{var tS=aR.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;return s+(typeof v==='number'?v:0)},0);return'<td>'+(tS>0?fmt2(tP/tS):'—')+'</td>'}}if(c.key==='__utfall_saljare__'){var s3=0;Object.values(uData).forEach(function(r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;if(typeof v==='number')s3+=v});return'<td>'+(s3>0?fmt2(s3):'—')+'</td>'}var s4=0;Object.values(uData).forEach(function(r){var v=findVal(r,c.key);if(typeof v==='number')s4+=v});return'<td>'+(s4>0?fmt2(s4):'—')+'</td>'}
     return'<td>—</td>';
   }).join('');
-  rows+='<tr class="summary-row">'+sC+'</tr>';
+  rows='<tr class="summary-row">'+sC+'</tr>'+rows;
   document.getElementById('tableBody').innerHTML=rows;_dailyRef=savedD;
   updateStatCards(uData,mData);
 }
