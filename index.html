@@ -217,6 +217,7 @@ function handleRowMouseup(){
     _lastClicked=null;
     var btn=document.getElementById('clearSelectionBtn');if(btn)btn.style.display=selectedDays.size>0?'':'none';
     afterSelectionChange();
+    updateSummaryRow();
     _dragStartDk=null;_dragMoved=false;
     return;
   }
@@ -237,6 +238,7 @@ function handleRowMouseup(){
   _lastClicked=dk;
   var btn=document.getElementById('clearSelectionBtn');if(btn)btn.style.display=selectedDays.size>0?'':'none';
   afterSelectionChange();
+  updateSummaryRow();
 }
 document.addEventListener('mouseup',handleRowMouseup);
 
@@ -245,6 +247,30 @@ function clearDaySelection(){
   document.querySelectorAll('tr.selected-day').forEach(function(t){t.classList.remove('selected-day')});
   var btn=document.getElementById('clearSelectionBtn');if(btn)btn.style.display='none';
   afterSelectionChange();
+  updateSummaryRow();
+}
+
+function updateSummaryRow(){
+  var multi=dailyProject.size>1,arr=[...dailyProject],fp=arr[0];
+  var uData,mData;
+  if(multi){var mg=mergeDailyData(arr);uData=mg.uMerged;mData=mg.mMerged}
+  else{var pd=getProjectData(fp);uData=pd.uData;mData=pd.mData}
+  var allT2=multi&&arr.every(function(p){return TELE2_PROJECTS[p]});
+  var cols=multi?(allT2&&dailyView==='full'?PROJECT_COLS['villafiber']:COMPACT_COLS):(dailyView==='compact'?COMPACT_COLS:(PROJECT_COLS[fp]||COMPACT_COLS));
+  var srcU=uData,srcM=mData,label='Total';
+  if(selectedDays.size>0){
+    srcU={};srcM={};
+    selectedDays.forEach(function(dk){if(uData[dk])srcU[dk]=uData[dk];if(mData[dk])srcM[dk]=mData[dk]});
+    label='Urval ('+selectedDays.size+')';
+  }
+  var sC=cols.map(function(c,idx){
+    if(idx===0)return'<td>'+label+'</td>';if(idx===1)return'<td></td>';
+    if(c.goalKey){var iSG=c.goalKey.toLowerCase().indexOf('snitt')>=0;if(iSG){var sm=0,ct=0;Object.values(srcM).forEach(function(r){var v=resolveDynGoal(c.goalKey,r);if(typeof v==='number'&&v>0){sm+=v;ct++}});return'<td class="goal goal-col">'+(ct>0?fmt2(sm/ct):'—')+'</td>'}var sm2=0;Object.values(srcM).forEach(function(r){var v=resolveDynGoal(c.goalKey,r);if(typeof v==='number')sm2+=v});return'<td class="goal goal-col">'+(sm2>0?fmt2(sm2):'—')+'</td>'}
+    if(c.key){if(c.key.toLowerCase()==='snitt'){var aR=Object.values(srcU),tP=aR.reduce(function(s,r){var v=findVal(r,'Produkt')??findVal(r,'produkt')??0;return s+(typeof v==='number'?v:0)},0);if(SNITT_PER_TIMMAR[fp]){var tT=aR.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??0;return s+(typeof v==='number'?v:0)},0);return'<td>'+(tT>0?fmt2(tP/tT):'—')+'</td>'}else{var tS=aR.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;return s+(typeof v==='number'?v:0)},0);return'<td>'+(tS>0?fmt2(tP/tS):'—')+'</td>'}}if(c.key==='__utfall_saljare__'){var s3=0;Object.values(srcU).forEach(function(r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;if(typeof v==='number')s3+=v});return'<td>'+(s3>0?fmt2(s3):'—')+'</td>'}var s4=0;Object.values(srcU).forEach(function(r){var v=findVal(r,c.key);if(typeof v==='number')s4+=v});return'<td>'+(s4>0?fmt2(s4):'—')+'</td>'}
+    return'<td>—</td>';
+  }).join('');
+  var sumRow=document.querySelector('#tableBody tr.summary-row');
+  if(sumRow)sumRow.innerHTML=sC;
 }
 
 function afterSelectionChange(){
