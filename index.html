@@ -408,8 +408,9 @@ function updateStatCards(uData,mData){
   if(taktEl){
     if(workDays>0&&malProd>0&&malDaysTotal>0){
       var now2=new Date(),isCM=(getMonth()===now2.getMonth()&&getYear()===now2.getFullYear());
-      var taktDays=Math.min(workDays,malDaysTotal);
-      var avgPD=totalProd/taktDays,projected=Math.round(avgPD*malDaysTotal);
+      var avgPD=totalProd/workDays;
+      var remainingDays=Math.max(malDaysTotal-workDays,0);
+      var projected=Math.round(totalProd+(avgPD*remainingDays));
       if(!isCM&&!hasSel){taktEl.innerHTML=''}
       else{taktEl.innerHTML='<span style="color:#1a1a1a;font-weight:600;">'+(projected>=malProd?'▲':'▼')+' Taktar mot: '+projected+' produkter</span>'}
     }else{taktEl.innerHTML=''}
