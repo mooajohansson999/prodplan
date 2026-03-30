@@ -408,9 +408,13 @@ function updateStatCards(uData,mData){
   if(taktEl){
     if(workDays>0&&malProd>0&&malDaysTotal>0){
       var now2=new Date(),isCM=(getMonth()===now2.getMonth()&&getYear()===now2.getFullYear());
+      // Count how many mål-days already have utfall
+      var malDaysWithUtfall=0;
+      if(multi){var seenDk=new Set();arr.forEach(function(proj){var pd=getProjectData(proj);Object.keys(pd.uData).forEach(function(dk){if(!seenDk.has(dk)&&hasRealUtfall(pd.uData[dk])&&pd.mData[dk]&&!isDayOff(pd.mData[dk])){seenDk.add(dk);malDaysWithUtfall++}})})}
+      else{var pdT=getProjectData(fp);Object.keys(pdT.uData).forEach(function(dk){if(hasRealUtfall(pdT.uData[dk])&&pdT.mData[dk]&&!isDayOff(pdT.mData[dk]))malDaysWithUtfall++})}
+      var remainingMalDays=Math.max(malDaysTotal-malDaysWithUtfall,0);
       var avgPD=totalProd/workDays;
-      var remainingDays=Math.max(malDaysTotal-workDays,0);
-      var projected=Math.round(totalProd+(avgPD*remainingDays));
+      var projected=Math.round(totalProd+(avgPD*remainingMalDays));
       if(!isCM&&!hasSel){taktEl.innerHTML=''}
       else{taktEl.innerHTML='<span style="color:#1a1a1a;font-weight:600;">'+(projected>=malProd?'▲':'▼')+' Taktar mot: '+projected+' produkter</span>'}
     }else{taktEl.innerHTML=''}
