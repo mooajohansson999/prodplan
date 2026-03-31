@@ -7519,6 +7519,7 @@
       "Mobil": 0,
       "TV Box": 1,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7538,6 +7539,7 @@
       "Mobil": 1,
       "TV Box": 0,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7569,6 +7571,7 @@
       "Mobil": 0,
       "TV Box": 0,
       "Trygghetspaket": 1,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7588,6 +7591,7 @@
       "Mobil": 0,
       "TV Box": 1,
       "Trygghetspaket": 1,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7607,6 +7611,7 @@
       "Mobil": 0,
       "TV Box": 2,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7626,6 +7631,7 @@
       "Mobil": 0,
       "TV Box": 0,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7645,6 +7651,7 @@
       "Mobil": 0,
       "TV Box": 0,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7664,6 +7671,7 @@
       "Mobil": 0,
       "TV Box": 1,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7683,6 +7691,7 @@
       "Mobil": 0,
       "TV Box": 0,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7702,6 +7711,7 @@
       "Mobil": 0,
       "TV Box": 1,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7721,6 +7731,7 @@
       "Mobil": 0,
       "TV Box": 1,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7740,6 +7751,7 @@
       "Mobil": 1,
       "TV Box": 1,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7759,6 +7771,7 @@
       "Mobil": 0,
       "TV Box": 0,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7778,6 +7791,7 @@
       "Mobil": 0,
       "TV Box": 0,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7797,6 +7811,7 @@
       "Mobil": 1,
       "TV Box": 2,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7816,6 +7831,7 @@
       "Mobil": 1,
       "TV Box": 1,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7835,6 +7851,7 @@
       "Mobil": 0,
       "TV Box": 1,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7854,6 +7871,7 @@
       "Mobil": 0,
       "TV Box": 1,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7873,6 +7891,7 @@
       "Mobil": 0,
       "TV Box": 1,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7892,6 +7911,7 @@
       "Mobil": 0,
       "TV Box": 0,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7911,6 +7931,7 @@
       "Mobil": 0,
       "TV Box": 0,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7930,6 +7951,7 @@
       "Mobil": 1,
       "TV Box": 4,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7949,6 +7971,7 @@
       "Mobil": 1,
       "TV Box": 0,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7968,6 +7991,7 @@
       "Mobil": 0,
       "TV Box": 1,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -7987,8 +8011,9 @@
       "Mobil": 1,
       "TV Box": 2,
       "Trygghetspaket": 1,
+      "Räknas ej": 2,
       "kontroll produkter": 0,
-      "kontroll Tilläggsprodukter": 2
+      "kontroll Tilläggsprodukter": 0
     },
     "2026-03-27": {
       "Telia Adressändring": "Fredag",
@@ -8006,6 +8031,7 @@
       "Mobil": 0,
       "TV Box": 1,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -8025,6 +8051,7 @@
       "Mobil": 0,
       "TV Box": 0,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -8044,6 +8071,7 @@
       "Mobil": 0,
       "TV Box": 0,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -8063,8 +8091,9 @@
       "Mobil": 0,
       "TV Box": 4,
       "Trygghetspaket": 0,
+      "Räknas ej": 2,
       "kontroll produkter": 0,
-      "kontroll Tilläggsprodukter": 2
+      "kontroll Tilläggsprodukter": 0
     },
     "2026-03-31": {
       "Telia Adressändring": "Tisdag",
@@ -8082,6 +8111,7 @@
       "Mobil": 0,
       "TV Box": 0,
       "Trygghetspaket": 0,
+      "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9206,6 +9236,8 @@
       "Sport": 1,
       "Mobil": 8,
       "TV Box": 2,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9224,6 +9256,8 @@
       "Sport": 3,
       "Mobil": 8,
       "TV Box": 1,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9254,6 +9288,8 @@
       "Sport": 3,
       "Mobil": 9,
       "TV Box": 4,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9272,6 +9308,8 @@
       "Sport": 2,
       "Mobil": 0,
       "TV Box": 2,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9290,6 +9328,8 @@
       "Sport": 1,
       "Mobil": 1,
       "TV Box": 2,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9308,6 +9348,8 @@
       "Sport": 0,
       "Mobil": 0,
       "TV Box": 0,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9326,6 +9368,8 @@
       "Sport": 0,
       "Mobil": 0,
       "TV Box": 0,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9344,6 +9388,8 @@
       "Sport": 1,
       "Mobil": 5,
       "TV Box": 0,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9362,6 +9408,8 @@
       "Sport": 1,
       "Mobil": 0,
       "TV Box": 3,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9380,6 +9428,8 @@
       "Sport": 1,
       "Mobil": 3,
       "TV Box": 1,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9398,6 +9448,8 @@
       "Sport": 3,
       "Mobil": 2,
       "TV Box": 1,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9416,6 +9468,8 @@
       "Sport": 2,
       "Mobil": 8,
       "TV Box": 2,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9434,6 +9488,8 @@
       "Sport": 0,
       "Mobil": 0,
       "TV Box": 0,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9452,6 +9508,8 @@
       "Sport": 0,
       "Mobil": 0,
       "TV Box": 0,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9470,6 +9528,8 @@
       "Sport": 0,
       "Mobil": 2,
       "TV Box": 4,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9488,6 +9548,8 @@
       "Sport": 2,
       "Mobil": 6,
       "TV Box": 2,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9506,8 +9568,10 @@
       "Sport": 1,
       "Mobil": 1,
       "TV Box": 4,
+      "Räknas ej": 0,
+      "Trygghetspaket": 2,
       "kontroll produkter": 0,
-      "kontroll Tilläggsprodukter": 2
+      "kontroll Tilläggsprodukter": 0
     },
     "2026-03-19": {
       "Telia VIP Leads": "Torsdag",
@@ -9524,6 +9588,8 @@
       "Sport": 2,
       "Mobil": 0,
       "TV Box": 7,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9542,6 +9608,8 @@
       "Sport": 2,
       "Mobil": 11,
       "TV Box": 6,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9560,6 +9628,8 @@
       "Sport": 0,
       "Mobil": 0,
       "TV Box": 0,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9578,6 +9648,8 @@
       "Sport": 0,
       "Mobil": 0,
       "TV Box": 0,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9594,10 +9666,12 @@
       "TV": 20,
       "Film": 6,
       "Sport": 1,
-      "Mobil": 3,
+      "Mobil": 4,
       "TV Box": 2,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
-      "kontroll Tilläggsprodukter": 1
+      "kontroll Tilläggsprodukter": 0
     },
     "2026-03-24": {
       "Telia VIP Leads": "Tisdag",
@@ -9614,6 +9688,8 @@
       "Sport": 1,
       "Mobil": 3,
       "TV Box": 2,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9632,8 +9708,10 @@
       "Sport": 3,
       "Mobil": 2,
       "TV Box": 2,
+      "Räknas ej": 4,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
-      "kontroll Tilläggsprodukter": 4
+      "kontroll Tilläggsprodukter": 0
     },
     "2026-03-26": {
       "Telia VIP Leads": "Torsdag",
@@ -9650,8 +9728,10 @@
       "Sport": 0,
       "Mobil": 0,
       "TV Box": 4,
+      "Räknas ej": 2,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
-      "kontroll Tilläggsprodukter": 2
+      "kontroll Tilläggsprodukter": 0
     },
     "2026-03-27": {
       "Telia VIP Leads": "Fredag",
@@ -9668,8 +9748,10 @@
       "Sport": 0,
       "Mobil": 1,
       "TV Box": 2,
+      "Räknas ej": 5,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
-      "kontroll Tilläggsprodukter": 5
+      "kontroll Tilläggsprodukter": 0
     },
     "2026-03-28": {
       "Telia VIP Leads": "Lördag",
@@ -9686,6 +9768,8 @@
       "Sport": 0,
       "Mobil": 0,
       "TV Box": 0,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9704,6 +9788,8 @@
       "Sport": 0,
       "Mobil": 0,
       "TV Box": 0,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -9722,8 +9808,10 @@
       "Sport": 3,
       "Mobil": 4,
       "TV Box": 3,
+      "Räknas ej": 1,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
-      "kontroll Tilläggsprodukter": 1
+      "kontroll Tilläggsprodukter": 0
     },
     "2026-03-31": {
       "Telia VIP Leads": "Tisdag",
@@ -9740,6 +9828,8 @@
       "Sport": 0,
       "Mobil": 0,
       "TV Box": 0,
+      "Räknas ej": 0,
+      "Trygghetspaket": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -14065,9 +14155,15 @@
       "Timmar": 109.94194444444447,
       "Total sälj": 10,
       "produkt": 10,
+      "Tilläggsprodukt": 0,
       "Mobil": 10,
       "EA": 0,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "1901-01-31": {
       "Telia Mobil": "Produkter",
@@ -14080,9 +14176,15 @@
       "Timmar": 123.50555555555555,
       "Total sälj": 26,
       "produkt": 26,
+      "Tilläggsprodukt": 0,
       "Mobil": 15,
       "EA": 11,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-04": {
       "Telia Mobil": "Onsdag",
@@ -14091,9 +14193,15 @@
       "Timmar": 114.77444444444446,
       "Total sälj": 21,
       "produkt": 21,
+      "Tilläggsprodukt": 0,
       "Mobil": 12,
       "EA": 9,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-05": {
       "Telia Mobil": "Torsdag",
@@ -14102,9 +14210,15 @@
       "Timmar": 129.01250000000002,
       "Total sälj": 18,
       "produkt": 18,
+      "Tilläggsprodukt": 0,
       "Mobil": 15,
       "EA": 3,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-06": {
       "Telia Mobil": "Fredag",
@@ -14113,9 +14227,15 @@
       "Timmar": 135.25888888888886,
       "Total sälj": 28,
       "produkt": 27,
+      "Tilläggsprodukt": 1,
       "Mobil": 16,
       "EA": 11,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 1,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-07": {
       "Telia Mobil": "Lördag",
@@ -14124,9 +14244,15 @@
       "Timmar": 0,
       "Total sälj": 0,
       "produkt": 0,
+      "Tilläggsprodukt": 0,
       "Mobil": 0,
       "EA": 0,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-08": {
       "Telia Mobil": "Söndag",
@@ -14135,9 +14261,15 @@
       "Timmar": 0,
       "Total sälj": 0,
       "produkt": 0,
+      "Tilläggsprodukt": 0,
       "Mobil": 0,
       "EA": 0,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-09": {
       "Telia Mobil": "Måndag",
@@ -14146,9 +14278,15 @@
       "Timmar": 162.04138888888892,
       "Total sälj": 23,
       "produkt": 23,
+      "Tilläggsprodukt": 0,
       "Mobil": 12,
       "EA": 11,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-10": {
       "Telia Mobil": "Tisdag",
@@ -14157,9 +14295,15 @@
       "Timmar": 142.79611111111112,
       "Total sälj": 28,
       "produkt": 28,
+      "Tilläggsprodukt": 0,
       "Mobil": 20,
       "EA": 8,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-11": {
       "Telia Mobil": "Onsdag",
@@ -14168,9 +14312,15 @@
       "Timmar": 141.63916666666668,
       "Total sälj": 30,
       "produkt": 30,
+      "Tilläggsprodukt": 0,
       "Mobil": 17,
       "EA": 13,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-12": {
       "Telia Mobil": "Torsdag",
@@ -14179,9 +14329,15 @@
       "Timmar": 151.18194444444444,
       "Total sälj": 22,
       "produkt": 22,
+      "Tilläggsprodukt": 0,
       "Mobil": 15,
       "EA": 7,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-13": {
       "Telia Mobil": "Fredag",
@@ -14190,9 +14346,15 @@
       "Timmar": 130.07999999999998,
       "Total sälj": 33,
       "produkt": 33,
+      "Tilläggsprodukt": 0,
       "Mobil": 16,
       "EA": 17,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-14": {
       "Telia Mobil": "Lördag",
@@ -14201,9 +14363,15 @@
       "Timmar": 0,
       "Total sälj": 0,
       "produkt": 0,
+      "Tilläggsprodukt": 0,
       "Mobil": 0,
       "EA": 0,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-15": {
       "Telia Mobil": "Söndag",
@@ -14212,9 +14380,15 @@
       "Timmar": 0,
       "Total sälj": 0,
       "produkt": 0,
+      "Tilläggsprodukt": 0,
       "Mobil": 0,
       "EA": 0,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-16": {
       "Telia Mobil": "Måndag",
@@ -14223,9 +14397,15 @@
       "Timmar": 170.88194444444446,
       "Total sälj": 30,
       "produkt": 30,
+      "Tilläggsprodukt": 0,
       "Mobil": 19,
       "EA": 11,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-17": {
       "Telia Mobil": "Tisdag",
@@ -14234,9 +14414,15 @@
       "Timmar": 164.42972222222224,
       "Total sälj": 33,
       "produkt": 31,
+      "Tilläggsprodukt": 2,
       "Mobil": 17,
       "EA": 14,
-      "kontroll produkt": 0
+      "Bredband": 1,
+      "TV": 1,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-18": {
       "Telia Mobil": "Onsdag",
@@ -14245,9 +14431,15 @@
       "Timmar": 163.7380555555556,
       "Total sälj": 36,
       "produkt": 35,
+      "Tilläggsprodukt": 1,
       "Mobil": 23,
       "EA": 12,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 1,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-19": {
       "Telia Mobil": "Torsdag",
@@ -14256,9 +14448,15 @@
       "Timmar": 172.43055555555557,
       "Total sälj": 23,
       "produkt": 23,
+      "Tilläggsprodukt": 0,
       "Mobil": 15,
       "EA": 8,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-20": {
       "Telia Mobil": "Fredag",
@@ -14267,9 +14465,15 @@
       "Timmar": 143.42333333333335,
       "Total sälj": 19,
       "produkt": 15,
+      "Tilläggsprodukt": 4,
       "Mobil": 13,
       "EA": 2,
-      "kontroll produkt": 0
+      "Bredband": 2,
+      "TV": 2,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-21": {
       "Telia Mobil": "Lördag",
@@ -14278,9 +14482,15 @@
       "Timmar": 0,
       "Total sälj": 0,
       "produkt": 0,
+      "Tilläggsprodukt": 0,
       "Mobil": 0,
       "EA": 0,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-22": {
       "Telia Mobil": "Söndag",
@@ -14289,9 +14499,15 @@
       "Timmar": 0,
       "Total sälj": 0,
       "produkt": 0,
+      "Tilläggsprodukt": 0,
       "Mobil": 0,
       "EA": 0,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-23": {
       "Telia Mobil": "Måndag",
@@ -14300,9 +14516,15 @@
       "Timmar": 168.13444444444443,
       "Total sälj": 49,
       "produkt": 41,
+      "Tilläggsprodukt": 8,
       "Mobil": 26,
       "EA": 15,
-      "kontroll produkt": 0
+      "Bredband": 2,
+      "TV": 3,
+      "Streaming": 3,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-24": {
       "Telia Mobil": "Tisdag",
@@ -14311,9 +14533,15 @@
       "Timmar": 151.97944444444443,
       "Total sälj": 31,
       "produkt": 31,
+      "Tilläggsprodukt": 0,
       "Mobil": 22,
       "EA": 9,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-25": {
       "Telia Mobil": "Onsdag",
@@ -14322,9 +14550,15 @@
       "Timmar": 124.57055555555554,
       "Total sälj": 37,
       "produkt": 33,
+      "Tilläggsprodukt": 4,
       "Mobil": 24,
       "EA": 9,
-      "kontroll produkt": 0
+      "Bredband": 1,
+      "TV": 2,
+      "Streaming": 1,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-26": {
       "Telia Mobil": "Torsdag",
@@ -14333,9 +14567,15 @@
       "Timmar": 126.1483333333333,
       "Total sälj": 24,
       "produkt": 24,
+      "Tilläggsprodukt": 0,
       "Mobil": 16,
       "EA": 8,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-27": {
       "Telia Mobil": "Fredag",
@@ -14344,9 +14584,15 @@
       "Timmar": 121.81138888888889,
       "Total sälj": 39,
       "produkt": 35,
+      "Tilläggsprodukt": 4,
       "Mobil": 22,
       "EA": 13,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 1,
+      "Streaming": 3,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-28": {
       "Telia Mobil": "Lördag",
@@ -14355,9 +14601,15 @@
       "Timmar": 0,
       "Total sälj": 0,
       "produkt": 0,
+      "Tilläggsprodukt": 0,
       "Mobil": 0,
       "EA": 0,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-29": {
       "Telia Mobil": "Söndag",
@@ -14366,9 +14618,15 @@
       "Timmar": 0,
       "Total sälj": 0,
       "produkt": 0,
+      "Tilläggsprodukt": 0,
       "Mobil": 0,
       "EA": 0,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-30": {
       "Telia Mobil": "Måndag",
@@ -14377,9 +14635,15 @@
       "Timmar": 163.2011111111111,
       "Total sälj": 32,
       "produkt": 29,
+      "Tilläggsprodukt": 3,
       "Mobil": 24,
       "EA": 5,
-      "kontroll produkt": 0
+      "Bredband": 1,
+      "TV": 1,
+      "Streaming": 1,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "2026-03-31": {
       "Telia Mobil": "Tisdag",
@@ -14388,21 +14652,27 @@
       "Timmar": 0,
       "Total sälj": 0,
       "produkt": 0,
+      "Tilläggsprodukt": 0,
       "Mobil": 0,
       "EA": 0,
-      "kontroll produkt": 0
+      "Bredband": 0,
+      "TV": 0,
+      "Streaming": 0,
+      "Trygghetspaket": 0,
+      "kontroll produkt": 0,
+      "kontroll Tilläggsprodukt": 0
     },
     "1901-08-14": {
       "Telia Mobil": "Total sälj",
       "DATUM": 592
     },
-    "1901-07-18": {
-      "Telia Mobil": "Produkter",
-      "DATUM": 565
-    },
     "1900-01-26": {
-      "Telia Mobil": "Kontroll",
+      "Telia Mobil": "Produkter",
       "DATUM": 27
+    },
+    "1901-07-18": {
+      "Telia Mobil": "Kontroll",
+      "DATUM": 565
     }
   },
   "2.2.1. Telia FMC": {
