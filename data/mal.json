@@ -706,7 +706,7 @@
       "Mål Premium": 22.5,
       "Mål Mob": 11.3,
       "Mål Trygghetspaket": 18,
-      "Mål snitt": 5.965
+      "Mål snitt": 6
     },
     "2026-04-02": {
       "DATUM": "2026-04-02",
@@ -718,7 +718,7 @@
       "Mål Premium": 22.5,
       "Mål Mob": 11.3,
       "Mål Trygghetspaket": 18,
-      "Mål snitt": 5.965
+      "Mål snitt": 6
     },
     "2026-04-03": {
       "DATUM": "2026-04-03"
@@ -730,16 +730,7 @@
       "DATUM": "2026-04-05"
     },
     "2026-04-06": {
-      "DATUM": "2026-04-06",
-      "Mål säljare": 20,
-      "Mål Sälj": 119.3,
-      "Mål timmar": 180,
-      "Mål BB": 45,
-      "Mål TV": 40.5,
-      "Mål Premium": 22.5,
-      "Mål Mob": 11.3,
-      "Mål Trygghetspaket": 18,
-      "Mål snitt": 5.965
+      "DATUM": "2026-04-06"
     },
     "2026-04-07": {
       "DATUM": "2026-04-07",
@@ -751,7 +742,7 @@
       "Mål Premium": 22.5,
       "Mål Mob": 11.3,
       "Mål Trygghetspaket": 18,
-      "Mål snitt": 5.965
+      "Mål snitt": 6
     },
     "2026-04-08": {
       "DATUM": "2026-04-08",
@@ -763,7 +754,7 @@
       "Mål Premium": 22.5,
       "Mål Mob": 11.3,
       "Mål Trygghetspaket": 18,
-      "Mål snitt": 5.965
+      "Mål snitt": 6
     },
     "2026-04-09": {
       "DATUM": "2026-04-09",
@@ -775,64 +766,82 @@
       "Mål Premium": 22.5,
       "Mål Mob": 11.3,
       "Mål Trygghetspaket": 18,
-      "Mål snitt": 5.965
+      "Mål snitt": 6
     },
     "2026-04-10": {
-      "DATUM": "2026-04-10"
+      "DATUM": "2026-04-10",
+      "Mål säljare": 10,
+      "Mål Sälj": 53,
+      "Mål timmar": 80,
+      "Mål BB": 20,
+      "Mål TV": 18,
+      "Mål Premium": 10,
+      "Mål Mob": 5,
+      "Mål Trygghetspaket": 8,
+      "Mål snitt": 5.3
     },
     "2026-04-11": {
       "DATUM": "2026-04-11"
     },
     "2026-04-12": {
-      "DATUM": "2026-04-12"
+      "DATUM": "2026-04-12",
+      "Mål säljare": 10,
+      "Mål Sälj": 53,
+      "Mål timmar": 80,
+      "Mål BB": 20,
+      "Mål TV": 18,
+      "Mål Premium": 10,
+      "Mål Mob": 5,
+      "Mål Trygghetspaket": 8,
+      "Mål snitt": 5.3
     },
     "2026-04-13": {
       "DATUM": "2026-04-13",
-      "Mål säljare": 22,
-      "Mål Sälj": 131.2,
-      "Mål timmar": 198,
-      "Mål BB": 49.5,
-      "Mål TV": 44.6,
-      "Mål Premium": 24.8,
-      "Mål Mob": 12.4,
-      "Mål Trygghetspaket": 19.8,
-      "Mål snitt": 5.963636363636363
+      "Mål säljare": 20,
+      "Mål Sälj": 119.3,
+      "Mål timmar": 180,
+      "Mål BB": 45,
+      "Mål TV": 40.5,
+      "Mål Premium": 22.5,
+      "Mål Mob": 11.3,
+      "Mål Trygghetspaket": 18,
+      "Mål snitt": 6
     },
     "2026-04-14": {
       "DATUM": "2026-04-14",
-      "Mål säljare": 22,
-      "Mål Sälj": 131.2,
-      "Mål timmar": 198,
-      "Mål BB": 49.5,
-      "Mål TV": 44.6,
-      "Mål Premium": 24.8,
-      "Mål Mob": 12.4,
-      "Mål Trygghetspaket": 19.8,
-      "Mål snitt": 5.963636363636363
+      "Mål säljare": 20,
+      "Mål Sälj": 119.3,
+      "Mål timmar": 180,
+      "Mål BB": 45,
+      "Mål TV": 40.5,
+      "Mål Premium": 22.5,
+      "Mål Mob": 11.3,
+      "Mål Trygghetspaket": 18,
+      "Mål snitt": 6
     },
     "2026-04-15": {
       "DATUM": "2026-04-15",
-      "Mål säljare": 22,
-      "Mål Sälj": 131.2,
-      "Mål timmar": 198,
-      "Mål BB": 49.5,
-      "Mål TV": 44.6,
-      "Mål Premium": 24.8,
-      "Mål Mob": 12.4,
-      "Mål Trygghetspaket": 19.8,
-      "Mål snitt": 5.963636363636363
+      "Mål säljare": 20,
+      "Mål Sälj": 119.3,
+      "Mål timmar": 180,
+      "Mål BB": 45,
+      "Mål TV": 40.5,
+      "Mål Premium": 22.5,
+      "Mål Mob": 11.3,
+      "Mål Trygghetspaket": 18,
+      "Mål snitt": 6
     },
     "2026-04-16": {
       "DATUM": "2026-04-16",
-      "Mål säljare": 22,
-      "Mål Sälj": 131.2,
-      "Mål timmar": 198,
-      "Mål BB": 49.5,
-      "Mål TV": 44.6,
-      "Mål Premium": 24.8,
-      "Mål Mob": 12.4,
-      "Mål Trygghetspaket": 19.8,
-      "Mål snitt": 5.963636363636363
+      "Mål säljare": 20,
+      "Mål Sälj": 119.3,
+      "Mål timmar": 180,
+      "Mål BB": 45,
+      "Mål TV": 40.5,
+      "Mål Premium": 22.5,
+      "Mål Mob": 11.3,
+      "Mål Trygghetspaket": 18,
+      "Mål snitt": 6
     },
     "2026-04-17": {
       "DATUM": "2026-04-17"
@@ -845,54 +854,63 @@
     },
     "2026-04-20": {
       "DATUM": "2026-04-20",
-      "Mål säljare": 24,
-      "Mål Sälj": 143.1,
-      "Mål timmar": 216,
-      "Mål BB": 54,
-      "Mål TV": 48.6,
-      "Mål Premium": 27,
-      "Mål Mob": 13.5,
-      "Mål Trygghetspaket": 21.6,
-      "Mål snitt": 5.9624999999999995
+      "Mål säljare": 22,
+      "Mål Sälj": 131.2,
+      "Mål timmar": 198,
+      "Mål BB": 49.5,
+      "Mål TV": 44.6,
+      "Mål Premium": 24.8,
+      "Mål Mob": 12.4,
+      "Mål Trygghetspaket": 19.8,
+      "Mål snitt": 6
     },
     "2026-04-21": {
       "DATUM": "2026-04-21",
-      "Mål säljare": 24,
-      "Mål Sälj": 143.1,
-      "Mål timmar": 216,
-      "Mål BB": 54,
-      "Mål TV": 48.6,
-      "Mål Premium": 27,
-      "Mål Mob": 13.5,
-      "Mål Trygghetspaket": 21.6,
-      "Mål snitt": 5.9624999999999995
+      "Mål säljare": 22,
+      "Mål Sälj": 131.2,
+      "Mål timmar": 198,
+      "Mål BB": 49.5,
+      "Mål TV": 44.6,
+      "Mål Premium": 24.8,
+      "Mål Mob": 12.4,
+      "Mål Trygghetspaket": 19.8,
+      "Mål snitt": 6
     },
     "2026-04-22": {
       "DATUM": "2026-04-22",
-      "Mål säljare": 24,
-      "Mål Sälj": 143.1,
-      "Mål timmar": 216,
-      "Mål BB": 54,
-      "Mål TV": 48.6,
-      "Mål Premium": 27,
-      "Mål Mob": 13.5,
-      "Mål Trygghetspaket": 21.6,
-      "Mål snitt": 5.9624999999999995
+      "Mål säljare": 22,
+      "Mål Sälj": 131.2,
+      "Mål timmar": 198,
+      "Mål BB": 49.5,
+      "Mål TV": 44.6,
+      "Mål Premium": 24.8,
+      "Mål Mob": 12.4,
+      "Mål Trygghetspaket": 19.8,
+      "Mål snitt": 6
     },
     "2026-04-23": {
       "DATUM": "2026-04-23",
-      "Mål säljare": 24,
-      "Mål Sälj": 143.1,
-      "Mål timmar": 216,
-      "Mål BB": 54,
-      "Mål TV": 48.6,
-      "Mål Premium": 27,
-      "Mål Mob": 13.5,
-      "Mål Trygghetspaket": 21.6,
-      "Mål snitt": 5.9624999999999995
+      "Mål säljare": 22,
+      "Mål Sälj": 131.2,
+      "Mål timmar": 198,
+      "Mål BB": 49.5,
+      "Mål TV": 44.6,
+      "Mål Premium": 24.8,
+      "Mål Mob": 12.4,
+      "Mål Trygghetspaket": 19.8,
+      "Mål snitt": 6
     },
     "2026-04-24": {
-      "DATUM": "2026-04-24"
+      "DATUM": "2026-04-24",
+      "Mål säljare": 11,
+      "Mål Sälj": 58.3,
+      "Mål timmar": 88,
+      "Mål BB": 22,
+      "Mål TV": 19.8,
+      "Mål Premium": 11,
+      "Mål Mob": 5.5,
+      "Mål Trygghetspaket": 8.8,
+      "Mål snitt": 5.3
     },
     "2026-04-25": {
       "DATUM": "2026-04-25"
@@ -902,51 +920,51 @@
     },
     "2026-04-27": {
       "DATUM": "2026-04-27",
-      "Mål säljare": 26,
-      "Mål Sälj": 155,
-      "Mål timmar": 234,
-      "Mål BB": 58.5,
-      "Mål TV": 52.7,
-      "Mål Premium": 29.3,
-      "Mål Mob": 14.6,
-      "Mål Trygghetspaket": 23.400000000000002,
-      "Mål snitt": 5.961538461538462
+      "Mål säljare": 24,
+      "Mål Sälj": 143.1,
+      "Mål timmar": 216,
+      "Mål BB": 54,
+      "Mål TV": 48.6,
+      "Mål Premium": 27,
+      "Mål Mob": 13.5,
+      "Mål Trygghetspaket": 21.6,
+      "Mål snitt": 6
     },
     "2026-04-28": {
       "DATUM": "2026-04-28",
-      "Mål säljare": 26,
-      "Mål Sälj": 155,
-      "Mål timmar": 234,
-      "Mål BB": 58.5,
-      "Mål TV": 52.7,
-      "Mål Premium": 29.3,
-      "Mål Mob": 14.6,
-      "Mål Trygghetspaket": 23.400000000000002,
-      "Mål snitt": 5.961538461538462
+      "Mål säljare": 24,
+      "Mål Sälj": 143.1,
+      "Mål timmar": 216,
+      "Mål BB": 54,
+      "Mål TV": 48.6,
+      "Mål Premium": 27,
+      "Mål Mob": 13.5,
+      "Mål Trygghetspaket": 21.6,
+      "Mål snitt": 6
     },
     "2026-04-29": {
       "DATUM": "2026-04-29",
-      "Mål säljare": 26,
-      "Mål Sälj": 155,
-      "Mål timmar": 234,
-      "Mål BB": 58.5,
-      "Mål TV": 52.7,
-      "Mål Premium": 29.3,
-      "Mål Mob": 14.6,
-      "Mål Trygghetspaket": 23.400000000000002,
-      "Mål snitt": 5.961538461538462
+      "Mål säljare": 24,
+      "Mål Sälj": 143.1,
+      "Mål timmar": 216,
+      "Mål BB": 54,
+      "Mål TV": 48.6,
+      "Mål Premium": 27,
+      "Mål Mob": 13.5,
+      "Mål Trygghetspaket": 21.6,
+      "Mål snitt": 6
     },
     "2026-04-30": {
       "DATUM": "2026-04-30",
-      "Mål säljare": 26,
-      "Mål Sälj": 155,
-      "Mål timmar": 234,
-      "Mål BB": 58.5,
-      "Mål TV": 52.7,
-      "Mål Premium": 29.3,
-      "Mål Mob": 14.6,
-      "Mål Trygghetspaket": 23.400000000000002,
-      "Mål snitt": 5.961538461538462
+      "Mål säljare": 24,
+      "Mål Sälj": 143.1,
+      "Mål timmar": 216,
+      "Mål BB": 54,
+      "Mål TV": 48.6,
+      "Mål Premium": 27,
+      "Mål Mob": 13.5,
+      "Mål Trygghetspaket": 21.6,
+      "Mål snitt": 6
     }
   },
   "1.3 Tele2 Villafiber": {
