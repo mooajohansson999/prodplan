@@ -382,7 +382,7 @@ function updateStatCards(uData,mData){
   if(multi){arr.forEach(function(proj){var pd=getProjectData(proj);datesU.forEach(function(dk){if(pd.mData[dk])malProdSoFar+=getProjectMalProd(proj,pd.mData[dk])})})}
   else{var pdM=getProjectData(fp);datesU.forEach(function(dk){if(pdM.mData[dk])malProdSoFar+=getProjectMalProd(fp,pdM.mData[dk])})}
   var totalHours=uRows.reduce(function(s,r){var v=findVal(r,'Timmar')??findVal(r,'timmar')??0;return s+(typeof v==='number'?v:0)},0);
-  var workDays=uRows.filter(function(r){return(findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0)>0}).length;
+  var workDays=uRows.filter(function(r){return hasRealUtfall(r)}).length;
   var totalSellers=uRows.reduce(function(s,r){var v=findVal(r,'Antal Mansdagar')??findVal(r,'Antal Säljare')??0;return s+(typeof v==='number'?v:0)},0);
   var avgProd=workDays>0?fmt2(totalProd/workDays):0;
   var malAvgProd=(function(){var s=0,c=0;mRows.forEach(function(r){var v=findVal(r,'Mål Sälj')??findVal(r,'Mål Produkt')??findVal(r,'Mål produkt')??null;if(typeof v==='number'&&v>0){s+=v;c++}});return c>0?fmt2(s/c):0})();
