@@ -679079,13 +679079,13 @@
     "Produkt": "Bredband Nyteckning",
     "Produkttyp": "Produkt",
     "Produktkod": "Bredband Nyteckning",
-    "Säljare": "Dennis Mazilu",
-    "LoxysoftID": 5437,
+    "Säljare": "Artur Genova",
+    "LoxysoftID": 6835,
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
     "FINNS TID": 1,
-    "provision trappa": 162
+    "provision trappa": 0
   },
   {
     "Kund": "Tele2",
@@ -679096,13 +679096,13 @@
     "Produkt": "DigitalTV Nyteckning",
     "Produkttyp": "Produkt",
     "Produktkod": "DigitalTV Nyteckning",
-    "Säljare": "Dennis Mazilu",
-    "LoxysoftID": 5437,
+    "Säljare": "Artur Genova",
+    "LoxysoftID": 6835,
     "nyckel": "Tele2 VillafiberDigitalTV NyteckningProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
     "FINNS TID": 1,
-    "provision trappa": 162
+    "provision trappa": 0
   },
   {
     "Kund": "Tele2",
@@ -679113,13 +679113,13 @@
     "Produkt": "Mobiltelefoni 10GB",
     "Produkttyp": "Produkt",
     "Produktkod": "Mobiltelefoni 10GB",
-    "Säljare": "Dennis Mazilu",
-    "LoxysoftID": 5437,
+    "Säljare": "Artur Genova",
+    "LoxysoftID": 6835,
     "nyckel": "Tele2 VillafiberMobiltelefoni 10GBProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
     "FINNS TID": 1,
-    "provision trappa": 162
+    "provision trappa": 0
   },
   {
     "Kund": "Tele2",
@@ -679130,13 +679130,13 @@
     "Produkt": "Familjeabonnemang",
     "Produkttyp": "Produkt",
     "Produktkod": "Familjeabonnemang",
-    "Säljare": "Dennis Mazilu",
-    "LoxysoftID": 5437,
+    "Säljare": "Artur Genova",
+    "LoxysoftID": 6835,
     "nyckel": "Tele2 VillafiberFamiljeabonnemangProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
     "FINNS TID": 1,
-    "provision trappa": 162
+    "provision trappa": 0
   },
   {
     "Kund": "Tele2",
@@ -679147,13 +679147,13 @@
     "Produkt": "Syskonabonnemang",
     "Produkttyp": "Tilläggsprodukt",
     "Produktkod": "Syskonabonnemang",
-    "Säljare": "Dennis Mazilu",
-    "LoxysoftID": 5437,
+    "Säljare": "Artur Genova",
+    "LoxysoftID": 6835,
     "nyckel": "Tele2 VillafiberSyskonabonnemangTilläggsprodukt",
     "kolumn?": "räknas ej",
     "Provition kontroll": 1,
     "FINNS TID": 1,
-    "provision trappa": 162
+    "provision trappa": 0
   },
   {
     "Kund": "Tele2",
@@ -679572,13 +679572,13 @@
     "Produkt": "Bredband Nyteckning",
     "Produkttyp": "Produkt",
     "Produktkod": "Bredband Nyteckning",
-    "Säljare": "Liam Johannesson",
-    "LoxysoftID": 4986,
+    "Säljare": "Tobias Nyman",
+    "LoxysoftID": 6863,
     "nyckel": "Tele2 VillafiberBredband NyteckningProdukt",
     "kolumn?": "Bredband",
     "Provition kontroll": 1,
     "FINNS TID": 1,
-    "provision trappa": 162
+    "provision trappa": 0
   },
   {
     "Kund": "Tele2",
@@ -679589,13 +679589,13 @@
     "Produkt": "DigitalTV Nyteckning",
     "Produkttyp": "Produkt",
     "Produktkod": "DigitalTV Nyteckning",
-    "Säljare": "Liam Johannesson",
-    "LoxysoftID": 4986,
+    "Säljare": "Tobias Nyman",
+    "LoxysoftID": 6863,
     "nyckel": "Tele2 VillafiberDigitalTV NyteckningProdukt",
     "kolumn?": "TV",
     "Provition kontroll": 1,
     "FINNS TID": 1,
-    "provision trappa": 162
+    "provision trappa": 0
   },
   {
     "Kund": "Tele2",
@@ -679606,13 +679606,13 @@
     "Produkt": "Mobiltelefoni 10GB",
     "Produkttyp": "Produkt",
     "Produktkod": "Mobiltelefoni 10GB",
-    "Säljare": "Liam Johannesson",
-    "LoxysoftID": 4986,
+    "Säljare": "Tobias Nyman",
+    "LoxysoftID": 6863,
     "nyckel": "Tele2 VillafiberMobiltelefoni 10GBProdukt",
     "kolumn?": "Mobil",
     "Provition kontroll": 1,
     "FINNS TID": 1,
-    "provision trappa": 162
+    "provision trappa": 0
   },
   {
     "Kund": "Tele2",
