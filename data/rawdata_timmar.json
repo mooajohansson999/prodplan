@@ -373621,8 +373621,7 @@
     "Hitrate": 1,
     "Samtal - tel.svar": 12,
     "Antal nej tack": 0,
-    "Antal bortfal": 0,
-    "Mansdagar": 1
+    "Antal bortfal": 0
   },
   {
     "Kund": "Telia",
@@ -373909,8 +373908,7 @@
     "Hitrate": 0.16666666666666666,
     "Samtal - tel.svar": 13,
     "Antal nej tack": 5,
-    "Antal bortfal": 2,
-    "Mansdagar": 1
+    "Antal bortfal": 2
   },
   {
     "Kund": "Telia",
@@ -377440,6 +377438,33 @@
     "Hanteringstid timmar": 0,
     "Inloggad tid": "8:00:00",
     "Inloggad tid timmar": 8,
+    "Samtalstid": "0:00:00",
+    "Samtalstid timmar": 0,
+    "Efterbearbetstid": "0:00:00",
+    "Efterbearbetstid timmar": 0,
+    "Genomsnittlig samtalstid": "0:00:00",
+    "Genomsnittlig samtalstid timmar": 0,
+    "Genomsnittlig samtalstid/Order": "0:00:00",
+    "Genomsnittlig samtalstid/Order timmar": 0,
+    "Registrerade samtal": 0,
+    "Registrerade prospekt": 0,
+    "Avbrutit samtalsbegäran": 0,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia D2D",
+    "Säljare": "Tobias Nyman",
+    "Loxysoft ID": 6863,
+    "Datum": "2026-06-08",
+    "År-månad": "2026-06",
+    "Overksam tid": "0:00:00",
+    "Overksam tid timmar": 0,
+    "Väntetid": "0:00:00",
+    "Väntetid timmar": 0,
+    "Hanteringstid timmar": 0,
+    "Inloggad tid": "9:00:00",
+    "Inloggad tid timmar": 9,
     "Samtalstid": "0:00:00",
     "Samtalstid timmar": 0,
     "Efterbearbetstid": "0:00:00",
