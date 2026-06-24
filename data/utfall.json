@@ -2914,8 +2914,8 @@
     "2026-06-23": {
       "Telia D2D": "Tisdag",
       "DATUM": "2026-06-23",
-      "Antal Mansdagar": 0,
-      "Timmar": 0,
+      "Antal Mansdagar": 19,
+      "Timmar": 171,
       "Total sälj": 0,
       "Tilläggsprodukt": 0,
       "Produkt": 0,
@@ -8343,16 +8343,16 @@
     "2026-06-23": {
       "Tele2 Koax": "Tisdag",
       "DATUM": "2026-06-23",
-      "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
-      "Tilläggsprodukt": 0,
-      "TV": 0,
-      "BREDBAND": 0,
-      "MBB": 0,
-      "Mobil": 0,
+      "Antal Mansdagar": 8,
+      "Total sälj": 46,
+      "produkt": 38,
+      "Tilläggsprodukt": 8,
+      "TV": 12,
+      "BREDBAND": 14,
+      "MBB": 2,
+      "Mobil": 10,
       "Streaming": 0,
-      "Bredband OM": 0,
+      "Bredband OM": 8,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0
@@ -8493,17 +8493,17 @@
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0
     },
-    "1901-06-30": {
+    "1901-08-15": {
       "Tele2 Koax": "Total sälj",
-      "DATUM": 547
+      "DATUM": 593
     },
-    "1900-04-08": {
+    "1900-04-16": {
       "Tele2 Koax": "Produkter",
-      "DATUM": 99
+      "DATUM": 107
     },
-    "1901-03-23": {
+    "1901-04-30": {
       "Tele2 Koax": "Tilläggsprodukter",
-      "DATUM": 448
+      "DATUM": 486
     }
   },
   "1.4. LAN": {
@@ -11476,14 +11476,14 @@
     "2026-06-23": {
       "Tele2 LAN": "Tisdag",
       "DATUM": "2026-06-23",
-      "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
+      "Antal Mansdagar": 9,
+      "Total sälj": 36,
+      "produkt": 36,
       "Tilläggsprodukt": 0,
-      "TV": 0,
-      "BREDBAND": 0,
-      "MBB": 0,
-      "Mobil": 0,
+      "TV": 14,
+      "BREDBAND": 8,
+      "MBB": 6,
+      "Mobil": 8,
       "Streaming": 0,
       "Bredband OM": 0,
       "räknas ej": 0,
@@ -11626,17 +11626,17 @@
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0
     },
-    "1901-04-08": {
+    "1901-05-14": {
       "Tele2 LAN": "Total sälj",
-      "DATUM": 464
+      "DATUM": 500
     },
     "1900-01-05": {
       "Tele2 LAN": "Produkter",
       "DATUM": 6
     },
-    "1901-04-02": {
+    "1901-05-08": {
       "Tele2 LAN": "Tilläggsprodukter",
-      "DATUM": 458
+      "DATUM": 494
     }
   },
   "1.5. Amref": {
@@ -34004,14 +34004,14 @@
     "2026-06-23": {
       "Tele2 Villafiber Norr": "Tisdag",
       "DATUM": "2026-06-23",
-      "Antal Mansdagar": 0,
-      "Total sälj": 0,
+      "Antal Mansdagar": 9,
+      "Total sälj": 16,
       "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "TV": 0,
-      "Bredband": 0,
+      "Produkt": 16,
+      "TV": 7,
+      "Bredband": 7,
       "MBB": 0,
-      "Mobil": 0,
+      "Mobil": 2,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
       "kontroll produkt": 0
@@ -34136,13 +34136,13 @@
       "Produkt Kontroll": 0,
       "kontroll produkt": 0
     },
-    "1901-03-18": {
+    "1901-04-03": {
       "Tele2 Villafiber Norr": "Total sälj",
-      "DATUM": 443
+      "DATUM": 459
     },
-    "1901-03-08": {
+    "1901-03-24": {
       "Tele2 Villafiber Norr": "Produkter",
-      "DATUM": 433
+      "DATUM": 449
     },
     "1900-01-09": {
       "Tele2 Villafiber Norr": "Tilläggsprodukter",
@@ -34483,15 +34483,15 @@
     "2026-06-23": {
       "Tele2 Villafiber Syd": "Tisdag",
       "DATUM": "2026-06-23",
-      "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "TV": 0,
-      "Bredband": 0,
-      "MBB": 0,
-      "Mobil": 0,
-      "Räknas ej": 0,
+      "Antal Mansdagar": 10,
+      "Total sälj": 33,
+      "Tilläggsprodukt": 1,
+      "Produkt": 32,
+      "TV": 11,
+      "Bredband": 13,
+      "MBB": 2,
+      "Mobil": 6,
+      "Räknas ej": 1,
       "Produkt Kontroll": 0,
       "kontroll produkt": 0
     },
@@ -34615,17 +34615,17 @@
       "Produkt Kontroll": 0,
       "kontroll produkt": 0
     },
-    "1901-06-05": {
+    "1901-07-08": {
       "Tele2 Villafiber Syd": "Total sälj",
-      "DATUM": 522
+      "DATUM": 555
     },
-    "1901-05-18": {
+    "1901-06-19": {
       "Tele2 Villafiber Syd": "Produkter",
-      "DATUM": 504
+      "DATUM": 536
     },
-    "1900-01-17": {
+    "1900-01-18": {
       "Tele2 Villafiber Syd": "Tilläggsprodukter",
-      "DATUM": 18
+      "DATUM": 19
     }
   }
 }
