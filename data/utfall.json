@@ -2999,8 +2999,8 @@
     "2026-06-28": {
       "Telia D2D": "Söndag",
       "DATUM": "2026-06-28",
-      "Antal Mansdagar": 18,
-      "Timmar": 162,
+      "Antal Mansdagar": 36,
+      "Timmar": 324,
       "Total sälj": 61,
       "Tilläggsprodukt": 4,
       "Produkt": 57,
@@ -8424,7 +8424,7 @@
     "2026-06-28": {
       "Tele2 Koax": "Söndag",
       "DATUM": "2026-06-28",
-      "Antal Mansdagar": 9,
+      "Antal Mansdagar": 4,
       "Total sälj": 9,
       "produkt": 9,
       "Tilläggsprodukt": 0,
@@ -11557,7 +11557,7 @@
     "2026-06-28": {
       "Tele2 LAN": "Söndag",
       "DATUM": "2026-06-28",
-      "Antal Mansdagar": 11,
+      "Antal Mansdagar": 9,
       "Total sälj": 36,
       "produkt": 36,
       "Tilläggsprodukt": 0,
@@ -15656,7 +15656,7 @@
       "Telia Adressändring": "Söndag",
       "DATUM": "2026-06-28",
       "Antal Säljare": 0,
-      "Timmar": 0.9291666666666667,
+      "Timmar": 1.8583333333333334,
       "Total sälj": 3,
       "produkt": 2,
       "Tilläggsprodukt": 1,
@@ -22939,8 +22939,8 @@
     "2026-06-28": {
       "Telia Retention Leads": "Söndag",
       "DATUM": "2026-06-28",
-      "Antal Mansdagar": 1,
-      "Timmar": 4.679444444444444,
+      "Antal Mansdagar": 2,
+      "Timmar": 9.358888888888888,
       "Total sälj": 14,
       "produkt": 8,
       "Tilläggsprodukt": 6,
@@ -29066,8 +29066,8 @@
     "2026-06-28": {
       "Telia Mobil": "Söndag",
       "DATUM": "2026-06-28",
-      "Antal Mansdagar": 5,
-      "Timmar": 18.387777777777778,
+      "Antal Mansdagar": 10,
+      "Timmar": 36.775555555555556,
       "Total sälj": 4,
       "produkt": 4,
       "Tilläggsprodukt": 0,
@@ -32414,8 +32414,8 @@
     "2026-06-28": {
       "Telia FMC": "Söndag",
       "DATUM": "2026-06-28",
-      "Antal Mansdagar": 3,
-      "Timmar": 8.909166666666668,
+      "Antal Mansdagar": 6,
+      "Timmar": 17.81833333333333,
       "Total sälj": 4,
       "produkt": 4,
       "Mobil": 2,
@@ -34083,7 +34083,7 @@
     "2026-06-28": {
       "Tele2 Villafiber Norr": "Söndag",
       "DATUM": "2026-06-28",
-      "Antal Mansdagar": 12,
+      "Antal Mansdagar": 0,
       "Total sälj": 0,
       "Tilläggsprodukt": 0,
       "Produkt": 0,
@@ -34562,7 +34562,7 @@
     "2026-06-28": {
       "Tele2 Villafiber Syd": "Söndag",
       "DATUM": "2026-06-28",
-      "Antal Mansdagar": 12,
+      "Antal Mansdagar": 0,
       "Total sälj": 0,
       "Tilläggsprodukt": 0,
       "Produkt": 0,
