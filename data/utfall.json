@@ -2999,8 +2999,8 @@
     "2026-06-28": {
       "Telia D2D": "Söndag",
       "DATUM": "2026-06-28",
-      "Antal Mansdagar": 36,
-      "Timmar": 324,
+      "Antal Mansdagar": 17,
+      "Timmar": 153,
       "Total sälj": 61,
       "Tilläggsprodukt": 4,
       "Produkt": 57,
@@ -3018,15 +3018,15 @@
       "DATUM": "2026-06-29",
       "Antal Mansdagar": 22,
       "Timmar": 198,
-      "Total sälj": 0,
-      "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "Bredband": 0,
-      "TV": 0,
-      "Streaming": 0,
-      "MOBIL": 0,
+      "Total sälj": 190,
+      "Tilläggsprodukt": 6,
+      "Produkt": 183,
+      "Bredband": 56,
+      "TV": 61,
+      "Streaming": 49,
+      "MOBIL": 17,
       "TV BOX": 0,
-      "Trygghetspaket": 0,
+      "Trygghetspaket": 6,
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0
     },
@@ -3064,13 +3064,21 @@
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0
     },
-    "1907-04-08": {
+    "1907-10-15": {
       "Telia D2D": "Total sälj",
-      "DATUM": 2655
+      "DATUM": 2845
     },
-    "1906-09-19": {
+    "1907-03-21": {
       "Telia D2D": "Produkter",
-      "DATUM": 2454
+      "DATUM": 2637
+    },
+    "1900-07-25": {
+      "Telia D2D": "Tilläggsprodukter",
+      "DATUM": 207
+    },
+    "1899-12-31": {
+      "Telia D2D": "Kontroll",
+      "DATUM": 1
     }
   },
   "1.3. Tele2 Villafiber": {
@@ -15656,7 +15664,7 @@
       "Telia Adressändring": "Söndag",
       "DATUM": "2026-06-28",
       "Antal Säljare": 0,
-      "Timmar": 1.8583333333333334,
+      "Timmar": 0.9291666666666667,
       "Total sälj": 3,
       "produkt": 2,
       "Tilläggsprodukt": 1,
@@ -22939,8 +22947,8 @@
     "2026-06-28": {
       "Telia Retention Leads": "Söndag",
       "DATUM": "2026-06-28",
-      "Antal Mansdagar": 2,
-      "Timmar": 9.358888888888888,
+      "Antal Mansdagar": 1,
+      "Timmar": 4.679444444444444,
       "Total sälj": 14,
       "produkt": 8,
       "Tilläggsprodukt": 6,
@@ -29066,8 +29074,8 @@
     "2026-06-28": {
       "Telia Mobil": "Söndag",
       "DATUM": "2026-06-28",
-      "Antal Mansdagar": 10,
-      "Timmar": 36.775555555555556,
+      "Antal Mansdagar": 5,
+      "Timmar": 15.829166666666666,
       "Total sälj": 4,
       "produkt": 4,
       "Tilläggsprodukt": 0,
@@ -32414,8 +32422,8 @@
     "2026-06-28": {
       "Telia FMC": "Söndag",
       "DATUM": "2026-06-28",
-      "Antal Mansdagar": 6,
-      "Timmar": 17.81833333333333,
+      "Antal Mansdagar": 2,
+      "Timmar": 6.9825,
       "Total sälj": 4,
       "produkt": 4,
       "Mobil": 2,
