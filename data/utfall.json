@@ -12708,12 +12708,12 @@
       "Tele2 LAN": "Lördag",
       "DATUM": "2026-07-04",
       "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
+      "Total sälj": 1,
+      "produkt": 1,
       "Tilläggsprodukt": 0,
       "TV": 0,
       "BREDBAND": 0,
-      "MBB": 0,
+      "MBB": 1,
       "Mobil": 0,
       "Streaming": 0,
       "Bredband OM": 0,
@@ -13180,17 +13180,17 @@
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0
     },
-    "1900-02-10": {
+    "1900-02-11": {
       "Tele2 LAN": "Total sälj",
-      "DATUM": 42
+      "DATUM": 43
     },
     "1900-01-04": {
       "Tele2 LAN": "Produkter",
       "DATUM": 5
     },
-    "1900-02-05": {
+    "1900-02-06": {
       "Tele2 LAN": "Tilläggsprodukter",
-      "DATUM": 37
+      "DATUM": 38
     }
   },
   "1.5. Amref": {
@@ -25819,13 +25819,13 @@
       "Total sälj": 13,
       "produkt": 4,
       "Tilläggsprodukt": 9,
-      "Bredband": 4,
+      "Bredband": 7,
       "TV": 1,
       "TV FL": 2,
       "Streaming": 2,
       "Mobil": 0,
       "TV BOX": 0,
-      "Kontroll produkter": 0,
+      "Kontroll produkter": -3,
       "Kontroll Tilläggsprodukter": 4
     },
     "2026-07-04": {
@@ -36853,9 +36853,9 @@
       "DATUM": "2026-07-01",
       "Antal Mansdagar": 13,
       "Timmar": 87.96055555555554,
-      "Total sälj": 38,
-      "produkt": 38,
-      "Mobil": 22,
+      "Total sälj": 37,
+      "produkt": 37,
+      "Mobil": 21,
       "EA": 16,
       "kontroll produkt": 0
     },
@@ -37193,9 +37193,9 @@
       "EA": 0,
       "kontroll produkt": 0
     },
-    "1900-04-05": {
+    "1900-04-04": {
       "Telia FMC": "Produkter",
-      "DATUM": 96
+      "DATUM": 95
     }
   },
   "Global Connect Aktiveringar": {
