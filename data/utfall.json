@@ -3266,8 +3266,8 @@
     "2026-07-13": {
       "Telia D2D": "Måndag",
       "DATUM": "2026-07-13",
-      "Antal Mansdagar": 0,
-      "Timmar": 0,
+      "Antal Mansdagar": 19,
+      "Timmar": 171,
       "Total sälj": 0,
       "Tilläggsprodukt": 0,
       "Produkt": 0,
@@ -9217,7 +9217,7 @@
     "2026-07-13": {
       "Tele2 Koax": "Måndag",
       "DATUM": "2026-07-13",
-      "Antal Mansdagar": 0,
+      "Antal Mansdagar": 7,
       "Total sälj": 55,
       "produkt": 37,
       "Tilläggsprodukt": 18,
@@ -12872,7 +12872,7 @@
     "2026-07-13": {
       "Tele2 LAN": "Måndag",
       "DATUM": "2026-07-13",
-      "Antal Mansdagar": 0,
+      "Antal Mansdagar": 7,
       "Total sälj": 44,
       "produkt": 43,
       "Tilläggsprodukt": 1,
@@ -39070,7 +39070,7 @@
     "2026-07-13": {
       "Tele2 Villafiber Norr": "Måndag",
       "DATUM": "2026-07-13",
-      "Antal Mansdagar": 0,
+      "Antal Mansdagar": 12,
       "Total sälj": 35,
       "Tilläggsprodukt": 3,
       "Produkt": 32,
@@ -40011,7 +40011,7 @@
     "2026-07-13": {
       "Tele2 Villafiber Syd": "Måndag",
       "DATUM": "2026-07-13",
-      "Antal Mansdagar": 0,
+      "Antal Mansdagar": 11,
       "Total sälj": 61,
       "Tilläggsprodukt": 0,
       "Produkt": 61,
