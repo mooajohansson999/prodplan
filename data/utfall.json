@@ -10185,14 +10185,14 @@
     "2026-08-07": {
       "Tele2 Koax": "Fredag",
       "DATUM": "2026-08-07",
-      "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
+      "Antal Mansdagar": 7,
+      "Total sälj": 7,
+      "produkt": 7,
       "Tilläggsprodukt": 0,
-      "TV": 0,
-      "BREDBAND": 0,
+      "TV": 1,
+      "BREDBAND": 4,
       "MBB": 0,
-      "Mobil": 0,
+      "Mobil": 2,
       "Streaming": 0,
       "Bredband OM": 0,
       "räknas ej": 0,
@@ -10607,17 +10607,17 @@
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0
     },
-    "1900-09-04": {
+    "1900-09-11": {
       "Tele2 Koax": "Total sälj",
-      "DATUM": 248
+      "DATUM": 255
     },
     "1900-02-11": {
       "Tele2 Koax": "Produkter",
       "DATUM": 43
     },
-    "1900-07-23": {
+    "1900-07-30": {
       "Tele2 Koax": "Tilläggsprodukter",
-      "DATUM": 205
+      "DATUM": 212
     }
   },
   "1.4. LAN": {
@@ -14380,12 +14380,12 @@
       "Tele2 LAN": "Fredag",
       "DATUM": "2026-08-07",
       "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
+      "Total sälj": 4,
+      "produkt": 4,
       "Tilläggsprodukt": 0,
-      "TV": 0,
-      "BREDBAND": 0,
-      "MBB": 0,
+      "TV": 2,
+      "BREDBAND": 1,
+      "MBB": 1,
       "Mobil": 0,
       "Streaming": 0,
       "Bredband OM": 0,
@@ -14397,11 +14397,11 @@
       "Tele2 LAN": "Lördag",
       "DATUM": "2026-08-08",
       "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
+      "Total sälj": 2,
+      "produkt": 2,
       "Tilläggsprodukt": 0,
-      "TV": 0,
-      "BREDBAND": 0,
+      "TV": 1,
+      "BREDBAND": 1,
       "MBB": 0,
       "Mobil": 0,
       "Streaming": 0,
@@ -14801,17 +14801,17 @@
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0
     },
-    "1900-09-15": {
+    "1900-09-21": {
       "Tele2 LAN": "Total sälj",
-      "DATUM": 259
+      "DATUM": 265
     },
     "1899-12-31": {
       "Tele2 LAN": "Produkter",
       "DATUM": 1
     },
-    "1900-09-14": {
+    "1900-09-20": {
       "Tele2 LAN": "Tilläggsprodukter",
-      "DATUM": 258
+      "DATUM": 264
     }
   },
   "1.5. Amref": {
