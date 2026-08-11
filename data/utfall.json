@@ -14435,13 +14435,13 @@
       "Tele2 LAN": "Måndag",
       "DATUM": "2026-08-10",
       "Antal Mansdagar": 8,
-      "Total sälj": 41,
-      "produkt": 37,
+      "Total sälj": 44,
+      "produkt": 40,
       "Tilläggsprodukt": 2,
-      "TV": 12,
-      "BREDBAND": 6,
+      "TV": 13,
+      "BREDBAND": 7,
       "MBB": 9,
-      "Mobil": 10,
+      "Mobil": 11,
       "Streaming": 0,
       "Bredband OM": 0,
       "räknas ej": 2,
@@ -14805,17 +14805,17 @@
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0
     },
-    "1900-11-01": {
+    "1900-11-04": {
       "Tele2 LAN": "Total sälj",
-      "DATUM": 306
+      "DATUM": 309
     },
     "1900-01-02": {
       "Tele2 LAN": "Produkter",
       "DATUM": 3
     },
-    "1900-10-27": {
+    "1900-10-30": {
       "Tele2 LAN": "Tilläggsprodukter",
-      "DATUM": 301
+      "DATUM": 304
     },
     "1900-01-01": {
       "Tele2 LAN": "Kontroll",
