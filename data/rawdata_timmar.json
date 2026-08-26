@@ -602734,5 +602734,31 @@
     "Registrerade prospekt": 0,
     "Avbrutit samtalsbegäran": 0,
     "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia D2D",
+    "Säljare": "Tobias Nyman",
+    "Loxysoft ID": 6863,
+    "Datum": "2026-08-25",
+    "År-månad": "2026-08",
+    "Overksam tid": "0:00:00",
+    "Overksam tid timmar": 0,
+    "Väntetid": "0:00:00",
+    "Väntetid timmar": 0,
+    "Hanteringstid timmar": 0,
+    "Inloggad tid": "1:00:00",
+    "Inloggad tid timmar": 1,
+    "Samtalstid": "0:00:00",
+    "Samtalstid timmar": 0,
+    "Efterbearbetstid": "0:00:00",
+    "Efterbearbetstid timmar": 0,
+    "Genomsnittlig samtalstid": "0:00:00",
+    "Genomsnittlig samtalstid timmar": 0,
+    "Genomsnittlig samtalstid/Order": "0:00:00",
+    "Genomsnittlig samtalstid/Order timmar": 0,
+    "Registrerade samtal": 0,
+    "Registrerade prospekt": 0,
+    "Avbrutit samtalsbegäran": 0
   }
 ]
