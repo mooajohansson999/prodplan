@@ -4043,17 +4043,17 @@
     "2026-08-27": {
       "Telia D2D": "Torsdag",
       "DATUM": "2026-08-27",
-      "Antal Mansdagar": 24,
-      "Timmar": 216,
-      "Total sälj": 0,
-      "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "Bredband": 0,
-      "TV": 0,
-      "Streaming": 0,
-      "MOBIL": 0,
+      "Antal Mansdagar": 25,
+      "Timmar": 225,
+      "Total sälj": 124,
+      "Tilläggsprodukt": 9,
+      "Produkt": 115,
+      "Bredband": 33,
+      "TV": 34,
+      "Streaming": 26,
+      "MOBIL": 22,
       "TV BOX": 0,
-      "Trygghetspaket": 0,
+      "Trygghetspaket": 9,
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0
     },
@@ -4125,17 +4125,17 @@
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0
     },
-    "1905-12-28": {
+    "1906-05-01": {
       "Telia D2D": "Total sälj",
-      "DATUM": 2189
+      "DATUM": 2313
     },
-    "1905-09-13": {
+    "1906-01-06": {
       "Telia D2D": "Produkter",
-      "DATUM": 2083
+      "DATUM": 2198
     },
-    "1900-04-15": {
+    "1900-04-24": {
       "Telia D2D": "Tilläggsprodukter",
-      "DATUM": 106
+      "DATUM": 115
     }
   },
   "1.3. Tele2 Villafiber": {
