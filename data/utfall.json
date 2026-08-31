@@ -46086,11 +46086,11 @@
       "Tele2 Villafiber Syd": "Måndag",
       "DATUM": "2026-08-24",
       "Antal Mansdagar": 17,
-      "Total sälj": 42,
+      "Total sälj": 44,
       "Tilläggsprodukt": 1,
-      "Produkt": 41,
-      "TV": 15,
-      "Bredband": 14,
+      "Produkt": 43,
+      "TV": 16,
+      "Bredband": 15,
       "MBB": 4,
       "Mobil": 8,
       "Räknas ej": 1,
@@ -46202,13 +46202,13 @@
       "Produkt Kontroll": 0,
       "kontroll produkt": 0
     },
-    "1902-05-07": {
+    "1902-05-09": {
       "Tele2 Villafiber Syd": "Total sälj",
-      "DATUM": 858
+      "DATUM": 860
     },
-    "1902-04-14": {
+    "1902-04-16": {
       "Tele2 Villafiber Syd": "Produkter",
-      "DATUM": 835
+      "DATUM": 837
     },
     "1900-01-22": {
       "Tele2 Villafiber Syd": "Tilläggsprodukter",
