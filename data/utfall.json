@@ -4174,8 +4174,8 @@
     "2026-09-03": {
       "Telia D2D": "Torsdag",
       "DATUM": "2026-09-03",
-      "Antal Mansdagar": 0,
-      "Timmar": 0,
+      "Antal Mansdagar": 25,
+      "Timmar": 225,
       "Total sälj": 0,
       "Tilläggsprodukt": 0,
       "Produkt": 0,
@@ -11167,7 +11167,7 @@
       "DATUM": 583
     },
     "2026-09-01": {
-      "Tele2 Koax": "Lördag",
+      "Tele2 Koax": "Tisdag",
       "DATUM": "2026-09-01",
       "Antal Mansdagar": 8,
       "Total sälj": 24,
@@ -11184,7 +11184,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-02": {
-      "Tele2 Koax": "Söndag",
+      "Tele2 Koax": "Onsdag",
       "DATUM": "2026-09-02",
       "Antal Mansdagar": 8,
       "Total sälj": 16,
@@ -11201,24 +11201,24 @@
       "Kontroll Produkt": 0
     },
     "2026-09-03": {
-      "Tele2 Koax": "Måndag",
+      "Tele2 Koax": "Torsdag",
       "DATUM": "2026-09-03",
-      "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
-      "Tilläggsprodukt": 0,
-      "TV": 0,
-      "BREDBAND": 0,
+      "Antal Mansdagar": 7,
+      "Total sälj": 52,
+      "produkt": 44,
+      "Tilläggsprodukt": 8,
+      "TV": 15,
+      "BREDBAND": 15,
       "MBB": 0,
-      "Mobil": 0,
+      "Mobil": 14,
       "Streaming": 0,
-      "Bredband OM": 0,
+      "Bredband OM": 8,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0
     },
     "2026-09-04": {
-      "Tele2 Koax": "Tisdag",
+      "Tele2 Koax": "Fredag",
       "DATUM": "2026-09-04",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11235,7 +11235,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-05": {
-      "Tele2 Koax": "Onsdag",
+      "Tele2 Koax": "Lördag",
       "DATUM": "2026-09-05",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11252,7 +11252,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-06": {
-      "Tele2 Koax": "Torsdag",
+      "Tele2 Koax": "Söndag",
       "DATUM": "2026-09-06",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11269,7 +11269,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-07": {
-      "Tele2 Koax": "Fredag",
+      "Tele2 Koax": "Måndag",
       "DATUM": "2026-09-07",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11286,7 +11286,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-08": {
-      "Tele2 Koax": "Lördag",
+      "Tele2 Koax": "Tisdag",
       "DATUM": "2026-09-08",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11303,7 +11303,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-09": {
-      "Tele2 Koax": "Söndag",
+      "Tele2 Koax": "Onsdag",
       "DATUM": "2026-09-09",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11320,7 +11320,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-10": {
-      "Tele2 Koax": "Måndag",
+      "Tele2 Koax": "Torsdag",
       "DATUM": "2026-09-10",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11337,7 +11337,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-11": {
-      "Tele2 Koax": "Tisdag",
+      "Tele2 Koax": "Fredag",
       "DATUM": "2026-09-11",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11354,7 +11354,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-12": {
-      "Tele2 Koax": "Onsdag",
+      "Tele2 Koax": "Lördag",
       "DATUM": "2026-09-12",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11371,7 +11371,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-13": {
-      "Tele2 Koax": "Torsdag",
+      "Tele2 Koax": "Söndag",
       "DATUM": "2026-09-13",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11388,7 +11388,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-14": {
-      "Tele2 Koax": "Fredag",
+      "Tele2 Koax": "Måndag",
       "DATUM": "2026-09-14",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11405,7 +11405,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-15": {
-      "Tele2 Koax": "Lördag",
+      "Tele2 Koax": "Tisdag",
       "DATUM": "2026-09-15",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11422,7 +11422,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-16": {
-      "Tele2 Koax": "Söndag",
+      "Tele2 Koax": "Onsdag",
       "DATUM": "2026-09-16",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11439,7 +11439,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-17": {
-      "Tele2 Koax": "Måndag",
+      "Tele2 Koax": "Torsdag",
       "DATUM": "2026-09-17",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11456,7 +11456,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-18": {
-      "Tele2 Koax": "Tisdag",
+      "Tele2 Koax": "Fredag",
       "DATUM": "2026-09-18",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11473,7 +11473,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-19": {
-      "Tele2 Koax": "Onsdag",
+      "Tele2 Koax": "Lördag",
       "DATUM": "2026-09-19",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11490,7 +11490,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-20": {
-      "Tele2 Koax": "Torsdag",
+      "Tele2 Koax": "Söndag",
       "DATUM": "2026-09-20",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11507,7 +11507,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-21": {
-      "Tele2 Koax": "Fredag",
+      "Tele2 Koax": "Måndag",
       "DATUM": "2026-09-21",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11524,7 +11524,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-22": {
-      "Tele2 Koax": "Lördag",
+      "Tele2 Koax": "Tisdag",
       "DATUM": "2026-09-22",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11541,7 +11541,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-23": {
-      "Tele2 Koax": "Söndag",
+      "Tele2 Koax": "Onsdag",
       "DATUM": "2026-09-23",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11558,7 +11558,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-24": {
-      "Tele2 Koax": "Måndag",
+      "Tele2 Koax": "Torsdag",
       "DATUM": "2026-09-24",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11575,7 +11575,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-25": {
-      "Tele2 Koax": "Tisdag",
+      "Tele2 Koax": "Fredag",
       "DATUM": "2026-09-25",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11592,7 +11592,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-26": {
-      "Tele2 Koax": "Onsdag",
+      "Tele2 Koax": "Lördag",
       "DATUM": "2026-09-26",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11609,7 +11609,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-27": {
-      "Tele2 Koax": "Torsdag",
+      "Tele2 Koax": "Söndag",
       "DATUM": "2026-09-27",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11626,7 +11626,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-28": {
-      "Tele2 Koax": "Fredag",
+      "Tele2 Koax": "Måndag",
       "DATUM": "2026-09-28",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11643,7 +11643,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-29": {
-      "Tele2 Koax": "Lördag",
+      "Tele2 Koax": "Tisdag",
       "DATUM": "2026-09-29",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11660,7 +11660,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-30": {
-      "Tele2 Koax": "Söndag",
+      "Tele2 Koax": "Onsdag",
       "DATUM": "2026-09-30",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11677,7 +11677,7 @@
       "Kontroll Produkt": 0
     },
     "2026-10-01": {
-      "Tele2 Koax": "Måndag",
+      "Tele2 Koax": "Torsdag",
       "DATUM": "2026-10-01",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -11693,17 +11693,17 @@
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0
     },
-    "1900-02-08": {
+    "1900-04-01": {
       "Tele2 Koax": "Total sälj",
-      "DATUM": 40
+      "DATUM": 92
     },
-    "1900-01-06": {
+    "1900-01-14": {
       "Tele2 Koax": "Produkter",
-      "DATUM": 7
+      "DATUM": 15
     },
-    "1900-02-01": {
+    "1900-03-17": {
       "Tele2 Koax": "Tilläggsprodukter",
-      "DATUM": 33
+      "DATUM": 77
     }
   },
   "1.4. LAN": {
@@ -15896,7 +15896,7 @@
       "DATUM": 710
     },
     "2026-09-01": {
-      "Tele2 LAN": "Lördag",
+      "Tele2 LAN": "Tisdag",
       "DATUM": "2026-09-01",
       "Antal Mansdagar": 7,
       "Total sälj": 25,
@@ -15913,7 +15913,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-02": {
-      "Tele2 LAN": "Söndag",
+      "Tele2 LAN": "Onsdag",
       "DATUM": "2026-09-02",
       "Antal Mansdagar": 7,
       "Total sälj": 27,
@@ -15930,16 +15930,16 @@
       "Kontroll Produkt": 0
     },
     "2026-09-03": {
-      "Tele2 LAN": "Måndag",
+      "Tele2 LAN": "Torsdag",
       "DATUM": "2026-09-03",
-      "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
+      "Antal Mansdagar": 7,
+      "Total sälj": 34,
+      "produkt": 34,
       "Tilläggsprodukt": 0,
-      "TV": 0,
-      "BREDBAND": 0,
-      "MBB": 0,
-      "Mobil": 0,
+      "TV": 9,
+      "BREDBAND": 8,
+      "MBB": 3,
+      "Mobil": 14,
       "Streaming": 0,
       "Bredband OM": 0,
       "räknas ej": 0,
@@ -15947,7 +15947,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-04": {
-      "Tele2 LAN": "Tisdag",
+      "Tele2 LAN": "Fredag",
       "DATUM": "2026-09-04",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -15964,7 +15964,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-05": {
-      "Tele2 LAN": "Onsdag",
+      "Tele2 LAN": "Lördag",
       "DATUM": "2026-09-05",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -15981,7 +15981,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-06": {
-      "Tele2 LAN": "Torsdag",
+      "Tele2 LAN": "Söndag",
       "DATUM": "2026-09-06",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -15998,7 +15998,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-07": {
-      "Tele2 LAN": "Fredag",
+      "Tele2 LAN": "Måndag",
       "DATUM": "2026-09-07",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16015,7 +16015,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-08": {
-      "Tele2 LAN": "Lördag",
+      "Tele2 LAN": "Tisdag",
       "DATUM": "2026-09-08",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16032,7 +16032,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-09": {
-      "Tele2 LAN": "Söndag",
+      "Tele2 LAN": "Onsdag",
       "DATUM": "2026-09-09",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16049,7 +16049,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-10": {
-      "Tele2 LAN": "Måndag",
+      "Tele2 LAN": "Torsdag",
       "DATUM": "2026-09-10",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16066,7 +16066,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-11": {
-      "Tele2 LAN": "Tisdag",
+      "Tele2 LAN": "Fredag",
       "DATUM": "2026-09-11",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16083,7 +16083,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-12": {
-      "Tele2 LAN": "Onsdag",
+      "Tele2 LAN": "Lördag",
       "DATUM": "2026-09-12",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16100,7 +16100,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-13": {
-      "Tele2 LAN": "Torsdag",
+      "Tele2 LAN": "Söndag",
       "DATUM": "2026-09-13",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16117,7 +16117,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-14": {
-      "Tele2 LAN": "Fredag",
+      "Tele2 LAN": "Måndag",
       "DATUM": "2026-09-14",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16134,7 +16134,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-15": {
-      "Tele2 LAN": "Lördag",
+      "Tele2 LAN": "Tisdag",
       "DATUM": "2026-09-15",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16151,7 +16151,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-16": {
-      "Tele2 LAN": "Söndag",
+      "Tele2 LAN": "Onsdag",
       "DATUM": "2026-09-16",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16168,7 +16168,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-17": {
-      "Tele2 LAN": "Måndag",
+      "Tele2 LAN": "Torsdag",
       "DATUM": "2026-09-17",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16185,7 +16185,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-18": {
-      "Tele2 LAN": "Tisdag",
+      "Tele2 LAN": "Fredag",
       "DATUM": "2026-09-18",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16202,7 +16202,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-19": {
-      "Tele2 LAN": "Onsdag",
+      "Tele2 LAN": "Lördag",
       "DATUM": "2026-09-19",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16219,7 +16219,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-20": {
-      "Tele2 LAN": "Torsdag",
+      "Tele2 LAN": "Söndag",
       "DATUM": "2026-09-20",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16236,7 +16236,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-21": {
-      "Tele2 LAN": "Fredag",
+      "Tele2 LAN": "Måndag",
       "DATUM": "2026-09-21",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16253,7 +16253,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-22": {
-      "Tele2 LAN": "Lördag",
+      "Tele2 LAN": "Tisdag",
       "DATUM": "2026-09-22",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16270,7 +16270,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-23": {
-      "Tele2 LAN": "Söndag",
+      "Tele2 LAN": "Onsdag",
       "DATUM": "2026-09-23",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16287,7 +16287,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-24": {
-      "Tele2 LAN": "Måndag",
+      "Tele2 LAN": "Torsdag",
       "DATUM": "2026-09-24",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16304,7 +16304,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-25": {
-      "Tele2 LAN": "Tisdag",
+      "Tele2 LAN": "Fredag",
       "DATUM": "2026-09-25",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16321,7 +16321,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-26": {
-      "Tele2 LAN": "Onsdag",
+      "Tele2 LAN": "Lördag",
       "DATUM": "2026-09-26",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16338,7 +16338,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-27": {
-      "Tele2 LAN": "Torsdag",
+      "Tele2 LAN": "Söndag",
       "DATUM": "2026-09-27",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16355,7 +16355,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-28": {
-      "Tele2 LAN": "Fredag",
+      "Tele2 LAN": "Måndag",
       "DATUM": "2026-09-28",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16372,7 +16372,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-29": {
-      "Tele2 LAN": "Lördag",
+      "Tele2 LAN": "Tisdag",
       "DATUM": "2026-09-29",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16389,7 +16389,7 @@
       "Kontroll Produkt": 0
     },
     "2026-09-30": {
-      "Tele2 LAN": "Söndag",
+      "Tele2 LAN": "Onsdag",
       "DATUM": "2026-09-30",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16406,7 +16406,7 @@
       "Kontroll Produkt": 0
     },
     "2026-10-01": {
-      "Tele2 LAN": "Måndag",
+      "Tele2 LAN": "Torsdag",
       "DATUM": "2026-10-01",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -16422,17 +16422,17 @@
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0
     },
-    "1900-02-20": {
+    "1900-03-26": {
       "Tele2 LAN": "Total sälj",
-      "DATUM": 52
+      "DATUM": 86
     },
     "1899-12-31": {
       "Tele2 LAN": "Produkter",
       "DATUM": 1
     },
-    "1900-02-19": {
+    "1900-03-25": {
       "Tele2 LAN": "Tilläggsprodukter",
-      "DATUM": 51
+      "DATUM": 85
     }
   },
   "1.5. Amref": {
@@ -21785,7 +21785,7 @@
       "DATUM": 288
     },
     "2026-09-01": {
-      "Telia Adressändring": "Lördag",
+      "Telia Adressändring": "Tisdag",
       "DATUM": "2026-09-01",
       "Antal Säljare": 4,
       "Timmar": 24.351388888888888,
@@ -21805,7 +21805,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-02": {
-      "Telia Adressändring": "Söndag",
+      "Telia Adressändring": "Onsdag",
       "DATUM": "2026-09-02",
       "Antal Säljare": 4,
       "Timmar": 22.095555555555556,
@@ -21825,7 +21825,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-03": {
-      "Telia Adressändring": "Måndag",
+      "Telia Adressändring": "Torsdag",
       "DATUM": "2026-09-03",
       "Antal Säljare": 4,
       "Timmar": 20.607499999999998,
@@ -21845,7 +21845,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-04": {
-      "Telia Adressändring": "Tisdag",
+      "Telia Adressändring": "Fredag",
       "DATUM": "2026-09-04",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -21865,7 +21865,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-05": {
-      "Telia Adressändring": "Onsdag",
+      "Telia Adressändring": "Lördag",
       "DATUM": "2026-09-05",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -21885,7 +21885,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-06": {
-      "Telia Adressändring": "Torsdag",
+      "Telia Adressändring": "Söndag",
       "DATUM": "2026-09-06",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -21905,7 +21905,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-07": {
-      "Telia Adressändring": "Fredag",
+      "Telia Adressändring": "Måndag",
       "DATUM": "2026-09-07",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -21925,7 +21925,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-08": {
-      "Telia Adressändring": "Lördag",
+      "Telia Adressändring": "Tisdag",
       "DATUM": "2026-09-08",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -21945,7 +21945,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-09": {
-      "Telia Adressändring": "Söndag",
+      "Telia Adressändring": "Onsdag",
       "DATUM": "2026-09-09",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -21965,7 +21965,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-10": {
-      "Telia Adressändring": "Måndag",
+      "Telia Adressändring": "Torsdag",
       "DATUM": "2026-09-10",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -21985,7 +21985,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-11": {
-      "Telia Adressändring": "Tisdag",
+      "Telia Adressändring": "Fredag",
       "DATUM": "2026-09-11",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22005,7 +22005,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-12": {
-      "Telia Adressändring": "Onsdag",
+      "Telia Adressändring": "Lördag",
       "DATUM": "2026-09-12",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22025,7 +22025,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-13": {
-      "Telia Adressändring": "Torsdag",
+      "Telia Adressändring": "Söndag",
       "DATUM": "2026-09-13",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22045,7 +22045,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-14": {
-      "Telia Adressändring": "Fredag",
+      "Telia Adressändring": "Måndag",
       "DATUM": "2026-09-14",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22065,7 +22065,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-15": {
-      "Telia Adressändring": "Lördag",
+      "Telia Adressändring": "Tisdag",
       "DATUM": "2026-09-15",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22085,7 +22085,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-16": {
-      "Telia Adressändring": "Söndag",
+      "Telia Adressändring": "Onsdag",
       "DATUM": "2026-09-16",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22105,7 +22105,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-17": {
-      "Telia Adressändring": "Måndag",
+      "Telia Adressändring": "Torsdag",
       "DATUM": "2026-09-17",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22125,7 +22125,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-18": {
-      "Telia Adressändring": "Tisdag",
+      "Telia Adressändring": "Fredag",
       "DATUM": "2026-09-18",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22145,7 +22145,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-19": {
-      "Telia Adressändring": "Onsdag",
+      "Telia Adressändring": "Lördag",
       "DATUM": "2026-09-19",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22165,7 +22165,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-20": {
-      "Telia Adressändring": "Torsdag",
+      "Telia Adressändring": "Söndag",
       "DATUM": "2026-09-20",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22185,7 +22185,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-21": {
-      "Telia Adressändring": "Fredag",
+      "Telia Adressändring": "Måndag",
       "DATUM": "2026-09-21",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22205,7 +22205,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-22": {
-      "Telia Adressändring": "Lördag",
+      "Telia Adressändring": "Tisdag",
       "DATUM": "2026-09-22",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22225,7 +22225,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-23": {
-      "Telia Adressändring": "Söndag",
+      "Telia Adressändring": "Onsdag",
       "DATUM": "2026-09-23",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22245,7 +22245,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-24": {
-      "Telia Adressändring": "Måndag",
+      "Telia Adressändring": "Torsdag",
       "DATUM": "2026-09-24",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22265,7 +22265,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-25": {
-      "Telia Adressändring": "Tisdag",
+      "Telia Adressändring": "Fredag",
       "DATUM": "2026-09-25",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22285,7 +22285,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-26": {
-      "Telia Adressändring": "Onsdag",
+      "Telia Adressändring": "Lördag",
       "DATUM": "2026-09-26",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22305,7 +22305,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-27": {
-      "Telia Adressändring": "Torsdag",
+      "Telia Adressändring": "Söndag",
       "DATUM": "2026-09-27",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22325,7 +22325,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-28": {
-      "Telia Adressändring": "Fredag",
+      "Telia Adressändring": "Måndag",
       "DATUM": "2026-09-28",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22345,7 +22345,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-29": {
-      "Telia Adressändring": "Lördag",
+      "Telia Adressändring": "Tisdag",
       "DATUM": "2026-09-29",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22365,7 +22365,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-30": {
-      "Telia Adressändring": "Söndag",
+      "Telia Adressändring": "Onsdag",
       "DATUM": "2026-09-30",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -22385,7 +22385,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-10-01": {
-      "Telia Adressändring": "Måndag",
+      "Telia Adressändring": "Torsdag",
       "DATUM": "2026-10-01",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27257,7 +27257,7 @@
       "DATUM": 466
     },
     "2026-09-01": {
-      "Telia VIP Leads": "Lördag",
+      "Telia VIP Leads": "Tisdag",
       "DATUM": "2026-09-01",
       "Antal Säljare": 3,
       "Timmar": 18.950555555555557,
@@ -27277,7 +27277,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-02": {
-      "Telia VIP Leads": "Söndag",
+      "Telia VIP Leads": "Onsdag",
       "DATUM": "2026-09-02",
       "Antal Säljare": 3,
       "Timmar": 16.509722222222223,
@@ -27297,7 +27297,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-03": {
-      "Telia VIP Leads": "Måndag",
+      "Telia VIP Leads": "Torsdag",
       "DATUM": "2026-09-03",
       "Antal Säljare": 4,
       "Timmar": 25.213611111111113,
@@ -27317,7 +27317,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-04": {
-      "Telia VIP Leads": "Tisdag",
+      "Telia VIP Leads": "Fredag",
       "DATUM": "2026-09-04",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27337,7 +27337,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-05": {
-      "Telia VIP Leads": "Onsdag",
+      "Telia VIP Leads": "Lördag",
       "DATUM": "2026-09-05",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27357,7 +27357,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-06": {
-      "Telia VIP Leads": "Torsdag",
+      "Telia VIP Leads": "Söndag",
       "DATUM": "2026-09-06",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27377,7 +27377,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-07": {
-      "Telia VIP Leads": "Fredag",
+      "Telia VIP Leads": "Måndag",
       "DATUM": "2026-09-07",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27397,7 +27397,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-08": {
-      "Telia VIP Leads": "Lördag",
+      "Telia VIP Leads": "Tisdag",
       "DATUM": "2026-09-08",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27417,7 +27417,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-09": {
-      "Telia VIP Leads": "Söndag",
+      "Telia VIP Leads": "Onsdag",
       "DATUM": "2026-09-09",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27437,7 +27437,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-10": {
-      "Telia VIP Leads": "Måndag",
+      "Telia VIP Leads": "Torsdag",
       "DATUM": "2026-09-10",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27457,7 +27457,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-11": {
-      "Telia VIP Leads": "Tisdag",
+      "Telia VIP Leads": "Fredag",
       "DATUM": "2026-09-11",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27477,7 +27477,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-12": {
-      "Telia VIP Leads": "Onsdag",
+      "Telia VIP Leads": "Lördag",
       "DATUM": "2026-09-12",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27497,7 +27497,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-13": {
-      "Telia VIP Leads": "Torsdag",
+      "Telia VIP Leads": "Söndag",
       "DATUM": "2026-09-13",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27517,7 +27517,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-14": {
-      "Telia VIP Leads": "Fredag",
+      "Telia VIP Leads": "Måndag",
       "DATUM": "2026-09-14",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27537,7 +27537,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-15": {
-      "Telia VIP Leads": "Lördag",
+      "Telia VIP Leads": "Tisdag",
       "DATUM": "2026-09-15",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27557,7 +27557,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-16": {
-      "Telia VIP Leads": "Söndag",
+      "Telia VIP Leads": "Onsdag",
       "DATUM": "2026-09-16",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27577,7 +27577,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-17": {
-      "Telia VIP Leads": "Måndag",
+      "Telia VIP Leads": "Torsdag",
       "DATUM": "2026-09-17",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27597,7 +27597,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-18": {
-      "Telia VIP Leads": "Tisdag",
+      "Telia VIP Leads": "Fredag",
       "DATUM": "2026-09-18",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27617,7 +27617,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-19": {
-      "Telia VIP Leads": "Onsdag",
+      "Telia VIP Leads": "Lördag",
       "DATUM": "2026-09-19",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27637,7 +27637,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-20": {
-      "Telia VIP Leads": "Torsdag",
+      "Telia VIP Leads": "Söndag",
       "DATUM": "2026-09-20",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27657,7 +27657,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-21": {
-      "Telia VIP Leads": "Fredag",
+      "Telia VIP Leads": "Måndag",
       "DATUM": "2026-09-21",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27677,7 +27677,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-22": {
-      "Telia VIP Leads": "Lördag",
+      "Telia VIP Leads": "Tisdag",
       "DATUM": "2026-09-22",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27697,7 +27697,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-23": {
-      "Telia VIP Leads": "Söndag",
+      "Telia VIP Leads": "Onsdag",
       "DATUM": "2026-09-23",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27717,7 +27717,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-24": {
-      "Telia VIP Leads": "Måndag",
+      "Telia VIP Leads": "Torsdag",
       "DATUM": "2026-09-24",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27737,7 +27737,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-25": {
-      "Telia VIP Leads": "Tisdag",
+      "Telia VIP Leads": "Fredag",
       "DATUM": "2026-09-25",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27757,7 +27757,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-26": {
-      "Telia VIP Leads": "Onsdag",
+      "Telia VIP Leads": "Lördag",
       "DATUM": "2026-09-26",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27777,7 +27777,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-27": {
-      "Telia VIP Leads": "Torsdag",
+      "Telia VIP Leads": "Söndag",
       "DATUM": "2026-09-27",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27797,7 +27797,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-28": {
-      "Telia VIP Leads": "Fredag",
+      "Telia VIP Leads": "Måndag",
       "DATUM": "2026-09-28",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27817,7 +27817,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-29": {
-      "Telia VIP Leads": "Lördag",
+      "Telia VIP Leads": "Tisdag",
       "DATUM": "2026-09-29",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27837,7 +27837,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-09-30": {
-      "Telia VIP Leads": "Söndag",
+      "Telia VIP Leads": "Onsdag",
       "DATUM": "2026-09-30",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -27857,7 +27857,7 @@
       "kontroll Tilläggsprodukter": 0
     },
     "2026-10-01": {
-      "Telia VIP Leads": "Måndag",
+      "Telia VIP Leads": "Torsdag",
       "DATUM": "2026-10-01",
       "Antal Säljare": 0,
       "Timmar": 0,
@@ -32688,7 +32688,7 @@
       "DATUM": 217
     },
     "2026-09-01": {
-      "Telia Retention Leads": "Lördag",
+      "Telia Retention Leads": "Tisdag",
       "DATUM": "2026-09-01",
       "Antal Mansdagar": 1,
       "Timmar": 5.666388888888889,
@@ -32706,7 +32706,7 @@
       "Kontroll Tilläggsprodukter": 2
     },
     "2026-09-02": {
-      "Telia Retention Leads": "Söndag",
+      "Telia Retention Leads": "Onsdag",
       "DATUM": "2026-09-02",
       "Antal Mansdagar": 1,
       "Timmar": 5.2219444444444445,
@@ -32724,7 +32724,7 @@
       "Kontroll Tilläggsprodukter": 1
     },
     "2026-09-03": {
-      "Telia Retention Leads": "Måndag",
+      "Telia Retention Leads": "Torsdag",
       "DATUM": "2026-09-03",
       "Antal Mansdagar": 1,
       "Timmar": 6.1375,
@@ -32742,7 +32742,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-04": {
-      "Telia Retention Leads": "Tisdag",
+      "Telia Retention Leads": "Fredag",
       "DATUM": "2026-09-04",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -32760,7 +32760,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-05": {
-      "Telia Retention Leads": "Onsdag",
+      "Telia Retention Leads": "Lördag",
       "DATUM": "2026-09-05",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -32778,7 +32778,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-06": {
-      "Telia Retention Leads": "Torsdag",
+      "Telia Retention Leads": "Söndag",
       "DATUM": "2026-09-06",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -32796,7 +32796,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-07": {
-      "Telia Retention Leads": "Fredag",
+      "Telia Retention Leads": "Måndag",
       "DATUM": "2026-09-07",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -32814,7 +32814,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-08": {
-      "Telia Retention Leads": "Lördag",
+      "Telia Retention Leads": "Tisdag",
       "DATUM": "2026-09-08",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -32832,7 +32832,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-09": {
-      "Telia Retention Leads": "Söndag",
+      "Telia Retention Leads": "Onsdag",
       "DATUM": "2026-09-09",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -32850,7 +32850,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-10": {
-      "Telia Retention Leads": "Måndag",
+      "Telia Retention Leads": "Torsdag",
       "DATUM": "2026-09-10",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -32868,7 +32868,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-11": {
-      "Telia Retention Leads": "Tisdag",
+      "Telia Retention Leads": "Fredag",
       "DATUM": "2026-09-11",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -32886,7 +32886,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-12": {
-      "Telia Retention Leads": "Onsdag",
+      "Telia Retention Leads": "Lördag",
       "DATUM": "2026-09-12",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -32904,7 +32904,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-13": {
-      "Telia Retention Leads": "Torsdag",
+      "Telia Retention Leads": "Söndag",
       "DATUM": "2026-09-13",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -32922,7 +32922,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-14": {
-      "Telia Retention Leads": "Fredag",
+      "Telia Retention Leads": "Måndag",
       "DATUM": "2026-09-14",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -32940,7 +32940,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-15": {
-      "Telia Retention Leads": "Lördag",
+      "Telia Retention Leads": "Tisdag",
       "DATUM": "2026-09-15",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -32958,7 +32958,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-16": {
-      "Telia Retention Leads": "Söndag",
+      "Telia Retention Leads": "Onsdag",
       "DATUM": "2026-09-16",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -32976,7 +32976,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-17": {
-      "Telia Retention Leads": "Måndag",
+      "Telia Retention Leads": "Torsdag",
       "DATUM": "2026-09-17",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -32994,7 +32994,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-18": {
-      "Telia Retention Leads": "Tisdag",
+      "Telia Retention Leads": "Fredag",
       "DATUM": "2026-09-18",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -33012,7 +33012,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-19": {
-      "Telia Retention Leads": "Onsdag",
+      "Telia Retention Leads": "Lördag",
       "DATUM": "2026-09-19",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -33030,7 +33030,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-20": {
-      "Telia Retention Leads": "Torsdag",
+      "Telia Retention Leads": "Söndag",
       "DATUM": "2026-09-20",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -33048,7 +33048,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-21": {
-      "Telia Retention Leads": "Fredag",
+      "Telia Retention Leads": "Måndag",
       "DATUM": "2026-09-21",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -33066,7 +33066,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-22": {
-      "Telia Retention Leads": "Lördag",
+      "Telia Retention Leads": "Tisdag",
       "DATUM": "2026-09-22",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -33084,7 +33084,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-23": {
-      "Telia Retention Leads": "Söndag",
+      "Telia Retention Leads": "Onsdag",
       "DATUM": "2026-09-23",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -33102,7 +33102,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-24": {
-      "Telia Retention Leads": "Måndag",
+      "Telia Retention Leads": "Torsdag",
       "DATUM": "2026-09-24",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -33120,7 +33120,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-25": {
-      "Telia Retention Leads": "Tisdag",
+      "Telia Retention Leads": "Fredag",
       "DATUM": "2026-09-25",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -33138,7 +33138,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-26": {
-      "Telia Retention Leads": "Onsdag",
+      "Telia Retention Leads": "Lördag",
       "DATUM": "2026-09-26",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -33156,7 +33156,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-27": {
-      "Telia Retention Leads": "Torsdag",
+      "Telia Retention Leads": "Söndag",
       "DATUM": "2026-09-27",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -33174,7 +33174,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-28": {
-      "Telia Retention Leads": "Fredag",
+      "Telia Retention Leads": "Måndag",
       "DATUM": "2026-09-28",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -33192,7 +33192,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-29": {
-      "Telia Retention Leads": "Lördag",
+      "Telia Retention Leads": "Tisdag",
       "DATUM": "2026-09-29",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -33210,7 +33210,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-09-30": {
-      "Telia Retention Leads": "Söndag",
+      "Telia Retention Leads": "Onsdag",
       "DATUM": "2026-09-30",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -33228,7 +33228,7 @@
       "Kontroll Tilläggsprodukter": 0
     },
     "2026-10-01": {
-      "Telia Retention Leads": "Måndag",
+      "Telia Retention Leads": "Torsdag",
       "DATUM": "2026-10-01",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37628,7 +37628,7 @@
       "DATUM": 1
     },
     "2026-09-01": {
-      "Telia MBH": "Lördag",
+      "Telia MBH": "Tisdag",
       "DATUM": "2026-09-01",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37646,7 +37646,7 @@
       "kontroll produkt": 0
     },
     "2026-09-02": {
-      "Telia MBH": "Söndag",
+      "Telia MBH": "Onsdag",
       "DATUM": "2026-09-02",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37664,7 +37664,7 @@
       "kontroll produkt": 0
     },
     "2026-09-03": {
-      "Telia MBH": "Måndag",
+      "Telia MBH": "Torsdag",
       "DATUM": "2026-09-03",
       "Antal Mansdagar": 0,
       "Timmar": 1.8469444444444445,
@@ -37682,7 +37682,7 @@
       "kontroll produkt": 0
     },
     "2026-09-04": {
-      "Telia MBH": "Tisdag",
+      "Telia MBH": "Fredag",
       "DATUM": "2026-09-04",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37700,7 +37700,7 @@
       "kontroll produkt": 0
     },
     "2026-09-05": {
-      "Telia MBH": "Onsdag",
+      "Telia MBH": "Lördag",
       "DATUM": "2026-09-05",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37718,7 +37718,7 @@
       "kontroll produkt": 0
     },
     "2026-09-06": {
-      "Telia MBH": "Torsdag",
+      "Telia MBH": "Söndag",
       "DATUM": "2026-09-06",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37736,7 +37736,7 @@
       "kontroll produkt": 0
     },
     "2026-09-07": {
-      "Telia MBH": "Fredag",
+      "Telia MBH": "Måndag",
       "DATUM": "2026-09-07",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37754,7 +37754,7 @@
       "kontroll produkt": 0
     },
     "2026-09-08": {
-      "Telia MBH": "Lördag",
+      "Telia MBH": "Tisdag",
       "DATUM": "2026-09-08",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37772,7 +37772,7 @@
       "kontroll produkt": 0
     },
     "2026-09-09": {
-      "Telia MBH": "Söndag",
+      "Telia MBH": "Onsdag",
       "DATUM": "2026-09-09",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37790,7 +37790,7 @@
       "kontroll produkt": 0
     },
     "2026-09-10": {
-      "Telia MBH": "Måndag",
+      "Telia MBH": "Torsdag",
       "DATUM": "2026-09-10",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37808,7 +37808,7 @@
       "kontroll produkt": 0
     },
     "2026-09-11": {
-      "Telia MBH": "Tisdag",
+      "Telia MBH": "Fredag",
       "DATUM": "2026-09-11",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37826,7 +37826,7 @@
       "kontroll produkt": 0
     },
     "2026-09-12": {
-      "Telia MBH": "Onsdag",
+      "Telia MBH": "Lördag",
       "DATUM": "2026-09-12",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37844,7 +37844,7 @@
       "kontroll produkt": 0
     },
     "2026-09-13": {
-      "Telia MBH": "Torsdag",
+      "Telia MBH": "Söndag",
       "DATUM": "2026-09-13",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37862,7 +37862,7 @@
       "kontroll produkt": 0
     },
     "2026-09-14": {
-      "Telia MBH": "Fredag",
+      "Telia MBH": "Måndag",
       "DATUM": "2026-09-14",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37880,7 +37880,7 @@
       "kontroll produkt": 0
     },
     "2026-09-15": {
-      "Telia MBH": "Lördag",
+      "Telia MBH": "Tisdag",
       "DATUM": "2026-09-15",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37898,7 +37898,7 @@
       "kontroll produkt": 0
     },
     "2026-09-16": {
-      "Telia MBH": "Söndag",
+      "Telia MBH": "Onsdag",
       "DATUM": "2026-09-16",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37916,7 +37916,7 @@
       "kontroll produkt": 0
     },
     "2026-09-17": {
-      "Telia MBH": "Måndag",
+      "Telia MBH": "Torsdag",
       "DATUM": "2026-09-17",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37934,7 +37934,7 @@
       "kontroll produkt": 0
     },
     "2026-09-18": {
-      "Telia MBH": "Tisdag",
+      "Telia MBH": "Fredag",
       "DATUM": "2026-09-18",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37952,7 +37952,7 @@
       "kontroll produkt": 0
     },
     "2026-09-19": {
-      "Telia MBH": "Onsdag",
+      "Telia MBH": "Lördag",
       "DATUM": "2026-09-19",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37970,7 +37970,7 @@
       "kontroll produkt": 0
     },
     "2026-09-20": {
-      "Telia MBH": "Torsdag",
+      "Telia MBH": "Söndag",
       "DATUM": "2026-09-20",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -37988,7 +37988,7 @@
       "kontroll produkt": 0
     },
     "2026-09-21": {
-      "Telia MBH": "Fredag",
+      "Telia MBH": "Måndag",
       "DATUM": "2026-09-21",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -38006,7 +38006,7 @@
       "kontroll produkt": 0
     },
     "2026-09-22": {
-      "Telia MBH": "Lördag",
+      "Telia MBH": "Tisdag",
       "DATUM": "2026-09-22",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -38024,7 +38024,7 @@
       "kontroll produkt": 0
     },
     "2026-09-23": {
-      "Telia MBH": "Söndag",
+      "Telia MBH": "Onsdag",
       "DATUM": "2026-09-23",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -38042,7 +38042,7 @@
       "kontroll produkt": 0
     },
     "2026-09-24": {
-      "Telia MBH": "Måndag",
+      "Telia MBH": "Torsdag",
       "DATUM": "2026-09-24",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -38060,7 +38060,7 @@
       "kontroll produkt": 0
     },
     "2026-09-25": {
-      "Telia MBH": "Tisdag",
+      "Telia MBH": "Fredag",
       "DATUM": "2026-09-25",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -38078,7 +38078,7 @@
       "kontroll produkt": 0
     },
     "2026-09-26": {
-      "Telia MBH": "Onsdag",
+      "Telia MBH": "Lördag",
       "DATUM": "2026-09-26",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -38096,7 +38096,7 @@
       "kontroll produkt": 0
     },
     "2026-09-27": {
-      "Telia MBH": "Torsdag",
+      "Telia MBH": "Söndag",
       "DATUM": "2026-09-27",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -38114,7 +38114,7 @@
       "kontroll produkt": 0
     },
     "2026-09-28": {
-      "Telia MBH": "Fredag",
+      "Telia MBH": "Måndag",
       "DATUM": "2026-09-28",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -38132,7 +38132,7 @@
       "kontroll produkt": 0
     },
     "2026-09-29": {
-      "Telia MBH": "Lördag",
+      "Telia MBH": "Tisdag",
       "DATUM": "2026-09-29",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -38150,7 +38150,7 @@
       "kontroll produkt": 0
     },
     "2026-09-30": {
-      "Telia MBH": "Söndag",
+      "Telia MBH": "Onsdag",
       "DATUM": "2026-09-30",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -38168,7 +38168,7 @@
       "kontroll produkt": 0
     },
     "2026-10-01": {
-      "Telia MBH": "Måndag",
+      "Telia MBH": "Torsdag",
       "DATUM": "2026-10-01",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42191,7 +42191,7 @@
       "DATUM": 1001
     },
     "2026-09-01": {
-      "Telia Mobil": "Lördag",
+      "Telia Mobil": "Tisdag",
       "DATUM": "2026-09-01",
       "Antal Mansdagar": 37,
       "Timmar": 231.1102777777778,
@@ -42209,7 +42209,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-02": {
-      "Telia Mobil": "Söndag",
+      "Telia Mobil": "Onsdag",
       "DATUM": "2026-09-02",
       "Antal Mansdagar": 35,
       "Timmar": 172.10666666666665,
@@ -42227,7 +42227,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-03": {
-      "Telia Mobil": "Måndag",
+      "Telia Mobil": "Torsdag",
       "DATUM": "2026-09-03",
       "Antal Mansdagar": 34,
       "Timmar": 204.48416666666662,
@@ -42245,7 +42245,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-04": {
-      "Telia Mobil": "Tisdag",
+      "Telia Mobil": "Fredag",
       "DATUM": "2026-09-04",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42263,7 +42263,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-05": {
-      "Telia Mobil": "Onsdag",
+      "Telia Mobil": "Lördag",
       "DATUM": "2026-09-05",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42281,7 +42281,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-06": {
-      "Telia Mobil": "Torsdag",
+      "Telia Mobil": "Söndag",
       "DATUM": "2026-09-06",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42299,7 +42299,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-07": {
-      "Telia Mobil": "Fredag",
+      "Telia Mobil": "Måndag",
       "DATUM": "2026-09-07",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42317,7 +42317,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-08": {
-      "Telia Mobil": "Lördag",
+      "Telia Mobil": "Tisdag",
       "DATUM": "2026-09-08",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42335,7 +42335,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-09": {
-      "Telia Mobil": "Söndag",
+      "Telia Mobil": "Onsdag",
       "DATUM": "2026-09-09",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42353,7 +42353,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-10": {
-      "Telia Mobil": "Måndag",
+      "Telia Mobil": "Torsdag",
       "DATUM": "2026-09-10",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42371,7 +42371,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-11": {
-      "Telia Mobil": "Tisdag",
+      "Telia Mobil": "Fredag",
       "DATUM": "2026-09-11",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42389,7 +42389,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-12": {
-      "Telia Mobil": "Onsdag",
+      "Telia Mobil": "Lördag",
       "DATUM": "2026-09-12",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42407,7 +42407,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-13": {
-      "Telia Mobil": "Torsdag",
+      "Telia Mobil": "Söndag",
       "DATUM": "2026-09-13",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42425,7 +42425,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-14": {
-      "Telia Mobil": "Fredag",
+      "Telia Mobil": "Måndag",
       "DATUM": "2026-09-14",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42443,7 +42443,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-15": {
-      "Telia Mobil": "Lördag",
+      "Telia Mobil": "Tisdag",
       "DATUM": "2026-09-15",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42461,7 +42461,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-16": {
-      "Telia Mobil": "Söndag",
+      "Telia Mobil": "Onsdag",
       "DATUM": "2026-09-16",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42479,7 +42479,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-17": {
-      "Telia Mobil": "Måndag",
+      "Telia Mobil": "Torsdag",
       "DATUM": "2026-09-17",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42497,7 +42497,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-18": {
-      "Telia Mobil": "Tisdag",
+      "Telia Mobil": "Fredag",
       "DATUM": "2026-09-18",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42515,7 +42515,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-19": {
-      "Telia Mobil": "Onsdag",
+      "Telia Mobil": "Lördag",
       "DATUM": "2026-09-19",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42533,7 +42533,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-20": {
-      "Telia Mobil": "Torsdag",
+      "Telia Mobil": "Söndag",
       "DATUM": "2026-09-20",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42551,7 +42551,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-21": {
-      "Telia Mobil": "Fredag",
+      "Telia Mobil": "Måndag",
       "DATUM": "2026-09-21",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42569,7 +42569,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-22": {
-      "Telia Mobil": "Lördag",
+      "Telia Mobil": "Tisdag",
       "DATUM": "2026-09-22",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42587,7 +42587,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-23": {
-      "Telia Mobil": "Söndag",
+      "Telia Mobil": "Onsdag",
       "DATUM": "2026-09-23",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42605,7 +42605,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-24": {
-      "Telia Mobil": "Måndag",
+      "Telia Mobil": "Torsdag",
       "DATUM": "2026-09-24",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42623,7 +42623,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-25": {
-      "Telia Mobil": "Tisdag",
+      "Telia Mobil": "Fredag",
       "DATUM": "2026-09-25",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42641,7 +42641,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-26": {
-      "Telia Mobil": "Onsdag",
+      "Telia Mobil": "Lördag",
       "DATUM": "2026-09-26",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42659,7 +42659,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-27": {
-      "Telia Mobil": "Torsdag",
+      "Telia Mobil": "Söndag",
       "DATUM": "2026-09-27",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42677,7 +42677,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-28": {
-      "Telia Mobil": "Fredag",
+      "Telia Mobil": "Måndag",
       "DATUM": "2026-09-28",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42695,7 +42695,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-29": {
-      "Telia Mobil": "Lördag",
+      "Telia Mobil": "Tisdag",
       "DATUM": "2026-09-29",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42713,7 +42713,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-09-30": {
-      "Telia Mobil": "Söndag",
+      "Telia Mobil": "Onsdag",
       "DATUM": "2026-09-30",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -42731,7 +42731,7 @@
       "kontroll Tilläggsprodukt": 0
     },
     "2026-10-01": {
-      "Telia Mobil": "Måndag",
+      "Telia Mobil": "Torsdag",
       "DATUM": "2026-10-01",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46752,7 +46752,7 @@
       "DATUM": 1254
     },
     "2026-09-01": {
-      "Telia FMC": "Lördag",
+      "Telia FMC": "Tisdag",
       "DATUM": "2026-09-01",
       "Antal Mansdagar": 23,
       "Timmar": 159.0836111111111,
@@ -46763,7 +46763,7 @@
       "kontroll produkt": 0
     },
     "2026-09-02": {
-      "Telia FMC": "Söndag",
+      "Telia FMC": "Onsdag",
       "DATUM": "2026-09-02",
       "Antal Mansdagar": 23,
       "Timmar": 135.92277777777778,
@@ -46774,7 +46774,7 @@
       "kontroll produkt": 0
     },
     "2026-09-03": {
-      "Telia FMC": "Måndag",
+      "Telia FMC": "Torsdag",
       "DATUM": "2026-09-03",
       "Antal Mansdagar": 24,
       "Timmar": 167.36861111111114,
@@ -46785,7 +46785,7 @@
       "kontroll produkt": 0
     },
     "2026-09-04": {
-      "Telia FMC": "Tisdag",
+      "Telia FMC": "Fredag",
       "DATUM": "2026-09-04",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46796,7 +46796,7 @@
       "kontroll produkt": 0
     },
     "2026-09-05": {
-      "Telia FMC": "Onsdag",
+      "Telia FMC": "Lördag",
       "DATUM": "2026-09-05",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46807,7 +46807,7 @@
       "kontroll produkt": 0
     },
     "2026-09-06": {
-      "Telia FMC": "Torsdag",
+      "Telia FMC": "Söndag",
       "DATUM": "2026-09-06",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46818,7 +46818,7 @@
       "kontroll produkt": 0
     },
     "2026-09-07": {
-      "Telia FMC": "Fredag",
+      "Telia FMC": "Måndag",
       "DATUM": "2026-09-07",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46829,7 +46829,7 @@
       "kontroll produkt": 0
     },
     "2026-09-08": {
-      "Telia FMC": "Lördag",
+      "Telia FMC": "Tisdag",
       "DATUM": "2026-09-08",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46840,7 +46840,7 @@
       "kontroll produkt": 0
     },
     "2026-09-09": {
-      "Telia FMC": "Söndag",
+      "Telia FMC": "Onsdag",
       "DATUM": "2026-09-09",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46851,7 +46851,7 @@
       "kontroll produkt": 0
     },
     "2026-09-10": {
-      "Telia FMC": "Måndag",
+      "Telia FMC": "Torsdag",
       "DATUM": "2026-09-10",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46862,7 +46862,7 @@
       "kontroll produkt": 0
     },
     "2026-09-11": {
-      "Telia FMC": "Tisdag",
+      "Telia FMC": "Fredag",
       "DATUM": "2026-09-11",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46873,7 +46873,7 @@
       "kontroll produkt": 0
     },
     "2026-09-12": {
-      "Telia FMC": "Onsdag",
+      "Telia FMC": "Lördag",
       "DATUM": "2026-09-12",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46884,7 +46884,7 @@
       "kontroll produkt": 0
     },
     "2026-09-13": {
-      "Telia FMC": "Torsdag",
+      "Telia FMC": "Söndag",
       "DATUM": "2026-09-13",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46895,7 +46895,7 @@
       "kontroll produkt": 0
     },
     "2026-09-14": {
-      "Telia FMC": "Fredag",
+      "Telia FMC": "Måndag",
       "DATUM": "2026-09-14",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46906,7 +46906,7 @@
       "kontroll produkt": 0
     },
     "2026-09-15": {
-      "Telia FMC": "Lördag",
+      "Telia FMC": "Tisdag",
       "DATUM": "2026-09-15",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46917,7 +46917,7 @@
       "kontroll produkt": 0
     },
     "2026-09-16": {
-      "Telia FMC": "Söndag",
+      "Telia FMC": "Onsdag",
       "DATUM": "2026-09-16",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46928,7 +46928,7 @@
       "kontroll produkt": 0
     },
     "2026-09-17": {
-      "Telia FMC": "Måndag",
+      "Telia FMC": "Torsdag",
       "DATUM": "2026-09-17",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46939,7 +46939,7 @@
       "kontroll produkt": 0
     },
     "2026-09-18": {
-      "Telia FMC": "Tisdag",
+      "Telia FMC": "Fredag",
       "DATUM": "2026-09-18",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46950,7 +46950,7 @@
       "kontroll produkt": 0
     },
     "2026-09-19": {
-      "Telia FMC": "Onsdag",
+      "Telia FMC": "Lördag",
       "DATUM": "2026-09-19",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46961,7 +46961,7 @@
       "kontroll produkt": 0
     },
     "2026-09-20": {
-      "Telia FMC": "Torsdag",
+      "Telia FMC": "Söndag",
       "DATUM": "2026-09-20",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46972,7 +46972,7 @@
       "kontroll produkt": 0
     },
     "2026-09-21": {
-      "Telia FMC": "Fredag",
+      "Telia FMC": "Måndag",
       "DATUM": "2026-09-21",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46983,7 +46983,7 @@
       "kontroll produkt": 0
     },
     "2026-09-22": {
-      "Telia FMC": "Lördag",
+      "Telia FMC": "Tisdag",
       "DATUM": "2026-09-22",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -46994,7 +46994,7 @@
       "kontroll produkt": 0
     },
     "2026-09-23": {
-      "Telia FMC": "Söndag",
+      "Telia FMC": "Onsdag",
       "DATUM": "2026-09-23",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -47005,7 +47005,7 @@
       "kontroll produkt": 0
     },
     "2026-09-24": {
-      "Telia FMC": "Måndag",
+      "Telia FMC": "Torsdag",
       "DATUM": "2026-09-24",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -47016,7 +47016,7 @@
       "kontroll produkt": 0
     },
     "2026-09-25": {
-      "Telia FMC": "Tisdag",
+      "Telia FMC": "Fredag",
       "DATUM": "2026-09-25",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -47027,7 +47027,7 @@
       "kontroll produkt": 0
     },
     "2026-09-26": {
-      "Telia FMC": "Onsdag",
+      "Telia FMC": "Lördag",
       "DATUM": "2026-09-26",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -47038,7 +47038,7 @@
       "kontroll produkt": 0
     },
     "2026-09-27": {
-      "Telia FMC": "Torsdag",
+      "Telia FMC": "Söndag",
       "DATUM": "2026-09-27",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -47049,7 +47049,7 @@
       "kontroll produkt": 0
     },
     "2026-09-28": {
-      "Telia FMC": "Fredag",
+      "Telia FMC": "Måndag",
       "DATUM": "2026-09-28",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -47060,7 +47060,7 @@
       "kontroll produkt": 0
     },
     "2026-09-29": {
-      "Telia FMC": "Lördag",
+      "Telia FMC": "Tisdag",
       "DATUM": "2026-09-29",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -47071,7 +47071,7 @@
       "kontroll produkt": 0
     },
     "2026-09-30": {
-      "Telia FMC": "Söndag",
+      "Telia FMC": "Onsdag",
       "DATUM": "2026-09-30",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -47082,7 +47082,7 @@
       "kontroll produkt": 0
     },
     "2026-10-01": {
-      "Telia FMC": "Måndag",
+      "Telia FMC": "Torsdag",
       "DATUM": "2026-10-01",
       "Antal Mansdagar": 0,
       "Timmar": 0,
@@ -49725,7 +49725,7 @@
       "DATUM": 823
     },
     "2026-09-01": {
-      "Tele2 Villafiber Norr": "Lördag",
+      "Tele2 Villafiber Norr": "Tisdag",
       "DATUM": "2026-09-01",
       "Antal Mansdagar": 12,
       "Total sälj": 45,
@@ -49740,7 +49740,7 @@
       "kontroll produkt": 0
     },
     "2026-09-02": {
-      "Tele2 Villafiber Norr": "Söndag",
+      "Tele2 Villafiber Norr": "Onsdag",
       "DATUM": "2026-09-02",
       "Antal Mansdagar": 12,
       "Total sälj": 53,
@@ -49755,22 +49755,22 @@
       "kontroll produkt": 0
     },
     "2026-09-03": {
-      "Tele2 Villafiber Norr": "Måndag",
+      "Tele2 Villafiber Norr": "Torsdag",
       "DATUM": "2026-09-03",
-      "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "TV": 0,
-      "Bredband": 0,
-      "MBB": 0,
-      "Mobil": 0,
-      "Räknas ej": 0,
+      "Antal Mansdagar": 15,
+      "Total sälj": 33,
+      "Tilläggsprodukt": 1,
+      "Produkt": 32,
+      "TV": 13,
+      "Bredband": 13,
+      "MBB": 1,
+      "Mobil": 5,
+      "Räknas ej": 1,
       "Produkt Kontroll": 0,
       "kontroll produkt": 0
     },
     "2026-09-04": {
-      "Tele2 Villafiber Norr": "Tisdag",
+      "Tele2 Villafiber Norr": "Fredag",
       "DATUM": "2026-09-04",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -49785,7 +49785,7 @@
       "kontroll produkt": 0
     },
     "2026-09-05": {
-      "Tele2 Villafiber Norr": "Onsdag",
+      "Tele2 Villafiber Norr": "Lördag",
       "DATUM": "2026-09-05",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -49800,7 +49800,7 @@
       "kontroll produkt": 0
     },
     "2026-09-06": {
-      "Tele2 Villafiber Norr": "Torsdag",
+      "Tele2 Villafiber Norr": "Söndag",
       "DATUM": "2026-09-06",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -49815,7 +49815,7 @@
       "kontroll produkt": 0
     },
     "2026-09-07": {
-      "Tele2 Villafiber Norr": "Fredag",
+      "Tele2 Villafiber Norr": "Måndag",
       "DATUM": "2026-09-07",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -49830,7 +49830,7 @@
       "kontroll produkt": 0
     },
     "2026-09-08": {
-      "Tele2 Villafiber Norr": "Lördag",
+      "Tele2 Villafiber Norr": "Tisdag",
       "DATUM": "2026-09-08",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -49845,7 +49845,7 @@
       "kontroll produkt": 0
     },
     "2026-09-09": {
-      "Tele2 Villafiber Norr": "Söndag",
+      "Tele2 Villafiber Norr": "Onsdag",
       "DATUM": "2026-09-09",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -49860,7 +49860,7 @@
       "kontroll produkt": 0
     },
     "2026-09-10": {
-      "Tele2 Villafiber Norr": "Måndag",
+      "Tele2 Villafiber Norr": "Torsdag",
       "DATUM": "2026-09-10",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -49875,7 +49875,7 @@
       "kontroll produkt": 0
     },
     "2026-09-11": {
-      "Tele2 Villafiber Norr": "Tisdag",
+      "Tele2 Villafiber Norr": "Fredag",
       "DATUM": "2026-09-11",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -49890,7 +49890,7 @@
       "kontroll produkt": 0
     },
     "2026-09-12": {
-      "Tele2 Villafiber Norr": "Onsdag",
+      "Tele2 Villafiber Norr": "Lördag",
       "DATUM": "2026-09-12",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -49905,7 +49905,7 @@
       "kontroll produkt": 0
     },
     "2026-09-13": {
-      "Tele2 Villafiber Norr": "Torsdag",
+      "Tele2 Villafiber Norr": "Söndag",
       "DATUM": "2026-09-13",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -49920,7 +49920,7 @@
       "kontroll produkt": 0
     },
     "2026-09-14": {
-      "Tele2 Villafiber Norr": "Fredag",
+      "Tele2 Villafiber Norr": "Måndag",
       "DATUM": "2026-09-14",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -49935,7 +49935,7 @@
       "kontroll produkt": 0
     },
     "2026-09-15": {
-      "Tele2 Villafiber Norr": "Lördag",
+      "Tele2 Villafiber Norr": "Tisdag",
       "DATUM": "2026-09-15",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -49950,7 +49950,7 @@
       "kontroll produkt": 0
     },
     "2026-09-16": {
-      "Tele2 Villafiber Norr": "Söndag",
+      "Tele2 Villafiber Norr": "Onsdag",
       "DATUM": "2026-09-16",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -49965,7 +49965,7 @@
       "kontroll produkt": 0
     },
     "2026-09-17": {
-      "Tele2 Villafiber Norr": "Måndag",
+      "Tele2 Villafiber Norr": "Torsdag",
       "DATUM": "2026-09-17",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -49980,7 +49980,7 @@
       "kontroll produkt": 0
     },
     "2026-09-18": {
-      "Tele2 Villafiber Norr": "Tisdag",
+      "Tele2 Villafiber Norr": "Fredag",
       "DATUM": "2026-09-18",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -49995,7 +49995,7 @@
       "kontroll produkt": 0
     },
     "2026-09-19": {
-      "Tele2 Villafiber Norr": "Onsdag",
+      "Tele2 Villafiber Norr": "Lördag",
       "DATUM": "2026-09-19",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -50010,7 +50010,7 @@
       "kontroll produkt": 0
     },
     "2026-09-20": {
-      "Tele2 Villafiber Norr": "Torsdag",
+      "Tele2 Villafiber Norr": "Söndag",
       "DATUM": "2026-09-20",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -50025,7 +50025,7 @@
       "kontroll produkt": 0
     },
     "2026-09-21": {
-      "Tele2 Villafiber Norr": "Fredag",
+      "Tele2 Villafiber Norr": "Måndag",
       "DATUM": "2026-09-21",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -50040,7 +50040,7 @@
       "kontroll produkt": 0
     },
     "2026-09-22": {
-      "Tele2 Villafiber Norr": "Lördag",
+      "Tele2 Villafiber Norr": "Tisdag",
       "DATUM": "2026-09-22",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -50055,7 +50055,7 @@
       "kontroll produkt": 0
     },
     "2026-09-23": {
-      "Tele2 Villafiber Norr": "Söndag",
+      "Tele2 Villafiber Norr": "Onsdag",
       "DATUM": "2026-09-23",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -50070,7 +50070,7 @@
       "kontroll produkt": 0
     },
     "2026-09-24": {
-      "Tele2 Villafiber Norr": "Måndag",
+      "Tele2 Villafiber Norr": "Torsdag",
       "DATUM": "2026-09-24",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -50085,7 +50085,7 @@
       "kontroll produkt": 0
     },
     "2026-09-25": {
-      "Tele2 Villafiber Norr": "Tisdag",
+      "Tele2 Villafiber Norr": "Fredag",
       "DATUM": "2026-09-25",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -50100,7 +50100,7 @@
       "kontroll produkt": 0
     },
     "2026-09-26": {
-      "Tele2 Villafiber Norr": "Onsdag",
+      "Tele2 Villafiber Norr": "Lördag",
       "DATUM": "2026-09-26",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -50115,7 +50115,7 @@
       "kontroll produkt": 0
     },
     "2026-09-27": {
-      "Tele2 Villafiber Norr": "Torsdag",
+      "Tele2 Villafiber Norr": "Söndag",
       "DATUM": "2026-09-27",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -50130,7 +50130,7 @@
       "kontroll produkt": 0
     },
     "2026-09-28": {
-      "Tele2 Villafiber Norr": "Fredag",
+      "Tele2 Villafiber Norr": "Måndag",
       "DATUM": "2026-09-28",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -50145,7 +50145,7 @@
       "kontroll produkt": 0
     },
     "2026-09-29": {
-      "Tele2 Villafiber Norr": "Lördag",
+      "Tele2 Villafiber Norr": "Tisdag",
       "DATUM": "2026-09-29",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -50160,7 +50160,7 @@
       "kontroll produkt": 0
     },
     "2026-09-30": {
-      "Tele2 Villafiber Norr": "Söndag",
+      "Tele2 Villafiber Norr": "Onsdag",
       "DATUM": "2026-09-30",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -50175,7 +50175,7 @@
       "kontroll produkt": 0
     },
     "2026-10-01": {
-      "Tele2 Villafiber Norr": "Måndag",
+      "Tele2 Villafiber Norr": "Torsdag",
       "DATUM": "2026-10-01",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -50189,17 +50189,17 @@
       "Produkt Kontroll": 0,
       "kontroll produkt": 0
     },
-    "1900-04-07": {
+    "1900-05-10": {
       "Tele2 Villafiber Norr": "Total sälj",
-      "DATUM": 98
+      "DATUM": 131
     },
-    "1900-04-05": {
+    "1900-05-07": {
       "Tele2 Villafiber Norr": "Produkter",
-      "DATUM": 96
+      "DATUM": 128
     },
-    "1900-01-01": {
+    "1900-01-02": {
       "Tele2 Villafiber Norr": "Tilläggsprodukter",
-      "DATUM": 2
+      "DATUM": 3
     }
   },
   "1.3. Tele2 Villafiber Syd": {
@@ -51620,7 +51620,7 @@
       "DATUM": 27
     },
     "2026-09-01": {
-      "Tele2 Villafiber Syd": "Lördag",
+      "Tele2 Villafiber Syd": "Tisdag",
       "DATUM": "2026-09-01",
       "Antal Mansdagar": 18,
       "Total sälj": 56,
@@ -51635,7 +51635,7 @@
       "kontroll produkt": 0
     },
     "2026-09-02": {
-      "Tele2 Villafiber Syd": "Söndag",
+      "Tele2 Villafiber Syd": "Onsdag",
       "DATUM": "2026-09-02",
       "Antal Mansdagar": 19,
       "Total sälj": 59,
@@ -51650,22 +51650,22 @@
       "kontroll produkt": 0
     },
     "2026-09-03": {
-      "Tele2 Villafiber Syd": "Måndag",
+      "Tele2 Villafiber Syd": "Torsdag",
       "DATUM": "2026-09-03",
-      "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "TV": 0,
-      "Bredband": 0,
-      "MBB": 0,
-      "Mobil": 0,
-      "Räknas ej": 0,
+      "Antal Mansdagar": 18,
+      "Total sälj": 70,
+      "Tilläggsprodukt": 3,
+      "Produkt": 67,
+      "TV": 20,
+      "Bredband": 23,
+      "MBB": 3,
+      "Mobil": 21,
+      "Räknas ej": 3,
       "Produkt Kontroll": 0,
       "kontroll produkt": 0
     },
     "2026-09-04": {
-      "Tele2 Villafiber Syd": "Tisdag",
+      "Tele2 Villafiber Syd": "Fredag",
       "DATUM": "2026-09-04",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51680,7 +51680,7 @@
       "kontroll produkt": 0
     },
     "2026-09-05": {
-      "Tele2 Villafiber Syd": "Onsdag",
+      "Tele2 Villafiber Syd": "Lördag",
       "DATUM": "2026-09-05",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51695,7 +51695,7 @@
       "kontroll produkt": 0
     },
     "2026-09-06": {
-      "Tele2 Villafiber Syd": "Torsdag",
+      "Tele2 Villafiber Syd": "Söndag",
       "DATUM": "2026-09-06",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51710,7 +51710,7 @@
       "kontroll produkt": 0
     },
     "2026-09-07": {
-      "Tele2 Villafiber Syd": "Fredag",
+      "Tele2 Villafiber Syd": "Måndag",
       "DATUM": "2026-09-07",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51725,7 +51725,7 @@
       "kontroll produkt": 0
     },
     "2026-09-08": {
-      "Tele2 Villafiber Syd": "Lördag",
+      "Tele2 Villafiber Syd": "Tisdag",
       "DATUM": "2026-09-08",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51740,7 +51740,7 @@
       "kontroll produkt": 0
     },
     "2026-09-09": {
-      "Tele2 Villafiber Syd": "Söndag",
+      "Tele2 Villafiber Syd": "Onsdag",
       "DATUM": "2026-09-09",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51755,7 +51755,7 @@
       "kontroll produkt": 0
     },
     "2026-09-10": {
-      "Tele2 Villafiber Syd": "Måndag",
+      "Tele2 Villafiber Syd": "Torsdag",
       "DATUM": "2026-09-10",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51770,7 +51770,7 @@
       "kontroll produkt": 0
     },
     "2026-09-11": {
-      "Tele2 Villafiber Syd": "Tisdag",
+      "Tele2 Villafiber Syd": "Fredag",
       "DATUM": "2026-09-11",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51785,7 +51785,7 @@
       "kontroll produkt": 0
     },
     "2026-09-12": {
-      "Tele2 Villafiber Syd": "Onsdag",
+      "Tele2 Villafiber Syd": "Lördag",
       "DATUM": "2026-09-12",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51800,7 +51800,7 @@
       "kontroll produkt": 0
     },
     "2026-09-13": {
-      "Tele2 Villafiber Syd": "Torsdag",
+      "Tele2 Villafiber Syd": "Söndag",
       "DATUM": "2026-09-13",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51815,7 +51815,7 @@
       "kontroll produkt": 0
     },
     "2026-09-14": {
-      "Tele2 Villafiber Syd": "Fredag",
+      "Tele2 Villafiber Syd": "Måndag",
       "DATUM": "2026-09-14",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51830,7 +51830,7 @@
       "kontroll produkt": 0
     },
     "2026-09-15": {
-      "Tele2 Villafiber Syd": "Lördag",
+      "Tele2 Villafiber Syd": "Tisdag",
       "DATUM": "2026-09-15",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51845,7 +51845,7 @@
       "kontroll produkt": 0
     },
     "2026-09-16": {
-      "Tele2 Villafiber Syd": "Söndag",
+      "Tele2 Villafiber Syd": "Onsdag",
       "DATUM": "2026-09-16",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51860,7 +51860,7 @@
       "kontroll produkt": 0
     },
     "2026-09-17": {
-      "Tele2 Villafiber Syd": "Måndag",
+      "Tele2 Villafiber Syd": "Torsdag",
       "DATUM": "2026-09-17",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51875,7 +51875,7 @@
       "kontroll produkt": 0
     },
     "2026-09-18": {
-      "Tele2 Villafiber Syd": "Tisdag",
+      "Tele2 Villafiber Syd": "Fredag",
       "DATUM": "2026-09-18",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51890,7 +51890,7 @@
       "kontroll produkt": 0
     },
     "2026-09-19": {
-      "Tele2 Villafiber Syd": "Onsdag",
+      "Tele2 Villafiber Syd": "Lördag",
       "DATUM": "2026-09-19",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51905,7 +51905,7 @@
       "kontroll produkt": 0
     },
     "2026-09-20": {
-      "Tele2 Villafiber Syd": "Torsdag",
+      "Tele2 Villafiber Syd": "Söndag",
       "DATUM": "2026-09-20",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51920,7 +51920,7 @@
       "kontroll produkt": 0
     },
     "2026-09-21": {
-      "Tele2 Villafiber Syd": "Fredag",
+      "Tele2 Villafiber Syd": "Måndag",
       "DATUM": "2026-09-21",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51935,7 +51935,7 @@
       "kontroll produkt": 0
     },
     "2026-09-22": {
-      "Tele2 Villafiber Syd": "Lördag",
+      "Tele2 Villafiber Syd": "Tisdag",
       "DATUM": "2026-09-22",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51950,7 +51950,7 @@
       "kontroll produkt": 0
     },
     "2026-09-23": {
-      "Tele2 Villafiber Syd": "Söndag",
+      "Tele2 Villafiber Syd": "Onsdag",
       "DATUM": "2026-09-23",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51965,7 +51965,7 @@
       "kontroll produkt": 0
     },
     "2026-09-24": {
-      "Tele2 Villafiber Syd": "Måndag",
+      "Tele2 Villafiber Syd": "Torsdag",
       "DATUM": "2026-09-24",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51980,7 +51980,7 @@
       "kontroll produkt": 0
     },
     "2026-09-25": {
-      "Tele2 Villafiber Syd": "Tisdag",
+      "Tele2 Villafiber Syd": "Fredag",
       "DATUM": "2026-09-25",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -51995,7 +51995,7 @@
       "kontroll produkt": 0
     },
     "2026-09-26": {
-      "Tele2 Villafiber Syd": "Onsdag",
+      "Tele2 Villafiber Syd": "Lördag",
       "DATUM": "2026-09-26",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -52010,7 +52010,7 @@
       "kontroll produkt": 0
     },
     "2026-09-27": {
-      "Tele2 Villafiber Syd": "Torsdag",
+      "Tele2 Villafiber Syd": "Söndag",
       "DATUM": "2026-09-27",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -52025,7 +52025,7 @@
       "kontroll produkt": 0
     },
     "2026-09-28": {
-      "Tele2 Villafiber Syd": "Fredag",
+      "Tele2 Villafiber Syd": "Måndag",
       "DATUM": "2026-09-28",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -52040,7 +52040,7 @@
       "kontroll produkt": 0
     },
     "2026-09-29": {
-      "Tele2 Villafiber Syd": "Lördag",
+      "Tele2 Villafiber Syd": "Tisdag",
       "DATUM": "2026-09-29",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -52055,7 +52055,7 @@
       "kontroll produkt": 0
     },
     "2026-09-30": {
-      "Tele2 Villafiber Syd": "Söndag",
+      "Tele2 Villafiber Syd": "Onsdag",
       "DATUM": "2026-09-30",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -52070,7 +52070,7 @@
       "kontroll produkt": 0
     },
     "2026-10-01": {
-      "Tele2 Villafiber Syd": "Måndag",
+      "Tele2 Villafiber Syd": "Torsdag",
       "DATUM": "2026-10-01",
       "Antal Mansdagar": 0,
       "Total sälj": 0,
@@ -52084,9 +52084,236 @@
       "Produkt Kontroll": 0,
       "kontroll produkt": 0
     },
-    "1900-04-24": {
+    "1900-07-03": {
+      "Tele2 Villafiber Syd": "Total sälj",
+      "DATUM": 185
+    },
+    "1900-06-30": {
       "Tele2 Villafiber Syd": "Produkter",
-      "DATUM": 115
+      "DATUM": 182
+    },
+    "1900-01-02": {
+      "Tele2 Villafiber Syd": "Tilläggsprodukter",
+      "DATUM": 3
+    }
+  },
+  "3.1 Global Connect": {
+    "2026-09-01": {
+      "Global Connect": "Tisdag",
+      "DATUM": "2026-09-01",
+      "Antal Mansdagar": 7,
+      "Timmar": 112,
+      "Total sälj": 0
+    },
+    "2026-09-02": {
+      "Global Connect": "Onsdag",
+      "DATUM": "2026-09-02",
+      "Antal Mansdagar": 7,
+      "Timmar": 112,
+      "Total sälj": 0
+    },
+    "2026-09-03": {
+      "Global Connect": "Torsdag",
+      "DATUM": "2026-09-03",
+      "Antal Mansdagar": 7,
+      "Timmar": 98,
+      "Total sälj": 0
+    },
+    "2026-09-04": {
+      "Global Connect": "Fredag",
+      "DATUM": "2026-09-04",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-05": {
+      "Global Connect": "Lördag",
+      "DATUM": "2026-09-05",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-06": {
+      "Global Connect": "Söndag",
+      "DATUM": "2026-09-06",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-07": {
+      "Global Connect": "Måndag",
+      "DATUM": "2026-09-07",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-08": {
+      "Global Connect": "Tisdag",
+      "DATUM": "2026-09-08",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-09": {
+      "Global Connect": "Onsdag",
+      "DATUM": "2026-09-09",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-10": {
+      "Global Connect": "Torsdag",
+      "DATUM": "2026-09-10",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-11": {
+      "Global Connect": "Fredag",
+      "DATUM": "2026-09-11",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-12": {
+      "Global Connect": "Lördag",
+      "DATUM": "2026-09-12",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-13": {
+      "Global Connect": "Söndag",
+      "DATUM": "2026-09-13",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-14": {
+      "Global Connect": "Måndag",
+      "DATUM": "2026-09-14",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-15": {
+      "Global Connect": "Tisdag",
+      "DATUM": "2026-09-15",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-16": {
+      "Global Connect": "Onsdag",
+      "DATUM": "2026-09-16",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-17": {
+      "Global Connect": "Torsdag",
+      "DATUM": "2026-09-17",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-18": {
+      "Global Connect": "Fredag",
+      "DATUM": "2026-09-18",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-19": {
+      "Global Connect": "Lördag",
+      "DATUM": "2026-09-19",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-20": {
+      "Global Connect": "Söndag",
+      "DATUM": "2026-09-20",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-21": {
+      "Global Connect": "Måndag",
+      "DATUM": "2026-09-21",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-22": {
+      "Global Connect": "Tisdag",
+      "DATUM": "2026-09-22",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-23": {
+      "Global Connect": "Onsdag",
+      "DATUM": "2026-09-23",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-24": {
+      "Global Connect": "Torsdag",
+      "DATUM": "2026-09-24",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-25": {
+      "Global Connect": "Fredag",
+      "DATUM": "2026-09-25",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-26": {
+      "Global Connect": "Lördag",
+      "DATUM": "2026-09-26",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-27": {
+      "Global Connect": "Söndag",
+      "DATUM": "2026-09-27",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-28": {
+      "Global Connect": "Måndag",
+      "DATUM": "2026-09-28",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-29": {
+      "Global Connect": "Tisdag",
+      "DATUM": "2026-09-29",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-09-30": {
+      "Global Connect": "Onsdag",
+      "DATUM": "2026-09-30",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
+    },
+    "2026-10-01": {
+      "Global Connect": "Torsdag",
+      "DATUM": "2026-10-01",
+      "Antal Mansdagar": 0,
+      "Timmar": 0,
+      "Total sälj": 0
     }
   }
 }
