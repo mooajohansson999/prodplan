@@ -11220,12 +11220,12 @@
     "2026-09-04": {
       "Tele2 Koax": "Fredag",
       "DATUM": "2026-09-04",
-      "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
+      "Antal Mansdagar": 1,
+      "Total sälj": 1,
+      "produkt": 1,
       "Tilläggsprodukt": 0,
       "TV": 0,
-      "BREDBAND": 0,
+      "BREDBAND": 1,
       "MBB": 0,
       "Mobil": 0,
       "Streaming": 0,
@@ -11693,17 +11693,17 @@
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0
     },
-    "1900-04-01": {
+    "1900-04-02": {
       "Tele2 Koax": "Total sälj",
-      "DATUM": 92
+      "DATUM": 93
     },
     "1900-01-14": {
       "Tele2 Koax": "Produkter",
       "DATUM": 15
     },
-    "1900-03-17": {
+    "1900-03-18": {
       "Tele2 Koax": "Tilläggsprodukter",
-      "DATUM": 77
+      "DATUM": 78
     }
   },
   "1.4. LAN": {
@@ -49802,14 +49802,14 @@
     "2026-09-06": {
       "Tele2 Villafiber Norr": "Söndag",
       "DATUM": "2026-09-06",
-      "Antal Mansdagar": 0,
-      "Total sälj": 0,
+      "Antal Mansdagar": 1,
+      "Total sälj": 4,
       "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "TV": 0,
-      "Bredband": 0,
+      "Produkt": 4,
+      "TV": 1,
+      "Bredband": 1,
       "MBB": 0,
-      "Mobil": 0,
+      "Mobil": 2,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
       "kontroll produkt": 0
@@ -50189,13 +50189,13 @@
       "Produkt Kontroll": 0,
       "kontroll produkt": 0
     },
-    "1900-05-10": {
+    "1900-05-14": {
       "Tele2 Villafiber Norr": "Total sälj",
-      "DATUM": 131
+      "DATUM": 135
     },
-    "1900-05-07": {
+    "1900-05-11": {
       "Tele2 Villafiber Norr": "Produkter",
-      "DATUM": 128
+      "DATUM": 132
     },
     "1900-01-02": {
       "Tele2 Villafiber Norr": "Tilläggsprodukter",
