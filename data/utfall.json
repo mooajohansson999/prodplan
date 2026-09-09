@@ -4152,7 +4152,9 @@
       "TV BOX": 0,
       "Trygghetspaket": 4,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Resultat chat": 176,
+      "Diffkontroll": -9
     },
     "2026-09-02": {
       "Telia D2D": "Onsdag",
@@ -4169,7 +4171,9 @@
       "TV BOX": 0,
       "Trygghetspaket": 4,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Resultat chat": 159,
+      "Diffkontroll": 2
     },
     "2026-09-03": {
       "Telia D2D": "Torsdag",
@@ -4186,7 +4190,9 @@
       "TV BOX": 0,
       "Trygghetspaket": 1,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Resultat chat": 146,
+      "Diffkontroll": 2
     },
     "2026-09-04": {
       "Telia D2D": "Fredag",
@@ -4203,7 +4209,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 55
     },
     "2026-09-05": {
       "Telia D2D": "Lördag",
@@ -4220,7 +4227,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-06": {
       "Telia D2D": "Söndag",
@@ -4237,7 +4245,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 3
     },
     "2026-09-07": {
       "Telia D2D": "Måndag",
@@ -4254,24 +4263,28 @@
       "TV BOX": 0,
       "Trygghetspaket": 1,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Resultat chat": 177,
+      "Diffkontroll": -12
     },
     "2026-09-08": {
       "Telia D2D": "Tisdag",
       "DATUM": "2026-09-08",
       "Antal Mansdagar": 27,
       "Timmar": 243,
-      "Total sälj": 196,
+      "Total sälj": 194,
       "Tilläggsprodukt": 3,
-      "Produkt": 193,
+      "Produkt": 191,
       "Bredband": 65,
       "TV": 67,
       "Streaming": 49,
-      "MOBIL": 12,
+      "MOBIL": 10,
       "TV BOX": 0,
       "Trygghetspaket": 3,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Resultat chat": 181,
+      "Diffkontroll": 10
     },
     "2026-09-09": {
       "Telia D2D": "Onsdag",
@@ -4288,7 +4301,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-10": {
       "Telia D2D": "Torsdag",
@@ -4305,7 +4319,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-11": {
       "Telia D2D": "Fredag",
@@ -4322,7 +4337,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-12": {
       "Telia D2D": "Lördag",
@@ -4339,7 +4355,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-13": {
       "Telia D2D": "Söndag",
@@ -4356,7 +4373,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-14": {
       "Telia D2D": "Måndag",
@@ -4373,7 +4391,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-15": {
       "Telia D2D": "Tisdag",
@@ -4390,7 +4409,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-16": {
       "Telia D2D": "Onsdag",
@@ -4407,7 +4427,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-17": {
       "Telia D2D": "Torsdag",
@@ -4424,7 +4445,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-18": {
       "Telia D2D": "Fredag",
@@ -4441,7 +4463,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-19": {
       "Telia D2D": "Lördag",
@@ -4458,7 +4481,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-20": {
       "Telia D2D": "Söndag",
@@ -4475,7 +4499,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-21": {
       "Telia D2D": "Måndag",
@@ -4492,7 +4517,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-22": {
       "Telia D2D": "Tisdag",
@@ -4509,7 +4535,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-23": {
       "Telia D2D": "Onsdag",
@@ -4526,7 +4553,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-24": {
       "Telia D2D": "Torsdag",
@@ -4543,7 +4571,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-25": {
       "Telia D2D": "Fredag",
@@ -4560,7 +4589,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-26": {
       "Telia D2D": "Lördag",
@@ -4577,7 +4607,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-27": {
       "Telia D2D": "Söndag",
@@ -4594,7 +4625,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-28": {
       "Telia D2D": "Måndag",
@@ -4611,7 +4643,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-29": {
       "Telia D2D": "Tisdag",
@@ -4628,7 +4661,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-30": {
       "Telia D2D": "Onsdag",
@@ -4645,7 +4679,8 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
     "2026-10-01": {
       "Telia D2D": "Torsdag",
@@ -4662,15 +4697,16 @@
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
-      "kontroll Tilläggsprodukt": 0
+      "kontroll Tilläggsprodukt": 0,
+      "Diffkontroll": 0
     },
-    "1902-06-23": {
+    "1902-06-21": {
       "Telia D2D": "Total sälj",
-      "DATUM": 905
+      "DATUM": 903
     },
-    "1902-06-10": {
+    "1902-06-08": {
       "Telia D2D": "Produkter",
-      "DATUM": 892
+      "DATUM": 890
     }
   },
   "1.3. Tele2 Villafiber": {
@@ -15942,7 +15978,9 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Resultat chat": 29,
+      "Diffkontroll": -4
     },
     "2026-09-02": {
       "Tele2 LAN": "Onsdag",
@@ -15959,7 +15997,9 @@
       "Bredband OM": 0,
       "räknas ej": 1,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Resultat chat": 28,
+      "Diffkontroll": -2
     },
     "2026-09-03": {
       "Tele2 LAN": "Torsdag",
@@ -15976,7 +16016,9 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Resultat chat": 36,
+      "Diffkontroll": -2
     },
     "2026-09-04": {
       "Tele2 LAN": "Fredag",
@@ -15993,7 +16035,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-05": {
       "Tele2 LAN": "Lördag",
@@ -16010,7 +16053,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-06": {
       "Tele2 LAN": "Söndag",
@@ -16027,7 +16071,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-07": {
       "Tele2 LAN": "Måndag",
@@ -16044,7 +16089,9 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Resultat chat": 35,
+      "Diffkontroll": 0
     },
     "2026-09-08": {
       "Tele2 LAN": "Tisdag",
@@ -16061,7 +16108,9 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Resultat chat": 31,
+      "Diffkontroll": 0
     },
     "2026-09-09": {
       "Tele2 LAN": "Onsdag",
@@ -16078,7 +16127,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-10": {
       "Tele2 LAN": "Torsdag",
@@ -16095,7 +16145,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-11": {
       "Tele2 LAN": "Fredag",
@@ -16112,7 +16163,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-12": {
       "Tele2 LAN": "Lördag",
@@ -16129,7 +16181,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-13": {
       "Tele2 LAN": "Söndag",
@@ -16146,7 +16199,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-14": {
       "Tele2 LAN": "Måndag",
@@ -16163,7 +16217,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-15": {
       "Tele2 LAN": "Tisdag",
@@ -16180,7 +16235,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-16": {
       "Tele2 LAN": "Onsdag",
@@ -16197,7 +16253,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-17": {
       "Tele2 LAN": "Torsdag",
@@ -16214,7 +16271,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-18": {
       "Tele2 LAN": "Fredag",
@@ -16231,7 +16289,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-19": {
       "Tele2 LAN": "Lördag",
@@ -16248,7 +16307,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-20": {
       "Tele2 LAN": "Söndag",
@@ -16265,7 +16325,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-21": {
       "Tele2 LAN": "Måndag",
@@ -16282,7 +16343,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-22": {
       "Tele2 LAN": "Tisdag",
@@ -16299,7 +16361,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-23": {
       "Tele2 LAN": "Onsdag",
@@ -16316,7 +16379,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-24": {
       "Tele2 LAN": "Torsdag",
@@ -16333,7 +16397,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-25": {
       "Tele2 LAN": "Fredag",
@@ -16350,7 +16415,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-26": {
       "Tele2 LAN": "Lördag",
@@ -16367,7 +16433,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-27": {
       "Tele2 LAN": "Söndag",
@@ -16384,7 +16451,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-28": {
       "Tele2 LAN": "Måndag",
@@ -16401,7 +16469,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-29": {
       "Tele2 LAN": "Tisdag",
@@ -16418,7 +16487,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-30": {
       "Tele2 LAN": "Onsdag",
@@ -16435,7 +16505,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-10-01": {
       "Tele2 LAN": "Torsdag",
@@ -16452,7 +16523,8 @@
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
-      "Kontroll Produkt": 0
+      "Kontroll Produkt": 0,
+      "Diffkontroll": 0
     },
     "1900-05-31": {
       "Tele2 LAN": "Total sälj",
@@ -49769,7 +49841,9 @@
       "Mobil": 15,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Resultat chat": 47,
+      "Diffkontroll": -2
     },
     "2026-09-02": {
       "Tele2 Villafiber Norr": "Onsdag",
@@ -49784,7 +49858,9 @@
       "Mobil": 11,
       "Räknas ej": 2,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Resultat chat": 50,
+      "Diffkontroll": 1
     },
     "2026-09-03": {
       "Tele2 Villafiber Norr": "Torsdag",
@@ -49799,7 +49875,9 @@
       "Mobil": 5,
       "Räknas ej": 1,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Resultat chat": 34,
+      "Diffkontroll": -2
     },
     "2026-09-04": {
       "Tele2 Villafiber Norr": "Fredag",
@@ -49814,7 +49892,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-05": {
       "Tele2 Villafiber Norr": "Lördag",
@@ -49829,7 +49908,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-06": {
       "Tele2 Villafiber Norr": "Söndag",
@@ -49844,7 +49924,8 @@
       "Mobil": 2,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 4
     },
     "2026-09-07": {
       "Tele2 Villafiber Norr": "Måndag",
@@ -49859,7 +49940,9 @@
       "Mobil": 19,
       "Räknas ej": 1,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Resultat chat": 68,
+      "Diffkontroll": -4
     },
     "2026-09-08": {
       "Tele2 Villafiber Norr": "Tisdag",
@@ -49874,7 +49957,9 @@
       "Mobil": 10,
       "Räknas ej": 2,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Resultat chat": 40,
+      "Diffkontroll": 0
     },
     "2026-09-09": {
       "Tele2 Villafiber Norr": "Onsdag",
@@ -49889,7 +49974,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-10": {
       "Tele2 Villafiber Norr": "Torsdag",
@@ -49904,7 +49990,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-11": {
       "Tele2 Villafiber Norr": "Fredag",
@@ -49919,7 +50006,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-12": {
       "Tele2 Villafiber Norr": "Lördag",
@@ -49934,7 +50022,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-13": {
       "Tele2 Villafiber Norr": "Söndag",
@@ -49949,7 +50038,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-14": {
       "Tele2 Villafiber Norr": "Måndag",
@@ -49964,7 +50054,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-15": {
       "Tele2 Villafiber Norr": "Tisdag",
@@ -49979,7 +50070,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-16": {
       "Tele2 Villafiber Norr": "Onsdag",
@@ -49994,7 +50086,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-17": {
       "Tele2 Villafiber Norr": "Torsdag",
@@ -50009,7 +50102,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-18": {
       "Tele2 Villafiber Norr": "Fredag",
@@ -50024,7 +50118,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-19": {
       "Tele2 Villafiber Norr": "Lördag",
@@ -50039,7 +50134,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-20": {
       "Tele2 Villafiber Norr": "Söndag",
@@ -50054,7 +50150,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-21": {
       "Tele2 Villafiber Norr": "Måndag",
@@ -50069,7 +50166,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-22": {
       "Tele2 Villafiber Norr": "Tisdag",
@@ -50084,7 +50182,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-23": {
       "Tele2 Villafiber Norr": "Onsdag",
@@ -50099,7 +50198,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-24": {
       "Tele2 Villafiber Norr": "Torsdag",
@@ -50114,7 +50214,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-25": {
       "Tele2 Villafiber Norr": "Fredag",
@@ -50129,7 +50230,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-26": {
       "Tele2 Villafiber Norr": "Lördag",
@@ -50144,7 +50246,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-27": {
       "Tele2 Villafiber Norr": "Söndag",
@@ -50159,7 +50262,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-28": {
       "Tele2 Villafiber Norr": "Måndag",
@@ -50174,7 +50278,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-29": {
       "Tele2 Villafiber Norr": "Tisdag",
@@ -50189,7 +50294,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-30": {
       "Tele2 Villafiber Norr": "Onsdag",
@@ -50204,7 +50310,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-10-01": {
       "Tele2 Villafiber Norr": "Torsdag",
@@ -50219,7 +50326,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "1900-08-29": {
       "Tele2 Villafiber Norr": "Total sälj",
@@ -51664,7 +51772,9 @@
       "Mobil": 17,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Resultat chat": 59,
+      "Diffkontroll": -3
     },
     "2026-09-02": {
       "Tele2 Villafiber Syd": "Onsdag",
@@ -51679,7 +51789,9 @@
       "Mobil": 15,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Resultat chat": 58,
+      "Diffkontroll": 1
     },
     "2026-09-03": {
       "Tele2 Villafiber Syd": "Torsdag",
@@ -51694,7 +51806,9 @@
       "Mobil": 21,
       "Räknas ej": 3,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Resultat chat": 67,
+      "Diffkontroll": 0
     },
     "2026-09-04": {
       "Tele2 Villafiber Syd": "Fredag",
@@ -51709,7 +51823,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-05": {
       "Tele2 Villafiber Syd": "Lördag",
@@ -51724,7 +51839,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-06": {
       "Tele2 Villafiber Syd": "Söndag",
@@ -51739,7 +51855,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-07": {
       "Tele2 Villafiber Syd": "Måndag",
@@ -51754,7 +51871,9 @@
       "Mobil": 15,
       "Räknas ej": 1,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Resultat chat": 54,
+      "Diffkontroll": -2
     },
     "2026-09-08": {
       "Tele2 Villafiber Syd": "Tisdag",
@@ -51769,7 +51888,9 @@
       "Mobil": 13,
       "Räknas ej": 1,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Resultat chat": 56,
+      "Diffkontroll": -3
     },
     "2026-09-09": {
       "Tele2 Villafiber Syd": "Onsdag",
@@ -51784,7 +51905,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-10": {
       "Tele2 Villafiber Syd": "Torsdag",
@@ -51799,7 +51921,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-11": {
       "Tele2 Villafiber Syd": "Fredag",
@@ -51814,7 +51937,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-12": {
       "Tele2 Villafiber Syd": "Lördag",
@@ -51829,7 +51953,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-13": {
       "Tele2 Villafiber Syd": "Söndag",
@@ -51844,7 +51969,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-14": {
       "Tele2 Villafiber Syd": "Måndag",
@@ -51859,7 +51985,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-15": {
       "Tele2 Villafiber Syd": "Tisdag",
@@ -51874,7 +52001,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-16": {
       "Tele2 Villafiber Syd": "Onsdag",
@@ -51889,7 +52017,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-17": {
       "Tele2 Villafiber Syd": "Torsdag",
@@ -51904,7 +52033,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-18": {
       "Tele2 Villafiber Syd": "Fredag",
@@ -51919,7 +52049,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-19": {
       "Tele2 Villafiber Syd": "Lördag",
@@ -51934,7 +52065,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-20": {
       "Tele2 Villafiber Syd": "Söndag",
@@ -51949,7 +52081,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-21": {
       "Tele2 Villafiber Syd": "Måndag",
@@ -51964,7 +52097,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-22": {
       "Tele2 Villafiber Syd": "Tisdag",
@@ -51979,7 +52113,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-23": {
       "Tele2 Villafiber Syd": "Onsdag",
@@ -51994,7 +52129,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-24": {
       "Tele2 Villafiber Syd": "Torsdag",
@@ -52009,7 +52145,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-25": {
       "Tele2 Villafiber Syd": "Fredag",
@@ -52024,7 +52161,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-26": {
       "Tele2 Villafiber Syd": "Lördag",
@@ -52039,7 +52177,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-27": {
       "Tele2 Villafiber Syd": "Söndag",
@@ -52054,7 +52193,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-28": {
       "Tele2 Villafiber Syd": "Måndag",
@@ -52069,7 +52209,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-29": {
       "Tele2 Villafiber Syd": "Tisdag",
@@ -52084,7 +52225,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-09-30": {
       "Tele2 Villafiber Syd": "Onsdag",
@@ -52099,7 +52241,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "2026-10-01": {
       "Tele2 Villafiber Syd": "Torsdag",
@@ -52114,7 +52257,8 @@
       "Mobil": 0,
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
-      "kontroll produkt": 0
+      "kontroll produkt": 0,
+      "Diffkontroll": 0
     },
     "1900-10-18": {
       "Tele2 Villafiber Syd": "Total sälj",
@@ -52142,14 +52286,16 @@
       "DATUM": "2026-09-02",
       "Antal Mansdagar": 14,
       "Timmar": 114,
-      "Total sälj": 19
+      "Total sälj": 19,
+      "Resultat chat": 20
     },
     "2026-09-03": {
       "Global Connect": "Torsdag",
       "DATUM": "2026-09-03",
       "Antal Mansdagar": 14,
       "Timmar": 98,
-      "Total sälj": 15
+      "Total sälj": 15,
+      "Resultat chat": 21
     },
     "2026-09-04": {
       "Global Connect": "Fredag",
@@ -52177,14 +52323,16 @@
       "DATUM": "2026-09-07",
       "Antal Mansdagar": 16,
       "Timmar": 112,
-      "Total sälj": 0
+      "Total sälj": 0,
+      "Resultat chat": 20
     },
     "2026-09-08": {
       "Global Connect": "Tisdag",
       "DATUM": "2026-09-08",
       "Antal Mansdagar": 17,
       "Timmar": 119,
-      "Total sälj": 0
+      "Total sälj": 0,
+      "Resultat chat": 21
     },
     "2026-09-09": {
       "Global Connect": "Onsdag",
