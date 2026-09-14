@@ -4321,61 +4321,63 @@
       "Trygghetspaket": 5,
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0,
-      "Diffkontroll": 174
+      "Resultat chat": 200,
+      "Diffkontroll": -26
     },
     "2026-09-11": {
       "Telia D2D": "Fredag",
       "DATUM": "2026-09-11",
       "Antal Mansdagar": 6,
       "Timmar": 54,
-      "Total sälj": 0,
-      "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "Bredband": 0,
-      "TV": 0,
-      "Streaming": 0,
-      "MOBIL": 0,
+      "Total sälj": 45,
+      "Tilläggsprodukt": 2,
+      "Produkt": 43,
+      "Bredband": 13,
+      "TV": 13,
+      "Streaming": 15,
+      "MOBIL": 2,
       "TV BOX": 0,
-      "Trygghetspaket": 0,
+      "Trygghetspaket": 2,
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0,
-      "Diffkontroll": 0
+      "Resultat chat": 38,
+      "Diffkontroll": 5
     },
     "2026-09-12": {
       "Telia D2D": "Lördag",
       "DATUM": "2026-09-12",
       "Antal Mansdagar": 0,
       "Timmar": 0,
-      "Total sälj": 0,
-      "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "Bredband": 0,
-      "TV": 0,
+      "Total sälj": 4,
+      "Tilläggsprodukt": 1,
+      "Produkt": 3,
+      "Bredband": 1,
+      "TV": 1,
       "Streaming": 0,
-      "MOBIL": 0,
+      "MOBIL": 1,
       "TV BOX": 0,
-      "Trygghetspaket": 0,
+      "Trygghetspaket": 1,
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0,
-      "Diffkontroll": 0
+      "Diffkontroll": 3
     },
     "2026-09-13": {
       "Telia D2D": "Söndag",
       "DATUM": "2026-09-13",
       "Antal Mansdagar": 6,
       "Timmar": 54,
-      "Total sälj": 0,
+      "Total sälj": 10,
       "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "Bredband": 0,
-      "TV": 0,
-      "Streaming": 0,
+      "Produkt": 10,
+      "Bredband": 3,
+      "TV": 3,
+      "Streaming": 4,
       "MOBIL": 0,
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0,
-      "Diffkontroll": 0
+      "Diffkontroll": 10
     },
     "2026-09-14": {
       "Telia D2D": "Måndag",
@@ -4701,17 +4703,17 @@
       "kontroll Tilläggsprodukt": 0,
       "Diffkontroll": 0
     },
-    "1903-07-03": {
+    "1903-08-31": {
       "Telia D2D": "Total sälj",
-      "DATUM": 1280
+      "DATUM": 1339
     },
-    "1903-06-09": {
+    "1903-08-04": {
       "Telia D2D": "Produkter",
-      "DATUM": 1256
+      "DATUM": 1312
     },
-    "1900-01-23": {
+    "1900-01-26": {
       "Telia D2D": "Tilläggsprodukter",
-      "DATUM": 24
+      "DATUM": 27
     }
   },
   "1.3. Tele2 Villafiber": {
