@@ -52284,7 +52284,7 @@
       "DATUM": "2026-09-01",
       "Antal Mansdagar": 14,
       "Timmar": 113,
-      "Total sälj": 15
+      "Total sälj": 16
     },
     "2026-09-02": {
       "Global Connect": "Onsdag",
@@ -52299,7 +52299,7 @@
       "DATUM": "2026-09-03",
       "Antal Mansdagar": 14,
       "Timmar": 98,
-      "Total sälj": 15,
+      "Total sälj": 20,
       "Resultat chat": 21
     },
     "2026-09-04": {
@@ -52307,14 +52307,14 @@
       "DATUM": "2026-09-04",
       "Antal Mansdagar": 15,
       "Timmar": 105,
-      "Total sälj": 0
+      "Total sälj": 28
     },
     "2026-09-05": {
       "Global Connect": "Lördag",
       "DATUM": "2026-09-05",
       "Antal Mansdagar": 0,
-      "Timmar": 0,
-      "Total sälj": 0
+      "Timmar": 1,
+      "Total sälj": 1
     },
     "2026-09-06": {
       "Global Connect": "Söndag",
@@ -52328,7 +52328,7 @@
       "DATUM": "2026-09-07",
       "Antal Mansdagar": 16,
       "Timmar": 112,
-      "Total sälj": 0,
+      "Total sälj": 21,
       "Resultat chat": 20
     },
     "2026-09-08": {
@@ -52336,7 +52336,7 @@
       "DATUM": "2026-09-08",
       "Antal Mansdagar": 17,
       "Timmar": 119,
-      "Total sälj": 0,
+      "Total sälj": 17,
       "Resultat chat": 21
     },
     "2026-09-09": {
@@ -52344,21 +52344,21 @@
       "DATUM": "2026-09-09",
       "Antal Mansdagar": 17,
       "Timmar": 119,
-      "Total sälj": 0
+      "Total sälj": 21
     },
     "2026-09-10": {
       "Global Connect": "Torsdag",
       "DATUM": "2026-09-10",
       "Antal Mansdagar": 17,
       "Timmar": 119,
-      "Total sälj": 0
+      "Total sälj": 13
     },
     "2026-09-11": {
       "Global Connect": "Fredag",
       "DATUM": "2026-09-11",
       "Antal Mansdagar": 15,
-      "Timmar": 105,
-      "Total sälj": 0
+      "Timmar": 106,
+      "Total sälj": 47
     },
     "2026-09-12": {
       "Global Connect": "Lördag",
@@ -52379,28 +52379,28 @@
       "DATUM": "2026-09-14",
       "Antal Mansdagar": 16,
       "Timmar": 112,
-      "Total sälj": 0
+      "Total sälj": 18
     },
     "2026-09-15": {
       "Global Connect": "Tisdag",
       "DATUM": "2026-09-15",
       "Antal Mansdagar": 16,
-      "Timmar": 112,
-      "Total sälj": 0
+      "Timmar": 113,
+      "Total sälj": 15
     },
     "2026-09-16": {
       "Global Connect": "Onsdag",
       "DATUM": "2026-09-16",
       "Antal Mansdagar": 16,
-      "Timmar": 112,
-      "Total sälj": 0
+      "Timmar": 113,
+      "Total sälj": 17
     },
     "2026-09-17": {
       "Global Connect": "Torsdag",
       "DATUM": "2026-09-17",
       "Antal Mansdagar": 16,
       "Timmar": 112,
-      "Total sälj": 0
+      "Total sälj": 17
     },
     "2026-09-18": {
       "Global Connect": "Fredag",
