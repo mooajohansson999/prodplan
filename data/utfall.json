@@ -4462,18 +4462,18 @@
       "DATUM": "2026-09-18",
       "Antal Mansdagar": 0,
       "Timmar": 0,
-      "Total sälj": 0,
+      "Total sälj": 5,
       "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "Bredband": 0,
-      "TV": 0,
+      "Produkt": 5,
+      "Bredband": 1,
+      "TV": 1,
       "Streaming": 0,
-      "MOBIL": 0,
+      "MOBIL": 3,
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0,
-      "Diffkontroll": 0
+      "Diffkontroll": 5
     },
     "2026-09-19": {
       "Telia D2D": "Lördag",
@@ -4709,13 +4709,13 @@
       "kontroll Tilläggsprodukt": 0,
       "Diffkontroll": 0
     },
-    "1905-08-03": {
+    "1905-08-08": {
       "Telia D2D": "Total sälj",
-      "DATUM": 2042
+      "DATUM": 2047
     },
-    "1905-06-16": {
+    "1905-06-21": {
       "Telia D2D": "Produkter",
-      "DATUM": 1994
+      "DATUM": 1999
     },
     "1900-02-16": {
       "Telia D2D": "Tilläggsprodukter",
