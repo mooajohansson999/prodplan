@@ -52213,17 +52213,17 @@
       "Tele2 Villafiber Syd": "Fredag",
       "DATUM": "2026-09-25",
       "Antal Mansdagar": 14,
-      "Total sälj": 20,
+      "Total sälj": 24,
       "Tilläggsprodukt": 1,
-      "Produkt": 19,
-      "TV": 7,
-      "Bredband": 9,
+      "Produkt": 23,
+      "TV": 8,
+      "Bredband": 12,
       "MBB": 0,
       "Mobil": 3,
       "Räknas ej": 1,
       "Produkt Kontroll": 0,
       "kontroll produkt": 0,
-      "Diffkontroll": 19
+      "Diffkontroll": 23
     },
     "2026-09-26": {
       "Tele2 Villafiber Syd": "Lördag",
@@ -52321,13 +52321,13 @@
       "kontroll produkt": 0,
       "Diffkontroll": 0
     },
-    "1902-04-25": {
+    "1902-04-29": {
       "Tele2 Villafiber Syd": "Total sälj",
-      "DATUM": 846
+      "DATUM": 850
     },
-    "1902-03-30": {
+    "1902-04-03": {
       "Tele2 Villafiber Syd": "Produkter",
-      "DATUM": 820
+      "DATUM": 824
     },
     "1900-01-25": {
       "Tele2 Villafiber Syd": "Tilläggsprodukter",
