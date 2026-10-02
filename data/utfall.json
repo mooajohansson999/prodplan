@@ -4702,19 +4702,19 @@
       "DATUM": "2026-10-01",
       "Antal Mansdagar": 15,
       "Timmar": 135,
-      "Total sälj": 0,
-      "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "Bredband": 0,
-      "TV": 0,
-      "Streaming": 0,
-      "MOBIL": 0,
+      "Total sälj": 97,
+      "Tilläggsprodukt": 2,
+      "Produkt": 95,
+      "Bredband": 35,
+      "TV": 33,
+      "Streaming": 19,
+      "MOBIL": 8,
       "TV BOX": 0,
-      "Trygghetspaket": 0,
+      "Trygghetspaket": 2,
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0,
       "Resultat chat": 113,
-      "Diffkontroll": -113
+      "Diffkontroll": -18
     },
     "1908-01-30": {
       "Telia D2D": "Total sälj",
@@ -5267,6 +5267,18 @@
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0,
       "Diffkontroll": 0
+    },
+    "1900-04-06": {
+      "Telia D2D": "Total sälj",
+      "DATUM": 97
+    },
+    "1900-04-04": {
+      "Telia D2D": "Produkter",
+      "DATUM": 95
+    },
+    "1900-01-01": {
+      "Telia D2D": "Tilläggsprodukter",
+      "DATUM": 2
     }
   },
   "1.3. Tele2 Villafiber": {
