@@ -17695,19 +17695,19 @@
       "Tele2 LAN": "Fredag",
       "DATUM": "2026-10-02",
       "Antal Mansdagar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
+      "Total sälj": 4,
+      "produkt": 4,
       "Tilläggsprodukt": 0,
-      "TV": 0,
-      "BREDBAND": 0,
+      "TV": 1,
+      "BREDBAND": 2,
       "MBB": 0,
-      "Mobil": 0,
+      "Mobil": 1,
       "Streaming": 0,
       "Bredband OM": 0,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0,
-      "Diffkontroll": 0
+      "Diffkontroll": 4
     },
     "2026-10-03": {
       "Tele2 LAN": "Lördag",
@@ -18231,9 +18231,9 @@
       "Kontroll Produkt": 0,
       "Diffkontroll": 0
     },
-    "1900-01-30": {
+    "1900-02-03": {
       "Tele2 LAN": "Tilläggsprodukter",
-      "DATUM": 31
+      "DATUM": 35
     }
   },
   "1.5. Amref": {
@@ -58415,8 +58415,8 @@
     "2026-10-02": {
       "Global Connect": "Fredag",
       "DATUM": "2026-10-02",
-      "Antal Mansdagar": 0,
-      "Timmar": 0,
+      "Antal Mansdagar": 17,
+      "Timmar": 119,
       "Total sälj": 0
     },
     "2026-10-03": {
