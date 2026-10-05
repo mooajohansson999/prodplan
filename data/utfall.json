@@ -4734,36 +4734,36 @@
       "DATUM": "2026-10-02",
       "Antal Mansdagar": 0,
       "Timmar": 0,
-      "Total sälj": 0,
+      "Total sälj": 7,
       "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "Bredband": 0,
-      "TV": 0,
-      "Streaming": 0,
+      "Produkt": 7,
+      "Bredband": 5,
+      "TV": 1,
+      "Streaming": 1,
       "MOBIL": 0,
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0,
-      "Diffkontroll": 0
+      "Diffkontroll": 7
     },
     "2026-10-03": {
       "Telia D2D": "Lördag",
       "DATUM": "2026-10-03",
       "Antal Mansdagar": 0,
       "Timmar": 0,
-      "Total sälj": 0,
+      "Total sälj": 3,
       "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "Bredband": 0,
-      "TV": 0,
-      "Streaming": 0,
+      "Produkt": 3,
+      "Bredband": 1,
+      "TV": 1,
+      "Streaming": 1,
       "MOBIL": 0,
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0,
-      "Diffkontroll": 0
+      "Diffkontroll": 3
     },
     "2026-10-04": {
       "Telia D2D": "Söndag",
@@ -4788,10 +4788,10 @@
       "DATUM": "2026-10-05",
       "Antal Mansdagar": 0,
       "Timmar": 0,
-      "Total sälj": 0,
+      "Total sälj": 1,
       "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "Bredband": 0,
+      "Produkt": 1,
+      "Bredband": 1,
       "TV": 0,
       "Streaming": 0,
       "MOBIL": 0,
@@ -4799,7 +4799,7 @@
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0,
-      "Diffkontroll": 0
+      "Diffkontroll": 1
     },
     "2026-10-06": {
       "Telia D2D": "Tisdag",
@@ -5269,13 +5269,13 @@
       "kontroll Tilläggsprodukt": 0,
       "Diffkontroll": 0
     },
-    "1900-04-06": {
+    "1900-04-17": {
       "Telia D2D": "Total sälj",
-      "DATUM": 97
+      "DATUM": 108
     },
-    "1900-04-04": {
+    "1900-04-15": {
       "Telia D2D": "Produkter",
-      "DATUM": 95
+      "DATUM": 106
     },
     "1900-01-01": {
       "Telia D2D": "Tilläggsprodukter",
