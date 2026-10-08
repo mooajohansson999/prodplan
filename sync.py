@@ -49,6 +49,20 @@ FILE_MAP = {
 RAWDATA_SHEETS = {
     '0.1 data försäljning': 'rawdata_orders',
     '0.0 data timmar': 'rawdata_timmar',
+    '0.2 data säljrapport': 'saljrapport',   # NYTT: teamledarnas rapporter per säljare och dag
+}
+
+# NYTT: bara dessa kolumner får lämna Excel. Kunduppgifter (kundnummer, personnummer,
+# namn, telefon, e-post, adress, prospekt-ID) exporteras aldrig till repot.
+RAWDATA_FIELDS = {
+    'rawdata_orders': ['Kund', 'Projekt', 'Datum', 'År-månad', 'Produkt', 'Produkttyp',
+                       'Produktkod', 'Säljare', 'LoxysoftID', 'kolumn?'],
+    'rawdata_timmar': ['Kund', 'Projekt', 'Säljare', 'Loxysoft ID', 'Datum', 'År-månad',
+                       'Inloggad tid timmar', 'Mansdagar'],
+    'saljrapport': ['Datum', 'Säljare', 'LoxyID', 'Projekt',
+                    'Bredband', 'TV', 'MBB', 'Mobil', 'Streaming', 'TV BOX', 'Trygghetspaket', 'Total',
+                    'Order Bredband', 'Order TV', 'Order MBB', 'Order Mobil', 'Order Streaming',
+                    'Order TV BOX', 'Order Trygghetspaket', 'Order total', 'Differens', 'Status'],
 }
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -120,7 +134,7 @@ def excel_to_json(content):
 
         if raw_key:
             # Parse rawdata sheet as flat array of rows
-            raw_rows = parse_rawdata_sheet(sheet_name, rows)
+            raw_rows = parse_rawdata_sheet(sheet_name, rows, raw_key)
             if raw_rows:
                 rawdata[raw_key] = rawdata.get(raw_key, []) + raw_rows
                 print(f'✅ RÅDATA {sheet_name}: {len(raw_rows)} rader')
@@ -182,10 +196,12 @@ def excel_to_json(content):
     return result, rawdata
 
 
-def parse_rawdata_sheet(sheet_name, rows):
-    """Parse a rawdata sheet into a flat list of row dicts."""
+def parse_rawdata_sheet(sheet_name, rows, raw_key):
+    """Parse a rawdata sheet into a flat list of row dicts (only allowed columns)."""
     def norm(x):
         return str(x).strip().lower().replace(':','') if x is not None else ''
+
+    allowed = {f.strip().lower() for f in RAWDATA_FIELDS.get(raw_key, [])}
 
     # Find header row
     header_row_idx = None
@@ -214,6 +230,9 @@ def parse_rawdata_sheet(sheet_name, rows):
             continue
 
         clean = clean_row(row_dict)
+
+        # NYTT: behåll bara tillåtna kolumner – inga kunduppgifter lämnar Excel
+        clean = {k: v for k, v in clean.items() if str(k).strip().lower() in allowed}
         if not clean:
             continue
 
@@ -298,7 +317,7 @@ files = list_files()
 print(f'Hittade {len(files)} filer/mappar i Dropbox (rekursivt)')
 
 all_data = {'utfall': {}, 'mal': {}}
-all_rawdata = {'rawdata_orders': [], 'rawdata_timmar': []}
+all_rawdata = {'rawdata_orders': [], 'rawdata_timmar': [], 'saljrapport': []}   # NYTT: saljrapport
 
 for f in files:
     if f['.tag'] != 'file':
