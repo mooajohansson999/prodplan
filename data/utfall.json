@@ -4837,7 +4837,8 @@
       "Trygghetspaket": 10,
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0,
-      "Diffkontroll": 130
+      "Resultat chat": 134,
+      "Diffkontroll": -4
     },
     "2026-10-08": {
       "Telia D2D": "Torsdag",
@@ -12470,7 +12471,8 @@
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0,
-      "Diffkontroll": 77
+      "Resultat chat": 70,
+      "Diffkontroll": 7
     },
     "2026-10-08": {
       "Tele2 Koax": "Torsdag",
@@ -17792,9 +17794,9 @@
       "DATUM": "2026-10-07",
       "Antal Mansdagar": 7,
       "Total sälj": 44,
-      "produkt": 43,
+      "produkt": 44,
       "Tilläggsprodukt": 0,
-      "TV": 12,
+      "TV": 13,
       "BREDBAND": 15,
       "MBB": 3,
       "Mobil": 13,
@@ -17803,7 +17805,8 @@
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0,
-      "Diffkontroll": 43
+      "Resultat chat": 45,
+      "Diffkontroll": -1
     },
     "2026-10-08": {
       "Tele2 LAN": "Torsdag",
@@ -18245,13 +18248,9 @@
       "Tele2 LAN": "Produkter",
       "DATUM": 3
     },
-    "1900-05-22": {
+    "1900-05-23": {
       "Tele2 LAN": "Tilläggsprodukter",
-      "DATUM": 143
-    },
-    "1899-12-31": {
-      "Tele2 LAN": "Kontroll",
-      "DATUM": 1
+      "DATUM": 144
     }
   },
   "1.5. Amref": {
@@ -55382,7 +55381,8 @@
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
       "kontroll produkt": 0,
-      "Diffkontroll": 45
+      "Resultat chat": 45,
+      "Diffkontroll": 0
     },
     "2026-10-08": {
       "Tele2 Villafiber Norr": "Torsdag",
@@ -57817,7 +57817,8 @@
       "Räknas ej": 3,
       "Produkt Kontroll": 0,
       "kontroll produkt": 0,
-      "Diffkontroll": 37
+      "Resultat chat": 41,
+      "Diffkontroll": -4
     },
     "2026-10-08": {
       "Tele2 Villafiber Syd": "Torsdag",
