@@ -45,26 +45,6 @@ FILE_MAP = {
     'utfall': 'utfall',
 }
 
-# Rådata-blad som ska exporteras separat
-RAWDATA_SHEETS = {
-    '0.1 data försäljning': 'rawdata_orders',
-    '0.0 data timmar': 'rawdata_timmar',
-    '0.2 data säljrapport': 'saljrapport',   # NYTT: teamledarnas rapporter per säljare och dag
-}
-
-# NYTT: bara dessa kolumner får lämna Excel. Kunduppgifter (kundnummer, personnummer,
-# namn, telefon, e-post, adress, prospekt-ID) exporteras aldrig till repot.
-RAWDATA_FIELDS = {
-    'rawdata_orders': ['Kund', 'Projekt', 'Datum', 'År-månad', 'Produkt', 'Produkttyp',
-                       'Produktkod', 'Säljare', 'LoxysoftID', 'kolumn?'],
-    'rawdata_timmar': ['Kund', 'Projekt', 'Säljare', 'Loxysoft ID', 'Datum', 'År-månad',
-                       'Inloggad tid timmar', 'Mansdagar'],
-    'saljrapport': ['Datum', 'Säljare', 'LoxyID', 'Projekt',
-                    'Bredband', 'TV', 'MBB', 'Mobil', 'Streaming', 'TV BOX', 'Trygghetspaket', 'Total',
-                    'Order Bredband', 'Order TV', 'Order MBB', 'Order Mobil', 'Order Streaming',
-                    'Order TV BOX', 'Order Trygghetspaket', 'Order total', 'Differens', 'Status'],
-}
-
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # ==============================
@@ -109,149 +89,6 @@ def download_file(path):
 # ==============================
 # ROBUST EXCEL PARSER
 # ==============================
-
-def excel_to_json(content):
-    wb = load_workbook(BytesIO(content), data_only=True)
-    result = {}
-    rawdata = {}
-
-    def norm(x):
-        return str(x).strip().lower().replace(':','') if x is not None else ''
-
-    for sheet_name in wb.sheetnames:
-        ws = wb[sheet_name]
-        rows = list(ws.iter_rows(values_only=True))
-        if not rows:
-            continue
-
-        # Check if this is a rawdata sheet
-        sheet_lower = sheet_name.strip().lower()
-        raw_key = None
-        for pattern, key in RAWDATA_SHEETS.items():
-            if sheet_lower.startswith(pattern) or pattern in sheet_lower:
-                raw_key = key
-                break
-
-        if raw_key:
-            # Parse rawdata sheet as flat array of rows
-            raw_rows = parse_rawdata_sheet(sheet_name, rows, raw_key)
-            if raw_rows:
-                rawdata[raw_key] = rawdata.get(raw_key, []) + raw_rows
-                print(f'✅ RÅDATA {sheet_name}: {len(raw_rows)} rader')
-            else:
-                print(f'⚠️ RÅDATA {sheet_name}: inga rader efter parsing')
-            continue
-
-        # Skip other "0." sheets that aren't mapped
-        if sheet_name.strip().startswith('0'):
-            print(f'Hoppar över okänt rådata-blad: {sheet_name}')
-            continue
-
-        # === Normal sheet parsing (unchanged) ===
-        header_row_idx = None
-        for i in range(min(60, len(rows))):
-            if any(norm(c) in ('datum', 'date') for c in rows[i]):
-                header_row_idx = i
-                break
-
-        if header_row_idx is None:
-            print(f'⚠️ Ingen header med DATUM hittades i: {sheet_name}')
-            continue
-
-        headers = [str(h).strip() if h is not None else '' for h in rows[header_row_idx]]
-
-        date_col = None
-        for h in headers:
-            if norm(h) in ('datum', 'date'):
-                date_col = h
-                break
-
-        if not date_col:
-            print(f'⚠️ Hittade header men ingen datum-kolumn i: {sheet_name}')
-            continue
-
-        sheet_data = {}
-
-        for row in rows[header_row_idx + 1:]:
-            row_dict = dict(zip(headers, row))
-            date_val = row_dict.get(date_col)
-
-            if not date_val:
-                continue
-
-            date_key = parse_date(date_val)
-            if not date_key:
-                continue
-
-            clean = clean_row(row_dict)
-            if clean:
-                sheet_data[date_key] = clean
-
-        if sheet_data:
-            result[sheet_name] = sheet_data
-            print(f'✅ {sheet_name}: {len(sheet_data)} rader')
-        else:
-            print(f'⚠️ {sheet_name}: inga rader efter parsing')
-
-    return result, rawdata
-
-
-def parse_rawdata_sheet(sheet_name, rows, raw_key):
-    """Parse a rawdata sheet into a flat list of row dicts (only allowed columns)."""
-    def norm(x):
-        return str(x).strip().lower().replace(':','') if x is not None else ''
-
-    allowed = {f.strip().lower() for f in RAWDATA_FIELDS.get(raw_key, [])}
-
-    # Find header row
-    header_row_idx = None
-    for i in range(min(20, len(rows))):
-        cells = [norm(c) for c in rows[i]]
-        if 'datum' in cells or 'date' in cells:
-            header_row_idx = i
-            break
-        # Also check for 'säljare' or 'projekt' as header indicators
-        if 'säljare' in cells and 'projekt' in cells:
-            header_row_idx = i
-            break
-
-    if header_row_idx is None:
-        print(f'⚠️ Ingen header hittades i rådata: {sheet_name}')
-        return []
-
-    headers = [str(h).strip() if h is not None else '' for h in rows[header_row_idx]]
-
-    parsed = []
-    for row in rows[header_row_idx + 1:]:
-        row_dict = dict(zip(headers, row))
-
-        # Skip completely empty rows
-        if all(v is None or str(v).strip() == '' for v in row):
-            continue
-
-        clean = clean_row(row_dict)
-
-        # NYTT: behåll bara tillåtna kolumner – inga kunduppgifter lämnar Excel
-        clean = {k: v for k, v in clean.items() if str(k).strip().lower() in allowed}
-        if not clean:
-            continue
-
-        # Convert any date fields to string
-        for k, v in clean.items():
-            if isinstance(v, (datetime.datetime, datetime.date)):
-                clean[k] = v.strftime('%Y-%m-%d')
-
-        # Ensure Datum is a proper date string
-        date_val = clean.get('Datum') or clean.get('datum')
-        if date_val:
-            parsed_date = parse_date(date_val)
-            if parsed_date:
-                clean['Datum'] = parsed_date
-
-        parsed.append(clean)
-
-    return parsed
-
 
 def parse_date(date_val):
     """Convert various date formats to YYYY-MM-DD string."""
@@ -298,6 +135,73 @@ def clean_row(row_dict):
     return clean
 
 
+def excel_to_json(content):
+    wb = load_workbook(BytesIO(content), data_only=True)
+    result = {}
+
+    def norm(x):
+        return str(x).strip().lower().replace(':','') if x is not None else ''
+
+    for sheet_name in wb.sheetnames:
+        ws = wb[sheet_name]
+        rows = list(ws.iter_rows(values_only=True))
+        if not rows:
+            continue
+
+        # Hoppa över rådata-blad (0.x)
+        if sheet_name.strip().startswith('0'):
+            print(f'Hoppar över rådata-blad: {sheet_name}')
+            continue
+
+        # === Normal sheet parsing ===
+        header_row_idx = None
+        for i in range(min(60, len(rows))):
+            if any(norm(c) in ('datum', 'date') for c in rows[i]):
+                header_row_idx = i
+                break
+
+        if header_row_idx is None:
+            print(f'⚠️ Ingen header med DATUM hittades i: {sheet_name}')
+            continue
+
+        headers = [str(h).strip() if h is not None else '' for h in rows[header_row_idx]]
+
+        date_col = None
+        for h in headers:
+            if norm(h) in ('datum', 'date'):
+                date_col = h
+                break
+
+        if not date_col:
+            print(f'⚠️ Hittade header men ingen datum-kolumn i: {sheet_name}')
+            continue
+
+        sheet_data = {}
+
+        for row in rows[header_row_idx + 1:]:
+            row_dict = dict(zip(headers, row))
+            date_val = row_dict.get(date_col)
+
+            if not date_val:
+                continue
+
+            date_key = parse_date(date_val)
+            if not date_key:
+                continue
+
+            clean = clean_row(row_dict)
+            if clean:
+                sheet_data[date_key] = clean
+
+        if sheet_data:
+            result[sheet_name] = sheet_data
+            print(f'✅ {sheet_name}: {len(sheet_data)} rader')
+        else:
+            print(f'⚠️ {sheet_name}: inga rader efter parsing')
+
+    return result
+
+
 # ==============================
 # FILE TYPE DETECTION
 # ==============================
@@ -317,7 +221,6 @@ files = list_files()
 print(f'Hittade {len(files)} filer/mappar i Dropbox (rekursivt)')
 
 all_data = {'utfall': {}, 'mal': {}}
-all_rawdata = {'rawdata_orders': [], 'rawdata_timmar': [], 'saljrapport': []}   # NYTT: saljrapport
 
 for f in files:
     if f['.tag'] != 'file':
@@ -334,14 +237,13 @@ for f in files:
 
     print(f'Laddar ner: {name} ({typ}) från {f["path_lower"]}')
     content = download_file(f['path_lower'])
-    data, rawdata = excel_to_json(content)
+    data = excel_to_json(content)
 
     # Merge normal sheet data - only overwrite if new row has real data
     for sheet_name, sheet_data in data.items():
         if sheet_name not in all_data[typ]:
             all_data[typ][sheet_name] = {}
         for date_key, row in sheet_data.items():
-            # Check if new row has any non-zero numeric values (besides DATUM)
             has_real_data = any(
                 isinstance(v, (int, float)) and v != 0
                 for k, v in row.items()
@@ -350,27 +252,15 @@ for f in files:
             if date_key not in all_data[typ][sheet_name] or has_real_data:
                 all_data[typ][sheet_name][date_key] = row
 
-    # Merge rawdata
-    for raw_key, raw_rows in rawdata.items():
-        all_rawdata[raw_key].extend(raw_rows)
+    print(f'  → {len(data)} flikar från {name}')
 
-    print(f'  → {len(data)} flikar, {sum(len(v) for v in rawdata.values())} rådata-rader från {name}')
-
-# Save normal JSON files
+# Save JSON files
 for typ, data in all_data.items():
     if data:
         out_path = os.path.join(OUTPUT_DIR, f'{typ}.json')
         with open(out_path, 'w', encoding='utf-8') as fh:
             json.dump(data, fh, ensure_ascii=False, indent=2)
         print(f'Sparade {out_path} med {len(data)} flikar')
-
-# Save rawdata JSON files
-for raw_key, raw_rows in all_rawdata.items():
-    if raw_rows:
-        out_path = os.path.join(OUTPUT_DIR, f'{raw_key}.json')
-        with open(out_path, 'w', encoding='utf-8') as fh:
-            json.dump(raw_rows, fh, ensure_ascii=False, indent=2)
-        print(f'Sparade {out_path} med {len(raw_rows)} rader')
 
 # ==============================
 # SAVE LAST SYNC TIME
