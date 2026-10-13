@@ -4930,7 +4930,8 @@
       "Trygghetspaket": 4,
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0,
-      "Diffkontroll": 126
+      "Resultat chat": 128,
+      "Diffkontroll": -2
     },
     "2026-10-13": {
       "Telia D2D": "Tisdag",
@@ -12565,7 +12566,8 @@
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0,
-      "Diffkontroll": 75
+      "Resultat chat": 76,
+      "Diffkontroll": -1
     },
     "2026-10-13": {
       "Tele2 Koax": "Tisdag",
@@ -17900,7 +17902,8 @@
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0,
-      "Diffkontroll": 43
+      "Resultat chat": 43,
+      "Diffkontroll": 0
     },
     "2026-10-13": {
       "Tele2 LAN": "Tisdag",
@@ -55463,7 +55466,8 @@
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
       "kontroll produkt": 0,
-      "Diffkontroll": 57
+      "Resultat chat": 57,
+      "Diffkontroll": 0
     },
     "2026-10-13": {
       "Tele2 Villafiber Norr": "Tisdag",
@@ -57900,7 +57904,8 @@
       "Räknas ej": 0,
       "Produkt Kontroll": 0,
       "kontroll produkt": 0,
-      "Diffkontroll": 35
+      "Resultat chat": 37,
+      "Diffkontroll": -2
     },
     "2026-10-13": {
       "Tele2 Villafiber Syd": "Tisdag",
