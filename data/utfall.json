@@ -12571,19 +12571,19 @@
       "Tele2 Koax": "Tisdag",
       "DATUM": "2026-10-13",
       "Antal Mansdagar": 8,
-      "Total sälj": 70,
-      "produkt": 60,
+      "Total sälj": 78,
+      "produkt": 68,
       "Tilläggsprodukt": 10,
-      "TV": 21,
-      "BREDBAND": 20,
+      "TV": 23,
+      "BREDBAND": 22,
       "MBB": 0,
-      "Mobil": 19,
+      "Mobil": 23,
       "Streaming": 0,
       "Bredband OM": 10,
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0,
-      "Diffkontroll": 60
+      "Diffkontroll": 68
     },
     "2026-10-14": {
       "Tele2 Koax": "Onsdag",
@@ -12909,17 +12909,13 @@
       "Kontroll Produkt": 0,
       "Diffkontroll": 0
     },
-    "1901-02-16": {
+    "1901-02-24": {
       "Tele2 Koax": "Total sälj",
-      "DATUM": 413
+      "DATUM": 421
     },
     "1900-02-08": {
       "Tele2 Koax": "Produkter",
       "DATUM": 40
-    },
-    "1901-01-07": {
-      "Tele2 Koax": "Tilläggsprodukter",
-      "DATUM": 373
     }
   },
   "1.4. LAN": {
@@ -57902,17 +57898,17 @@
       "Tele2 Villafiber Syd": "Tisdag",
       "DATUM": "2026-10-13",
       "Antal Mansdagar": 17,
-      "Total sälj": 38,
-      "Tilläggsprodukt": 2,
-      "Produkt": 36,
-      "TV": 14,
-      "Bredband": 15,
+      "Total sälj": 42,
+      "Tilläggsprodukt": 3,
+      "Produkt": 39,
+      "TV": 15,
+      "Bredband": 16,
       "MBB": 0,
-      "Mobil": 7,
-      "Räknas ej": 2,
+      "Mobil": 8,
+      "Räknas ej": 3,
       "Produkt Kontroll": 0,
       "kontroll produkt": 0,
-      "Diffkontroll": 36
+      "Diffkontroll": 39
     },
     "2026-10-14": {
       "Tele2 Villafiber Syd": "Onsdag",
@@ -58202,17 +58198,17 @@
       "kontroll produkt": 0,
       "Diffkontroll": 0
     },
-    "1900-11-05": {
+    "1900-11-09": {
       "Tele2 Villafiber Syd": "Total sälj",
-      "DATUM": 310
+      "DATUM": 314
     },
-    "1900-10-25": {
+    "1900-10-28": {
       "Tele2 Villafiber Syd": "Produkter",
-      "DATUM": 299
+      "DATUM": 302
     },
-    "1900-01-10": {
+    "1900-01-11": {
       "Tele2 Villafiber Syd": "Tilläggsprodukter",
-      "DATUM": 11
+      "DATUM": 12
     }
   },
   "3.1 Global Connect": {
