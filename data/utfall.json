@@ -12592,11 +12592,11 @@
       "Tele2 Koax": "Onsdag",
       "DATUM": "2026-10-14",
       "Antal Mansdagar": 8,
-      "Total sälj": 63,
-      "produkt": 59,
+      "Total sälj": 66,
+      "produkt": 62,
       "Tilläggsprodukt": 4,
-      "TV": 19,
-      "BREDBAND": 19,
+      "TV": 20,
+      "BREDBAND": 21,
       "MBB": 0,
       "Mobil": 21,
       "Streaming": 0,
@@ -12604,7 +12604,7 @@
       "räknas ej": 0,
       "Kontroll tilläggsprodukt": 0,
       "Kontroll Produkt": 0,
-      "Diffkontroll": 59
+      "Diffkontroll": 62
     },
     "2026-10-15": {
       "Tele2 Koax": "Torsdag",
@@ -12912,17 +12912,17 @@
       "Kontroll Produkt": 0,
       "Diffkontroll": 0
     },
-    "1901-04-28": {
+    "1901-05-01": {
       "Tele2 Koax": "Total sälj",
-      "DATUM": 484
+      "DATUM": 487
     },
     "1900-02-12": {
       "Tele2 Koax": "Produkter",
       "DATUM": 44
     },
-    "1901-03-15": {
+    "1901-03-18": {
       "Tele2 Koax": "Tilläggsprodukter",
-      "DATUM": 440
+      "DATUM": 443
     }
   },
   "1.4. LAN": {
@@ -57935,17 +57935,17 @@
       "Tele2 Villafiber Syd": "Onsdag",
       "DATUM": "2026-10-14",
       "Antal Mansdagar": 17,
-      "Total sälj": 52,
+      "Total sälj": 55,
       "Tilläggsprodukt": 5,
-      "Produkt": 47,
-      "TV": 16,
-      "Bredband": 17,
+      "Produkt": 50,
+      "TV": 17,
+      "Bredband": 18,
       "MBB": 3,
-      "Mobil": 11,
+      "Mobil": 12,
       "Räknas ej": 5,
       "Produkt Kontroll": 0,
       "kontroll produkt": 0,
-      "Diffkontroll": 47
+      "Diffkontroll": 50
     },
     "2026-10-15": {
       "Tele2 Villafiber Syd": "Torsdag",
@@ -58219,13 +58219,13 @@
       "kontroll produkt": 0,
       "Diffkontroll": 0
     },
-    "1900-12-31": {
+    "1901-01-03": {
       "Tele2 Villafiber Syd": "Total sälj",
-      "DATUM": 366
+      "DATUM": 369
     },
-    "1900-12-14": {
+    "1900-12-17": {
       "Tele2 Villafiber Syd": "Produkter",
-      "DATUM": 349
+      "DATUM": 352
     },
     "1900-01-16": {
       "Tele2 Villafiber Syd": "Tilläggsprodukter",
