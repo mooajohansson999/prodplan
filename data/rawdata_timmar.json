@@ -286108,5 +286108,881 @@
     "Datum": "2026-11-02",
     "År-månad": "2026-11",
     "Inloggad tid timmar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Retention Leads",
+    "Säljare": "Abdirahman Aydarus",
+    "Loxysoft ID": 15070,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 0.0016666666666666668
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia VIP Leads",
+    "Säljare": "Abdirahman Aydarus",
+    "Loxysoft ID": 15070,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.4238888888888885,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Adam Sallander",
+    "Loxysoft ID": 15479,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 0.001388888888888889
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Adam Sallander",
+    "Loxysoft ID": 15479,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 8.382777777777777,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Albin Gundewall",
+    "Loxysoft ID": 15504,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.654166666666667,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Anton Edwinson",
+    "Loxysoft ID": 15511,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 8.457222222222223,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Antonio Estay",
+    "Loxysoft ID": 15275,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 4.9222222222222225,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Antonio Estay",
+    "Loxysoft ID": 15275,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 0.005555555555555556
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Arvid Lindh",
+    "Loxysoft ID": 15615,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.091111111111111,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Carl Emmoth",
+    "Loxysoft ID": 15525,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 8.425555555555556,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Dennis Hansen",
+    "Loxysoft ID": 15619,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.735277777777778,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Diana Adayson",
+    "Loxysoft ID": 15598,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 6.111111111111111,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Adressändring",
+    "Säljare": "Diangelo Olmos",
+    "Loxysoft ID": 15112,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 4.586388888888889,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Djan Djelal",
+    "Loxysoft ID": 15366,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 8.245555555555555,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Egon Eklöf",
+    "Loxysoft ID": 15591,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.215,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia VIP Leads",
+    "Säljare": "Einari Karlmark",
+    "Loxysoft ID": 15001,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.3213888888888885,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Elias Mårdfjäll",
+    "Loxysoft ID": 15161,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 0.10833333333333334
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Elias Mårdfjäll",
+    "Loxysoft ID": 15161,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.995,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Emanuel Schelin",
+    "Loxysoft ID": 15464,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.580277777777778,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Emilio Rönnholmen Aleksov",
+    "Loxysoft ID": 15584,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.0055555555555555,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Eric Nichols",
+    "Loxysoft ID": 15562,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 4.955277777777778,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Fabian Dannemann",
+    "Loxysoft ID": 15435,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.357777777777778,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Felipe Grape",
+    "Loxysoft ID": 15603,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.825555555555556,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Felix Holmqvist",
+    "Loxysoft ID": 15572,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 4.093333333333333,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Felix Santos",
+    "Loxysoft ID": 15358,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.509444444444444,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Felix Santos",
+    "Loxysoft ID": 15358,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 0.05305555555555556
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Frank Tiriolo",
+    "Loxysoft ID": 15614,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 0.39861111111111114,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Gunnar Wikegård Holmqvist",
+    "Loxysoft ID": 15574,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 8.114444444444445,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Gustav Söderholm",
+    "Loxysoft ID": 15613,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 4.811388888888889,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Hugo Almroth",
+    "Loxysoft ID": 15414,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.703888888888889,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Isak Sundblad-Wetzel",
+    "Loxysoft ID": 15506,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 8.105,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Ismael Toure",
+    "Loxysoft ID": 15612,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.123333333333333,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Jack Lindblom",
+    "Loxysoft ID": 15200,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.729444444444445,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Johannes Gonzales",
+    "Loxysoft ID": 15465,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 4.903888888888889,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Johannes Gonzales",
+    "Loxysoft ID": 15465,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 0.22416666666666665
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Joseph Al-jumaah",
+    "Loxysoft ID": 15601,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.305,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Karl-William Hallström",
+    "Loxysoft ID": 15590,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.454444444444444,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia VIP Leads",
+    "Säljare": "Kevin Ali",
+    "Loxysoft ID": 15606,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.628055555555555,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Lare Akram",
+    "Loxysoft ID": 15597,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.3036111111111115,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Leah Lindahl",
+    "Loxysoft ID": 15323,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.469722222222222,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Liam Jimenez",
+    "Loxysoft ID": 15528,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.929166666666666,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia MBH",
+    "Säljare": "Liam Wiström",
+    "Loxysoft ID": 15495,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.278611111111111,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia VIP Leads",
+    "Säljare": "Lloyd Antwi",
+    "Loxysoft ID": 14866,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.777777777777778,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia MBH",
+    "Säljare": "Lukas Furaev",
+    "Loxysoft ID": 15416,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 8.445555555555556,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Malte Persson",
+    "Loxysoft ID": 15354,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 8.379722222222222,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Markus Ablahad",
+    "Loxysoft ID": 15561,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 0.30527777777777776
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Markus Ablahad",
+    "Loxysoft ID": 15561,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.770555555555555,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Marley Woody",
+    "Loxysoft ID": 15604,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.460277777777778,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Max Tobiasson",
+    "Loxysoft ID": 15537,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 6.609166666666667,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Melker Uhlan",
+    "Loxysoft ID": 15611,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.041388888888889,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Melker Åstrand",
+    "Loxysoft ID": 15605,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.78,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia MBH",
+    "Säljare": "Michael Mwaura",
+    "Loxysoft ID": 15507,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 0.15611111111111112
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Michael Mwaura",
+    "Loxysoft ID": 15507,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.476388888888889,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Milos Zivojinovic",
+    "Loxysoft ID": 15544,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.5325,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Adressändring",
+    "Säljare": "Miranda Valenzuela Prades",
+    "Loxysoft ID": 15097,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.443611111111111,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Mobin Said",
+    "Loxysoft ID": 15620,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.221388888888889,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Mohammed Qujan",
+    "Loxysoft ID": 15618,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.4375,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Natalie Lind",
+    "Loxysoft ID": 15600,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 8.84,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Neo Sachedina",
+    "Loxysoft ID": 15564,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 1.8380555555555556,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Nils Liss",
+    "Loxysoft ID": 15441,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 6.2780555555555555,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Nils Liss",
+    "Loxysoft ID": 15441,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 1.6480555555555556
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Nima Rezai",
+    "Loxysoft ID": 15610,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 6.735277777777778,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Nour Aljoubarani",
+    "Loxysoft ID": 14713,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 8.100555555555555,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Oliver Hammer",
+    "Loxysoft ID": 15538,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 0.0038888888888888888
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Oliver Hammer",
+    "Loxysoft ID": 15538,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.926666666666667,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Olle Örndahl",
+    "Loxysoft ID": 15468,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.635,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Povel Le Febvre",
+    "Loxysoft ID": 15502,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 8.346944444444446,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Radwan Mohammedsadik",
+    "Loxysoft ID": 15546,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 6.1675,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Adressändring",
+    "Säljare": "Sagal Ahmed",
+    "Loxysoft ID": 15019,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 4.141111111111111,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia MBH",
+    "Säljare": "Samuel West",
+    "Loxysoft ID": 15442,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 4.205277777777778,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Sebastian Banda",
+    "Loxysoft ID": 15443,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.759444444444444,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia MBH",
+    "Säljare": "Sebastian Lindmark",
+    "Loxysoft ID": 14730,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.749444444444444,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Selme Salim",
+    "Loxysoft ID": 15419,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 2.6069444444444443
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Selme Salim",
+    "Loxysoft ID": 15419,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 4.952222222222222,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Sergio Villacrez Ramos",
+    "Loxysoft ID": 15224,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.945555555555556,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Shayan Abbasikia",
+    "Loxysoft ID": 15168,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 0.37444444444444447
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Shayan Abbasikia",
+    "Loxysoft ID": 15168,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 2.3880555555555554,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Simon Asp",
+    "Loxysoft ID": 15593,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.046666666666667,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Simon Ohlsson",
+    "Loxysoft ID": 15486,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 1.9669444444444444,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Simon Svensson",
+    "Loxysoft ID": 15609,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 4.085555555555556,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Victor Rundberg",
+    "Loxysoft ID": 15395,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.271388888888889,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Villemo Lundvang",
+    "Loxysoft ID": 15599,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 4.729444444444445,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Vincent Ripatti",
+    "Loxysoft ID": 15608,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 4.8069444444444445,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Vojin Ciric",
+    "Loxysoft ID": 15607,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.991666666666666,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia VIP Leads",
+    "Säljare": "William Meltzer",
+    "Loxysoft ID": 15150,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 7.913611111111111,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Ynabi Tedros",
+    "Loxysoft ID": 15471,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 0.21583333333333332
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia Mobil",
+    "Säljare": "Ynabi Tedros",
+    "Loxysoft ID": 15471,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.599444444444444,
+    "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Yosef Saleh",
+    "Loxysoft ID": 15355,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 5.577777777777778
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia FMC",
+    "Säljare": "Yoselin Palestro",
+    "Loxysoft ID": 15596,
+    "Datum": "2026-11-03",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 8.159444444444444,
+    "Mansdagar": 1
   }
 ]
