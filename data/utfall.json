@@ -5339,8 +5339,8 @@
     "2026-11-03": {
       "Telia D2D": "Tisdag",
       "DATUM": "2026-11-03",
-      "Antal Mansdagar": 21,
-      "Timmar": 189,
+      "Antal Mansdagar": 20,
+      "Timmar": 180,
       "Total sälj": 121,
       "Tilläggsprodukt": 1,
       "Produkt": 120,
@@ -25559,13 +25559,13 @@
       "DATUM": "2026-11-02",
       "Antal Säljare": 3,
       "Timmar": 14.624166666666667,
-      "Total sälj": 20,
-      "produkt": 12,
-      "Tilläggsprodukt": 8,
+      "Total sälj": 18,
+      "produkt": 11,
+      "Tilläggsprodukt": 7,
       "Bredband": 4,
-      "Flytt Bredband": 4,
+      "Flytt Bredband": 3,
       "MBH": 4,
-      "TV": 6,
+      "TV": 5,
       "Streaming": 2,
       "Mobil": 0,
       "TV Box": 0,
@@ -25597,19 +25597,19 @@
     "2026-11-04": {
       "Telia Adressändring": "Onsdag",
       "DATUM": "2026-11-04",
-      "Antal Säljare": 0,
-      "Timmar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
-      "Tilläggsprodukt": 0,
-      "Bredband": 0,
-      "Flytt Bredband": 0,
-      "MBH": 0,
-      "TV": 0,
-      "Streaming": 0,
-      "Mobil": 0,
-      "TV Box": 0,
-      "Trygghetspaket": 0,
+      "Antal Säljare": 2,
+      "Timmar": 10.821111111111112,
+      "Total sälj": 28,
+      "produkt": 12,
+      "Tilläggsprodukt": 16,
+      "Bredband": 5,
+      "Flytt Bredband": 3,
+      "MBH": 4,
+      "TV": 8,
+      "Streaming": 2,
+      "Mobil": 2,
+      "TV Box": 2,
+      "Trygghetspaket": 2,
       "Räknas ej": 0,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
@@ -26154,17 +26154,17 @@
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
-    "1900-02-04": {
+    "1900-03-02": {
       "Telia Adressändring": "Total sälj",
-      "DATUM": 36
+      "DATUM": 62
     },
-    "1900-01-14": {
+    "1900-01-29": {
       "Telia Adressändring": "Produkter",
-      "DATUM": 15
+      "DATUM": 30
     },
-    "1900-01-20": {
+    "1900-01-31": {
       "Telia Adressändring": "Tilläggsprodukter",
-      "DATUM": 21
+      "DATUM": 32
     }
   },
   "2.6. Telia VIP Leads": {
@@ -32271,15 +32271,15 @@
       "DATUM": "2026-11-02",
       "Antal Säljare": 5,
       "Timmar": 31.999166666666667,
-      "Total sälj": 54,
+      "Total sälj": 51,
       "produkt": 27,
-      "Tilläggsprodukt": 27,
+      "Tilläggsprodukt": 24,
       "Bredband": 25,
       "MBH": 2,
       "TV": 14,
       "Film": 0,
       "Sport": 0,
-      "Mobil": 7,
+      "Mobil": 4,
       "TV Box": 6,
       "Räknas ej": 0,
       "Trygghetspaket": 0,
@@ -32291,10 +32291,10 @@
       "DATUM": "2026-11-03",
       "Antal Säljare": 5,
       "Timmar": 30.064722222222223,
-      "Total sälj": 58,
-      "produkt": 27,
+      "Total sälj": 57,
+      "produkt": 26,
       "Tilläggsprodukt": 31,
-      "Bredband": 23,
+      "Bredband": 22,
       "MBH": 4,
       "TV": 16,
       "Film": 2,
@@ -32309,20 +32309,20 @@
     "2026-11-04": {
       "Telia VIP Leads": "Onsdag",
       "DATUM": "2026-11-04",
-      "Antal Säljare": 0,
-      "Timmar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
-      "Tilläggsprodukt": 0,
-      "Bredband": 0,
-      "MBH": 0,
-      "TV": 0,
-      "Film": 0,
+      "Antal Säljare": 5,
+      "Timmar": 32.29222222222222,
+      "Total sälj": 62,
+      "produkt": 31,
+      "Tilläggsprodukt": 31,
+      "Bredband": 22,
+      "MBH": 9,
+      "TV": 12,
+      "Film": 3,
       "Sport": 0,
-      "Mobil": 0,
-      "TV Box": 0,
+      "Mobil": 11,
+      "TV Box": 4,
       "Räknas ej": 0,
-      "Trygghetspaket": 0,
+      "Trygghetspaket": 1,
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
@@ -32866,17 +32866,17 @@
       "kontroll produkter": 0,
       "kontroll Tilläggsprodukter": 0
     },
-    "1900-04-21": {
+    "1900-06-18": {
       "Telia VIP Leads": "Total sälj",
-      "DATUM": 112
+      "DATUM": 170
     },
-    "1900-02-26": {
+    "1900-03-26": {
       "Telia VIP Leads": "Produkter",
-      "DATUM": 58
+      "DATUM": 86
     },
-    "1900-02-22": {
+    "1900-03-24": {
       "Telia VIP Leads": "Tilläggsprodukter",
-      "DATUM": 54
+      "DATUM": 84
     }
   },
   "2.5. Telia Retention Leads": {
@@ -44390,17 +44390,17 @@
     "2026-11-04": {
       "Telia MBH": "Onsdag",
       "DATUM": "2026-11-04",
-      "Antal Mansdagar": 0,
-      "Timmar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
-      "Tilläggsprodukt": 0,
-      "Bredband": 0,
-      "TV": 0,
-      "Film": 0,
+      "Antal Mansdagar": 4,
+      "Timmar": 28.769444444444446,
+      "Total sälj": 5,
+      "produkt": 2,
+      "Tilläggsprodukt": 3,
+      "Bredband": 2,
+      "TV": 1,
+      "Film": 1,
       "Sport": 0,
       "mobil": 0,
-      "tv box": 0,
+      "tv box": 1,
       "räknas ej": 0,
       "Kontroll Tilläggsprodukt": 0,
       "kontroll produkt": 0
@@ -44891,13 +44891,17 @@
       "Kontroll Tilläggsprodukt": 0,
       "kontroll produkt": 0
     },
-    "1900-01-06": {
+    "1900-01-11": {
       "Telia MBH": "Total sälj",
-      "DATUM": 7
+      "DATUM": 12
     },
-    "1900-01-05": {
+    "1900-01-02": {
+      "Telia MBH": "Produkter",
+      "DATUM": 3
+    },
+    "1900-01-08": {
       "Telia MBH": "Tilläggsprodukter",
-      "DATUM": 6
+      "DATUM": 9
     }
   },
   "2.2. Telia Mobil": {
@@ -50045,11 +50049,11 @@
       "DATUM": "2026-11-02",
       "Antal Mansdagar": 45,
       "Timmar": 280.18555555555554,
-      "Total sälj": 75,
-      "produkt": 66,
+      "Total sälj": 69,
+      "produkt": 60,
       "Tilläggsprodukt": 9,
-      "Mobil": 26,
-      "EA": 40,
+      "Mobil": 24,
+      "EA": 36,
       "Bredband": 5,
       "TV": 4,
       "Streaming": 0,
@@ -50063,10 +50067,10 @@
       "DATUM": "2026-11-03",
       "Antal Mansdagar": 43,
       "Timmar": 271.3272222222222,
-      "Total sälj": 35,
-      "produkt": 31,
+      "Total sälj": 33,
+      "produkt": 29,
       "Tilläggsprodukt": 4,
-      "Mobil": 19,
+      "Mobil": 17,
       "EA": 12,
       "Bredband": 4,
       "TV": 0,
@@ -50079,15 +50083,15 @@
     "2026-11-04": {
       "Telia Mobil": "Onsdag",
       "DATUM": "2026-11-04",
-      "Antal Mansdagar": 0,
-      "Timmar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
-      "Tilläggsprodukt": 0,
-      "Mobil": 0,
-      "EA": 0,
-      "Bredband": 0,
-      "TV": 0,
+      "Antal Mansdagar": 37,
+      "Timmar": 245.4430555555555,
+      "Total sälj": 73,
+      "produkt": 69,
+      "Tilläggsprodukt": 4,
+      "Mobil": 32,
+      "EA": 37,
+      "Bredband": 2,
+      "TV": 2,
       "Streaming": 0,
       "Trygghetspaket": 0,
       "Räknas ej": 0,
@@ -50580,17 +50584,17 @@
       "kontroll produkt": 0,
       "kontroll Tilläggsprodukt": 0
     },
-    "1900-04-19": {
+    "1900-06-23": {
       "Telia Mobil": "Total sälj",
-      "DATUM": 110
+      "DATUM": 175
     },
-    "1900-01-12": {
+    "1900-01-16": {
       "Telia Mobil": "Produkter",
-      "DATUM": 13
+      "DATUM": 17
     },
-    "1900-04-06": {
+    "1900-06-06": {
       "Telia Mobil": "Kontroll",
-      "DATUM": 97
+      "DATUM": 158
     }
   },
   "2.2.1. Telia FMC": {
@@ -54010,9 +54014,9 @@
       "DATUM": "2026-11-02",
       "Antal Mansdagar": 18,
       "Timmar": 116.13111111111111,
-      "Total sälj": 61,
-      "produkt": 61,
-      "Mobil": 41,
+      "Total sälj": 58,
+      "produkt": 58,
+      "Mobil": 38,
       "EA": 20,
       "kontroll produkt": 0
     },
@@ -54021,21 +54025,21 @@
       "DATUM": "2026-11-03",
       "Antal Mansdagar": 20,
       "Timmar": 137.99138888888888,
-      "Total sälj": 79,
-      "produkt": 78,
-      "Mobil": 34,
-      "EA": 44,
+      "Total sälj": 68,
+      "produkt": 67,
+      "Mobil": 28,
+      "EA": 39,
       "kontroll produkt": 0
     },
     "2026-11-04": {
       "Telia FMC": "Onsdag",
       "DATUM": "2026-11-04",
-      "Antal Mansdagar": 0,
-      "Timmar": 0,
-      "Total sälj": 0,
-      "produkt": 0,
-      "Mobil": 0,
-      "EA": 0,
+      "Antal Mansdagar": 25,
+      "Timmar": 164.60111111111112,
+      "Total sälj": 71,
+      "produkt": 71,
+      "Mobil": 44,
+      "EA": 27,
       "kontroll produkt": 0
     },
     "2026-11-05": {
@@ -54335,13 +54339,13 @@
       "EA": 0,
       "kontroll produkt": 0
     },
-    "1900-05-19": {
+    "1900-07-15": {
       "Telia FMC": "Total sälj",
-      "DATUM": 140
+      "DATUM": 197
     },
-    "1900-05-18": {
+    "1900-07-14": {
       "Telia FMC": "Produkter",
-      "DATUM": 139
+      "DATUM": 196
     }
   },
   "Global Connect Aktiveringar": {
