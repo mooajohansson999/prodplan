@@ -5377,8 +5377,8 @@
     "2026-11-05": {
       "Telia D2D": "Torsdag",
       "DATUM": "2026-11-05",
-      "Antal Mansdagar": 21,
-      "Timmar": 189,
+      "Antal Mansdagar": 20,
+      "Timmar": 180,
       "Total sälj": 141,
       "Tilläggsprodukt": 2,
       "Produkt": 139,
@@ -5398,36 +5398,36 @@
       "DATUM": "2026-11-06",
       "Antal Mansdagar": 0,
       "Timmar": 0,
-      "Total sälj": 0,
+      "Total sälj": 23,
       "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "Bredband": 0,
-      "TV": 0,
-      "Streaming": 0,
-      "MOBIL": 0,
+      "Produkt": 23,
+      "Bredband": 7,
+      "TV": 7,
+      "Streaming": 3,
+      "MOBIL": 6,
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0,
-      "Diffkontroll": 0
+      "Diffkontroll": 23
     },
     "2026-11-07": {
       "Telia D2D": "Lördag",
       "DATUM": "2026-11-07",
       "Antal Mansdagar": 0,
       "Timmar": 0,
-      "Total sälj": 0,
+      "Total sälj": 4,
       "Tilläggsprodukt": 0,
-      "Produkt": 0,
-      "Bredband": 0,
-      "TV": 0,
-      "Streaming": 0,
+      "Produkt": 4,
+      "Bredband": 1,
+      "TV": 1,
+      "Streaming": 2,
       "MOBIL": 0,
       "TV BOX": 0,
       "Trygghetspaket": 0,
       "Kontroll Produkt": 0,
       "kontroll Tilläggsprodukt": 0,
-      "Diffkontroll": 0
+      "Diffkontroll": 4
     },
     "2026-11-08": {
       "Telia D2D": "Söndag",
@@ -5861,13 +5861,13 @@
       "kontroll Tilläggsprodukt": 0,
       "Diffkontroll": 0
     },
-    "1901-05-22": {
+    "1901-06-18": {
       "Telia D2D": "Total sälj",
-      "DATUM": 508
+      "DATUM": 535
     },
-    "1901-05-17": {
+    "1901-06-13": {
       "Telia D2D": "Produkter",
-      "DATUM": 503
+      "DATUM": 530
     },
     "1900-01-04": {
       "Telia D2D": "Tilläggsprodukter",
