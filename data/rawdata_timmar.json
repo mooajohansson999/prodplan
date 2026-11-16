@@ -299705,5 +299705,50 @@
     "År-månad": "2026-11",
     "Inloggad tid timmar": 5.758333333333334,
     "Mansdagar": 1
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 Koax",
+    "Säljare": "Ousman Jobe",
+    "Loxysoft ID": 6885,
+    "Datum": "2026-11-13",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 1
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Viasales",
+    "Säljare": "Johannes Müller",
+    "Loxysoft ID": 6822,
+    "Datum": "2026-11-13",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 1
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Viasales",
+    "Säljare": "Nils Nirmark",
+    "Loxysoft ID": 15441,
+    "Datum": "2026-11-13",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 1
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Viasales",
+    "Säljare": "Johannes Müller",
+    "Loxysoft ID": 6822,
+    "Datum": "2026-11-14",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 1
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 Villafiber Norr",
+    "Säljare": "Sham Alshami",
+    "Loxysoft ID": 6541,
+    "Datum": "2026-11-14",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 1
   }
 ]

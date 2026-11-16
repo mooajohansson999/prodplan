@@ -1121434,5 +1121434,113 @@
     "Säljare": "Lloyd Antwi",
     "LoxysoftID": 14866,
     "kolumn?": "TV"
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 Koax",
+    "Datum": "2026-11-13",
+    "År-månad": "2026-11",
+    "Produkt": "Bredband Nyteckning Koax",
+    "Produkttyp": "Produkt",
+    "Produktkod": "Bredband Nyteckning Koax",
+    "Säljare": "Ousman Jobe",
+    "LoxysoftID": 6885,
+    "kolumn?": "Bredband"
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 Koax",
+    "Datum": "2026-11-13",
+    "År-månad": "2026-11",
+    "Produkt": "DigitalTV Nyteckning Koax",
+    "Produkttyp": "Produkt",
+    "Produktkod": "DigitalTV Nyteckning Koax",
+    "Säljare": "Ousman Jobe",
+    "LoxysoftID": 6885,
+    "kolumn?": "TV"
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Viasales",
+    "Datum": "2026-11-13",
+    "År-månad": "2026-11",
+    "Produkt": "Bredband Nyteckning",
+    "Produkttyp": "Produkt",
+    "Produktkod": "Bredband Nyteckning",
+    "Säljare": "Johannes Müller",
+    "LoxysoftID": 6822,
+    "kolumn?": "Bredband"
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Viasales",
+    "Datum": "2026-11-13",
+    "År-månad": "2026-11",
+    "Produkt": "DigitalTV Nyteckning",
+    "Produkttyp": "Produkt",
+    "Produktkod": "DigitalTV Nyteckning",
+    "Säljare": "Johannes Müller",
+    "LoxysoftID": 6822,
+    "kolumn?": "TV"
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Viasales",
+    "Datum": "2026-11-13",
+    "År-månad": "2026-11",
+    "Produkt": "Bredband Nyteckning",
+    "Produkttyp": "Produkt",
+    "Produktkod": "Bredband Nyteckning",
+    "Säljare": "Nils Nirmark",
+    "LoxysoftID": 15441,
+    "kolumn?": "Bredband"
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Viasales",
+    "Datum": "2026-11-13",
+    "År-månad": "2026-11",
+    "Produkt": "DigitalTV Nyteckning",
+    "Produkttyp": "Produkt",
+    "Produktkod": "DigitalTV Nyteckning",
+    "Säljare": "Nils Nirmark",
+    "LoxysoftID": 15441,
+    "kolumn?": "TV"
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Viasales",
+    "Datum": "2026-11-14",
+    "År-månad": "2026-11",
+    "Produkt": "Bredband Nyteckning",
+    "Produkttyp": "Produkt",
+    "Produktkod": "Bredband Nyteckning",
+    "Säljare": "Johannes Müller",
+    "LoxysoftID": 6822,
+    "kolumn?": "Bredband"
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 Villafiber Norr",
+    "Datum": "2026-11-14",
+    "År-månad": "2026-11",
+    "Produkt": "Mobiltelefoni 20GB+",
+    "Produkttyp": "Produkt",
+    "Produktkod": "Mobiltelefoni 20GB+",
+    "Säljare": "Sham Alshami",
+    "LoxysoftID": 6541,
+    "kolumn?": "Mobil"
+  },
+  {
+    "Kund": "Tele2",
+    "Projekt": "Tele2 Villafiber Norr",
+    "Datum": "2026-11-14",
+    "År-månad": "2026-11",
+    "Produkt": "Familjeabonnemang",
+    "Produkttyp": "Produkt",
+    "Produktkod": "Familjeabonnemang",
+    "Säljare": "Sham Alshami",
+    "LoxysoftID": 6541,
+    "kolumn?": "Mobil"
   }
 ]
