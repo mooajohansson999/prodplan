@@ -301620,5 +301620,41 @@
     "År-månad": "2026-11",
     "Inloggad tid timmar": 7,
     "Mansdagar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Viasales",
+    "Säljare": "Johannes Müller",
+    "Loxysoft ID": 6822,
+    "Datum": "2026-11-13",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia D2D",
+    "Säljare": "Said Agha Zaza",
+    "Loxysoft ID": 7320,
+    "Datum": "2026-11-13",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia D2D",
+    "Säljare": "Jonathan Loord",
+    "Loxysoft ID": 7174,
+    "Datum": "2026-11-13",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 1
+  },
+  {
+    "Kund": "Telia",
+    "Projekt": "Telia D2D",
+    "Säljare": "Alexander Palacio",
+    "Loxysoft ID": 6612,
+    "Datum": "2026-11-13",
+    "År-månad": "2026-11",
+    "Inloggad tid timmar": 1
   }
 ]
