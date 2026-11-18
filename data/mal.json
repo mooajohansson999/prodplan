@@ -4535,25 +4535,25 @@
       "DATUM": "2026-11-02",
       "Mål mansdagar": 8,
       "Mål produkt": 36,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-03": {
       "DATUM": "2026-11-03",
       "Mål mansdagar": 8,
       "Mål produkt": 36,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-04": {
       "DATUM": "2026-11-04",
       "Mål mansdagar": 8,
       "Mål produkt": 36,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-05": {
       "DATUM": "2026-11-05",
       "Mål mansdagar": 8,
       "Mål produkt": 36,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-06": {
       "DATUM": "2026-11-06"
@@ -4568,25 +4568,25 @@
       "DATUM": "2026-11-09",
       "Mål mansdagar": 8,
       "Mål produkt": 36,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-10": {
       "DATUM": "2026-11-10",
       "Mål mansdagar": 8,
       "Mål produkt": 36,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-11": {
       "DATUM": "2026-11-11",
       "Mål mansdagar": 8,
       "Mål produkt": 36,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-12": {
       "DATUM": "2026-11-12",
       "Mål mansdagar": 8,
       "Mål produkt": 36,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-13": {
       "DATUM": "2026-11-13"
@@ -4601,25 +4601,25 @@
       "DATUM": "2026-11-16",
       "Mål mansdagar": 8,
       "Mål produkt": 36,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-17": {
       "DATUM": "2026-11-17",
       "Mål mansdagar": 8,
       "Mål produkt": 36,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-18": {
       "DATUM": "2026-11-18",
       "Mål mansdagar": 8,
       "Mål produkt": 36,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-19": {
       "DATUM": "2026-11-19",
       "Mål mansdagar": 8,
       "Mål produkt": 36,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-20": {
       "DATUM": "2026-11-20"
@@ -4634,25 +4634,25 @@
       "DATUM": "2026-11-23",
       "Mål mansdagar": 8,
       "Mål produkt": 36,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-24": {
       "DATUM": "2026-11-24",
       "Mål mansdagar": 8,
       "Mål produkt": 36,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-25": {
       "DATUM": "2026-11-25",
       "Mål mansdagar": 8,
       "Mål produkt": 36,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-26": {
       "DATUM": "2026-11-26",
       "Mål mansdagar": 8,
       "Mål produkt": 36,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-27": {
       "DATUM": "2026-11-27"
@@ -4667,7 +4667,7 @@
       "DATUM": "2026-11-30",
       "Mål mansdagar": 8,
       "Mål produkt": 36,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     }
   },
   "1.4 LAN": {
@@ -22993,25 +22993,25 @@
       "DATUM": "2026-11-02",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-03": {
       "DATUM": "2026-11-03",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-04": {
       "DATUM": "2026-11-04",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-05": {
       "DATUM": "2026-11-05",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-06": {
       "DATUM": "2026-11-06"
@@ -23026,25 +23026,25 @@
       "DATUM": "2026-11-09",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-10": {
       "DATUM": "2026-11-10",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-11": {
       "DATUM": "2026-11-11",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-12": {
       "DATUM": "2026-11-12",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-13": {
       "DATUM": "2026-11-13"
@@ -23059,25 +23059,25 @@
       "DATUM": "2026-11-16",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-17": {
       "DATUM": "2026-11-17",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-18": {
       "DATUM": "2026-11-18",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-19": {
       "DATUM": "2026-11-19",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-20": {
       "DATUM": "2026-11-20"
@@ -23092,25 +23092,25 @@
       "DATUM": "2026-11-23",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-24": {
       "DATUM": "2026-11-24",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-25": {
       "DATUM": "2026-11-25",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-26": {
       "DATUM": "2026-11-26",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-27": {
       "DATUM": "2026-11-27"
@@ -23125,7 +23125,7 @@
       "DATUM": "2026-11-30",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     }
   },
   "1.3 Tele2 Villa Nord": {
@@ -23860,25 +23860,25 @@
       "DATUM": "2026-11-02",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-03": {
       "DATUM": "2026-11-03",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-04": {
       "DATUM": "2026-11-04",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-05": {
       "DATUM": "2026-11-05",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-06": {
       "DATUM": "2026-11-06"
@@ -23893,25 +23893,25 @@
       "DATUM": "2026-11-09",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-10": {
       "DATUM": "2026-11-10",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-11": {
       "DATUM": "2026-11-11",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-12": {
       "DATUM": "2026-11-12",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-13": {
       "DATUM": "2026-11-13"
@@ -23926,25 +23926,25 @@
       "DATUM": "2026-11-16",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-17": {
       "DATUM": "2026-11-17",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-18": {
       "DATUM": "2026-11-18",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-19": {
       "DATUM": "2026-11-19",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-20": {
       "DATUM": "2026-11-20"
@@ -23959,25 +23959,25 @@
       "DATUM": "2026-11-23",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-24": {
       "DATUM": "2026-11-24",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-25": {
       "DATUM": "2026-11-25",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-26": {
       "DATUM": "2026-11-26",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     },
     "2026-11-27": {
       "DATUM": "2026-11-27"
@@ -23992,7 +23992,7 @@
       "DATUM": "2026-11-30",
       "Mål mansdagar": 16,
       "Mål produkt": 48,
-      "Mål snitt per mansdag": 3
+      "Mål snitt": 3
     }
   },
   "3.1 Global Connect": {
@@ -24487,25 +24487,25 @@
       "DATUM": "2026-11-02",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-03": {
       "DATUM": "2026-11-03",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-04": {
       "DATUM": "2026-11-04",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-05": {
       "DATUM": "2026-11-05",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-06": {
       "DATUM": "2026-11-06"
@@ -24520,25 +24520,25 @@
       "DATUM": "2026-11-09",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-10": {
       "DATUM": "2026-11-10",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-11": {
       "DATUM": "2026-11-11",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-12": {
       "DATUM": "2026-11-12",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-13": {
       "DATUM": "2026-11-13"
@@ -24553,25 +24553,25 @@
       "DATUM": "2026-11-16",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-17": {
       "DATUM": "2026-11-17",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-18": {
       "DATUM": "2026-11-18",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-19": {
       "DATUM": "2026-11-19",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-20": {
       "DATUM": "2026-11-20"
@@ -24586,25 +24586,25 @@
       "DATUM": "2026-11-23",
       "Mål mansdagar": 7,
       "Mål produkt": 31.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-24": {
       "DATUM": "2026-11-24",
       "Mål mansdagar": 7,
       "Mål produkt": 31.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-25": {
       "DATUM": "2026-11-25",
       "Mål mansdagar": 7,
       "Mål produkt": 31.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-26": {
       "DATUM": "2026-11-26",
       "Mål mansdagar": 7,
       "Mål produkt": 31.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-27": {
       "DATUM": "2026-11-27"
@@ -24619,7 +24619,7 @@
       "DATUM": "2026-11-30",
       "Mål mansdagar": 7,
       "Mål produkt": 31.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     }
   },
   "1.4 Tele2 LAN Syd": {
@@ -24630,25 +24630,25 @@
       "DATUM": "2026-11-02",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-03": {
       "DATUM": "2026-11-03",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-04": {
       "DATUM": "2026-11-04",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-05": {
       "DATUM": "2026-11-05",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-06": {
       "DATUM": "2026-11-06"
@@ -24663,25 +24663,25 @@
       "DATUM": "2026-11-09",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-10": {
       "DATUM": "2026-11-10",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-11": {
       "DATUM": "2026-11-11",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-12": {
       "DATUM": "2026-11-12",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-13": {
       "DATUM": "2026-11-13"
@@ -24696,25 +24696,25 @@
       "DATUM": "2026-11-16",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-17": {
       "DATUM": "2026-11-17",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-18": {
       "DATUM": "2026-11-18",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-19": {
       "DATUM": "2026-11-19",
       "Mål mansdagar": 5,
       "Mål produkt": 22.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-20": {
       "DATUM": "2026-11-20"
@@ -24729,25 +24729,25 @@
       "DATUM": "2026-11-23",
       "Mål mansdagar": 7,
       "Mål produkt": 31.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-24": {
       "DATUM": "2026-11-24",
       "Mål mansdagar": 7,
       "Mål produkt": 31.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-25": {
       "DATUM": "2026-11-25",
       "Mål mansdagar": 7,
       "Mål produkt": 31.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-26": {
       "DATUM": "2026-11-26",
       "Mål mansdagar": 7,
       "Mål produkt": 31.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     },
     "2026-11-27": {
       "DATUM": "2026-11-27"
@@ -24762,7 +24762,7 @@
       "DATUM": "2026-11-30",
       "Mål mansdagar": 7,
       "Mål produkt": 31.5,
-      "Mål snitt per mansdag": 4.5
+      "Mål snitt": 4.5
     }
   }
 }
