@@ -2,7 +2,7 @@ name: Sync Dropbox
 
 on:
   schedule:
-    - cron: '0 * * * *'  
+    - cron: '0 * * * *'
   workflow_dispatch:       # Tillåter manuell körning
 
 jobs:
@@ -24,12 +24,19 @@ jobs:
           DP_TOKEN: ${{ secrets.DP_TOKEN }}
           DP_SECRET: ${{ secrets.DP_SECRET }}
           DP_APP_TOKEN: ${{ secrets.DP_APP_TOKEN }}
+          # NYTT: lönen räknas bara när variabeln PUBLICERA_LON är satt till "ja".
+          # Sätt den först när prodplanen ligger bakom inloggning (Settings → Secrets and variables → Actions → Variables).
+          PUBLICERA_LON: ${{ vars.PUBLICERA_LON }}
+          # NYTT: Supabase. Adressen och den hemliga nyckeln ligger som hemligheter i GitHub (Settings → Secrets and variables → Actions).
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python sync.py
 
       - name: Commit and push data
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add data/
+          # Med Supabase skrivs inga publika filer; gamla filer i data/ tas bort i första körningen.
+          git add -A data/ 2>/dev/null || true
           git diff --cached --quiet || git commit -m "Sync data from Dropbox"
           git push
