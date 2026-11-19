@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prodplan – admin</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #f3f2f0; color: #1a1a1a; font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-size: 14px; }
+  header { background: #fff; border-bottom: 1px solid #ebebeb; padding: 10px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+  .logo { display: flex; align-items: center; gap: 10px; }
+  .logo-ikon { width: 32px; height: 32px; border-radius: 50%; background: #e8503a; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+  .logo b { letter-spacing: .5px; } .logo span.del { color: #555; padding-left: 10px; border-left: 1px solid #ebebeb; }
+  .vem { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #555; }
+  button, input, select { font: inherit; }
+  .knapp { min-height: 40px; padding: 6px 14px; border: 1px solid #d6d6d6; background: #fff; border-radius: 8px; font-size: 13px; font-weight: 600; color: #444; cursor: pointer; }
+  .knapp:hover { border-color: #aaa; }
+  .knapp.primar { background: #c84a2f; border-color: #c84a2f; color: #fff; }
+  .knapp:disabled { opacity: .55; cursor: not-allowed; }
+  .liten { min-height: 32px; padding: 2px 10px; font-size: 12px; font-weight: 500; }
+  main { max-width: 1280px; margin: 0 auto; padding: 24px; display: flex; flex-direction: column; gap: 16px; }
+  h1 { margin: 0 0 4px; font-size: 22px; font-weight: 600; } h2 { margin: 0; font-size: 15px; font-weight: 600; }
+  .ingress { margin: 0; color: #555; line-height: 1.5; }
+  .ruta { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+  .rad { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 12px; }
+  .falt { display: flex; flex-direction: column; gap: 4px; }
+  .etikett { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; color: #6b6b6b; }
+  input[type=date], input[type=text], input[type=email], input[type=password], input[type=search], select { min-height: 40px; border: 1.5px solid #aaa; border-radius: 8px; padding: 6px 10px; color: #1a1a1a; background: #fff; }
+  input:focus, select:focus, button:focus-visible { outline: 2px solid #f97c5a; outline-offset: 1px; }
+  .pill { min-height: 40px; padding: 6px 14px; border: 1px solid #d6d6d6; background: #fff; border-radius: 20px; font-size: 13px; font-weight: 600; cursor: pointer; color: #1a1a1a; }
+  .pill[aria-pressed=true] { background: #1a1a1a; border-color: #1a1a1a; color: #fff; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; background: #f0f0ee; color: #444; }
+  .chip.gron { background: #e1f4e8; color: #1c5f34; } .chip.gul { background: #fdf3d6; color: #6b4a07; } .chip.rod { background: #fde4e1; color: #8f2a1f; }
+  .pool { display: flex; flex-wrap: wrap; gap: 8px; }
+  .poolrad { display: flex; align-items: center; gap: 8px; padding: 5px 6px 5px 12px; border: 1px solid #ebebeb; border-radius: 10px; background: #faf9f7; }
+  .poolrad small { color: #6b6b6b; }
+  .kort { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; align-items: start; }
+  .lag { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+  .lag .tva { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .lag ul { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; }
+  .lag li { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 4px 4px 4px 10px; border-radius: 8px; background: #faf9f7; }
+  .ledartag { font-size: 11px; font-weight: 600; color: #9a3412; }
+  .tom { margin: 0; padding: 12px; border: 1px dashed #d6d6d6; border-radius: 8px; font-size: 13px; color: #555; }
+  .ny-lag { min-height: 120px; border: 1.5px dashed #c9c6c0; background: #faf9f7; border-radius: 12px; font-size: 14px; font-weight: 600; color: #444; cursor: pointer; }
+  .spara { position: sticky; bottom: 0; flex-direction: row; flex-wrap: wrap; align-items: center; justify-content: space-between; box-shadow: 0 -2px 10px rgba(0,0,0,.04); }
+  .meddelande { font-size: 13px; color: #555; } .meddelande.ok { color: #1c5f34; font-weight: 600; } .meddelande.fel { color: #a62a17; font-weight: 600; }
+  .login { max-width: 400px; margin: 60px auto; }
+  .login form { display: flex; flex-direction: column; gap: 12px; }
+  .login .knapp { min-height: 46px; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><span class="logo-ikon" aria-hidden="true">V</span><b>VIASALES</b><span class="del">Admin</span></div>
+  <div class="vem" id="vem" hidden><span id="vemText"></span><button class="knapp liten" id="loggaUt" type="button">Logga ut</button></div>
+</header>
+
+<main id="inlogg">
+  <section class="ruta login" aria-labelledby="loginRubrik">
+    <h1 id="loginRubrik">Logga in</h1>
+    <p class="ingress">Adminsidan för prodplanen. Bara adminkontot kan logga in.</p>
+    <form id="loginForm">
+      <div class="falt"><label class="etikett" for="epost">E-post</label><input id="epost" type="email" autocomplete="username" required></div>
+      <div class="falt"><label class="etikett" for="losen">Lösenord</label><input id="losen" type="password" autocomplete="current-password" required></div>
+      <div class="meddelande fel" id="loginFel" role="alert"></div>
+      <button class="knapp primar" type="submit" id="loginKnapp">Logga in</button>
+    </form>
+  </section>
+</main>
+
+<main id="app" hidden>
+  <div>
+    <h1>Teamindelning</h1>
+    <p class="ingress">Lägg upp D2D-teamen för en period på en eller två veckor. Teamledaren räknas som medlem i sitt team, så hens egen försäljning kommer med. Fliken Team i prodplanen visar indelningen direkt efter att du sparat.</p>
+  </div>
+
+  <section class="ruta" aria-label="Period">
+    <div class="rad">
+      <div class="falt"><label class="etikett" for="fran">Från</label><input id="fran" type="date"></div>
+      <div class="falt"><label class="etikett" for="till">Till</label><input id="till" type="date"></div>
+      <div class="chips" role="group" aria-label="Periodens längd">
+        <button class="pill" type="button" data-langd="7" aria-pressed="false">1 vecka</button>
+        <button class="pill" type="button" data-langd="14" aria-pressed="false">2 veckor</button>
+      </div>
+      <button class="knapp" type="button" id="kopiera">Kopiera förra perioden</button>
+    </div>
+    <div class="chips" id="periodChips"></div>
+  </section>
+
+  <section class="ruta" aria-labelledby="poolRubrik">
+    <div class="rad" style="align-items:center;justify-content:space-between">
+      <h2 id="poolRubrik">Säljare utan team</h2>
+      <div class="falt" style="min-width:240px"><label class="etikett" for="sok">Sök säljare (namn eller LoxyID)</label><input id="sok" type="search" placeholder="Visa alla säljare som matchar"></div>
+    </div>
+    <div class="pool" id="pool"></div>
+  </section>
+
+  <div class="kort" id="kort"></div>
+
+  <section class="ruta spara" aria-label="Spara">
+    <div class="meddelande" id="status" aria-live="polite"></div>
+    <div class="chips">
+      <button class="knapp" type="button" id="angra">Ångra ändringar</button>
+      <button class="knapp primar" type="button" id="sparaKnapp">Spara teamindelningen</button>
+    </div>
+  </section>
+</main>
+
+<script>
+/* Adminsidan: inloggning med Supabase-kontot och teamindelning. Radskyddet i databasen släpper bara in admin. */
+var SB_URL = 'https://wsqqxfiefvgcuoffuqxg.supabase.co', SB_KEY = 'sb_publishable_MX_32ko1cN4HwXM9XLZbiw_sVZkWVRb';
+var S = { token: null, refresh: null, epost: '', saljare: [], team: [], period: null, kort: [], andrat: false, nyNr: 0, borttagna: [] };
+var $ = function (id) { return document.getElementById(id); };
+function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+
+/* ---------- Datum ---------- */
+function dDatum(s) { return new Date(+s.slice(0, 4), +s.slice(5, 7) - 1, +s.slice(8, 10)); }
+function dNyckel(d) { return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); }
+function dPlus(s, n) { var d = dDatum(s); d.setDate(d.getDate() + n); return dNyckel(d); }
+function dMandag(s) { var d = dDatum(s), w = d.getDay() || 7; d.setDate(d.getDate() - w + 1); return dNyckel(d); }
+function dKort(s) { var d = dDatum(s); return d.getDate() + '/' + (d.getMonth() + 1); }
+function dLangd() { return Math.round((dDatum($('till').value) - dDatum($('fran').value)) / 86400000) + 1; }
+
+/* ---------- Supabase ---------- */
+function sattSession(d) { S.token = d.access_token; S.refresh = d.refresh_token; if (d.user && d.user.email) S.epost = d.user.email;
+  try { sessionStorage.setItem('prodplan_admin', JSON.stringify({ r: S.refresh, e: S.epost })); } catch (e) {} }
+async function auth(typ, body) {
+  var r = await fetch(SB_URL + '/auth/v1/token?grant_type=' + typ, { method: 'POST', headers: { 'apikey': SB_KEY, 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+  var d = await r.json().catch(function () { return {}; }); if (!r.ok) { var e = new Error(d.msg || d.error_description || d.message || ('HTTP ' + r.status)); e.status = r.status; throw e; } return d; }
+async function fornya() { if (!S.refresh) return false; try { sattSession(await auth('refresh_token', { refresh_token: S.refresh })); return true; } catch (e) { return false; } }
+async function api(path, o) {
+  o = o || {}; var h = { 'apikey': SB_KEY, 'Content-Type': 'application/json' }; if (S.token) h['Authorization'] = 'Bearer ' + S.token; Object.assign(h, o.headers || {});
+  var r = await fetch(SB_URL + path, { method: o.method || 'GET', headers: h, body: o.body !== undefined ? JSON.stringify(o.body) : undefined });
+  if (r.status === 401 && !o.igen && await fornya()) return api(path, Object.assign({}, o, { igen: true }));
+  if (r.status === 401) { visaInlogg('Du har loggats ut. Logga in igen.'); throw new Error('Utloggad'); }
+  var t = await r.text(), d = t ? JSON.parse(t) : null;
+  if (!r.ok) { var e = new Error((d && (d.message || d.msg)) || ('HTTP ' + r.status)); e.data = d; throw e; } return d; }
+
+/* ---------- Inloggning ---------- */
+function visaInlogg(fel) { S.token = null; $('app').hidden = true; $('vem').hidden = true; $('inlogg').hidden = false; $('loginFel').textContent = fel || ''; $('loginKnapp').disabled = false; $('loginKnapp').textContent = 'Logga in'; }
+async function efterInlogg() {
+  var admin = await api('/rest/v1/rpc/ar_admin', { method: 'POST', body: {} });
+  if (admin !== true) { await loggaUt(true); visaInlogg('Kontot är inte admin för prodplanen.'); return; }
+  $('inlogg').hidden = true; $('app').hidden = false; $('vem').hidden = false; $('vemText').textContent = 'Inloggad som ' + S.epost;
+  var idag = dNyckel(new Date()), p = await api('/rest/v1/team_period?select=fran,till&fran=lte.' + idag + '&till=gte.' + idag + '&limit=1');
+  if (p && p.length) { $('fran').value = p[0].fran; $('till').value = p[0].till; } else { $('fran').value = dMandag(idag); $('till').value = dPlus(dMandag(idag), 6); }
+  S.saljare = await api('/rest/v1/saljare?select=id,namn,projekt,senast_sedd&order=namn.asc') || [];
+  await laddaPeriod(); }
+async function loggaUt(tyst) { try { if (S.token) await fetch(SB_URL + '/auth/v1/logout', { method: 'POST', headers: { 'apikey': SB_KEY, 'Authorization': 'Bearer ' + S.token } }); } catch (e) {}
+  S.token = S.refresh = null; try { sessionStorage.removeItem('prodplan_admin'); } catch (e) {} if (!tyst) visaInlogg(''); }
+$('loginForm').addEventListener('submit', async function (ev) { ev.preventDefault(); $('loginKnapp').disabled = true; $('loginKnapp').textContent = 'Loggar in…'; $('loginFel').textContent = '';
+  try { sattSession(await auth('password', { email: $('epost').value.trim(), password: $('losen').value })); $('losen').value = ''; await efterInlogg(); }
+  catch (e) { visaInlogg(e.status === 400 ? 'Fel e-post eller lösenord.' : 'Inloggningen misslyckades: ' + e.message); } });
+$('loggaUt').addEventListener('click', function () { loggaUt(false); });
+
+/* ---------- Projekt och säljare ---------- */
+function arD2D(p) { return /d2d/i.test(p) || /^tele2\b/i.test(p); }
+function projektLista() { var s = new Set(); S.saljare.forEach(function (x) { (x.projekt || []).forEach(function (p) { if (arD2D(p)) s.add(p); }); });
+  S.kort.forEach(function (k) { if (k.projekt) s.add(k.projekt); }); return [...s].sort(function (a, b) { return a.localeCompare(b, 'sv'); }); }
+function tilldelade() { var s = new Set(); S.kort.forEach(function (k) { k.medlemmar.forEach(function (m) { s.add(m.saljare_id); }); }); return s; }
+function poolSaljare() { var sok = $('sok').value.trim().toLowerCase(), upptagen = tilldelade(), grans = dPlus($('fran').value, -35);
+  return S.saljare.filter(function (x) { if (upptagen.has(x.id)) return false;
+    if (sok) return x.namn.toLowerCase().indexOf(sok) >= 0 || String(x.id).indexOf(sok) === 0;
+    return (x.projekt || []).some(arD2D) && x.senast_sedd && x.senast_sedd >= grans; }); }
+
+/* ---------- Läs en period ---------- */
+async function laddaPeriod() {
+  var f = $('fran').value, t = $('till').value; S.andrat = false; S.borttagna = []; S.langd = dLangd() === 14 ? 14 : 7; markeraLangd();
+  S.team = await api('/rest/v1/team?select=id,namn,projekt,aktiv&order=id.asc') || [];
+  var p = await api('/rest/v1/team_period?select=id,fran,till,team_medlem(team_id,saljare_id,saljare_namn,ar_ledare)&fran=eq.' + f + '&till=eq.' + t + '&limit=1');
+  S.period = p && p.length ? p[0] : null; var med = S.period ? S.period.team_medlem || [] : [];
+  var ids = new Set(med.map(function (m) { return m.team_id; }));
+  S.kort = S.team.filter(function (x) { return x.aktiv || ids.has(x.id); }).map(function (x) {
+    return { key: 't' + x.id, id: x.id, namn: x.namn, projekt: x.projekt, orig: x.namn + '|' + x.projekt,
+             medlemmar: med.filter(function (m) { return m.team_id === x.id; }).sort(function (a, b) { return (b.ar_ledare - a.ar_ledare) || a.saljare_namn.localeCompare(b.saljare_namn, 'sv'); }) }; });
+  var over = await api('/rest/v1/team_period?select=fran,till&fran=lte.' + t + '&till=gte.' + f);
+  S.overlapp = (over || []).filter(function (x) { return !(x.fran === f && x.till === t); });
+  status(S.period ? 'Sparad indelning för ' + dKort(f) + '–' + dKort(t) + '.' : 'Ingen indelning sparad för ' + dKort(f) + '–' + dKort(t) + '. Kopiera förra perioden eller lägg in säljarna.', '');
+  rita(); }
+
+/* ---------- Rita ---------- */
+function status(txt, typ) { var s = $('status'); s.textContent = txt; s.className = 'meddelande' + (typ ? ' ' + typ : ''); }
+function markeraLangd() { var l = dLangd(); document.querySelectorAll('[data-langd]').forEach(function (b) { b.setAttribute('aria-pressed', String(+b.dataset.langd === l)); }); }
+function rita() {
+  var antal = S.kort.reduce(function (s, k) { return s + k.medlemmar.length; }, 0), pool = poolSaljare(), sok = $('sok').value.trim();
+  $('periodChips').innerHTML = '<span class="chip">' + S.kort.length + ' team · ' + antal + ' säljare</span>'
+    + (sok ? '' : '<span class="chip ' + (pool.length ? 'gul' : 'gron') + '">' + (pool.length ? pool.length + (pool.length === 1 ? ' säljare' : ' säljare') + ' med tid i D2D utan team' : 'Alla aktiva D2D-säljare har ett team') + '</span>')
+    + (S.overlapp && S.overlapp.length ? '<span class="chip rod">Överlappar sparad period ' + S.overlapp.map(function (x) { return dKort(x.fran) + '–' + dKort(x.till); }).join(', ') + '</span>' : '')
+    + (S.andrat ? '<span class="chip gul">Ändringar som inte är sparade</span>' : '');
+  var teamOpt = S.kort.map(function (k) { return '<option value="' + esc(k.key) + '">' + esc(k.namn + ' · ' + k.projekt) + '</option>'; }).join('');
+  $('pool').innerHTML = pool.length ? pool.slice(0, 120).map(function (x) {
+    return '<div class="poolrad"><span>' + esc(x.namn) + ' <small>' + x.id + (x.projekt && x.projekt.length ? ' · ' + esc(x.projekt.filter(arD2D).join(', ') || x.projekt.join(', ')) : '') + '</small></span>'
+      + '<select data-tilldela="' + x.id + '" aria-label="Välj team för ' + esc(x.namn) + '"><option value="">Välj team</option>' + teamOpt + '</select></div>'; }).join('')
+    + (pool.length > 120 ? '<span class="chip">+ ' + (pool.length - 120) + ' till, sök för att hitta fler</span>' : '')
+    : '<p class="tom">' + (sok ? 'Ingen säljare utan team matchar sökningen.' : 'Alla säljare med tid i D2D-projekten de senaste fem veckorna har ett team. Sök för att lägga till någon annan.') + '</p>';
+  var projOpt = function (val) { return projektLista().map(function (p) { return '<option' + (p === val ? ' selected' : '') + '>' + esc(p) + '</option>'; }).join(''); };
+  $('kort').innerHTML = S.kort.map(function (k) {
+    var ledare = k.medlemmar.filter(function (m) { return m.ar_ledare; })[0];
+    return '<section class="lag" aria-label="' + esc(k.namn) + '">'
+      + '<input type="text" value="' + esc(k.namn) + '" data-namn="' + esc(k.key) + '" aria-label="Teamets namn" style="font-weight:600;font-size:15px">'
+      + '<div class="tva"><div class="falt"><span class="etikett">Projekt</span><select data-projekt="' + esc(k.key) + '" aria-label="Projekt för ' + esc(k.namn) + '">' + projOpt(k.projekt) + '</select></div>'
+      + '<div class="falt"><span class="etikett">Teamledare</span><select data-ledare="' + esc(k.key) + '" aria-label="Teamledare för ' + esc(k.namn) + '"><option value="">Välj teamledare</option>'
+      + k.medlemmar.map(function (m) { return '<option value="' + m.saljare_id + '"' + (ledare && ledare.saljare_id === m.saljare_id ? ' selected' : '') + '>' + esc(m.saljare_namn) + '</option>'; }).join('') + '</select></div></div>'
+      + '<div class="rad" style="justify-content:space-between;align-items:baseline"><span class="etikett">Säljare</span><span style="font-size:12px;color:#555">' + k.medlemmar.length + ' säljare</span></div>'
+      + (k.medlemmar.length ? '<ul>' + k.medlemmar.map(function (m) { return '<li><span>' + esc(m.saljare_namn) + (m.ar_ledare ? ' <span class="ledartag">Teamledare</span>' : '') + '</span>'
+          + '<button class="knapp liten" type="button" data-bort="' + esc(k.key) + '|' + m.saljare_id + '" aria-label="Ta bort ' + esc(m.saljare_namn) + ' från ' + esc(k.namn) + '">Ta bort</button></li>'; }).join('') + '</ul>'
+        : '<p class="tom">Inga säljare än. Välj teamet för en säljare under Säljare utan team.</p>')
+      + '<button class="knapp liten" type="button" data-taborttam="' + esc(k.key) + '" style="align-self:flex-start">Ta bort teamet</button></section>'; }).join('')
+    + '<button class="ny-lag" type="button" id="nyttLag">+ Lägg till team</button>';
+  $('sparaKnapp').disabled = !S.andrat; $('angra').disabled = !S.andrat; }
+
+/* ---------- Ändringar ---------- */
+function kortFor(key) { return S.kort.filter(function (k) { return k.key === key; })[0]; }
+function andrat() { S.andrat = true; status('Ändringarna är inte sparade än.', ''); rita(); }
+document.addEventListener('change', function (ev) { var el = ev.target, k;
+  if (el.dataset.tilldela !== undefined && el.value) { var x = S.saljare.filter(function (s) { return s.id === +el.dataset.tilldela; })[0]; k = kortFor(el.value);
+    if (x && k) { k.medlemmar.push({ saljare_id: x.id, saljare_namn: x.namn, ar_ledare: !k.medlemmar.some(function (m) { return m.ar_ledare; }) }); andrat(); } }
+  else if (el.dataset.projekt !== undefined) { k = kortFor(el.dataset.projekt); if (k) { k.projekt = el.value; andrat(); } }
+  else if (el.dataset.ledare !== undefined) { k = kortFor(el.dataset.ledare); if (k) { k.medlemmar.forEach(function (m) { m.ar_ledare = String(m.saljare_id) === el.value; }); andrat(); } }
+  else if (el.dataset.namn !== undefined) { k = kortFor(el.dataset.namn); if (k) { k.namn = el.value.trim() || k.namn; andrat(); } }
+  else if (el.id === 'fran') { $('till').value = dPlus(el.value, (S.langd || 7) - 1); laddaPeriod(); }
+  else if (el.id === 'till') laddaPeriod(); });
+document.addEventListener('click', function (ev) { var el = ev.target.closest('button'); if (!el) return; var k;
+  if (el.dataset.bort) { var p = el.dataset.bort.split('|'); k = kortFor(p[0]); if (!k) return; var var_ledare = k.medlemmar.some(function (m) { return m.saljare_id === +p[1] && m.ar_ledare; });
+    k.medlemmar = k.medlemmar.filter(function (m) { return m.saljare_id !== +p[1]; }); if (var_ledare && k.medlemmar.length) k.medlemmar[0].ar_ledare = true; andrat(); }
+  else if (el.dataset.taborttam) { k = kortFor(el.dataset.taborttam); if (!k) return;
+    if (k.medlemmar.length && !confirm('Ta bort ' + k.namn + '? Säljarna hamnar under Säljare utan team.')) return;
+    if (k.id) S.borttagna.push(k.id); S.kort = S.kort.filter(function (x) { return x !== k; }); andrat(); }
+  else if (el.id === 'nyttLag') { S.nyNr++; var proj = projektLista()[0] || ''; S.kort.push({ key: 'ny' + S.nyNr, id: null, namn: 'Team ' + (S.kort.length + 1), projekt: proj, orig: '', medlemmar: [] }); andrat(); }
+  else if (el.dataset.langd) { $('till').value = dPlus($('fran').value, +el.dataset.langd - 1); laddaPeriod(); }
+  else if (el.id === 'kopiera') kopiera();
+  else if (el.id === 'angra') laddaPeriod();
+  else if (el.id === 'sparaKnapp') spara(); });
+$('sok').addEventListener('input', rita);
+
+async function kopiera() {
+  var p = await api('/rest/v1/team_period?select=fran,till,team_medlem(team_id,saljare_id,saljare_namn,ar_ledare)&fran=lt.' + $('fran').value + '&order=fran.desc&limit=1');
+  if (!p || !p.length) { status('Det finns ingen tidigare period att kopiera.', 'fel'); return; }
+  var med = p[0].team_medlem || [], ids = new Set(S.kort.map(function (k) { return k.id; }));
+  S.kort.forEach(function (k) { k.medlemmar = med.filter(function (m) { return m.team_id === k.id; }).map(function (m) { return Object.assign({}, m); }); });
+  var utanför = med.filter(function (m) { return !ids.has(m.team_id); }).length;
+  S.andrat = true; status('Kopierade ' + med.length + ' säljare från ' + dKort(p[0].fran) + '–' + dKort(p[0].till) + (utanför ? ', ' + utanför + ' från borttagna team hamnar utan team' : '') + '. Flytta dem som byter team och spara.', ''); rita(); }
+
+async function spara() {
+  if (S.overlapp && S.overlapp.length) { status('Perioden överlappar en sparad period (' + S.overlapp.map(function (x) { return dKort(x.fran) + '–' + dKort(x.till); }).join(', ') + '). Välj samma datum som den, eller datum som inte överlappar.', 'fel'); return; }
+  var utanLedare = S.kort.filter(function (k) { return k.medlemmar.length && !k.medlemmar.some(function (m) { return m.ar_ledare; }); });
+  if (utanLedare.length) { status('Välj teamledare för ' + utanLedare.map(function (k) { return k.namn; }).join(', ') + '.', 'fel'); return; }
+  $('sparaKnapp').disabled = true; status('Sparar…', '');
+  try {
+    for (var i = 0; i < S.kort.length; i++) { var k = S.kort[i];
+      if (!k.id) { var ny = await api('/rest/v1/team', { method: 'POST', headers: { 'Prefer': 'return=representation' }, body: [{ namn: k.namn, projekt: k.projekt }] }); k.id = ny[0].id; }
+      else if (k.namn + '|' + k.projekt !== k.orig) await api('/rest/v1/team?id=eq.' + k.id, { method: 'PATCH', body: { namn: k.namn, projekt: k.projekt, aktiv: true } }); }
+    for (var j = 0; j < S.borttagna.length; j++) await api('/rest/v1/team?id=eq.' + S.borttagna[j], { method: 'PATCH', body: { aktiv: false } });
+    var med = []; S.kort.forEach(function (k) { k.medlemmar.forEach(function (m) { med.push({ team_id: k.id, saljare_id: m.saljare_id, saljare_namn: m.saljare_namn, ar_ledare: !!m.ar_ledare }); }); });
+    await api('/rest/v1/rpc/spara_teamindelning', { method: 'POST', body: { p_fran: $('fran').value, p_till: $('till').value, p_medlemmar: med } });
+    await laddaPeriod(); status('Sparat. Fliken Team i prodplanen visar den nya indelningen.', 'ok'); }
+  catch (e) { var m = e.message || ''; status(/overlapp/.test(m) ? 'Perioden överlappar en sparad period. Välj samma datum som den, eller datum som inte överlappar.' : 'Kunde inte spara: ' + m, 'fel'); $('sparaKnapp').disabled = false; } }
+
+/* ---------- Start ---------- */
+(async function () { var s = null; try { s = JSON.parse(sessionStorage.getItem('prodplan_admin') || 'null'); } catch (e) {}
+  if (s && s.r) { S.refresh = s.r; S.epost = s.e || ''; if (await fornya()) { try { await efterInlogg(); return; } catch (e) {} } }
+  visaInlogg(''); })();
+</script>
+</body>
+</html>
