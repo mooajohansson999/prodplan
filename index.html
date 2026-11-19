@@ -43,6 +43,67 @@
   .badge-green { background: #e8f7ee; color: #2d8a4e; }
   .badge-red { background: #fdecea; color: #c0392b; }
   .badge-neutral { background: #f0f0f0; color: #666; }
+  .sp-input { border: 1.5px solid #aaa; border-radius: 8px; padding: 6px 10px; font-size: 13px; min-width: 210px; outline: none; }
+  .sp-input:focus { border-color: #f97c5a; }
+  .sp-kpis { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin-bottom: 14px; }
+  .sp-kpis .stat-card { min-height: 104px; }
+  .sp-two { display: grid; grid-template-columns: 3fr 2fr; gap: 14px; }
+  .sp-panel { background: #fff; border: 1px solid #ebebeb; border-radius: 12px; padding: 14px 16px; margin-bottom: 14px; overflow-x: auto; }
+  .sp-panel-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .sp-panel-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 8px; flex-wrap: wrap; }
+  .sp-panel-head .sp-panel-title { margin-bottom: 0; }
+  .sp-view-btn { font-size: 12px; padding: 7px 14px; }
+  .sp-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .sp-table th { text-align: right; font-weight: 600; color: #666; padding: 6px 8px; border-bottom: 2px solid #f4d3c9; white-space: nowrap; cursor: pointer; user-select: none; }
+  .sp-table th:hover { color: #1a1a1a; }
+  .sp-table th.txt, .sp-table td.txt { text-align: left; }
+  .sp-table th.sorted::after { content: ' ▾'; }
+  .sp-table th.sorted.asc::after { content: ' ▴'; }
+  .sp-table td { text-align: right; padding: 6px 8px; border-bottom: 1px solid #f3f2f0; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .sp-table tbody tr:hover td { background: #fbfaf8; }
+  .sp-table tr.total td { font-weight: 700; border-top: 2px solid #ebebeb; background: #faf9f7; }
+  .badge-darkgreen { background: #237a43; color: #fff; }
+  .sp-date { border: 1.5px solid #aaa; border-radius: 8px; padding: 5px 8px; font-size: 13px; font-family: inherit; color: #1a1a1a; background: #fff; }
+  .sp-date:focus { border-color: #f97c5a; outline: none; }
+  .sp-bars { display: grid; gap: 7px; }
+  .sp-bar-row { display: grid; grid-template-columns: minmax(150px, 1.6fr) 3fr 48px; gap: 10px; align-items: center; font-size: 12.5px; }
+  .sp-bar-row .sp-bar-name { line-height: 1.3; }
+  .sp-bar-track { background: #f4f3f1; border-radius: 4px; height: 18px; }
+  .sp-bar { height: 18px; background: #f97c5a; border-radius: 4px; }
+  .sp-bar-row.till .sp-bar { background: #fbc4b1; }
+  .sp-bar-row .sp-bar-val { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .sp-bar-legend { display: flex; gap: 14px; margin-top: 10px; font-size: 11px; color: #777; }
+  .sp-bar-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; background: #f97c5a; margin-right: 5px; vertical-align: -1px; }
+  .sp-bar-legend i.till { background: #fbc4b1; }
+  .sp-table tbody tr.clickable { cursor: pointer; }
+  .sp-table tbody tr.picked td { background: #fff1ec; }
+  .sp-table tr.sp-detail > td { background: #fffaf7; padding: 12px 16px 16px; white-space: normal; text-align: left; }
+  .sp-detail-box { max-width: 760px; }
+  .sp-detail-title { font-weight: 600; font-size: 12.5px; margin-bottom: 10px; }
+  /* Färgnivåer med bakgrund. Står sist så att de ligger kvar när man pekar på eller markerar en rad. */
+  .sp-table tbody tr td.lvl-red { background: #f9dcd8; color: #a12f22; font-weight: 600; }
+  .sp-table tbody tr td.lvl-yellow { background: #fcefc7; color: #7a5306; font-weight: 600; }
+  .sp-table tbody tr td.lvl-green { background: #dcf3e4; color: #1e6b3a; font-weight: 600; }
+  .sp-table tbody tr td.lvl-darkgreen { background: #237a43; color: #fff; font-weight: 700; }
+  /* Säljartabellen: hela raden färgas efter säljarens snitt mot kravet */
+  .sp-legend { display: grid; grid-template-columns: repeat(4, 1fr); border-radius: 8px; overflow: hidden; margin: 2px 0 10px; font-size: 11px; font-weight: 600; }
+  .sp-legend span { padding: 7px 10px; display: flex; align-items: center; gap: 6px; }
+  .sp-legend i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: none; }
+  .sp-legend .lg-darkgreen { background: #1f6f3e; color: #fff; } .sp-legend .lg-darkgreen i { background: #9be3b4; }
+  .sp-legend .lg-green { background: #e1f4e8; color: #1c5f34; } .sp-legend .lg-green i { background: #2d8a4e; }
+  .sp-legend .lg-yellow { background: #fdf3d6; color: #6b4a07; } .sp-legend .lg-yellow i { background: #c9871a; }
+  .sp-legend .lg-red { background: #fde4e1; color: #8f2a1f; } .sp-legend .lg-red i { background: #c0392b; }
+  .sp-table tbody tr.row-darkgreen td { background: #1f6f3e; color: #fff; border-bottom-color: rgba(255,255,255,.12); }
+  .sp-table tbody tr.row-green td { background: #e1f4e8; color: #1c5f34; border-bottom-color: rgba(0,0,0,.05); }
+  .sp-table tbody tr.row-yellow td { background: #fdf3d6; color: #6b4a07; border-bottom-color: rgba(0,0,0,.05); }
+  .sp-table tbody tr.row-red td { background: #fde4e1; color: #8f2a1f; border-bottom-color: rgba(0,0,0,.05); }
+  .sp-table tbody tr.clickable:hover td { box-shadow: inset 0 0 0 999px rgba(0,0,0,.04); }
+  .sp-table tbody tr.picked td { box-shadow: inset 0 2px 0 #f97c5a, inset 0 -2px 0 #f97c5a; }
+  .sp-table td.strong { font-weight: 700; }
+  .sp-note { font-size: 11px; color: #777; margin-top: 8px; line-height: 1.5; }
+  .sp-note.warn { color: #9a6510; }
+  .sp-empty { padding: 30px 0; color: #999; font-size: 13px; }
+  @media (max-width: 1100px) { .sp-kpis { grid-template-columns: repeat(3, 1fr); } .sp-two { grid-template-columns: 1fr; } }
   .badge-yellow { background: #fdf3e1; color: #9a6510; }
   td.near { color: #9a6510; font-weight: 600; }
   .proj-chip.multi-toggle { border-style: dashed; color: #666; font-weight: 500; }
@@ -124,6 +185,23 @@
     .project-selector { gap: 4px; } .proj-chip { padding: 4px 10px; font-size: 11px; }
     th { font-size: 9px; padding: 5px 6px; } td { font-size: 11px; padding: 4px 6px; }
   }
+  /* Kodruta: prodplanen visas först efter rätt kod */
+  .pp-las { position: fixed; inset: 0; z-index: 1000; background: #f3f2f0; display: flex; align-items: center; justify-content: center; padding: 24px; box-sizing: border-box; }
+  .pp-las[hidden] { display: none; }
+  .pp-kort { width: 100%; max-width: 400px; background: #fff; border: 1px solid #ebebeb; border-radius: 16px; padding: 32px 28px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px; font-family: inherit; }
+  .pp-kort h1 { margin: 0; font-size: 22px; font-weight: 600; }
+  .pp-kort p { margin: 0; color: #555; line-height: 1.5; font-size: 14px; }
+  .pp-kort label { font-size: 13px; font-weight: 600; }
+  .pp-kort input[type=password] { min-height: 46px; padding: 10px 12px; border: 1.5px solid #aaa; border-radius: 10px; font: inherit; font-size: 15px; }
+  .pp-kort input[type=password]:focus { outline: 2px solid #f97c5a; outline-offset: 1px; border-color: #f97c5a; }
+  .pp-kom { display: flex; align-items: center; gap: 8px; font-weight: 400 !important; color: #444; min-height: 32px; }
+  .pp-kom input { width: 18px; height: 18px; accent-color: #c84a2f; }
+  .pp-fel { min-height: 20px; color: #a62a17; font-size: 13px; font-weight: 600; }
+  .pp-kort button { min-height: 48px; border: none; border-radius: 10px; background: #c84a2f; color: #fff; font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+  .pp-kort button:disabled { opacity: .6; cursor: wait; }
+  .pp-logo { display: flex; align-items: center; gap: 10px; }
+  .pp-logo span:first-child { width: 40px; height: 40px; border-radius: 50%; background: #e8503a; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 17px; }
+  .pp-lasknapp { min-height: 32px; padding: 4px 12px; border: 1px solid #d6d6d6; background: #fff; border-radius: 8px; font: inherit; font-size: 12px; font-weight: 600; color: #444; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -133,10 +211,23 @@
     <div class="main-nav" id="mainNav">
       <button class="main-nav-tab active" onclick="switchPage('overview')">📊 Översikt</button>
       <button class="main-nav-tab" onclick="switchPage('daily')">📅 Daglig uppföljning</button>
+      <button class="main-nav-tab" onclick="switchPage('seller')">👤 Säljare</button>
     </div>
   </div>
-  <div class="header-right"><div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#666;"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/></svg><span id="lastSynced">Senast synkad: —</span></div></div>
+  <div class="header-right" style="display:flex;align-items:center;gap:12px"><div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#666;"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/></svg><span id="lastSynced">Senast synkad: —</span></div><button type="button" class="pp-lasknapp" onclick="ppLas()" title="Lås prodplanen på den här enheten">Lås</button></div>
 </header>
+<div class="pp-las" id="ppLas" hidden>
+  <form class="pp-kort" onsubmit="ppOppna(event)">
+    <div class="pp-logo"><span aria-hidden="true">V</span><span style="font-weight:600;letter-spacing:.5px">VIASALES</span></div>
+    <h1>Prodplan</h1>
+    <p>Ange koden för att se prodplanen.</p>
+    <label for="ppKod">Kod</label>
+    <input id="ppKod" type="password" autocomplete="current-password" required>
+    <label class="pp-kom"><input type="checkbox" id="ppKom" checked> Kom ihåg på den här enheten</label>
+    <div class="pp-fel" id="ppFel" role="alert" aria-live="assertive"></div>
+    <button type="submit" id="ppKnapp">Öppna</button>
+  </form>
+</div>
 <main>
   <div id="overviewPage">
     <div class="filter-bar" style="flex-direction:column;align-items:stretch;gap:8px;">
@@ -165,6 +256,30 @@
       <div id="teliaFmBreakdown" style="display:none;margin-bottom:16px;"><div class="stat-card" style="padding:14px 20px;"><div class="stat-label">Snitt per timme – Kategorier</div><div id="teliaFmBreakdownContent" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:8px;"></div></div></div>
       <div class="table-wrap" id="tableWrap"><table><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table></div>
       <div id="dailyCompareWrap" style="display:none"></div>
+    </div>
+  </div>
+  <div id="sellerPage" style="display:none;">
+    <div class="filter-bar" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;"><div class="filter-group"><span class="filter-label">Visa:</span><div class="filter-pills" id="spGroupFilter"><button class="filter-pill active" onclick="spSetGroup('alla',this)">Alla</button><button class="filter-pill" onclick="spSetGroup('d2d',this)">D2D</button><button class="filter-pill" onclick="spSetGroup('tm',this)">TM</button></div></div></div>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;"><div class="filter-group"><span class="filter-label">Projekt:</span><div class="project-selector" id="spProjectSelector"></div></div></div>
+      <div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+        <div class="filter-group"><span class="filter-label">Säljare:</span><input id="spSearch" class="sp-input" type="search" placeholder="Sök på namn" oninput="renderSellerPage()"></div><div class="filter-group"><span class="filter-label">Datum:</span><input id="spFrom" class="sp-date" type="date" onchange="renderSellerPage()" aria-label="Från datum"><span style="color:#999;">–</span><input id="spTo" class="sp-date" type="date" onchange="renderSellerPage()" aria-label="Till datum"><button class="btn" id="spDateReset" style="display:none;font-size:11px;padding:4px 10px;" onclick="spResetDates()">Hela månaden</button></div>
+      </div>
+    </div>
+    <div class="filter-bar month-bar" style="border-top:none;"><div class="filter-group"><button class="nav-btn" onclick="changeMonth(-1)">◀</button><select id="monthSel3" onchange="syncMonthFrom(this);renderCurrent()"><option value="0">Januari</option><option value="1">Februari</option><option value="2">Mars</option><option value="3">April</option><option value="4">Maj</option><option value="5">Juni</option><option value="6">Juli</option><option value="7">Augusti</option><option value="8">September</option><option value="9">Oktober</option><option value="10">November</option><option value="11">December</option></select><select id="yearSel3" onchange="syncYearFrom(this);renderCurrent()"><option value="2024">2024</option><option value="2025">2025</option><option value="2026">2026</option><option value="2027">2027</option></select><button class="nav-btn" onclick="changeMonth(1)">▶</button></div></div>
+    <div class="page-section">
+      <div class="page-title">Säljare</div>
+      <div class="page-sub" id="spSub"></div>
+      <div id="spKpis" class="sp-kpis"></div>
+      <div class="sp-two">
+        <div class="sp-panel"><div class="sp-panel-title">Projekt</div><div id="spProjTable"></div></div>
+        <div class="sp-panel"><div class="sp-panel-title">Mest sålda produkter</div><div id="spTopProducts"></div></div>
+      </div>
+      <div class="sp-panel" id="spResultPanel">
+        <div class="sp-panel-head"><div class="sp-panel-title" id="spResultTitle">Utfall per säljare</div><button class="btn sp-view-btn" id="spViewBtn" type="button" style="display:none" onclick="spToggleView()">Se effektivitet →</button></div>
+        <div id="spSellerTable"></div>
+        <div id="spEffTable" style="display:none"></div>
+      </div>
     </div>
   </div>
 </main>
@@ -207,7 +322,7 @@ function getMonth(){return parseInt(document.getElementById('monthSel').value)}
 function getYear(){return parseInt(document.getElementById('yearSel').value)}
 function syncMonthFrom(s){document.getElementById('monthSel').value=s.value}
 function syncYearFrom(s){document.getElementById('yearSel').value=s.value}
-function changeMonth(d){var m=getMonth()+d,y=getYear();if(m<0){m=11;y--}if(m>11){m=0;y++}document.getElementById('monthSel').value=m;document.getElementById('yearSel').value=y;document.getElementById('monthSel2').value=m;document.getElementById('yearSel2').value=y;renderCurrent()}
+function changeMonth(d){var m=getMonth()+d,y=getYear();if(m<0){m=11;y--}if(m>11){m=0;y++}document.getElementById('monthSel').value=m;document.getElementById('yearSel').value=y;document.getElementById('monthSel2').value=m;document.getElementById('yearSel2').value=y;var m3=document.getElementById('monthSel3'),y3=document.getElementById('yearSel3');if(m3)m3.value=m;if(y3)y3.value=y;renderCurrent()}
 function toDateKey(y,m,d){return y+'-'+String(m+1).padStart(2,'0')+'-'+String(d).padStart(2,'0')}
 function storeKey(p,y,m){return p+'_'+y+'_'+m}
 function fmt2(v){return typeof v==='number'?parseFloat(v.toFixed(2)):v}
@@ -321,9 +436,9 @@ function afterSelectionChange(){
 }
 
 /* === PAGE SWITCHING === */
-function switchPage(pg,keep){if(pg!==currentPage&&!keep)carrySelection(pg);currentPage=pg;document.querySelectorAll('.main-nav-tab').forEach(function(t){t.classList.remove('active')});document.querySelectorAll('.main-nav-tab').forEach(function(t){if((pg==='overview'&&t.textContent.indexOf('Översikt')>=0)||(pg==='daily'&&t.textContent.indexOf('Daglig')>=0))t.classList.add('active')});document.getElementById('overviewPage').style.display=pg==='overview'?'':'none';document.getElementById('dailyPage').style.display=pg==='daily'?'':'none';renderCurrent()}
+function switchPage(pg,keep){if(pg!==currentPage&&!keep&&pg!=='seller'&&currentPage!=='seller')carrySelection(pg);currentPage=pg;document.querySelectorAll('.main-nav-tab').forEach(function(t){t.classList.remove('active')});document.querySelectorAll('.main-nav-tab').forEach(function(t){if((pg==='overview'&&t.textContent.indexOf('Översikt')>=0)||(pg==='daily'&&t.textContent.indexOf('Daglig')>=0)||(pg==='seller'&&t.textContent.indexOf('Säljare')>=0))t.classList.add('active')});document.getElementById('overviewPage').style.display=pg==='overview'?'':'none';document.getElementById('dailyPage').style.display=pg==='daily'?'':'none';var spg=document.getElementById('sellerPage');if(spg)spg.style.display=pg==='seller'?'':'none';renderCurrent()}
 function switchToDaily(proj){var g=GROUP_D2D.indexOf(proj)>=0?'d2d':'tm';dailyGroup=g;dailyProject=new Set([proj]);document.querySelectorAll('#dailyGroupFilter .filter-pill').forEach(function(p){p.classList.toggle('active',p.textContent.toLowerCase()===g)});buildProjectChips();updateDailyTabs();switchPage('daily',true)}
-function renderCurrent(){refreshProjectLists();if(currentPage==='overview')renderOverview();else renderDaily()}
+function renderCurrent(){refreshProjectLists();if(currentPage==='overview')renderOverview();else if(currentPage==='seller')renderSellerPage();else renderDaily()}
 function setOverviewFilter(f,el){overviewFilter=f;overviewProject=null;document.querySelectorAll('#overviewFilter .filter-pill').forEach(function(p){p.classList.remove('active')});el.classList.add('active');buildOverviewProjectChips();renderOverview()}
 function buildOverviewProjectChips(){var ps=visibleProjects(groupList(overviewFilter));var sel=document.getElementById('overviewProjectSelector');var html='<button class="proj-chip '+(overviewProject===null?'active':'')+'" onclick="selectOverviewProject(\'alla\',this,event)">Alla</button>';ps.forEach(function(p){html+='<button class="proj-chip '+((overviewProject instanceof Set&&overviewProject.has(p))?'active':'')+'" onclick="selectOverviewProject(\''+p+'\',this,event)">'+PROJECT_META[p].name+'</button>'});html+='<button class="proj-chip multi-toggle'+(multiSelectMode?' active':'')+'" onclick="toggleMultiSelect()" title="När Välj flera är på läggs varje klickat projekt till eller tas bort">Välj flera</button>';sel.innerHTML=html}
 function selectOverviewProject(p,el,ev){if(p==='alla')overviewProject=null;else if(multiSelectMode||(ev&&(ev.ctrlKey||ev.metaKey))){if(overviewProject===null)overviewProject=new Set();if(overviewProject.has(p))overviewProject.delete(p);else overviewProject.add(p);if(overviewProject.size===0)overviewProject=null}else{if(overviewProject instanceof Set&&overviewProject.size===1&&overviewProject.has(p))overviewProject=null;else overviewProject=new Set([p])}document.querySelectorAll('#overviewProjectSelector .proj-chip').forEach(function(c){var val=c.textContent;if(val==='Alla')c.classList.toggle('active',overviewProject===null);else{var pr=Object.entries(PROJECT_META).find(function(e){return e[1].name===val});if(pr)c.classList.toggle('active',overviewProject instanceof Set&&overviewProject.has(pr[0]))}});renderOverview()}
@@ -470,17 +585,244 @@ var spH='<div class="sparkline"><div class="sparkline-label">Produkter per dag'+
 return'<div class="compare-card"><div class="compare-card-header"><span class="compare-card-title">'+nm+'</span>'+bH+'</div>'+pM+s2Mt+snMt+spH+'</div>'}).join('');document.getElementById('dailyCompareWrap').innerHTML='<div class="compare-grid">'+cards+'</div>'}
 
 /* === DATA LOADING === */
-function convertJsonToStore(raw,store){var stp={};for(var[p,meta]of Object.entries(PROJECT_META)){var names=meta.sheets||[meta.sheet];names.forEach(function(nm){if(nm)stp[nm]=p})}var norm=function(s){return s.toLowerCase().replace(/^\d+[\.\d]*\s*/,'').replace(/[\.\s]+/g,'').trim()};for(var[sn,dr]of Object.entries(raw)){var proj=stp[sn];if(!proj){var ns=norm(sn);for(var[sh,p2]of Object.entries(stp))if(norm(sh)===ns){proj=p2;break}}if(!proj)continue;for(var[dk,row]of Object.entries(dr)){var d=new Date(dk);if(isNaN(d))continue;var key=storeKey(proj,d.getFullYear(),d.getMonth());if(!store[key])store[key]={};store[key][dk]=row}}}
+function convertJsonToStore(raw,store){var stp={};for(var[p,meta]of Object.entries(PROJECT_META)){var names=meta.sheets||[meta.sheet];names.forEach(function(nm){if(nm)stp[nm]=p})}var norm=function(s){return s.toLowerCase().replace(/^\d+[\.\d]*\s*/,'').replace(/[\.\s]+/g,'').trim()};for(var[sn,dr]of Object.entries(raw)){var proj=stp[sn];if(!proj){var ns=norm(sn);for(var[sh,p2]of Object.entries(stp))if(norm(sh)===ns){proj=p2;break}}if(!proj)continue;for(var[dk,row]of Object.entries(dr)){var d=new Date(dk);if(isNaN(d))continue;var key=storeKey(proj,d.getFullYear(),d.getMonth());if(!store[key])store[key]={};store[key][dk]=row;if(store===malData&&MANSDAG_PROJECTS[proj])fixMansdagSnitt(proj,row)}}}
+/* Målsnitt för projekt som mäts per mansdag = mål i produkter / mål säljare. Räknas här i stället för att läsas ur kolumnen
+   "Mål snitt", så att ett snitt per timme i målfilen inte kan slå igenom. TM-projekten använder kolumnen som förut. */
+function fixMansdagSnitt(proj,row){var s=findVal(normalizeRow(row,'mal'),'Mål säljare'),p=getProjectMalProd(proj,row),keys=Object.keys(row).filter(function(k){return k.toLowerCase().indexOf('mål snitt')===0});if(typeof s!=='number'||s<=0||!(p>0))return;var v=p/s;if(keys.length)keys.forEach(function(k){row[k]=v});else row['Mål snitt']=v}
 /* === PROJEKT FRÅN FLIKAR ===
    Varje synlig flik i produktionsplanens uträknare blir ett projekt (synken hoppar över dolda flikar).
    Siffran i fliknamnet styr: 1 = D2D (snitt per mansdag), 2 = TM (snitt per timme), 3 eller ingen siffra = TM (snitt per mansdag).
+   En ny D2D-flik räknas som Tele2 om namnet innehåller Tele2 eller fliken har kolumnerna TV, Bredband, MBB och Mobil.
    Befintliga projekt behåller namn och kolumner nedan. Nya projekt får namn från fliken och kolumner från flikens rubriker.
    Målfilens flik ska heta likadant som uträknarens (siffror, punkter, mellanslag och versaler spelar ingen roll). */
 function normSheet(s){return String(s).toLowerCase().replace(/^\d+[\.\d]*\s*/,'').replace(/[\.\s]+/g,'').trim()}
 function sheetNum(s){var m=String(s).trim().match(/^(\d+(?:\.\d+)*)/);return m?m[1].split('.').filter(Boolean).map(Number):null}
 function autoCols(meta,rawU,rawM){var key=normSheet(meta.sheets[0]),uKeys=[],mKeys=[];Object.keys(rawU).forEach(function(s){if(normSheet(s)===key)Object.values(rawU[s]).forEach(function(r){Object.keys(r).forEach(function(k){if(typeof r[k]==='number'&&uKeys.indexOf(k)<0)uKeys.push(k)})})});Object.keys(rawM||{}).forEach(function(s){if(normSheet(s)===key)Object.values(rawM[s]).forEach(function(r){Object.keys(r).forEach(function(k){if(typeof r[k]==='number'&&mKeys.indexOf(k)<0)mKeys.push(k)})})});var mL=mKeys.map(function(x){return x.toLowerCase()}),snK=mKeys.find(function(k){return k.toLowerCase().indexOf('mål snitt')===0})||'Mål snitt';var cols=[{label:'Dag'},{label:'Datum'},{label:'Mål säljare',goalKey:'__mal_saljare__'},{label:'Utfall säljare',key:'__utfall_saljare__'}];if(meta.perHour)cols.push({label:'Mål timmar',goalKey:'Mål timmar'},{label:'Utfall timmar',key:'Timmar'});cols.push({label:'Mål Produkt',goalKey:'__mal_prod__'},{label:'Utfall Produkt',key:'Produkt'});var skip=['datum','antal mansdagar','antal säljare','timmar','produkt','total sälj','tilläggsprodukt','räknas ej'];uKeys.forEach(function(k){var l=k.toLowerCase();if(skip.indexOf(l)>=0||l.indexOf('kontroll')>=0||l.indexOf('diff')>=0||l.indexOf('resultat')>=0)return;var gi=mL.indexOf('mål '+l);if(gi>=0)cols.push({label:mKeys[gi],goalKey:mKeys[gi]});cols.push({label:k,key:k})});cols.push({label:snK,goalKey:snK},{label:'Utfall snitt',key:'snitt'});return cols}
-function discoverProjects(rawU,rawM){var known={};Object.entries(PROJECT_META).forEach(function(e){(e[1].sheets||[e[1].sheet]).forEach(function(nm){if(nm)known[normSheet(nm)]=e[0]})});var found=[],seen={};Object.keys(rawU||{}).forEach(function(sn){var key=normSheet(sn);if(!key||seen[key])return;seen[key]=1;var id=known[key];if(!id){var num=sheetNum(sn),first=num?num[0]:3,name=String(sn).trim().replace(/^\d+[\.\d]*\s*/,'');id='p-'+key.replace(/[^a-z0-9åäö]+/g,'-');PROJECT_META[id]={name:name,sheets:[sn],auto:true,grp:first===1?'d2d':'tm',perHour:first===2,tele2:/tele2/i.test(name)}}found.push({id:id,sheet:sn,num:sheetNum(sn)})});if(!found.length)return;found.sort(function(a,b){var x=a.num||[99],y=b.num||[99];for(var i=0;i<Math.max(x.length,y.length);i++){var d=(x[i]||0)-(y[i]||0);if(d)return d}return a.sheet.localeCompare(b.sheet,'sv')});var ids=found.map(function(f){return f.id}),d2d=[],tm=[];ids.forEach(function(id){var m=PROJECT_META[id],isD2D=m.auto?m.grp==='d2d':GROUP_D2D.indexOf(id)>=0;(isD2D?d2d:tm).push(id);if(m.auto){if(m.perHour)SNITT_PER_TIMMAR[id]=1;else MANSDAG_PROJECTS[id]=1;if(m.tele2&&isD2D)TELE2_PROJECTS[id]=1;if(!PROJECT_COLS[id])PROJECT_COLS[id]=autoCols(m,rawU,rawM)}});[MANSDAG_PROJECTS,SNITT_PER_TIMMAR,TELE2_PROJECTS].forEach(function(o){Object.keys(o).forEach(function(p){if(ids.indexOf(p)<0)delete o[p]})});GROUP_D2D=d2d;GROUP_TM=tm;ALL_PROJECTS=[].concat(d2d,tm)}
-async function loadData(){try{var cb='?t='+Date.now();var r=await Promise.all([fetch('data/utfall.json'+cb),fetch('data/mal.json'+cb),fetch('data/last_synced.json'+cb)]);var rawU=r[0].ok?await r[0].json():null,rawM=r[1].ok?await r[1].json():null;if(rawU)discoverProjects(rawU,rawM||{});if(rawU)convertJsonToStore(rawU,utfallData);if(rawM)convertJsonToStore(rawM,malData);dailyProject=new Set(ALL_PROJECTS);if(r[2].ok){var s=await r[2].json();if(s.last_synced)document.getElementById('lastSynced').textContent='Senast synkad: '+s.last_synced}}catch(e){console.warn('Kunde inte ladda data:',e)}renderCurrent()}
+function discoverProjects(rawU,rawM){var known={};Object.entries(PROJECT_META).forEach(function(e){(e[1].sheets||[e[1].sheet]).forEach(function(nm){if(nm)known[normSheet(nm)]=e[0]})});var found=[],seen={};Object.keys(rawU||{}).forEach(function(sn){var key=normSheet(sn);if(!key||seen[key])return;seen[key]=1;var id=known[key];if(!id){var num=sheetNum(sn),first=num?num[0]:3,name=String(sn).trim().replace(/^\d+[\.\d]*\s*/,'');id='p-'+key.replace(/[^a-z0-9åäö]+/g,'-');var ck={};Object.values(rawU[sn]||{}).forEach(function(r){Object.keys(r).forEach(function(k){if(typeof r[k]==='number')ck[k.toLowerCase()]=1})});PROJECT_META[id]={name:name,sheets:[sn],auto:true,grp:first===1?'d2d':'tm',perHour:first===2,tele2:/tele2/i.test(name)||['tv','bredband','mbb','mobil'].every(function(c){return ck[c]})}}found.push({id:id,sheet:sn,num:sheetNum(sn)})});if(!found.length)return;found.sort(function(a,b){var x=a.num||[99],y=b.num||[99];for(var i=0;i<Math.max(x.length,y.length);i++){var d=(x[i]||0)-(y[i]||0);if(d)return d}return a.sheet.localeCompare(b.sheet,'sv')});var ids=found.map(function(f){return f.id}),d2d=[],tm=[];ids.forEach(function(id){var m=PROJECT_META[id],isD2D=m.auto?m.grp==='d2d':GROUP_D2D.indexOf(id)>=0;(isD2D?d2d:tm).push(id);if(m.auto){if(m.perHour)SNITT_PER_TIMMAR[id]=1;else MANSDAG_PROJECTS[id]=1;if(m.tele2&&isD2D)TELE2_PROJECTS[id]=1;if(!PROJECT_COLS[id])PROJECT_COLS[id]=autoCols(m,rawU,rawM)}});[MANSDAG_PROJECTS,SNITT_PER_TIMMAR,TELE2_PROJECTS].forEach(function(o){Object.keys(o).forEach(function(p){if(ids.indexOf(p)<0)delete o[p]})});GROUP_D2D=d2d;GROUP_TM=tm;ALL_PROJECTS=[].concat(d2d,tm)}
+/* === SÄLJARSIDAN ===
+   Läser data/individ.json från synken: en rad per projekt, säljare och dag med order, tillägg, mansdagar,
+   tider och samtal. Lönen finns bara när synken körs med PUBLICERA_LON=ja, alltså först efter inloggning.
+   Projekten kopplas till prodplanens projekt via namnet för att hämta målsnitt och arbetsdagar ur målfilen. */
+var individData=null,spSelected=null,spSortKey='prod',spSortDir=-1,spGroup='alla';
+/* Grupp som i Översikt: prodplanens D2D- och TM-grupper. Okända projekt med samtalsdata räknas som TM. */
+function spGroupOf(n,rows){var id=spMapProject(n);if(id)return GROUP_D2D.indexOf(id)>=0?'d2d':'tm';return rows.some(function(r){return r.projekt===n&&r.samtal>0})?'tm':'d2d'}
+function spSetGroup(g,el){spGroup=g;spSelected=null;document.querySelectorAll('#spGroupFilter .filter-pill').forEach(function(p){p.classList.toggle('active',p===el)});renderSellerPage()}
+function spEsc(s){return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function spKey(s){return normSheet(s).replace(/^(tele2|telia)/,'')}
+function spMapProject(name){
+  var k=spKey(name),best=null,bl=0;
+  ALL_PROJECTS.forEach(function(id){var m=PROJECT_META[id];(m.sheets||[m.sheet]).forEach(function(sh){
+    if(!sh)return;var s=spKey(sh);if(!s||s.length<3)return;
+    if(s===k){best=id;bl=999}else if(bl<999&&(k.indexOf(s)===0||s.indexOf(k)===0)&&s.length>bl){best=id;bl=s.length}})});
+  return best}
+function spMonthKey(){return getYear()+'-'+String(getMonth()+1).padStart(2,'0')}
+function spData(){var md=individData&&individData[spMonthKey()];if(!md)return null;var k=md.kolumner;
+  return{meta:md,rows:md.rader.map(function(r){var o={};k.forEach(function(c,i){o[c]=r[i]});return o})}}
+function spProjInfo(name,lastDate,rows,dFrom,dTo){
+  var id=spMapProject(name),y=getYear(),m=getMonth(),days=new Date(y,m+1,0).getDate(),goalDays=[],periodGoal=0,goalSoFar=0,inP=function(dk){return dk>=dFrom&&dk<=dTo};
+  var perHour=id?!!SNITT_PER_TIMMAR[id]:rows.some(function(r){return r.projekt===name&&r.samtal>0});
+  var pDays=new Set();for(var i0=1;i0<=days;i0++){var d0=toDateKey(y,m,i0);if(inP(d0))pDays.add(d0)}
+  if(id){var md=getProjectData(id).mData;for(var i=1;i<=days;i++){var dk=toDateKey(y,m,i),r=md[dk];if(!r||!inP(dk))continue;
+    var s=findVal(normalizeRow(r,'mal'),'Mål säljare'),g=getProjectMalProd(id,r);if(typeof s==='number'&&s>0)goalDays.push(dk);periodGoal+=g;if(dk<=lastDate)goalSoFar+=g}}
+  if(!goalDays.length){for(var j=1;j<=days;j++){var dj=toDateKey(y,m,j),w=new Date(y,m,j).getDay();if(inP(dj)&&w>=1&&w<=(perHour?5:4))goalDays.push(dj)}}
+  var hitt=goalDays.filter(function(d){return d<=lastDate}).length;
+  return{id:id,perHour:perHour,goalSnitt:id?goalSnitt([id],pDays):0,periodGoal:periodGoal,goalSoFar:goalSoFar,goalDays:goalDays,hittills:hitt,kvar:goalDays.length-hitt}}
+function spN(v,d){return typeof v==='number'&&isFinite(v)?v.toLocaleString('sv-SE',{minimumFractionDigits:d||0,maximumFractionDigits:d||0}):'—'}
+function spKr(v){return typeof v==='number'&&isFinite(v)?Math.round(v).toLocaleString('sv-SE')+' kr':'—'}
+function spPct(v){return typeof v==='number'&&isFinite(v)?Math.round(v*100)+' %':'—'}
+function spHrs(h){if(!(h>0))return'—';var t=Math.round(h*60);return Math.floor(t/60)+':'+String(t%60).padStart(2,'0')}
+function spMinSec(h){if(!(h>0))return'—';var s=Math.round(h*3600);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0')}
+function spSelect(p,ev){if(p===null)spSelected=null;else if(multiSelectMode||(ev&&(ev.ctrlKey||ev.metaKey))){if(!spSelected)spSelected=new Set();if(spSelected.has(p))spSelected.delete(p);else spSelected.add(p);if(!spSelected.size)spSelected=null}else spSelected=new Set([p]);renderSellerPage()}
+function spSort(k){if(spSortKey===k)spSortDir=-spSortDir;else{spSortKey=k;spSortDir=(k==='namn'||k==='projekt')?1:-1}renderSellerPage()}
+function spChips(names){var el=document.getElementById('spProjectSelector');if(!el)return;var all=!spSelected,h='<button class="proj-chip'+(all?' active':'')+'" onclick="spSelect(null,event)">Alla</button>';
+  names.forEach(function(n){h+='<button class="proj-chip'+(!all&&spSelected.has(n)?' active':'')+'" data-p="'+spEsc(n)+'" onclick="spSelect(this.dataset.p,event)">'+spEsc(n)+'</button>'});
+  el.innerHTML=h+'<button class="proj-chip multi-toggle'+(multiSelectMode?' active':'')+'" onclick="toggleMultiSelect();renderSellerPage()" title="När Välj flera är på läggs varje klickat projekt till eller tas bort">Välj flera</button>'}
+/* Säljarnas färgskala mot kravet (avrundade procent): under 95 % röd, 95–99 % gul, 100–110 % grön, över 110 % mörkgrön. */
+function spLvl(r){if(typeof r!=='number'||!isFinite(r)||r<0)return null;var p=Math.round(r*100);return p<95?'red':p<100?'yellow':p<=110?'green':'darkgreen'}
+var spMonthShown='',spView='utfall';
+/* Utfall och Effektivitet är två sidor i samma ruta, så att man slipper scrolla */
+function spToggleView(){spView=spView==='utfall'?'effektivitet':'utfall';renderSellerPage();var p=document.getElementById('spResultPanel');if(p&&p.scrollIntoView)p.scrollIntoView({block:'nearest'})}
+function spShowView(hasEff){if(!hasEff)spView='utfall';var b=document.getElementById('spViewBtn'),t=document.getElementById('spResultTitle'),s=document.getElementById('spSellerTable'),e=document.getElementById('spEffTable');
+  if(b){b.style.display=hasEff?'':'none';b.textContent=spView==='utfall'?'Se effektivitet →':'← Tillbaka till utfall';b.setAttribute('aria-label',spView==='utfall'?'Visa effektivitet per säljare':'Visa utfall per säljare')}
+  if(t)t.textContent=spView==='utfall'?'Utfall per säljare':'Effektivitet per säljare';if(s)s.style.display=spView==='utfall'?'':'none';if(e)e.style.display=spView==='effektivitet'?'':'none'}
+var SP_KAT={'bredband':'BB','flytt bredband':'Flytt BB','tv':'TV','mobil':'Mobil','streaming':'Streaming','mbb':'MBB','ea':'EA','mbh':'MBH','film':'Film','sport':'Sport','tv box':'TV Box','tv fl':'TV FL','trygghetspaket':'Trygghetspaket','bredband om':'Bredband OM','räknas ej':'Räknas ej'};
+var SP_KAT_ORDER=['BB','TV','Mobil','Streaming','MBB','EA','MBH','Flytt BB'];
+function spKat(c){var k=String(c).trim().toLowerCase();return SP_KAT[k]||(k?String(c).trim():'Övrigt')}
+function spLegend(){return'<div class="sp-legend" role="note" aria-label="Färgförklaring"><span class="lg-darkgreen"><i></i>Över 110 % av kravet</span><span class="lg-green"><i></i>100–110 %</span><span class="lg-yellow"><i></i>95–99 %</span><span class="lg-red"><i></i>Under 95 %</span></div>'}
+function spResetDates(){document.getElementById('spFrom').value='';document.getElementById('spTo').value='';renderSellerPage()}
+function spDay(d){return parseInt(d.slice(8))+' '+MONTHS_SV[getMonth()].toLowerCase()}
+var spPicked=null;
+function spPick(k){spPicked=spPicked===k?null:k;renderSellerPage()}
+function spBars(list,till){var mx=list.length?list[0][1]:1;
+  return'<div class="sp-bars">'+list.map(function(t){return'<div class="sp-bar-row'+(till.has(t[0])?' till':'')+'"><span class="sp-bar-name">'+spEsc(t[0])+'</span><div class="sp-bar-track"><div class="sp-bar" style="width:'+Math.max(3,t[1]/mx*100)+'%"></div></div><span class="sp-bar-val">'+spN(t[1])+'</span></div>'}).join('')+'</div>'+
+    (list.some(function(t){return till.has(t[0])})?'<div class="sp-bar-legend"><span><i></i>Produkt</span><span><i class="till"></i>Tillägg</span></div>':'')}
+function spCombine(ps,info,lastDate){
+  var c={id:ps[0].id,namn:ps[0].namn,parts:ps,projekter:ps.map(function(a){return a.projekt}),kat:{},dates:{}};c.projekt=c.projekter.join(', ');
+  ['prod','till','md','inl','vant','samt','samtal','telsvar','nej','bortfall','hit_w','snitt_w'].forEach(function(f){c[f]=ps.reduce(function(s,a){return s+(a[f]||0)},0)});
+  var tot=function(f){var xs=ps.filter(function(a){return a[f]!=null});return xs.length?xs.reduce(function(s,a){return s+a[f]},0):null};
+  c.lon=tot('lon');c.prognos=tot('prognos');c.mal=tot('mal');
+  var prodMal=ps.filter(function(a){return a.mal!=null}).reduce(function(s,a){return s+a.prod},0);
+  ps.forEach(function(a){Object.keys(a.kat||{}).forEach(function(k){c.kat[k]=(c.kat[k]||0)+a.kat[k]});Object.keys(a.dates||{}).forEach(function(d){c.dates[d]=1})});
+  c.dagar=Object.keys(c.dates).length;
+  var hd={};ps.forEach(function(a){info[a.projekt].goalDays.forEach(function(d){if(d<=lastDate)hd[d]=1})});c.hittills=Object.keys(hd).length;c.narvaro=c.hittills>0?c.dagar/c.hittills:null;
+  var u=ps.map(function(a){return a.perHour});c.perHour=u.every(function(x){return x===true})?true:u.every(function(x){return x===false})?false:null;
+  c.snitt=c.perHour===true?(c.inl>0?c.prod/c.inl:null):c.perHour===false?(c.md>0?c.prod/c.md:null):null;
+  c.uppf=c.mal>0?prodMal/c.mal:null;
+  c.effektiv=c.inl>0&&c.samtal>0?(c.vant+c.samt)/c.inl:null;c.hitrate=c.samtal>0?c.hit_w/c.samtal:null;c.samtalEx=c.samtal>0?c.samtal-c.telsvar:null;c.snittSamtal=c.samtal>0?c.snitt_w/c.samtal:null;
+  c.key='s|'+c.id;return c}
+function spSellerProducts(a,meta,rs){var projs=a.projekter||[a.projekt],ps={},till=new Set();projs.forEach(function(p){(((meta.tillagg||{})[p])||[]).forEach(function(x){till.add(x)})});
+  rs.forEach(function(r){if(r.id===a.id&&projs.indexOf(r.projekt)>=0){var p=r.pr||{};Object.keys(p).forEach(function(k){ps[k]=(ps[k]||0)+p[k]})}});
+  var list=Object.entries(ps).sort(function(x,y){return y[1]-x[1]||x[0].localeCompare(y[0],'sv')});
+  return'<div class="sp-detail-box"><div class="sp-detail-title">'+spEsc(a.namn)+' – '+spEsc(a.projekt)+': '+spN(a.prod)+' produkter och '+spN(a.till)+' tillägg</div>'+(list.length?spBars(list,till):'<div class="sp-note">Inga order den här månaden.</div>')+'</div>'}
+function spTable(cols,rows,total,sortable,o){o=o||{};
+  var h='<table class="sp-table"><thead><tr>'+cols.map(function(c){var cl=(c.txt?'txt':'')+(sortable&&spSortKey===c.k?' sorted'+(spSortDir>0?' asc':''):'');
+    return'<th class="'+cl+'"'+(sortable?' onclick="spSort(\''+c.k+'\')"':'')+'>'+c.l+'</th>'}).join('')+'</tr></thead><tbody>';
+  var cell=function(c,a){var v=c.f?c.f(a):spEsc(a[c.k]==null?'':a[c.k]),cl=c.txt?'txt':'';if(c.lvl){var l=levelOf(typeof c.lvl==='function'?c.lvl(a):a[c.k]);if(l)cl+=' lvl-'+l}if(c.slvl){var s=spLvl(c.slvl(a));if(s)cl+=' lvl-'+s}if(c.strong)cl+=' strong';var tt=c.tip?c.tip(a):'';return'<td class="'+cl+'"'+(tt?' title="'+spEsc(tt)+'"':'')+'>'+v+'</td>'};
+  rows.forEach(function(a){h+='<tr'+(o.rowAttr?o.rowAttr(a):'')+'>'+cols.map(function(c){return cell(c,a)}).join('')+'</tr>';
+    var dt=o.detail?o.detail(a):'';if(dt)h+='<tr class="sp-detail"><td colspan="'+cols.length+'">'+dt+'</td></tr>'});
+  if(total)h+='<tr class="total">'+cols.map(function(c){return cell(c,total)}).join('')+'</tr>';
+  return h+'</tbody></table>'}
+function renderSellerPage(){
+  var ms=document.getElementById('monthSel3'),ys=document.getElementById('yearSel3');if(ms)ms.value=getMonth();if(ys)ys.value=getYear();
+  var mk=spMonthKey();ppSakerManad(mk);var fe=document.getElementById('spFrom'),te=document.getElementById('spTo'),mFirst=mk+'-01',mLast=mk+'-'+String(new Date(getYear(),getMonth()+1,0).getDate()).padStart(2,'0');
+  if(spMonthShown!==mk){spMonthShown=mk;fe.value='';te.value=''}
+  fe.min=te.min=mFirst;fe.max=te.max=mLast;
+  var dFrom=fe.value||mFirst,dTo=te.value||mLast;if(dFrom>dTo){var dT=dFrom;dFrom=dTo;dTo=dT}
+  var filtered=!!(fe.value||te.value);document.getElementById('spDateReset').style.display=filtered?'':'none';
+  var D=spData(),ids=['spKpis','spProjTable','spTopProducts','spSellerTable','spEffTable'],sub=document.getElementById('spSub');
+  if(!D){spChips([]);ids.forEach(function(i){document.getElementById(i).innerHTML=''});spShowView(false);
+    document.getElementById('spKpis').innerHTML='<div class="sp-empty">'+(ppHamtar[mk]?'Hämtar '+MONTHS_SV[getMonth()].toLowerCase()+' '+getYear()+'…':'Ingen säljardata för '+MONTHS_SV[getMonth()]+' '+getYear()+'.')+'</div>';sub.textContent='';return}
+  var rows=D.rows,meta=D.meta,names=[...new Set(rows.map(function(r){return r.projekt}))];
+  var ord=function(n){var id=spMapProject(n),i=id?ALL_PROJECTS.indexOf(id):-1;return i<0?999:i};
+  names.sort(function(a,b){return ord(a)-ord(b)||a.localeCompare(b,'sv')});
+  if(spGroup!=='alla')names=names.filter(function(n){return spGroupOf(n,rows)===spGroup});
+  if(!names.length){spChips([]);ids.forEach(function(i){document.getElementById(i).innerHTML=''});spShowView(false);
+    document.getElementById('spKpis').innerHTML='<div class="sp-empty">Inga '+(spGroup==='tm'?'TM':'D2D')+'-projekt med data för '+MONTHS_SV[getMonth()]+' '+getYear()+'.</div>';sub.textContent='';return}
+  if(spSelected){[...spSelected].forEach(function(p){if(names.indexOf(p)<0)spSelected.delete(p)});if(!spSelected.size)spSelected=null}
+  spChips(names);
+  var sel=spSelected?names.filter(function(n){return spSelected.has(n)}):names,rsM=rows.filter(function(r){return sel.indexOf(r.projekt)>=0}),rs=rsM.filter(function(r){return r.datum>=dFrom&&r.datum<=dTo});
+  var lastDate=rs.reduce(function(a,r){return r.datum>a?r.datum:a},''),info={};sel.forEach(function(n){info[n]=spProjInfo(n,lastDate,rs,dFrom,dTo)});
+  /* Löneprognosen gäller alltid hela månaden, oavsett datumfilter */
+  var lastM=rsM.reduce(function(a,r){return r.datum>a?r.datum:a},''),infoM={},PM={};sel.forEach(function(n){infoM[n]=filtered?spProjInfo(n,lastM,rsM,mFirst,mLast):info[n]});
+  rsM.forEach(function(r){var k=r.projekt+'|'+r.id,x=PM[k]||(PM[k]={lon:0,dagar:0});x.lon+=r.lon||0;if((r.md||0)>0)x.dagar++});
+  var q=(document.getElementById('spSearch').value||'').trim().toLowerCase(),withLon=!!meta.lon,utanLon=new Set(meta.utan_lon||[]);
+  var F=['prod','till','md','inl','vant','samt','samtal','telsvar','nej','bortfall','hit_w','snitt_w','lon'],A={};
+  rs.forEach(function(r){var k=r.projekt+'|'+r.id,a=A[k]||(A[k]={projekt:r.projekt,id:r.id,namn:r.namn,dagar:0,kat:{},dates:{}});F.forEach(function(f){a[f]=(a[f]||0)+(r[f]||0)});if((r.md||0)>0){a.dagar++;a.dates[r.datum]=1}
+    var kt=r.kat||{};Object.keys(kt).forEach(function(c){var x=spKat(c);a.kat[x]=(a.kat[x]||0)+kt[c]})});
+  var calc=function(a,I){var u=I.perHour?a.inl:a.md,upd=a.dagar>0?u/a.dagar:(I.perHour?0:1);a.perHour=I.perHour;a.hittills=I.hittills;
+    a.narvaro=I.hittills>0?a.dagar/I.hittills:null;a.snitt=u>0?a.prod/u:null;a.mal=I.goalSnitt>0?I.goalSnitt*u:null;a.uppf=a.mal>0?a.prod/a.mal:null;
+    var pm=PM[a.projekt+'|'+a.id];a.prognos=pm&&pm.dagar>0?(pm.lon/pm.dagar)*(pm.dagar+infoM[a.projekt].kvar):(pm&&pm.lon>0?pm.lon:null);if(utanLon.has(a.projekt)){a.lon=null;a.prognos=null}
+    a.effektiv=a.inl>0&&a.samtal>0?(a.vant+a.samt)/a.inl:null;a.hitrate=a.samtal>0?a.hit_w/a.samtal:null;a.samtalEx=a.samtal>0?a.samtal-a.telsvar:null;a.snittSamtal=a.samtal>0?a.snitt_w/a.samtal:null;return a};
+  var S=Object.values(A).map(function(a){return calc(a,info[a.projekt])});
+  /* Fler än ett projekt visas: en rad per säljare där lön, produkter och tider är summan av projekten.
+     Ett projekt valt: en rad per projekt. Trapporna räknas alltid per projekt. */
+  var combined=sel.length>1,PSM={};
+  rsM.forEach(function(r){if(utanLon.has(r.projekt))return;var x=PSM[r.id]||(PSM[r.id]={lon:0,dates:{},projs:{}});x.lon+=r.lon||0;x.projs[r.projekt]=1;if((r.md||0)>0)x.dates[r.datum]=1});
+  if(combined){var G={};S.forEach(function(a){(G[a.id]=G[a.id]||[]).push(a)});
+    S=Object.keys(G).map(function(id){var ps=G[id];if(ps.length===1)return Object.assign(ps[0],{key:'s|'+id});var c=spCombine(ps,info,lastDate),x=PSM[id];
+      if(x&&c.lon!=null){var dg=Object.keys(x.dates).length,kv={};Object.keys(x.projs).forEach(function(p){(infoM[p]?infoM[p].goalDays:[]).forEach(function(d){if(d>lastM)kv[d]=1})});
+        c.prognos=dg>0?(x.lon/dg)*(dg+Object.keys(kv).length):(x.lon>0?x.lon:null)}else c.prognos=null;return c})}
+  S.forEach(function(a){if(!a.key)a.key=a.projekt+'|'+a.id});
+  var V=q?S.filter(function(a){return a.namn.toLowerCase().indexOf(q)>=0}):S;
+  if(spPicked&&!V.some(function(a){return a.key===spPicked}))spPicked=null;
+  var sum=function(arr,f){return arr.reduce(function(s,a){return s+(typeof a[f]==='number'&&isFinite(a[f])?a[f]:0)},0)};
+  var allH=sel.every(function(n){return info[n].perHour}),allM=sel.every(function(n){return !info[n].perHour});
+  var wdSet=new Set();sel.forEach(function(n){info[n].goalDays.forEach(function(d){wdSet.add(d)})});var wd=[...wdSet],hitt=wd.filter(function(d){return d<=lastDate}).length,kvar=wd.length-hitt;
+  var tP=sum(V,'prod'),tMd=sum(V,'md'),tI=sum(V,'inl'),tSam=sum(V,'samtal'),tMal=sum(V,'mal'),unit=allH?tI:allM?tMd:0;
+  sub.textContent=MONTHS_SV[getMonth()]+' '+getYear()+(filtered?' · period '+(dFrom===dTo?spDay(dTo):parseInt(dFrom.slice(8))+'–'+spDay(dTo)):'')+(lastDate?' · data till och med '+spDay(lastDate):'')+' · '+V.length+(combined?' säljare':' säljarrader');
+  var card=function(l,v,m,b){return'<div class="stat-card"><div class="stat-label">'+l+'</div><div class="stat-value">'+v+'</div><div class="stat-meta">'+m+'</div>'+(b||'')+'</div>'};
+  var badge=function(r){return r?'<div><span class="stat-badge badge-'+(spLvl(r)||'neutral')+'">'+Math.round(r*100)+' % av mål</span></div>':''};
+  var snitt=unit>0?tP/unit:null,malSn=unit>0&&tMal>0?tMal/unit:null;
+  document.getElementById('spKpis').innerHTML=
+    card('Sålda produkter',spN(tP),'Tillägg: '+spN(sum(V,'till'))+(tMal>0?' · mål '+spN(tMal):''),tMal>0?badge(tP/tMal):'')+
+    card(allH?'Snitt per timme':allM?'Snitt per mansdag':'Snitt',spN(snitt,2),allH||allM?(malSn?'Mål: '+spN(malSn,2):'Mål saknas'):'D2D och TM har olika enheter',malSn?badge(snitt/malSn):'')+
+    card('Mansdagar',spN(tMd,tMd%1?1:0),'Per arbetsdag: '+(hitt>0?spN(tMd/hitt,1):'—'))+
+    card('Inloggad tid',spHrs(tI),'Per mansdag: '+(tMd>0?spHrs(tI/tMd):'—'))+
+    card('Effektiv tid',tSam>0&&tI>0?spPct((sum(V,'vant')+sum(V,'samt'))/tI):'—','Väntetid och samtalstid av inloggad tid')+
+    card('Arbetsdagar',spN(hitt),(filtered?'Kvar i perioden: ':'Kvar i månaden: ')+spN(kvar));
+  // Projekt
+  var PR=sel.map(function(n){var I=info[n],u=sum(S.filter(function(a){return a.projekt===n}),'prod'),g=I.periodGoal,k=g>0?Math.max(0,g-u):null;
+    return{projekt:n,mal:g>0?g:null,utfall:u,uppf:g>0?u/g:null,kvarMal:k,kvarDag:k!==null&&I.kvar>0?k/I.kvar:null,soFar:I.goalSoFar,takt:I.goalSoFar>0?u/I.goalSoFar:null}});
+  var pt={projekt:'Totalt',mal:sum(PR,'mal')||null,utfall:sum(PR,'utfall'),kvarMal:sum(PR,'kvarMal')};pt.uppf=pt.mal?pt.utfall/pt.mal:null;pt.takt=sum(PR,'soFar')>0?pt.utfall/sum(PR,'soFar'):null;pt.kvarDag=kvar>0&&pt.kvarMal!==null?pt.kvarMal/kvar:null;
+  document.getElementById('spProjTable').innerHTML=spTable([{k:'projekt',l:'Projekt',txt:1},{k:'mal',l:'Mål',f:function(a){return spN(a.mal)}},{k:'utfall',l:'Utfall',f:function(a){return spN(a.utfall)}},
+    {k:'uppf',l:'Måluppfyllnad',f:function(a){return spPct(a.uppf)},slvl:function(a){return a.takt}},{k:'kvarMal',l:'Kvar till mål',f:function(a){return spN(a.kvarMal)}},{k:'kvarDag',l:'Kvar per dag',f:function(a){return spN(a.kvarDag,1)}}],PR,PR.length>1?pt:null,false);
+  // Mest sålda produkter
+  var pc={};rs.forEach(function(r){var p=r.pr||{};Object.keys(p).forEach(function(k){pc[k]=(pc[k]||0)+p[k]})});
+  var top=Object.entries(pc).sort(function(a,b){return b[1]-a[1]}).slice(0,10),tillAll=new Set();sel.forEach(function(n){(((meta.tillagg||{})[n])||[]).forEach(function(x){tillAll.add(x)})});
+  document.getElementById('spTopProducts').innerHTML=top.length?spBars(top,tillAll)+'<div class="sp-note">Klicka på en säljare i tabellen för att se den säljarens produkter.</div>':'<div class="sp-empty">Inga order.</div>';
+  // Säljare
+  /* Kategorier: de fyra största i urvalet, i fast ordning, resten i Övrigt */
+  var katTot={};V.forEach(function(a){Object.keys(a.kat||{}).forEach(function(c){katTot[c]=(katTot[c]||0)+a.kat[c]})});
+  var katBy=Object.keys(katTot).sort(function(x,y){return katTot[y]-katTot[x]}),katMain=katBy.slice(0,4),katRest=katBy.slice(4);
+  katMain.sort(function(x,y){var i=SP_KAT_ORDER.indexOf(x),j=SP_KAT_ORDER.indexOf(y);return(i<0?99:i)-(j<0?99:j)||x.localeCompare(y,'sv')});
+  S.forEach(function(a){katMain.forEach(function(c){a['kat_'+c]=(a.kat||{})[c]||0});a.kat_ovr=katRest.reduce(function(s,c){return s+((a.kat||{})[c]||0)},0);
+    if(a.parts){a.stegInfo=null;a.stegList=a.parts.map(function(x){var s2=((meta.steg||{})[x.projekt]||{})[String(x.id)];return s2?{p:x.projekt,st:s2}:null}).filter(Boolean);
+      a.stegNr=a.stegList.length?Math.max.apply(null,a.stegList.map(function(x){return x.st[1]})):null}
+    else{var st=((meta.steg||{})[a.projekt]||{})[String(a.id)];a.stegNr=st?st[1]:null;a.stegInfo=st||null;a.stegList=null}});
+  var katCols=katMain.map(function(c){return{k:'kat_'+c,l:c,f:function(a){return spN(a['kat_'+c])}}});
+  if(katRest.length)katCols.push({k:'kat_ovr',l:'Övrigt',f:function(a){return spN(a.kat_ovr)},tip:function(){return katRest.join(', ')}});
+  var hasSteg=V.some(function(a){return a.stegInfo||(a.stegList&&a.stegList.length)});
+  var cols=[{k:'namn',l:'Säljare',txt:1},{k:'projekt',l:'Projekt',txt:1}].concat(katCols,[{k:'prod',l:'Produkter',f:function(a){return spN(a.prod)},strong:1}],
+    hasSteg?[{k:'stegNr',l:'Steg',f:function(a){return a.stegList&&a.stegList.length?a.stegList.map(function(x){return x.st[1]+'/'+x.st[2]}).join(' · '):a.stegInfo?a.stegInfo[1]+'/'+a.stegInfo[2]:'—'},
+      tip:function(a){var one=function(s){return s[0]+' trappsatta produkter i månaden'+(s[1]<s[2]?' · '+s[3]+' kvar till steg '+(s[1]+1):' · högsta steget')};
+        return a.stegList&&a.stegList.length?a.stegList.map(function(x){return x.p+': '+one(x.st)}).join('\n'):a.stegInfo?one(a.stegInfo):''}}]:[],
+    [{k:'dagar',l:'Dagar',f:function(a){return spN(a.dagar)},tip:function(){return'Arbetade dagar = dagar med mansdag. Timmar utan mansdag syns under Inloggad tid.'}},{k:'narvaro',l:'Närvaro',f:function(a){return spPct(a.narvaro)}},{k:'inl',l:'Inloggad tid',f:function(a){return spHrs(a.inl)}},
+    {k:'snitt',l:'Snitt',f:function(a){return a.snitt==null?'—':spN(a.snitt,2)+(a.perHour==null?'':a.perHour?' /tim':' /md')},strong:1},
+    {k:'uppf',l:'Måluppfyllnad',f:function(a){return spPct(a.uppf)}}]);
+  if(withLon)cols=cols.concat([{k:'lon',l:'Lön ink sem',f:function(a){return spKr(a.lon)}},{k:'prognos',l:'Löneprognos',f:function(a){return spKr(a.prognos)}}]);
+  var sorted=V.slice().sort(function(x,y){var a=x[spSortKey],b=y[spSortKey];if(a==null&&b==null)return 0;if(a==null)return 1;if(b==null)return-1;return(typeof a==='string'?a.localeCompare(b,'sv'):a-b)*spSortDir});
+  var T={namn:'Totalt ('+V.length+')',projekt:'',dagar:sum(V,'dagar'),inl:tI,prod:tP,mal:tMal||null,lon:sum(V,'lon'),prognos:sum(V,'prognos'),perHour:allH?true:allM?false:null};
+  var hs=sum(V,'hittills');T.narvaro=hs>0?T.dagar/hs:null;T.snitt=snitt;T.uppf=tMal>0?tP/tMal:null;
+  katMain.forEach(function(c){T['kat_'+c]=sum(V,'kat_'+c)});T.kat_ovr=sum(V,'kat_ovr');
+  var notes=combined?'<div class="sp-note">En rad per säljare: lön, produkter och tider är summan av alla visade projekt. Trappan räknas för varje projekt för sig. Välj ett projekt för att se det separat.</div>':'';
+  notes+=filtered&&(withLon||hasSteg)?'<div class="sp-note">'+(withLon?'Löneprognosen':'')+(withLon&&hasSteg?' och steget i trappan gäller':hasSteg?'Steget i trappan gäller':' gäller')+' hela månaden, oavsett datumfilter.</div>':'';
+  if(!withLon)notes+=(meta.kolumner.indexOf('lon')>=0?'<div class="sp-note warn">Provisionsfiler saknas för den här månaden, så lönen kan inte räknas. Lägg Provision- och Provisionstrappa-filerna i Dropbox.</div>':'<div class="sp-note">Lönekolumnerna visas när lönen är påslagen i synken. Den slås på först när prodplanen ligger bakom inloggning.</div>');
+  else{var sp=(meta.saknar_pris||[]).filter(function(x){return sel.indexOf(x.projekt)>=0});
+    notes+='<div class="sp-note">Lön från provisionsfilerna för '+spEsc(meta.provisionsmanad||'—')+', inklusive semesterersättning. Trappsteget räknas på säljarens totala antal trappsatta produkter i projektet under månaden.</div>';
+    var andr=(meta.andringar||[]).filter(function(x){return sel.indexOf(x.projekt)>=0});
+    if(andr.length)notes+='<div class="sp-note">Ändrad ersättning under månaden: '+andr.slice(0,6).map(function(x){return spEsc(x.projekt)+' – '+spEsc(x.produkt)+' från '+(+x.fran.slice(8,10))+'/'+(+x.fran.slice(5,7))}).join(', ')+(andr.length>6?' och '+(andr.length-6)+' till':'')+'. Order före datumet har det tidigare priset.</div>';
+    var ul=sel.filter(function(n){return utanLon.has(n)});if(ul.length)notes+='<div class="sp-note">Ingen lön visas för '+ul.map(spEsc).join(', ')+', eftersom projekten inte finns i provisionsfilerna.</div>';
+    if(sp.length)notes+='<div class="sp-note warn">Produkter utan pris, räknas som 0 kr: '+sp.map(function(x){return spEsc(x.produkt)+' ('+spEsc(x.projekt)+', '+x.antal+' st)'}).join(' · ')+'</div>'}
+  document.getElementById('spSellerTable').innerHTML=V.length?spLegend()+spTable(cols,sorted,T,true,{rowAttr:function(a){var k=a.key,lv=spLvl(a.uppf);return' class="clickable'+(lv?' row-'+lv:'')+(spPicked===k?' picked':'')+'" data-k="'+spEsc(k)+'" onclick="spPick(this.dataset.k)" title="Klicka för att se säljarens produkter"'},
+    detail:function(a){return spPicked===a.key?spSellerProducts(a,meta,rs):''}})+notes:'<div class="sp-empty">'+(rs.length?'Ingen säljare matchar sökningen.':'Ingen data för vald period.')+'</div>';
+  // Effektivitet
+  var E=V.filter(function(a){return a.samtal>0}).sort(function(x,y){return y.inl-x.inl});
+  spShowView(E.length>0);
+  if(E.length){var es=sum(E,'samtal'),eT={namn:'Totalt ('+E.length+')',projekt:'',inl:sum(E,'inl'),dagar:sum(E,'dagar'),samtalEx:sum(E,'samtalEx'),nej:sum(E,'nej'),bortfall:sum(E,'bortfall')};
+    var eh=sum(E,'hittills');eT.narvaro=eh>0?eT.dagar/eh:null;eT.effektiv=eT.inl>0?(sum(E,'vant')+sum(E,'samt'))/eT.inl:null;eT.hitrate=es>0?sum(E,'hit_w')/es:null;eT.snittSamtal=es>0?sum(E,'snitt_w')/es:null;
+    document.getElementById('spEffTable').innerHTML=spTable([{k:'namn',l:'Säljare',txt:1},{k:'projekt',l:'Projekt',txt:1},{k:'inl',l:'Inloggad tid',f:function(a){return spHrs(a.inl)}},{k:'dagar',l:'Arbetade dagar',f:function(a){return spN(a.dagar)}},
+      {k:'narvaro',l:'Närvaro',f:function(a){return spPct(a.narvaro)}},{k:'effektiv',l:'Effektiv tid',f:function(a){return spPct(a.effektiv)}},{k:'hitrate',l:'Hitrate',f:function(a){return a.hitrate==null?'—':spN(a.hitrate*100,2)+' %'}},
+      {k:'samtalEx',l:'Samtal (ex. tel.svar)',f:function(a){return spN(a.samtalEx)}},{k:'nej',l:'Nej tack',f:function(a){return spN(a.nej)}},{k:'bortfall',l:'Bortfall',f:function(a){return spN(a.bortfall)}},
+      {k:'snittSamtal',l:'Snittid per samtal',f:function(a){return spMinSec(a.snittSamtal)}}],E,eT,false)+'<div class="sp-note">Effektiv tid = (väntetid + samtalstid) / inloggad tid. Hitrate och snittid per samtal är viktade med antal samtal.</div>'}
+}
+/* Prodplanens data ligger i Supabase och lämnas bara ut mot rätt kod (funktionen hamta_prodplan). */
+var SB_URL='https://wsqqxfiefvgcuoffuqxg.supabase.co',SB_KEY='sb_publishable_MX_32ko1cN4HwXM9XLZbiw_sVZkWVRb',PP_NYCKEL='prodplan_kod';
+var ppManader=[],ppHamtar={},ppGrundKlar=false;
+function ppLagrad(){try{return localStorage.getItem(PP_NYCKEL)||sessionStorage.getItem(PP_NYCKEL)||''}catch(e){return''}}
+function ppSpara(kod,kom){try{localStorage.removeItem(PP_NYCKEL);sessionStorage.removeItem(PP_NYCKEL);(kom?localStorage:sessionStorage).setItem(PP_NYCKEL,kod)}catch(e){}ppMinne=kod}
+function ppGlom(){try{localStorage.removeItem(PP_NYCKEL);sessionStorage.removeItem(PP_NYCKEL)}catch(e){}ppMinne=''}
+var ppMinne='';function ppKod(){return ppMinne||ppLagrad()}
+function ppVisa(fel){var l=document.getElementById('ppLas');l.hidden=false;document.getElementById('ppFel').textContent=fel||'';var b=document.getElementById('ppKnapp');b.disabled=false;b.textContent='Öppna';var i=document.getElementById('ppKod');i.value='';try{i.focus()}catch(e){}}
+function ppLas(){ppGlom();location.reload()}
+async function ppHamta(kod,manad){var r=await fetch(SB_URL+'/rest/v1/rpc/hamta_prodplan',{method:'POST',headers:{'apikey':SB_KEY,'Content-Type':'application/json'},body:JSON.stringify({p_kod:kod,p_manad:manad||null})});if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}
+function ppFeltext(f){return f==='sparr'?'För många försök. Vänta 15 minuter och försök igen.':f==='saknas'?'Ingen kod är satt ännu. Kontakta din administratör.':'Fel kod. Försök igen.'}
+function ppAktuellManad(){var d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')}
+function ppLaggIn(d){individData=individData||{};Object.keys(d||{}).forEach(function(k){if(k.indexOf('individ:')===0)individData[k.slice(8)]=d[k]});
+  if(!ppGrundKlar&&d&&d.utfall){var rawU=d.utfall,rawM=d.mal||{};discoverProjects(rawU,rawM);convertJsonToStore(rawU,utfallData);if(d.mal)convertJsonToStore(rawM,malData);dailyProject=new Set(ALL_PROJECTS);ppGrundKlar=true}
+  if(d&&d.last_synced&&d.last_synced.last_synced)document.getElementById('lastSynced').textContent='Senast synkad: '+d.last_synced.last_synced}
+/* Säljarsidan: hämtar en månad som inte är hämtad än och ritar om när den kommit */
+function ppSakerManad(mk){if((individData&&individData[mk])||ppManader.indexOf(mk)<0||ppHamtar[mk])return;ppHamtar[mk]=true;
+  ppHamta(ppKod(),mk).then(function(r){ppHamtar[mk]=false;if(r&&r.ok){ppLaggIn(r.data);renderCurrent()}else if(r&&!r.ok){ppGlom();ppVisa(ppFeltext(r.fel))}}).catch(function(){ppHamtar[mk]=false})}
+async function ppOppna(ev){if(ev)ev.preventDefault();var kod=document.getElementById('ppKod').value.trim(),kom=document.getElementById('ppKom').checked;if(!kod)return;
+  var b=document.getElementById('ppKnapp');b.disabled=true;b.textContent='Öppnar…';document.getElementById('ppFel').textContent='';
+  var ok=await loadData(kod);if(ok){ppSpara(kod,kom);document.getElementById('ppLas').hidden=true}}
+async function loadData(kodIn){var kod=kodIn||ppKod();if(!kod){ppVisa('');return false}
+  var mk=ppAktuellManad(),r;
+  try{r=await ppHamta(kod,mk)}catch(e){console.warn('Kunde inte hämta data:',e);ppVisa('Kunde inte nå servern. Kontrollera uppkopplingen och försök igen.');return false}
+  if(!r||!r.ok){ppGlom();ppVisa(!kodIn&&r&&r.fel==='fel'?'Koden har ändrats. Ange den nya koden.':ppFeltext(r&&r.fel));return false}
+  ppManader=r.manader||[];ppLaggIn(r.data);
+  if(!(individData&&individData[mk])&&ppManader.length){var senast=ppManader[ppManader.length-1];try{var r2=await ppHamta(kod,senast);if(r2&&r2.ok)ppLaggIn(r2.data)}catch(e){}}
+  document.getElementById('ppLas').hidden=true;renderCurrent();return true}
 
 buildProjectChips();buildOverviewProjectChips();
 var _now=new Date();document.getElementById('monthSel').value=_now.getMonth();document.getElementById('yearSel').value=_now.getFullYear();document.getElementById('monthSel2').value=_now.getMonth();document.getElementById('yearSel2').value=_now.getFullYear();
