@@ -185,6 +185,25 @@
     .project-selector { gap: 4px; } .proj-chip { padding: 4px 10px; font-size: 11px; }
     th { font-size: 9px; padding: 5px 6px; } td { font-size: 11px; padding: 4px 6px; }
   }
+  /* Fliken Team (teamledarkoden) */
+  .tm-tabell th.dag { text-align: center; background: #fff5f0; cursor: default; }
+  .tm-tabell th.extra, .tm-tabell td.extra { background: #f7f7f5; }
+  .tm-tabell th.grupp { cursor: default; }
+  .tm-tabell td.lv-red { background: #fde4e1; color: #8f2a1f; } .tm-tabell td.lv-yellow { background: #fdf3d6; color: #6b4a07; }
+  .tm-tabell td.lv-green { background: #e1f4e8; color: #1c5f34; } .tm-tabell td.lv-darkgreen { background: #1f6f3e; color: #fff; }
+  .tm-tabell td.fet { font-weight: 700; }
+  .tm-knapp { border: none; background: none; font: inherit; font-weight: 700; color: inherit; cursor: pointer; text-decoration: underline; text-decoration-color: #c9c6c0; text-underline-offset: 3px; padding: 4px 6px; border-radius: 6px; min-height: 32px; text-align: inherit; }
+  .tm-knapp.vald { background: #fff1ec; box-shadow: inset 0 0 0 2px #f97c5a; }
+  .tm-ledare { display: block; font-size: 11px; font-weight: 500; color: #555; text-decoration: none; }
+  .tm-tabell tr.tm-detalj td { background: #fffaf7; text-align: left; white-space: normal; padding: 14px 16px; }
+  .tm-detalj-huvud { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+  .tm-detalj-huvud b { font-size: 14px; display: block; margin-bottom: 3px; }
+  .tm-detalj-innehall { display: flex; gap: 24px; flex-wrap: wrap; align-items: flex-start; }
+  .tm-detalj-innehall > div:first-child { flex: 3 1 420px; min-width: 0; } .tm-detalj-innehall > div:last-child { flex: 2 1 260px; min-width: 0; }
+  .tm-stang { min-height: 32px; padding: 4px 12px; border: 1px solid #d6d6d6; background: #fff; border-radius: 8px; font: inherit; font-size: 12px; font-weight: 600; color: #444; cursor: pointer; }
+  .tm-veckoknapp { min-height: 34px; }
+  .stat-badge.lv-red { background: #fde4e1; color: #8f2a1f; } .stat-badge.lv-yellow { background: #fdf3d6; color: #6b4a07; }
+  .stat-badge.lv-green { background: #e1f4e8; color: #1c5f34; } .stat-badge.lv-darkgreen { background: #1f6f3e; color: #fff; }
   /* Kodruta: prodplanen visas först efter rätt kod */
   .pp-las { position: fixed; inset: 0; z-index: 1000; background: #f3f2f0; display: flex; align-items: center; justify-content: center; padding: 24px; box-sizing: border-box; }
   .pp-las[hidden] { display: none; }
@@ -212,6 +231,7 @@
       <button class="main-nav-tab active" onclick="switchPage('overview')">📊 Översikt</button>
       <button class="main-nav-tab" onclick="switchPage('daily')">📅 Daglig uppföljning</button>
       <button class="main-nav-tab" onclick="switchPage('seller')">👤 Säljare</button>
+      <button class="main-nav-tab" id="navTeam" onclick="switchPage('team')" hidden>👥 Team</button>
     </div>
   </div>
   <div class="header-right" style="display:flex;align-items:center;gap:12px"><div style="display:flex;align-items:center;gap:6px;font-size:12px;color:#666;"><svg viewBox="0 0 20 20" fill="currentColor" width="13" height="13"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/></svg><span id="lastSynced">Senast synkad: —</span></div><button type="button" class="pp-lasknapp" onclick="ppLas()" title="Lås prodplanen på den här enheten">Lås</button></div>
@@ -256,6 +276,21 @@
       <div id="teliaFmBreakdown" style="display:none;margin-bottom:16px;"><div class="stat-card" style="padding:14px 20px;"><div class="stat-label">Snitt per timme – Kategorier</div><div id="teliaFmBreakdownContent" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:8px;"></div></div></div>
       <div class="table-wrap" id="tableWrap"><table><thead id="tableHead"></thead><tbody id="tableBody"></tbody></table></div>
       <div id="dailyCompareWrap" style="display:none"></div>
+    </div>
+  </div>
+  <div id="teamPage" style="display:none;">
+    <div class="filter-bar" style="flex-direction:column;align-items:stretch;gap:8px;">
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+        <div class="filter-group"><span class="filter-label">Vecka:</span><button class="nav-btn tm-veckoknapp" onclick="tmByt(-1)" aria-label="Föregående vecka">◀</button><strong id="tmVeckotext" style="min-width:170px;text-align:center;font-size:13px"></strong><button class="nav-btn tm-veckoknapp" id="tmNasta" onclick="tmByt(1)" aria-label="Nästa vecka">▶</button></div>
+        <div class="filter-group"><span class="filter-label">Veckomål:</span><div class="filter-pills" id="tmLage"><button class="filter-pill active" onclick="tmSattLage('hittills')">Veckan hittills</button><button class="filter-pill" onclick="tmSattLage('hela')">Hela veckan</button></div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;"><div class="filter-group"><span class="filter-label">Projekt:</span><div class="filter-pills" id="tmProjekt"></div></div></div>
+    </div>
+    <div class="page-section">
+      <div class="page-title">Team</div>
+      <div class="page-sub" id="tmSub"></div>
+      <div id="tmKpis" class="sp-kpis"></div>
+      <div class="sp-panel"><div class="sp-panel-title">Teamen, bäst först</div><div id="tmTabell"></div></div>
     </div>
   </div>
   <div id="sellerPage" style="display:none;">
@@ -436,9 +471,9 @@ function afterSelectionChange(){
 }
 
 /* === PAGE SWITCHING === */
-function switchPage(pg,keep){if(pg!==currentPage&&!keep&&pg!=='seller'&&currentPage!=='seller')carrySelection(pg);currentPage=pg;document.querySelectorAll('.main-nav-tab').forEach(function(t){t.classList.remove('active')});document.querySelectorAll('.main-nav-tab').forEach(function(t){if((pg==='overview'&&t.textContent.indexOf('Översikt')>=0)||(pg==='daily'&&t.textContent.indexOf('Daglig')>=0)||(pg==='seller'&&t.textContent.indexOf('Säljare')>=0))t.classList.add('active')});document.getElementById('overviewPage').style.display=pg==='overview'?'':'none';document.getElementById('dailyPage').style.display=pg==='daily'?'':'none';var spg=document.getElementById('sellerPage');if(spg)spg.style.display=pg==='seller'?'':'none';renderCurrent()}
+function switchPage(pg,keep){if(pg!==currentPage&&!keep&&['seller','team'].indexOf(pg)<0&&['seller','team'].indexOf(currentPage)<0)carrySelection(pg);currentPage=pg;document.querySelectorAll('.main-nav-tab').forEach(function(t){t.classList.remove('active')});document.querySelectorAll('.main-nav-tab').forEach(function(t){if((pg==='overview'&&t.textContent.indexOf('Översikt')>=0)||(pg==='daily'&&t.textContent.indexOf('Daglig')>=0)||(pg==='seller'&&t.textContent.indexOf('Säljare')>=0)||(pg==='team'&&t.textContent.indexOf('Team')>=0))t.classList.add('active')});document.getElementById('overviewPage').style.display=pg==='overview'?'':'none';document.getElementById('dailyPage').style.display=pg==='daily'?'':'none';var spg=document.getElementById('sellerPage');if(spg)spg.style.display=pg==='seller'?'':'none';var tpg=document.getElementById('teamPage');if(tpg)tpg.style.display=pg==='team'?'':'none';renderCurrent()}
 function switchToDaily(proj){var g=GROUP_D2D.indexOf(proj)>=0?'d2d':'tm';dailyGroup=g;dailyProject=new Set([proj]);document.querySelectorAll('#dailyGroupFilter .filter-pill').forEach(function(p){p.classList.toggle('active',p.textContent.toLowerCase()===g)});buildProjectChips();updateDailyTabs();switchPage('daily',true)}
-function renderCurrent(){refreshProjectLists();if(currentPage==='overview')renderOverview();else if(currentPage==='seller')renderSellerPage();else renderDaily()}
+function renderCurrent(){refreshProjectLists();if(currentPage==='overview')renderOverview();else if(currentPage==='seller')renderSellerPage();else if(currentPage==='team')renderTeamPage();else renderDaily()}
 function setOverviewFilter(f,el){overviewFilter=f;overviewProject=null;document.querySelectorAll('#overviewFilter .filter-pill').forEach(function(p){p.classList.remove('active')});el.classList.add('active');buildOverviewProjectChips();renderOverview()}
 function buildOverviewProjectChips(){var ps=visibleProjects(groupList(overviewFilter));var sel=document.getElementById('overviewProjectSelector');var html='<button class="proj-chip '+(overviewProject===null?'active':'')+'" onclick="selectOverviewProject(\'alla\',this,event)">Alla</button>';ps.forEach(function(p){html+='<button class="proj-chip '+((overviewProject instanceof Set&&overviewProject.has(p))?'active':'')+'" onclick="selectOverviewProject(\''+p+'\',this,event)">'+PROJECT_META[p].name+'</button>'});html+='<button class="proj-chip multi-toggle'+(multiSelectMode?' active':'')+'" onclick="toggleMultiSelect()" title="När Välj flera är på läggs varje klickat projekt till eller tas bort">Välj flera</button>';sel.innerHTML=html}
 function selectOverviewProject(p,el,ev){if(p==='alla')overviewProject=null;else if(multiSelectMode||(ev&&(ev.ctrlKey||ev.metaKey))){if(overviewProject===null)overviewProject=new Set();if(overviewProject.has(p))overviewProject.delete(p);else overviewProject.add(p);if(overviewProject.size===0)overviewProject=null}else{if(overviewProject instanceof Set&&overviewProject.size===1&&overviewProject.has(p))overviewProject=null;else overviewProject=new Set([p])}document.querySelectorAll('#overviewProjectSelector .proj-chip').forEach(function(c){var val=c.textContent;if(val==='Alla')c.classList.toggle('active',overviewProject===null);else{var pr=Object.entries(PROJECT_META).find(function(e){return e[1].name===val});if(pr)c.classList.toggle('active',overviewProject instanceof Set&&overviewProject.has(pr[0]))}});renderOverview()}
@@ -795,6 +830,92 @@ function renderSellerPage(){
       {k:'samtalEx',l:'Samtal (ex. tel.svar)',f:function(a){return spN(a.samtalEx)}},{k:'nej',l:'Nej tack',f:function(a){return spN(a.nej)}},{k:'bortfall',l:'Bortfall',f:function(a){return spN(a.bortfall)}},
       {k:'snittSamtal',l:'Snittid per samtal',f:function(a){return spMinSec(a.snittSamtal)}}],E,eT,false)+'<div class="sp-note">Effektiv tid = (väntetid + samtalstid) / inloggad tid. Hitrate och snittid per samtal är viktade med antal samtal.</div>'}
 }
+/* === FLIKEN TEAM ===
+   Teamindelningen kommer från adminsidan (Supabase) och följer bara med teamledarkoden. Resultaten räknas här
+   på samma säljardata och målsnitt som säljarsidan. Veckomål: hittills = dagskrav × mansdagar (som Daglig
+   uppföljning), hela veckan = antal säljare × dagskrav × 4. Fredag är extra och räknas inte in. */
+var tmVecka='',tmLage='hittills',tmProj='Alla',tmOppen=null,tmRadCache={};
+var TM_DAGAR=['Måndag','Tisdag','Onsdag','Torsdag','Fredag'];
+function tmDatum(s){return new Date(+s.slice(0,4),+s.slice(5,7)-1,+s.slice(8,10))}
+function tmNyckel(d){return toDateKey(d.getFullYear(),d.getMonth(),d.getDate())}
+function tmPlus(s,n){var d=tmDatum(s);d.setDate(d.getDate()+n);return tmNyckel(d)}
+function tmMandag(s){var d=tmDatum(s),w=d.getDay()||7;d.setDate(d.getDate()-w+1);return tmNyckel(d)}
+function tmVeckonr(s){var d=tmDatum(s),t=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())),w=t.getUTCDay()||7;t.setUTCDate(t.getUTCDate()+4-w);var y0=new Date(Date.UTC(t.getUTCFullYear(),0,1));return Math.ceil(((t-y0)/86400000+1)/7)}
+function tmKort(s){var d=tmDatum(s);return d.getDate()+'/'+(d.getMonth()+1)}
+function tmRader(mk){var md=individData&&individData[mk];if(!md)return null;if(tmRadCache[mk]&&tmRadCache[mk].src===md)return tmRadCache[mk].rows;
+  var k=md.kolumner,rows=md.rader.map(function(r){var o={};k.forEach(function(c,i){o[c]=r[i]});return o});tmRadCache[mk]={src:md,rows:rows};return rows}
+function tmSenasteDag(){var s='';Object.keys(individData||{}).forEach(function(mk){(tmRader(mk)||[]).forEach(function(r){if(r.datum>s&&((r.md||0)>0||(r.prod||0)>0))s=r.datum})});return s}
+function tmMalsnitt(id,dates){if(!id)return 0;var perHour=!!SNITT_PER_TIMMAR[id],num=0,den=0,lagg=function(md,dk){var n=normalizeRow(md[dk],'mal'),sn=findVal(n,'Mål snitt'),w=perHour?findVal(n,'Mål timmar'):findVal(n,'Mål säljare');if(typeof sn==='number'&&sn>0&&typeof w==='number'&&w>0){num+=sn*w;den+=w}};
+  dates.forEach(function(dk){var md=malData[storeKey(id,+dk.slice(0,4),+dk.slice(5,7)-1)]||{};if(md[dk])lagg(md,dk)});
+  if(den===0&&dates.length){var md0=malData[storeKey(id,+dates[0].slice(0,4),+dates[0].slice(5,7)-1)]||{};Object.keys(md0).forEach(function(dk){lagg(md0,dk)})}
+  return den>0?Math.round(num/den*100)/100:0}
+function tmPeriod(mandag){var p=(tmData&&tmData.perioder)||[];for(var i=p.length-1;i>=0;i--){if(p[i].fran<=mandag&&p[i].till>=mandag)return p[i]}
+  for(var j=p.length-1;j>=0;j--){if(p[j].fran<=tmPlus(mandag,4)&&p[j].till>=mandag)return p[j]}return null}
+function tmByt(n){tmVecka=tmPlus(tmVecka||tmMandag(tmSenasteDag()||tmNyckel(new Date())),7*n);tmOppen=null;renderTeamPage()}
+function tmSattLage(l){tmLage=l;document.querySelectorAll('#tmLage .filter-pill').forEach(function(b){b.classList.toggle('active',(l==='hittills')===(b.textContent.indexOf('hittills')>=0))});renderTeamPage()}
+function tmSattProj(p){tmProj=p;tmOppen=null;renderTeamPage()}
+function tmVisa(team,dag){tmOppen=tmOppen&&tmOppen.team===team&&tmOppen.dag===dag?null:{team:team,dag:dag};renderTeamPage()}
+function tmBerakna(){var mandag=tmVecka,dagar=[0,1,2,3,4].map(function(i){return tmPlus(mandag,i)}),arbete=dagar.slice(0,4),senast=tmSenasteDag();
+  var period=tmPeriod(mandag);if(!period)return{dagar:dagar,lag:[],period:null};
+  var tmap={};((tmData&&tmData.team)||[]).forEach(function(t){tmap[t.id]=t});var grp={};
+  (period.medlemmar||[]).forEach(function(m){(grp[m.team_id]=grp[m.team_id]||[]).push(m)});
+  var lag=Object.keys(grp).map(function(tid){var t=tmap[tid]||{namn:'Team '+tid,projekt:''},med=grp[tid],ids=new Set(med.map(function(m){return m.saljare_id})),ledare=med.filter(function(m){return m.ar_ledare})[0];
+    var id=spMapProject(t.projekt),perHour=!!SNITT_PER_TIMMAR[id],krav=tmMalsnitt(id,arbete),till=new Set();
+    var dag={};dagar.forEach(function(dk){var mk=dk.slice(0,7),rows=tmRader(mk)||[],meta=individData&&individData[mk];((meta&&meta.tillagg&&meta.tillagg[t.projekt])||[]).forEach(function(x){till.add(x)});
+      var d={prod:0,till:0,md:0,inl:0,pr:{},saljare:{}};rows.forEach(function(r){if(r.datum!==dk||r.projekt!==t.projekt||!ids.has(r.id))return;d.prod+=r.prod||0;d.till+=r.till||0;d.md+=r.md||0;d.inl+=r.inl||0;
+        var p=r.pr||{};Object.keys(p).forEach(function(k){d.pr[k]=(d.pr[k]||0)+p[k]});var s=d.saljare[r.id]||(d.saljare[r.id]={namn:r.namn,prod:0,till:0,md:0});s.prod+=r.prod||0;s.till+=r.till||0;s.md+=r.md||0});
+      var enh=perHour?d.inl:d.md,saldeN=Object.keys(d.saljare).filter(function(k){return d.saljare[k].prod>0}).length;d.snitt=enh>0?d.prod/enh:(saldeN>0?d.prod/saldeN:null);dag[dk]=d});
+    var prod=0,enh=0,tillSum=0;arbete.forEach(function(dk){prod+=dag[dk].prod;tillSum+=dag[dk].till;enh+=perHour?dag[dk].inl:dag[dk].md});
+    var mal=tmLage==='hittills'||perHour?krav*enh:ids.size*krav*4;
+    return{id:tid,namn:t.namn,projekt:t.projekt,ledare:ledare?ledare.saljare_namn:'',ledareId:ledare?ledare.saljare_id:null,antal:ids.size,krav:krav,perHour:perHour,dag:dag,prod:prod,till:tillSum,enh:enh,mal:mal,uppf:mal>0?prod/mal:null,tillagg:till,medlemmar:med}});
+  return{dagar:dagar,lag:lag,period:period,senast:senast}}
+function tmDetalj(t,dagk,dagar){var lista={},sal={},rubrik,sammanfattning,dagKol;
+  if(dagk==='vecka'){dagar.slice(0,4).forEach(function(dk){var d=t.dag[dk];Object.keys(d.pr).forEach(function(k){lista[k]=(lista[k]||0)+d.pr[k]});Object.keys(d.saljare).forEach(function(i){var s=d.saljare[i],x=sal[i]||(sal[i]={namn:s.namn,prod:0,till:0,dagar:0});x.prod+=s.prod;x.till+=s.till;if(s.md>0)x.dagar++})});
+    var fre=t.dag[dagar[4]];rubrik=t.namn+' · '+(t.ledare||'ingen teamledare')+' · veckan hittills, måndag–torsdag';
+    sammanfattning=spN(t.prod)+' produkter och '+spN(t.till)+' tillägg · '+spN(t.enh,t.perHour?1:0)+(t.perHour?' timmar':' mansdagar')+' · snitt '+(t.enh>0?spN(t.prod/t.enh,2):'—')+' · dagskrav '+spN(t.krav,2)+(fre.prod>0?' · plus '+spN(fre.prod)+' produkter extra på fredagen':'');dagKol='Dagar'}
+  else{var d=t.dag[dagk],i0=dagar.indexOf(dagk);Object.keys(d.pr).forEach(function(k){lista[k]=d.pr[k]});Object.keys(d.saljare).forEach(function(i){var s=d.saljare[i];sal[i]={namn:s.namn,prod:s.prod,till:s.till,dagar:s.md>0?'Ja':'–'}});
+    rubrik=t.namn+' · '+(t.ledare||'ingen teamledare')+' · '+TM_DAGAR[i0].toLowerCase()+' '+tmKort(dagk)+(i0===4?', extra':'');
+    sammanfattning=spN(d.prod)+' produkter och '+spN(d.till)+' tillägg · '+(i0===4?Object.keys(d.saljare).filter(function(k){return d.saljare[k].prod>0}).length+' säljare sålde · inget dagskrav':spN(d.md)+' mansdagar · snitt '+(d.snitt==null?'—':spN(d.snitt,2))+' · dagskrav '+spN(t.krav,2));dagKol='Mansdag'}
+  var l=Object.entries(lista).sort(function(a,b){return b[1]-a[1]||a[0].localeCompare(b[0],'sv')});
+  var s=Object.keys(sal).map(function(i){return Object.assign({id:+i},sal[i])}).sort(function(a,b){return b.prod-a.prod||a.namn.localeCompare(b.namn,'sv')});
+  return'<tr class="tm-detalj"><td colspan="17"><div class="tm-detalj-huvud"><div><b>'+spEsc(rubrik)+'</b><span class="sp-note" style="margin:0">'+spEsc(sammanfattning)+'</span></div><button class="tm-stang" onclick="tmVisa(\''+spEsc(t.id)+'\',\''+spEsc(dagk)+'\')">Stäng</button></div>'
+   +'<div class="tm-detalj-innehall"><div><div class="sp-panel-title">Sålda produkter</div>'+(l.length?spBars(l,t.tillagg):'<div class="sp-note">Inga order.</div>')+'</div>'
+   +'<div><div class="sp-panel-title">Säljarna</div><table class="sp-table"><thead><tr><th class="txt">Säljare</th><th>Produkter</th><th>Tillägg</th><th>'+dagKol+'</th></tr></thead><tbody>'
+   +s.map(function(x){return'<tr><td class="txt">'+spEsc(x.namn)+(x.id===t.ledareId?' <b style="color:#9a3412;font-size:11px">Teamledare</b>':'')+'</td><td class="fet">'+spN(x.prod)+'</td><td>'+spN(x.till)+'</td><td>'+(typeof x.dagar==='number'?spN(x.dagar):x.dagar)+'</td></tr>'}).join('')
+   +'</tbody></table></div></div></td></tr>'}
+function renderTeamPage(){var el=document.getElementById('tmTabell');if(!el)return;
+  if(!tmVecka)tmVecka=tmMandag(tmSenasteDag()||tmNyckel(new Date()));
+  var dagar=[0,1,2,3,4].map(function(i){return tmPlus(tmVecka,i)});dagar.forEach(function(dk){ppSakerManad(dk.slice(0,7))});
+  var idag=tmMandag(tmNyckel(new Date()));document.getElementById('tmNasta').disabled=tmVecka>=idag;
+  document.getElementById('tmVeckotext').textContent='Vecka '+tmVeckonr(tmVecka)+' · '+tmKort(tmVecka)+'–'+tmKort(tmPlus(tmVecka,6));
+  var laddar=dagar.some(function(dk){return ppHamtar[dk.slice(0,7)]});
+  var res=tmBerakna(),alla=res.lag,projs=[...new Set(alla.map(function(t){return t.projekt}))].sort(function(a,b){return a.localeCompare(b,'sv')});
+  if(tmProj!=='Alla'&&projs.indexOf(tmProj)<0)tmProj='Alla';
+  document.getElementById('tmProjekt').innerHTML=['Alla'].concat(projs).map(function(p){return'<button class="filter-pill'+(p===tmProj?' active':'')+'" onclick="tmSattProj(this.dataset.p)" data-p="'+spEsc(p)+'">'+spEsc(p)+'</button>'}).join('');
+  var lag=alla.filter(function(t){return tmProj==='Alla'||t.projekt===tmProj}).sort(function(a,b){return(b.uppf==null?-1:b.uppf)-(a.uppf==null?-1:a.uppf)});
+  document.getElementById('tmSub').textContent=res.period?'Teamindelning '+tmKort(res.period.fran)+'–'+tmKort(res.period.till)+' · '+lag.length+(lag.length===1?' team':' team')+(res.senast?' · data till och med '+tmKort(res.senast):''):'';
+  if(!res.period){document.getElementById('tmKpis').innerHTML='';el.innerHTML='<div class="sp-empty">'+(laddar?'Hämtar veckan…':'Ingen teamindelning för vecka '+tmVeckonr(tmVecka)+'. Teamindelningen görs på adminsidan.')+'</div>';return}
+  var P=0,G=0,E=0,GK=0,FRE=0,SPD=0;lag.forEach(function(t){P+=t.prod;G+=t.mal;E+=t.enh;GK+=t.krav*t.enh;FRE+=t.dag[dagar[4]].prod});
+  var tot=G>0?P/G:null,lv=spLvl(tot),card=function(l,v,m,b){return'<div class="stat-card"><div class="stat-label">'+l+'</div><div class="stat-value">'+v+'</div><div class="stat-meta">'+m+'</div>'+(b||'')+'</div>'};
+  var dagarMed=dagar.slice(0,4).filter(function(dk){return lag.some(function(t){return t.dag[dk].md>0})}).length;
+  document.getElementById('tmKpis').innerHTML=card('Resultat mån–tor',spN(P),'Veckomål '+spN(Math.round(G)),G>0?'<div class="stat-badge '+(lv?'lv-'+lv:'')+'">'+spPct(tot)+' av målet</div>':'')
+    +card('Snitt per mansdag',E>0?spN(P/E,2):'—','Dagskrav '+(E>0?spN(GK/E,2):'—'))+card('Säljare per dag',dagarMed?spN(E/dagarMed,1):'—','Snitt måndag–torsdag')
+    +card('Extra fredag',spN(FRE),'Utanför veckomålet')+card('Team',String(lag.length),lag.length===1?'1 teamledare':lag.length+' teamledare');
+  var h='<table class="sp-table tm-tabell"><thead><tr><th class="txt grupp" rowspan="2">Team</th><th class="txt grupp" rowspan="2">Projekt</th><th class="grupp" rowspan="2">Säljare</th><th class="grupp" rowspan="2">Dagskrav</th><th class="grupp" rowspan="2">Veckomål</th><th class="grupp" rowspan="2">Resultat</th><th class="grupp" rowspan="2">Status</th>'
+    +dagar.map(function(dk,i){return'<th class="dag'+(i===4?' extra':'')+'" colspan="2">'+TM_DAGAR[i]+' '+tmKort(dk)+(i===4?' · extra':'')+'</th>'}).join('')+'</tr><tr>'
+    +dagar.map(function(dk,i){return'<th class="grupp'+(i===4?' extra':'')+'">Resultat</th><th class="grupp'+(i===4?' extra':'')+'">Snitt</th>'}).join('')+'</tr></thead><tbody>';
+  lag.forEach(function(t){var vo=tmOppen&&tmOppen.team===String(t.id);h+='<tr><td class="txt"><button class="tm-knapp'+(vo&&tmOppen.dag==='vecka'?' vald':'')+'" aria-expanded="'+(vo&&tmOppen.dag==='vecka')+'" onclick="tmVisa(\''+t.id+'\',\'vecka\')" title="Visa veckan hittills">'+spEsc(t.namn)+'<span class="tm-ledare">'+spEsc(t.ledare||'Ingen teamledare')+'</span></button></td>'
+    +'<td class="txt">'+spEsc(t.projekt)+'</td><td>'+t.antal+'</td><td>'+spN(t.krav,2)+'</td><td>'+spN(Math.round(t.mal))+'</td><td class="fet">'+spN(t.prod)+'</td><td class="fet'+(spLvl(t.uppf)?' lv-'+spLvl(t.uppf):'')+'">'+spPct(t.uppf)+'</td>';
+    dagar.forEach(function(dk,i){var d=t.dag[dk],har=d.prod>0||d.md>0,sel=vo&&tmOppen.dag===dk,dl=i<4&&d.snitt!=null&&t.krav>0?spLvl(d.snitt/t.krav):null;
+      h+='<td class="'+(i===4?'extra':'')+'">'+(har?'<button class="tm-knapp'+(sel?' vald':'')+'" aria-expanded="'+sel+'" onclick="tmVisa(\''+t.id+'\',\''+dk+'\')" title="Visa vad teamet sålde '+TM_DAGAR[i].toLowerCase()+'">'+spN(d.prod)+'</button>':'–')+'</td><td class="'+(i===4?'extra':'')+(dl?' lv-'+dl:'')+'">'+(d.snitt==null?'–':spN(d.snitt,1))+'</td>'});
+    h+='</tr>';if(vo)h+=tmDetalj(t,tmOppen.dag,dagar)});
+  var tp=dagar.map(function(dk){var p=0,m=0;lag.forEach(function(t){p+=t.dag[dk].prod;m+=t.dag[dk].md});return{p:p,m:m}});
+  h+='<tr class="total"><td class="txt">Summa</td><td></td><td>'+lag.reduce(function(s,t){return s+t.antal},0)+'</td><td></td><td>'+spN(Math.round(G))+'</td><td>'+spN(P)+'</td><td class="'+(lv?'lv-'+lv:'')+'">'+spPct(tot)+'</td>'
+    +tp.map(function(x,i){return'<td class="'+(i===4?'extra':'')+'">'+spN(x.p)+'</td><td class="'+(i===4?'extra':'')+'">'+(x.m>0?spN(x.p/x.m,1):'–')+'</td>'}).join('')+'</tr></tbody></table>';
+  el.innerHTML=(lag.length?spLegend()+h:'<div class="sp-empty">Inga team i '+spEsc(tmProj)+' den här veckan.</div>')
+    +'<div class="sp-note">'+(tmLage==='hittills'?'Veckan hittills: veckomålet är dagskravet gånger de mansdagar teamet har haft, som i Daglig uppföljning.':'Hela veckan: veckomålet är antal säljare i teamet gånger dagskravet gånger 4 dagar.')
+    +' Teamledarens egen försäljning räknas med. Fredag är extra och räknas inte in i resultat eller mål; fredagens snitt är per säljare som sålde. Klicka på teamet för veckan, eller på en dags resultat för den dagen.</div>'}
+
 /* Prodplanens data ligger i Supabase och lämnas bara ut mot rätt kod (funktionen hamta_prodplan). */
 var SB_URL='https://wsqqxfiefvgcuoffuqxg.supabase.co',SB_KEY='sb_publishable_MX_32ko1cN4HwXM9XLZbiw_sVZkWVRb',PP_NYCKEL='prodplan_kod';
 var ppManader=[],ppHamtar={},ppGrundKlar=false;
@@ -807,12 +928,14 @@ function ppLas(){ppGlom();location.reload()}
 async function ppHamta(kod,manad){var r=await fetch(SB_URL+'/rest/v1/rpc/hamta_prodplan',{method:'POST',headers:{'apikey':SB_KEY,'Content-Type':'application/json'},body:JSON.stringify({p_kod:kod,p_manad:manad||null})});if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}
 function ppFeltext(f){return f==='sparr'?'För många försök. Vänta 15 minuter och försök igen.':f==='saknas'?'Ingen kod är satt ännu. Kontakta din administratör.':'Fel kod. Försök igen.'}
 function ppAktuellManad(){var d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')}
+var tmRoll='',tmData=null;
+function ppRoll(r){if(!r)return;tmRoll=r.roll||'';if(r.team)tmData=r.team;var nb=document.getElementById('navTeam');if(nb)nb.hidden=tmRoll!=='teamledare';if(tmRoll!=='teamledare'&&currentPage==='team')switchPage('overview')}
 function ppLaggIn(d){individData=individData||{};Object.keys(d||{}).forEach(function(k){if(k.indexOf('individ:')===0)individData[k.slice(8)]=d[k]});
   if(!ppGrundKlar&&d&&d.utfall){var rawU=d.utfall,rawM=d.mal||{};discoverProjects(rawU,rawM);convertJsonToStore(rawU,utfallData);if(d.mal)convertJsonToStore(rawM,malData);dailyProject=new Set(ALL_PROJECTS);ppGrundKlar=true}
   if(d&&d.last_synced&&d.last_synced.last_synced)document.getElementById('lastSynced').textContent='Senast synkad: '+d.last_synced.last_synced}
 /* Säljarsidan: hämtar en månad som inte är hämtad än och ritar om när den kommit */
 function ppSakerManad(mk){if((individData&&individData[mk])||ppManader.indexOf(mk)<0||ppHamtar[mk])return;ppHamtar[mk]=true;
-  ppHamta(ppKod(),mk).then(function(r){ppHamtar[mk]=false;if(r&&r.ok){ppLaggIn(r.data);renderCurrent()}else if(r&&!r.ok){ppGlom();ppVisa(ppFeltext(r.fel))}}).catch(function(){ppHamtar[mk]=false})}
+  ppHamta(ppKod(),mk).then(function(r){ppHamtar[mk]=false;if(r&&r.ok){ppRoll(r);ppLaggIn(r.data);renderCurrent()}else if(r&&!r.ok){ppGlom();ppVisa(ppFeltext(r.fel))}}).catch(function(){ppHamtar[mk]=false})}
 async function ppOppna(ev){if(ev)ev.preventDefault();var kod=document.getElementById('ppKod').value.trim(),kom=document.getElementById('ppKom').checked;if(!kod)return;
   var b=document.getElementById('ppKnapp');b.disabled=true;b.textContent='Öppnar…';document.getElementById('ppFel').textContent='';
   var ok=await loadData(kod);if(ok){ppSpara(kod,kom);document.getElementById('ppLas').hidden=true}}
@@ -820,7 +943,7 @@ async function loadData(kodIn){var kod=kodIn||ppKod();if(!kod){ppVisa('');return
   var mk=ppAktuellManad(),r;
   try{r=await ppHamta(kod,mk)}catch(e){console.warn('Kunde inte hämta data:',e);ppVisa('Kunde inte nå servern. Kontrollera uppkopplingen och försök igen.');return false}
   if(!r||!r.ok){ppGlom();ppVisa(!kodIn&&r&&r.fel==='fel'?'Koden har ändrats. Ange den nya koden.':ppFeltext(r&&r.fel));return false}
-  ppManader=r.manader||[];ppLaggIn(r.data);
+  ppManader=r.manader||[];ppRoll(r);ppLaggIn(r.data);
   if(!(individData&&individData[mk])&&ppManader.length){var senast=ppManader[ppManader.length-1];try{var r2=await ppHamta(kod,senast);if(r2&&r2.ok)ppLaggIn(r2.data)}catch(e){}}
   document.getElementById('ppLas').hidden=true;renderCurrent();return true}
 
