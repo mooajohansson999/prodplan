@@ -456,8 +456,13 @@ def steg_nr(granser, antal):
     return max(idx, key=lambda i: granser[i][0]) + 1
 
 
-def bygg_individ(orders, timmar, prov_rows, trappa_rows, med_lon):
+def bygg_individ(orders, timmar, prov_rows, trappa_rows, med_lon, alias=None):
     fast, trappor, projstart, starter, visning = bygg_lonetabeller(prov_rows, trappa_rows)
+    alias = alias or {}
+
+    def pris_namn(proj, prod):
+        """Namnbyten från adminsidan: ett nytt produktnamn i ordrarna prissätts som den gamla produkten."""
+        return alias.get((proj, prod)) or alias.get(('', prod)) or prod
     utan_lon = {}   # projekt utan provision under månaden: ingen lön och ingen varning om saknade priser
 
     def prisinfo(proj, prod, datum):
@@ -484,6 +489,7 @@ def bygg_individ(orders, timmar, prov_rows, trappa_rows, med_lon):
     for o in giltiga:
         m, d = o['Datum'][:7], o['Datum'][:10]
         proj, prod, sid = n_txt(o.get('Projekt')), n_txt(o.get('Produkt')), int(n_num(o.get('LoxysoftID')))
+        prod = pris_namn(proj, prod)
         pi = prisinfo(proj, prod, d)
         if (pi and pi[0] == 'trappa') or (har_provision(proj, d) and raknas_i_trappan(proj, prod)):
             k = (m, sid, TRAPPGRUPPER.get(proj, proj))
@@ -498,6 +504,7 @@ def bygg_individ(orders, timmar, prov_rows, trappa_rows, med_lon):
     for o in giltiga:
         m, proj_namn = o['Datum'][:7], ' '.join(str(o.get('Projekt', '')).split())
         proj, prod, sid = n_txt(proj_namn), n_txt(o.get('Produkt')), int(n_num(o.get('LoxysoftID')))
+        prod = pris_namn(proj, prod)
         r = rad(m, proj_namn, sid, o['Datum'][:10])
         typ = str(o.get('Produkttyp', '')).strip().lower()
         if typ == 'produkt':
@@ -656,6 +663,73 @@ def skriv_till_supabase(all_data, individ, ts, status=None):
         sys.exit(1)
 
 
+class SupabaseFel(RuntimeError):
+    def __init__(self, text, status):
+        super().__init__(text)
+        self.status = status
+
+
+def supabase_hamta(tabell):
+    """Läser alla rader ur en tabell med den hemliga nyckeln, 1000 åt gången."""
+    h = {'apikey': SUPABASE_KEY}
+    if not SUPABASE_KEY.startswith('sb_'):
+        h['Authorization'] = f'Bearer {SUPABASE_KEY}'
+    ut, start = [], 0
+    while True:
+        r = requests.get(f'{SUPABASE_URL}/rest/v1/{tabell}?select=*&order=id.asc&limit=1000&offset={start}', headers=h, timeout=120)
+        if r.status_code >= 300:
+            raise SupabaseFel(f'{tabell}: HTTP {r.status_code} {r.text[:300]}', r.status_code)
+        sida = r.json()
+        ut.extend(sida)
+        if len(sida) < 1000:
+            return ut
+        start += 1000
+
+
+def supabase_lagg_till(tabell, rader):
+    h = {'apikey': SUPABASE_KEY, 'Content-Type': 'application/json', 'Prefer': 'return=minimal'}
+    if not SUPABASE_KEY.startswith('sb_'):
+        h['Authorization'] = f'Bearer {SUPABASE_KEY}'
+    for i in range(0, len(rader), 500):
+        r = requests.post(f'{SUPABASE_URL}/rest/v1/{tabell}', headers=h,
+                          data=json.dumps(rader[i:i + 500], ensure_ascii=False, default=str).encode('utf-8'), timeout=120)
+        if r.status_code >= 300:
+            raise SupabaseFel(f'{tabell}: HTTP {r.status_code} {r.text[:300]}', r.status_code)
+
+
+def ren(s):
+    return ' '.join(str(s).split()) if s is not None else None
+
+
+def provision_fran_excel(prov):
+    """Excel-raderna som rader för Supabase, första gången provisionen flyttas dit."""
+    fast, trappa = {}, {}
+    for r in prov['provision']:
+        start = startdatum(r) or '2000-01-01'
+        k = (ren(r['Projekt']), ren(r['Produkt']), start)
+        b_in = r.get('Ersättning IN')
+        fast[k] = {'kund': ren(r.get('Kund')), 'projekt': k[0], 'produkt': k[1], 'belopp': n_num(r.get('Ersättning Ut')),
+                   'belopp_in': n_num(b_in) if b_in not in (None, '') else None, 'galler_fran': start}
+    for r in prov['trappa']:
+        start = startdatum(r) or '2000-01-01'
+        sid = int(n_num(r.get('LoxysoftID'))) or None
+        k = (ren(r['Projekt']), ren(r['Produkt']), sid or 0, start, n_num(r.get('Intervall start')))
+        trappa[k] = {'kund': ren(r.get('Kund')), 'projekt': k[0], 'produkt': k[1], 'saljare_id': sid,
+                     'saljare_namn': ren(r.get('Säljare')) if sid else None, 'steg_fran': k[4],
+                     'steg_till': n_num(r.get('Intervall slut')), 'belopp': n_num(r.get('Provisionsbelopp')), 'galler_fran': start}
+    return list(fast.values()), list(trappa.values())
+
+
+def provision_till_rader(fast, trappa):
+    """Supabase-raderna i samma form som Excel-raderna, så att lönelogiken är densamma."""
+    p = [{'Kund': x.get('kund'), 'Projekt': x['projekt'], 'Produkt': x['produkt'], 'Ersättning Ut': x['belopp'],
+          'Ersättning IN': x.get('belopp_in'), 'Gäller från': x['galler_fran']} for x in fast]
+    t = [{'Kund': x.get('kund'), 'Projekt': x['projekt'], 'Produkt': x['produkt'], 'Säljare': x.get('saljare_namn'),
+          'LoxysoftID': x.get('saljare_id') or 0, 'Intervall start': x['steg_fran'], 'Intervall slut': x['steg_till'],
+          'Provisionsbelopp': x['belopp'], 'Gäller från': x['galler_fran']} for x in trappa]
+    return p, t
+
+
 # MAIN SYNC LOOP
 # ==============================
 
@@ -721,16 +795,52 @@ MED_LON = PUBLICERA_LON and SUPABASE_PA     # lön bara när datan ligger skydda
 if PUBLICERA_LON and not SUPABASE_PA:
     print('::warning::PUBLICERA_LON är på men Supabase saknas. Lönen räknas inte, eftersom datan då skulle bli publik.')
 
+ALIAS, PROV_KALLA = {}, 'Excel-filerna i Dropbox'
+if SUPABASE_PA:
+    try:
+        sb_fast, sb_trappa = supabase_hamta('provision_fast'), supabase_hamta('provision_trappa')
+        if not sb_fast and not sb_trappa and (all_prov['provision'] or all_prov['trappa']):
+            f_rader, t_rader = provision_fran_excel(all_prov)
+            supabase_lagg_till('provision_fast', f_rader)
+            supabase_lagg_till('provision_trappa', t_rader)
+            print(f'Supabase: provisionen flyttad från Excel-filerna ({len(f_rader)} fasta ersättningar, {len(t_rader)} trappsteg)')
+            sb_fast, sb_trappa = supabase_hamta('provision_fast'), supabase_hamta('provision_trappa')
+        if sb_fast or sb_trappa:
+            p_rader, t_rader = provision_till_rader(sb_fast, sb_trappa)
+            all_prov = {'provision': p_rader, 'trappa': t_rader}
+            PROV_KALLA = 'adminsidan'
+            if prov_filer['provision'] or prov_filer['trappa']:
+                print('Provisionsfilerna i Dropbox används inte längre. Provisionen ändras på adminsidan.')
+        ALIAS = {(n_txt(a.get('projekt') or ''), n_txt(a['namn_i_order'])): n_txt(a['prissatt_som']) for a in supabase_hamta('produktnamn')}
+    except SupabaseFel as e:
+        if e.status == 404:
+            print('::warning::Provisionstabellerna finns inte i Supabase än (kör supabase_5_provision.sql). Excel-filerna används så länge.')
+        else:
+            print(f'::error::Supabase: kunde inte läsa provisionen ({e}).')
+            sys.exit(1)
+    except Exception as e:
+        print(f'::error::Supabase: kunde inte läsa provisionen ({e}). Kontrollera uppkopplingen och hemligheterna.')
+        sys.exit(1)
+print(f'Provision från {PROV_KALLA}: {len(all_prov["provision"])} fasta ersättningar, {len(all_prov["trappa"])} trappsteg, {len(ALIAS)} namnbyten')
+
 individ = bygg_individ(all_rawdata['rawdata_orders'], all_rawdata['rawdata_timmar'],
-                       all_prov['provision'], all_prov['trappa'], MED_LON)
+                       all_prov['provision'], all_prov['trappa'], MED_LON, ALIAS)
 print(f'Säljardata: {len(individ)} månader, lön {"med" if MED_LON else "avstängd"}')
 ts = datetime.datetime.now(ZoneInfo('Europe/Stockholm')).strftime('%Y-%m-%d %H:%M')
 LON_VARIABEL = os.environ.get('PUBLICERA_LON', '')
 print(f'Lön: PUBLICERA_LON={LON_VARIABEL!r}, Supabase {"på" if SUPABASE_PA else "av"} → lön {"på" if MED_LON else "av"}')
 print(f'Provisionsfiler: {", ".join(prov_filer["provision"]) or "inga"} | Trappfiler: {", ".join(prov_filer["trappa"]) or "inga"}')
 # Synkens status följer med till sidan, så att säljarsidan kan visa varför lönen saknas
+SALDA = {}
+for o in all_rawdata['rawdata_orders']:
+    if str(o.get('Produkttyp', '')).strip().upper() != 'TA BORT' and o.get('Projekt') and o.get('Produkt'):
+        SALDA.setdefault(ren(o['Projekt']), set()).add(ren(o['Produkt']))
+SENASTE = max(individ) if individ else None
 STATUS = {'tid': ts, 'lon_variabel': LON_VARIABEL, 'lon_pa': MED_LON,
-          'provisionsfiler': prov_filer['provision'], 'trappfiler': prov_filer['trappa']}
+          'provisionsfiler': prov_filer['provision'], 'trappfiler': prov_filer['trappa'], 'provision_kalla': PROV_KALLA,
+          'manad': SENASTE, 'saknar_pris': individ[SENASTE].get('saknar_pris', []) if SENASTE else [],
+          'utan_lon': individ[SENASTE].get('utan_lon', []) if SENASTE else [],
+          'produkter': {k: sorted(v) for k, v in sorted(SALDA.items())}}
 
 if SUPABASE_PA:
     # Prodplanen läser från Supabase med kod. Gamla publika filer tas bort, så att de försvinner från sidan.
