@@ -73,7 +73,7 @@
 <main id="app" hidden>
   <div>
     <h1>Teamindelning</h1>
-    <p class="ingress">Lägg upp D2D-teamen för en period på en eller två veckor. Teamledaren räknas som medlem i sitt team, så hens egen försäljning kommer med. Fliken Team i prodplanen visar indelningen direkt efter att du sparat.</p>
+    <p class="ingress">Välj teamledare och säljare för en period på en eller två veckor. Uppföljningen följer teamledaren, så det behövs inga teamnamn. Teamledaren räknas som medlem i sitt team, så hens egen försäljning kommer med. Fliken Team i prodplanen visar indelningen direkt efter att du sparat.</p>
   </div>
 
   <section class="ruta" aria-label="Period">
@@ -160,7 +160,7 @@ function arD2D(p) { return /d2d/i.test(p) || /^tele2\b/i.test(p); }
 function projektLista() { var s = new Set(); S.saljare.forEach(function (x) { (x.projekt || []).forEach(function (p) { if (arD2D(p)) s.add(p); }); });
   S.kort.forEach(function (k) { if (k.projekt) s.add(k.projekt); }); return [...s].sort(function (a, b) { return a.localeCompare(b, 'sv'); }); }
 function tilldelade() { var s = new Set(); S.kort.forEach(function (k) { k.medlemmar.forEach(function (m) { s.add(m.saljare_id); }); }); return s; }
-function poolSaljare() { var sok = $('sok').value.trim().toLowerCase(), upptagen = tilldelade(), grans = dPlus($('fran').value, -35);
+function poolSaljare(utanSok) { var sok = utanSok ? '' : $('sok').value.trim().toLowerCase(), upptagen = tilldelade(), grans = dPlus($('fran').value, -35);
   return S.saljare.filter(function (x) { if (upptagen.has(x.id)) return false;
     if (sok) return x.namn.toLowerCase().indexOf(sok) >= 0 || String(x.id).indexOf(sok) === 0;
     return (x.projekt || []).some(arD2D) && x.senast_sedd && x.senast_sedd >= grans; }); }
@@ -189,46 +189,52 @@ function rita() {
     + (sok ? '' : '<span class="chip ' + (pool.length ? 'gul' : 'gron') + '">' + (pool.length ? pool.length + (pool.length === 1 ? ' säljare' : ' säljare') + ' med tid i D2D utan team' : 'Alla aktiva D2D-säljare har ett team') + '</span>')
     + (S.overlapp && S.overlapp.length ? '<span class="chip rod">Överlappar sparad period ' + S.overlapp.map(function (x) { return dKort(x.fran) + '–' + dKort(x.till); }).join(', ') + '</span>' : '')
     + (S.andrat ? '<span class="chip gul">Ändringar som inte är sparade</span>' : '');
-  var teamOpt = S.kort.map(function (k) { return '<option value="' + esc(k.key) + '">' + esc(k.namn + ' · ' + k.projekt) + '</option>'; }).join('');
+  var teamOpt = S.kort.map(function (k) { return '<option value="' + esc(k.key) + '">' + esc(etikett(k)) + '</option>'; }).join('');
   $('pool').innerHTML = pool.length ? pool.slice(0, 120).map(function (x) {
     return '<div class="poolrad"><span>' + esc(x.namn) + ' <small>' + x.id + (x.projekt && x.projekt.length ? ' · ' + esc(x.projekt.filter(arD2D).join(', ') || x.projekt.join(', ')) : '') + '</small></span>'
       + '<select data-tilldela="' + x.id + '" aria-label="Välj team för ' + esc(x.namn) + '"><option value="">Välj team</option>' + teamOpt + '</select></div>'; }).join('')
     + (pool.length > 120 ? '<span class="chip">+ ' + (pool.length - 120) + ' till, sök för att hitta fler</span>' : '')
     : '<p class="tom">' + (sok ? 'Ingen säljare utan team matchar sökningen.' : 'Alla säljare med tid i D2D-projekten de senaste fem veckorna har ett team. Sök för att lägga till någon annan.') + '</p>';
   var projOpt = function (val) { return projektLista().map(function (p) { return '<option' + (p === val ? ' selected' : '') + '>' + esc(p) + '</option>'; }).join(''); };
+  var ledig = poolSaljare.call(null, true);
   $('kort').innerHTML = S.kort.map(function (k) {
-    var ledare = k.medlemmar.filter(function (m) { return m.ar_ledare; })[0];
-    return '<section class="lag" aria-label="' + esc(k.namn) + '">'
-      + '<input type="text" value="' + esc(k.namn) + '" data-namn="' + esc(k.key) + '" aria-label="Teamets namn" style="font-weight:600;font-size:15px">'
-      + '<div class="tva"><div class="falt"><span class="etikett">Projekt</span><select data-projekt="' + esc(k.key) + '" aria-label="Projekt för ' + esc(k.namn) + '">' + projOpt(k.projekt) + '</select></div>'
-      + '<div class="falt"><span class="etikett">Teamledare</span><select data-ledare="' + esc(k.key) + '" aria-label="Teamledare för ' + esc(k.namn) + '"><option value="">Välj teamledare</option>'
-      + k.medlemmar.map(function (m) { return '<option value="' + m.saljare_id + '"' + (ledare && ledare.saljare_id === m.saljare_id ? ' selected' : '') + '>' + esc(m.saljare_namn) + '</option>'; }).join('') + '</select></div></div>'
+    var ledare = ledareAv(k), rubrik = ledare ? ledare.saljare_namn : 'Nytt team';
+    return '<section class="lag" aria-label="' + esc(etikett(k)) + '">'
+      + '<div class="falt"><span class="etikett">Teamledare</span><select data-ledare="' + esc(k.key) + '" aria-label="Teamledare" style="font-weight:600;font-size:15px">'
+      + '<option value="">Välj teamledare</option>'
+      + (k.medlemmar.length ? '<optgroup label="I teamet">' + k.medlemmar.map(function (m) { return '<option value="' + m.saljare_id + '"' + (ledare && ledare.saljare_id === m.saljare_id ? ' selected' : '') + '>' + esc(m.saljare_namn) + '</option>'; }).join('') + '</optgroup>' : '')
+      + (ledig.length ? '<optgroup label="Utan team">' + ledig.map(function (x) { return '<option value="' + x.id + '">' + esc(x.namn) + '</option>'; }).join('') + '</optgroup>' : '')
+      + '</select></div>'
+      + '<div class="falt"><span class="etikett">Projekt</span><select data-projekt="' + esc(k.key) + '" aria-label="Projekt för ' + esc(rubrik) + '">' + projOpt(k.projekt) + '</select></div>'
       + '<div class="rad" style="justify-content:space-between;align-items:baseline"><span class="etikett">Säljare</span><span style="font-size:12px;color:#555">' + k.medlemmar.length + ' säljare</span></div>'
       + (k.medlemmar.length ? '<ul>' + k.medlemmar.map(function (m) { return '<li><span>' + esc(m.saljare_namn) + (m.ar_ledare ? ' <span class="ledartag">Teamledare</span>' : '') + '</span>'
-          + '<button class="knapp liten" type="button" data-bort="' + esc(k.key) + '|' + m.saljare_id + '" aria-label="Ta bort ' + esc(m.saljare_namn) + ' från ' + esc(k.namn) + '">Ta bort</button></li>'; }).join('') + '</ul>'
-        : '<p class="tom">Inga säljare än. Välj teamet för en säljare under Säljare utan team.</p>')
+          + '<button class="knapp liten" type="button" data-bort="' + esc(k.key) + '|' + m.saljare_id + '" aria-label="Ta bort ' + esc(m.saljare_namn) + ' från teamet">Ta bort</button></li>'; }).join('') + '</ul>'
+        : '<p class="tom">Välj teamledare ovan. Säljarna lägger du sedan till under Säljare utan team.</p>')
       + '<button class="knapp liten" type="button" data-taborttam="' + esc(k.key) + '" style="align-self:flex-start">Ta bort teamet</button></section>'; }).join('')
     + '<button class="ny-lag" type="button" id="nyttLag">+ Lägg till team</button>';
   $('sparaKnapp').disabled = !S.andrat; $('angra').disabled = !S.andrat; }
 
 /* ---------- Ändringar ---------- */
+function ledareAv(k) { return k.medlemmar.filter(function (m) { return m.ar_ledare; })[0]; }
+function etikett(k) { var l = ledareAv(k); return (l ? l.saljare_namn : 'Nytt team, välj teamledare') + ' · ' + k.projekt; }
 function kortFor(key) { return S.kort.filter(function (k) { return k.key === key; })[0]; }
 function andrat() { S.andrat = true; status('Ändringarna är inte sparade än.', ''); rita(); }
 document.addEventListener('change', function (ev) { var el = ev.target, k;
   if (el.dataset.tilldela !== undefined && el.value) { var x = S.saljare.filter(function (s) { return s.id === +el.dataset.tilldela; })[0]; k = kortFor(el.value);
     if (x && k) { k.medlemmar.push({ saljare_id: x.id, saljare_namn: x.namn, ar_ledare: !k.medlemmar.some(function (m) { return m.ar_ledare; }) }); andrat(); } }
   else if (el.dataset.projekt !== undefined) { k = kortFor(el.dataset.projekt); if (k) { k.projekt = el.value; andrat(); } }
-  else if (el.dataset.ledare !== undefined) { k = kortFor(el.dataset.ledare); if (k) { k.medlemmar.forEach(function (m) { m.ar_ledare = String(m.saljare_id) === el.value; }); andrat(); } }
-  else if (el.dataset.namn !== undefined) { k = kortFor(el.dataset.namn); if (k) { k.namn = el.value.trim() || k.namn; andrat(); } }
+  else if (el.dataset.ledare !== undefined) { k = kortFor(el.dataset.ledare); if (!k || !el.value) return;
+    if (!k.medlemmar.some(function (m) { return String(m.saljare_id) === el.value; })) { var ny = S.saljare.filter(function (s) { return String(s.id) === el.value; })[0]; if (ny) k.medlemmar.unshift({ saljare_id: ny.id, saljare_namn: ny.namn, ar_ledare: false }); }
+    k.medlemmar.forEach(function (m) { m.ar_ledare = String(m.saljare_id) === el.value; }); andrat(); }
   else if (el.id === 'fran') { $('till').value = dPlus(el.value, (S.langd || 7) - 1); laddaPeriod(); }
   else if (el.id === 'till') laddaPeriod(); });
 document.addEventListener('click', function (ev) { var el = ev.target.closest('button'); if (!el) return; var k;
   if (el.dataset.bort) { var p = el.dataset.bort.split('|'); k = kortFor(p[0]); if (!k) return; var var_ledare = k.medlemmar.some(function (m) { return m.saljare_id === +p[1] && m.ar_ledare; });
     k.medlemmar = k.medlemmar.filter(function (m) { return m.saljare_id !== +p[1]; }); if (var_ledare && k.medlemmar.length) k.medlemmar[0].ar_ledare = true; andrat(); }
   else if (el.dataset.taborttam) { k = kortFor(el.dataset.taborttam); if (!k) return;
-    if (k.medlemmar.length && !confirm('Ta bort ' + k.namn + '? Säljarna hamnar under Säljare utan team.')) return;
+    if (k.medlemmar.length && !confirm('Ta bort teamet för ' + etikett(k) + '? Säljarna hamnar under Säljare utan team.')) return;
     if (k.id) S.borttagna.push(k.id); S.kort = S.kort.filter(function (x) { return x !== k; }); andrat(); }
-  else if (el.id === 'nyttLag') { S.nyNr++; var proj = projektLista()[0] || ''; S.kort.push({ key: 'ny' + S.nyNr, id: null, namn: 'Team ' + (S.kort.length + 1), projekt: proj, orig: '', medlemmar: [] }); andrat(); }
+  else if (el.id === 'nyttLag') { S.nyNr++; var proj = projektLista()[0] || ''; S.kort.push({ key: 'ny' + S.nyNr, id: null, namn: '', projekt: proj, orig: '', medlemmar: [] }); andrat(); var sel = document.querySelector('[data-ledare="ny' + S.nyNr + '"]'); if (sel) sel.focus(); }
   else if (el.dataset.langd) { $('till').value = dPlus($('fran').value, +el.dataset.langd - 1); laddaPeriod(); }
   else if (el.id === 'kopiera') kopiera();
   else if (el.id === 'angra') laddaPeriod();
@@ -245,8 +251,11 @@ async function kopiera() {
 
 async function spara() {
   if (S.overlapp && S.overlapp.length) { status('Perioden överlappar en sparad period (' + S.overlapp.map(function (x) { return dKort(x.fran) + '–' + dKort(x.till); }).join(', ') + '). Välj samma datum som den, eller datum som inte överlappar.', 'fel'); return; }
-  var utanLedare = S.kort.filter(function (k) { return k.medlemmar.length && !k.medlemmar.some(function (m) { return m.ar_ledare; }); });
-  if (utanLedare.length) { status('Välj teamledare för ' + utanLedare.map(function (k) { return k.namn; }).join(', ') + '.', 'fel'); return; }
+  var utanLedare = S.kort.filter(function (k) { return k.medlemmar.length && !ledareAv(k); });
+  if (utanLedare.length) { status('Välj teamledare för ' + utanLedare.length + (utanLedare.length === 1 ? ' team' : ' team') + ' (' + utanLedare.map(function (k) { return k.projekt; }).join(', ') + ').', 'fel'); return; }
+  S.kort.filter(function (k) { return !k.medlemmar.length && k.id; }).forEach(function (k) { S.borttagna.push(k.id); });
+  S.kort = S.kort.filter(function (k) { return k.medlemmar.length; });
+  S.kort.forEach(function (k) { k.namn = ledareAv(k).saljare_namn; });
   $('sparaKnapp').disabled = true; status('Sparar…', '');
   try {
     for (var i = 0; i < S.kort.length; i++) { var k = S.kort[i];
