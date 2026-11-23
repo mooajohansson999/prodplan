@@ -202,6 +202,20 @@
   .tm-detalj-innehall > div:first-child { flex: 3 1 420px; min-width: 0; } .tm-detalj-innehall > div:last-child { flex: 2 1 260px; min-width: 0; }
   .tm-stang { min-height: 32px; padding: 4px 12px; border: 1px solid #d6d6d6; background: #fff; border-radius: 8px; font: inherit; font-size: 12px; font-weight: 600; color: #444; cursor: pointer; }
   .tm-veckoknapp { min-height: 34px; }
+  /* Färgerna i teamtabellerna ska ligga kvar när man håller musen över en rad */
+  .sp-table.tm-tabell tbody tr td.lv-red, .sp-table.tm-tabell tbody tr:hover td.lv-red { background: #fde4e1; color: #8f2a1f; }
+  .sp-table.tm-tabell tbody tr td.lv-yellow, .sp-table.tm-tabell tbody tr:hover td.lv-yellow { background: #fdf3d6; color: #6b4a07; }
+  .sp-table.tm-tabell tbody tr td.lv-green, .sp-table.tm-tabell tbody tr:hover td.lv-green { background: #e1f4e8; color: #1c5f34; }
+  .sp-table.tm-tabell tbody tr td.lv-darkgreen, .sp-table.tm-tabell tbody tr:hover td.lv-darkgreen { background: #1f6f3e; color: #fff; }
+  .sp-table.tm-tabell tbody tr td.extra:not([class*="lv-"]), .sp-table.tm-tabell tbody tr:hover td.extra:not([class*="lv-"]) { background: #f7f7f5; }
+  .sp-table.tm-tabell tbody tr.tm-detalj td, .sp-table.tm-tabell tbody tr.tm-detalj:hover td { background: #fffaf7; }
+  /* Teamledarna vecka för vecka */
+  .tm-trend-svg { display: block; width: 100%; height: auto; max-height: 260px; }
+  .tm-legend { display: flex; flex-wrap: wrap; gap: 6px 10px; margin: 8px 0 10px; font-size: 12px; }
+  .tm-legend button { display: flex; align-items: center; gap: 6px; border: 1px solid #e3e1dd; background: #fff; padding: 4px 10px; border-radius: 16px; cursor: pointer; font: inherit; font-size: 12px; color: #333; min-height: 30px; }
+  .tm-legend button[aria-pressed=true] { border-color: #1a1a1a; font-weight: 600; }
+  .tm-legend i { width: 16px; height: 3px; border-radius: 2px; display: inline-block; }
+  .tm-pil-upp { color: #1c5f34; font-weight: 700; } .tm-pil-ner { color: #a62a17; font-weight: 700; } .tm-pil-stabil { color: #6b6b6b; font-weight: 700; }
   .stat-badge.lv-red { background: #fde4e1; color: #8f2a1f; } .stat-badge.lv-yellow { background: #fdf3d6; color: #6b4a07; }
   .stat-badge.lv-green { background: #e1f4e8; color: #1c5f34; } .stat-badge.lv-darkgreen { background: #1f6f3e; color: #fff; }
   /* Kodruta: prodplanen visas först efter rätt kod */
@@ -290,7 +304,8 @@
       <div class="page-title">Team</div>
       <div class="page-sub" id="tmSub"></div>
       <div id="tmKpis" class="sp-kpis"></div>
-      <div class="sp-panel"><div class="sp-panel-title">Teamen, bäst först</div><div id="tmTabell"></div></div>
+      <div class="sp-panel"><div class="sp-panel-title">Teamledarna, bäst först</div><div id="tmTabell"></div></div>
+      <div class="sp-panel"><div class="sp-panel-title" id="tmTrendRubrik">Teamledarna vecka för vecka</div><div id="tmTrend"></div></div>
     </div>
   </div>
   <div id="sellerPage" style="display:none;">
@@ -705,6 +720,11 @@ function spCombine(ps,info,lastDate){
   c.uppf=c.mal>0?prodMal/c.mal:null;
   c.effektiv=c.inl>0&&c.samtal>0?(c.vant+c.samt)/c.inl:null;c.hitrate=c.samtal>0?c.hit_w/c.samtal:null;c.samtalEx=c.samtal>0?c.samtal-c.telsvar:null;c.snittSamtal=c.samtal>0?c.snitt_w/c.samtal:null;
   c.key='s|'+c.id;return c}
+/* Varför lönen saknas: synken skriver vad den såg (variabeln och provisionsfilerna) */
+function spLonOrsak(meta){var s=ppStatus,mn=MONTHS_SV[getMonth()].toLowerCase()+' '+getYear();
+  if(s&&!s.lon_pa){var v=String(s.lon_variabel==null?'':s.lon_variabel).trim();return'<div class="sp-note warn">Lönen visas inte eftersom den är avstängd i synken. Variabeln PUBLICERA_LON var '+(v?'"'+spEsc(v)+'"':'tom eller saknades')+' när synken körde '+spEsc(s.tid||'')+'. Den ska vara ja under GitHub → Settings → Secrets and variables → Actions → Variables. Kör sedan Sync Dropbox.</div>'}
+  if((s&&s.lon_pa)||meta.kolumner.indexOf('lon')>=0){var f=((s&&s.provisionsfiler)||[]).concat((s&&s.trappfiler)||[]);return'<div class="sp-note warn">Lönen är påslagen, men synken hittade inga provisionsfiler som gäller '+mn+'. '+(f.length?'Hittade: '+spEsc(f.join(', '))+'.':'Inga provisionsfiler hittades i Dropbox.')+' Lägg Provision_ÅÅÅÅ-MM.xlsx och Provisionstrappa_ÅÅÅÅ-MM.xlsx i samma mapp som uträknaren och kör Sync Dropbox.</div>'}
+  return'<div class="sp-note">Lönekolumnerna visas när lönen är påslagen i synken.</div>'}
 function spSellerProducts(a,meta,rs){var projs=a.projekter||[a.projekt],ps={},till=new Set();projs.forEach(function(p){(((meta.tillagg||{})[p])||[]).forEach(function(x){till.add(x)})});
   rs.forEach(function(r){if(r.id===a.id&&projs.indexOf(r.projekt)>=0){var p=r.pr||{};Object.keys(p).forEach(function(k){ps[k]=(ps[k]||0)+p[k]})}});
   var list=Object.entries(ps).sort(function(x,y){return y[1]-x[1]||x[0].localeCompare(y[0],'sv')});
@@ -811,7 +831,7 @@ function renderSellerPage(){
   katMain.forEach(function(c){T['kat_'+c]=sum(V,'kat_'+c)});T.kat_ovr=sum(V,'kat_ovr');
   var notes=combined?'<div class="sp-note">En rad per säljare: lön, produkter och tider är summan av alla visade projekt. Trappan räknas för varje projekt för sig. Välj ett projekt för att se det separat.</div>':'';
   notes+=filtered&&(withLon||hasSteg)?'<div class="sp-note">'+(withLon?'Löneprognosen':'')+(withLon&&hasSteg?' och steget i trappan gäller':hasSteg?'Steget i trappan gäller':' gäller')+' hela månaden, oavsett datumfilter.</div>':'';
-  if(!withLon)notes+=(meta.kolumner.indexOf('lon')>=0?'<div class="sp-note warn">Provisionsfiler saknas för den här månaden, så lönen kan inte räknas. Lägg Provision- och Provisionstrappa-filerna i Dropbox.</div>':'<div class="sp-note">Lönekolumnerna visas när lönen är påslagen i synken. Den slås på först när prodplanen ligger bakom inloggning.</div>');
+  if(!withLon)notes+=spLonOrsak(meta);
   else{var sp=(meta.saknar_pris||[]).filter(function(x){return sel.indexOf(x.projekt)>=0});
     notes+='<div class="sp-note">Lön från provisionsfilerna för '+spEsc(meta.provisionsmanad||'—')+', inklusive semesterersättning. Trappsteget räknas på säljarens totala antal trappsatta produkter i projektet under månaden.</div>';
     var andr=(meta.andringar||[]).filter(function(x){return sel.indexOf(x.projekt)>=0});
@@ -855,7 +875,7 @@ function tmByt(n){tmVecka=tmPlus(tmVecka||tmMandag(tmSenasteDag()||tmNyckel(new 
 function tmSattLage(l){tmLage=l;document.querySelectorAll('#tmLage .filter-pill').forEach(function(b){b.classList.toggle('active',(l==='hittills')===(b.textContent.indexOf('hittills')>=0))});renderTeamPage()}
 function tmSattProj(p){tmProj=p;tmOppen=null;renderTeamPage()}
 function tmVisa(team,dag){tmOppen=tmOppen&&tmOppen.team===team&&tmOppen.dag===dag?null:{team:team,dag:dag};renderTeamPage()}
-function tmBerakna(){var mandag=tmVecka,dagar=[0,1,2,3,4].map(function(i){return tmPlus(mandag,i)}),arbete=dagar.slice(0,4),senast=tmSenasteDag();
+function tmBerakna(vecka){var mandag=vecka||tmVecka,dagar=[0,1,2,3,4].map(function(i){return tmPlus(mandag,i)}),arbete=dagar.slice(0,4),senast=tmSenasteDag();
   var period=tmPeriod(mandag);if(!period)return{dagar:dagar,lag:[],period:null};
   var tmap={};((tmData&&tmData.team)||[]).forEach(function(t){tmap[t.id]=t});var grp={};
   (period.medlemmar||[]).forEach(function(m){(grp[m.team_id]=grp[m.team_id]||[]).push(m)});
@@ -871,10 +891,10 @@ function tmBerakna(){var mandag=tmVecka,dagar=[0,1,2,3,4].map(function(i){return
   return{dagar:dagar,lag:lag,period:period,senast:senast}}
 function tmDetalj(t,dagk,dagar){var lista={},sal={},rubrik,sammanfattning,dagKol;
   if(dagk==='vecka'){dagar.slice(0,4).forEach(function(dk){var d=t.dag[dk];Object.keys(d.pr).forEach(function(k){lista[k]=(lista[k]||0)+d.pr[k]});Object.keys(d.saljare).forEach(function(i){var s=d.saljare[i],x=sal[i]||(sal[i]={namn:s.namn,prod:0,till:0,dagar:0});x.prod+=s.prod;x.till+=s.till;if(s.md>0)x.dagar++})});
-    var fre=t.dag[dagar[4]];rubrik=t.namn+' · '+(t.ledare||'ingen teamledare')+' · veckan hittills, måndag–torsdag';
+    var fre=t.dag[dagar[4]];rubrik=(t.ledare||'Utan teamledare')+' · '+t.projekt+' · veckan hittills, måndag–torsdag';
     sammanfattning=spN(t.prod)+' produkter och '+spN(t.till)+' tillägg · '+spN(t.enh,t.perHour?1:0)+(t.perHour?' timmar':' mansdagar')+' · snitt '+(t.enh>0?spN(t.prod/t.enh,2):'—')+' · dagskrav '+spN(t.krav,2)+(fre.prod>0?' · plus '+spN(fre.prod)+' produkter extra på fredagen':'');dagKol='Dagar'}
   else{var d=t.dag[dagk],i0=dagar.indexOf(dagk);Object.keys(d.pr).forEach(function(k){lista[k]=d.pr[k]});Object.keys(d.saljare).forEach(function(i){var s=d.saljare[i];sal[i]={namn:s.namn,prod:s.prod,till:s.till,dagar:s.md>0?'Ja':'–'}});
-    rubrik=t.namn+' · '+(t.ledare||'ingen teamledare')+' · '+TM_DAGAR[i0].toLowerCase()+' '+tmKort(dagk)+(i0===4?', extra':'');
+    rubrik=(t.ledare||'Utan teamledare')+' · '+t.projekt+' · '+TM_DAGAR[i0].toLowerCase()+' '+tmKort(dagk)+(i0===4?', extra':'');
     sammanfattning=spN(d.prod)+' produkter och '+spN(d.till)+' tillägg · '+(i0===4?Object.keys(d.saljare).filter(function(k){return d.saljare[k].prod>0}).length+' säljare sålde · inget dagskrav':spN(d.md)+' mansdagar · snitt '+(d.snitt==null?'—':spN(d.snitt,2))+' · dagskrav '+spN(t.krav,2));dagKol='Mansdag'}
   var l=Object.entries(lista).sort(function(a,b){return b[1]-a[1]||a[0].localeCompare(b[0],'sv')});
   var s=Object.keys(sal).map(function(i){return Object.assign({id:+i},sal[i])}).sort(function(a,b){return b.prod-a.prod||a.namn.localeCompare(b.namn,'sv')});
@@ -883,28 +903,63 @@ function tmDetalj(t,dagk,dagar){var lista={},sal={},rubrik,sammanfattning,dagKol
    +'<div><div class="sp-panel-title">Säljarna</div><table class="sp-table"><thead><tr><th class="txt">Säljare</th><th>Produkter</th><th>Tillägg</th><th>'+dagKol+'</th></tr></thead><tbody>'
    +s.map(function(x){return'<tr><td class="txt">'+spEsc(x.namn)+(x.id===t.ledareId?' <b style="color:#9a3412;font-size:11px">Teamledare</b>':'')+'</td><td class="fet">'+spN(x.prod)+'</td><td>'+spN(x.till)+'</td><td>'+(typeof x.dagar==='number'?spN(x.dagar):x.dagar)+'</td></tr>'}).join('')
    +'</tbody></table></div></div></td></tr>'}
+var tmFokus=null,TM_FARGER=['#c84a2f','#2563eb','#16a34a','#9333ea','#d97706','#0891b2','#db2777','#4b5563','#65a30d','#7c3aed','#0f766e','#b45309'];
+function tmVeckorIManad(mk){var y=+mk.slice(0,4),m=+mk.slice(5,7)-1,forsta=toDateKey(y,m,1),sista=toDateKey(y,m,new Date(y,m+1,0).getDate()),idag=tmMandag(tmNyckel(new Date())),ut=[],v=tmMandag(forsta);
+  while(v<=sista){var tor=tmPlus(v,3);if(tor>=forsta&&tor<=sista&&v<=idag)ut.push(v);v=tmPlus(v,7)}return ut}
+function tmTrendPil(p){var x=[],y=[];p.forEach(function(v,i){if(v!=null){x.push(i);y.push(v)}});if(y.length<2)return{t:'–',k:'',txt:'för få veckor'};
+  var mx=x.reduce(function(a,b){return a+b},0)/x.length,my=y.reduce(function(a,b){return a+b},0)/y.length,n=0,d=0;x.forEach(function(xi,i){n+=(xi-mx)*(y[i]-my);d+=(xi-mx)*(xi-mx)});var k=d>0?n/d:0;
+  return k>=3?{t:'↑ Uppåt',k:'tm-pil-upp',txt:'+'+Math.round(k)+' procentenheter per vecka'}:k<=-3?{t:'↓ Nedåt',k:'tm-pil-ner',txt:Math.round(k)+' procentenheter per vecka'}:{t:'→ Stabil',k:'tm-pil-stabil',txt:(k>=0?'+':'')+Math.round(k)+' procentenheter per vecka'}}
+function tmSattFokus(k){tmFokus=tmFokus===k?null:k;renderTeamTrend()}
+function renderTeamTrend(){var el=document.getElementById('tmTrend');if(!el||!tmVecka)return;
+  var mk=tmPlus(tmVecka,3).slice(0,7),veckor=tmVeckorIManad(mk),manad=MONTHS_SV[+mk.slice(5,7)-1];
+  veckor.forEach(function(v){[0,1,2,3,4].forEach(function(i){ppSakerManad(tmPlus(v,i).slice(0,7))})});
+  document.getElementById('tmTrendRubrik').textContent='Teamledarna vecka för vecka – '+manad.toLowerCase()+' '+mk.slice(0,4);
+  var L={},ordning=[];veckor.forEach(function(v,vi){tmBerakna(v).lag.forEach(function(t){if(tmProj!=='Alla'&&t.projekt!==tmProj)return;
+    var k=t.ledareId!=null?'L'+t.ledareId:'T'+t.id,x=L[k];if(!x){x=L[k]={k:k,namn:t.ledare||'Utan teamledare',projekt:[],v:{}};ordning.push(k)}
+    if(x.projekt.indexOf(t.projekt)<0)x.projekt.push(t.projekt);var w=x.v[v]||(x.v[v]={prod:0,mal:0});w.prod+=t.prod;w.mal+=t.mal})});
+  var lista=ordning.map(function(k){var x=L[k],p=veckor.map(function(v){var w=x.v[v];return w&&w.mal>0?w.prod/w.mal*100:null}),sp=0,sm=0;
+    veckor.forEach(function(v){var w=x.v[v];if(w){sp+=w.prod;sm+=w.mal}});return Object.assign(x,{pct:p,manad:sm>0?sp/sm:null,pil:tmTrendPil(p)})})
+   .sort(function(a,b){return(b.manad==null?-1:b.manad)-(a.manad==null?-1:a.manad)});
+  lista.forEach(function(x,i){x.farg=TM_FARGER[i%TM_FARGER.length]});
+  if(!lista.length){el.innerHTML='<div class="sp-empty">'+(veckor.some(function(v){return ppHamtar[v.slice(0,7)]})?'Hämtar månaden…':'Ingen teamindelning i '+manad.toLowerCase()+' än.')+'</div>';return}
+  var W=720,H=230,ml=44,mr=14,mt=12,mb=28,iw=W-ml-mr,ih=H-mt-mb,max=120;lista.forEach(function(x){x.pct.forEach(function(v){if(v!=null&&v>max)max=v})});max=Math.ceil(max/20)*20;
+  var X=function(i){return ml+(veckor.length<2?iw/2:i*iw/(veckor.length-1))},Y=function(v){return mt+ih-v/max*ih};
+  var g='';for(var s=0;s<=max;s+=max>200?50:20){g+='<line x1="'+ml+'" x2="'+(W-mr)+'" y1="'+Y(s).toFixed(1)+'" y2="'+Y(s).toFixed(1)+'" stroke="#eeece8"/><text x="'+(ml-6)+'" y="'+(Y(s)+4).toFixed(1)+'" text-anchor="end" font-size="10" fill="#888">'+s+' %</text>'}
+  g+='<line x1="'+ml+'" x2="'+(W-mr)+'" y1="'+Y(100).toFixed(1)+'" y2="'+Y(100).toFixed(1)+'" stroke="#1a1a1a" stroke-width="1.5" stroke-dasharray="5,4"/><text x="'+(W-mr)+'" y="'+(Y(100)-5).toFixed(1)+'" text-anchor="end" font-size="10" fill="#1a1a1a">Mål</text>';
+  veckor.forEach(function(v,i){g+='<text x="'+X(i).toFixed(1)+'" y="'+(H-8)+'" text-anchor="middle" font-size="11" fill="#555">V'+tmVeckonr(v)+'</text>'});
+  lista.slice().reverse().forEach(function(x){var dim=tmFokus&&tmFokus!==x.k,op=dim?0.15:1,sw=tmFokus===x.k?3.5:2.2,seg='',pts='';
+    x.pct.forEach(function(v,i){if(v==null)return;var prev=i>0?x.pct[i-1]:null;if(prev!=null)seg+='<line x1="'+X(i-1).toFixed(1)+'" y1="'+Y(prev).toFixed(1)+'" x2="'+X(i).toFixed(1)+'" y2="'+Y(v).toFixed(1)+'" stroke="'+x.farg+'" stroke-width="'+sw+'" stroke-linecap="round"/>';
+      var w=x.v[veckor[i]];pts+='<circle cx="'+X(i).toFixed(1)+'" cy="'+Y(v).toFixed(1)+'" r="'+(tmFokus===x.k?5:4)+'" fill="'+x.farg+'" stroke="#fff" stroke-width="1.5"><title>'+spEsc(x.namn)+', vecka '+tmVeckonr(veckor[i])+': '+Math.round(v)+' % av målet ('+spN(w.prod)+' av '+spN(Math.round(w.mal))+')</title></circle>'});
+    g+='<g opacity="'+op+'">'+seg+pts+'</g>'});
+  var svg='<svg class="tm-trend-svg" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Andel av veckomålet per teamledare, vecka för vecka">'+g+'</svg>';
+  var leg='<div class="tm-legend" role="group" aria-label="Markera en teamledare">'+lista.map(function(x){return'<button type="button" aria-pressed="'+(tmFokus===x.k)+'" onclick="tmSattFokus(\''+x.k+'\')"><i style="background:'+x.farg+'"></i>'+spEsc(x.namn)+'</button>'}).join('')+'</div>';
+  var tb='<table class="sp-table tm-tabell"><thead><tr><th class="txt grupp">Teamledare</th><th class="txt grupp">Projekt</th>'+veckor.map(function(v){return'<th class="grupp">V'+tmVeckonr(v)+'</th>'}).join('')+'<th class="grupp">'+manad+'</th><th class="txt grupp">Trend</th></tr></thead><tbody>'
+    +lista.map(function(x){return'<tr><td class="txt"><i style="display:inline-block;width:10px;height:10px;border-radius:50%;background:'+x.farg+';margin-right:6px"></i>'+spEsc(x.namn)+'</td><td class="txt">'+spEsc(x.projekt.join(', '))+'</td>'
+      +x.pct.map(function(v){var l=v==null?null:spLvl(v/100);return'<td class="'+(l?'lv-'+l:'')+'">'+(v==null?'–':Math.round(v)+' %')+'</td>'}).join('')
+      +'<td class="fet'+(spLvl(x.manad)?' lv-'+spLvl(x.manad):'')+'">'+spPct(x.manad)+'</td><td class="txt"><span class="'+x.pil.k+'" title="'+spEsc(x.pil.txt)+'">'+x.pil.t+'</span></td></tr>'}).join('')+'</tbody></table>';
+  el.innerHTML=leg+svg+tb+'<div class="sp-note">Andel av veckomålet ('+(tmLage==='hittills'?'veckan hittills':'hela veckan')+') vecka för vecka i '+manad.toLowerCase()+'. Varje teamledare följs på sitt namn, även när teamet byter säljare. Trenden räknas på lutningen över veckorna: uppåt eller nedåt vid minst 3 procentenheter per vecka. Klicka på ett namn för att markera linjen.</div>'}
 function renderTeamPage(){var el=document.getElementById('tmTabell');if(!el)return;
   if(!tmVecka)tmVecka=tmMandag(tmSenasteDag()||tmNyckel(new Date()));
   var dagar=[0,1,2,3,4].map(function(i){return tmPlus(tmVecka,i)});dagar.forEach(function(dk){ppSakerManad(dk.slice(0,7))});
   var idag=tmMandag(tmNyckel(new Date()));document.getElementById('tmNasta').disabled=tmVecka>=idag;
   document.getElementById('tmVeckotext').textContent='Vecka '+tmVeckonr(tmVecka)+' · '+tmKort(tmVecka)+'–'+tmKort(tmPlus(tmVecka,6));
   var laddar=dagar.some(function(dk){return ppHamtar[dk.slice(0,7)]});
-  var res=tmBerakna(),alla=res.lag,projs=[...new Set(alla.map(function(t){return t.projekt}))].sort(function(a,b){return a.localeCompare(b,'sv')});
+  var res=tmBerakna(tmVecka),alla=res.lag,projs=[...new Set(alla.map(function(t){return t.projekt}))].sort(function(a,b){return a.localeCompare(b,'sv')});
   if(tmProj!=='Alla'&&projs.indexOf(tmProj)<0)tmProj='Alla';
   document.getElementById('tmProjekt').innerHTML=['Alla'].concat(projs).map(function(p){return'<button class="filter-pill'+(p===tmProj?' active':'')+'" onclick="tmSattProj(this.dataset.p)" data-p="'+spEsc(p)+'">'+spEsc(p)+'</button>'}).join('');
   var lag=alla.filter(function(t){return tmProj==='Alla'||t.projekt===tmProj}).sort(function(a,b){return(b.uppf==null?-1:b.uppf)-(a.uppf==null?-1:a.uppf)});
-  document.getElementById('tmSub').textContent=res.period?'Teamindelning '+tmKort(res.period.fran)+'–'+tmKort(res.period.till)+' · '+lag.length+(lag.length===1?' team':' team')+(res.senast?' · data till och med '+tmKort(res.senast):''):'';
-  if(!res.period){document.getElementById('tmKpis').innerHTML='';el.innerHTML='<div class="sp-empty">'+(laddar?'Hämtar veckan…':'Ingen teamindelning för vecka '+tmVeckonr(tmVecka)+'. Teamindelningen görs på adminsidan.')+'</div>';return}
+  document.getElementById('tmSub').textContent=res.period?'Teamindelning '+tmKort(res.period.fran)+'–'+tmKort(res.period.till)+' · '+lag.length+(lag.length===1?' teamledare':' teamledare')+(res.senast?' · data till och med '+tmKort(res.senast):''):'';
+  if(!res.period){document.getElementById('tmKpis').innerHTML='';el.innerHTML='<div class="sp-empty">'+(laddar?'Hämtar veckan…':'Ingen teamindelning för vecka '+tmVeckonr(tmVecka)+'. Teamindelningen görs på adminsidan.')+'</div>';renderTeamTrend();return}
   var P=0,G=0,E=0,GK=0,FRE=0,SPD=0;lag.forEach(function(t){P+=t.prod;G+=t.mal;E+=t.enh;GK+=t.krav*t.enh;FRE+=t.dag[dagar[4]].prod});
   var tot=G>0?P/G:null,lv=spLvl(tot),card=function(l,v,m,b){return'<div class="stat-card"><div class="stat-label">'+l+'</div><div class="stat-value">'+v+'</div><div class="stat-meta">'+m+'</div>'+(b||'')+'</div>'};
   var dagarMed=dagar.slice(0,4).filter(function(dk){return lag.some(function(t){return t.dag[dk].md>0})}).length;
   document.getElementById('tmKpis').innerHTML=card('Resultat mån–tor',spN(P),'Veckomål '+spN(Math.round(G)),G>0?'<div class="stat-badge '+(lv?'lv-'+lv:'')+'">'+spPct(tot)+' av målet</div>':'')
     +card('Snitt per mansdag',E>0?spN(P/E,2):'—','Dagskrav '+(E>0?spN(GK/E,2):'—'))+card('Säljare per dag',dagarMed?spN(E/dagarMed,1):'—','Snitt måndag–torsdag')
-    +card('Extra fredag',spN(FRE),'Utanför veckomålet')+card('Team',String(lag.length),lag.length===1?'1 teamledare':lag.length+' teamledare');
-  var h='<table class="sp-table tm-tabell"><thead><tr><th class="txt grupp" rowspan="2">Team</th><th class="txt grupp" rowspan="2">Projekt</th><th class="grupp" rowspan="2">Säljare</th><th class="grupp" rowspan="2">Dagskrav</th><th class="grupp" rowspan="2">Veckomål</th><th class="grupp" rowspan="2">Resultat</th><th class="grupp" rowspan="2">Status</th>'
+    +card('Extra fredag',spN(FRE),'Utanför veckomålet')+card('Teamledare',String(lag.length),lag.reduce(function(s,t){return s+t.antal},0)+' säljare i teamen');
+  var h='<table class="sp-table tm-tabell"><thead><tr><th class="txt grupp" rowspan="2">Teamledare</th><th class="txt grupp" rowspan="2">Projekt</th><th class="grupp" rowspan="2">Säljare</th><th class="grupp" rowspan="2">Dagskrav</th><th class="grupp" rowspan="2">Veckomål</th><th class="grupp" rowspan="2">Resultat</th><th class="grupp" rowspan="2">Status</th>'
     +dagar.map(function(dk,i){return'<th class="dag'+(i===4?' extra':'')+'" colspan="2">'+TM_DAGAR[i]+' '+tmKort(dk)+(i===4?' · extra':'')+'</th>'}).join('')+'</tr><tr>'
     +dagar.map(function(dk,i){return'<th class="grupp'+(i===4?' extra':'')+'">Resultat</th><th class="grupp'+(i===4?' extra':'')+'">Snitt</th>'}).join('')+'</tr></thead><tbody>';
-  lag.forEach(function(t){var vo=tmOppen&&tmOppen.team===String(t.id);h+='<tr><td class="txt"><button class="tm-knapp'+(vo&&tmOppen.dag==='vecka'?' vald':'')+'" aria-expanded="'+(vo&&tmOppen.dag==='vecka')+'" onclick="tmVisa(\''+t.id+'\',\'vecka\')" title="Visa veckan hittills">'+spEsc(t.namn)+'<span class="tm-ledare">'+spEsc(t.ledare||'Ingen teamledare')+'</span></button></td>'
+  lag.forEach(function(t){var vo=tmOppen&&tmOppen.team===String(t.id);h+='<tr><td class="txt"><button class="tm-knapp'+(vo&&tmOppen.dag==='vecka'?' vald':'')+'" aria-expanded="'+(vo&&tmOppen.dag==='vecka')+'" onclick="tmVisa(\''+t.id+'\',\'vecka\')" title="Visa veckan hittills för '+spEsc(t.ledare||'teamet')+'">'+spEsc(t.ledare||'Utan teamledare')+'<span class="tm-ledare">'+t.antal+(t.antal===1?' säljare':' säljare')+'</span></button></td>'
     +'<td class="txt">'+spEsc(t.projekt)+'</td><td>'+t.antal+'</td><td>'+spN(t.krav,2)+'</td><td>'+spN(Math.round(t.mal))+'</td><td class="fet">'+spN(t.prod)+'</td><td class="fet'+(spLvl(t.uppf)?' lv-'+spLvl(t.uppf):'')+'">'+spPct(t.uppf)+'</td>';
     dagar.forEach(function(dk,i){var d=t.dag[dk],har=d.prod>0||d.md>0,sel=vo&&tmOppen.dag===dk,dl=i<4&&d.snitt!=null&&t.krav>0?spLvl(d.snitt/t.krav):null;
       h+='<td class="'+(i===4?'extra':'')+'">'+(har?'<button class="tm-knapp'+(sel?' vald':'')+'" aria-expanded="'+sel+'" onclick="tmVisa(\''+t.id+'\',\''+dk+'\')" title="Visa vad teamet sålde '+TM_DAGAR[i].toLowerCase()+'">'+spN(d.prod)+'</button>':'–')+'</td><td class="'+(i===4?'extra':'')+(dl?' lv-'+dl:'')+'">'+(d.snitt==null?'–':spN(d.snitt,1))+'</td>'});
@@ -914,7 +969,7 @@ function renderTeamPage(){var el=document.getElementById('tmTabell');if(!el)retu
     +tp.map(function(x,i){return'<td class="'+(i===4?'extra':'')+'">'+spN(x.p)+'</td><td class="'+(i===4?'extra':'')+'">'+(x.m>0?spN(x.p/x.m,1):'–')+'</td>'}).join('')+'</tr></tbody></table>';
   el.innerHTML=(lag.length?spLegend()+h:'<div class="sp-empty">Inga team i '+spEsc(tmProj)+' den här veckan.</div>')
     +'<div class="sp-note">'+(tmLage==='hittills'?'Veckan hittills: veckomålet är dagskravet gånger de mansdagar teamet har haft, som i Daglig uppföljning.':'Hela veckan: veckomålet är antal säljare i teamet gånger dagskravet gånger 4 dagar.')
-    +' Teamledarens egen försäljning räknas med. Fredag är extra och räknas inte in i resultat eller mål; fredagens snitt är per säljare som sålde. Klicka på teamet för veckan, eller på en dags resultat för den dagen.</div>'}
+    +' Teamledarens egen försäljning räknas med. Fredag är extra och räknas inte in i resultat eller mål; fredagens snitt är per säljare som sålde. Klicka på teamledaren för veckan, eller på en dags resultat för den dagen.</div>';renderTeamTrend()}
 
 /* Prodplanens data ligger i Supabase och lämnas bara ut mot rätt kod (funktionen hamta_prodplan). */
 var SB_URL='https://wsqqxfiefvgcuoffuqxg.supabase.co',SB_KEY='sb_publishable_MX_32ko1cN4HwXM9XLZbiw_sVZkWVRb',PP_NYCKEL='prodplan_kod';
@@ -928,11 +983,12 @@ function ppLas(){ppGlom();location.reload()}
 async function ppHamta(kod,manad){var r=await fetch(SB_URL+'/rest/v1/rpc/hamta_prodplan',{method:'POST',headers:{'apikey':SB_KEY,'Content-Type':'application/json'},body:JSON.stringify({p_kod:kod,p_manad:manad||null})});if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}
 function ppFeltext(f){return f==='sparr'?'För många försök. Vänta 15 minuter och försök igen.':f==='saknas'?'Ingen kod är satt ännu. Kontakta din administratör.':'Fel kod. Försök igen.'}
 function ppAktuellManad(){var d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')}
-var tmRoll='',tmData=null;
+var tmRoll='',tmData=null,ppStatus=null;
 function ppRoll(r){if(!r)return;tmRoll=r.roll||'';if(r.team)tmData=r.team;var nb=document.getElementById('navTeam');if(nb)nb.hidden=tmRoll!=='teamledare';if(tmRoll!=='teamledare'&&currentPage==='team')switchPage('overview')}
 function ppLaggIn(d){individData=individData||{};Object.keys(d||{}).forEach(function(k){if(k.indexOf('individ:')===0)individData[k.slice(8)]=d[k]});
   if(!ppGrundKlar&&d&&d.utfall){var rawU=d.utfall,rawM=d.mal||{};discoverProjects(rawU,rawM);convertJsonToStore(rawU,utfallData);if(d.mal)convertJsonToStore(rawM,malData);dailyProject=new Set(ALL_PROJECTS);ppGrundKlar=true}
-  if(d&&d.last_synced&&d.last_synced.last_synced)document.getElementById('lastSynced').textContent='Senast synkad: '+d.last_synced.last_synced}
+  if(d&&d.last_synced&&d.last_synced.last_synced)document.getElementById('lastSynced').textContent='Senast synkad: '+d.last_synced.last_synced;
+  if(d&&d.status)ppStatus=d.status}
 /* Säljarsidan: hämtar en månad som inte är hämtad än och ritar om när den kommit */
 function ppSakerManad(mk){if((individData&&individData[mk])||ppManader.indexOf(mk)<0||ppHamtar[mk])return;ppHamtar[mk]=true;
   ppHamta(ppKod(),mk).then(function(r){ppHamtar[mk]=false;if(r&&r.ok){ppRoll(r);ppLaggIn(r.data);renderCurrent()}else if(r&&!r.ok){ppGlom();ppVisa(ppFeltext(r.fel))}}).catch(function(){ppHamtar[mk]=false})}
