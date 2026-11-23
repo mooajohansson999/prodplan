@@ -49,6 +49,20 @@
   .login form { display: flex; flex-direction: column; gap: 12px; }
   .login .knapp { min-height: 46px; }
   [hidden] { display: none !important; }
+  .flikar { display: flex; flex-wrap: wrap; gap: 2px; background: #f0f0ee; border-radius: 10px; padding: 3px; align-self: flex-start; }
+  .flikar button { min-height: 40px; padding: 8px 16px; border: none; background: transparent; border-radius: 8px; font-size: 13px; color: #555; cursor: pointer; }
+  .flikar button[aria-selected=true] { background: #fff; color: #1a1a1a; font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .tabell { overflow-x: auto; border: 1px solid #ebebeb; border-radius: 8px; }
+  .tabell table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .tabell th { text-align: right; padding: 8px 10px; font-weight: 600; color: #555; background: #faf9f7; border-bottom: 1px solid #ebebeb; white-space: nowrap; vertical-align: bottom; }
+  .tabell th.txt, .tabell td.txt { text-align: left; }
+  .tabell td { text-align: right; padding: 5px 10px; border-bottom: 1px solid #f3f2f0; white-space: nowrap; }
+  .tabell input[type=text], .tabell input[type=number] { min-height: 34px; padding: 4px 8px; border: 1.5px solid #d6d6d6; border-radius: 6px; text-align: right; width: 84px; font-variant-numeric: tabular-nums; }
+  .tabell input.namn { text-align: left; width: 260px; }
+  .tabell input.andrad { border-color: #b7791f; background: #fff4e0; }
+  .tabell .steg-fran { width: 64px; }
+  .hint { font-size: 12px; color: #6b6b6b; }
+  .regler { margin: 0; padding-left: 18px; font-size: 13px; color: #444; line-height: 1.6; }
 </style>
 </head>
 <body>
@@ -71,6 +85,12 @@
 </main>
 
 <main id="app" hidden>
+  <div class="flikar" role="tablist" aria-label="Adminsidans delar">
+    <button type="button" role="tab" id="tabTeam" aria-selected="true" aria-controls="flikTeam">Teamindelning</button>
+    <button type="button" role="tab" id="tabTrappor" aria-selected="false" aria-controls="flikTrappor">Provisionstrappor</button>
+    <button type="button" role="tab" id="tabErs" aria-selected="false" aria-controls="flikErs">Ersättningar och produktnamn</button>
+  </div>
+  <div id="flikTeam" role="tabpanel" aria-labelledby="tabTeam" style="display:flex;flex-direction:column;gap:16px">
   <div>
     <h1>Teamindelning</h1>
     <p class="ingress">Välj teamledare och säljare för en period på en eller två veckor. Uppföljningen följer teamledaren, så det behövs inga teamnamn. Teamledaren räknas som medlem i sitt team, så hens egen försäljning kommer med. Fliken Team i prodplanen visar indelningen direkt efter att du sparat.</p>
@@ -106,6 +126,87 @@
       <button class="knapp primar" type="button" id="sparaKnapp">Spara teamindelningen</button>
     </div>
   </section>
+  </div>
+
+  <div id="flikTrappor" role="tabpanel" aria-labelledby="tabTrappor" hidden style="flex-direction:column;gap:16px">
+    <div>
+      <h1>Provisionstrappor</h1>
+      <p class="ingress">Ändra stegen och beloppen per projekt. Varje ändring sparas från ett datum, så tidigare dagar och månader påverkas inte. Beloppen är före semesterersättning. Säljarsidan räknar om lönen vid nästa synk, inom en timme.</p>
+    </div>
+    <section class="ruta" aria-label="Välj trappa">
+      <div class="chips" id="trProjekt"></div>
+      <div class="rad">
+        <div class="falt"><label class="etikett" for="trGaller">Gäller för</label><select id="trGaller"></select></div>
+        <div class="falt"><label class="etikett" for="trVersion">Version</label><select id="trVersion"></select></div>
+        <div class="falt"><label class="etikett" for="trNyttUndantag">Nytt undantag för säljare</label><select id="trNyttUndantag"></select></div>
+      </div>
+      <div class="hint" id="trInfo"></div>
+    </section>
+    <section class="ruta" aria-label="Trappan">
+      <div class="tabell" id="trTabell"></div>
+      <div class="chips">
+        <button class="knapp liten" type="button" id="trNyProdukt">+ Lägg till produkt</button>
+        <button class="knapp liten" type="button" id="trNyttSteg">+ Lägg till steg</button>
+        <button class="knapp liten" type="button" id="trTaBortSteg">Ta bort sista steget</button>
+      </div>
+      <ul class="regler">
+        <li>Steget räknas på säljarens alla trappsatta produkter i projektet under månaden, och hela månaden får det stegets pris.</li>
+        <li>Familjeabonnemang och Streaming Nyteckning räknas mot steget i Tele2-projekten men har fast pris (fliken Ersättningar och produktnamn).</li>
+        <li>Ett undantag gäller bara den säljaren. Sparar du en ny standardtrappa från ett datum slutar tidigare undantag att gälla från det datumet; lägg in dem igen om de ska fortsätta.</li>
+      </ul>
+    </section>
+    <section class="ruta spara" aria-label="Spara trappan">
+      <div class="rad" style="align-items:center">
+        <div class="falt"><label class="etikett" for="trFran">Gäller från</label><input id="trFran" type="date"></div>
+        <div class="meddelande" id="trStatus" aria-live="polite"></div>
+      </div>
+      <div class="chips">
+        <button class="knapp" type="button" id="trTaBortVersion">Ta bort versionen</button>
+        <button class="knapp" type="button" id="trAngra">Ångra ändringar</button>
+        <button class="knapp primar" type="button" id="trSpara">Spara trappan</button>
+      </div>
+    </section>
+  </div>
+
+  <div id="flikErs" role="tabpanel" aria-labelledby="tabErs" hidden style="flex-direction:column;gap:16px">
+    <div>
+      <h1>Ersättningar och produktnamn</h1>
+      <p class="ingress">Fasta ersättningar per projekt och produkt. Finns en produkt i projektets trappa används trappans pris, annars den fasta ersättningen. Ändringar sparas från ett datum och räknas in vid nästa synk.</p>
+    </div>
+    <section class="ruta" aria-label="Projekt"><div class="chips" id="erProjekt"></div></section>
+    <section class="ruta" aria-label="Produkter utan pris" id="erSaknasRuta">
+      <h2>Produkter utan pris</h2>
+      <div id="erSaknas"></div>
+    </section>
+    <section class="ruta" aria-label="Fasta ersättningar">
+      <div class="rad" style="justify-content:space-between;align-items:baseline"><h2>Fasta ersättningar</h2><span class="hint" id="erTrappInfo"></span></div>
+      <div class="tabell" id="erTabell"></div>
+      <div class="chips"><button class="knapp liten" type="button" id="erNyProdukt">+ Lägg till produkt</button></div>
+    </section>
+    <section class="ruta spara" aria-label="Spara ersättningarna">
+      <div class="rad" style="align-items:center">
+        <div class="falt"><label class="etikett" for="erFran">Gäller från</label><input id="erFran" type="date"></div>
+        <div class="meddelande" id="erStatus" aria-live="polite"></div>
+      </div>
+      <div class="chips">
+        <button class="knapp" type="button" id="erAngra">Ångra ändringar</button>
+        <button class="knapp primar" type="button" id="erSpara">Spara ersättningarna</button>
+      </div>
+    </section>
+    <section class="ruta" aria-label="Namnbyten">
+      <h2>Namnbyten</h2>
+      <p class="hint" style="margin:0">När Telia eller Tele2 döper om en produkt: koppla namnet i ordrarna till produkten som har priset. Gäller direkt vid nästa synk.</p>
+      <div class="tabell" id="nbTabell"></div>
+      <div class="rad">
+        <div class="falt"><label class="etikett" for="nbProjekt">Projekt</label><select id="nbProjekt"></select></div>
+        <div class="falt"><label class="etikett" for="nbOrder">Namn i ordrarna</label><input id="nbOrder" type="text" list="nbOrderLista" style="min-width:260px"></div>
+        <div class="falt"><label class="etikett" for="nbPris">Prissätts som</label><input id="nbPris" type="text" list="nbPrisLista" style="min-width:260px"></div>
+        <button class="knapp" type="button" id="nbLagg">Lägg till namnbyte</button>
+      </div>
+      <datalist id="nbOrderLista"></datalist><datalist id="nbPrisLista"></datalist>
+      <div class="meddelande" id="nbStatus" aria-live="polite"></div>
+    </section>
+  </div>
 </main>
 
 <script>
@@ -266,6 +367,162 @@ async function spara() {
     await api('/rest/v1/rpc/spara_teamindelning', { method: 'POST', body: { p_fran: $('fran').value, p_till: $('till').value, p_medlemmar: med } });
     await laddaPeriod(); status('Sparat. Fliken Team i prodplanen visar den nya indelningen.', 'ok'); }
   catch (e) { var m = e.message || ''; status(/overlapp/.test(m) ? 'Perioden överlappar en sparad period. Välj samma datum som den, eller datum som inte överlappar.' : 'Kunde inte spara: ' + m, 'fel'); $('sparaKnapp').disabled = false; } }
+
+/* ---------- Flikar ---------- */
+var FLIKAR = { tabTeam: 'flikTeam', tabTrappor: 'flikTrappor', tabErs: 'flikErs' }, P = { laddad: false, trappa: [], fast: [], namn: [], status: {} };
+function visaFlik(tab) { Object.keys(FLIKAR).forEach(function (t) { var vald = t === tab; $(t).setAttribute('aria-selected', String(vald)); var p = $(FLIKAR[t]); p.hidden = !vald; p.style.display = vald ? 'flex' : 'none'; });
+  if (tab !== 'tabTeam') laddaProvision().then(function () { if (tab === 'tabTrappor') ritaTrappa(); else ritaErs(); })
+    .catch(function (e) { var t = /provision|produktnamn|404|not find/i.test(e.message) ? 'Provisionstabellerna finns inte i Supabase än. Kör supabase_5_provision.sql i SQL Editor och kör sedan Sync Dropbox en gång.' : 'Kunde inte läsa provisionen: ' + e.message;
+      meddela(tab === 'tabTrappor' ? 'trStatus' : 'erStatus', t, 'fel'); }); }
+Object.keys(FLIKAR).forEach(function (t) { $(t).addEventListener('click', function () { visaFlik(t); }); });
+
+/* ---------- Provisionen: läs ---------- */
+async function hamtaAlla(tabell) { var ut = [], off = 0; while (true) { var s = await api('/rest/v1/' + tabell + '?select=*&order=id.asc&limit=1000&offset=' + off) || []; ut = ut.concat(s); if (s.length < 1000) return ut; off += 1000; } }
+async function laddaProvision(tvinga) { if (P.laddad && !tvinga) return;
+  var r = await Promise.all([hamtaAlla('provision_trappa'), hamtaAlla('provision_fast'), hamtaAlla('produktnamn'), api('/rest/v1/rpc/hamta_adminstatus', { method: 'POST', body: {} }).catch(function () { return {}; })]);
+  P.trappa = r[0]; P.fast = r[1]; P.namn = r[2]; P.status = r[3] || {}; P.laddad = true;
+  if (!T.proj) { var pr = trappProjekt(); T.proj = pr[0] || ''; } if (!E.proj) { var ep = ersProjekt(); E.proj = ep[0] || ''; } }
+function idag() { return dNyckel(new Date()); }
+function kr(v) { return (typeof v === 'number' && isFinite(v)) ? Math.round(v).toLocaleString('sv-SE') + ' kr' : '–'; }
+function tal(s) { var v = parseFloat(String(s).replace(/\s/g, '').replace(',', '.')); return isFinite(v) ? v : null; }
+
+/* ---------- Provisionstrappor ---------- */
+var T = { proj: '', sid: 0, version: '', steg: [], rader: [], andrat: false, nyttUndantag: null };
+function trappProjekt() { var s = new Set(P.trappa.map(function (r) { return r.projekt; })); return [...s].sort(function (a, b) { return a.localeCompare(b, 'sv'); }); }
+function trappVersioner(proj, sid) { var s = new Set(P.trappa.filter(function (r) { return r.projekt === proj && (r.saljare_id || 0) === sid; }).map(function (r) { return r.galler_fran; })); return [...s].sort().reverse(); }
+function nuvarande(vers) { var d = idag(); return vers.filter(function (v) { return v <= d; })[0] || vers[vers.length - 1]; }
+function trappUndantag(proj) { var m = {}; P.trappa.forEach(function (r) { if (r.projekt === proj && r.saljare_id) m[r.saljare_id] = r.saljare_namn || String(r.saljare_id); }); return m; }
+function laddaTrappa(version) { var rows = P.trappa.filter(function (r) { return r.projekt === T.proj && (r.saljare_id || 0) === T.sid && r.galler_fran === version; });
+  if (!rows.length && T.sid) { var std = nuvarande(trappVersioner(T.proj, 0)); rows = P.trappa.filter(function (r) { return r.projekt === T.proj && !r.saljare_id && r.galler_fran === std; }); }
+  var per = {}; rows.forEach(function (r) { (per[r.produkt] = per[r.produkt] || []).push(r); });
+  var varianter = {}; Object.keys(per).forEach(function (p) { per[p].sort(function (a, b) { return a.steg_fran - b.steg_fran; }); var k = per[p].map(function (r) { return r.steg_fran; }).join(','); varianter[k] = (varianter[k] || 0) + 1; });
+  var vanl = Object.keys(varianter).sort(function (a, b) { return varianter[b] - varianter[a]; })[0];
+  T.steg = vanl ? vanl.split(',').map(Number) : [1]; T.version = version; T.andrat = false;
+  T.rader = Object.keys(per).sort(function (a, b) { return a.localeCompare(b, 'sv'); }).map(function (p) { return { produkt: p, orig: p, belopp: T.steg.map(function (s) { var r = per[p].filter(function (x) { return x.steg_fran <= s; }).pop(); return r ? r.belopp : null; }), origB: null }; });
+  T.rader.forEach(function (r) { r.origB = r.belopp.slice(); }); T.origSteg = T.steg.slice(); }
+function ritaTrappa() { var pr = trappProjekt();
+  if (T.proj && pr.indexOf(T.proj) < 0) pr.push(T.proj);
+  $('trProjekt').innerHTML = pr.map(function (p) { return '<button class="pill" type="button" data-trproj="' + esc(p) + '" aria-pressed="' + (p === T.proj) + '">' + esc(p) + '</button>'; }).join('')
+    + '<select id="trNyttProjekt" aria-label="Ny trappa för projekt"><option value="">+ Ny trappa för projekt…</option>' + Object.keys(P.status.produkter || {}).filter(function (p) { return pr.indexOf(p) < 0; }).map(function (p) { return '<option>' + esc(p) + '</option>'; }).join('') + '</select>';
+  var und = trappUndantag(T.proj);
+  $('trGaller').innerHTML = '<option value="0">Alla säljare (standard)</option>' + Object.keys(und).map(function (id) { return '<option value="' + id + '"' + (+id === T.sid ? ' selected' : '') + '>Undantag: ' + esc(und[id]) + '</option>'; }).join('')
+    + (T.nyttUndantag && !und[T.sid] && T.sid ? '<option value="' + T.sid + '" selected>Undantag: ' + esc(T.nyttUndantag) + ' (nytt)</option>' : '');
+  var vers = trappVersioner(T.proj, T.sid), nu = nuvarande(vers);
+  if (!T.version || (vers.indexOf(T.version) < 0 && !T.andrat && vers.length)) { if (vers.length) laddaTrappa(nu); else if (!T.rader.length) { T.steg = [1]; T.rader = []; T.version = ''; } }
+  $('trVersion').innerHTML = vers.length ? vers.map(function (v) { return '<option value="' + v + '"' + (v === T.version ? ' selected' : '') + '>Från ' + v + (v === nu ? ' (gäller nu)' : v > idag() ? ' (kommande)' : ' (tidigare)') + '</option>'; }).join('') : '<option value="">Ingen sparad version</option>';
+  var ledig = S.saljare.filter(function (x) { return (x.projekt || []).indexOf(T.proj) >= 0 && !und[x.id]; });
+  $('trNyttUndantag').innerHTML = '<option value="">Välj säljare…</option>' + ledig.map(function (x) { return '<option value="' + x.id + '">' + esc(x.namn) + '</option>'; }).join('');
+  if (!$('trFran').value) $('trFran').value = idag();
+  $('trInfo').textContent = T.version ? (T.sid ? 'Undantag för ' + ($('trGaller').selectedOptions[0] || {}).textContent.replace('Undantag: ', '') + '. ' : '') + 'Visar versionen från ' + T.version + '. Spara med ett nytt datum för att ändra från det datumet; samma datum ersätter versionen.' : 'Ingen trappa sparad än. Lägg till steg och produkter och spara.';
+  var n = T.steg.length;
+  var h = '<table><thead><tr><th class="txt">Produkt</th>' + T.steg.map(function (s, i) { var till = i < n - 1 ? (T.steg[i + 1] - 1) : null;
+      return '<th>Steg ' + (i + 1) + '<br>' + (i === 0 ? '<span class="hint">från 1</span>' : '<input class="steg-fran' + (T.origSteg && T.origSteg[i] !== s ? ' andrad' : '') + '" type="number" min="2" value="' + s + '" data-steg="' + i + '" aria-label="Steg ' + (i + 1) + ' börjar vid">')
+        + '<br><span class="hint">' + (till != null ? 'till ' + till : 'och uppåt') + '</span></th>'; }).join('') + '<th></th></tr></thead><tbody>';
+  h += T.rader.map(function (r, ri) { return '<tr><td class="txt">' + (r.orig ? esc(r.produkt) : '<input class="namn' + (r.produkt ? ' andrad' : '') + '" type="text" value="' + esc(r.produkt) + '" data-trnamn="' + ri + '" placeholder="Produktens namn" aria-label="Produktens namn">') + '</td>'
+      + T.steg.map(function (s, i) { var v = r.belopp[i], ch = !r.origB || r.origB[i] !== v; return '<td><input type="text" inputmode="numeric" value="' + (v == null ? '' : v) + '" data-trbelopp="' + ri + '|' + i + '" class="' + (ch ? 'andrad' : '') + '" aria-label="' + esc(r.produkt || 'Ny produkt') + ', steg ' + (i + 1) + '"></td>'; }).join('')
+      + '<td><button class="knapp liten" type="button" data-trbort="' + ri + '" aria-label="Ta bort ' + esc(r.produkt || 'raden') + '">Ta bort</button></td></tr>'; }).join('');
+  if (!T.rader.length) h += '<tr><td class="txt" colspan="' + (n + 2) + '"><span class="hint">Inga produkter i trappan än.</span></td></tr>';
+  $('trTabell').innerHTML = h + '</tbody></table>';
+  $('trTaBortSteg').disabled = n < 2; $('trSpara').disabled = !T.andrat && T.version === $('trFran').value; $('trAngra').disabled = !T.andrat;
+  $('trTaBortVersion').disabled = !T.version || T.andrat;
+  if (!T.andrat && !$('trStatus').classList.contains('ok') && !$('trStatus').classList.contains('fel')) $('trStatus').textContent = ''; }
+function trAndrat() { T.andrat = true; meddela('trStatus', 'Ändringarna är inte sparade än.', ''); ritaTrappa(); }
+function meddela(id, txt, typ) { var s = $(id); s.textContent = txt; s.className = 'meddelande' + (typ ? ' ' + typ : ''); }
+async function sparaTrappa() { var fran = $('trFran').value, steg = T.steg.slice();
+  if (!fran) { meddela('trStatus', 'Välj från vilket datum trappan gäller.', 'fel'); return; }
+  for (var i = 1; i < steg.length; i++) if (!(steg[i] > steg[i - 1])) { meddela('trStatus', 'Stegen måste börja på allt högre antal: steg ' + (i + 1) + ' börjar vid ' + steg[i] + '.', 'fel'); return; }
+  var rader = [], fel = '';
+  T.rader.forEach(function (r) { var namn = String(r.produkt || '').trim(); if (!namn) { fel = 'Skriv namnet på den nya produkten.'; return; }
+    r.belopp.forEach(function (b, i) { if (b == null || !(b >= 0)) fel = 'Fyll i alla belopp för ' + namn + '.'; rader.push({ produkt: namn, steg_fran: steg[i], steg_till: i < steg.length - 1 ? steg[i + 1] - 1 : 9999, belopp: b }); }); });
+  if (fel) { meddela('trStatus', fel, 'fel'); return; }
+  var namnGrupp = T.sid ? (($('trGaller').selectedOptions[0] || {}).textContent || '').replace('Undantag: ', '').replace(' (nytt)', '') : null;
+  $('trSpara').disabled = true; meddela('trStatus', 'Sparar…', '');
+  try { await api('/rest/v1/rpc/spara_trappa', { method: 'POST', body: { p_projekt: T.proj, p_galler_fran: fran, p_saljare_id: T.sid || null, p_saljare_namn: namnGrupp, p_rader: rader } });
+    await laddaProvision(true); T.nyttUndantag = null; laddaTrappa(fran); ritaTrappa(); meddela('trStatus', 'Sparat från ' + fran + '. Lönen räknas om vid nästa synk.', 'ok'); }
+  catch (e) { meddela('trStatus', 'Kunde inte spara: ' + e.message, 'fel'); $('trSpara').disabled = false; } }
+async function taBortVersion() { if (!T.version || !confirm('Ta bort versionen från ' + T.version + (T.sid ? ' för undantaget' : '') + '? Lönen räknas då med versionen före.')) return;
+  try { await api('/rest/v1/rpc/ta_bort_trappversion', { method: 'POST', body: { p_projekt: T.proj, p_galler_fran: T.version, p_saljare_id: T.sid || null } });
+    await laddaProvision(true); var v = trappVersioner(T.proj, T.sid); if (!v.length && T.sid) T.sid = 0; T.version = ''; T.rader = []; ritaTrappa(); meddela('trStatus', 'Versionen är borttagen.', 'ok'); }
+  catch (e) { meddela('trStatus', 'Kunde inte ta bort: ' + e.message, 'fel'); } }
+document.addEventListener('click', function (ev) { var b = ev.target.closest('button'); if (!b) return;
+  if (b.dataset.trproj) { if (T.andrat && !confirm('Släppa ändringarna i trappan?')) return; T.proj = b.dataset.trproj; T.sid = 0; T.version = ''; T.rader = []; T.andrat = false; meddela('trStatus', '', ''); ritaTrappa(); }
+  else if (b.dataset.trbort) { T.rader.splice(+b.dataset.trbort, 1); trAndrat(); }
+  else if (b.id === 'trNyProdukt') { T.rader.push({ produkt: '', orig: '', belopp: T.rader.length ? T.rader[T.rader.length - 1].belopp.slice() : T.steg.map(function () { return null; }), origB: null }); trAndrat(); }
+  else if (b.id === 'trNyttSteg') { var sist = T.steg[T.steg.length - 1]; T.steg.push(sist + 25); T.rader.forEach(function (r) { r.belopp.push(r.belopp[r.belopp.length - 1]); }); trAndrat(); }
+  else if (b.id === 'trTaBortSteg') { if (T.steg.length > 1) { T.steg.pop(); T.rader.forEach(function (r) { r.belopp.pop(); }); trAndrat(); } }
+  else if (b.id === 'trAngra') { var v = T.version; T.rader = []; if (v) laddaTrappa(v); T.andrat = false; meddela('trStatus', '', ''); ritaTrappa(); }
+  else if (b.id === 'trSpara') sparaTrappa();
+  else if (b.id === 'trTaBortVersion') taBortVersion(); });
+document.addEventListener('change', function (ev) { var el = ev.target;
+  if (el.dataset.trbelopp) { var p = el.dataset.trbelopp.split('|'); T.rader[+p[0]].belopp[+p[1]] = tal(el.value); trAndrat(); }
+  else if (el.dataset.trnamn) { T.rader[+el.dataset.trnamn].produkt = el.value.trim(); trAndrat(); }
+  else if (el.dataset.steg) { T.steg[+el.dataset.steg] = Math.round(tal(el.value) || 0); trAndrat(); }
+  else if (el.id === 'trGaller') { T.sid = +el.value; T.version = ''; T.rader = []; T.andrat = false; ritaTrappa(); }
+  else if (el.id === 'trVersion') { if (el.value) { laddaTrappa(el.value); ritaTrappa(); } }
+  else if (el.id === 'trNyttUndantag' && el.value) { var x = S.saljare.filter(function (s) { return String(s.id) === el.value; })[0]; T.sid = x.id; T.nyttUndantag = x.namn; T.version = '';
+    var std = nuvarande(trappVersioner(T.proj, 0)); T.rader = []; if (std) { var sid = T.sid; T.sid = 0; laddaTrappa(std); T.sid = sid; } T.version = ''; T.andrat = true; meddela('trStatus', 'Nytt undantag för ' + x.namn + ', utgår från standardtrappan. Ändra och spara.', ''); ritaTrappa(); }
+  else if (el.id === 'trNyttProjekt' && el.value) { T.proj = el.value; T.sid = 0; T.version = ''; T.steg = [1]; T.rader = []; T.andrat = true; meddela('trStatus', 'Ny trappa för ' + el.value + '. Lägg till steg och produkter och spara.', ''); ritaTrappa(); }
+  else if (el.id === 'trFran') ritaTrappa(); });
+
+/* ---------- Ersättningar och produktnamn ---------- */
+var E = { proj: '', rader: [], andrat: false };
+function ersProjekt() { var s = new Set(); P.fast.forEach(function (r) { s.add(r.projekt); }); P.trappa.forEach(function (r) { s.add(r.projekt); }); Object.keys(P.status.produkter || {}).forEach(function (p) { s.add(p); }); return [...s].sort(function (a, b) { return a.localeCompare(b, 'sv'); }); }
+function fastNu(proj) { var d = idag(), per = {}; P.fast.filter(function (r) { return r.projekt === proj; }).sort(function (a, b) { return a.galler_fran < b.galler_fran ? -1 : 1; }).forEach(function (r) { var x = per[r.produkt] || (per[r.produkt] = { produkt: r.produkt, nu: null, kommande: null });
+    if (r.galler_fran <= d) x.nu = r; else x.kommande = r; }); return Object.values(per).sort(function (a, b) { return a.produkt.localeCompare(b.produkt, 'sv'); }); }
+function trappsatta(proj) { var d = idag(), s = new Set(); P.trappa.forEach(function (r) { if (r.projekt === proj && !r.saljare_id && r.galler_fran <= d) s.add(r.produkt); }); return s; }
+function laddaErs() { E.rader = fastNu(E.proj).map(function (x) { var r = x.nu || x.kommande; return { produkt: x.produkt, belopp: r ? r.belopp : null, orig: r ? r.belopp : null, sedan: x.nu ? x.nu.galler_fran : null, kommande: x.kommande, ny: false }; }); E.andrat = false; }
+function ritaErs() { var pr = ersProjekt(); if (!E.proj) E.proj = pr[0] || ''; if (!E.rader.length && !E.andrat) laddaErs();
+  $('erProjekt').innerHTML = pr.map(function (p) { return '<button class="pill" type="button" data-erproj="' + esc(p) + '" aria-pressed="' + (p === E.proj) + '">' + esc(p) + '</button>'; }).join('');
+  var tr = trappsatta(E.proj); $('erTrappInfo').textContent = tr.size ? tr.size + (tr.size === 1 ? ' produkt' : ' produkter') + ' i ' + E.proj + ' prissätts i trappan och visas inte här.' : '';
+  var sak = (P.status.saknar_pris || []).filter(function (x) { return x.projekt === E.proj; }), prissatta = fastNu(E.proj).map(function (x) { return x.produkt; }).concat([...tr]).sort(function (a, b) { return a.localeCompare(b, 'sv'); });
+  $('erSaknasRuta').hidden = !sak.length;
+  $('erSaknas').innerHTML = sak.map(function (x, i) { return '<div class="poolrad" style="justify-content:space-between;flex-wrap:wrap"><span>' + esc(x.produkt) + ' <small>' + x.antal + ' order i ' + esc(P.status.manad || '') + ' utan pris</small></span>'
+      + '<span class="chips"><button class="knapp liten" type="button" data-satt="' + i + '">Sätt fast pris</button><select data-koppla="' + i + '" aria-label="Prissätt ' + esc(x.produkt) + ' som"><option value="">Prissätt som…</option>' + prissatta.map(function (p) { return '<option>' + esc(p) + '</option>'; }).join('') + '</select></span></div>'; }).join('');
+  if (!$('erFran').value) $('erFran').value = idag();
+  var h = '<table><thead><tr><th class="txt">Produkt</th><th>Ersättning</th><th>Inkl. semesterersättning</th><th class="txt">Gäller sedan</th><th></th></tr></thead><tbody>';
+  h += E.rader.map(function (r, i) { var ch = r.ny || r.belopp !== r.orig; return '<tr><td class="txt">' + (r.ny ? '<input class="namn andrad" type="text" value="' + esc(r.produkt) + '" data-ernamn="' + i + '" list="erProdLista" placeholder="Produktens namn" aria-label="Produktens namn">' : esc(r.produkt)) + '</td>'
+      + '<td><input type="text" inputmode="numeric" value="' + (r.belopp == null ? '' : r.belopp) + '" data-erbelopp="' + i + '" class="' + (ch ? 'andrad' : '') + '" aria-label="Ersättning för ' + esc(r.produkt || 'ny produkt') + '"></td>'
+      + '<td>' + kr(r.belopp == null ? null : r.belopp * 1.12) + '</td><td class="txt">' + (r.sedan || '–') + (r.kommande ? ' <span class="hint">(ändras till ' + kr(r.kommande.belopp) + ' från ' + r.kommande.galler_fran + ')</span>' : '') + '</td>'
+      + '<td>' + (r.ny ? '<button class="knapp liten" type="button" data-erbort="' + i + '">Ta bort</button>' : '') + '</td></tr>'; }).join('');
+  if (!E.rader.length) h += '<tr><td class="txt" colspan="5"><span class="hint">Inga fasta ersättningar i ' + esc(E.proj) + '.' + (tr.size ? ' Alla produkter prissätts i trappan.' : '') + '</span></td></tr>';
+  $('erTabell').innerHTML = h + '</tbody></table><datalist id="erProdLista">' + ((P.status.produkter || {})[E.proj] || []).map(function (p) { return '<option value="' + esc(p) + '">'; }).join('') + '</datalist>';
+  $('erSpara').disabled = !E.andrat; $('erAngra').disabled = !E.andrat;
+  var alla = ersProjekt(); $('nbProjekt').innerHTML = '<option value="">Alla projekt</option>' + alla.map(function (p) { return '<option' + (p === E.proj ? ' selected' : '') + '>' + esc(p) + '</option>'; }).join('');
+  ritaNamnbyten(); }
+function ritaNamnbyten() { var pj = $('nbProjekt').value;
+  $('nbOrderLista').innerHTML = ((P.status.produkter || {})[pj] || [].concat.apply([], Object.values(P.status.produkter || {}))).map(function (p) { return '<option value="' + esc(p) + '">'; }).join('');
+  $('nbPrisLista').innerHTML = (pj ? fastNu(pj).map(function (x) { return x.produkt; }).concat([...trappsatta(pj)]) : []).map(function (p) { return '<option value="' + esc(p) + '">'; }).join('');
+  $('nbTabell').innerHTML = '<table><thead><tr><th class="txt">Projekt</th><th class="txt">Namn i ordrarna</th><th class="txt">Prissätts som</th><th></th></tr></thead><tbody>'
+    + (P.namn.length ? P.namn.map(function (n) { return '<tr><td class="txt">' + esc(n.projekt || 'Alla projekt') + '</td><td class="txt">' + esc(n.namn_i_order) + '</td><td class="txt">' + esc(n.prissatt_som) + '</td><td><button class="knapp liten" type="button" data-nbbort="' + n.id + '" aria-label="Ta bort namnbytet ' + esc(n.namn_i_order) + '">Ta bort</button></td></tr>'; }).join('')
+      : '<tr><td class="txt" colspan="4"><span class="hint">Inga namnbyten.</span></td></tr>') + '</tbody></table>'; }
+function erAndrat() { E.andrat = true; meddela('erStatus', 'Ändringarna är inte sparade än.', ''); ritaErs(); }
+async function sparaErs() { var fran = $('erFran').value; if (!fran) { meddela('erStatus', 'Välj från vilket datum ersättningarna gäller.', 'fel'); return; }
+  var rader = [], fel = ''; E.rader.forEach(function (r) { if (!(r.ny || r.belopp !== r.orig)) return; var namn = String(r.produkt || '').trim();
+    if (!namn) fel = 'Skriv namnet på den nya produkten.'; else if (r.belopp == null || !(r.belopp >= 0)) fel = 'Fyll i ersättningen för ' + namn + '.'; else rader.push({ projekt: E.proj, produkt: namn, belopp: r.belopp }); });
+  if (fel) { meddela('erStatus', fel, 'fel'); return; } if (!rader.length) return;
+  $('erSpara').disabled = true; meddela('erStatus', 'Sparar…', '');
+  try { await api('/rest/v1/rpc/spara_fast', { method: 'POST', body: { p_galler_fran: fran, p_rader: rader } }); await laddaProvision(true); laddaErs(); ritaErs();
+    meddela('erStatus', 'Sparat ' + rader.length + (rader.length === 1 ? ' ersättning' : ' ersättningar') + ' från ' + fran + '. Lönen räknas om vid nästa synk.', 'ok'); }
+  catch (e) { meddela('erStatus', 'Kunde inte spara: ' + e.message, 'fel'); $('erSpara').disabled = false; } }
+async function laggNamnbyte(projekt, order, pris) { order = String(order || '').trim(); pris = String(pris || '').trim();
+  if (!order || !pris) { meddela('nbStatus', 'Fyll i både namnet i ordrarna och produkten som ger priset.', 'fel'); return; }
+  try { await api('/rest/v1/produktnamn', { method: 'POST', headers: { 'Prefer': 'return=minimal' }, body: [{ projekt: projekt || null, namn_i_order: order, prissatt_som: pris }] });
+    await laddaProvision(true); $('nbOrder').value = ''; $('nbPris').value = ''; ritaErs(); meddela('nbStatus', order + ' prissätts som ' + pris + ' från nästa synk.', 'ok'); }
+  catch (e) { meddela('nbStatus', /duplicate|unik/i.test(e.message) ? order + ' har redan ett namnbyte i projektet.' : 'Kunde inte spara: ' + e.message, 'fel'); } }
+document.addEventListener('click', function (ev) { var b = ev.target.closest('button'); if (!b) return;
+  if (b.dataset.erproj) { if (E.andrat && !confirm('Släppa ändringarna?')) return; E.proj = b.dataset.erproj; E.rader = []; E.andrat = false; meddela('erStatus', '', ''); ritaErs(); }
+  else if (b.id === 'erNyProdukt') { E.rader.push({ produkt: '', belopp: null, orig: null, sedan: null, ny: true }); erAndrat(); }
+  else if (b.dataset.erbort) { E.rader.splice(+b.dataset.erbort, 1); erAndrat(); }
+  else if (b.dataset.satt) { var x = (P.status.saknar_pris || []).filter(function (s) { return s.projekt === E.proj; })[+b.dataset.satt]; E.rader.push({ produkt: x.produkt, belopp: null, orig: null, sedan: null, ny: true }); erAndrat(); }
+  else if (b.id === 'erAngra') { laddaErs(); meddela('erStatus', '', ''); ritaErs(); }
+  else if (b.id === 'erSpara') sparaErs();
+  else if (b.id === 'nbLagg') laggNamnbyte($('nbProjekt').value, $('nbOrder').value, $('nbPris').value);
+  else if (b.dataset.nbbort) { api('/rest/v1/produktnamn?id=eq.' + b.dataset.nbbort, { method: 'DELETE' }).then(function () { return laddaProvision(true); }).then(function () { ritaErs(); meddela('nbStatus', 'Namnbytet är borttaget.', 'ok'); }); } });
+document.addEventListener('change', function (ev) { var el = ev.target;
+  if (el.dataset.erbelopp) { E.rader[+el.dataset.erbelopp].belopp = tal(el.value); erAndrat(); }
+  else if (el.dataset.ernamn) { E.rader[+el.dataset.ernamn].produkt = el.value.trim(); erAndrat(); }
+  else if (el.dataset.koppla && el.value) { var x = (P.status.saknar_pris || []).filter(function (s) { return s.projekt === E.proj; })[+el.dataset.koppla]; laggNamnbyte(E.proj, x.produkt, el.value); }
+  else if (el.id === 'nbProjekt') ritaNamnbyten(); });
 
 /* ---------- Start ---------- */
 (async function () { var s = null; try { s = JSON.parse(sessionStorage.getItem('prodplan_admin') || 'null'); } catch (e) {}
