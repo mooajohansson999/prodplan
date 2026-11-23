@@ -632,7 +632,7 @@ def saljarlista(individ):
              'senast_sedd': s['senast'] or None} for i, s in sorted(per.items())]
 
 
-def skriv_till_supabase(all_data, individ, ts):
+def skriv_till_supabase(all_data, individ, ts, status=None):
     """Skriver det sidorna läser (utfall, mål, säljardata per månad, senaste synk) och säljarlistan.
     Supabase är enda platsen för datan, så ett fel stoppar körningen och syns i GitHub."""
     if not (SUPABASE_URL and SUPABASE_KEY):
@@ -642,6 +642,8 @@ def skriv_till_supabase(all_data, individ, ts):
     rader = [{'typ': typ, 'manad': 'alla', 'data': data, 'uppdaterad': nu} for typ, data in all_data.items() if data]
     rader += [{'typ': 'individ', 'manad': m, 'data': d, 'uppdaterad': nu} for m, d in sorted(individ.items())]
     rader.append({'typ': 'last_synced', 'manad': 'alla', 'data': {'last_synced': ts}, 'uppdaterad': nu})
+    if status:
+        rader.append({'typ': 'status', 'manad': 'alla', 'data': status, 'uppdaterad': nu})
     try:
         for rad in rader:                                # en datamängd per anrop håller anropen små
             supabase_upsert('prodplan_data', [rad])
@@ -663,6 +665,7 @@ print(f'Hittade {len(files)} filer/mappar i Dropbox (rekursivt)')
 all_data = {'utfall': {}, 'mal': {}}
 all_rawdata = {'rawdata_orders': [], 'rawdata_timmar': [], 'saljrapport': []}   # NYTT: saljrapport
 all_prov = {'provision': [], 'trappa': []}   # NYTT: provisionsfilerna
+prov_filer = {'provision': [], 'trappa': []}  # filnamnen, för felsökning av lönen
 
 for f in files:
     if f['.tag'] != 'file':
@@ -684,6 +687,7 @@ for f in files:
     if typ in ('provision', 'trappa'):
         rows = parse_provision_file(content)
         all_prov[typ].extend(rows)
+        prov_filer[typ].append(name)
         print(f'  → {len(rows)} rader från {name}')
         continue
 
@@ -721,6 +725,12 @@ individ = bygg_individ(all_rawdata['rawdata_orders'], all_rawdata['rawdata_timma
                        all_prov['provision'], all_prov['trappa'], MED_LON)
 print(f'Säljardata: {len(individ)} månader, lön {"med" if MED_LON else "avstängd"}')
 ts = datetime.datetime.now(ZoneInfo('Europe/Stockholm')).strftime('%Y-%m-%d %H:%M')
+LON_VARIABEL = os.environ.get('PUBLICERA_LON', '')
+print(f'Lön: PUBLICERA_LON={LON_VARIABEL!r}, Supabase {"på" if SUPABASE_PA else "av"} → lön {"på" if MED_LON else "av"}')
+print(f'Provisionsfiler: {", ".join(prov_filer["provision"]) or "inga"} | Trappfiler: {", ".join(prov_filer["trappa"]) or "inga"}')
+# Synkens status följer med till sidan, så att säljarsidan kan visa varför lönen saknas
+STATUS = {'tid': ts, 'lon_variabel': LON_VARIABEL, 'lon_pa': MED_LON,
+          'provisionsfiler': prov_filer['provision'], 'trappfiler': prov_filer['trappa']}
 
 if SUPABASE_PA:
     # Prodplanen läser från Supabase med kod. Gamla publika filer tas bort, så att de försvinner från sidan.
@@ -728,7 +738,7 @@ if SUPABASE_PA:
         if f.endswith('.json'):
             os.remove(os.path.join(OUTPUT_DIR, f))
             print(f'Tog bort den publika filen data/{f}')
-    skriv_till_supabase(all_data, individ, ts)
+    skriv_till_supabase(all_data, individ, ts, STATUS)
 else:
     for typ, data in all_data.items():
         if data:
